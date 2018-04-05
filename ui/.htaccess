@@ -1,0 +1,3 @@
+php_value include_path  ".:PATH:/var/www/html:/var/www/html/lib:/var/www/html/lib/classes:/var/www/html/lib/vendor"
+Options -Indexes 
+

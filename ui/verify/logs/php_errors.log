@@ -1,0 +1,15 @@
+[30-Jan-2018 23:05:33 US/Eastern] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in validation_mobile.php on line 11
+[30-Jan-2018 23:43:58 US/Eastern] PHP Parse error:  syntax error, unexpected ',' in validation_mobile_a.php on line 90
+[30-Jan-2018 23:59:39 US/Eastern] PHP Parse error:  syntax error, unexpected ';', expecting '{' in ../lib/validation.php on line 33
+[31-Jan-2018 00:00:05 US/Eastern] PHP Parse error:  syntax error, unexpected 'app_fd_pro_patientEpisodes' (T_STRING) in ../lib/validation.php on line 35
+[31-Jan-2018 00:00:25 US/Eastern] PHP Parse error:  syntax error, unexpected '"' in ../lib/validation.php on line 40
+[31-Jan-2018 00:21:04 US/Eastern] PHP Parse error:  syntax error, unexpected '{' in validation.php on line 22
+[31-Jan-2018 14:34:02 US/Eastern] PHP Parse error:  syntax error, unexpected ''];' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in patients.php on line 636
+[31-Jan-2018 14:37:15 US/Eastern] PHP Parse error:  syntax error, unexpected '%' in patients.php on line 597
+[01-Feb-2018 21:55:22 US/Eastern] PHP Parse error:  syntax error, unexpected 'dev' (T_STRING) in ../lib/validation.php on line 97
+[02-Feb-2018 11:08:52 US/Eastern] PHP Parse error:  syntax error, unexpected '{' in validation.php on line 17
+[03-Feb-2018 18:42:21 US/Eastern] PHP Parse error:  syntax error, unexpected ';' in ../lib/validation.php on line 27
+[03-Feb-2018 21:39:59 US/Eastern] PHP Parse error:  syntax error, unexpected ']' in validation_forgot_pw_a.php on line 11
+[03-Feb-2018 23:20:48 US/Eastern] PHP Parse error:  syntax error, unexpected ']' in validation_pw_reset_a.php on line 19
+[07-Feb-2018 00:40:22 US/Eastern] PHP Parse error:  syntax error, unexpected '<' in patients.php on line 562
+[07-Feb-2018 23:48:20 US/Eastern] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in patients_a.php on line 150

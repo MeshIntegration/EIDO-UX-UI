@@ -1,0 +1,8 @@
+[23-Feb-2018 03:48:58 Etc/UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL) in change_password_a.php on line 23
+[23-Feb-2018 04:21:02 Etc/UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in utilities.php on line 201
+[23-Feb-2018 04:21:18 Etc/UTC] PHP Parse error:  syntax error, unexpected '[' in utilities.php on line 202
+[23-Feb-2018 04:22:05 Etc/UTC] PHP Parse error:  syntax error, unexpected 'dir_user' (T_STRING) in utilities.php on line 210
+[23-Feb-2018 04:32:03 Etc/UTC] PHP Parse error:  syntax error, unexpected ';' in change_password.php on line 63
+[23-Feb-2018 04:32:21 Etc/UTC] PHP Parse error:  syntax error, unexpected end of file in change_password.php on line 215
+[23-Feb-2018 04:33:35 Etc/UTC] PHP Parse error:  syntax error, unexpected end of file in change_password.php on line 215
+[23-Feb-2018 05:00:43 Etc/UTC] PHP Parse error:  syntax error, unexpected ',', expecting ']' in change_password_a.php on line 21

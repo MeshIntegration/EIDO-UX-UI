@@ -1,0 +1,8 @@
+[05-Jan-2018 03:26:46 Etc/UTC] PHP Parse error:  syntax error, unexpected '<' in patients.php on line 3
+[05-Jan-2018 04:47:03 Etc/UTC] PHP Parse error:  syntax error, unexpected '$nhsNumber' (T_VARIABLE) in patients.php on line 180
+[05-Jan-2018 04:47:29 Etc/UTC] PHP Parse error:  syntax error, unexpected ';' in patients.php on line 187
+[05-Jan-2018 04:48:25 Etc/UTC] PHP Parse error:  syntax error, unexpected ';' in patients.php on line 187
+[06-Jan-2018 21:35:52 Etc/UTC] PHP Parse error:  syntax error, unexpected '/' in patients.php on line 389
+[07-Jan-2018 01:09:03 Etc/UTC] PHP Parse error:  syntax error, unexpected '>' in patients.php on line 284
+[07-Jan-2018 01:10:18 Etc/UTC] PHP Parse error:  syntax error, unexpected '>' in patients.php on line 284
+[07-Jan-2018 04:09:05 Etc/UTC] PHP Parse error:  syntax error, unexpected '"; ?><span class="' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in patients.php on line 694

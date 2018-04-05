@@ -1,0 +1,59 @@
+	<!-- Start Content-Right -->  
+	<div class="small-12 medium-6 large-6 cell content-right">
+	  <h2>View Organisation</h2>
+	  <form>
+  		<div class="grid-container">
+    	  <div class="grid-x grid-padding-x">
+      	    <div class="small-12 medium-12 large-12 cell">
+        	  <label>Name
+                <input type="text" placeholder="Nottingham Hospital">
+              </label>
+            </div>
+      		<div class="small-12 medium-12 large-12 cell">
+        	  <label>Administrator Contact
+                <input type="text" placeholder="Susan Johnson">
+              </label>
+            </div>
+			<div class="small-12 medium-12 large-12 cell">
+        	  <label>E-mail Address
+                <input type="text" placeholder="susan@NottinghamHospital.com">
+              </label>
+            </div>
+			<div class="small-12 medium-12 large-12 cell">
+        	  <label>Type
+                <input type="text" placeholder="Hospital">
+              </label>
+            </div>
+			<div class="small-12 medium-12 large-12 cell">
+              <div class="grid-x">
+                <div class="small-7 cell">
+				  <label>Organisation Header Logo	
+                  <input type="text" placeholder="">
+				  </label>
+                </div>
+				<div class="small-2 cell">&nbsp;</div>
+                <div class="small-3 cell no-label">
+                  <a href="#" class="button postfix expanded grey">Browse</a>
+                </div>
+              </div>
+            </div>
+			<!-- <div class="small-12 medium-12 large-12 cell">
+              <div class="input-group">
+			    <label>Organisation Header Logo
+                  <input class="input-group-field" type="text">
+				</label>
+                <div class="input-group-button no-label">
+                  <input type="submit" class="button grey" value="browse">
+                </div>
+              </div>
+			</div> -->
+			<div class="small-12 medium-12 large-12 cell option">
+			  <p class="name"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right" />Manage Procedures</p>
+			</div>  
+			<div class="small-12 medium-12 large-12 cell text-center">
+        	  <a class="button large lt-green" href="#">update ORGANISATION</a>
+            </div>
+    	  </div>
+  		</div>
+	  </form>
+	</div>  

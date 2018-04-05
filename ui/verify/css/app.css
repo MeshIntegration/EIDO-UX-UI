@@ -1,0 +1,2 @@
+.su-table .su-table [type='text'], .su-table [type='password'], .su-table [type='date'], .su-table [type='datetime'], .su-table [type='datetime-local'], .su-table [type='month'], .su-table [type='week'],             .su-table [type='email'], .su-table [type='number'], .su-table [type='search'], .su-table [type='tel'], .su-table [type='time'], .su-table [type='url'], .su-table [type='color'], 
+          .su-table textarea { background:#e3e3e3 !important; }

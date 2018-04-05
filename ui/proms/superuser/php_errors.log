@@ -1,0 +1,13 @@
+[14-Dec-2017 05:52:21 Etc/UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in users.php on line 17
+[14-Dec-2017 05:52:53 Etc/UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in users.php on line 147
+[14-Dec-2017 16:43:03 Etc/UTC] PHP Parse error:  syntax error, unexpected 'WHERE' (T_STRING) in organisations.php on line 142
+[14-Dec-2017 17:06:18 Etc/UTC] PHP Parse error:  syntax error, unexpected 'Government' (T_STRING) in organisations.php on line 190
+[17-Dec-2017 22:31:07 Etc/UTC] PHP Parse error:  syntax error, unexpected '=' in organisations.php on line 20
+[17-Dec-2017 23:32:52 Etc/UTC] PHP Parse error:  syntax error, unexpected 'while' (T_WHILE) in organisations.php on line 308
+[17-Dec-2017 23:33:19 Etc/UTC] PHP Parse error:  syntax error, unexpected ''c_description];' (T_ENCAPSED_AND_WHITESPACE), expecting ']' in organisations.php on line 310
+[17-Dec-2017 23:34:01 Etc/UTC] PHP Parse error:  syntax error, unexpected end of file in organisations.php on line 356
+[17-Dec-2017 23:36:48 Etc/UTC] PHP Parse error:  syntax error, unexpected end of file in organisations.php on line 353
+[17-Dec-2017 23:44:00 Etc/UTC] PHP Parse error:  syntax error, unexpected end of file in organisations.php on line 355
+[17-Dec-2017 23:46:37 Etc/UTC] PHP Parse error:  syntax error, unexpected end of file in organisations.php on line 354
+[18-Dec-2017 07:41:09 Etc/UTC] PHP Parse error:  syntax error, unexpected ']' in functions.php on line 18
+[18-Dec-2017 07:41:30 Etc/UTC] PHP Parse error:  syntax error, unexpected '"' in functions.php on line 21
