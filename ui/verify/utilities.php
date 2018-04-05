@@ -234,4 +234,5 @@ function save_password($user_id, $password)
           WHERE id='$user_id'";
    dbi_query($sql);
 }
+// EOF
 ?>
