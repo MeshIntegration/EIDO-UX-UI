@@ -1,10 +1,6 @@
 <div class="grid-x hide-for-small-only show-for-medium">
   <div class="medium-8 large-8 cell">
-    <span class="type float-left"><?php echo $user_initials; ?></span>
-    <!-- extra links commented out for now
-    <span class="float-left links one_link"><a href="#"><img src="/ui/verify/img/add.png" alt="Add Patient" class="add_icon"/>Add Patient</a></span>
-    <span class="float-left links one_link"><a href="#"><img src="/ui/verify/img/add.png" alt="Add Patient" class="add_icon"/>Second Link</a></span>
-    -->
+    &nbsp; 
   </div>
   <div class="medium-4 large-4 cell"><a href="/"><img src="/ui/verify/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a></div>
 </div>

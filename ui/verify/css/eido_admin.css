@@ -50,7 +50,14 @@ a.button_users { color:#8A8B92; font-weight:400; font-family:'Lato', sans-serif;
   font-family:'Lato', sans-serif; 
   margin-top: 23px;
 }
-
+.button_users_bulk { 
+  width: 150; 
+  height: 45px; 
+  background: #dfdddd; 
+  color:#8A8B92; 
+  font-weight:400; 
+  font-family:'Lato', sans-serif; 
+}
 
 #user-checkbox2{margin-left: 10px; }
 

@@ -4,17 +4,24 @@
 **************************************************************  -->
 <tr>  
   <td colspan="5">
-            
-<ul class="tabs" data-active-collapse="true" data-responsive-accordion-tabs="tabs medium-accordion medium-tabs" id="example-tabs">
-  <li class="tabs-title"><a href="#panel1">Bulk Actions<img src="../img/icons/add_light.png" alt="add icon" class="fc_add"/></a></li>
-  <li class="tabs-title"><a href="#panel2">Sort By<img src="../img/icons/add_white.png" alt="add icon" class="fc_add"/></a></li>
+      
+ <!--          
+<ul class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="bulk_action_tabs">
+  <li class="tabs-title button_users_bulk fc"><a href="#panel1">Bulk Actions<img src="../img/icons/add_light.png" alt="add icon" class="fc_add"/></a></li>
+  <li class="tabs-title button_users_bulk fc"><a href="#panel2">Sort By<img src="../img/icons/add_white.png" alt="add icon" class="fc_add"/></a></li>
 </ul>
+-->
 
-<div class="tabs-content" data-tabs-content="example-tabs">
+<div id="bulk_action_tabs" class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" >
+  <div class="tabs-title button_users_bulk fc"><a href="#panel1">Bulk Actions<img src="../img/icons/add_light.png" alt="add icon" class="fc_add"/></a></div>
+  <div class="tabs-title button_users_bulk fc"><a href="#panel2">Sort By<img src="../img/icons/add_white.png" alt="add icon" class="fc_add"/></a></div>
+</div>
+
+<div class="tabs-content" data-tabs-content="bulk_action_tabs">
   <div class="tabs-panel" id="panel1">          
     <div class="grid-x rule">
         <div class="small-12 medium-8 cell">
-           <a href="#" class="button" type="submit">Force Password Reset</a>
+           <a href="#" data-open="pwdResetModa1" class="button" type="submit">Force Password Reset</a>
         </div>
         <div class="small-12 medium-8 cell">
            <a href="#" class="button">Delete User</a>
@@ -32,13 +39,13 @@
             <label for="middle-label" class="middle">Time Added:</label>
         </div>
         <div class="small-12 medium-8 cell">
-           <a href="users.php?filter=1&time_added=1" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==1)?"selected":"inactive";?>" type="submit">
+           <a href="patients.php?filter=1&time_added=1" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==1)?"selected":"inactive";?>" type="submit">
               Newest First</a>
               &nbsp;
-           <a href="users.php?filter=1&time_added=2" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==2)?"selected":"inactive";?>">
+           <a href="patients.php?filter=1&time_added=2" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==2)?"selected":"inactive";?>">
               Oldest First</a>
               &nbsp;
-           <a href="users.php?filter=1&time_added=3" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==3)?"selected":"inactive";?>">
+           <a href="patients.php?filter=1&time_added=1" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==2)?"selected":"inactive";?>">
               Last Import</a>
         </div>
     </div>
@@ -47,8 +54,8 @@
            <label for="middle-label" class="middle">Name:</label>
          </div>
          <div class="small-12 medium-8 cell">
-           <a href="users.php?filter=1&name=1" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==1)?"selected":"inactive";?>">A-Z</a>&nbsp;
-           <a href="users.php?filter=1&name=2" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==2)?"selected":"inactive";?>">Z-A</a>
+           <a href="patients.php?filter=1&name=1" class="button<?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==1)?"selected":"inactive";?>">A-Z</a>&nbsp;
+           <a href="patients.php?filter=1&name=2" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==2)?"selected":"inactive";?>">Z-A</a>
          </div>
     </div>
     <div class="grid-x rule">

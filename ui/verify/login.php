@@ -53,7 +53,7 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 			<label>E-mail
 			  <div class="input-group">
                                 <span class="input-group-label"><i class="fi-mail"></i></span>
-				<input class="input-group-field" type="text" name="username" placeholder="Enter your e-mail address">
+				<input id="username1" class="input-group-field" type="text" name="username" placeholder="Enter your e-mail address">
                           </div>
 			</label>
 			<label>Password
@@ -61,7 +61,7 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
                 <span class="input-group-label"><i class="fi-lock"></i></span>
                 <input class="input-group-field" type="password" name="password" placeholder="Enter your password">
               </div>
-			  <p class="text-right" style="font-weight:200"><a href="forgot_pw.php">I forgot my password</a></p>
+			  <p id="forgotpw" class="text-right" style="font-weight:200"><a href="forgot_pw.php">I forgot my password</a></p>
 			</label>
 			<div class="small-12 cell">
 			  <button type="submit" name="" value="" class="button large float-right">login</button>
@@ -101,8 +101,15 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
       <script src="./js/app.js"></script>
       <script>
          $(document).ready(function () {
-            $('#errorModal').foundation('<?php echo $modal_popup;?>');
+		$('#errorModal').foundation('<?php echo $modal_popup;?>');
          });
+//         $(document).ready(function (){
+//                $("#forgotpw").click(function(){
+//                	var username = $("#username1").val();
+//                	sessionStorage.setItem('username',username);
+//		});
+//         });
+
       </script>  
    </body>
 </html>

@@ -51,7 +51,7 @@ if (isset($forgot_login_flag))
 			<p>&nbsp;</p>
 			<h1>Login</h1>
                     <?php if (strlen($error_msg)) { ?>
-                       <label class="caution" >The e-mail or password iyour entered do not match our records.<br />Please try again.</label>
+                       <label class="caution" >The e-mail or password entered do not match our records.<br />Please try again.</label>
                     <?php } ?>
 			<label>E-mail
 			  <div class="input-group">
@@ -99,7 +99,12 @@ if (isset($forgot_login_flag))
                   input.attr("type", "password");
                   $(this).html("SHOW");
                }
-            }); 
+            });
+	    $(function(){
+       		if( !$('#name').val() ) {
+          	  $('#name').val(sessionStorage.username);
+        	}
+     	    }); 
          });
       </script>  
    </body>

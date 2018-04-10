@@ -24,6 +24,27 @@ if ($mode=="update")
            WHERE id='$id'";
    dbi_query($sql);
 } 
+else if ($mode=="userreset")
+{
+   //global $TBLPTEPISODES;
+   $sql = "UPDATE dir_user
+           SET c_pw_reset=1,
+               c_dateModified=NOW()
+           WHERE id='$id'";
+   dbi_query($sql);
+   header("Location: users.php");
+   exit();
+}
+else if ($mode=="userdelete")
+{
+   $sql = "UPDATE dir_user
+           SET active=0,
+           c_dateModified=NOW()
+           WHERE id='$id'";
+   dbi_query($sql);
+   header("Location: users.php");
+   exit();
+}
 else
 {
    $id = substr(strtolower($firstName),0,1).strtolower($lastName);
@@ -72,7 +93,10 @@ logMsg($sql,$logfile);
            SET roleId='ROLE_ADMIN',
                userId='$id'";
    dbi_query($sql);
-logMsg($sql,$logfile);
+   logMsg($sql,$logfile);
+
+   header("Location: users.php");
+   exit();
 }
 header("Location: users.php");
 exit();

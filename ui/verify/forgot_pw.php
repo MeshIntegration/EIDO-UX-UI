@@ -49,7 +49,7 @@ $logfile = "validation.log";
 			<label>E-mail
 			  <div class="input-group login">
                 <span class="input-group-label"><i class="fi-mail"></i></span>
-                <input class="input-group-field" name="email" type="text" placeholder="Enter your e-mail" value="<?php echo $_SESSION['login_email']; ?>">
+                <input id="email" class="input-group-field" name="email" type="text" placeholder="Enter your e-mail" value="<?php echo $_SESSION['login_email']; ?>">
               </div>
 			  <p class="note text-right"><a href="login.php">I remembered! Back to Login</a></p>
 			</label>
@@ -76,7 +76,9 @@ $logfile = "validation.log";
       <script src="./js/app.js"></script>
       <script>
          $(document).ready(function () {
-		   
+//	 	if ( !$("#email").val() ) {
+//			$("#email").val(sessionStorage.username)
+//	 	}
          });
       </script>  
    </body>

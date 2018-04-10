@@ -20,7 +20,11 @@ $logfile = "superuser.log";
 
 $mode = get_query_string('m');
 $id = get_query_string('id');
-
+$error_msg = $_SESSION['error_msg'];
+if($error_msg){
+echo "<center>".$error_msg."</center>";
+unset($_SESSION['error_msg']);
+}
 // turn everything off
 $add_hide = "hide";
 $update_hide = "hide";
@@ -280,12 +284,6 @@ $pagination = get_pagination($page, $totalRecord);
                logMsg("--------------- ManageSurveys --------------",$logfile);
                $session_number = $_SESSION['session_number'];
                logMsg("SESSION SN: ".$_SESSION['session_number'] ,$logfile);
-               if(isset($_GET['gfdb']) && !empty($_GET['gfdb'])){
-                  $save_to_sess = true;
-               }else{
-                  $save_to_sess = false;
-               }
- 
                $arr_proc_episode =  get_proc_episode($pe_id, $session_number,$get_from_db);
                // set default session if number of session is not set
                if(!empty($arr_proc_episode['c_numberOfSessions'])){
@@ -394,7 +392,7 @@ $pagination = get_pagination($page, $totalRecord);
             <div class="small-12 medium-12 large-12 cell">
                      <ul class="sort" id="sortable" >
                           <?php 
-                           $survey_ids = $_SESSION['pe_id'.$pe_id]["sess_id".$sess_id];
+                           $survey_ids = get_surveys_by_proc($pe_id,$sess_id); // $_SESSION['pe_id'.$pe_id]["sess_id".$sess_id];
                            for ($i=0; $i<count($survey_ids); $i++) { 
                               $arr_survey_info = get_survey_by_num($survey_ids[$i]);
                               if(!empty($arr_survey_info)){
@@ -420,8 +418,11 @@ $pagination = get_pagination($page, $totalRecord);
                {
                   $arr_all_surveys=get_all_surveys();
                   $_SESSION['arr_all_surveys']=$arr_all_surveys;
-               }
-               $arr_all_surveys=$_SESSION['arr_all_surveys'];
+               }     
+// added 4/8
+               $arr_all_surveys=get_all_surveys();
+               $_SESSION['arr_all_surveys']=$arr_all_surveys;             
+// $arr_all_surveys=$_SESSION['arr_all_surveys'];
                $_SESSION['pe_id_prev']=$pe_id;
                $_SESSION['sess_id_prev']=$sess_id; 
             }

@@ -22,6 +22,7 @@ $password= $_POST['password'];
 $sql = "SELECT u.*, ug.*
         FROM dir_user u, dir_user_group ug
         WHERE u.username='$username'
+        AND active=1
         AND u.id=ug.userid";
 logMsg($sql,$logfile);
 
@@ -35,6 +36,7 @@ if ($GetQuery->num_rows==0)
 }
 else
 {
+   $qryResult=$GetQuery->fetch_assoc();
    if (0 && !password_verify($password, $hash)) {
       /* Invalid */
       $_SESSION['error_msg']="Incorrect email or password. Please try again.";
@@ -43,10 +45,15 @@ else
       exit;
    }
 
-
-   $qryResult=$GetQuery->fetch_assoc();
    $user_id=$qryResult['id'];
    is_setcookie("user_id", $user_id, 0, "/", $cookie_domain);
+
+   // password reset required
+   if ($qryResult['c_pw_reset']==1)
+   {
+      header("Location: change_password.php?rt=login");
+      exit;
+   } 
 
    $fname = $qryResult['firstName'];
    $lname = $qryResult['lastName'];

@@ -19,23 +19,38 @@ require_once 'functions.php';
 session_start();
 $logfile = "patient.log";
 
+// need to change according to session
+$script_name = substr(strrchr($_SERVER['PHP_SELF'],"/"),1);
+
+if ((isset($_GET['page']) && !empty($_GET['page']))){
+   $page = $_GET['page'];
+   $start = ($page - 1) * $row;
+}else if (isset($_SESSION['page'][$script_name]['no']) && !empty($_SESSION['page'][$script_name]['no'])){
+   $page = $_SESSION['page'][$script_name]['no'];
+   $start = ($page - 1) * $row;
+}
+$_SESSION['page'][$script_name]['no'] = $page ;
+
 ////////////////////////////////////////////////
 // sorting and filtering session setting 
 ////////////////////////////////////////////////
 
 if (isset($_GET['filter']) && $_GET['filter']==1){
-// set the filter detail in session
+   // set the filter detail in session
+    $is_default_filter = false;
+   // reset the paggination values when any filter / search start
+    $_SESSION['page'][$script_name]['no'] = 0;
 
    // if operation was already set and they clicked it again - turn it off (TOGGLE)
-   if(isset($_GET['operation']) && $_GET['operation']==1 && ($_SESSION['filter']['operation']==0 || $_SESSION['filter']['operation']==2))
+   if(isset($_GET['operation']) && $_GET['operation']==1 && ($_SESSION['filter']['operation']==0 || $_SESSION['filter']['operation']==2)){
       $_SESSION['filter']['operation'] = 1;
-   else if(isset($_GET['operation']) && $_GET['operation']==1 && $_SESSION['filter']['operation']==1)
-      $_SESSION['filter']['operation'] = 0;
-   else if(isset($_GET['operation']) && $_GET['operation']==2 && ($_SESSION['filter']['operation']==0 || $_SESSION['filter']['operation']==1))
+}else if(isset($_GET['operation']) && $_GET['operation']==1 && $_SESSION['filter']['operation']==1){
+      unset($_SESSION['filter']['operation']);
+}else if(isset($_GET['operation']) && $_GET['operation']==2 && ($_SESSION['filter']['operation']==0 || $_SESSION['filter']['operation']==1)){
       $_SESSION['filter']['operation'] = 2;
-   else if(isset($_GET['operation']) && $_GET['operation']==2 && $_SESSION['filter']['operation']==2)
-      $_SESSION['filter']['operation'] = 0;
- 
+}else if(isset($_GET['operation']) && $_GET['operation']==2 && $_SESSION['filter']['operation']==2){
+      unset($_SESSION['filter']['operation']);
+} 
    if(isset($_GET['time_added']) && $_GET['time_added']==1){
       $_SESSION['filter']['time_added'] = 1; 
    }else if(isset($_GET['time_added']) && $_GET['time_added']==2){
@@ -54,6 +69,12 @@ if (isset($_GET['filter']) && $_GET['filter']==1){
       $_SESSION['filter']['activity'] = 2;
    }
 
+   if(isset($_GET['status']) && $_GET['status']==1){
+      $_SESSION['filter']['status'] = 1;
+   }else if(isset($_GET['status']) && $_GET['status']==2){
+      $_SESSION['filter']['status'] = 2;
+   }
+
    if(isset($_GET['gender']) && $_GET['gender']==1){
       $_SESSION['filter']['gender'] = 1;
    }else if(isset($_GET['gender']) && $_GET['gender']==2){
@@ -61,15 +82,48 @@ if (isset($_GET['filter']) && $_GET['filter']==1){
    }else if(isset($_GET['gender']) && $_GET['gender']==3){
       $_SESSION['filter']['gender'] = 3;
    }
+
+    // search within results
+   if(isset($_POST['search_within_submit']) && !empty($_POST['search_within_submit'])){
+      $_SESSION['filter']['search_within_query'] = $_REQUEST['search_within_query'];
+   }
+
+   if(isset($_GET['tags']) && !empty($_GET['tags']) && ($_GET['tags']!=$_SESSION['filter']['tags'])){
+      $_SESSION['filter']['tags'] = $_GET['tags'];
+   }else{
+      $_SESSION['filter']['tags'] = "";
+   }
+
    // top search query
    if(isset($_REQUEST['top_search_submit']) && !empty($_REQUEST['top_search_submit'])){
       $_SESSION['filter']['top_search_query'] = $_REQUEST['top_search_query'];
       $_SESSION['filter']['looking_for'] = $_REQUEST['looking_for'];
       $_SESSION['filter']['procedure_date'] = $_REQUEST['procedure_date'];
+
+      // 4/9/18 - SD
+      // Pre-Op & Post-Op filters are reset(cleared)
+      unset($_SESSION['filter']['operation']);
+      
+      // status, gender, Search within and tag search will reset
+      unset($_SESSION['filter']['status']);
+      unset($_SESSION['filter']['gender']);
    }
+
+   
 
    header("Location:patients.php");
    exit;
+}else{
+   if(!isset($_SESSION['filter']) OR count($_SESSION['filter'])<=2){
+      // default filter state
+      $is_default_filter = true;
+
+      // time added
+      $_SESSION['filter']['time_added'] = 1;
+
+      // Name
+      $_SESSION['filter'][name] = 1;
+   }
 }
 
 $mode = get_query_string('m');
@@ -202,18 +256,6 @@ else if ($mode=="reviewconfirm")
    $pe_id=$id;
 }
 
-// need to change according to session
-$script_name = substr(strrchr($_SERVER['PHP_SELF'],"/"),1);
-
-if ((isset($_GET['page']) && !empty($_GET['page']))){
-   $page = $_GET['page'];
-   $start = ($page - 1) * $row;
-}else if (isset($_SESSION['page'][$script_name]['no']) && !empty($_SESSION['page'][$script_name]['no'])){
-   $page = $_SESSION['page'][$script_name]['no'];
-   $start = ($page - 1) * $row;
-}
-$_SESSION['page'][$script_name]['no'] = $page ;
-
 // get patient list
 $sql = "SELECT *,
            (SELECT count(*)
@@ -283,6 +325,14 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter'])>0){
       }
    }
 
+   if (isset($_SESSION['filter']['status'])){
+      if($_SESSION['filter']['status']==1){
+         // need to get status filter - red
+      }else if($_SESSION['filter']['status']==2){
+         // need to get status filter - green
+      }
+   }
+
    if (isset($_SESSION['filter']['gender'])){
       if($_SESSION['filter']['gender']==1){
          // we need all records do nothing
@@ -292,6 +342,12 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter'])>0){
       }else if($_SESSION['filter']['gender']==3){
          // we need only Female records
          $where[] = "c_gender='Female'";
+      }
+   }
+
+   if (isset($_SESSION['filter']['tags'])){
+      if(!empty($_SESSION['filter']['tags'])){
+         $where[] = "c_tags='".$_SESSION['filter']['tags']."'";
       }
    }
 
@@ -352,6 +408,82 @@ $pagination_sql = str_replace(
                      ),
                      $pagination_sql
                   );
+
+// Filter to add within search
+if(isset($_SESSION['filter']) && sizeof($_SESSION['filter'])>0){
+   if(isset($_SESSION['filter']['search_within_query']) && !empty($_SESSION['filter']['search_within_query'])){
+
+// get patient list
+$sub_sql = "SELECT *,
+           (SELECT count(*)
+            FROM $TBLTIMELINES as timeline
+            WHERE timeline.c_patientEpisodeId=episodes.id AND c_timelineEntryDetail in ('".implode("','",$timeline_entry_detail)."')) `total_activity`
+        FROM $TBLPTEPISODES as episodes
+        WHERE #WHERE#
+        ORDER BY #ORDER#";
+
+$sub_pagination_sql = "SELECT *,
+                      (SELECT count(*)
+                       FROM $TBLTIMELINES as timeline
+                       WHERE timeline.c_patientEpisodeId=episodes.id AND c_timelineEntryDetail in ('".implode("','",$timeline_entry_detail)."')) `total_activity`
+                  FROM $TBLPTEPISODES as episodes
+                  WHERE #WHERE#
+                  ORDER BY #ORDER#
+                  ";
+$sub_sql = str_replace(
+          array("#WHERE#","#ORDER#"),
+          array(
+             implode(" AND ",$where),
+             implode(", ",$order),
+          ),
+          $sub_sql
+       );
+
+$sub_pagination_sql = str_replace(
+                     array("#WHERE#","#ORDER#"),
+                     array(
+                        implode(", ",$where),
+                        implode(", ",$order),
+                     ),
+                     $sub_pagination_sql
+                  );
+
+      $sub_where_field = array(
+         "t.c_postalCode",
+         "t.c_description",
+         "t.c_surname",
+         "t.c_procedure",
+         "t.c_userName",
+         "t.c_tags",
+         "t.c_firstName",
+         "t.c_status",
+         "t.c_hospitalName",
+         "t.c_surgeonName",
+         "t.c_gmcNumber",
+         "t.c_displayName"
+      ) ; 
+
+      $sub_where_value = $_SESSION['filter']['search_within_query'];
+
+      $sub_where = array_map(function($sub) use ($sub_where_value){
+         return $sub . " LIKE '%".$sub_where_value."%'" ;
+      },$sub_where_field); 
+
+      $sub_where_str = implode(" OR ",$sub_where);      
+      $sql = "SELECT t.* 
+              FROM ($sub_sql) as t 
+              WHERE ".$sub_where_str." LIMIT ".$limit ;
+
+      $pagination_sql = "SELECT t.*
+              FROM ($sub_pagination_sql) as t
+              WHERE ".$sub_where_str ;
+   }
+}
+
+// fetch tags value
+$tags_sql = "SELECT DISTINCT(c_tags) FROM $TBLPTEPISODES  WHERE c_tags is not null"; 
+
+$tags_GetQuery = dbi_query($tags_sql);
 
 ///////////////////////////////////////////////////
 // Add Filter to Query : END 
@@ -461,14 +593,20 @@ $GetQuery = dbi_query($sql);
 					  </a>
                       -->
                       <div class="accordion-content sort" data-tab-content>
+                      <?php 
+                      // Reset Filter button is not shown if filter is default
+                      if (!$is_default_filter){
+                      ?> 
 			 <div class="grid-x rule">
                             <div class="small-12 cell">
-                               <a href="clear_filter.php" class="float-right align-center-middle"><img src="../img/close-icon.png" alt="" style="margin:7px;"></a>
+                               <!--<a href="clear_filter.php" class="float-right align-center-middle"><img src="../img/close-icon.png" alt="" style="margin:7px;"></a>-->
+                               <a href="clear_filter.php" class="float-right align-center-middle">Reset Filters</a>
                             </div>
-                         </div>		   
+                         </div>	
+                      <?php } ?>	   
                          <div class="grid-x rule">
                           <div class="small-12 medium-4 cell">
-                            <label for="middle-label" class="middle">Time Added:</label>
+                            <label for="middle-label" class="middle">Time Added</label>
                           </div>
                           <div class="small-12 medium-8 cell">
                             <a href="patients.php?filter=1&time_added=1" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==1)?"selected":"inactive";?>">Newest First</a>&nbsp;<a href="patients.php?filter=1&time_added=2" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==2)?"selected":"inactive";?>">Oldest First</a>
@@ -476,7 +614,7 @@ $GetQuery = dbi_query($sql);
                         </div>
 						<div class="grid-x rule">
                           <div class="small-12 medium-4 cell">
-                            <label for="middle-label" class="middle">Name:</label>
+                            <label for="middle-label" class="middle">Name</label>
                           </div>
                           <div class="small-12 medium-8 cell">
                             <a href="patients.php?filter=1&name=1" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==1)?"selected":"inactive";?>">A-Z</a>&nbsp;<a href="patients.php?filter=1&name=2" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==2)?"selected":"inactive";?>">Z-A</a>
@@ -484,12 +622,21 @@ $GetQuery = dbi_query($sql);
                         </div>
 						<div class="grid-x rule">
                           <div class="small-12 medium-4 cell">
-                            <label for="middle-label" class="middle">Activity:</label>
+                            <label for="middle-label" class="middle">Activity</label>
                           </div>
                           <div class="small-12 medium-8 cell">
                             <a href="patients.php?filter=1&activity=1" class="button <?php echo (isset($_SESSION['filter']['activity']) && $_SESSION['filter']['activity']==1)?"selected":"inactive";?>">Most Active</a>&nbsp;<a href="patients.php?filter=1&activity=2" class="button <?php echo (isset($_SESSION['filter']['activity']) && $_SESSION['filter']['activity']==2)?"selected":"inactive";?>">Least Active</a>
                           </div>
                         </div>
+                        <div class="grid-x rule">
+                           <div class="small-12 medium-4 cell">
+                              <label for="middle-label" class="middle">Status</label>
+                           </div>
+                           <div class="small-12 medium-8 cell">
+                              <a href="patients.php?filter=1&status=1" class="button off_status <?php echo (isset($_SESSION['filter']['status']) && $_SESSION['filter']['status']==1)?"selected":"inactive";?>">Red</a>&nbsp;<a href="patients.php?filter=1&status=2" class="button on_status <?php echo (isset($_SESSION['filter']['status']) && $_SESSION['filter']['status']==2)?"selected":"inactive";?>">Green</a>
+                           </div>
+                        </div>
+
 						<div class="grid-x rule">
                           <div class="small-12 medium-4 cell">
                             <label for="middle-label" class="middle">Gender:</label>
@@ -497,17 +644,32 @@ $GetQuery = dbi_query($sql);
                           <div class="small-12 medium-8 cell">
                             <a href="patients.php?filter=1&gender=1" class="button <?php echo (isset($_SESSION['filter']['gender']) && $_SESSION['filter']['gender']==1)?"selected":"inactive";?>">Any</a>&nbsp;<a href="patients.php?filter=1&gender=2" class="button <?php echo (isset($_SESSION['filter']['gender']) && $_SESSION['filter']['gender']==2)?"selected":"inactive";?>">Male</a>&nbsp;<a href="patients.php?filter=1&gender=3" class="button <?php echo (isset($_SESSION['filter']['gender']) && $_SESSION['filter']['gender']==3)?"selected":"inactive";?>">Female</a>
                           </div>
-                        </div>
-						<div class="grid-x rule">
+                        </div>	
+                       <div class="grid-x rule">
                           <div class="small-12 medium-4 cell">
                             <label for="middle-label" class="ml_label">Search:<br />within results</label>
                           </div>
+                          <form method="post" enctype="multipart/form-data" action="patients.php?filter=1">
                           <div class="small-12 medium-8 cell">
                             <div class="input-group">
-                              <input class="input-group-field searchbox" placeholder="Hobbs" type="text" name="query" value="<?php if (!empty($_POST['query'])) echo $_POST['query']; ?>">
-                              <div class="input-group-button"><button type="submit" class="button" value="Go" name="submit">Go</button></div>
-                            </div>
+                              <input class="input-group-field searchbox" placeholder="Hobbs" type="text" name="search_within_query" value="<?php if (!empty($_SESSION['filter']['search_within_query'])) echo $_SESSION['filter']['search_within_query']; ?>">
+                              <div class="input-group-button"><button type="submit" class="button" value="Go" name="search_within_submit">Go</button></div>
+                             </div>
                           </div>
+                          </form>
+                       </div>
+                          <div class="grid-x rule">
+                          <div class="small-12 medium-12 cell">
+                             <label for="middle-label" class="ml_label">Recent tags</label>
+                          </div>
+                          <div class="small-12 medium-12 cell">
+                          <?php 
+                             while ($tags_qryResult=$tags_GetQuery->fetch_assoc())
+                             {
+                          ?>
+                             <a href="patients.php?filter=1&tags=<?php echo $tags_qryResult['c_tags'];?>"><span class="label <?php echo (isset($_SESSION['filter']['tags']) && $_SESSION['filter']['tags']==$tags_qryResult['c_tags'])?"success":"secondary";?> "><?php echo strtoupper($tags_qryResult['c_tags']);?></span></a>
+                           <?php } ?>
+                           </div>
                         </div>
                       </div>
                     </div>
@@ -551,7 +713,6 @@ $GetQuery = dbi_query($sql);
 					   }
                ?>
 	  <tr<?php echo $isSelected; ?>>
-              <td><input type="checkbox"></td>
               <td class='clickable-row su_data' data-href='patients.php?m=overview&id=<?php echo $id; ?>'>
                   <p class="<?php echo $pt_status_class; ?>">
                       <span class="uc"><?php echo $pt_name; ?></span><br />
@@ -1878,10 +2039,10 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
           <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
           <h3>Confirmation<br /><span class="small"></span></h3>
           <div class="grid-x text-center">
-            <div class="hide-for-small-only medium-3 large-3 cell"></div>
-                <div class="small-12 medium-6 large-6 cell">
-                  <p><center><img src="../img/success-guy.png" width="110"></center></p>
-              <h5 class="">SUCCESS</h5>
+            <div class="hide-for-small-only medium-2 large-2 cell"></div>
+                <div class="small-12 medium-8 large-8 cell">
+                  <p class="text-center" style="padding-top: 60px;"><img src="../img/success-guy.png" width="110"></p>
+              <h5 class="uc">Success</h5>
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 medium-12 large-12 cell text-center">
                       <p>The patient has been added successfully.</p>
@@ -1893,7 +2054,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
                     </div>
                    </div>
                 </div>
-            <div class="hide-for-small-only medium-3 large-3 cell"></div>
+            <div class="hide-for-small-only medium-2 large-2 cell"></div>
           </div>
         </div>
     <!-- PROCCONFIRM END -->
@@ -1964,23 +2125,26 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
                           <td><?php echo $c_plannedProcedureDate; ?></td>
                         </tr>
                   </table>
-          <p><strong>Search for the name of the surgeon who will perform this procedure</strong></p>
-          <form action="patients_a.php?m=proccomplete&id=<?php echo $pe_id; ?>" method="post">
-                <div class="grid-container">
+          <div class="grid-container">
           <div class="grid-x grid-padding-x">
-                <div class="small-12 medium-12 large-12 cell">
+          <div class="small-2 medium-2 large-2 cell"></div>
+          <div class="small-9 medium-9 large-9 cell">
+          <p>Mark the procedure as complete.</p>
+          <p>Search for the name of the surgeon who will perform this procedure</p>
+          <form action="patients_a.php?m=proccomplete&id=<?php echo $pe_id; ?>" method="post">
                   <label>Surgeon Name
-                <select name="proc_surgeon" >
+                <select name="proc_surgeon" size="5">
                    <?php make_combo("app_fd_ver_surgeons","c_surgeonName", "c_surgeonName", $c_surgeonName, "", " ORDER BY c_surgeonName "); ?>
                 </select>
               </label>
             </div>
-                        <div class="small-12 medium-12 large-12 cell">
-                  <strong>GMC Number</strong><br />
-                    <?php echo $c_gmcNumber; ?>
+          <div class="small-2 medium-2 large-2 cell"></div>
+          <div class="small-9 medium-9 large-9 cell">
+               <label>GMC Number</label>
+                <?php echo $c_gmcNumber; ?>
             </div>
-                  </div>
-                </div>
+           </div>
+          </div>
           <div class="grid-x">
                 <div class="hide-for-small-only medium-2 large-2 cell"></div>
             <div class="small-12 medium-8 large-8 cell text-center">

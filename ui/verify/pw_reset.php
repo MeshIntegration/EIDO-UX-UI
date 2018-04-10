@@ -1,5 +1,9 @@
 <!doctype html>
 <?php
+// this is password reset for patients - pw_reset.php
+// Copyright 2018, Mest Intgration LLC
+// WEL 3/1/18
+
 require_once './utilities.php';
 require_once './lib/validation.php';
 $logfile = "wel.log";

@@ -36,6 +36,7 @@ save_password($user_id, $password);
 if ($rt=="su") $return_to="superuser/users.php";
 else if ($rt=="adm") $return_to="admin/users.php";
 else if ($rt=="pt") $return_to="patient/patients.php";
+else if ($rt=="login") $return_to="login.php";
 header ("Location: $return_to");
 exit();
 ?>

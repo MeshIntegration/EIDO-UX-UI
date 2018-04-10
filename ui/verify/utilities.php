@@ -230,7 +230,9 @@ function get_user_info($user_id)
 function save_password($user_id, $password)
 {
    $sql = "UPDATE dir_user
-          SET password='$password'
+          SET password='$password',
+              c_pw_reset=0,
+              c_dateModified=NOW()
           WHERE id='$user_id'";
    dbi_query($sql);
 }

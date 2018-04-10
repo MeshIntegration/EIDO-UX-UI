@@ -1,5 +1,9 @@
 <!doctype html>
 <?php
+// change_password.php - for users
+// Copyright 2018, Mesh Integration LLC
+// WEL 2/28/18
+
 require_once 'utilities.php';
 require_once 'lib/validation.php';
 $logfile = "validation.log";

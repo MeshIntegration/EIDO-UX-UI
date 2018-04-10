@@ -44,7 +44,7 @@ else if ($mode=="add_survey_to_temp")
 
   // check for number of survey limit
   $no_of_survey_stored = get_num_surveys_by_proc($pe_id,$sess_id);
-  if(($no_of_survey_stored + count($arr_add_surveys) == $MAX_SURVEYS )){
+  if(($no_of_survey_stored + count($arr_add_surveys)>=$MAX_SURVEYS )){
   // max survey allready selected
   // dont allow this add operation
     $_SESSION['error_msg'] = "The current number of surveys plus the selected ones are greater that the maximum of (".$MAX_SURVEYS.") allowed."; 
@@ -94,27 +94,29 @@ else if ($mode=="add_selected_surveys")
 {
    $pe_id=get_query_string('id'); // procedure id
    $sess_id=get_query_string('sess_id'); // current session number
-   $arr_add_surveys = $_SESSION['arr_add_surveys'][$sess_id]['c_surveyNumber_'.$sess_id];
-   logMsg("add_selected_surveys: pe_id: $pe_id sess_id: $sess_id ",$logfile);
+   $arr_add_surveys = array_unique(array_filter($_SESSION['arr_add_surveys'][$pe_id]));
+   
    $num_current_surveys=get_num_surveys_by_proc($pe_id,$sess_id);
-   $num_selected_surveys = count(array_filter($arr_add_surveys));
-   if ($num_current_surveys+$num_selected_surveys>5)
+   $num_selected_surveys = count($arr_add_surveys);
+   if ($num_current_surveys+$num_selected_surveys>$MAX_SURVEYS)
    {
       $_SESSION['error_msg'] = "The current number of surveys plus the selected ones are greater that the maximum of five (5) allowed.";
       $goto="procedures.php?m=addsurveys&id=$pe_id&sess_id=$sess_id";
    }
    else
    {
-      // write the selected surveys to the session
-      $j=0;
-      for ($i=($num_current_surveys+1); $i<=5; $i++)
-      {
-         $nm = "sessionSurvey".$i; // removed 3/28/18 - SD
-         // $nm = "sessionSurvey" ;
-         $_SESSION[$nm] = $arr_add_surveys[$j]; // add multiple array []
-         $j++;
+      // store to database
+      if ($num_selected_surveys>0){
+         for($i=$num_current_surveys;$i<$MAX_SURVEYS;$i++){
+            $relative_index = $i - $num_current_surveys;
+            $c_session_survey[] ="c_session".$sess_id."Survey".($relative_index + 1). "='".$arr_add_surveys[$relative_index]."'";
+         }
+         echo $sql = "UPDATE $TBLPROCEPISODES
+            SET ".implode(",", $c_session_survey)." 
+            WHERE id='$pe_id';";
       }
-      $_SESSION["pe_id".$pe_id]["sess_id".$sess_id] = array_unique(array_merge($arr_add_surveys,$_SESSION["pe_id".$pe_id]["sess_id".$sess_id]));
+      dbi_query($sql);
+      unset($_SESSION['arr_add_surveys'][$pe_id]);
    }
    $goto="procedures.php?m=managesurveys&id=$pe_id&sess_id=$sess_id";
 }

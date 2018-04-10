@@ -18,15 +18,28 @@ $logfile = "superuser.log";
 
 $mode = get_query_string('m');
 $id = get_query_string('id');
-if ($mode=="")
+
+// turn everything off
+$add_hide = "hide";
+$update_hide = "hide";
+$userdelete_hide = "hide";
+$userreset_hide = "hide";
+
+if ($mode=="" || $mode=="main")
 {
    $add_hide = "";
-   $update_hide = "hide";
 }
 else if ($mode=="update")
 {
-   $add_hide = "hide";
    $update_hide = "";
+}
+else if ($mode=="userdelete")
+{
+   $userdelete_hide = "";
+}
+else if ($mode=="userreset")
+{
+   $userreset_hide = "";
 }
 
 // need to change according to session
@@ -55,7 +68,7 @@ $GetQuery = dbi_query($sql);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manage SuperUsers</title>
   <link rel="stylesheet" href="../css/foundation.css">
-  <link rel="stylesheet" href="../css/new_eido.css">
+  <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/app.css">
   <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
@@ -100,7 +113,7 @@ $GetQuery = dbi_query($sql);
           </tr>
           <tr>
             <td><input type="checkbox"></td>
-            <td colspan="2">Procedure</td>
+            <td colspan="2"></td>
           </tr>
           <?php
             while ($qryResult=$GetQuery->fetch_assoc()) {
@@ -218,14 +231,72 @@ $GetQuery = dbi_query($sql);
                 <input type="text" name="email" value="<?php echo $email; ?>">
               </label>
             </div>
-			<div class="small-12 cell field text-center">
-        	  <br /><input type="submit" id="update" class="button large" value="Update User">
+            <div class="small-12 medium-12 large-12 cell field">&nbsp;</div>
+            <div class="small-3 medium-3 large-3 cell field">&nbsp;</div>
+            <div class="small-6 medium-6 large-6 cell field text-center">
+               <button type="submit"  class="button large expanded" />UPDATE USER</button><br />
+               <a href="users.php?m=userreset&id=<?php echo $id; ?>" class="button large inactive expanded" />RESET PASSWORD</a><br />
+               <a href="users.php?m=userdelete&id=<?php echo $id; ?>" class="button large red expanded" />DELETE USER</a>
             </div>
+            <div class="small-3 medium-3 large-3 cell field">&nbsp;</div>
     	  </div>
   		</div>
 	  </form>
 	</div>
-	<!-- End Content-Right -->
+<!-- END UPDATE SECTION -->
+<!-- SINGLE DELETEUSER SECTION -->
+    <div class="small-12 medium-6 large-6 cell content-right  <?php echo $userdelete_hide; ?>">
+        <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
+          <div class="grid-container">
+              <div class="grid-x grid-padding-x">
+                 <div class="small-12 medium-12 large-12 cell text-center">
+                   <h2>Are you sure you want to delete this user?</h2>
+                   <p>This will not affect any patient data, but the user will no longer be able to access the system.</p>
+              </div>
+              <div class="small-12 medium-12 large-12 cell text-center">
+                  <div class="grid-x">
+                      <div class="small-3">&nbsp;</div>
+                           <div class="small-6"><br>
+                                 <a href="users.php?m=main" class="button large inactive expanded" name=""/>NO</a>
+                                 <a href="users_a.php?m=userdelete&id=<?php echo $id; ?>" class="button large expanded red" name=""/>CONFIRM DELETE</a>
+                           </div>
+                       <div class="small-3">&nbsp;</div>
+                     </div>
+                     <p>&nbsp;</p>
+                 </div>
+              </div>
+           </div>
+          <div class="grid-x text-center">
+          </div>
+        </div>
+<!-- End SINGLE DELETEUSER SECTION -->
+<!-- SINGLE PW USERRESET SECTION -->
+    <div class="small-12 medium-6 large-6 cell content-right  <?php echo $userreset_hide; ?>">
+        <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
+          <div class="grid-container">
+              <div class="grid-x grid-padding-x">
+                 <div class="small-12 medium-12 large-12 cell text-center">
+                   <h2>Are you sure you wish to reset the password?</h2>
+                   <p>The user will be asked to enter a new password the next time they login to Verify.</p>
+              </div>
+              <div class="small-12 medium-12 large-12 cell text-center">
+                  <div class="grid-x">
+                      <div class="small-3">&nbsp;</div>
+                           <div class="small-6"><br>
+                                 <a href="users.php?m=main" class="button large inactive expanded" name=""/>NO</a>
+                                 <a href="users_a.php?m=userreset&id=<?php echo $id; ?>" class="button large expanded active" name=""/>CONFIRM RESET</a>
+                           </div>
+                       <div class="small-3">&nbsp;</div>
+                     </div>
+                     <p>&nbsp;</p>
+                 </div>
+              </div>
+           </div>
+          <div class="grid-x text-center">
+          </div>
+        </div>
+<!-- End SINGLE PW USERRESET SECTION -->
+<!-- End Content-Right -->
   </div>
   <!-- End Content --> 
   <!-- Start Footer -->

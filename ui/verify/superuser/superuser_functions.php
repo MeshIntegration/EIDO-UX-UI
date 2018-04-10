@@ -91,6 +91,31 @@ function get_num_surveys_by_proc($pe_id, $session_number)
    return $num_surveys;
 }
 
+function get_surveys_by_proc($pe_id, $session_number)
+{
+   global $TBLPROCEPISODES,$MAX_SURVEYS;
+
+   $logfile = "superuser.log";
+   logMsg("-------------- GetNumSurveysByProc ---------------",$logfile);
+
+   // up to 5 surveys a session
+   // see how many have values for this session
+   $sql = "SELECT *
+          FROM $TBLPROCEPISODES
+          WHERE id = '$pe_id'";
+   logMsg($sql, $logfile);
+   $GetQuery = dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   $num_surveys=0;
+   $surveys = array();
+  for ($i=1; $i<=$MAX_SURVEYS; $i++)
+   {
+     $nm = "c_session".$session_number."Survey".$i;
+     $surveys[] = $qryResult[$nm];
+   }
+   return $surveys;
+}
+
 // ***************************************************************
 function get_all_surveys()
 {
