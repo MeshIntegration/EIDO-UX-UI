@@ -74,14 +74,16 @@ $logfile = "validation.log";
       <script src="./js/vendor/foundation.js"></script>
       <script src="./js/app.js"></script>
       <script>
-         $(document).ready(function () {
-	 	if ( !$("#email").val() ) {
-			$("#email").val(sessionStorage.username1)
-	 	}
-		$("#backtologin").click(function(){
-			var username2 = ("#email").val();
-			sessionStorage.setItem("username2",username2);
-		})
+	 $(document).ready(function () {
+                $(function () {
+                        if ( !$("#email").val() ) {
+                                $("#email").val(sessionStorage.username)
+                        }
+                })
+                $("#backtologin").click(function () {
+                        var username1 = $("#email").val();
+                        sessionStorage.setItem('username',username1);
+                })
          });
       </script>  
    </body>

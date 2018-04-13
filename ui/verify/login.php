@@ -100,20 +100,20 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
       <script src="./js/vendor/foundation.js"></script>
       <script src="./js/app.js"></script>
       <script>
-         $(document).ready(function () {
-		$('#errorModal').foundation('<?php echo $modal_popup;?>');
+        $(document).ready(function () {
+                $('#errorModal').foundation('<?php echo $modal_popup;?>');	
+	});
+	$(document).ready(function () {
+		$(function () {
+                	if ( !$("#username1").val() ) {
+                        	$("#username1").val(sessionStorage.username)
+                	}
+		})
+                $("#forgotpw").click(function () {
+                        var username1 = $("#username1").val();
+                        sessionStorage.setItem('username',username1);
+                })
          });
-         $(document).ready(function (){
-                if ( !$("#username1").val() ) {
-                        $("#username1").val(sessionStorage.username2)
-                }
-
-                $("#forgotpw").click(function(){
-                	var username1 = $("#username1").val();
-                	sessionStorage.setItem('username1',username1);
-		});
-         });
-
       </script>  
    </body>
 </html>

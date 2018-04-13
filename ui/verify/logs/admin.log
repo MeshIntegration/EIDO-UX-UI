@@ -1700,3 +1700,25 @@
         WHERE u.username='mm1admin@thenakedsurgeon.com'
         AND active=1
         AND u.id=ug.userid
+04/13/2018 17:54:33 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/13/2018 18:15:51 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/13/2018 22:13:32 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='ddfghdfh'
+        AND active=1
+        AND u.id=ug.userid
+04/13/2018 22:13:32 - 76.188.180.118: Incorrect email or password. ddfghdfh %password - back to login.php
+04/13/2018 22:29:38 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='321'
+        AND active=1
+        AND u.id=ug.userid
+04/13/2018 22:29:38 - 76.188.180.118: Incorrect email or password. 321 %password - back to login.php
