@@ -45,9 +45,10 @@ $_SESSION['error_msg']="";
 		<h6 class="caution"><?php echo $error_msg; ?></h6>
 		<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	     </div>	  
-       </div>
-	<!-- End Content-Full -->
+          </div>
+      </div>
   </div>
+<!-- End Content-Full -->
   <!-- footer --> 
       <?php include "./includes/footer.php"; ?>
   <!-- end footer --> 

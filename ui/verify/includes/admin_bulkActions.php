@@ -39,13 +39,13 @@
             <label for="middle-label" class="middle">Time Added:</label>
         </div>
         <div class="small-12 medium-8 cell">
-           <a href="patients.php?filter=1&time_added=1" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==1)?"selected":"inactive";?>" type="submit">
+           <a href="users.php?filter=1&time_added=1" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==1)?"selected":"inactive";?>" type="submit">
               Newest First</a>
               &nbsp;
-           <a href="patients.php?filter=1&time_added=2" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==2)?"selected":"inactive";?>">
+           <a href="users.php?filter=1&time_added=2" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==2)?"selected":"inactive";?>">
               Oldest First</a>
               &nbsp;
-           <a href="patients.php?filter=1&time_added=1" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==2)?"selected":"inactive";?>">
+           <a href="users.php?filter=1&time_added=1" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added']==2)?"selected":"inactive";?>">
               Last Import</a>
         </div>
     </div>
@@ -54,8 +54,8 @@
            <label for="middle-label" class="middle">Name:</label>
          </div>
          <div class="small-12 medium-8 cell">
-           <a href="patients.php?filter=1&name=1" class="button<?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==1)?"selected":"inactive";?>">A-Z</a>&nbsp;
-           <a href="patients.php?filter=1&name=2" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==2)?"selected":"inactive";?>">Z-A</a>
+           <a href="users.php?filter=1&name=1" class="button<?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==1)?"selected":"inactive";?>">A-Z</a>&nbsp;
+           <a href="usersdmin_bulkActions.php.php?filter=1&name=2" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==2)?"selected":"inactive";?>">Z-A</a>
          </div>
     </div>
     <div class="grid-x rule">

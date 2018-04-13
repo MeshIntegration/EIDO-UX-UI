@@ -1,15 +1,15 @@
 <?php
 // **************************************
-// validation_forgot_pw_a.php
+// forgot_pw_a.php
 // Copyright 2018, Mesh Integration LLC
 // WEL 2/4/18
 // **************************************
 
 include "./utilities.php";
-include "./lib/validation.php";
+//include "./lib/validation.php";
 session_start();
 $arr_pt_info = $_SESSION['arr_pt_info'];
-$logfile = "validation.log";
+$logfile = "admin.log";
 
 $email = trim($_POST['email']);
 
@@ -30,6 +30,7 @@ $arr_email['mail_to']=$mail_to;
 $arr_email['body']=$body;
 
 $result = send_email($arr_email);
+logMsg("forgot_pw: mail_send_result: $result", $logfile);
 
 $_SESSION['error_msg']="An e-mail has been sent to your mail account. Please click the link and use that page reset your password.<br /><br />Thank you.<br /><br />EIDO Verify Patient Communications";
 header("Location:message.php");

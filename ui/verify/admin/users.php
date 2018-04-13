@@ -99,7 +99,6 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 			<div class="content-left">
 				<table style="border: 0" class="su-table stack">
 					<tbody>
-  	   <?php include "../includes/admin_bulkActions.php"; ?>
 	  	</tbody>
 				</table>
 			</div>
@@ -111,6 +110,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 					action="bulk_pwd_delete_a.php.php?m=pwd" method="post">
 					<table style="width: 100%" class="su-table stack">
 						<tbody>
+  	   <?php include "../includes/admin_bulkActions.php"; ?>
 							<tr>
 								<td><input type="checkbox" name="actOnAll" id="actOnAll"></td>
 								<td>User</td>

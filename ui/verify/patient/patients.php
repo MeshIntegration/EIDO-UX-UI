@@ -1541,6 +1541,7 @@ logMsg("c_postalCode=$c_postalCode",$logfile);
         </div>
 <!-- END EDITADDRESS SECTION -->
 <!-- EDITCONFIRM SECTION -->
+    <?php if ($mode=='editconfirm') $arr_pt_info=get_pt_info($pe_id); ?>
         <div class="small-12 medium-6 large-6 cell content-right  <?php echo $editconfirm_hide; ?>">
           <!-- <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div> -->
           <h3>Confirmation<br /><span class="small"></span></h3>
@@ -1548,6 +1549,7 @@ logMsg("c_postalCode=$c_postalCode",$logfile);
             <div class="hide-for-small-only medium-3 large-3 cell"></div>
                 <div class="small-12 medium-6 large-6 cell">
               <h5 class="">You have updated the patient's information</h5>
+              <?php if ($arr_pt_info['c_status']<>"PENDING") { ?>
                   <div class="grid-x grid-padding-x">
                     <div class="small-12 medium-12 large-12 cell text-center">
                       <p>Would you like to resend the most recent survey invitation?</p>
@@ -1558,6 +1560,14 @@ logMsg("c_postalCode=$c_postalCode",$logfile);
                           <a href="patients.php?m=main" class="button large expanded inactive">NO THANKS</a>
                     </div>
                    </div>
+                <?php } else { ?>
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 medium-12 large-12 cell text-center">
+                      <p>&nbsp;</p>
+                          <a href="patients.php?main=m&id=<?php echo $pe_id; ?>" class="button large expanded">HOME</a>
+                    </div>
+                   </div>
+                <?php } ?>
                 </div>
             <div class="hide-for-small-only medium-3 large-3 cell"></div>
           </div>
@@ -2133,7 +2143,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
           <p>Search for the name of the surgeon who will perform this procedure</p>
           <form action="patients_a.php?m=proccomplete&id=<?php echo $pe_id; ?>" method="post">
                   <label>Surgeon Name
-                <select name="proc_surgeon" size="5">
+                <select name="proc_surgeon"  class="select_address">
                    <?php make_combo("app_fd_ver_surgeons","c_surgeonName", "c_surgeonName", $c_surgeonName, "", " ORDER BY c_surgeonName "); ?>
                 </select>
               </label>

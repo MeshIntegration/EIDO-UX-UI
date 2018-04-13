@@ -1,4 +1,3 @@
-<!doctype html>
 <?php
 // **************************************
 // forgot_pw.php
@@ -51,7 +50,7 @@ $logfile = "validation.log";
                 <span class="input-group-label"><i class="fi-mail"></i></span>
                 <input id="email" class="input-group-field" name="email" type="text" placeholder="Enter your e-mail" value="<?php echo $_SESSION['login_email']; ?>">
               </div>
-			  <p class="note text-right"><a href="login.php">I remembered! Back to Login</a></p>
+			  <p id="backtologin" class="note text-right"><a href="login.php">I remembered! Back to Login</a></p>
 			</label>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 			<div class="small-12 cell">
@@ -76,9 +75,13 @@ $logfile = "validation.log";
       <script src="./js/app.js"></script>
       <script>
          $(document).ready(function () {
-//	 	if ( !$("#email").val() ) {
-//			$("#email").val(sessionStorage.username)
-//	 	}
+	 	if ( !$("#email").val() ) {
+			$("#email").val(sessionStorage.username1)
+	 	}
+		$("#backtologin").click(function(){
+			var username2 = ("#email").val();
+			sessionStorage.setItem("username2",username2);
+		})
          });
       </script>  
    </body>

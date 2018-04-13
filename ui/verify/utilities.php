@@ -179,7 +179,7 @@ function save_user_pw_key($email, $pwkey)
 {
    // save the key used to authenicate an admin password reset
    $sql = "UPDATE dir_user
-           SET passwordResetKey = '$pwkey'
+           SET c_passwordResetKey = '$pwkey'
            WHERE email = '".$email."'";
    logMsg("save_user_pw_key: $sql", "wel.log");
    dbi_query($sql);

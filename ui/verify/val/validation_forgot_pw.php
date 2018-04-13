@@ -55,9 +55,9 @@ else
 			<label>E-mail
 			  <div class="input-group login">
                 <span class="input-group-label"><i class="fi-mail"></i></span>
-                <input class="input-group-field" name="email" type="text" placeholder="Enter your e-mail" value="<?php echo $email; ?>">
+                <input id="email" class="input-group-field" name="email" type="text" placeholder="Enter your e-mail" value="<?php echo $email; ?>">
               </div>
-			  <p class="note text-right"><a href="login.php?f=1">I remembered! Back to Login</a></p>
+			  <p id="backtologin" class="note text-right"><a href="login.php?f=1">I remembered! Back to Login</a></p>
 			</label>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 			<div class="small-12 cell">
@@ -81,8 +81,14 @@ else
       <script src="../js/vendor/foundation.js"></script>
       <script src="../js/app.js"></script>
       <script>
-         $(document).ready(function () {
-		   
+	     $(document).ready(function () {
+                if ( !$("#email").val() ) {
+                        $("#email").val(sessionStorage.username1)
+                }
+                $("#backtologin").click(function(){
+                        var username2 = ("#email").val();
+                        sessionStorage.setItem("username2",username2);
+             })		   
          });
       </script>  
    </body>

@@ -56,7 +56,7 @@ if (isset($forgot_login_flag))
 			<label>E-mail
 			  <div class="input-group">
                 <span class="input-group-label"><i class="fi-mail"></i></span>
-				<input class="input-group-field" name="email" type="text" value="<?php echo $email; ?>" placeholder="Enter your e-mail address">
+				<input id="username1" class="input-group-field" name="email" type="text" value="<?php echo $email; ?>" placeholder="Enter your e-mail address">
               </div>
 			</label>
 			<label>Password
@@ -65,7 +65,7 @@ if (isset($forgot_login_flag))
                 <input class="input-group-field" type="password" name="password" id="form_password"  placeholder="Enter your password">
                 <span class="input-group-label toggle-password" toggle="#form_password">SHOW</span>
               </div>
-			  <p class="note text-right"><a href="validation_forgot_pw.php">I forgot my password</a></p>
+			  <p id="forgotpw" class="note text-right"><a href="validation_forgot_pw.php">I forgot my password</a></p>
 			</label>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 			<div class="small-12 cell">
@@ -99,13 +99,18 @@ if (isset($forgot_login_flag))
                   input.attr("type", "password");
                   $(this).html("SHOW");
                }
-            });
-	    $(function(){
-       		if( !$('#name').val() ) {
-          	  $('#name').val(sessionStorage.username);
-        	}
-     	    }); 
-         });
+            })
+	});
+         $(document).ready(function (){
+                if ( !$("#username1").val() ) {
+                        $("#username1").val(sessionStorage.username2)
+                }
+
+                $("#forgotpw").click(function(){
+                        var username1 = $("#username1").val();
+                        sessionStorage.setItem('username1',username1);
+                });
+         }); 
       </script>  
    </body>
 </html>

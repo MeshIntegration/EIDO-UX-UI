@@ -181,6 +181,7 @@ else if ($mode=="addconfirm")
                c_city=".escapeQuote($_SESSION['add_city']).",
                c_county=".escapeQuote($_SESSION['add_county']).",
                c_preferredContactMethod='EMAIL',
+               c_status='PENDING',
                c_acceptedTC='NO',
                dateModified=NOW(),
                dateCreated=NOW()";
@@ -433,6 +434,7 @@ else if ($mode=="procconfirm")
    // get the process ID and write that into the record we have been building all this time
    $sql = "UPDATE $TBLPTEPISODES
            SET id='$processId',
+               c_status='STARTED',
                c_episodeId='$processId'
            WHERE id='$id'";
    logMsg("Patients_a: ProcConfirm: $sql",$logfile);

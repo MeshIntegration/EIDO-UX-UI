@@ -103,12 +103,16 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
          $(document).ready(function () {
 		$('#errorModal').foundation('<?php echo $modal_popup;?>');
          });
-//         $(document).ready(function (){
-//                $("#forgotpw").click(function(){
-//                	var username = $("#username1").val();
-//                	sessionStorage.setItem('username',username);
-//		});
-//         });
+         $(document).ready(function (){
+                if ( !$("#username1").val() ) {
+                        $("#username1").val(sessionStorage.username2)
+                }
+
+                $("#forgotpw").click(function(){
+                	var username1 = $("#username1").val();
+                	sessionStorage.setItem('username1',username1);
+		});
+         });
 
       </script>  
    </body>
