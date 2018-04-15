@@ -75,6 +75,9 @@ $logfile = "validation.log";
       <script src="./js/app.js"></script>
       <script>
 	 $(document).ready(function () {
+                $('#errorModal').foundation('<?php echo $modal_popup;?>');
+         });	
+	 $(document).ready(function () {
                 $(function () {
                         if ( !$("#email").val() ) {
                                 $("#email").val(sessionStorage.username)

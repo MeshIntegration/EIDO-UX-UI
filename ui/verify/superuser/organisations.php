@@ -17,6 +17,7 @@ if ($user_role<>"SUPERUSER")
    exit();
 }
 session_start();
+$return_to = "suo";
 $logfile = "superuser.log";
 
 // turn eerything off

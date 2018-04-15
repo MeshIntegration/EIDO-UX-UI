@@ -105,7 +105,7 @@ $return_to = get_query_string('rt');
     </div>
 	<!-- End Content-Full -->
   </div>
-  <?php include "../includes/val_footer.php"; ?>
+  <?php include "includes/footer.php"; ?>
   <!-- End Content --> 
 </div>
       <script src="js/vendor/jquery.js"></script>

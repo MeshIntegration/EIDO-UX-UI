@@ -2841,3 +2841,11 @@
                c_displayName='',
                dateModified=NOW(),
                dateCreated=NOW()
+04/14/2018 15:30:18 - 68.107.189.223: Procedures_a: add 
+04/14/2018 15:30:18 - 68.107.189.223: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5ad21e8af177e',
+               c_description='NEW TEST - 04-14-17',
+               c_procedureId='TEST PROC 1',
+               c_displayName='NEW TEST - 04-14-17',
+               dateModified=NOW(),
+               dateCreated=NOW()

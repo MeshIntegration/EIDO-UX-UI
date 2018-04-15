@@ -57,7 +57,7 @@ add_to_timeline($arr_pt_info['id'], "Request review", "Open", "Alert",
 			<p>Your data will be doubled checked and the results sent to you.</p>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 			<div class="small-12 cell">
-			  <button name="" value="" class="button large inactive float-right">Read More</button>
+			<a href="http://www.google.com" class="button large inactive float-right">Read More</a>
 			</div>
 			<div class="clear"></div>
 		  </form>

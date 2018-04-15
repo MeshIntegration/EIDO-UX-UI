@@ -16,6 +16,7 @@ if ($user_role<>"SUPERUSER")
 }
 require_once 'superuser_functions.php';
 session_start();
+$return_to = "sup";
 $logfile = "superuser.log";
 
 $mode = get_query_string('m');

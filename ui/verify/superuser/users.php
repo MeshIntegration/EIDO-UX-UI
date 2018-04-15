@@ -14,6 +14,7 @@ if ($user_role<>"SUPERUSER")
    header("Location: /ui/verify/login.php");
    exit();
 }
+$return_to = "suu";
 $logfile = "superuser.log";
 
 $mode = get_query_string('m');

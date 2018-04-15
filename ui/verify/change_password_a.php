@@ -33,10 +33,12 @@ if ($_SESSION['error_msg']<>"")
    exit();
 }
 save_password($user_id, $password);
-if ($rt=="su") $return_to="superuser/users.php";
+if ($rt=="suu") $return_to="superuser/users.php";
+else if ($rt=="suo") $return_to="superuser/organisations.php";
+else if ($rt=="sup") $return_to="superuser/procedures.php";
 else if ($rt=="adm") $return_to="admin/users.php";
 else if ($rt=="pt") $return_to="patient/patients.php";
-else if ($rt=="login") $return_to="login.php";
+else $return_to="login.php";
 header ("Location: $return_to");
 exit();
 ?>

@@ -91,7 +91,7 @@ function save_entered_pt_info($id, $surname, $postalcode, $dob, $nhsnumber)
           SET c_surnameEntered=".escapeQuote($surname).",
               c_postalCodeEntered=".escapeQuote($postalcode).",
               c_dateOfBirthEntered=".escapeQuote($dob).",
-              c_nhsNumberEntered=".escapeQuote($nhsnumber).",
+              c_nhsNumberEntered=".escapeQuote($nhsnumber)."
           WHERE id='$id'";
    logMsg("Save Entered Pt Info - Validation: $sql", "validation.log");
    dbi_query($sql);

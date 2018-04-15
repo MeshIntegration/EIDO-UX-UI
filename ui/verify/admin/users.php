@@ -12,7 +12,7 @@ if ($user_role != "ADMIN") {
 	header ( "Location: /ui/verify/login.php" );
 	exit ();
 }
-
+$return_to = "adm";
 $logfile = "admin.log";
 
 $mode = get_query_string ( 'm' );
@@ -437,6 +437,11 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
          }
        });
      });
+	$(document).ready(function(){
+		$('#actOnAll').click(function () {    
+			$("[id^=performAction]").prop('checked', this.checked);    
+		});
+	});	
      </script>
 
 </body>

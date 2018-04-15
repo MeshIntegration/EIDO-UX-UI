@@ -9,7 +9,7 @@
             </button><?php echo $user_fullname; ?>
         </div>
 
-		<div class="small-12"><a href="../change_password.php">
+		<div id="changepw" class="small-12"><a href="../change_password.php?rt=<?php echo $return_to; ?>">
           <i class="fi-widget"></i>&nbsp;Change Password</a>
         </div>
         <div class="small-12 cell">

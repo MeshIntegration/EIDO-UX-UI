@@ -28,7 +28,7 @@ if ($dob_day=="" || $dob_month=="" || $dob_year=="")
 $_SESSION['entered_dob'] = "$dob_day/$dob_month/$dob_year";
 $_SESSION['entered_nhsnumber'] = "$c_nhsNumber";
 
-save_entered_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalCode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber']);
+save_entered_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber']);
 
 if ($arr_pt_info['c_acceptedTC']=="YES")
    header ("Location: validation_review.php");

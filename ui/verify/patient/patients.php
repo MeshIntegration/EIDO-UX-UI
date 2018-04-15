@@ -17,6 +17,7 @@ if ($user_role<>"USER" && $user_role<>"ADMIN")
 
 require_once 'functions.php';
 session_start();
+$return_to = "pt";
 $logfile = "patient.log";
 
 // need to change according to session
@@ -140,6 +141,7 @@ if ($id<>$_SESSION['curr_pe_id'])
 $main_hide = "hide";
 $add_hide = "hide";
 $overview_hide = "hide";
+$stats_hide = "hide";
 $detail_hide = "hide";
 $edit_hide = "hide";
 $editaddress_hide = "hide";
@@ -171,6 +173,10 @@ else if ($mode=="overview")
 {
    $overview_hide = "";
    $pe_id=$id;
+}
+else if ($mode=="stats")
+{
+   $stats_hide = "";
 }
 else if ($mode=="detail" || $mode=="addreview" || $mode=="editreview")
 {
@@ -490,6 +496,7 @@ $tags_GetQuery = dbi_query($tags_sql);
 /////////////////////////////////////////////////// 
 
 $GetQuery = dbi_query($sql);
+$results_count=$GetQuery->num_rows;
 
 ?>
 <html class="no-js" lang="en" dir="ltr">
@@ -582,8 +589,15 @@ $GetQuery = dbi_query($sql);
                       <!-- Accordion tab title -->
                       <div class='grid-x'>
                           <div class="small-6 medium-8 cell text-left">
-                             <a href='patients.php?filter=1&operation=1' class="button <?php echo (isset($_SESSION['filter']['operation']) && $_SESSION['filter']['operation']==1)?"selected":"inactive";?>">Post op</a>&nbsp;&nbsp;<a href='patients.php?filter=1&operation=2' class="button <?php echo (isset($_SESSION['filter']['operation']) && $_SESSION['filter']['operation']==2)?"selected":"inactive";?>">Pre op</a></div></div>
-                             <div class="small-6 medium-4 cell"></div>
+                             <a href='patients.php?filter=1&operation=1' class="button <?php echo (isset($_SESSION['filter']['operation']) && $_SESSION['filter']['operation']==1)?"selected":"inactive";?>">Post op</a>&nbsp;&nbsp;<a href='patients.php?filter=1&operation=2' class="button <?php echo (isset($_SESSION['filter']['operation']) && $_SESSION['filter']['operation']==2)?"selected":"inactive";?>">Pre op</a>
+                          </div>
+                       </div>
+                       <div class="small-6 medium-4 cell"></div>
+                      <div class='grid-x'>
+                          <div class="small-12 medium-12 cell text-left">
+                             Results: <?php echo $results_count; ?>
+                          </div>
+                       </div>
                       <!-- // initial sort by tab		  		 
                       <a href="#" class="accordion-title sort">
 					    <div class="grid-x">
@@ -827,11 +841,46 @@ $GetQuery = dbi_query($sql);
           <p>&nbsp;</p>
           <div class="grid-x">
               <div class="hide-for-small-only medium-2">&nbsp;</div>
-              <div class="small-12 medium-8"><button type="button" name="" value="" class="button large expanded">View stats</button></div>
+              <div class="small-12 medium-8"><a href="patients.php?m=stats" class="button large expanded active">View stats</a></div>
               <div class="hide-for-small-only medium-2">&nbsp;</div>
           </div>
    </div>
 <!-- END MAIN SECTION -->
+<!-- STATS SECTION -->
+        <div class="small-12 medium-6 large-6 cell content-right  <?php echo $stats_hide; ?>">
+          <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
+          <h3>Stats<br /><span class="small"></span></h3>
+          <p>User statistics for Verify</p>
+          <div class="grid-x text-center">
+             <div class="small-12 medium-12 large-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 medium-12 large-12 cell text-center">
+                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Active Patients<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
+                    </div>
+                    <div class="small-12 medium-12 large-12 cell text-center">
+                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Inactive Patients<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
+                    </div>
+                    <div class="small-12 medium-12 large-12 cell text-center">
+                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Total Patients<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
+                    </div>
+                    <div class="small-12 medium-12 large-12 cell text-center">
+                    </div>
+                    <div class="small-12 medium-12 large-12 cell text-center">
+                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Completed Surveys<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
+                    </div>
+                    <div class="small-12 medium-12 large-12 cell text-center">
+                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Incompleted Surveys<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
+                    </div>
+                    <div class="small-12 medium-12 large-12 cell text-center">
+                    </div>
+                    <div class="small-12 medium-12 large-12 cell text-center">
+                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Unresolved Alerts<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
+                    </div>
+                   </div>
+                </div>
+          </div>
+        </div>
+<!-- STATS END -->
 <!-- ADD SECTION -->
   <div class="small-12 medium-6 large-6 cell content-right  <?php echo $add_hide; ?>">
     <div class="back"><a href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
@@ -1011,7 +1060,7 @@ $GetQuery = dbi_query($sql);
               }
         ?>
 <div class="small-12 medium-6 large-6 cell content-right patientcontent <?php echo $overview_hide; ?>">
-       <div class="back"><a href="patients.php?m=add"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+       <div class="back"><a href="patients.php?m="><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
        <h3>Patient Overview<br /><span class="small">See a patient's progress through Verify</span></h3>
        <h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
         <table class="su-table stack">
