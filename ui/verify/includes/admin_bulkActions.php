@@ -21,10 +21,10 @@
   <div class="tabs-panel" id="panel1">          
     <div class="grid-x rule">
         <div class="small-12 medium-8 cell">
-           <a href="#" data-open="pwdResetModa1" class="button" type="submit">Force Password Reset</a>
+           <a href="bulk_actions_a.php?actionRequested=pwdreset&#" data-open="pwdResetModa1" class="button" type="submit">Force Password Reset</a>
         </div>
         <div class="small-12 medium-8 cell">
-           <a href="#" class="button">Delete User</a>
+           <a href="bulk_actions_a.php?actionRequested=delete&#" class="button">Delete User</a>
         </div>
     </div>
   </div>
@@ -55,7 +55,7 @@
          </div>
          <div class="small-12 medium-8 cell">
            <a href="users.php?filter=1&name=1" class="button<?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==1)?"selected":"inactive";?>">A-Z</a>&nbsp;
-           <a href="usersdmin_bulkActions.php.php?filter=1&name=2" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==2)?"selected":"inactive";?>">Z-A</a>
+           <a href="users.php?filter=1&name=2" class="button<?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name']==2)?"selected":"inactive";?>">Z-A</a>
          </div>
     </div>
     <div class="grid-x rule">

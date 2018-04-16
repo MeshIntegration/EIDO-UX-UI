@@ -147,7 +147,7 @@ table.notifications { width: 80%; margin: 20px auto; }
 .error_message + label > input,
 .error_message + label > select { border-color: #ae3526 !important; }
 
-td.clickable-row { cursor:pointer !important; }
+.clickable-row { cursor:pointer !important; }
 
 table td.sort, .sort { padding:0; }
 tr.no_hover:hover, tr.no_hover:active { background:none; }

@@ -135,7 +135,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 							$is_surgeon = true;
 					?>
 				  <tr>
-						<td><input type="checkbox"  name="performAction<?php $i?>"id="performAction<?php $i?>"></td>
+						<td><input type="checkbox"  name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?></td>
 						<td class="clickable-row su_data"
 							data-href="users.php?m=update&id=<?php echo $uid; ?>"><p>
 								<span class="uc"><?php echo $full_name; ?></span><br /><?php echo $email; ?></p></td>
@@ -314,7 +314,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 								<br /> <br /> <a
 									href="users.php?m=reset&id=<?php echo $user_id; ?>"
 									class="button large inactive">Reset Password</a><br /> <br /> <a
-									href="users.php?m=delete&id=<?php echo $user_id; ?>"
+									href="users_a.php?m=delete&id=<?php echo $user_id; ?>"
 									class="button large red">Delete User</a>
 
 							</div>

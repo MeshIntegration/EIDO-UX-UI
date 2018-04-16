@@ -2096,3 +2096,667 @@
         WHERE u.username='amolenaar@meshintegration.com'
         AND active=1
         AND u.id=ug.userid
+04/15/2018 13:25:41 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 13:25:59 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 13:26:16 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 13:26:40 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 13:26:40 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/15/2018 13:26:58 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 13:27:09 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dsfg'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 13:27:09 - 76.188.180.118: Incorrect email or password. dsfg %password - back to login.php
+04/15/2018 13:50:28 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 13:53:47 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 14:01:14 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='sdfg'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 14:01:14 - 76.188.180.118: Incorrect email or password. sdfg %password - back to login.php
+04/15/2018 14:01:19 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='sdfg'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 14:01:19 - 76.188.180.118: Incorrect email or password. sdfg %password - back to login.php
+04/15/2018 14:01:52 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 14:04:07 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 14:19:01 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 15:43:46 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 17:31:32 - 24.101.155.16: Users_a: mode: add - ID: 
+04/15/2018 17:31:32 - 24.101.155.16: ADD: INSERT INTO dir_user
+           SET firstName='Careful',
+               lastName='Cutter',
+               email='ccutter@thenakedsurgeon.com',
+               active=1,
+               timeZone='0',
+               id='5ad38c74d7e99',
+               username='ccutter@thenakedsurgeon.com',
+               gmc_number='8675309',
+               password='password'
+04/15/2018 17:31:32 - 24.101.155.16: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad38c74d82f6',
+                  c_userId='5ad38c74d7e99',
+                  c_surgeonName='Careful Cutter',
+                  c_gmcNumber='8675309',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/15/2018 17:31:32 - 24.101.155.16: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  userId='5ad38c74d7e99'
+04/15/2018 17:31:32 - 24.101.155.16: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  userId='5ad38c74d7e99'
+04/15/2018 18:34:51 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 18:34:51 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='Test',
+               lastName='Administrator',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5ad39b4baa27a',
+               username='ajm@mm.st',
+               gmc_number='',
+               password='password'
+04/15/2018 18:35:56 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 18:35:56 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='Test',
+               lastName='Admin',
+               email='andrew@mailingaddress.org',
+               active=1,
+               timeZone='0',
+               id='5ad39b8c152f7',
+               username='andrew@mailingaddress.org',
+               gmc_number='',
+               password='password'
+04/15/2018 19:05:26 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 19:24:54 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 19:24:54 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='new',
+               lastName='name',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5ad3a7069cd46',
+               username='ajm@mm.st',
+               gmc_number='',
+               password='password'
+04/15/2018 19:30:35 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 19:30:35 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='a',
+               lastName='m',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5ad3a85bed4c1',
+               username='ajm@mm.st',
+               gmc_number='',
+               password='password'
+04/15/2018 19:38:43 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 19:39:12 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 19:39:12 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='new',
+               lastName='usr',
+               email='123@321.123',
+               active=1,
+               timeZone='0',
+               id='5ad3aa60bf867',
+               username='123@321.123',
+               gmc_number='',
+               password='password'
+04/15/2018 19:54:26 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 19:54:51 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 19:54:51 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='test',
+               lastName='surgeon',
+               email='email@email.com',
+               active=1,
+               timeZone='0',
+               id='5ad3ae0b1f4ee',
+               username='email@email.com',
+               gmc_number='12345',
+               password='password'
+04/15/2018 19:54:51 - 76.188.180.118: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad3ae0b1f95d',
+                  c_userId='5ad3ae0b1f4ee',
+                  c_surgeonName='test surgeon',
+                  c_gmcNumber='12345',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='amolenaar',
+                  createdByName = 'Andrew Molenaar'
+04/15/2018 19:54:51 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  userId='5ad3ae0b1f4ee'
+04/15/2018 19:54:51 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  userId='5ad3ae0b1f4ee'
+04/15/2018 19:56:07 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 19:56:07 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='test',
+               lastName='siteadmin',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5ad3ae57ea25b',
+               username='ajm@mm.st',
+               gmc_number='',
+               password='password'
+04/15/2018 19:56:56 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 19:56:56 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='test',
+               lastName='siteadministrator',
+               email='andrew@mailingaddress.org',
+               active=1,
+               timeZone='0',
+               id='5ad3ae88f2875',
+               username='andrew@mailingaddress.org',
+               gmc_number='',
+               password='password'
+04/15/2018 19:57:31 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 19:57:31 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='test',
+               lastName='tester',
+               email='test@email.com',
+               active=1,
+               timeZone='0',
+               id='5ad3aeab04da5',
+               username='test@email.com',
+               gmc_number='',
+               password='password'
+04/15/2018 20:04:53 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 20:05:28 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 20:05:28 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='t',
+               lastName='s',
+               email='ts',
+               active=1,
+               timeZone='0',
+               id='5ad3b088b4b32',
+               username='ts',
+               gmc_number='12',
+               password='password'
+04/15/2018 20:05:28 - 76.188.180.118: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad3b088b4f59',
+                  c_userId='5ad3b088b4b32',
+                  c_surgeonName='t s',
+                  c_gmcNumber='12',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='amolenaar',
+                  createdByName = 'Andrew Molenaar'
+04/15/2018 20:05:28 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  userId='5ad3b088b4b32'
+04/15/2018 20:05:28 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  userId='5ad3b088b4b32'
+04/15/2018 20:05:52 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 20:05:52 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='td',
+               lastName='sd',
+               email='td',
+               active=1,
+               timeZone='0',
+               id='5ad3b0a004c3f',
+               username='td',
+               gmc_number='',
+               password='password'
+04/15/2018 20:20:26 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 20:20:39 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 20:20:39 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='12',
+               lastName='21',
+               email='1221',
+               active=1,
+               timeZone='0',
+               id='5ad3b417d38de',
+               username='1221',
+               gmc_number='1',
+               password='password'
+04/15/2018 20:20:39 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  userId='5ad3b417d38de'
+04/15/2018 20:20:39 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='admin',
+                  userId='5ad3b417d38de'
+04/15/2018 20:55:54 - 76.188.180.118: Users_a: mode: update - ID: 5ad3b417d38de
+04/15/2018 20:55:54 - 76.188.180.118: UPDATE dir_user
+           SET firstName='12',
+               lastName='21',
+               email='1221',
+               active=1,
+               timeZone='0',
+               id='5ad3b417d38de',
+               username='1221',
+               gmc_number='12'
+           WHERE u.id='5ad3b417d38de'
+04/15/2018 20:55:54 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               userId='5ad3b417d38de'
+04/15/2018 20:55:54 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               userId='5ad3b417d38de'
+04/15/2018 20:56:04 - 76.188.180.118: Users_a: mode: update - ID: 5ad3b417d38de
+04/15/2018 20:56:04 - 76.188.180.118: UPDATE dir_user
+           SET firstName='12',
+               lastName='21',
+               email='1221',
+               active=1,
+               timeZone='0',
+               id='5ad3b417d38de',
+               username='1221',
+               gmc_number='123'
+           WHERE u.id='5ad3b417d38de'
+04/15/2018 20:56:04 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               userId='5ad3b417d38de'
+04/15/2018 20:56:04 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               userId='5ad3b417d38de'
+04/15/2018 20:56:16 - 76.188.180.118: Users_a: mode: update - ID: 5ad3b417d38de
+04/15/2018 20:56:16 - 76.188.180.118: UPDATE dir_user
+           SET firstName='121',
+               lastName='21',
+               email='1221',
+               active=1,
+               timeZone='0',
+               id='5ad3b417d38de',
+               username='1221',
+               gmc_number='1'
+           WHERE u.id='5ad3b417d38de'
+04/15/2018 20:56:16 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               userId='5ad3b417d38de'
+04/15/2018 20:56:16 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               userId='5ad3b417d38de'
+04/15/2018 21:00:32 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 21:00:41 - 76.188.180.118: Users_a: mode: update - ID: 5ad3b417d38de
+04/15/2018 21:00:41 - 76.188.180.118: UPDATE dir_user u, dir_user_group ug
+           SET u.firstName='12',
+               u.lastName='321',
+               u.email='12212',
+               u.active=1,
+               u.timeZone='0',
+               u.id='5ad3b417d38de',
+               u.username='12212',
+               u.gmc_number='1',
+	       ug.username='12212'
+           WHERE u.id='5ad3b417d38de' AND ug.userId='5ad3b417d38de'
+04/15/2018 21:00:41 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               userId='5ad3b417d38de'
+04/15/2018 21:00:41 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               userId='5ad3b417d38de'
+04/15/2018 21:07:01 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 21:07:11 - 76.188.180.118: Users_a: mode: update - ID: 5ad3b417d38de
+04/15/2018 21:07:11 - 76.188.180.118: UPDATE dir_user u, dir_user_group ug
+           SET u.firstName='12123',
+               u.lastName='321',
+               u.email='1221221',
+               u.active=1,
+               u.timeZone='0',
+               u.id='5ad3b417d38de',
+               u.username='1221221',
+               u.gmc_number='1',
+	       ug.username='1221221'
+           WHERE u.id=ug.userId AND u.id='5ad3b417d38de'
+04/15/2018 21:07:11 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               userId='5ad3b417d38de'
+04/15/2018 21:07:11 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               userId='5ad3b417d38de'
+04/15/2018 21:12:19 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 21:12:31 - 76.188.180.118: Users_a: mode: update - ID: 5ad3b417d38de
+04/15/2018 21:12:31 - 76.188.180.118: UPDATE dir_user u, dir_user_group ug
+           SET u.firstName='12123221',
+               u.lastName='32123',
+               u.email='121223',
+               u.active=1,
+               u.timeZone='0',
+               u.id='5ad3b417d38de',
+               u.username='121223',
+               u.gmc_number='1',
+	       ug.userId='5ad3b417d38de',
+	       ug.username='121223'
+           WHERE u.id='5ad3b417d38de' AND ug.userId='5ad3b417d38de'
+04/15/2018 21:12:31 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               userId='5ad3b417d38de'
+04/15/2018 21:12:31 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               userId='5ad3b417d38de'
+04/15/2018 21:13:20 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 21:13:28 - 76.188.180.118: Users_a: mode: update - ID: 5ad3b417d38de
+04/15/2018 21:13:28 - 76.188.180.118: UPDATE dir_user u, dir_user_group ug
+           SET u.firstName='12123221',
+               u.lastName='3212322',
+               u.email='11221121223',
+               u.active=1,
+               u.timeZone='0',
+               u.id='5ad3b417d38de',
+               u.username='11221121223',
+               u.gmc_number='1',
+	       ug.userId='5ad3b417d38de',
+	       ug.username='11221121223'
+           WHERE u.id='5ad3b417d38de' OR ug.userId='5ad3b417d38de'
+04/15/2018 21:13:28 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               userId='5ad3b417d38de'
+04/15/2018 21:13:28 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               userId='5ad3b417d38de'
+04/15/2018 21:13:35 - 76.188.180.118: Users_a: mode: update - ID: 5ad3b417d38de
+04/15/2018 21:13:35 - 76.188.180.118: UPDATE dir_user u, dir_user_group ug
+           SET u.firstName='12123221',
+               u.lastName='32123',
+               u.email='1212121223',
+               u.active=1,
+               u.timeZone='0',
+               u.id='5ad3b417d38de',
+               u.username='1212121223',
+               u.gmc_number='1',
+	       ug.userId='5ad3b417d38de',
+	       ug.username='1212121223'
+           WHERE u.id='5ad3b417d38de' OR ug.userId='5ad3b417d38de'
+04/15/2018 21:13:35 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               userId='5ad3b417d38de'
+04/15/2018 21:13:35 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               userId='5ad3b417d38de'
+04/15/2018 22:26:35 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 23:00:12 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 23:11:16 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 23:11:37 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 23:11:37 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='',
+               lastName='',
+               email='',
+               active=1,
+               timeZone='0',
+               id='5ad3dc2972158',
+               username='',
+               gmc_number='',
+               password='password'
+04/15/2018 23:11:37 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+		  username='',
+                  userId='5ad3dc2972158'
+04/15/2018 23:11:37 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='staff',
+		  username='',
+                  userId='5ad3dc2972158'
+04/15/2018 23:17:04 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 23:17:13 - 76.188.180.118: Users_a: mode: delete - ID: 5ad3b417d38de
+04/15/2018 23:17:24 - 76.188.180.118: Users_a: mode: delete - ID: 5ad3dc2972158
+04/15/2018 23:17:45 - 76.188.180.118: Users_a: mode: delete - ID: dlage@meshintegration.com
+04/15/2018 23:17:55 - 76.188.180.118: Users_a: mode: delete - ID: wayne@mindstreams.com
+04/15/2018 23:18:24 - 76.188.180.118: Users_a: mode: delete - ID: 5ad3b088b4b32
+04/15/2018 23:18:48 - 76.188.180.118: Users_a: mode: delete - ID: nursenancy
+04/15/2018 23:19:04 - 76.188.180.118: Users_a: mode: delete - ID: gsubadmin@example.com
+04/15/2018 23:19:15 - 76.188.180.118: Users_a: mode: delete - ID: gadmin@example.com
+04/15/2018 23:19:33 - 76.188.180.118: Users_a: mode: delete - ID: 5ad3ae0b1f4ee
+04/15/2018 23:19:50 - 76.188.180.118: Users_a: mode: delete - ID: nuhuser1@doctors.org.uk
+04/15/2018 23:24:14 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 23:24:14 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='Andrew',
+               lastName='Surgeon',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5ad3df1ee38d2',
+               username='ajm@mm.st',
+               gmc_number='',
+               password='password'
+04/15/2018 23:24:14 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+		  username='ajm@mm.st',
+                  userId='5ad3df1ee38d2'
+04/15/2018 23:24:14 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='staff',
+		  username='ajm@mm.st',
+                  userId='5ad3df1ee38d2'
+04/15/2018 23:24:57 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 23:24:57 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='Andrew',
+               lastName='Test Surgeon',
+               email='andrew@mailingaddress.org',
+               active=1,
+               timeZone='0',
+               id='5ad3df49c15ed',
+               username='andrew@mailingaddress.org',
+               gmc_number='123456543',
+               password='password'
+04/15/2018 23:24:57 - 76.188.180.118: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad3df49c1a5a',
+                  c_userId='5ad3df49c15ed',
+                  c_surgeonName='Andrew Test Surgeon',
+                  c_gmcNumber='123456543',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='amolenaar',
+                  createdByName = 'Andrew Molenaar'
+04/15/2018 23:24:57 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+		  username='andrew@mailingaddress.org',
+                  userId='5ad3df49c15ed'
+04/15/2018 23:24:57 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+		  username='andrew@mailingaddress.org',
+                  userId='5ad3df49c15ed'
+04/15/2018 23:32:40 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 23:39:54 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/15/2018 23:40:10 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 23:40:10 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='new',
+               lastName='user',
+               email='email@email.email',
+               active=1,
+               timeZone='0',
+               id='5ad3e2dadae2d',
+               username='email@email.email',
+               gmc_number='',
+               password='password'
+04/15/2018 23:40:10 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='email@email.email',
+                  userId='5ad3e2dadae2d'
+04/15/2018 23:40:10 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='admin',
+                  username='email@email.email',
+                  userId='5ad3e2dadae2d'
+04/15/2018 23:40:39 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 23:40:39 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='surgeon',
+               lastName='new',
+               email='email@surgeon.email',
+               active=1,
+               timeZone='0',
+               id='5ad3e2f79bdb1',
+               username='email@surgeon.email',
+               gmc_number='123454321',
+               password='password'
+04/15/2018 23:40:39 - 76.188.180.118: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad3e2f79c21e',
+                  c_userId='5ad3e2f79bdb1',
+                  c_surgeonName='surgeon new',
+                  c_gmcNumber='123454321',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='amolenaar',
+                  createdByName = 'Andrew Molenaar'
+04/15/2018 23:40:39 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='email@surgeon.email',
+                  userId='5ad3e2f79bdb1'
+04/15/2018 23:40:39 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  username='email@surgeon.email',
+                  userId='5ad3e2f79bdb1'
+04/15/2018 23:41:05 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 23:41:05 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='first',
+               lastName='last',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5ad3e311546fa',
+               username='ajm@mm.st',
+               gmc_number='',
+               password='password'
+04/15/2018 23:41:05 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='ajm@mm.st',
+                  userId='5ad3e311546fa'
+04/15/2018 23:41:05 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='admin',
+                  username='ajm@mm.st',
+                  userId='5ad3e311546fa'
+04/15/2018 23:41:50 - 76.188.180.118: Users_a: mode: add - ID: 
+04/15/2018 23:41:50 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='name',
+               lastName='surname',
+               email='drewmol@icloud.com',
+               active=1,
+               timeZone='0',
+               id='5ad3e33e81a4c',
+               username='drewmol@icloud.com',
+               gmc_number='',
+               password='password'
+04/15/2018 23:41:50 - 76.188.180.118: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='drewmol@icloud.com',
+                  userId='5ad3e33e81a4c'
+04/15/2018 23:41:50 - 76.188.180.118: INSERT INTO dir_user_group
+              SET groupId='admin',
+                  username='drewmol@icloud.com',
+                  userId='5ad3e33e81a4c'
+04/16/2018 01:21:07 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/16/2018 01:21:07 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+04/16/2018 01:21:23 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/16/2018 01:28:35 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid

@@ -39,7 +39,7 @@ $_SESSION['page'][$script_name]['no'] = $page ;
 if (isset($_GET['filter']) && $_GET['filter']==1){
    // set the filter detail in session
     $is_default_filter = false;
-   // reset the paggination values when any filter / search start
+   // reset the pagination values when any filter / search start
     $_SESSION['page'][$script_name]['no'] = 0;
 
    // if operation was already set and they clicked it again - turn it off (TOGGLE)
@@ -109,8 +109,6 @@ if (isset($_GET['filter']) && $_GET['filter']==1){
       unset($_SESSION['filter']['status']);
       unset($_SESSION['filter']['gender']);
    }
-
-   
 
    header("Location:patients.php");
    exit;
@@ -286,9 +284,13 @@ $pagination_sql = "SELECT *,
 // Filter session will be destroyed if the requested page is visit from some other page
 $dirname = dirname($_SERVER['HTTP_REFERER'])."/" ;
 $req_dirname = dirname($_SERVER['PHP_SELF'])."/";
+logMsg("$dirname - $req_dirname",$logfile);
 if(basename($dirname)!=basename($req_dirname)){
-   // only unset the search query
+   // only unset the search query items
+logMsg(">>>> Unset the search query items", $logfile);
    unset($_SESSION['filter']['top_search_query']);
+   unset($_SESSION['filter']['looking_for']);
+   unset($_SESSION['filter']['procedure_date']);
 }
 
 if(isset($_SESSION['filter']) && sizeof($_SESSION['filter'])>0){
@@ -333,9 +335,21 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter'])>0){
 
    if (isset($_SESSION['filter']['status'])){
       if($_SESSION['filter']['status']==1){
-         // need to get status filter - red
+         // need to get status filter - red ALERTS
+         $where[] = "c_status <> 'PENDING' AND c_procedureStatus<>'CANCEL' && c_status<>'Episode Complete'" ;
+         $order[] = "c_surname ASC" ;
       }else if($_SESSION['filter']['status']==2){
-         // need to get status filter - green
+         // need to get status filter - green ACTIVE
+         $where[] = "c_status<>'PENDING' AND c_procedureStatus<>'CANCEL' AND c_status<>'Episode Complete'" ;
+         $order[] = "c_surname ASC" ;
+      }else if($_SESSION['filter']['status']==3){
+         // need to get status filter - gray INACTIVE
+         $where[] = "c_status='PENDING' OR c_procedureStatus='CANCEL' OR c_status='Episode Complete'" ;
+         $order[] = "c_surname ASC" ;
+      }else if($_SESSION['filter']['status']==4){
+         // need to get status filter - ALL/TOTAL
+         $where[] = "" ;
+         $order[] = "c_surname ASC" ;
       }
    }
 
@@ -848,42 +862,86 @@ $results_count=$GetQuery->num_rows;
 <!-- END MAIN SECTION -->
 <!-- STATS SECTION -->
         <div class="small-12 medium-6 large-6 cell content-right  <?php echo $stats_hide; ?>">
-          <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
           <h3>Stats<br /><span class="small"></span></h3>
           <p>User statistics for Verify</p>
           <div class="grid-x text-center">
              <div class="small-12 medium-12 large-12 cell">
-                  <div class="grid-x grid-padding-x">
-                    <div class="small-12 medium-12 large-12 cell text-center">
-                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Active Patients<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
-                    </div>
-                    <div class="small-12 medium-12 large-12 cell text-center">
-                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Inactive Patients<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
-                    </div>
-                    <div class="small-12 medium-12 large-12 cell text-center">
-                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Total Patients<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
-                    </div>
-                    <div class="small-12 medium-12 large-12 cell text-center">
-                    </div>
-                    <div class="small-12 medium-12 large-12 cell text-center">
-                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Completed Surveys<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
-                    </div>
-                    <div class="small-12 medium-12 large-12 cell text-center">
-                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Incompleted Surveys<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
-                    </div>
-                    <div class="small-12 medium-12 large-12 cell text-center">
-                    </div>
-                    <div class="small-12 medium-12 large-12 cell text-center">
-                         <a href="patients.php?m=stats" class="no-u"><p class="directive">Unresolved Alerts<a href="patients.php?m=stats"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
-                    </div>
-                   </div>
+                <table width="100%" border="0"  class="su-table stack">
+                  <tr><td class="su-data clickable-row" data-href="patients.php?m=statsm=stats&filter=1&status=2" width="60%">
+                         <a href="patients.php?m=stats&filter=1&status=2" class="no-u"><h4 class="">ACTIVE PATIENTS<a href="patients.php?m=stats"></h4></a>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2" width="20%">
+                      <?php echo $active_stats_count."<br />TOTAL"; ?>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2" width="20%">
+                      <img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" />
+                  </td>
+                  </tr>
+                  <tr><td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=3" width="60%">
+                         <a href="patients.php?m=statsm=stats&filter=1&status=3" class="no-u"><h4 class="">INACTIVE PATIENTS<a href="patients.php?m=stats&filter=1&status=3"></h4></a>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=3" width="20%">
+                      <?php echo $inactive_stats_count."<br />TOTAL"; ?>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=3" width="20%">
+                      <img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" />
+                  </td>
+                  </tr>
+                  <tr><td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=4" width="60%">
+                         <a href="patients.php?m=stats&filter=1&status=4" class="no-u"><h4 class="">TOTAL PATIENTS<a href="patients.php?m=stats"></h4></a>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=4" width="20%">
+                      <?php echo $total_stats_count."<br />TOTAL"; ?>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=4" width="20%">
+                      <img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" />
+                  </td>
+                  </tr>
+                  <tr><td class="su-data" colspan="3">
+                     &nbsp;
+                  </td></tr>
+                  <tr><td class="su-data clickable-row" data-href="patients.php?m=stats" width="60%">
+                         <a href="patients.php?m=stats" class="no-u"><h4 class="">COMPLETED SURVEYS<a href="patients.php?m=stats"></h4></a>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
+                      <?php echo $completed_stats_count."<br />TODAY"; ?>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
+                      <img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" />
+                  </td>
+                  </tr>
+                  <tr><td class="su-data clickable-row" data-href="patients.php?m=stats" width="60%">
+                         <a href="patients.php?m=stats" class="no-u"><h4 class="">INCOMPLETE SURVEYS<a href="patients.php?m=stats"></h4></a>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
+                      <?php echo $incomplete_stats_count."<br />TODAY"; ?>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
+                      <img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" />
+                  </td>
+                  </tr>
+                  <tr><td class="su-data" colspan="3">
+                     &nbsp;
+                  </td></tr>
+                  <tr><td class="su-data clickable-row" data-href="patients.php?m=stats" width="60%">
+                         <a href="patients.php?m=stats" class="no-u"><h4 class="">UNRESOLVED ALERTS<a href="patients.php?m=stats"></h4></a>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
+                      <?php echo $alerts_stats_count."<br />TOTAL"; ?>
+                  </td>
+                  <td  class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
+                      <img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" />
+                  </td>
+                  </tr>
+                 </table>
                 </div>
           </div>
         </div>
 <!-- STATS END -->
 <!-- ADD SECTION -->
   <div class="small-12 medium-6 large-6 cell content-right  <?php echo $add_hide; ?>">
-    <div class="back"><a href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+    <div class="back clickable-row" data-href="patients.php?m=main"><a href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
     <h3>Add Patient<br /><span class="small">Start a Verify session with a new patient</span></h3>
     <form action="patients_a.php?m=add" method="post" class="rs-adj">
       <div class="grid-container">
@@ -986,6 +1044,7 @@ $results_count=$GetQuery->num_rows;
                  $c_procedureId=$qryResult_o['c_procedureId'];
                  $c_description=$qryResult_o['c_description'];
                  $c_surgeonName=$qryResult_o['c_surgeonName'];
+                 $c_status=$qryResult_o['c_status'];
                  $c_plannedProcedureDate=$qryResult_o['c_plannedProcedureDate'];
                  if ($c_procedureId<>"")
                  {
@@ -1060,7 +1119,7 @@ $results_count=$GetQuery->num_rows;
               }
         ?>
 <div class="small-12 medium-6 large-6 cell content-right patientcontent <?php echo $overview_hide; ?>">
-       <div class="back"><a href="patients.php?m="><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+       <div class="back clickable-row" data-href="patients.php?m=main"><a href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
        <h3>Patient Overview<br /><span class="small">See a patient's progress through Verify</span></h3>
        <h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
         <table class="su-table stack">
@@ -1097,6 +1156,14 @@ $results_count=$GetQuery->num_rows;
               </td>
               <td><a href="<?php echo $ov_proc_link; ?>"><img src="../img/icons/greater.png" alt="greater than icon" class="align-right" /></a></td>
             <?php } ?> 
+            </tr>
+            <tr>
+              <td class=' su_data'>
+                <p><strong>Status:</strong></p>
+              </td>
+              <td colspan=2" class="su_data">
+                <?php echo $c_status; ?>
+              </td>
             </tr>
         <?php if (count($arr_tags)>0) { ?>
             <tr>
@@ -1308,7 +1375,7 @@ logMsg("Desc: $tl_desc Date: $tl_date Type: $tl_type Image: $tl_imgfile Icon: $t
 // logMsg("c_surname: $c_surname c_address: $c_address Session_surname ".$_SESSION['add_surname']." session_address: ".$_SESSION['add_address'], $logfile);
         ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $detail_hide; ?>">
-          <div class="back"><a href="patients.php?m=overview&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=overview&id=<?php echo $pe_id; ?>"><a href="patients.php?m=overview&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <h3>Confirm<br /><span class="small">Check and confirm the information entered</span></h3>
           <form action="" method="post" class="rs-adj">
 		    <h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small">"Pending"</span></h5>
@@ -1407,7 +1474,7 @@ logMsg("Desc: $tl_desc Date: $tl_date Type: $tl_type Image: $tl_imgfile Icon: $t
               } 
           ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $edit_hide; ?>">
-          <div class="back"><a href="patients.php?m=detail&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=detail&id=<?php echo $pe_id; ?>"><a href="patients.php?m=detail&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <h3>Edit Patient<br /><span class="small">View or edit the patient</span></h3>
           <form action="patients_a.php?m=edit&id=<?php echo $pe_id; ?>" method="post">
           <div class="grid-container">
@@ -1526,12 +1593,12 @@ logMsg("c_postalCode=$c_postalCode",$logfile);
           ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $editaddress_hide; ?>">
         <?php if ($mode=="editaddress") { ?>
-          <div class="back"><a href="patients.php?m=edit&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=edit&id=<?php echo $pe_id; ?>"><a href="patients.php?m=edit&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <h3>Edit Address<br /><span class="small">Update the address for the patient.</span></h3>
           <form action="patients_a.php?m=editaddress&id=<?php echo $pe_id; ?>" method="post" class="rs-adj">
             <h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
             <?php } else if ($mode=="addaddress") { ?>
-            <div class="back"><a href="patients.php?m=add"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+            <div class="back clickable-row" data-href="patients.php?m=add&id=<?php echo $pe_id; ?>"><a href="patients.php?m=add"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
             <h3>Confirm Address<br /><span class="small">Select the patient's address.</span></h3>
             <form action="patients_a.php?m=addaddress" method="post" class="rs-adj">
           <?php } ?>
@@ -1624,7 +1691,7 @@ logMsg("c_postalCode=$c_postalCode",$logfile);
 <!-- EDITCONFIRM END -->
 <!-- PROCPROCEED SECTION -->
         <div class="small-12 medium-6 large-6 cell content-right  <?php echo $procproceed_hide; ?>">
-          <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=editaddress&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
           <h3>Add Patient<br /><span class="small"></span></h3>
           <div class="grid-x text-center">
             <div class="hide-for-small-only medium-3 large-3 cell"></div>
@@ -1878,7 +1945,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
 } ?>
         
 <div class="small-12 medium-6 large-6 cell content-right <?php echo $procselect_hide; ?>">
-<div class="back"><a href="patients.php?m=<?php echo $procselect_rtn_mode; ?>&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</a></div>
+<div class="back clickable-row" data-href="patients.php?m=<?php echo $procselect_rtn_mode; ?>&id=<?php echo $pe_id; ?>"><a href="patients.php?m=<?php echo $procselect_rtn_mode; ?>&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</a></div>
   <h3>Select Procedure<br><span class="small">Which procedure will the patient have?</span></h3>
   <form action="patients_a.php?m=procselect&id=<?php echo $pe_id; ?>" method="post" class="rs-adj">
 	<div class="grid-container">
@@ -1964,7 +2031,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
         <!-- END PROCSELECT SECTION -->
         <!-- PROCDATE SECTION -->
 	    <div class="small-12 medium-6 large-6 cell content-right <?php echo $procdate_hide; ?>">
-          <div class="back"><a href="patients.php?m=<?php echo $procdate_rtn_mode; ?>&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</a></div>
+          <div class="back clickable-row" data-href="patients.php?m=<?php echo $procdate_rtn_mode; ?>&id=<?php echo $pe_id; ?>"><a href="patients.php?m=<?php echo $procdate_rtn_mode; ?>&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</a></div>
 	      <h3>Select Procedure Date<br><span class="small">What date is the procedure planned for?</span></h3>
               <?php ; // &rtn=pd   ???  ?>
 	      <form action="patients_a.php?m=procdate&id=<?php echo $pe_id; ?>" method="post">
@@ -2015,7 +2082,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
     <!-- END PROCDATE  SECTION -->
     <!-- PROCSURGEON SECTION -->
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $procsurgeon_hide; ?>">
-          <div class="back"><a href="patients.php?m=procdate&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</a></div>
+          <div class="back clickable-row" data-href="patients.php?m=procdate&id=<?php echo $pe_id; ?>"><a href="patients.php?m=procdate&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</a></div>
           <h3>Select Surgeon<br /><span class="small">Which surgeon will perform the procedure?</span></h3>
           <table class="su-table stack">
             <tr>
@@ -2066,7 +2133,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
     <!-- END PROCSURGEON SECTION -->
     <!-- PROCSUMMARY SECTION -->
       <div class="small-12 medium-6 large-6 cell content-right <?php echo $procsummary_hide; ?>">
-          <div class="back"><a href="patients.php?m=procsurgeon&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=procsurgeon&id=<?php echo $pe_id; ?>"><a href="patients.php?m=procsurgeon&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <h3>Summary<br /><span class="small">Check and confirm</span></h3>
           <h6 class="border">Patient</h6>
       <h6>Name</h6>
@@ -2095,7 +2162,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
     <!-- END PROCSUMMARY -->
     <!-- PROCCONFIRM SECTION -->
         <div class="small-12 medium-6 large-6 cell content-right  <?php echo $procconfirm_hide; ?>">
-          <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=procsurgeon&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
           <h3>Confirmation<br /><span class="small"></span></h3>
           <div class="grid-x text-center">
             <div class="hide-for-small-only medium-2 large-2 cell"></div>
@@ -2119,7 +2186,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
     <!-- PROCCONFIRM END -->
     <!-- PROCDETAIL SECTION -->
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $procdetail_hide; ?>">
-          <div class="back"><a href="patients.php?m=overview&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=overview&id=<?php echo $pe_id; ?>"><a href="patients.php?m=overview&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <h3>Procedure Details<br /><span class="small">The patient's procedure.</span></h3>
 		  <h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
           <table class="su-table stack">
@@ -2132,7 +2199,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
 			  <td><?php echo $c_plannedProcedureDate; ?></td>
 			</tr>
 		  </table>
-          <div class="small-12 medium-12 large-12 cell text-center">
+          <div class="small-12 medium-12 large-12 cell text-center clickable-row" data-href="patients.php?m=procdate<?php echo $procdetail_rtn_str; ?>&id=<?php echo $pe_id; ?>">
             <a href="patients.php?m=procdate<?php echo $procdetail_rtn_str; ?>&id=<?php echo $pe_id; ?>" class="no-u"><p class="directive">Change Procedure Date<a href="patients.php?m=procdate<?php echo $procdetail_rtn_str; ?>&id=<?php echo $pe_id; ?>"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a></a>
           </div>
           <h3>Mark Procedure Complete<br /><span class="small">This will trigger the post-op surveys</span></h3>      
@@ -2155,7 +2222,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
         <!-- END PROCDETAIL -->
         <!-- PROCCANCEL SECTION -->
        <div class="small-12 medium-6 large-6 cell content-right <?php echo $proccancel_hide; ?>">
-          <div class="back"><a href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>"><a href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <div class="grid-x text-center">
             <div class="hide-for-small-only medium-3 large-3 cell"></div>
             <div class="small-12 medium-6 large-6 cell">
@@ -2171,7 +2238,7 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
 <!-- END PROCCANCEL SECTION -->
 <!-- PROCCOMPLETE SECTION -->
        <div class="small-12 medium-6 large-6 cell content-right <?php echo $proccomplete_hide; ?>">
-          <div class="back"><a href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>"><a href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <h3>Procedure Details<br /><span class="small">The patient's procedure.</span></h3>
           <h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
                   <table class="su-table stack">
