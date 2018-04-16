@@ -15,6 +15,7 @@ if ($user_role<>"SUPERUSER")
    exit();
 }
 $return_to = "suu";
+$home = "users.php";
 $logfile = "superuser.log";
 
 $mode = get_query_string('m');

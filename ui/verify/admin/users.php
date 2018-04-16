@@ -13,6 +13,7 @@ if ($user_role != "ADMIN") {
 	exit ();
 }
 $return_to = "adm";
+$home = "users.php";
 $logfile = "admin.log";
 
 $mode = get_query_string ( 'm' );
@@ -72,7 +73,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 <title>Add Verify User</title>
 <link rel="stylesheet" href="../css/foundation.css">
 <link rel="stylesheet" href="../css/dashboard_admin.css">
-<link rel="stylesheet" href="../css/eido_admin.css">
+<link rel="stylesheet" href="../css/eido.css"> <!-- was eido_admin.css -->
 <link rel="stylesheet" href="../css/app.css">
 <link
 	href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
@@ -107,7 +108,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 			<!-- Start Content-Left -->
 			<div class="small-12 medium-6 large-6 cell content-left">
 				<form name="userlistfrm" id="userlistfrm"
-					action="bulk_pwd_delete_a.php.php?m=pwd" method="post">
+					action="bulk_pwd_delete_a.php?m=pwd" method="post">
 					<table style="width: 100%" class="su-table stack">
 						<tbody>
   	   <?php include "../includes/admin_bulkActions.php"; ?>
@@ -134,16 +135,17 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 						if (strtolower ( $arr_users [$i] ['groupid'] ) == "surgeon")
 							$is_surgeon = true;
 					?>
+<!--				<form method="POST" action="bulk_action.php" id="table">              -->
 				  <tr>
-						<td><input type="checkbox"  name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?></td>
-						<td class="clickable-row su_data"
+						<td align="left" valign="center"><input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?></td>
+						<td valign="center" align="right" class="clickable-row su_data"
 							data-href="users.php?m=update&id=<?php echo $uid; ?>"><p>
 								<span class="uc"><?php echo $full_name; ?></span><br /><?php echo $email; ?></p></td>
-						<td class="clickable-row"
+						<td class="clickable-row su_data"
 							data-href="users.php?m=update&id=<?php echo $uid; ?>"><input
 							type="checkbox" name="is_admin"
 							<?php if ($is_admin) echo "checked"; ?>></td>
-						<td class="clickable-row"
+						<td class="clickable-row su_data"
 							data-href="users.php?m=update&id=<?php echo $uid; ?>"><input
 							type="checkbox" name="is_surgeon"
 							<?php if ($is_surgeon) echo "checked"; ?>></td>
@@ -151,6 +153,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 								src="../img/icons/greater.png" alt="greater than icon"
 								class="align-right" /></a></td>
 					</tr>
+<!--				</form>      -->
 		          <?php } ?>
 	               <?php
 						 $sql = "SELECT u.*, ug.groupid

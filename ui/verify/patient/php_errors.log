@@ -36,3 +36,5 @@
 [01-Apr-2018 15:53:13 Etc/UTC] PHP Parse error:  syntax error, unexpected '.', expecting ',' or ')' in patients.php on line 908
 [03-Apr-2018 00:11:55 Etc/UTC] PHP Parse error:  syntax error, unexpected '$procdate_rtn_str' (T_VARIABLE), expecting '(' in patients.php on line 1680
 [03-Apr-2018 00:52:35 Etc/UTC] PHP Parse error:  syntax error, unexpected end of file in patients.php on line 2070
+[16-Apr-2018 13:10:32 Etc/UTC] PHP Parse error:  syntax error, unexpected '=' in patients.php on line 1389
+[16-Apr-2018 13:11:07 Etc/UTC] PHP Parse error:  syntax error, unexpected '=' in patients.php on line 1389

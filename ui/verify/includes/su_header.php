@@ -10,7 +10,7 @@
   <div class="small-12 medium-6 large-6 cell">
      &nbsp;
   </div>
-  <div class="medium-4 large-4 cell"><a href="patients.php?m=main"><img src="/ui/verify/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a></div>
+  <div class="medium-4 large-4 cell"><a href="<?php echo $home; ?>"><img src="/ui/verify/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a></div>
 </div>
 <!-- Start Mobile Nav -->
 <div class="grid-x hide-for-medium">

@@ -116,7 +116,8 @@ table tbody td.no_left_pad { padding-left:0 !important; }
 .su-table tr.selected { background-color: #d3d1d1; }
 .su-table tr td .uc { font-weight: bold; }
 .su-table tr.selected td .uc { font-weight: bold; }
-.su-table tr td input[type='checkbox'] { -webkit-transform: scale(2.5); transform: scale(2.5); margin: 0 -0.5rem 0 0.5rem; }
+.su-table tr td input[type='checkbox'] { zoom: 2.5; margin: 0 -0.5rem 0 0.5rem; }
+.su-table tr td input[type='checkbox']:checked+label {background:#36AB2B; color:white; zoom: 2.5; margin: 0 -0.5rem 0 0.5rem; }
 
 .su .content-right { border: 0 }
 .su .content-right form { padding: 0 20px; }

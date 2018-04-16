@@ -18,6 +18,7 @@ if ($user_role<>"SUPERUSER")
 }
 session_start();
 $return_to = "suo";
+$home = "organisations.php";
 $logfile = "superuser.log";
 
 // turn eerything off

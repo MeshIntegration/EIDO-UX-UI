@@ -21,7 +21,7 @@
   </div>
 
   <div class="medium-4 large-4 cell">
-    <a href="patients.php?m=main">
+    <a href="<?php echo $home; ?>">
       <img src="/ui/verify/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a>
   </div>
 </div>

@@ -13,7 +13,7 @@ if ($error_msg<>"")
 {
    $modal_popup = "open" ;
 }else{
-   $modal_popup = "";
+   $modal_popup = "close";
 }
 
 if (isset($_GET['page']) && !empty($_GET['page'])) {
@@ -53,13 +53,13 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 			<label>E-mail
 			  <div class="input-group">
                                 <span class="input-group-label"><i class="fi-mail"></i></span>
-				<input id="username1" class="input-group-field" type="text" name="username" placeholder="Enter your e-mail address">
+				<input id="username1" class="input-group-field" type="text" name="username" placeholder="Enter your e-mail address" autofocus>
                           </div>
 			</label>
 			<label>Password
 			  <div class="input-group login">
                 <span class="input-group-label"><i class="fi-lock"></i></span>
-                <input class="input-group-field" type="password" name="password" placeholder="Enter your password">
+                <input id="password" class="input-group-field" type="password" name="password" placeholder="Enter your password">
               </div>
 			  <p id="forgotpw" class="text-right" style="font-weight:200"><a href="forgot_pw.php">I forgot my password</a></p>
 			</label>
@@ -101,14 +101,26 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
       <script src="./js/app.js"></script>
       <script>
         $(document).ready(function () {
-                $('#errorModal').foundation('<?php echo $modal_popup;?>');	
+
+                $('#errorModal').foundation('<?php echo $modal_popup;?>');
+		
 	});
 	$(document).ready(function () {
-		$(function () {
-                	if ( !$("#username1").val() ) {
-                        	$("#username1").val(sessionStorage.username)
-                	}
-		})
+		
+			if (sessionStorage.getItem('remembered') == "1") {
+			$(function () {				
+				$("#username1").focus();
+                        	$("#username1").val(sessionStorage.username);
+				sessionStorage.removeItem('username');
+				sessionStorage.removeItem('remembered');
+				if !($("#username1").val() == ""){
+				$("#password").focus();
+				}
+                	})
+		}
+		});
+		
+		$(document).ready(function () {
                 $("#forgotpw").click(function () {
                         var username1 = $("#username1").val();
                         sessionStorage.setItem('username',username1);

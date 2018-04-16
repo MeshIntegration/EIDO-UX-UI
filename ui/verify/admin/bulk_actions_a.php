@@ -30,12 +30,12 @@ foreach($updateUserList as $item) {
     //GLAST, Gfirst;gadmin@example.com;true
     
 	$input = explode(";", $item);
-	$useremail = $input[1];
+	$uid = $input[1];
 	
 	if ($mode=="pwdreset")
 	{
 		// 1= reset password
-		$sql = "UPDATE dir_user SET c_pwd_reset=1, c_dateModified=NOW() WHERE email='$useremail'";
+		$sql = "UPDATE dir_user SET c_pwd_reset=1, c_dateModified=NOW() WHERE id='$uid'";
 		
 		dbi_query($sql);
 		logMsg($sql,$logfile);
@@ -45,7 +45,7 @@ foreach($updateUserList as $item) {
 	{
 		//1= active, 0 = inactive customer
 		// additional user information tables may be considred here.
-		$sql = "UPDATE dir_user SET active=0, c_dateModified=NOW() WHERE email='$useremail'";
+		$sql = "UPDATE dir_user SET active=0, c_dateModified=NOW() WHERE id='$uid'";
 	}
 }
 

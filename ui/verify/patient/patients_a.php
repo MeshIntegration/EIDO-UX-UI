@@ -194,6 +194,7 @@ else if ($mode=="addconfirm")
 else if ($mode=="gotoaddpt")
 {
    clear_add_session();
+   $_SESSION['workflow']="ADD";
    header("Location: patients.php?m=add");
    exit();
 }

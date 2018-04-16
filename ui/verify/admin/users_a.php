@@ -122,7 +122,7 @@ else if ($mode=="update")
    logMsg($sql,$logfile);
 
    // UPDATE Surgeon
-   if ($is_surgeon=="1" || $is_admin=="0")
+   if ($is_surgeon=="1")
    {
       $fullname = "$firstname $lastname";
       $sql = "UPDATE $TBLSURGEONS
@@ -138,9 +138,9 @@ else if ($mode=="update")
    }
 
    // DETERMINE Group
-   if ($is_admin=="1" || $is_surgeon=="0")
+   if ($is_admin=="1")
          $group_str="admin";
-   else if ($is_admin=="0" || $is_surgeon=="1")
+   else if ($is_surgeon=="1")
          $group_str="surgeon";
    else
          $group_str="staff";

@@ -18,6 +18,7 @@ if ($user_role<>"USER" && $user_role<>"ADMIN")
 require_once 'functions.php';
 session_start();
 $return_to = "pt";
+$home = "patient.php";
 $logfile = "patient.log";
 
 // need to change according to session
@@ -74,7 +75,12 @@ if (isset($_GET['filter']) && $_GET['filter']==1){
       $_SESSION['filter']['status'] = 1;
    }else if(isset($_GET['status']) && $_GET['status']==2){
       $_SESSION['filter']['status'] = 2;
+   }else if(isset($_GET['status']) && $_GET['status']==3){
+      $_SESSION['filter']['status'] = 3;
+   }else if(isset($_GET['status']) && $_GET['status']==4){
+      $_SESSION['filter']['status'] = 4;
    }
+logMsg(">>> Filter-Status = ".$_SESSION['filter']['status'], $logfile);
 
    if(isset($_GET['gender']) && $_GET['gender']==1){
       $_SESSION['filter']['gender'] = 1;
@@ -110,8 +116,11 @@ if (isset($_GET['filter']) && $_GET['filter']==1){
       unset($_SESSION['filter']['gender']);
    }
 
-   header("Location:patients.php");
-   exit;
+   if (get_query_string('m')<>'stats')
+   {
+      header("Location:patients.php");
+      exit;
+   }
 }else{
    if(!isset($_SESSION['filter']) OR count($_SESSION['filter'])<=2){
       // default filter state
@@ -291,6 +300,7 @@ logMsg(">>>> Unset the search query items", $logfile);
    unset($_SESSION['filter']['top_search_query']);
    unset($_SESSION['filter']['looking_for']);
    unset($_SESSION['filter']['procedure_date']);
+   unset($_SESSION['filter']['search_within_query']); 
 }
 
 if(isset($_SESSION['filter']) && sizeof($_SESSION['filter'])>0){
@@ -333,6 +343,7 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter'])>0){
       }
    }
 
+logMsg(">>>Mode: $mode -  Filrer-Status = ".$_SESSION['filter']['status'], $logfile);
    if (isset($_SESSION['filter']['status'])){
       if($_SESSION['filter']['status']==1){
          // need to get status filter - red ALERTS
@@ -348,7 +359,7 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter'])>0){
          $order[] = "c_surname ASC" ;
       }else if($_SESSION['filter']['status']==4){
          // need to get status filter - ALL/TOTAL
-         $where[] = "" ;
+         //$where[] = "" ;
          $order[] = "c_surname ASC" ;
       }
    }
@@ -868,7 +879,7 @@ $results_count=$GetQuery->num_rows;
           <div class="grid-x text-center">
              <div class="small-12 medium-12 large-12 cell">
                 <table width="100%" border="0"  class="su-table stack">
-                  <tr><td class="su-data clickable-row" data-href="patients.php?m=statsm=stats&filter=1&status=2" width="60%">
+                  <tr><td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2" width="60%">
                          <a href="patients.php?m=stats&filter=1&status=2" class="no-u"><h4 class="">ACTIVE PATIENTS<a href="patients.php?m=stats"></h4></a>
                   </td>
                   <td  class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2" width="20%">
@@ -1119,7 +1130,7 @@ $results_count=$GetQuery->num_rows;
               }
         ?>
 <div class="small-12 medium-6 large-6 cell content-right patientcontent <?php echo $overview_hide; ?>">
-       <div class="back clickable-row" data-href="patients.php?m=main"><a href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+       <!-- <div class="back clickable-row" data-href="patients.php?m=main"><a href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div> -->
        <h3>Patient Overview<br /><span class="small">See a patient's progress through Verify</span></h3>
        <h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
         <table class="su-table stack">
@@ -1375,7 +1386,8 @@ logMsg("Desc: $tl_desc Date: $tl_date Type: $tl_type Image: $tl_imgfile Icon: $t
 // logMsg("c_surname: $c_surname c_address: $c_address Session_surname ".$_SESSION['add_surname']." session_address: ".$_SESSION['add_address'], $logfile);
         ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $detail_hide; ?>">
-          <div class="back clickable-row" data-href="patients.php?m=overview&id=<?php echo $pe_id; ?>"><a href="patients.php?m=overview&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+<?php if ($_SESSION['workflow']=="ADD") $rtn_back="addaddress"; else $rtn_back="editaddress&id=$pe_id"; ?>
+          <div class="back clickable-row" data-href="patients.php?m=<?php echo $rtn_back; ?>"><a href="patients.php?m=<?php echo $rtn_back;?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <h3>Confirm<br /><span class="small">Check and confirm the information entered</span></h3>
           <form action="" method="post" class="rs-adj">
 		    <h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small">"Pending"</span></h5>

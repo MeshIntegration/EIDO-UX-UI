@@ -10,7 +10,7 @@
 </div>
 <!-- Start Mobile Nav -->
 <div class="grid-x hide-for-medium">
-  <div class="small-12 cell text-center"><a href="/"><img src="/ui/verify/img/eido_logo.png" alt="EIDO Logo" class="logo"/></a></div>  
+  <div class="small-12 cell text-center"><a href="<?php echo $home; ?>"><img src="/ui/verify/img/eido_logo.png" alt="EIDO Logo" class="logo"/></a></div>  
   <div class="small-12 cell toggle">
     <div class="grid-x">
 	  <div class="small-10 cell">&nbsp;</div>

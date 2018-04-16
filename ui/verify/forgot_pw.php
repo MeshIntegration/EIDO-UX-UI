@@ -22,11 +22,6 @@ $logfile = "validation.log";
   <link rel="stylesheet" href="./css/app.css">
   <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script>
-	    $( function() {
-   $( "#tooltip_error_day" ).tooltip().tooltip("open");
-});
-	  </script>
 </head>
 <body class="registration">
 <div class="grid-container">
@@ -48,7 +43,7 @@ $logfile = "validation.log";
 			<label>E-mail
 			  <div class="input-group login">
                 <span class="input-group-label"><i class="fi-mail"></i></span>
-                <input id="email" class="input-group-field" name="email" type="text" placeholder="Enter your e-mail" value="<?php echo $_SESSION['login_email']; ?>">
+                <input id="email" class="input-group-field" name="email" type="text" placeholder="Enter your e-mail address" value="<?php echo $_SESSION['login_email']; ?>">
               </div>
 			  <p id="backtologin" class="note text-right"><a href="login.php">I remembered! Back to Login</a></p>
 			</label>
@@ -74,20 +69,20 @@ $logfile = "validation.log";
       <script src="./js/vendor/foundation.js"></script>
       <script src="./js/app.js"></script>
       <script>
-	 $(document).ready(function () {
-                $('#errorModal').foundation('<?php echo $modal_popup;?>');
-         });	
-	 $(document).ready(function () {
-                $(function () {
-                        if ( !$("#email").val() ) {
-                                $("#email").val(sessionStorage.username)
+
+                  $(document).ready(function () {
+                                if ($('#email').val() == "")  {
+                                $('#email').focus();
+                                $("#email").val(sessionStorage.username);
                         }
-                })
+                                    
                 $("#backtologin").click(function () {
                         var username1 = $("#email").val();
+                        var remembered = 1;
+                        sessionStorage.setItem('remembered',remembered);
                         sessionStorage.setItem('username',username1);
-                })
          });
+});
       </script>  
    </body>
 </html>

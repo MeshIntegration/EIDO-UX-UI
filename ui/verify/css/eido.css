@@ -109,7 +109,8 @@ table tbody td.no_left_pad { padding-left:0 !important; }
 .su-table tr.selected { background-color: #d3d1d1; }
 .su-table tr td .uc { font-weight: 500; }
 .su-table tr.selected td .uc { font-weight: bold; }
-.su-table tr td input[type='checkbox'] { -webkit-transform: scale(2.5); transform: scale(2.5); margin: 0 -0.5rem 0 0.5rem; }
+.su-table tr td input[type='checkbox'] { zoom: 2.5; margin: 0 -0.5rem 0 0.5rem; }
+.su-table tr td input[type='checkbox']:checked+label { background:blue; color:white; zoom: 2.5; margin: 0 -0.5rem 0 0.5rem; }
 
 .su .content-right { border: 0 }
 .su .content-right form { padding: 0 20px; }
@@ -148,6 +149,7 @@ table.notifications { width: 80%; margin: 20px auto; }
 .error_message + label > select { border-color: #ae3526 !important; }
 
 .clickable-row { cursor:pointer !important; }
+.clickable-row:hover { background:#f7f5f5 !important; }
 
 table td.sort, .sort { padding:0; }
 tr.no_hover:hover, tr.no_hover:active { background:none; }
