@@ -3281,3 +3281,9 @@
         WHERE u.username='jmacknife@thenakedsurgeon.com'
         AND active=1
         AND u.id=ug.userid
+04/17/2018 17:52:39 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dlage@meshintegration.com'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 17:52:39 - 207.54.162.178: Incorrect email or password. dlage@meshintegration.com %password - back to login.php
