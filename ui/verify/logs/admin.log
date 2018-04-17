@@ -2891,3 +2891,393 @@
         AND active=1
         AND u.id=ug.userid
 04/16/2018 16:38:05 - 76.188.180.118: Incorrect email or password. kjglhkjk %password - back to login.php
+04/17/2018 03:29:16 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hgf'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 03:29:16 - 76.188.180.118: Incorrect email or password. hgf %password - back to login.php
+04/17/2018 03:29:25 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dffdfs'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 03:29:25 - 76.188.180.118: Incorrect email or password. dffdfs %password - back to login.php
+04/17/2018 03:36:43 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mkjhg'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 03:36:43 - 76.188.180.118: Incorrect email or password. mkjhg %password - back to login.php
+04/17/2018 03:43:57 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hgf'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 03:43:57 - 76.188.180.118: Incorrect email or password. hgf %password - back to login.php
+04/17/2018 03:48:27 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hgfd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 03:48:27 - 76.188.180.118: Incorrect email or password. hgfd %password - back to login.php
+04/17/2018 03:48:42 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='ddfd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 03:48:42 - 76.188.180.118: Incorrect email or password. ddfd %password - back to login.php
+04/17/2018 04:00:38 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hbgfds'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:00:38 - 76.188.180.118: Incorrect email or password. hbgfds %password - back to login.php
+04/17/2018 04:06:13 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hhghwwww'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:06:13 - 76.188.180.118: Incorrect email or password. hhghwwww %password - back to login.php
+04/17/2018 04:06:30 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dfdd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:06:30 - 76.188.180.118: Incorrect email or password. dfdd %password - back to login.php
+04/17/2018 04:12:43 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jhgfd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:12:43 - 76.188.180.118: Incorrect email or password. jhgfd %password - back to login.php
+04/17/2018 04:12:54 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hgfds'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:12:54 - 76.188.180.118: Incorrect email or password. hgfds %password - back to login.php
+04/17/2018 04:13:26 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='ssssss'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:13:26 - 76.188.180.118: Incorrect email or password. ssssss %password - back to login.php
+04/17/2018 04:20:08 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='ws'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:20:08 - 76.188.180.118: Incorrect email or password. ws %password - back to login.php
+04/17/2018 04:20:21 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wsss'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:20:21 - 76.188.180.118: Incorrect email or password. wsss %password - back to login.php
+04/17/2018 04:22:36 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dsafsgd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:22:36 - 76.188.180.118: Incorrect email or password. dsafsgd %password - back to login.php
+04/17/2018 04:22:47 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dsafsgd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:22:47 - 76.188.180.118: Incorrect email or password. dsafsgd %password - back to login.php
+04/17/2018 04:22:57 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dsafsgd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:22:57 - 76.188.180.118: Incorrect email or password. dsafsgd %password - back to login.php
+04/17/2018 04:23:15 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dsafsgd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:23:15 - 76.188.180.118: Incorrect email or password. dsafsgd %password - back to login.php
+04/17/2018 04:23:30 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dsafsgd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:23:30 - 76.188.180.118: Incorrect email or password. dsafsgd %password - back to login.php
+04/17/2018 04:25:40 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hytgfd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:25:40 - 76.188.180.118: Incorrect email or password. hytgfd %password - back to login.php
+04/17/2018 04:25:55 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='asaff'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:25:55 - 76.188.180.118: Incorrect email or password. asaff %password - back to login.php
+04/17/2018 04:29:52 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='asdf'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:29:52 - 76.188.180.118: Incorrect email or password. asdf %password - back to login.php
+04/17/2018 04:30:03 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='asd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:30:03 - 76.188.180.118: Incorrect email or password. asd %password - back to login.php
+04/17/2018 04:37:09 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hg'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:37:09 - 76.188.180.118: Incorrect email or password. hg %password - back to login.php
+04/17/2018 04:37:17 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='sas'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:37:17 - 76.188.180.118: Incorrect email or password. sas %password - back to login.php
+04/17/2018 04:38:31 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hgfd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:38:31 - 76.188.180.118: Incorrect email or password. hgfd %password - back to login.php
+04/17/2018 04:42:34 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dfsd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:42:34 - 76.188.180.118: Incorrect email or password. dfsd %password - back to login.php
+04/17/2018 04:42:40 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:42:40 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:43:13 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:43:13 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:44:21 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:44:21 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:44:28 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hfgdf'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:44:28 - 76.188.180.118: Incorrect email or password. hfgdf %password - back to login.php
+04/17/2018 04:46:34 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dsfd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:46:34 - 76.188.180.118: Incorrect email or password. dsfd %password - back to login.php
+04/17/2018 04:46:45 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:46:45 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:46:54 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:46:54 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:47:07 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:47:07 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:47:24 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:47:24 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:47:31 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='kjhg'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:47:31 - 76.188.180.118: Incorrect email or password. kjhg %password - back to login.php
+04/17/2018 04:51:57 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:51:57 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:52:02 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='kjhg'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:52:02 - 76.188.180.118: Incorrect email or password. kjhg %password - back to login.php
+04/17/2018 04:52:08 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:52:08 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:55:19 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:55:19 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 04:55:28 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 04:55:28 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 05:01:54 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:01:54 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 05:02:01 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hgfd'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:02:01 - 76.188.180.118: Incorrect email or password. hgfd %password - back to login.php
+04/17/2018 05:02:14 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='hgfds'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:02:14 - 76.188.180.118: Incorrect email or password. hgfds %password - back to login.php
+04/17/2018 05:02:20 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='asdfg'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:02:20 - 76.188.180.118: Incorrect email or password. asdfg %password - back to login.php
+04/17/2018 05:02:46 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='222'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:02:46 - 76.188.180.118: Incorrect email or password. 222 %password - back to login.php
+04/17/2018 05:02:53 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:02:53 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 05:03:26 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:03:26 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 05:06:42 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:06:42 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 05:06:54 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:06:54 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 05:07:13 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='333'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:07:13 - 76.188.180.118: Incorrect email or password. 333 %password - back to login.php
+04/17/2018 05:07:24 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:07:24 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 05:08:29 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='4444'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:08:29 - 76.188.180.118: Incorrect email or password. 4444 %password - back to login.php
+04/17/2018 05:10:04 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='1111'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:10:04 - 76.188.180.118: Incorrect email or password. 1111 %password - back to login.php
+04/17/2018 05:10:15 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:10:15 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 05:10:24 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='aqsa'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:10:24 - 76.188.180.118: Incorrect email or password. aqsa %password - back to login.php
+04/17/2018 05:10:34 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:10:34 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 05:10:44 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='32'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:10:44 - 76.188.180.118: Incorrect email or password. 32 %password - back to login.php
+04/17/2018 05:10:58 - 76.188.180.118: forgot_pw: mail_send_result: 
+04/17/2018 05:11:21 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='6754'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:11:21 - 76.188.180.118: Incorrect email or password. 6754 %password - back to login.php
+04/17/2018 05:13:28 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='121'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:13:28 - 76.188.180.118: Incorrect email or password. 121 %password - back to login.php
+04/17/2018 05:13:34 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 05:13:34 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 06:20:26 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@eidoverify.com'
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 06:20:26 - 76.188.180.118: Incorrect email or password. eidoadmin@eidoverify.com %password - back to login.php
+04/17/2018 06:20:42 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username=''
+        AND active=1
+        AND u.id=ug.userid
+04/17/2018 06:20:42 - 76.188.180.118: Incorrect email or password.  %password - back to login.php
+04/17/2018 09:49:11 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid

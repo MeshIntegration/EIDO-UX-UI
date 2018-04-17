@@ -69,20 +69,27 @@ $logfile = "validation.log";
       <script src="./js/vendor/foundation.js"></script>
       <script src="./js/app.js"></script>
       <script>
-
-                  $(document).ready(function () {
-                                if ($('#email').val() == "")  {
-                                $('#email').focus();
+        $(document).ready(function () {
+                        if (sessionStorage.getItem("remembered") == 1) {
+                            $(function () {
+                                $("#email").focus();
                                 $("#email").val(sessionStorage.username);
+                                sessionStorage.setItem("remembered",0);
+                                $("#email").blur();
+                            })
                         }
-                                    
-                $("#backtologin").click(function () {
-                        var username1 = $("#email").val();
-                        var remembered = 1;
-                        sessionStorage.setItem('remembered',remembered);
-                        sessionStorage.setItem('username',username1);
-         });
-});
+        });
+
+
+        $(document).ready(function () {
+                 $("#backtologin").click(function () {
+		     if( $("#email").val().length > 0 ) {
+                        var username = $("#email").val();
+                        sessionStorage.setItem("username",username);
+                        sessionStorage.setItem("remembered",1);
+                     }
+                 });
+        });
       </script>  
    </body>
 </html>

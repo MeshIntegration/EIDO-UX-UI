@@ -64,7 +64,7 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 			  <p id="forgotpw" class="text-right" style="font-weight:200"><a href="forgot_pw.php">I forgot my password</a></p>
 			</label>
 			<div class="small-12 cell">
-			  <button type="submit" name="" value="" class="button large float-right">login</button>
+			  <button type="submit" id="login" name="" value="" class="button large float-right">login</button>
 			</div>
 		  </form>
 		  </div>
@@ -91,7 +91,7 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 <div class="reveal" id="errorModal" data-reveal>
   <h1>Please try again...</h1>
   <p><?php echo $error_msg;?></p>
-  <button class="close-button" data-close aria-label="Close modal" type="button">
+  <button class="close-button" id="errorclose" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -100,32 +100,53 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
       <script src="./js/vendor/foundation.js"></script>
       <script src="./js/app.js"></script>
       <script>
-        $(document).ready(function () {
-
-                $('#errorModal').foundation('<?php echo $modal_popup;?>');
-		
-	});
 	$(document).ready(function () {
-		
-			if (sessionStorage.getItem('remembered') == "1") {
-			$(function () {				
-				$("#username1").focus();
-                        	$("#username1").val(sessionStorage.username);
-				sessionStorage.removeItem('username');
-				sessionStorage.removeItem('remembered');
-				if !($("#username1").val() == ""){
-				$("#password").focus();
-				}
-                	})
-		}
+		$('#login').click(function () {
+			if( $("#username1").val().length > 0 ) {
+				var username = $("#username1").val();
+                        	sessionStorage.setItem("username",username);
+			}
+			else{
+                                var username = "0";
+                                sessionStorage.setItem("username",username);
+                        }
 		});
-		
-		$(document).ready(function () {
-                $("#forgotpw").click(function () {
-                        var username1 = $("#username1").val();
-                        sessionStorage.setItem('username',username1);
-                })
-         });
+		$('.close-button').click(function () {
+			//   if ( (sessionStorage.username).val().length > 0 ) {
+                      if  (sessionStorage.getItem('username') != "0") {  
+			      $("#username1").val(sessionStorage.username);
+                                $("#password").focus();
+			   }
+			else{
+				$("#username1").val();
+				$("#username1").focus();
+			}
+		});
+                $('#errorModal').foundation('<?php echo $modal_popup;?>');
+
+        });
+        $(document).ready(function () {
+                        if (sessionStorage.getItem("remembered") == 1) {
+                            $(function () {
+                                $("#username1").focus();
+                                $("#username1").val(sessionStorage.username);
+                                sessionStorage.setItem("remembered",0);
+                                $("#username1").blur();
+                                $("#password").focus();
+                            })
+                        }
+        });
+
+
+        $(document).ready(function () {
+                 $("#forgotpw").click(function () {
+		    if( $("#username1").val().length > 0 ) {
+                        var username = $("#username1").val();
+                        sessionStorage.setItem("username",username);
+                        sessionStorage.setItem("remembered",1);
+                    }
+                 })
+        });
       </script>  
    </body>
 </html>
