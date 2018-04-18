@@ -3287,3 +3287,35 @@
         AND active=1
         AND u.id=ug.userid
 04/17/2018 17:52:39 - 207.54.162.178: Incorrect email or password. dlage@meshintegration.com %password - back to login.php
+04/18/2018 10:32:27 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@eidosystems.com'
+        AND active=1
+        AND u.id=ug.userid
+04/18/2018 10:32:27 - 82.34.15.57: Incorrect email or password. jmacknife@eidosystems.com %password - back to login.php
+04/18/2018 10:32:36 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@eidosystems.com'
+        AND active=1
+        AND u.id=ug.userid
+04/18/2018 10:32:36 - 82.34.15.57: Incorrect email or password. jmacknife@eidosystems.com %password - back to login.php
+04/18/2018 10:33:17 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/18/2018 12:55:49 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/18/2018 12:56:35 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/18/2018 13:46:58 - 65.25.77.151: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid

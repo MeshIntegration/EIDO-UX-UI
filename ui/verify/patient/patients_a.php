@@ -362,7 +362,6 @@ logMsg("patients_a: procdate: rtn=$rtn",$logfile);
 }
 else if ($mode=="procsurgeon")
 {
-   
    $proc_surgeon = $_POST['proc_surgeon'];
    $proc_gmcnumber = $_POST['proc_gmcnumber'];
    $sql = "UPDATE $TBLPTEPISODES

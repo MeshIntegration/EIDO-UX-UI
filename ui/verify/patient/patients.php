@@ -106,6 +106,7 @@ logMsg(">>> Filter-Status = ".$_SESSION['filter']['status'], $logfile);
       $_SESSION['filter']['top_search_query'] = $_REQUEST['top_search_query'];
       $_SESSION['filter']['looking_for'] = $_REQUEST['looking_for'];
       $_SESSION['filter']['procedure_date'] = $_REQUEST['procedure_date'];
+logMsg(">>> Procedure date search value: ".$_SESSION['filter']['procedure_date'], $logfile);
 
       // 4/9/18 - SD
       // Pre-Op & Post-Op filters are reset(cleared)
@@ -390,7 +391,7 @@ logMsg(">>>Mode: $mode -  Filrer-Status = ".$_SESSION['filter']['status'], $logf
          $top_search_query = explode(" ",strtolower($_SESSION['filter']['top_search_query']));
          if($_SESSION['filter']['looking_for']=='patient'){
             foreach($top_search_query as $temp)
-               $where[] = "c_surname LIKE '%".$temp."%' OR c_firstName LIKE '%".$temp."%' OR id LIKE '%".$temp."%'";
+               $where[] = "(c_surname LIKE '%".$temp."%' OR c_firstName LIKE '%".$temp."%' OR id LIKE '%".$temp."%')";
          }else if($_SESSION['filter']['looking_for']=='procedure'){
             foreach($top_search_query as $temp)
                $where[] = "c_description LIKE '%".$temp."%' OR c_procedureId LIKE '%".$temp."%'";
@@ -401,8 +402,9 @@ logMsg(">>>Mode: $mode -  Filrer-Status = ".$_SESSION['filter']['status'], $logf
       }
 
       if(!empty($_SESSION['filter']['procedure_date'])){
-         $procedure_date = new DateTime($_SESSION['procedure_date']);
-         $where[] = "c_plannedProcedureDate='".$procedure_date->format('d/m/Y')."'";
+         //$procedure_date = new DateTime($_SESSION['procedure_date']);
+         //$where[] = "c_plannedProcedureDate='".$procedure_date->format('d/m/Y')."'";
+         $where[] = "c_plannedProcedureDate='".$_SESSION['filter']['procedure_date']."'";
       }
    }
 
@@ -429,7 +431,7 @@ $sql = str_replace(
           $sql         
        );
 
-//logMsg("SQL for filter > ".$sql , $logfile);
+logMsg("WEL SQL for filter >>>>>>>> ".$sql , $logfile);
 
 $pagination_sql = str_replace(
                      array("#WHERE#","#ORDER#","#LIMIT#"),
