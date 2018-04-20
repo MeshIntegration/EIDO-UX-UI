@@ -8,6 +8,7 @@
 // ***************************************
 require_once '../utilities.php';
 require_once "../alert_intruders.php";
+session_start();
 if ($user_role != "ADMIN") {
 	header ( "Location: /ui/verify/login.php" );
 	exit ();
@@ -140,7 +141,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 						<td align="left" valign="center"><input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?></td>
 						<td valign="center" align="right" class="clickable-row su_data"
 							data-href="users.php?m=update&id=<?php echo $uid; ?>"><p>
-								<span class="uc"><?php echo $full_name; ?></span><br /><?php echo $email; ?></p></td>
+								<span class="uc clickable-row"><?php echo $full_name; ?></span><br /><?php echo $email; ?></p></td>
 						<td class="clickable-row su_data"
 							data-href="users.php?m=update&id=<?php echo $uid; ?>"><input
 							type="checkbox" name="is_admin"
@@ -176,80 +177,89 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 
 			<!-- End Content-Left -->
 			<!-- Start Content-Right -->
-			<!-- ADD USER SECTION -->
-			<div
-				class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
-				<!--  <h3>Add Verify User</h3>  -->
-				<div class="section-title">Add Verify User</div>
-				<form action="users_a.php?m=add" method="post">
-					<div class="grid-container">
-						<div class="grid-x">
-							<div class="small-12 cell field">
-								<label class="weight-normal">First Name <input type="text"
-									name="fname">
-								</label>
-							</div>
-							<hr />
-							<div class="small-12 cell field">
-								<label class="weight-normal">Surname <input type="text"
-									name="lname">
-								</label>
-							</div>
-							<div class="small-12 cell field">
-								<label class="weight-normal">Email Address <input type="text"
-									name="email">
-								</label>
-							</div>
-							<div class="small-12 cell field">
-								<div class="grid-x grid-padding-x">
-									<fieldset class="small-12 medium-12 large-12 cell">
-										<input class="user-checkbox1" type="checkbox"
-											name="is_surgeon" value="1"><label class="weight-normal"
-											for="checkbox1">Is a surgeon</label> <input
-											class="user-checkbox2" type="checkbox" name="is_admin"
-											value="1"><label class="weight-normal" for="checkbox2">Is a
-											system administrator</label>
-									</fieldset>
+	<!-- ADD USER SECTION -->
+	<div
+		class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
+		<!--  <h3>Add Verify User</h3>  -->
+		<div class="section-title">Add Verify User</div>
+		<form action="users_a.php?m=add" method="post">
+			<div class="grid-container">
+				<div class="grid-x">
+					<div class="small-12 cell field">
+                                            <?php if ($_SESSION['add_firstname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                                                   else if ($_SESSION['add_firstname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+						<label class="weight-normal">First Name <input type="text"
+						value="<?php echo $_SESSION['add_firstname']; ?>" name="firstname">
+						</label>
+					</div>
+					<hr />
+					<div class="small-12 cell field">
+                                            <?php if ($_SESSION['add_lastname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the last name</strong> - this is required</div>";
+                                                   else if ($_SESSION['add_lastname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct the last name</strong> - no special characters are allowed</div>"; ?>
+						<label class="weight-normal">Surname <input type="text"
+							value="<?php echo $_SESSION['add_lastname']; ?>" name="lastname">
+						</label>
+					</div>
+					<div class="small-12 cell field">
+                                            <?php if ($_SESSION['add_email_error']) echo "<div class='error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                                                   else if ($_SESSION['add_bad_email_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>"; 
+                                                   else if ($_SESSION['add_email_duplicate_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+						<label class="weight-normal">Email Address <input type="text"
+							value="<?php echo $_SESSION['add_email']; ?>" name="email">
+						</label>
+					</div>
+					<div class="small-12 cell field">
+						<div class="grid-x grid-padding-x">
+							<fieldset class="small-12 medium-12 large-12 cell">
+			<input class="user-checkbox1" type="checkbox" <?php if ($_SESSION['add_is_surgeon']=="1") echo "checked"; ?> name="is_surgeon" value="1"><label class="weight-normal"
+								for="checkbox1">Is a surgeon</label> 
+                        <input class="user-checkbox2" type="checkbox" name="is_admin" value="1" <?php if ($_SESSION['add_is_admin']=="1") echo "checked"; ?> >
+                                        <label class="weight-normal" for="checkbox2">Is a system administrator</label>
+							</fieldset>
+						</div>
+					</div>
+					<div class="small-12 cell field">
+                                            <?php if ($_SESSION['add_gmc_number_error']) echo "<div class='error_message fi-alert'><strong>Please enter the GMC Number</strong> - this is required for a surgeon</div>";
+                                                   else if ($_SESSION['add_gmc_number_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct the GMC Number</strong> - no letters or special characters are allowed</div>"; 
+                                                   else if ($_SESSION['add_gmc_number_length_error']) echo "<div class='error_message fi-alert'><strong>Please correct the GMC Number</strong> - it should be 6 or 7 digits</div>"; 
+                                                   else if ($_SESSION['add_gmc_number_duplicate_error']) echo "<div class='error_message fi-alert'><strong>Please correct the GMC number</strong> - that GMC number already exists</div>"; ?>
+						<label class="weight-normal">GMC Number <input type="text"
+						value="<?php echo $_SESSION['add_gmc_number']; ?>" name="gmc_number">
+						</label>
+					</div>
+					<div class="small-12 cell">&nbsp;</div>
+					<div class="small-12 cell field text-center">
+						<input type="submit" name="" value="Add User"
+							class="button addusr" />
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="divide">
+			<div class="section-title">Bulk Edit</div>
+			<form>
+				<div class="grid-container">
+					<div class="grid-x">
+						<div class="small-12 cell field">
+							<div class="grid-x">
+								<div class="small-7 cell">
+									<label>CSV File <input type="text" placeholder="">
+									</label>
 								</div>
-							</div>
-							<div class="small-12 cell field">
-								<label class="weight-normal">GMC Number <input type="text"
-									name="gmc_number">
-								</label>
-							</div>
-							<div class="small-12 cell">&nbsp;</div>
-							<div class="small-12 cell field text-center">
-								<input type="submit" name="" value="Add User"
-									class="button addusr" />
+								<div class="small-2 cell">&nbsp;</div>
+								<div class="small-3 cell">
+							<!--  <input type="button" name="" value="browse" class="a.button_users postfix expanded grey"></a> -->
+							<input type="button" name="" value="browse"
+										class="button_users_browse postfix expanded">
+								</div>
 							</div>
 						</div>
 					</div>
-				</form>
-				<div class="divide">
-					<div class="section-title">Bulk Edit</div>
-					<form>
-						<div class="grid-container">
-							<div class="grid-x">
-								<div class="small-12 cell field">
-									<div class="grid-x">
-										<div class="small-7 cell">
-											<label>CSV File <input type="text" placeholder="">
-											</label>
-										</div>
-										<div class="small-2 cell">&nbsp;</div>
-										<div class="small-3 cell">
-											<!--  <input type="button" name="" value="browse" class="a.button_users postfix expanded grey"></a> -->
-											<input type="button" name="" value="browse"
-												class="button_users_browse postfix expanded">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</form>
 				</div>
-			</div>
-			<!-- UPDATE USER SECTION -->
+			</form>
+		</div>
+	</div>
+	<!-- UPDATE USER SECTION -->
         <?php
 								
 								if ($mode == "update") {

@@ -7,6 +7,7 @@
 
 require_once '../utilities.php';
 require_once "../alert_intruders.php";
+session_start();
 $logfile = "admin.log";
 
 $mode = get_query_string('m');
@@ -28,15 +29,67 @@ if ($mode=="delete")
    dbi_query($sql);
 }
 
-
 else if ($mode=="add")
 {
-   $firstname = $_POST['fname'];
-   $lastname = $_POST['lname'];
+   $firstname = $_POST['firstname'];
+   $lastname = $_POST['lastname'];
    $email = $_POST['email'];
    $is_surgeon = $_POST['is_surgeon'];
    $is_admin = $_POST['is_admin'];
    $gmc_number = $_POST['gmc_number'];
+
+   //  check for required fields and formats here
+   if ($firstname=="")
+      $_SESSION['add_firstname_error']=true; else $_SESSION['add_firstname_error']=false;
+   if (!preg_match("/^[a-zA-Z]*$/",$firstname))
+      $_SESSION['add_firstname_format_error']=true; else $_SESSION['add_firstname_format_error']=false;
+
+   if ($lastname=="")
+      $_SESSION['add_lastname_error']=true; else $_SESSION['add_lastname_error']=false;
+   if (!preg_match("/^[a-zA-Z]*$/",$lastname))
+      $_SESSION['add_lastname_format_error']=true; else $_SESSION['add_lastname_format_error']=false;
+
+   if ($email=="")
+      $_SESSION['add_email_error']=true; else $_SESSION['add_email_error']=false;
+   if ($email<>"" && !filter_var($email, FILTER_VALIDATE_EMAIL))
+      $_SESSION['add_bad_email_error']=true; else $_SESSION['add_bad_email_error']=false;
+   if (!is_email_unique($email))
+      $_SESSION['add_email_duplicate_error']=true; else $_SESSION['add_email_duplicate_error']=false;
+
+   if ($is_surgeon=="1")
+   {
+      if ($gmc_number=="")
+         $_SESSION['add_gmc_number_error']=true; else $_SESSION['add_gmc_number_error']=false;
+      if (!preg_match("/^[0-9]*$/",$gmc_number))
+         $_SESSION['add_gmc_number_format_error']=true; else $_SESSION['add_gmc_number_format_error']=false;
+      if (strlen($gmc_number)<6 || strlen($gmc_number)>7)
+         $_SESSION['add_gmc_number_length_error']=true; else $_SESSION['add_gmc_number_length_error']=false;
+      if (!is_gmc_number_unique($gmc_number))
+         $_SESSION['add_gmc_number_duplicate_error']=true; else $_SESSION['add_gmc_number_duplicate_error']=false;
+   }
+   else
+   {
+      $_SESSION['add_gmc_number_error']=false;
+      $_SESSION['add_gmc_number_format_error']=false;
+      $_SESSION['add_gmc_number_length_error']=false;
+      $_SESSION['add_gmc_number_duplicate_error']=false;
+   }
+
+   if ($_SESSION['add_firstname_error'] || $_SESSION['add_lastname_error'] || $_SESSION['add_gmc_number_error'] ||
+       $_SESSION['add_bad_email_error'] || $_SESSION['add_email_error'] || $_SESSION['add_email_duplicate_error'] ||
+       $_SESSION['add_firstname_format_error'] || $_SESSION['add_lastname_format_error'] ||
+       $_SESSION['add_gmc_number_format_error'] || $_SESSION['add_gmc_number_length_error'] || 
+       $_SESSION['add_gmc_number_duplicate_error'])
+   {
+      $_SESSION['add_firstname']=$firstname;
+      $_SESSION['add_lastname']=$lastname;
+      $_SESSION['add_email']=$email;
+      $_SESSION['add_gmc_number']=$gmc_number;
+      $_SESSION['add_is_surgeon']=$is_surgeon;
+      $_SESSION['add_is_admin']=$is_admin;
+      header("Location: users.php?m=add");
+      exit();
+   }
 
    // INSERT
    $admin_user_id = uniqid();
@@ -71,32 +124,35 @@ else if ($mode=="add")
       dbi_query($sql);
       logMsg("ADD SURGEON: $sql",$logfile);
     }
-      //  Role
-      $sql = "INSERT INTO dir_user_role
-              SET roleId='ROLE_USER',
-                  username='$email',
-                  userId='$admin_user_id'";
-      dbi_query($sql);
-      logMsg($sql,$logfile);
+   //  Role
+   $sql = "INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='$email',
+               userId='$admin_user_id'";
+   dbi_query($sql);
+   logMsg($sql,$logfile);
 
-      // Group
-      if ($is_admin=="1")
-         $group_str="admin";
-      else if ($is_surgeon=="1")
-         $group_str="surgeon";
-      else
-         $group_str="staff";
-      $sql = "INSERT INTO dir_user_group
-              SET groupId='$group_str',
-                  username='$email',
-                  userId='$admin_user_id'";
-      dbi_query($sql);
-      logMsg($sql,$logfile);
+   // Group
+   if ($is_admin=="1")
+      $group_str="admin";
+   else if ($is_surgeon=="1")
+      $group_str="surgeon";
+   else
+      $group_str="staff";
+   $sql = "INSERT INTO dir_user_group
+           SET groupId='$group_str',
+               username='$email',
+               userId='$admin_user_id'";
+   dbi_query($sql);
+   logMsg($sql,$logfile);
 
+   unset($_SESSION['add_firstname']);
+   unset($_SESSION['add_lastname']);
+   unset($_SESSION['add_email']);
+   unset($_SESSION['add_gmc_number']);
+   unset($_SESSION['add_is_surgeon']);
+   unset($_SESSION['add_is_admin']);
 }
-
-
-
 
 else if ($mode=="update")
 {
@@ -160,8 +216,6 @@ else if ($mode=="update")
            WHERE userId='$id'";
    dbi_query($sql);
    logMsg($sql,$logfile);
-
-
 } 
 
 header("Location: users.php");

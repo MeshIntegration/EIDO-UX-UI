@@ -5,7 +5,9 @@
       <?php echo $user_initials; ?>
     </button>
     <?php include "admin_dropdown_pane.php"; ?>
-
+    <div class="clickable-row">
+       <a  href="/ui/verify/patient/patients.php?m=main">
+       <img src="../img/icons/back.png" alt="Back to dashboard" class="float-left"/>&nbsp&nbspBack to dashboard</div>
   </div>
    <div class="small-12 medium-6 large-6 cell" style="padding-top: 15px;">
       <!--  <div class="grid" style="padding-top: 15px;"> -->

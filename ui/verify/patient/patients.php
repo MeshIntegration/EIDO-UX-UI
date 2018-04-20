@@ -875,7 +875,7 @@ $results_count=$GetQuery->num_rows;
 <!-- END MAIN SECTION -->
 <!-- STATS SECTION -->
         <div class="small-12 medium-6 large-6 cell content-right  <?php echo $stats_hide; ?>">
-          <div class="back clickable-row" data-href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
+          <div class="back clickable-row" data-href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="clickable-row float-left" />Back</div>
           <h3>Stats<br /><span class="small"></span></h3>
           <p>User statistics for Verify</p>
           <div class="grid-x text-center">
@@ -960,25 +960,30 @@ $results_count=$GetQuery->num_rows;
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
           <div class="small-12 cell">
-            <?php if ($_SESSION['add_fname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your First Name</strong> - this is required</div>"; ?>
+            <?php if ($_SESSION['add_fname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your First Name</strong> - this is required</div>"; 
+                  else if ($_SESSION['add_fname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
             <label>First Name
               <input type="text" name="fname" placeholder="" value="<?php echo $_SESSION['add_fname']; ?>">
             </label>
           </div>
           <div class="small-12 cell">
-            <?php if ($_SESSION['add_lname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your Surname</strong> - this is required</div>"; ?>
+            <?php if ($_SESSION['add_lname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your Surname</strong> - this is required</div>"; 
+                  else if ($_SESSION['add_lname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
             <label>Surname
               <input type="text" name="lname" placeholder="" value="<?php echo $_SESSION['add_lname']; ?>">
             </label>
           </div>
           <div class="small-12 cell">
-            <?php if ($_SESSION['add_nhsnumber_error']) echo "<div class='error_message fi-alert'><strong>Please enter your NHS Numbr</strong> - this is required</div>"; ?>
+            <?php if ($_SESSION['add_nhsnumber_error']) echo "<div class='error_message fi-alert'><strong>Please enter your NHS Numbr</strong> - this is required</div>"; 
+                  else if ($_SESSION['add_nhsnumber_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your NHS number</strong> - no letters or special characters are allowed</div>"; 
+                  else if ($_SESSION['add_nhsnumber_length_error']) echo "<div class='error_message fi-alert'><strong>Please correct your NHS number</strong> - it should be nine (9) digits</div>"; ?>
             <label>NHS Number
               <input type="text" name="nhsnumber" placeholder="" value="<?php echo $_SESSION['add_nhsnumber']; ?>">
             </label>
           </div>
           <div class="small-12 cell">
-            <?php if ($_SESSION['add_hospitalnumber_error']) echo "<div class='error_message fi-alert'><strong>Please enter your Hospital Number</strong> - this is required</div>"; ?>
+            <?php if ($_SESSION['add_hospitalnumber_error']) echo "<div class='error_message fi-alert'><strong>Please enter your Hospital Number</strong> - this is required</div>"; 
+            else if ($_SESSION['add_hospitalnumber_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your Hospital Number</strong> - no special characters are allowed</div>"; ?>
             <label>Hospital Number
               <input type="text" name="hospitalnumber" placeholder="" value="<?php echo $_SESSION['add_hospitalnumber']; ?>">
             </label>
@@ -995,13 +1000,16 @@ $results_count=$GetQuery->num_rows;
             </label>
           </div>
           <div class="small-12 cell">
-            <?php if ($_SESSION['add_dob_error']) echo "<div class='error_message fi-alert'><strong>Please enter your Date of Birth</strong> - this is required</div>"; ?>
+            <?php if ($_SESSION['add_dob_error']) echo "<div class='error_message fi-alert'><strong>Please enter your Date of Birth</strong> - this is required</div>"; 
+                  else if ($_SESSION['add_dob_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - special characters are not allowed</div>"; 
+                  else if ($_SESSION['add_dob_invalid_error']) echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - you enterd an invalid date</div>"; ?>
             <label>Date of Birth
-              <input type="text" name="dob" placeholder="" value="<?php echo $_SESSION['add_dob']; ?>">
+              <input type="text" name="dob" placeholder="DD/MM/YYYY" value="<?php echo $_SESSION['add_dob']; ?>">
             </label>
           </div>
           <div class="small-12 cell">
-            <?php if ($_SESSION['add_postalcode_error']) echo "<div class='error_message fi-alert'><strong>Please enter your Post Code</strong> - this is required</div>"; ?>
+            <?php if ($_SESSION['add_postalcode_error']) echo "<div class='error_message fi-alert'><strong>Please enter your Post Code</strong> - this is required</div>"; 
+            else if ($_SESSION['add_postalcode_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your Post Code</strong> - no special charaters are allowed</div>"; ?>
             <label>Postcode
               <input type="text" name="postalcode" placeholder="" value="<?php echo $_SESSION['add_postalcode']; ?>">
             </label>

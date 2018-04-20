@@ -96,6 +96,55 @@ function format_uk_date($mdate)
 }
 
 // **************************************************
+function date_cleanup($dt)
+{
+   if (strpos($dt, "/"))
+      list($d,$m,$y)=explode("/",$dt);
+   else if (strpos($dt, "-"))
+      list($d,$m,$y)=explode("-",$dt);
+   else
+   {
+      $d=substr($dt,0,2);
+      $m=substr($dt,2,2);
+      $y=substr($dt,4,4);
+   }
+   $arr_date_cleanup['date_valid']=checkdate($m,$d,$y);
+   if ($arr_date_cleanup['date_valid'])
+   { 
+      if (strlen($d)==1) $d="0".$d;
+      if (strlen($m)==1) $d="0".$m;
+      $arr_date_cleanup['date_formatted']="$d/$m/$y";
+   }
+   return $arr_date_cleanup;
+}
+// **************************************************
+function is_email_unique($email)
+{
+   $sql="SELECT * 
+         FROM dir_user 
+         WHERE email='$email'
+         AND active=1";
+   $GetQuery=dbi_query($sql);
+   if ($GetQuery->num_rows>0)
+      return false;
+   else
+      return true;
+}
+
+// **************************************************
+function is_gmc_number_unique($gmc_number)
+{
+   $sql="SELECT * 
+         FROM dir_user 
+         WHERE gmc_number='$gmc_number'
+         AND active=1";
+   $GetQuery=dbi_query($sql);
+   if ($GetQuery->num_rows>0)
+      return false;
+   else
+      return true;
+}
+// **************************************************
 function send_email($arr_email)
 {
    global $mailhost,$phpmailerdir;

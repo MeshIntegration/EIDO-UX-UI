@@ -3319,3 +3319,520 @@
         WHERE u.username='jmacknife@thenakedsurgeon.com'
         AND active=1
         AND u.id=ug.userid
+04/18/2018 20:45:04 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/19/2018 09:06:29 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/19/2018 12:39:43 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/19/2018 13:52:53 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/19/2018 13:52:53 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+04/19/2018 13:53:53 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/19/2018 13:54:58 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/19/2018 15:29:45 - 70.60.174.130: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/20/2018 03:08:22 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid
+04/20/2018 03:09:34 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 03:09:34 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='',
+               lastName='',
+               email='',
+               active=1,
+               timeZone='0',
+               id='5ad959ee88a72',
+               username='',
+               gmc_number='',
+               password='password'
+04/20/2018 03:09:34 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='',
+                  userId='5ad959ee88a72'
+04/20/2018 03:09:34 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='staff',
+                  username='',
+                  userId='5ad959ee88a72'
+04/20/2018 03:09:48 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 03:09:48 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='',
+               lastName='',
+               email='',
+               active=1,
+               timeZone='0',
+               id='5ad959fc45b13',
+               username='',
+               gmc_number='',
+               password='password'
+04/20/2018 03:09:48 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='',
+                  userId='5ad959fc45b13'
+04/20/2018 03:09:48 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='staff',
+                  username='',
+                  userId='5ad959fc45b13'
+04/20/2018 03:59:20 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 03:59:23 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:00:49 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:00:53 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:02:42 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:05:34 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:05:34 - 68.107.189.223: Errors - back to ADD user screen
+04/20/2018 04:06:27 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:06:27 - 68.107.189.223: Errors - back to ADD user screen
+04/20/2018 04:08:34 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:08:34 - 68.107.189.223: Errors - back to ADD user screen
+04/20/2018 04:08:41 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:08:41 - 68.107.189.223: Errors - back to ADD user screen
+04/20/2018 04:09:17 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:09:17 - 68.107.189.223: Errors - back to ADD user screen
+04/20/2018 04:20:55 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:23:09 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:23:14 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:23:44 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:23:54 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:25:47 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:28:50 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:29:01 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:29:08 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:29:15 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:29:20 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:49:53 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:50:39 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:50:50 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:50:55 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:51:00 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:53:05 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:53:57 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:54:03 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:54:10 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:54:18 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:54:18 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Carson',
+               lastName='Cartwright',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5ad9727a1ce31',
+               username='wayne@mindstreams.com',
+               gmc_number='787005',
+               password='password'
+04/20/2018 04:54:18 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad9727a1d311',
+                  c_userId='5ad9727a1ce31',
+                  c_surgeonName='Carson Cartwright',
+                  c_gmcNumber='787005',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 04:54:18 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='wayne@mindstreams.com',
+                  userId='5ad9727a1ce31'
+04/20/2018 04:54:18 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  username='wayne@mindstreams.com',
+                  userId='5ad9727a1ce31'
+04/20/2018 04:54:23 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:54:26 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:54:33 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:54:33 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Carson',
+               lastName='Cartwright',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5ad97289b48ba',
+               username='wayne@mindstreams.com',
+               gmc_number='7870055',
+               password='password'
+04/20/2018 04:54:33 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad97289b4f71',
+                  c_userId='5ad97289b48ba',
+                  c_surgeonName='Carson Cartwright',
+                  c_gmcNumber='7870055',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 04:54:33 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97289b48ba'
+04/20/2018 04:54:33 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97289b48ba'
+04/20/2018 04:59:04 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 04:59:04 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Carson',
+               lastName='Cartwright',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5ad97398b1c27',
+               username='wayne@mindstreams.com',
+               gmc_number='78700',
+               password='password'
+04/20/2018 04:59:04 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97398b1c27'
+04/20/2018 04:59:04 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='staff',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97398b1c27'
+04/20/2018 05:10:46 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:11:18 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:11:23 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:11:28 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:12:25 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:12:31 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:12:31 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Carson',
+               lastName='Cartwright',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5ad976bf00d64',
+               username='wayne@mindstreams.com',
+               gmc_number='123456',
+               password='password'
+04/20/2018 05:12:31 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad976bf011ca',
+                  c_userId='5ad976bf00d64',
+                  c_surgeonName='Carson Cartwright',
+                  c_gmcNumber='123456',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 05:12:31 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='wayne@mindstreams.com',
+                  userId='5ad976bf00d64'
+04/20/2018 05:12:31 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  username='wayne@mindstreams.com',
+                  userId='5ad976bf00d64'
+04/20/2018 05:12:41 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:14:50 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:14:50 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Carson',
+               lastName='Cartwright',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5ad9774a804d9',
+               username='wayne@mindstreams.com',
+               gmc_number='123456',
+               password='password'
+04/20/2018 05:14:50 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad9774a8093e',
+                  c_userId='5ad9774a804d9',
+                  c_surgeonName='Carson Cartwright',
+                  c_gmcNumber='123456',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 05:14:50 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='wayne@mindstreams.com',
+                  userId='5ad9774a804d9'
+04/20/2018 05:14:50 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  username='wayne@mindstreams.com',
+                  userId='5ad9774a804d9'
+04/20/2018 05:26:06 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:26:06 - 68.107.189.223: is surgeon
+04/20/2018 05:26:06 - 68.107.189.223: GMC#: 1234...
+04/20/2018 05:26:06 - 68.107.189.223: length of GMC#: 7
+04/20/2018 05:26:06 - 68.107.189.223: Error: 
+04/20/2018 05:26:27 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:26:27 - 68.107.189.223: is surgeon
+04/20/2018 05:26:27 - 68.107.189.223: GMC#: 1234.56
+04/20/2018 05:26:27 - 68.107.189.223: length of GMC#: 7
+04/20/2018 05:26:27 - 68.107.189.223: Error: 
+04/20/2018 05:26:43 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:26:43 - 68.107.189.223: is surgeon
+04/20/2018 05:26:43 - 68.107.189.223: GMC#: 1234.56
+04/20/2018 05:26:43 - 68.107.189.223: length of GMC#: 7
+04/20/2018 05:26:43 - 68.107.189.223: Error: 
+04/20/2018 05:27:17 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:27:17 - 68.107.189.223: is surgeon
+04/20/2018 05:27:17 - 68.107.189.223: GMC#: 123456
+04/20/2018 05:27:17 - 68.107.189.223: length of GMC#: 6
+04/20/2018 05:27:17 - 68.107.189.223: Error: 
+04/20/2018 05:27:17 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Carson',
+               lastName='Cartwright',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5ad97a35a6234',
+               username='wayne@mindstreams.com',
+               gmc_number='123456',
+               password='password'
+04/20/2018 05:27:17 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad97a35a66f9',
+                  c_userId='5ad97a35a6234',
+                  c_surgeonName='Carson Cartwright',
+                  c_gmcNumber='123456',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 05:27:17 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97a35a6234'
+04/20/2018 05:27:17 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97a35a6234'
+04/20/2018 05:28:25 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:28:25 - 68.107.189.223: is surgeon
+04/20/2018 05:28:25 - 68.107.189.223: GMC#: 1234.56
+04/20/2018 05:28:25 - 68.107.189.223: length of GMC#: 7
+04/20/2018 05:28:25 - 68.107.189.223: Error: 
+04/20/2018 05:28:38 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:28:38 - 68.107.189.223: is surgeon
+04/20/2018 05:28:38 - 68.107.189.223: GMC#: 123467
+04/20/2018 05:28:38 - 68.107.189.223: length of GMC#: 6
+04/20/2018 05:28:38 - 68.107.189.223: Error: 
+04/20/2018 05:28:38 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Carson',
+               lastName='Cartwright',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5ad97a863c2e1',
+               username='wayne@mindstreams.com',
+               gmc_number='123467',
+               password='password'
+04/20/2018 05:28:38 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad97a863c77d',
+                  c_userId='5ad97a863c2e1',
+                  c_surgeonName='Carson Cartwright',
+                  c_gmcNumber='123467',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 05:28:38 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97a863c2e1'
+04/20/2018 05:28:38 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97a863c2e1'
+04/20/2018 05:29:38 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:29:38 - 68.107.189.223: is surgeon
+04/20/2018 05:29:38 - 68.107.189.223: GMC#: 4444444
+04/20/2018 05:29:38 - 68.107.189.223: length of GMC#: 7
+04/20/2018 05:29:38 - 68.107.189.223: Error: 
+04/20/2018 05:29:38 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Carson',
+               lastName='Cartwright',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5ad97ac21129a',
+               username='wayne@mindstreams.com',
+               gmc_number='4444444',
+               password='password'
+04/20/2018 05:29:38 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad97ac211723',
+                  c_userId='5ad97ac21129a',
+                  c_surgeonName='Carson Cartwright',
+                  c_gmcNumber='4444444',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 05:29:38 - 68.107.189.223: INSERT INTO dir_user_role
+              SET roleId='ROLE_USER',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97ac21129a'
+04/20/2018 05:29:38 - 68.107.189.223: INSERT INTO dir_user_group
+              SET groupId='surgeon',
+                  username='wayne@mindstreams.com',
+                  userId='5ad97ac21129a'
+04/20/2018 05:33:50 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:33:50 - 68.107.189.223: is surgeon
+04/20/2018 05:33:50 - 68.107.189.223: GMC#: 1234.56
+04/20/2018 05:33:50 - 68.107.189.223: length of GMC#: 7
+04/20/2018 05:33:50 - 68.107.189.223: Error: 
+04/20/2018 05:34:04 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 05:34:04 - 68.107.189.223: is surgeon
+04/20/2018 05:34:04 - 68.107.189.223: GMC#: 888888
+04/20/2018 05:34:04 - 68.107.189.223: length of GMC#: 6
+04/20/2018 05:34:04 - 68.107.189.223: Error: 
+04/20/2018 05:34:04 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Carson',
+               lastName='Cartwright',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5ad97bcc96dd7',
+               username='wayne@mindstreams.com',
+               gmc_number='888888',
+               password='password'
+04/20/2018 05:34:04 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad97bcc97258',
+                  c_userId='5ad97bcc96dd7',
+                  c_surgeonName='Carson Cartwright',
+                  c_gmcNumber='888888',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 05:34:04 - 68.107.189.223: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='wayne@mindstreams.com',
+               userId='5ad97bcc96dd7'
+04/20/2018 05:34:04 - 68.107.189.223: INSERT INTO dir_user_group
+           SET groupId='surgeon',
+               username='wayne@mindstreams.com',
+               userId='5ad97bcc96dd7'
+04/20/2018 06:12:09 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 06:12:09 - 68.107.189.223: is surgeon
+04/20/2018 06:12:09 - 68.107.189.223: GMC#: 999
+04/20/2018 06:12:09 - 68.107.189.223: length of GMC#: 3
+04/20/2018 06:12:09 - 68.107.189.223: Error: 1
+04/20/2018 06:12:29 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 06:12:29 - 68.107.189.223: is surgeon
+04/20/2018 06:12:29 - 68.107.189.223: GMC#: 999999
+04/20/2018 06:12:29 - 68.107.189.223: length of GMC#: 6
+04/20/2018 06:12:29 - 68.107.189.223: Error: 
+04/20/2018 06:12:29 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Marvin',
+               lastName='Martian',
+               email='marvin@example.com',
+               active=1,
+               timeZone='0',
+               id='5ad984cd9d51d',
+               username='marvin@example.com',
+               gmc_number='999999',
+               password='password'
+04/20/2018 06:12:29 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad984cd9d987',
+                  c_userId='5ad984cd9d51d',
+                  c_surgeonName='Marvin Martian',
+                  c_gmcNumber='999999',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 06:12:29 - 68.107.189.223: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='marvin@example.com',
+               userId='5ad984cd9d51d'
+04/20/2018 06:12:29 - 68.107.189.223: INSERT INTO dir_user_group
+           SET groupId='admin',
+               username='marvin@example.com',
+               userId='5ad984cd9d51d'
+04/20/2018 12:40:54 - 76.188.180.118: Users_a: mode: add - ID: 
+04/20/2018 12:40:54 - 76.188.180.118: is surgeon
+04/20/2018 12:40:54 - 76.188.180.118: GMC#: 
+04/20/2018 12:40:54 - 76.188.180.118: length of GMC#: 0
+04/20/2018 12:40:54 - 76.188.180.118: Error: 1
+04/20/2018 12:40:58 - 76.188.180.118: Users_a: mode: add - ID: 
+04/20/2018 12:40:58 - 76.188.180.118: is surgeon
+04/20/2018 12:40:58 - 76.188.180.118: GMC#: 
+04/20/2018 12:40:58 - 76.188.180.118: length of GMC#: 0
+04/20/2018 12:40:58 - 76.188.180.118: Error: 1
+04/20/2018 13:00:41 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 13:00:41 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='rrrrrrr',
+               lastName='rrrrrrr',
+               email='test@email.com',
+               active=1,
+               timeZone='0',
+               id='5ad9e4793389e',
+               username='test@email.com',
+               gmc_number='1234567',
+               password='password'
+04/20/2018 13:00:41 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad9e47933e64',
+                  c_userId='5ad9e4793389e',
+                  c_surgeonName='rrrrrrr rrrrrrr',
+                  c_gmcNumber='1234567',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 13:00:41 - 68.107.189.223: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='test@email.com',
+               userId='5ad9e4793389e'
+04/20/2018 13:00:41 - 68.107.189.223: INSERT INTO dir_user_group
+           SET groupId='surgeon',
+               username='test@email.com',
+               userId='5ad9e4793389e'
+04/20/2018 13:05:01 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 13:08:59 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 13:09:06 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 13:09:38 - 68.107.189.223: Users_a: mode: add - ID: 
+04/20/2018 13:09:38 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='rrreereee',
+               lastName='errereeeee',
+               email='test@em4ail.com',
+               active=1,
+               timeZone='0',
+               id='5ad9e692c0c33',
+               username='test@em4ail.com',
+               gmc_number='123456',
+               password='password'
+04/20/2018 13:09:38 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5ad9e692c10a6',
+                  c_userId='5ad9e692c0c33',
+                  c_surgeonName='rrreereee errereeeee',
+                  c_gmcNumber='123456',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+04/20/2018 13:09:38 - 68.107.189.223: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='test@em4ail.com',
+               userId='5ad9e692c0c33'
+04/20/2018 13:09:38 - 68.107.189.223: INSERT INTO dir_user_group
+           SET groupId='surgeon',
+               username='test@em4ail.com',
+               userId='5ad9e692c0c33'
+04/20/2018 13:28:55 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND active=1
+        AND u.id=ug.userid

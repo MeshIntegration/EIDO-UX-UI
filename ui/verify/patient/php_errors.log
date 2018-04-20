@@ -38,3 +38,5 @@
 [03-Apr-2018 00:52:35 Etc/UTC] PHP Parse error:  syntax error, unexpected end of file in patients.php on line 2070
 [16-Apr-2018 13:10:32 Etc/UTC] PHP Parse error:  syntax error, unexpected '=' in patients.php on line 1389
 [16-Apr-2018 13:11:07 Etc/UTC] PHP Parse error:  syntax error, unexpected '=' in patients.php on line 1389
+[19-Apr-2018 14:48:18 Etc/UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in ../utilities.php on line 103
+[19-Apr-2018 14:54:40 Etc/UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in patients_a.php on line 94
