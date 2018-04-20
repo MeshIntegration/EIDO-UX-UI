@@ -16,10 +16,13 @@ logMsg("Users_a: mode: $mode - ID: $id",$logfile);
 
 if ($mode=="delete")
 {
-   $sql = "DELETE FROM dir_user WHERE id='$id'";
+   $sql = "UPDATE dir_user
+           SET active=0,
+           c_dateModified=NOW()
+           WHERE id='$id'";
    dbi_query($sql);
 
-   $sql = "DELETE FROM dir_user_role WHERE userId='$id'";
+ /*  $sql = "DELETE FROM dir_user_role WHERE userId='$id'";
    dbi_query($sql);
 
    $sql = "DELETE FROM dir_user_group WHERE userId='$id'";
@@ -27,6 +30,7 @@ if ($mode=="delete")
 
    $sql = "DELETE FROM $TBLSURGEONS WHERE c_userId='$id'";
    dbi_query($sql);
+ */
 }
 
 else if ($mode=="add")
@@ -104,6 +108,7 @@ else if ($mode=="add")
                id='$admin_user_id',
                username='$email',
                gmc_number='$gmc_number',
+               isSurgeon='$is_surgeon',
                password='password'";
    logMsg("ADD: $sql",$logfile);
    dbi_query($sql);
@@ -135,8 +140,6 @@ else if ($mode=="add")
    // Group
    if ($is_admin=="1")
       $group_str="admin";
-   else if ($is_surgeon=="1")
-      $group_str="surgeon";
    else
       $group_str="staff";
    $sql = "INSERT INTO dir_user_group
@@ -172,6 +175,7 @@ else if ($mode=="update")
                timeZone='0',
                id='$id',
                username='$email',
+               isSurgeon='$is_surgeon',
                gmc_number='$gmc_number'
            WHERE id='$id'";
    dbi_query($sql);
@@ -188,7 +192,7 @@ else if ($mode=="update")
                   dateModified=NOW(),
                   modifiedBy='$user_id',
                   modifiedByName = '$user_fullname'
-              WHERE id='$id'";
+              WHERE c_userId='$id'";
       dbi_query($sql);
       logMsg($sql,$logfile);
    }
@@ -196,8 +200,6 @@ else if ($mode=="update")
    // DETERMINE Group
    if ($is_admin=="1")
          $group_str="admin";
-   else if ($is_surgeon=="1")
-         $group_str="surgeon";
    else
          $group_str="staff";
 
