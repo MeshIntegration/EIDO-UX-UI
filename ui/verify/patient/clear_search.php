@@ -11,8 +11,7 @@ session_start();
 $mode = get_query_string('m');
 
 unset($_SESSION['filter']['top_search_query']);
-unset($_SESSION['filter']['procedure_date']);
-
+//unset($_SESSION['filter']['procedure_date']);
 
 // status, gender, Search within and tag search will reset
 unset($_SESSION['filter']['status']);

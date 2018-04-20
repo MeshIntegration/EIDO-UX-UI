@@ -21231,3 +21231,10 @@
               WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
               AND u.id = e.userId 
               AND o.c_name=e.departmentId
+04/20/2018 13:47:38 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='21737_gov_patientEpisode'
+04/20/2018 13:47:38 - 68.107.189.223: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId

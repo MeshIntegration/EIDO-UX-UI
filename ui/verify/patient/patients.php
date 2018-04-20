@@ -587,7 +587,8 @@ $results_count=$GetQuery->num_rows;
 		    </div>
             <input id="popupDatepicker" name="procedure_date" class="date_element" value="<?php if(isset($_SESSION['filter']['procedure_date'])){echo $_SESSION['filter']['procedure_date'];}?>" type="text"
 		      class="input-group-field">
-			<div class="input-group-button right-append">&nbsp;</div>
+			<div class="input-group-button right-append"><a href="clear_procdate_search.php?m=main"><img src="../img/icons/clear_white.png" alt="clear" style="margin: 10px 5px" /></a>
+                        </div>
 		  </div>
         </label>
       </div>
