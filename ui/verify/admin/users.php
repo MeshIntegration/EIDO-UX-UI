@@ -133,8 +133,16 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 						$is_admin = $is_surgeon = false;
 						if (strtolower ( $arr_users [$i] ['groupid'] ) == "admin")
 							$is_admin = true;
+						if ( $arr_users [$i] ['isSurgeon'] == "1")
+							$is_surgeon = true;
+						
+					/*	as surgeon can also be an admin, removed surgeon from groupid, now denoted by a flag in dir_user table
+						$is_admin = $is_surgeon = false;
+						if (strtolower ( $arr_users [$i] ['groupid'] ) == "admin")
+							$is_admin = true;
 						if (strtolower ( $arr_users [$i] ['groupid'] ) == "surgeon")
 							$is_surgeon = true;
+					*/
 					?>
 <!--				<form method="POST" action="bulk_action.php" id="table">              -->
 				  <tr>
@@ -276,8 +284,16 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 									$is_admin = $is_surgeon = false;
 									if (strtolower ( $qryResult_u ['groupid'] ) == "admin")
 										$is_admin = true;
+									if ( $qryResult_u ['isSurgeon'] == "1")
+										$is_surgeon = true;
+						
+								/*	as surgeon can also be an admin, removed surgeon group from dir_user_group, now denoted by a flag in dir_user table
+									$is_admin = $is_surgeon = false;
+									if (strtolower ( $qryResult_u ['groupid'] ) == "admin")
+										$is_admin = true;
 									if (strtolower ( $qryResult_u ['groupid'] ) == "surgeon")
 										$is_surgeon = true;
+								*/
 								}
 								?>
 
