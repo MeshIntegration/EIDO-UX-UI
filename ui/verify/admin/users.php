@@ -16,16 +16,13 @@ if ($user_role != "ADMIN") {
 $return_to = "adm";
 $home = "users.php";
 $logfile = "admin.log";
-
 $mode = get_query_string ( 'm' );
 $id = get_query_string ( 'id' );
-
 // turn everythign off
 $add_hide = "hide";
 $update_hide = "hide";
 $reset_hide = "hide";
 $delete_hide = "hide";
-
 if ($mode == "" || $mode == "add") {
 	$add_hide = "";
 } else if ($mode == "update") {
@@ -38,9 +35,7 @@ if ($mode == "" || $mode == "add") {
 	$delete_hide = "";
 	$user_id = $id;
 }
-
 $script_name = substr ( strrchr ( $_SERVER ['PHP_SELF'], "/" ), 1 );
-
 if ((isset ( $_GET ['page'] ) && ! empty ( $_GET ['page'] ))) {
 	$page = $_GET ['page'];
 	$start = ($page - 1) * $row;
@@ -49,7 +44,6 @@ if ((isset ( $_GET ['page'] ) && ! empty ( $_GET ['page'] ))) {
 	$start = ($page - 1) * $row;
 }
 $_SESSION ['page'] [$script_name] ['no'] = $page;
-
 $sql = "SELECT u.*, ug.groupid
         FROM dir_user u, dir_user_role ur, dir_user_group ug
         WHERE u.id=ur.userid
@@ -64,7 +58,6 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 	$arr_users [$i] = $qryResult;
 	$i ++;
 }
-
 ?>
 <html class="no-js" lang="en" dir="ltr">
 <head>
@@ -133,8 +126,16 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 						$is_admin = $is_surgeon = false;
 						if (strtolower ( $arr_users [$i] ['groupid'] ) == "admin")
 							$is_admin = true;
+						if ( $arr_users [$i] ['isSurgeon'] == "1")
+							$is_surgeon = true;
+						
+					/*	as surgeon can also be an admin, removed surgeon from groupid, now denoted by a flag in dir_user table
+						$is_admin = $is_surgeon = false;
+						if (strtolower ( $arr_users [$i] ['groupid'] ) == "admin")
+							$is_admin = true;
 						if (strtolower ( $arr_users [$i] ['groupid'] ) == "surgeon")
 							$is_surgeon = true;
+					*/
 					?>
 <!--				<form method="POST" action="bulk_action.php" id="table">              -->
 				  <tr>
@@ -169,12 +170,10 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		  	    		</tbody>
 					</table>
 				</form>
-
 				<div class="grid grid-x text-center">
 					<div class="small-12 pagination-btm-users"><?php echo $pagination; ?></div>
 				</div>
 			</div>
-
 			<!-- End Content-Left -->
 			<!-- Start Content-Right -->
 	<!-- ADD USER SECTION -->
@@ -276,11 +275,18 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 									$is_admin = $is_surgeon = false;
 									if (strtolower ( $qryResult_u ['groupid'] ) == "admin")
 										$is_admin = true;
+									if ( $qryResult_u ['isSurgeon'] == "1")
+										$is_surgeon = true;
+						
+								/*	as surgeon can also be an admin, removed surgeon group from dir_user_group, now denoted by a flag in dir_user table
+									$is_admin = $is_surgeon = false;
+									if (strtolower ( $qryResult_u ['groupid'] ) == "admin")
+										$is_admin = true;
 									if (strtolower ( $qryResult_u ['groupid'] ) == "surgeon")
 										$is_surgeon = true;
+								*/
 								}
 								?>
-
         <div
 				class="small-12 medium-6 large-6 cell content-right <?php echo $update_hide; ?>">
 				<h3>View User</h3>
@@ -322,21 +328,18 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 							</div>
 							<div class="small-12 cell field">&nbsp;</div>
 							<div class="small-12 cell field text-center">
-
 								<button type="submit" class="button large">Update User</button>
 								<br /> <br /> <a
 									href="users.php?m=reset&id=<?php echo $user_id; ?>"
 									class="button large inactive">Reset Password</a><br /> <br /> <a
 									href="users_a.php?m=delete&id=<?php echo $user_id; ?>"
 									class="button large red">Delete User</a>
-
 							</div>
 						</div>
 					</div>
 				</form>
 			</div>
 			<!-- END VIEW USER -->
-
 			<!-- RESET PW SECTION -->
 			<div class="small-12 medium-6 large-6 cell content-right reveal"
 				id="pwdResetModal" data-reveal>
@@ -414,7 +417,6 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
           $(".clickable-row").click(function() {
             window.location = $(this).data("href");
           });
-
           // This button will increment the value
           $('[data-quantity="plus"]').click(function(e){
           // Stop acting like a button
@@ -456,6 +458,5 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		});
 	});	
      </script>
-
 </body>
 </html>
