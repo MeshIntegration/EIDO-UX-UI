@@ -18,6 +18,7 @@ if ($mode=="delete")
            c_dateModified=NOW()
            WHERE id='$id'";
    dbi_query($sql);
+
  /*  $sql = "DELETE FROM dir_user_role WHERE userId='$id'";
    dbi_query($sql);
    $sql = "DELETE FROM dir_user_group WHERE userId='$id'";
