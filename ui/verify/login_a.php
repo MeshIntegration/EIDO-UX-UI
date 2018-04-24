@@ -36,8 +36,10 @@ if ($GetQuery->num_rows==0)
 }
 else
 {
+   // get encrypted password
    $qryResult=$GetQuery->fetch_assoc();
-   if (0 && !password_verify($password, $hash)) {
+   $hash=$qryResult['uipassword'];
+   if (!password_verify($password, $hash)) {
       /* Invalid */
       $_SESSION['error_msg']="Incorrect email or password. Please try again.";
       logMsg("Incorrect email or password. $username %password - back to login.php", $logfile);
@@ -62,20 +64,20 @@ else
    is_setcookie("user_fullname", $fullname, 0, "/", $cookie_domain);
    is_setcookie("user_initials", $initials, 0, "/", $cookie_domain);
 
-   if (strtolower($qryResult['groupId'])=="eidoadmins")
+   if (strtolower($qryResult['groupid'])=="eidoadmins")
    {
       logMsg("$user_id - Logged in as SUPERUSER",$logfile);
       is_setcookie("user_role", "SUPERUSER", 0, "/", $cookie_domain);
-      header("Location: /ui/verify/superuser/users.php");
+      header("Location: /ui/verify/superuser/organisations.php");
       exit();
    }
 
    // Not a SuperUser so now figure out what group they are in
-   //$sql="SELECT * FROM dir_user_group WHERE userId='$user_id'";
+   //$sql="SELECT * FROM dir_user_group WHERE userid='$user_id'";
    //$GetQuery=dbi_query($sql);
    //$qryResult=$GetQuery->fetch_assoc();
 
-   if (strtolower($qryResult['groupId'])=="sitedivadmins")
+   if (strtolower($qryResult['groupid'])=="sitedivadmins")
    {
       // determine what organisation they are with
       // and set a cookie for the ORG ID
@@ -86,7 +88,6 @@ else
       $qryResult=$GetQuery->fetch_assoc();
       $org_id = $qryResult['id'];
       is_setcookie("org_id", $org_id, 0, "/", $cookie_domain); 
-
       is_setcookie("user_role", "ADMIN", 0, "/", $cookie_domain); 
       header("Location: /ui/verify/admin/users.php");
       exit();

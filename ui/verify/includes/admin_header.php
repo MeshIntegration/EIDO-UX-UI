@@ -11,15 +11,20 @@
   </div>
    <div class="small-12 medium-6 large-6 cell" style="padding-top: 15px;">
       <!--  <div class="grid" style="padding-top: 15px;"> -->
-       <div class="row">
-          <a href="/ui/verify/patient/patients.php?m=add">
-            <img src="/ui/verify/img/add.png" alt="Add Patient" class="add_icon"/>Add Patient</a>
+       <div id="adduser" class="row links">
+          <a href="/ui/verify/admin/users.php?m=add">
+            <img src="/ui/verify/img/icons/circle_round_icons/64x64.png" alt="Add User" class="add_icon"/>Add User</a>
        </div>
-      <div class="row">
+
+<!--
+      <div class="row links">
           <a href="#">
-            <img src="/ui/verify/img/add.png" 
+            <img src="/ui/verify/img/icons/chevron_circle_right_solid_500.png" 
              alt="User Administration" class="add_icon"/>User Administration</a>
       </div>
+-->
+
+
   </div>
 
   <div class="medium-4 large-4 cell">

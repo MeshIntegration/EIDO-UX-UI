@@ -122,7 +122,7 @@ function is_email_unique($email)
 {
    $sql="SELECT * 
          FROM dir_user 
-         WHERE email='$email'
+         WHERE username='$email'
          AND active=1";
    $GetQuery=dbi_query($sql);
    if ($GetQuery->num_rows>0)
@@ -229,7 +229,7 @@ function save_user_pw_key($email, $pwkey)
    // save the key used to authenicate an admin password reset
    $sql = "UPDATE dir_user
            SET c_passwordResetKey = '$pwkey'
-           WHERE email = '".$email."'";
+           WHERE username = '".$email."'";
    logMsg("save_user_pw_key: $sql", "wel.log");
    dbi_query($sql);
 }
@@ -238,7 +238,7 @@ function save_user_pw_key($email, $pwkey)
 function  save_user_pw_reset($pwkey, $password)
 {
    $sql = "UPDATE dir_user
-           SET password = '$password'
+           SET uipassword = '$password'
            WHERE passwordResetKey = '".$pwkey."'";
    logMsg("save_user_pw_reset: $sql", "wel.log");
    dbi_query($sql);
@@ -271,7 +271,7 @@ function get_user_info($user_id)
           WHERE id='$user_id'";
    $GetQuery = dbi_query($sql);
    $qryResult = $GetQuery->fetch_assoc();
-   $arr_user_info['password']=$qryResult['password'];
+   $arr_user_info['password']=$qryResult['uipassword'];
    return $arr_user_info;
 }
 
@@ -279,7 +279,7 @@ function get_user_info($user_id)
 function save_password($user_id, $password)
 {
    $sql = "UPDATE dir_user
-          SET password='$password',
+          SET uipassword='$password',
               c_pw_reset=0,
               c_dateModified=NOW()
           WHERE id='$user_id'";

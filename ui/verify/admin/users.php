@@ -140,28 +140,33 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 <!--				<form method="POST" action="bulk_action.php" id="table">              -->
 				  <tr>
 						<td align="left" valign="center"><input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?></td>
-						<td valign="center" align="right" class="clickable-row su_data"
+						<div id="container" class="clickable-row">
+							<td valign="center" align="right" class="clickable-row su_data"
 							data-href="users.php?m=update&id=<?php echo $uid; ?>"><p>
-								<span class="uc clickable-row"><?php echo $full_name; ?></span><br /><?php echo $email; ?></p></td>
+								<span class="uc clickable-row" data-href="users.php?m=update&id=<?php echo $uid; ?>"><?php echo $full_name; ?></span><br /><span class="clickable-row su-data" data-href="users.php?m=update&id=<?php echo $uid; ?>"><?php echo $email; ?></span></p>
+							</td></div>
+						<div id="container" class="clickable-row">
+							<td class="clickable-row su_data"
+							data-href="users.php?m=update&id=<?php echo $uid; ?>"><input
+							type="checkbox" onclick="return false;" name="is_admin"
+							<?php if ($is_admin) echo "checked"; ?>>
+							</td></div>
 						<td class="clickable-row su_data"
 							data-href="users.php?m=update&id=<?php echo $uid; ?>"><input
-							type="checkbox" name="is_admin"
-							<?php if ($is_admin) echo "checked"; ?>></td>
-						<td class="clickable-row su_data"
-							data-href="users.php?m=update&id=<?php echo $uid; ?>"><input
-							type="checkbox" name="is_surgeon"
+							type="checkbox" onclick="return false;" name="is_surgeon"
 							<?php if ($is_surgeon) echo "checked"; ?>></td>
 						<td><a href="users.php?m=update&id=<?php echo $uid; ?>"><img
 								src="../img/icons/greater.png" alt="greater than icon"
 								class="align-right" /></a></td>
+						</div>
 					</tr>
 <!--				</form>      -->
 		          <?php } ?>
 	               <?php
-						 $sql = "SELECT u.*, ug.groupid
+						 $sql = "SELECT u.*, ug.groupId
 	                     FROM dir_user u, dir_user_role ur, dir_user_group ug
-	                     WHERE u.id=ur.userid
-	                     AND u.id = ug.userid
+	                     WHERE u.id=ur.userId
+	                     AND u.id = ug.userId
 	                     AND ur.roleId='ROLE_USER'";
 						$GetQuery = dbi_query ( $sql );
 						$totalRecord = $GetQuery->num_rows;
@@ -262,25 +267,25 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
         <?php
 								
 								if ($mode == "update") {
-									$sql_u = "SELECT u.*, ug.groupid 
+									$sql_u = "SELECT u.*, ug.groupId 
                            FROM dir_user u, dir_user_group ug
                            WHERE u.id = '$user_id'
-                           AND ug.userid=u.id";
+                           AND ug.userId=u.id";
 									$GetQuery_u = dbi_query ( $sql_u );
 									$qryResult_u = $GetQuery_u->fetch_assoc ();
 									$firstName = $qryResult_u ['firstName'];
 									$lastName = $qryResult_u ['lastName'];
-									$email = $qryResult_u ['email'];
+									$email = $qryResult_u ['username'];
 									$gmc_number = $qryResult_u ['gmc_number'];
 									$is_admin = $is_surgeon = false;
-									if (strtolower ( $qryResult_u ['groupid'] ) == "admin")
+									if (strtolower ( $qryResult_u ['groupId'] ) == "sitedivadmins")
 										$is_admin = true;
 									if ( $qryResult_u ['isSurgeon'] == "1")
 										$is_surgeon = true;
 						
-								/*	as surgeon can also be an admin, removed surgeon group from dir_user_group, now denoted by a flag in dir_user table
+								/*	as surgeon can also be an admin, removed surgeon group from dir_user_group, surgeon role is now denoted by a boolean flag in dir_user table
 									$is_admin = $is_surgeon = false;
-									if (strtolower ( $qryResult_u ['groupid'] ) == "admin")
+									if (strtolower ( $qryResult_u ['groupid'] ) == "sitedivadmins")
 										$is_admin = true;
 									if (strtolower ( $qryResult_u ['groupid'] ) == "surgeon")
 										$is_surgeon = true;
@@ -456,7 +461,19 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		$('#actOnAll').click(function () {    
 			$("[id^=performAction]").prop('checked', this.checked);    
 		});
-	});	
+	});
+	$(document).ready(function(){	
+        	$("#adduser").on("click",function(){
+		$.get("clearsession.php");
+  		$("form div").removeClass("error_message");
+  		$("form label").removeClass("error_message");
+		$("form div").removeClass("fi-alert");
+		$("form label").removeClass("fi-alert");
+  		$("form")[0].reset();
+		});
+	});
+
+
      </script>
 </body>
 </html>

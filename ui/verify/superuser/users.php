@@ -21,29 +21,6 @@ $logfile = "superuser.log";
 $mode = get_query_string('m');
 $id = get_query_string('id');
 
-// turn everything off
-$add_hide = "hide";
-$update_hide = "hide";
-$userdelete_hide = "hide";
-$userreset_hide = "hide";
-
-if ($mode=="" || $mode=="main")
-{
-   $add_hide = "";
-}
-else if ($mode=="update")
-{
-   $update_hide = "";
-}
-else if ($mode=="userdelete")
-{
-   $userdelete_hide = "";
-}
-else if ($mode=="userreset")
-{
-   $userreset_hide = "";
-}
-
 // need to change according to session
 $script_name = substr(strrchr($_SERVER['PHP_SELF'],"/"),1);
 
@@ -58,8 +35,9 @@ $_SESSION['page'][$script_name]['no'] = $page ;
 
 $sql = "SELECT u.*
         FROM ".DB_PREFIX."user u, ".DB_PREFIX."user_role ur
-        WHERE u.id=ur.userid
-        AND ur.roleId='ROLE_ADMIN' LIMIT $start,$row";
+        WHERE u.id=ur.userId
+        AND ur.roleId='ROLE_ADMIN'
+	AND u.active=1 LIMIT $start,$row";
 $GetQuery = dbi_query($sql);
 
 ?>
@@ -105,7 +83,7 @@ $GetQuery = dbi_query($sql);
   <div class="grid-x grid-margin-x su">
     <!-- Start Content-Left -->
     <div class="small-12 medium-6 large-6 cell content-left">
-      <table width="90%" border="0"  class="su-table stack">
+      <table width="90%" border="0"  class="hoverTable su-table stack">
   	    <tbody>
 		  <tr>  
 		    <td colspan="3">
@@ -114,8 +92,8 @@ $GetQuery = dbi_query($sql);
 			</td>
           </tr>
           <tr>
-            <td><input type="checkbox"></td>
-            <td colspan="2"></td>
+            <td class="clickable-row"><input type="checkbox"></td>
+            <td class="clickable-row" colspan="2"></td>
           </tr>
           <?php
             while ($qryResult=$GetQuery->fetch_assoc()) {
@@ -130,15 +108,15 @@ $GetQuery = dbi_query($sql);
 			   }
           ?>
 	  <tr<?php echo $isSelected; ?>>
-        <td><input type="checkbox"></td>
+        <td class="clickable-row"><input type="checkbox"></td>
 	    <td class='clickable-row su_data' data-href='users.php?m=update&id=<?php echo $list_id; ?>'><p><span class="uc"><?php echo $lastName; ?>, <?php echo $firstName; ?></span><br /><?php echo $email; ?></p></td>
-	    <td><a href="users.php?m=update&id=<?php echo $list_id; ?>"><img src="../img/icons/greater.png" alt="icon" class="align-right" /></a></td>
+	    <td class="clickable-row"><a href="users.php?m=update&id=<?php echo $list_id; ?>"><img src="../img/icons/greater.png" alt="icon" class="align-right" /></a></td>
 	  </tr>
-         <?php } ?>
+         
          <?php 
             $sql = "SELECT u.*
                     FROM ".DB_PREFIX."user u, ".DB_PREFIX."user_role ur
-                    WHERE u.id=ur.userid
+                    WHERE u.id=ur.userId
                     AND ur.roleId='ROLE_ADMIN'";
             $GetQuery = dbi_query($sql);
             $totalRecord = $GetQuery->num_rows;
@@ -155,44 +133,44 @@ $GetQuery = dbi_query($sql);
  	<!-- ADD USER SECTION -->  
 	<div class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
 	  <h3>Add SuperUser</h3>
-	  <form id="add_form"  action="users_a.php?m=add" method="post" data-abide novalidate>
+	  <form id="add_form"  action="users_a.php?m=add" method="post">
   		<div class="grid-container">
     	  <div class="grid-x">
-      	    <div class="small-12 cell field">
-        	  <label>First Name
-                <input type="text" name="firstName" placeholder="">
-              </label>
-            </div>
-      		<div class="small-12 cell field">
-        	  <label>Surname
-                <input type="text" name="lastName" placeholder="">
-              </label>
-            </div>
-            <div class="small-12 cell field">
-                <label>E-mail Address
-                   <input type="text" id="add_email" name="email" placeholder="">
-                   <span class="form-error">Email allready exist</span>
-                </label>
-            </div>          
-            <div class="small-12 cell field password-field">
+		<div class="small-12 cell field">
+	                <?php if ($_SESSION['add_firstname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                        else if ($_SESSION['add_firstname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>	
+			<label class="weight-normal">First Name <input type="text"
+	 			value="<?php echo $_SESSION['add_firstname']; ?>" name="firstname">
+			</label></div>
+	      	<div class="small-12 cell field">
+ 	               <?php if ($_SESSION['add_lastname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the last name</strong> - this is required</div>";
+                       else if ($_SESSION['add_lastname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct the last name</strong> - no special characters are allowed</div>"; ?>
+        	       <label class="weight-normal">Surname <input type="text" 
+	               	       value="<?php echo $_SESSION['add_lastname']; ?>" name="lastname">
+	               </label> </div>
+		<div class="small-12 cell field">
+                       <?php if ($_SESSION['add_email_error']) echo "<div class='error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                       else if ($_SESSION['add_bad_email_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>"; 
+                       else if ($_SESSION['add_email_duplicate_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+		       <label class="weight-normal">Email Address <input type="text" 
+		               value="<?php echo $_SESSION['add_email']; ?>" name="email"></label> </div></div>
+        <div class="small-12 cell field password-field">
                 <label>Password
-                <input type="password" id="password"  name="password" placeholder="" required>
+                <input type="password" id="password" name="password" placeholder="" required>
               </label>
             </div>
             <div class="small-12 cell field password-confirmation-field">
                   <label>Retype Password
-                <input type="password" placeholder="" required data-equalto="password">
+                <input type="password" required data-equalto="password">
  <small class="form-error">The password did not match</small>
               </label>
-            </div>
-			<div class="small-12 cell text-center">
+            </div><div class="small-12 cell text-center">
         	  <br /><input type="submit" id="add" class="button large" value="Add User">
             </div>
     	  </div>
   		</div>
 	  </form>
 	</div>  
-
  	<!-- UPDATE USER SECTION -->  
         <?php
            if ($mode=="update")
@@ -205,6 +183,7 @@ $GetQuery = dbi_query($sql);
                $firstName = $qryResult_u['firstName'];
                $lastName = $qryResult_u['lastName'];
                $email = $qryResult_u['email'];
+	       
             }
             else
             {
@@ -218,27 +197,29 @@ $GetQuery = dbi_query($sql);
 	  <form action="users_a.php?m=update&id=<?php echo $id; ?>" method="post">
   		<div class="grid-container">
     	  <div class="grid-x">
-      	    <div class="small-12 cell field">
-        	  <label>First Name
-                <input type="text" name="firstName" value="<?php echo $firstName; ?>">
-              </label>
-            </div>
-      	    <div class="small-12 cell field">
-        	  <label>Surname
-                <input type="text" name="lastName" value="<?php echo $lastName; ?>">
-              </label>
-            </div>
-      	    <div class="small-12 cell field">
-        	  <label>E-mail Address
-                <input type="text" name="email" value="<?php echo $email; ?>">
-              </label>
-            </div>
-            <div class="small-12 medium-12 large-12 cell field">&nbsp;</div>
+		<div class="small-12 cell field">
+					    <?php if ($_SESSION['add_firstname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";else if ($_SESSION['add_firstname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+						<label class="weight-normal">First Name <input type="text"
+						value="<?php echo $_SESSION['add_firstname']; ?>" name="firstname">
+						</label></div>
+					<div class="small-12 cell field">
+					    <?php if ($_SESSION['add_lastname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the last name</strong> - this is required</div>";
+                                                   else if ($_SESSION['add_lastname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct the last name</strong> - no special characters are allowed</div>"; ?>
+					<label class="weight-normal">Surname <input type="text"value="<?php echo $_SESSION['add_lastname']; ?>" name="lastname"></label>
+					</div>
+					<div class="small-12 cell field">
+					    <?php if ($_SESSION['add_email_error']) echo "<div class='error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                                                   else if ($_SESSION['add_bad_email_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>"; 
+                                                   else if ($_SESSION['add_email_duplicate_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+					<label class="weight-normal">Email Address <input type="text" value="<?php echo $_SESSION['add_email']; ?>" name="email">
+					</label>
+					</div>
+        <div class="small-12 medium-12 large-12 cell field">&nbsp;</div>
             <div class="small-3 medium-3 large-3 cell field">&nbsp;</div>
             <div class="small-6 medium-6 large-6 cell field text-center">
                <button type="submit"  class="button large expanded" />UPDATE USER</button><br />
-               <a href="users.php?m=userreset&id=<?php echo $id; ?>" class="button large inactive expanded" />RESET PASSWORD</a><br />
-               <a href="users.php?m=userdelete&id=<?php echo $id; ?>" class="button large red expanded" />DELETE USER</a>
+               <a href="users_a.php?m=userreset&id=<?php echo $id; ?>" class="button large inactive expanded" />RESET PASSWORD</a><br />
+               <a href="users_a.php?m=userdelete&id=<?php echo $id; ?>" class="button large red expanded" />DELETE USER</a>
             </div>
             <div class="small-3 medium-3 large-3 cell field">&nbsp;</div>
     	  </div>
@@ -259,7 +240,7 @@ $GetQuery = dbi_query($sql);
                   <div class="grid-x">
                       <div class="small-3">&nbsp;</div>
                            <div class="small-6"><br>
-                                 <a href="users.php?m=main" class="button large inactive expanded" name=""/>NO</a>
+                                 <a href="users_a.php?m=main" class="button large inactive expanded" name=""/>NO</a>
                                  <a href="users_a.php?m=userdelete&id=<?php echo $id; ?>" class="button large expanded red" name=""/>CONFIRM DELETE</a>
                            </div>
                        <div class="small-3">&nbsp;</div>
@@ -285,7 +266,7 @@ $GetQuery = dbi_query($sql);
                   <div class="grid-x">
                       <div class="small-3">&nbsp;</div>
                            <div class="small-6"><br>
-                                 <a href="users.php?m=main" class="button large inactive expanded" name=""/>NO</a>
+                                 <a href="users_a.php?m=main" class="button large inactive expanded" name=""/>NO</a>
                                  <a href="users_a.php?m=userreset&id=<?php echo $id; ?>" class="button large expanded active" name=""/>CONFIRM RESET</a>
                            </div>
                        <div class="small-3">&nbsp;</div>
@@ -314,32 +295,16 @@ $GetQuery = dbi_query($sql);
             $(".clickable-row").click(function() {
               window.location = $(this).data("href");
             });
-            $("#add_email").change(function(){
-               var email_val = $("#add_email").val();
-               if(email_val.length==0){              
-                  $("#add_email").next("span").html("Email must not be empty");
-                  return false;
-               }
- 
-               $.ajax({ 
-                  url: "./ajax/validate_data.php",
-                  method: "POST",
-                  data: {type: 'validate_email', email: 'email_val'},
-                  dataType: "HTML",
-               }).done(function(response){
-                  // once ajax is completed
-                  if(response){
-                     // email exist
-                     $("#add_form").foundation("addErrorClasses",$("#add_email"));
-                     return false;
-                  }else{
-                     // email not exist
-                     console.log("email does not exitst");
-                     return true;
-                  }
-               });
-            });
          });
+         $(document).ready(function(){
+            $("#addsu").on("click",function(){
+		$.get("clearsession.php");
+                $("form div").removeClass("error_message");
+                $("form label").removeClass("error_message");
+                $("form div").removeClass("fi-alert");
+                $("form label").removeClass("fi-alert");
+            });
+        });
       </script>  
    </body>
 </html>

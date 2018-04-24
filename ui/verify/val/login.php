@@ -101,16 +101,55 @@ if (isset($forgot_login_flag))
                }
             })
 	});
-         $(document).ready(function (){
-                if ( !$("#username1").val() ) {
-                        $("#username1").val(sessionStorage.username2)
-                }
-
-                $("#forgotpw").click(function(){
-                        var username1 = $("#username1").val();
-                        sessionStorage.setItem('username1',username1);
+        $(document).ready(function () {
+                $('#login').click(function () {
+                        if( $("#username1").val().length > 0 ) {
+                                var username = $("#username1").val();
+                                sessionStorage.setItem("username",username);
+                        }
+                        else{
+                                var username = "0";
+                                sessionStorage.setItem("username",username);
+                        }
                 });
-         }); 
+                $('.close-button').click(function () {
+                        //   if ( (sessionStorage.username).val().length > 0 ) {
+                      if  (sessionStorage.getItem('username') != "0") {
+                              $("#username1").val(sessionStorage.username);
+                                $("#password").focus();
+                           }
+                        else{
+                                $("#username1").val();
+                                $("#username1").focus();
+                        }
+                });
+                                $('#errorModal').foundation('<?php echo $modal_popup;?>');
+
+        });
+        
+        $(document).ready(function () {
+                        if (sessionStorage.getItem("remembered") == 1) {
+                            $(function () {
+                                $("#username1").focus();
+                                $("#username1").val(sessionStorage.username);
+                                sessionStorage.setItem("remembered",0);
+                                $("#username1").blur();
+                                $("#form_password").focus();
+                            })
+                        }
+        });
+
+
+        $(document).ready(function () {
+                 $("#forgotpw").click(function () {
+                    if( $("#username1").val().length > 0 ) {
+                        var username = $("#username1").val();
+                        sessionStorage.setItem("username",username);
+                        sessionStorage.setItem("remembered",1);
+                    }
+                 })
+        });
+
       </script>  
    </body>
 </html>

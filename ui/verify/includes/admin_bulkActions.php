@@ -6,15 +6,17 @@
   <td colspan="5">
       
  <!--          
-<ul class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="bulk_action_tabs">
+<ul class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" data-active-collapse="true" id="bulk_action_tabs">
   <li class="tabs-title button_users_bulk fc"><a href="#panel1">Bulk Actions<img src="../img/icons/add_light.png" alt="add icon" class="fc_add"/></a></li>
   <li class="tabs-title button_users_bulk fc"><a href="#panel2">Sort By<img src="../img/icons/add_white.png" alt="add icon" class="fc_add"/></a></li>
 </ul>
 -->
 
-<div id="bulk_action_tabs" class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" >
-  <div class="tabs-title button_users_bulk fc"><a href="#panel1">Bulk Actions<img src="../img/icons/add_light.png" alt="add icon" class="fc_add"/></a></div>
-  <div class="tabs-title button_users_bulk fc"><a href="#panel2">Sort By<img src="../img/icons/add_white.png" alt="add icon" class="fc_add"/></a></div>
+<div id="bulk_action_tabs" class="tabs" data-active-collapse="true" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" >
+  <div class="tabs-title fl-left button_users_bulk fc"><a href="#panel1">Bulk Actions<img src="../img/icons/plus.png" alt="plus icon" class="fc_add fl-left fc_plus tabs-title-left"/>
+<img src="../img/icons/minus.png" alt="minus icon" class="tabs-title-left fc_add fc_minus fl-left"/></a></div>
+  <div class="tabs-title fl-right button_users_bulk fc"><a href="#panel2">Sort By<img src="../img/icons/plus.png" alt="plus icon" class="fc_add fl-right fc_plus"/>
+<img src="../img/icons/minus.png" alt="minus icon" class="fc_add fc_minus fl-right"/></a></div>
 </div>
 
 <div class="tabs-content" data-tabs-content="bulk_action_tabs">

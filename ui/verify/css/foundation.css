@@ -3125,6 +3125,7 @@ ol.list-upper-roman {
 
 .accordion {
   margin-left: 0;
+  plusminus: true;
   background: #fefefe;
   list-style-type: none; }
   .accordion[disabled] .accordion-title {

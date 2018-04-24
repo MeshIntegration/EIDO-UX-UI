@@ -6,14 +6,13 @@
 // ***************************************
 
 require_once '../utilities.php';
+require_once "../alert_intruders.php";
+session_start();
 $logfile = "superuser.log";
-
 $mode = get_query_string('m');
 $id = get_query_string('id');
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+
+logMsg("Users_a: mode: $mode - ID: $id",$logfile);
 
 if ($mode=="update")
 {
@@ -23,6 +22,7 @@ if ($mode=="update")
                email=".escapeQuote($email)."
            WHERE id='$id'";
    dbi_query($sql);
+   logMsg("UPDATE: $sql",$logfile);
 } 
 else if ($mode=="userreset")
 {
@@ -32,8 +32,7 @@ else if ($mode=="userreset")
                c_dateModified=NOW()
            WHERE id='$id'";
    dbi_query($sql);
-   header("Location: users.php");
-   exit();
+   logMsg("PWRESET: $sql",$logfile);
 }
 else if ($mode=="userdelete")
 {
@@ -42,12 +41,8 @@ else if ($mode=="userdelete")
            c_dateModified=NOW()
            WHERE id='$id'";
    dbi_query($sql);
-   header("Location: users.php");
-   exit();
+   logMsg("DELETE: $sql",$logfile);   
 }
-else
-{
-   $id = substr(strtolower($firstName),0,1).strtolower($lastName);
 
 /* *******************API STUFF COMMENTED OUT*********************************************
 
@@ -67,36 +62,75 @@ echo $resp;
 echo "<br />";
 exit();
 *************************************************************************  */
-//   $hash = password_hash($password, PASSWORD_BCRYPT);
+else
+{
+   $firstname = $_POST['firstname'];
+   $lastname = $_POST['lastname'];
+   $email = $_POST['email'];
+   $password = $_POST['password'];
+   //  check for required fields and formats here
+   if ($firstname=="")
+      $_SESSION['add_firstname_error']=true; else $_SESSION['add_firstname_error']=false;
+   if (!preg_match("/^[a-zA-Z]*$/",$firstname))
+      $_SESSION['add_firstname_format_error']=true; else $_SESSION['add_firstname_format_error']=false;
+   if ($lastname=="")
+      $_SESSION['add_lastname_error']=true; else $_SESSION['add_lastname_error']=false;
+   if (!preg_match("/^[a-zA-Z]*$/",$lastname))
+      $_SESSION['add_lastname_format_error']=true; else $_SESSION['add_lastname_format_error']=false;
+   if ($email=="")
+      $_SESSION['add_email_error']=true; else $_SESSION['add_email_error']=false;
+   if ($email<>"" && !filter_var($email, FILTER_VALIDATE_EMAIL))
+      $_SESSION['add_bad_email_error']=true; else $_SESSION['add_bad_email_error']=false;
+   if (!is_email_unique($email))
+      $_SESSION['add_email_duplicate_error']=true; else $_SESSION['add_email_duplicate_error']=false;
+   if ($_SESSION['add_firstname_error'] || $_SESSION['add_lastname_error'] ||
+       $_SESSION['add_bad_email_error'] || $_SESSION['add_email_error'] || $_SESSION['add_email_duplicate_error'] ||
+       $_SESSION['add_firstname_format_error'] || $_SESSION['add_lastname_format_error'])
+   {
+      $_SESSION['add_firstname']=$firstname;
+      $_SESSION['add_lastname']=$lastname;
+      $_SESSION['add_email']=$email;
+      $_SESSION['add_password']=$password;
+   }
 
-//   if (!password_verify($password, $hash)) {
-//      /* Invalid hash generation*/
-//      header("Location:".$_SERVER['HTTP_REFERER']);
-//      exit;
-//   }
+
+   $id = uniqid();
+   $hash = password_hash($password, PASSWORD_BCRYPT);
+   if (!password_verify($password, $hash)) {
+      /* Invalid hash generation*/
+      header("Location:".$_SERVER['HTTP_REFERER']);
+      exit;
+   }
 
    // INSERT
-   //          password=".$hash.",
+
    $sql = "INSERT INTO dir_user
            SET firstName=".escapeQuote($firstName).",
                lastName=".escapeQuote($lastName).",
                email=".escapeQuote($email).",
-               password=".$password.",
-               active=1,
+	       password='".$hash."',
+               active='1',
                timeZone='0',
                id='$id',
+               c_dateModified=NOW(),
                username='$email'";
    dbi_query($sql);
-logMsg($sql,$logfile);
+   logMsg("ADD: $sql",$logfile);
 
    $sql = "INSERT INTO dir_user_role
            SET roleId='ROLE_ADMIN',
-               userId='$id'";
+               userId='$id',
+               username='$email'";
    dbi_query($sql);
-   logMsg($sql,$logfile);
+   logMsg("ADD: $sql",$logfile);
 
-   header("Location: users.php");
-   exit();
+   $sql = "INSERT INTO dir_user_group
+           SET groupId='eidoadmins',
+               userId='$id',
+	       username='$email'";
+   dbi_query($sql);
+   logMsg("ADD: $sql",$logfile);
+
 }
 header("Location: users.php");
 exit();

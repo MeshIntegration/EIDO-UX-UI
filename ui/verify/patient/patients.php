@@ -523,7 +523,8 @@ $tags_GetQuery = dbi_query($tags_sql);
 /////////////////////////////////////////////////// 
 
 $GetQuery = dbi_query($sql);
-$results_count=$GetQuery->num_rows;
+$GetQuery_all = dbi_query($pagination_sql);
+$results_count=$GetQuery_all->num_rows;
 
 ?>
 <html class="no-js" lang="en" dir="ltr">
@@ -2440,6 +2441,16 @@ logMsg("ProcSelect: ProcIid_selected = $proc_id_selected", $logfile);
                $("#proc_gmcnumber").val(proc_gmcnumber);
                $("#proc_gmcnumber_temp").val(proc_gmcnumber);
             });
+	    $(document).ready(function(){
+                 $("#addpt").on("click",function(){
+        	         $("form div").removeClass("error_message");
+               		 $("form label").removeClass("error_message");
+                	 $("form div").removeClass("fi-alert");
+                	 $("form label").removeClass("fi-alert");
+               		 $("form")[0].reset();
+                	 $.get("clearsession.php");
+                 });
+            });			
 
             //////////////////////////////////
             // Review Section

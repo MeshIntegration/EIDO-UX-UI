@@ -6,6 +6,14 @@
     <?php include "admin_dropdown_pane.php"; ?>
 
   </div>
+   <div class="small-12 medium-6 large-6 cell" style="padding-top: 15px;">
+      <!--  <div class="grid" style="padding-top: 15px;"> -->
+       <div id="addsu" class="row links">
+          <a href="/ui/verify/superuser/users.php?m=add">
+            <img src="/ui/verify/img/icons/circle_round_icons/64x64.png" alt="Add User" class="add_icon"/>Add User</a>
+       </div>
+  </div>
+
 
   <div class="small-12 medium-6 large-6 cell">
      &nbsp;

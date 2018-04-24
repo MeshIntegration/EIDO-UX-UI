@@ -50,6 +50,9 @@ a.button_users { color:#8A8B92; font-weight:400; font-family:'Lato', sans-serif;
   font-family:'Lato', sans-serif; 
   margin-top: 23px;
 }
+.hoverTable tr:hover td.clickable-row {
+          background-color: #f7f5f5;
+    }
 
 
 #user-checkbox2{margin-left: 10px; }
@@ -149,7 +152,18 @@ table.notifications { width: 80%; margin: 20px auto; }
 .error_message + label > select { border-color: #ae3526 !important; }
 
 .clickable-row { cursor:pointer !important; }
-.clickable-row:hover { background:#f7f5f5 !important; }
+
+
+
+
+.tabs-title .fc_plus { display: inline; height: ;}
+.tabs-title .fc_minus { display: none; }
+.tabs-title.is-active .fc_plus { display: none; }
+.tabs-title.is-active .fc_minus { display: inline; height: ; }
+.tabs-title.fl-left { float: left; }
+.tabs-title.fl-right { float: right; }
+.tabs-title .fl-left { float: left; margin-right: 15px; }
+.tabs-title .fl-right { float: right; margin-left: 15px; }
 
 table td.sort, .sort { padding:0; }
 tr.no_hover:hover, tr.no_hover:active { background:none; }
@@ -209,7 +223,7 @@ input:checked ~ .switch-paddle { background:#3dae65; }
   .header_left { padding:20px 0; text-align:left; }
     .header_left img { margin:0 0 0 10px; }
   .header_mid { padding:40px 90px 0 0; text-align:right; }
-    .add_icon { margin-right:10px; }
+    .add_icon { margin-right:10px; width:20px; height:20px; }
     .add_patient { margin-right:10%; }
   .header_right { margin:10px 0 10px 0; padding:20px 0 0 0; border-left:1px solid #797979; }
   .header_center { padding:20px 0px; text-align:center; }

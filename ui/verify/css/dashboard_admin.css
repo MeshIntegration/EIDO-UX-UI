@@ -53,8 +53,10 @@ hr { margin:0.9375em 0px; }
 .button-group .fc { margin-right:20px; color:#fff; !important; }
 .fc, .fc:active, .fc:visited, .fc:focus { background:#dfdddd; color:#0D2240; padding:.5rem; }
   .fc:hover { background:#6b6b6b; }
-    .fc:hover img { background:url(../img/icons/add_white.png) no-repeat; }
+/*    .fc:hover img { background:url(../img/icons/add_white.png) no-repeat; } */
     .fc_add { margin-left:10px; }
+    .fc_plus { margin-left:10px; }
+    .fc_minus { margin-left:10px; }
 
 .red, .red:active, .red:visited, .red:focus { background:#d0021b; color:#fff; }
   .red:hover { background:#6b6b6b; }

@@ -6,6 +6,7 @@
     <?php include "admin_dropdown_pane.php"; ?>
   </div>
 
+<!--   /Removed per EIDO amend request/
   <div class="small-12 medium-6 large-6 cell">
     <span class="float-left links one_link">
        <?php if ($user_role=="ADMIN") { ?>
@@ -14,6 +15,28 @@
        <a href="patients_a.php?m=gotoaddpt"><img src="/ui/img/add.png" alt="Add Patient" class="add_icon"/>Add Patient</a>
    </span>
   </div>
+-->
+
+ <div class="small-12 medium-6 large-6 cell" style="padding-top: 15px;">
+    	  <!--  <div class="grid" style="padding-top: 15px;"> -->
+      	  
+	   <div id="addpt" class="row links">
+              <a href="/ui/verify/patient/patients.php?m=add">
+              <img src="/ui/verify/img/icons/circle_round_icons/64x64.png" alt="Add Patient" class="add_icon"/>Add Patient</a>
+           </div>
+      
+
+<!-- ONLY SHOW IF USER IS SITE ADMIN  -->
+
+       <?php if ($user_role=="ADMIN") { ?>
+      	  <div class="row links">
+            <a href="/ui/verify/admin/users.php">
+            <img src="/ui/verify/img/icons/chevron_circle_right_solid_500.png"
+             alt="User Administration" class="add_icon"/>User Administration</a>
+   	  </div>
+       <?php } ?>
+</div>
+
   <div class="medium-4 large-4 cell"><a href="patients.php?m=main"><img src="/ui/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a></div>
 </div>
 <!-- Start Mobile Nav -->

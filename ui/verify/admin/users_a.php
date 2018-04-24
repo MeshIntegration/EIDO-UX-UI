@@ -18,6 +18,10 @@ if ($mode=="delete")
            c_dateModified=NOW()
            WHERE id='$id'";
    dbi_query($sql);
+   logMsg("SU DELETE: $sql",$logfile);
+      header("Location: users.php");
+      exit();
+
 
  /*  $sql = "DELETE FROM dir_user_role WHERE userId='$id'";
    dbi_query($sql);
@@ -29,12 +33,8 @@ if ($mode=="delete")
 }
 else if ($mode=="add")
 {
-   $firstname = $_POST['firstname'];
-   $lastname = $_POST['lastname'];
-   $email = $_POST['email'];
-   $is_surgeon = $_POST['is_surgeon'];
-   $is_admin = $_POST['is_admin'];
-   $gmc_number = $_POST['gmc_number'];
+
+
    //  check for required fields and formats here
    if ($firstname=="")
       $_SESSION['add_firstname_error']=true; else $_SESSION['add_firstname_error']=false;
@@ -83,9 +83,11 @@ else if ($mode=="add")
       header("Location: users.php?m=add");
       exit();
    }
+
    // INSERT
    $admin_user_id = uniqid();
    //  substr(strtolower($firstName),0,1).strtolower($lastName);
+
    // User
    $sql = "INSERT INTO dir_user
            SET firstName=".escapeQuote($firstname).",
@@ -98,11 +100,11 @@ else if ($mode=="add")
                gmc_number='$gmc_number',
                isSurgeon='$is_surgeon',
                password='password'";
-   logMsg("ADD: $sql",$logfile);
+   logMsg("ADD SITE OR STAFF USER: $sql",$logfile);
    dbi_query($sql);
       if ($is_surgeon=="1")
    {
-      $id=uniqid();
+      $id = uniqid();
       $fullname = "$firstname $lastname";
       $sql = "INSERT INTO $TBLSURGEONS
               SET id='$id',
@@ -116,30 +118,39 @@ else if ($mode=="add")
       dbi_query($sql);
       logMsg("ADD SURGEON: $sql",$logfile);
     }
+
    //  Role
    $sql = "INSERT INTO dir_user_role
            SET roleId='ROLE_USER',
                username='$email',
                userId='$admin_user_id'";
    dbi_query($sql);
-   logMsg($sql,$logfile);
+   logMsg("ADD SITE OR STAFF USER: $sql",$logfile);
+
    // Group
    if ($is_admin=="1")
-      $group_str="admin";
+   {
+      $group_str="sitedivadmins";
+   }
    else
+   {
       $group_str="staff";
+   }
    $sql = "INSERT INTO dir_user_group
            SET groupId='$group_str',
                username='$email',
                userId='$admin_user_id'";
    dbi_query($sql);
-   logMsg($sql,$logfile);
+   logMsg("ADD SITE OR STAFF USER: $sql",$logfile);
    unset($_SESSION['add_firstname']);
    unset($_SESSION['add_lastname']);
    unset($_SESSION['add_email']);
    unset($_SESSION['add_gmc_number']);
    unset($_SESSION['add_is_surgeon']);
    unset($_SESSION['add_is_admin']);
+header("Location: users.php");
+exit();
+
 }
 else if ($mode=="update")
 {
@@ -149,6 +160,7 @@ else if ($mode=="update")
    $is_surgeon = $_POST['is_surgeon'];
    $is_admin = $_POST['is_admin'];
    $gmc_number = $_POST['gmc_number'];
+
    // UPDATE User
    $sql = "UPDATE dir_user
            SET firstName=".escapeQuote($firstname).",
@@ -162,7 +174,7 @@ else if ($mode=="update")
                gmc_number='$gmc_number'
            WHERE id='$id'";
    dbi_query($sql);
-   logMsg($sql,$logfile);
+   logMsg("UPDATE SITE OR STAFF USER: $sql",$logfile);
    // UPDATE Surgeon
    if ($is_surgeon=="1")
    {
@@ -176,11 +188,11 @@ else if ($mode=="update")
                   modifiedByName = '$user_fullname'
               WHERE c_userId='$id'";
       dbi_query($sql);
-      logMsg($sql,$logfile);
+      logMsg("UPDATE SURGEON: $sql",$logfile);
    }
    // DETERMINE Group
    if ($is_admin=="1")
-         $group_str="admin";
+         $group_str="sitedivadmins";
    else
          $group_str="staff";
    // UPDATE Group
@@ -189,14 +201,15 @@ else if ($mode=="update")
                   username='$email'
               WHERE userId='$id'";
    dbi_query($sql);
-   logMsg($sql,$logfile);
+   logMsg("UPDATE SITE OR STAFF USER: $sql",$logfile);
+   
    // UPDATE Role
    $sql = "UPDATE dir_user_role
            SET roleId='ROLE_USER',
                username='$email'
            WHERE userId='$id'";
    dbi_query($sql);
-   logMsg($sql,$logfile);
+   logMsg("UPDATE SITE OR STAFF USER: $sql",$logfile);
 } 
 header("Location: users.php");
 exit();
