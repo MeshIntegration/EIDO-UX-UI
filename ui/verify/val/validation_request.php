@@ -14,10 +14,12 @@ $_SESSION['error_msg']="";
 // else
    // $preferred = "SMS text message";
 
-$ip_address = $_SERVER['REMOTE_ADDR'];
-$browser = $_SERVER['HTTP_USER_AGENT'];
-add_to_timeline($arr_pt_info['id'], "Request review", "Open", "Alert", 
-                $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
+//  doing this in validation_goto_request.php so it does not duplicate entry 
+//  if this page gets refreshed.
+//$ip_address = $_SERVER['REMOTE_ADDR'];
+//$browser = $_SERVER['HTTP_USER_AGENT'];
+//add_to_timeline($arr_pt_info['id'], "Request review", "Open", "Alert", 
+//         $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
 
 ?>
 <html class="no-js" lang="en" dir="ltr">

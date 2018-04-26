@@ -225,6 +225,9 @@ function clear_add_session()
    unset($_SESSION['add_bad_email_error']);
    unset($_SESSION['add_no_contact_error']);
    unset($_SESSION['proc_select_error']);
+   unset($_SESSION['proc_surgeon']);
+   unset($_SESSION['proc_gmcnumber']);
+   unset($_SESSION['workflow']);
 }
 
 // ********************************************************

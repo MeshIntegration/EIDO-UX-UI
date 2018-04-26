@@ -22,7 +22,6 @@ $password= $_POST['password'];
 $sql = "SELECT u.*, ug.*
         FROM dir_user u, dir_user_group ug
         WHERE u.username='$username'
-        AND active=1
         AND u.id=ug.userid";
 logMsg($sql,$logfile);
 
@@ -77,27 +76,45 @@ else
    //$GetQuery=dbi_query($sql);
    //$qryResult=$GetQuery->fetch_assoc();
 
-   if (strtolower($qryResult['groupid'])=="sitedivadmins")
-   {
+//   if (strtolower($qryResult['groupid'])=="sitedivadmins")
+//   {
       // determine what organisation they are with
       // and set a cookie for the ORG ID
-      $sql = "SELECT id 
-              FROM app_fd_ver_organizations 
-              WHERE c_email='$email'";
-      $GetQuery=dbi_query($sql);
-      $qryResult=$GetQuery->fetch_assoc();
-      $org_id = $qryResult['id'];
-      is_setcookie("org_id", $org_id, 0, "/", $cookie_domain); 
+
+/*      $sql = "SELECT id */
+/*              FROM app_fd_ver_organizations  */
+/*              WHERE c_email='$email'";  */
+/*      $GetQuery=dbi_query($sql);  */
+/*      $qryResult=$GetQuery->fetch_assoc();  */
+/*      $org_id = $qryResult['id'];   */
+/*      is_setcookie("org_id", $org_id, 0, "/", $cookie_domain);  */ 
+
+  else
+  {
       is_setcookie("user_role", "ADMIN", 0, "/", $cookie_domain); 
       header("Location: /ui/verify/admin/users.php");
       exit();
    }
-   else
-   {
-      is_setcookie("user_role", "USER", 0, "/", $cookie_domain); 
-      header("Location: /ui/verify/patient/patients.php");
-      exit();
-   }
+
+
+
+
+
+
+
+//   else
+//   {
+//      is_setcookie("user_role", "USER", 0, "/", $cookie_domain); 
+//      header("Location: /ui/verify/patient/patients.php");
+//      exit();
+//   }
+
+
+
    exit();
+
+
+
+
 }
 ?>

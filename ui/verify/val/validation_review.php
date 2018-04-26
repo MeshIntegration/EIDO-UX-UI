@@ -214,7 +214,7 @@ if ($_SESSION['dob_error'])
                 <div class="clear"></div>
 		<div class="small-12 cell">
                   <p>If you are 100% sure the data is correct, please click the button below for a review.</p>
-		  <a href="validation_request.php"><button type="button" name="" value="" class="button large float-right inactive">Request Review</button></a>
+		  <a href="validation_goto_request.php"><button type="button" name="" value="" class="button large float-right inactive">Request Review</button></a>
 		</div>
             <?php } ?>
 	  </form>

@@ -103,14 +103,23 @@ function add_to_timeline($patientEpisodeId, $name, $status, $type,
                                $browser, $ip_address, $subsystem, $session_number)
 {
    global $TBLTIMELINES;
-
+   if ($type=="CHANGELOG")
+   {
+      $createdBy=$_COOKIE['user_id'];
+      $createdByName=$_COOKIE['user_fullname'];
+   }
+   else
+   {
+      $createdBy = 'admin';
+      $createdByName='Admin Admin';
+   }
    $id=uniqid();
    $sql = "INSERT INTO $TBLTIMELINES
            SET id='$id',
                dateCreated = NOW(),
                dateModified = NOW(),
-               createdBy = 'admin',
-               CreatedByName='Admin Admin',
+               createdBy = '$createdBy',
+               createdByName='$createdByName',
                c_patientEpisodeId = '$patientEpisodeId',
                c_timelineEntryType='$type',
                c_timelineEntryDetail = '$name',

@@ -2,19 +2,20 @@
     <div class="dropdown-pane main_menu" 
      data-position="bottom" data-alignment="left" id="example-dropdown-bottom-left" 
      data-dropdown data-auto-focus="true">
-      <div class="grid">
-			<div class="small-12 text-center collapse">
-            <button class="button type" type="button">
-               <?php echo $user_initials; ?>
-            </button><?php echo $user_fullname; ?>
+      <div class="grid" style="padding-bottom: 0 !important;">
+	      <div class="small-12 text-center collapse" style="padding-bottom:15px;">
+            <button class="button type" type="button"><?php echo $user_initials; ?></button>
+				<strong style=""><?php echo $user_fullname; ?></strong>
         </div>
+	      <ul class="basic-list">
+		      <li>
+			      <a href="../change_password.php?rt=<?php echo $return_to; ?>"><i class="fi-widget"></i> Change Password</a>
+		      </li>
+		      <li>
+			      <a href="../logout.php"><i class="fi-power"></i> Logout</a>
+		      </li>
+	      </ul>
 
-		<div id="changepw" class="small-12"><a href="../change_password.php?rt=<?php echo $return_to; ?>">
-          <i class="fi-widget"></i>&nbsp;Change Password</a>
-        </div>
-        <div class="small-12 cell">
-          <a href="../logout.php"><i class="fi-power"></i>&nbsp;Logout</a>
-        </div>
       </div>
     </div>
     <!-- End includes admin_dropdown_pane.php -->

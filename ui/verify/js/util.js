@@ -22,7 +22,7 @@ function bulkaction(formName, actionRequested){
         {
         	// Get the user 'key'
             datacell = row.cells[1].firstChild.innerText.replace("\n",";");
-            userentry = datacell + ';true;
+            userentry = datacell + ';true;';
             updateusers.push(datacell);
         }
     }

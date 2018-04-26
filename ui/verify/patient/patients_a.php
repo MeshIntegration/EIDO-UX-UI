@@ -10,6 +10,8 @@ require_once '../utilities.php';
 require_once 'functions.php';
 $logfile = "patient.log";
 $debug=true;  // turn on for extra logging
+$ip_address = $_SERVER['REMOTE_ADDR'];
+$browser = $_SERVER['HTTP_USER_AGENT'];
 
 $mode = get_query_string('m');
 $id = get_query_string('id');
@@ -58,6 +60,8 @@ if ($mode=="edit")
            WHERE id='$id'";
    logMsg($sql,$logfile);
    dbi_query($sql);
+   add_to_timeline($id, "Edit Patient Details", "Closed", "CHANGELOG", 
+                          $browser, $ip_address, "Patient Dashboard");
    header("Location: patients.php?m=editconfirm&id=$id");
    exit();
 } 
@@ -157,7 +161,6 @@ else if ($mode=="addaddress")
    $_SESSION['add_city'] = $_POST['city'];
    $_SESSION['add_county'] = $_POST['county'];
    $_SESSION['add_postalcode'] = $_POST['postalcode'];
-logMsg("patients_a: addaddress: session-add_postalcode=".$_SESSION['add_postalcode'], $logfile);
 
    if ($_SESSION['add_address_error'])
    {
@@ -195,7 +198,6 @@ else if ($mode=="addconfirm")
            WHERE u.id='$user_id'
            AND e.userid='$user_id'
            AND d.id=e.departmentId";
-   logMsg("XXXXXX $sql",$logfile);
    $GetQuery = dbi_query($sql);
    $qryResult=$GetQuery->fetch_assoc();
    $username = $qryResult['firstName']." ".$qryResult['lastName'];
@@ -228,6 +230,7 @@ else if ($mode=="addconfirm")
                dateCreated=NOW()";
    dbi_query($sql);
    if ($debug) logMsg($sql,$logfile);
+   add_to_timeline($pe_id, "New Patient Added", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
    // go to the Procedure Proceed screen to ask what next 
    header("Location: patients.php?m=procproceed&id=$pe_id");
    exit();
@@ -302,8 +305,27 @@ logMsg("Update TL: $sql", $logfile);
    $ip_address = $_SERVER['REMOTE_ADDR'];
    $browser = $_SERVER['HTTP_USER_AGENT'];
    add_to_timeline($id, "Request for data review complete", "", "Event", $browser, $ip_address, "Validation");
+   add_to_timeline($id, "Review Patient Access", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
+
+   $arr_pt_info=get_pt_info($id);
+   // send mail to the patient 
+   $body_template = "<FIRSTNAME>,<br /><br />
+We have reviewed your information in our system and made the appropriate corrections. You will be receiving another email inviting you to log in and use the EIDO Verify system.<br /><br />";
+
+   $arr_email = array();
+   $arr_email['mail_to']=$arr_pt_info['c_email'];
+   $arr_email['mail_to_name']=$arr_pt_info['c_firstName']." ". $arr_pt_info['c_lastName'];
+   $arr_email['bcc']="wayne@mindstreams.com";
+   $arr_email['mail_from']=$verify_mail_from;
+   $arr_email['mail_from_name']=$verify_mail_from_name;
+   $arr_email['subject']="EIDO Verify Account Review";
+   $body_template = str_replace("<FIRSTNAME>", $arr_pt_info['c_firstName'], $body_template);
+   $arr_email['body']=$body_template;
+
+   send_email($arr_email);
   
-   header("Location: patients.php?m=reviewconfirm&id=$id");
+   header("Location: resend_invite.php?rtn=reviewconfirm&id=$id");
+   // header("Location: patients.php?m=reviewconfirm&id=$id");
    exit();
 }
 else if ($mode=="clearalert")
@@ -379,6 +401,8 @@ logMsg("patients_a: procselect: proc_id (from post[proc_id])= $proc_id",$logfile
             WHERE id='$id'";
    logMsg("Patients_a: ProcSelect: $sql2", $logfile);
    dbi_query($sql2);
+   add_to_timeline($id, "Add Procedure to Patient", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
+
    header("Location: patients.php?m=procdate&id=$id");
    exit();
 }
@@ -395,6 +419,8 @@ logMsg("patients_a: procdate: rtn=$rtn",$logfile);
            WHERE id='$id'";
    logMsg("Patients_a: ProcDate: $sql", $logfile);
    dbi_query($sql);
+   add_to_timeline($id, "Set Procedure Date", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
+
    if ($rtn=="pd")
       header("Location: patients.php?m=procdetail&id=$id");
    else
@@ -411,6 +437,8 @@ else if ($mode=="procsurgeon")
            WHERE id='$id'";
    logMsg("Patients_a: ProcSurgeon: $sql", $logfile);
    dbi_query($sql);
+   $_SESSION['proc_surgeon']=$proc_surgeon;
+   $_SESSION['proc_gmcnumber']=$proc_gmcnumber;
    header("Location: patients.php?m=procsummary&id=$id");
    exit();
 }
@@ -504,6 +532,8 @@ else if ($mode=="procconfirm")
 
    // unset SESSION variables 
    clear_add_session();
+   add_to_timeline($processId, "Start Patient Process", "Closed", "CHANGELOG",
+                          $browser, $ip_address, "Patient Dashboard");
 
    header("Location: patients.php?m=procconfirm");
    exit();
@@ -522,11 +552,13 @@ else if ($mode=="proccomplete" || $mode=="proccancel")
    {
       $c_procedureStatus = "POST";
       $value="Proceed";
+      add_to_timeline($id, "Mark Procedure Complete", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
    }
    else
    {
       $c_procedureStatus="CANCEL";
       $value="Cancel";
+      add_to_timeline($id, "Cancel Procedure", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
    }
 
    $sql = "UPDATE $TBLPTEPISODES

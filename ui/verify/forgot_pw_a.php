@@ -18,8 +18,8 @@ $pwkey = uniqid();
 save_user_pw_key($email, $pwkey);
 
 $subject = "EIDO Verify Password Reset";
-$mail_from = $proms_mail_from;
-$mail_from_name = $proms_mail_from_name;
+$mail_from = $verify_mail_from;
+$mail_from_name = $verify_mail_from_name;
 $mail_to = $email;
 $body = "Hello,<br /><br />A request was made to reset the password for EIDO Verify. If you did not make this request you may ignore this message. If you did request a reset, please click the link below and use that page to enter your new password.<br /><br /><a href='".$SITE_URL."pw_reset.php?k=$pwkey'>Click here to reset your password.</a><br /><br />Thank you<br /><br />EIDO Verify Patient Communications"; 
 

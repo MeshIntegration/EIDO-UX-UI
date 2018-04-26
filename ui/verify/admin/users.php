@@ -5,6 +5,7 @@
 // 2017 Copyright, Mesh Integration LLC
 // 12/19/17 - WEL
 // 03/14/18 - SD - add paggination value in to session
+// 4/26/18 - added bulk upload
 // ***************************************
 require_once '../utilities.php';
 require_once "../alert_intruders.php";
@@ -23,6 +24,7 @@ $add_hide = "hide";
 $update_hide = "hide";
 $reset_hide = "hide";
 $delete_hide = "hide";
+$bulk_hide = "hide";
 if ($mode == "" || $mode == "add") {
 	$add_hide = "";
 } else if ($mode == "update") {
@@ -34,6 +36,8 @@ if ($mode == "" || $mode == "add") {
 } else if ($mode == "delete") {
 	$delete_hide = "";
 	$user_id = $id;
+} else if ($mode == "bulk") {
+	$bulk_hide = "";
 }
 $script_name = substr ( strrchr ( $_SERVER ['PHP_SELF'], "/" ), 1 );
 if ((isset ( $_GET ['page'] ) && ! empty ( $_GET ['page'] ))) {
@@ -61,21 +65,22 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 ?>
 <html class="no-js" lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Add Verify User</title>
-<link rel="stylesheet" href="../css/foundation.css">
-<link rel="stylesheet" href="../css/dashboard_admin.css">
-<link rel="stylesheet" href="../css/eido.css"> <!-- was eido_admin.css -->
-<link rel="stylesheet" href="../css/app.css">
-<link
-	href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
-	rel="stylesheet">
-<link
-	href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css"
-	rel="stylesheet" type="text/css">
-<link rel="icon" type="image/png" href="../favicon.png">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Verify User</title>
+        <link rel="stylesheet" href="../css/foundation.css">
+        <link rel="stylesheet" href="../css/dashboard.css">
+        <link rel="stylesheet" href="../css/app.css">
+        <link rel="stylesheet" href="../css/foundation-datepicker.min.css">
+        <link rel="stylesheet" href="../css/timeline.css">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/ui/verify/css/icons/eido-icons.css" type="text/css" />
+        <link rel="icon" type="image/png" href="../favicon.png">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="../css/eido.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 	<div class="grid-container">
@@ -112,7 +117,9 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 								<td>Admin</td>
 								<td>Surgeon</td>
 								<td>&nbsp;</td>
+
 							</tr>
+					</table>
 		          <?php
 												
 					for($i = 0; $i < count ( $arr_users ); $i ++) {
@@ -137,30 +144,29 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 							$is_surgeon = true;
 					*/
 					?>
-<!--				<form method="POST" action="bulk_action.php" id="table">              -->
-				  <tr>
-						<td align="left" valign="center"><input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?></td>
-						<div id="container" class="clickable-row">
-							<td valign="center" align="right" class="clickable-row su_data"
-							data-href="users.php?m=update&id=<?php echo $uid; ?>"><p>
-								<span class="uc clickable-row" data-href="users.php?m=update&id=<?php echo $uid; ?>"><?php echo $full_name; ?></span><br /><span class="clickable-row su-data" data-href="users.php?m=update&id=<?php echo $uid; ?>"><?php echo $email; ?></span></p>
-							</td></div>
-						<div id="container" class="clickable-row">
-							<td class="clickable-row su_data"
-							data-href="users.php?m=update&id=<?php echo $uid; ?>"><input
-							type="checkbox" onclick="return false;" name="is_admin"
-							<?php if ($is_admin) echo "checked"; ?>>
-							</td></div>
-						<td class="clickable-row su_data"
-							data-href="users.php?m=update&id=<?php echo $uid; ?>"><input
-							type="checkbox" onclick="return false;" name="is_surgeon"
-							<?php if ($is_surgeon) echo "checked"; ?>></td>
-						<td><a href="users.php?m=update&id=<?php echo $uid; ?>"><img
-								src="../img/icons/greater.png" alt="greater than icon"
-								class="align-right" /></a></td>
-						</div>
-					</tr>
-<!--				</form>      -->
+                                                <li<?php echo $isSelected; ?>>
+                                                        <a href=users.php?m=update&id=<?php echo $uid; ?>">
+                                                                <span class="float-right right-arrow">
+                                                                <i class="eido-icon-chevron-right"></i>
+                                                                </span>
+								<div class="float-right" valign="center">
+                                                                <label class="eido-checkbox">
+                                                                        <input type="checkbox" name="is_admin"<?php if ($is_admin) echo "checked"; ?>>
+                                                                        <span class="checkmark"</span>
+                                                                </label>
+								</div>
+                                                                <div valign="center" class="float-left">
+								<label class="eido-checkbox">
+                                                                <input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
+                                                                <span class="checkmark"</span>
+								</label>
+								</div>
+                                                                <p>
+                                                                        <span><?php echo $pt_name; ?></span><br/>
+                                                                        <span><?php echo $username; ?></span>                                     
+                                                                </p>
+                                                        </a>
+                                                </li>
 		          <?php } ?>
 	               <?php
 						 $sql = "SELECT u.*, ug.groupId
@@ -241,26 +247,20 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		</form>
 		<div class="divide">
 			<div class="section-title">Bulk Edit</div>
-			<form>
 				<div class="grid-container">
 					<div class="grid-x">
 						<div class="small-12 cell field">
 							<div class="grid-x">
-								<div class="small-7 cell">
-									<label>CSV File <input type="text" placeholder="">
-									</label>
+								<div class="small-2 cell">&nbsp;</div>
+								<div class="small-8 cell text-center">
+                                                                   <p>Add or remove users from the system using a CSV file</p>
+                                                                    <a href="users.php?m=bulk" class="button large active expanded">Upload Users</a>
 								</div>
 								<div class="small-2 cell">&nbsp;</div>
-								<div class="small-3 cell">
-							<!--  <input type="button" name="" value="browse" class="a.button_users postfix expanded grey"></a> -->
-							<input type="button" name="" value="browse"
-										class="button_users_browse postfix expanded">
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</form>
 		</div>
 	</div>
 	<!-- UPDATE USER SECTION -->
@@ -363,44 +363,76 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<!-- End RESET PW SECTION -->
-				<!-- DELETE USER SECTION -->
-				<div
-					class="small-12 medium-6 large-6 cell content-right <?php echo $delete_hide; ?>">
-					<form name="deleteuserfrm">
-						<div class="grid-container">
-							<div class="grid-x grid-padding-x">
-								<div class="small-12 medium-12 large-12 cell text-center">
-									<h3>Are you sure you wish to delete this user?</h3>
-									<p>This will not affect any patient data, but the user will no
-										longer be able to access the system.</p>
-								</div>
-								<div class="small-12 medium-12 large-12 cell text-center">
-									<div class="grid-x">
-										<div class="small-3">&nbsp;</div>
-										<div class="small-6">
-											<br> <a href="users.php?m=main"><input type="button" name=""
-												value="No" class="button large expanded inactive" /></a> <a
-												href="users_a.php?m=delete&id=<?php echo $user_id; ?>"> <input
-												type="button" name="" value="Confirm Delete"
-												class="button large red expanded" /></a>
-										</div>
-										<div class="small-3">&nbsp;</div>
-									</div>
-									<p>&nbsp;</p>
-								</div>
-							</div>
-						</div>
-					</form>
+                            </div>
+		<!-- End RESET PW SECTION -->
+<!-- DELETE USER SECTION -->
+<div class="small-12 medium-6 large-6 cell content-right <?php echo $delete_hide; ?>">
+	<form name="deleteuserfrm">
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="small-12 medium-12 large-12 cell text-center">
+		                        <h3>Are you sure you wish to delete this user?</h3>
+					<p>This will not affect any patient data, but the user will no
+						longer be able to access the system.</p>
 				</div>
-				<!-- End DELETE USER SECTION -->
-				<!-- End Content-Right -->
+				<div class="small-12 medium-12 large-12 cell text-center">
+					<div class="grid-x">
+						<div class="small-3">&nbsp;</div>
+						<div class="small-6">
+							<br> <a href="users.php?m=main"><input type="button" name=""
+								value="No" class="button large expanded inactive" /></a> 
+                                                              <a href="users_a.php?m=delete&id=<?php echo $user_id; ?>"> <input type="button" name="" value="Confirm Delete" class="button large red expanded" /></a>
+						</div>
+						<div class="small-3">&nbsp;</div>
+					</div>
+					<p>&nbsp;</p>
+				</div>
 			</div>
 		</div>
-		<!-- End Content -->
-		<!-- Start Footer -->
-      	<?php include "../includes/footer.php"; ?>
-  		<!-- End Footer -->
+	</form>
+</div>
+<!-- End DELETE USER SECTION -->
+<!-- BULK ADD/DELETE USER SECTION -->
+<div class="small-12 medium-6 large-6 cell content-right <?php echo $bulk_hide; ?>">
+      <div class="section-title">Bulk Edit Users</div>
+               <form id="bulk_upload" name="bulk_upload" action="bulk_upload.php" method="post" enctype="multipart/form-data">
+                <div class="grid-container">
+                        <div class="grid-x grid-padding-x">
+                                <div class="small-12 medium-12 large-12 cell text-center">
+                                        <p>To add or remove users from the system in bulk, you may use a CSV from your admin system</p>
+                                </div>
+                                <div class="small-12 medium-12 large-12 cell text-center">
+                                        <div class="grid-x">
+                                                <div class="small-3">&nbsp;</div>
+                                                <div class="small-6 text-center">
+                                                    <label>CSV File
+                                                    <input type="file" name="bulk_file" placeholder="">
+                                                    </label>
+                                                </div>
+                                                <div class="small-3">&nbsp;</div>
+                                        </div>
+                                        <p><button type="submit" class="button active large expanded">Upload</button></p>
+                                </div>
+                                <div class="small-12 medium-12 large-12 cell text-center">
+                                     <p>Instructions:<br />
+                                        Add/Update is one operation. Remove is another operation</p>
+                                     <p>Create a CSV of all the users you would like to add.<br />
+                                        Upload it in the field above.<br />
+                                        Follow the instructions.</p>
+                                     <p><a href="" target="_blank">Download a sample CSV file here</a></p>
+                                </div>
+                        </div>
+                </div>
+        </form>
+</div>
+<!-- End BULK ADD/DELETE USER SECTION -->
+	<!-- End Content-Right -->
+			</div>
+		</div>
+	<!-- End Content -->
+	<!-- Start Footer -->
+          	<?php include "../includes/footer.php"; ?>
+  	<!-- End Footer -->
 	</div>
 	<script src="../js/vendor/jquery.js"></script>
 	<script src="../js/vendor/what-input.js"></script>
@@ -409,14 +441,14 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 	<script src="../js/util.js"></script>
 	<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
-	<script>
-      $( function() {
-      $( "#sortable" ).sortable({
-        placeholder: "ui-state-highlight"
-      });
-      $( "#sortable" ).disableSelection();
-      } );
-    </script>
+<!--	<script>-->
+<!--      $( function() {-->
+<!--      $( "#sortable" ).sortable({-->
+<!--        placeholder: "ui-state-highlight"-->
+<!--      });-->
+<!--      $( "#sortable" ).disableSelection();-->
+<!--      } );-->
+<!--    </script>-->
 	<script>
         jQuery(document).ready(function() {
           $(".clickable-row").click(function() {

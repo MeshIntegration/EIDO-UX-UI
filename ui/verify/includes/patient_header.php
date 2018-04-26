@@ -21,20 +21,20 @@
     	  <!--  <div class="grid" style="padding-top: 15px;"> -->
       	  
 	   <div id="addpt" class="row links">
-              <a href="/ui/verify/patient/patients.php?m=add">
-              <img src="/ui/verify/img/icons/circle_round_icons/64x64.png" alt="Add Patient" class="add_icon"/>Add Patient</a>
+              <a href="/ui/verify/patient/patients_a.php?m=gotoaddpt" style="">
+	              <i class="eido-icon-plus"></i> Add Patient</a>
            </div>
       
 
 <!-- ONLY SHOW IF USER IS SITE ADMIN  -->
 
-       <?php if ($user_role=="ADMIN") { ?>
+       <?php if ($user_role=="ADMIN"): ?>
       	  <div class="row links">
             <a href="/ui/verify/admin/users.php">
-            <img src="/ui/verify/img/icons/chevron_circle_right_solid_500.png"
-             alt="User Administration" class="add_icon"/>User Administration</a>
-   	  </div>
-       <?php } ?>
+	            <i class="eido-icon-plus"></i> User Administration
+            </a>
+   	    </div>
+       <?php endif; ?>
 </div>
 
   <div class="medium-4 large-4 cell"><a href="patients.php?m=main"><img src="/ui/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a></div>

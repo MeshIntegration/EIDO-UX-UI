@@ -9,6 +9,7 @@ session_start();
 require_once '../utilities.php';
 $logfile = "patient.log";
 $id=get_query_string('id');
+$rtn=get_query_string('rtn');
 $arr_pt_info=get_pt_info($id);
 
 $webhook = "https://apiant.eidoverify.com/webhook/ef45684f98284e528cd34b66af315c7f-f6556bcc0b4548a782112abd4cd58ca0";
@@ -46,7 +47,10 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                                                                                                                      
 $result = curl_exec($ch);
 
-header ("Location: patients.php?main");
+if (isset($rtn))
+   header ("Location: patients.php?m=$rtn");
+else
+   header ("Location: patients.php?m=main");
 exit();
 ?>
 

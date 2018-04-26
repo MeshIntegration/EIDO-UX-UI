@@ -285,5 +285,11 @@ function save_password($user_id, $password)
           WHERE id='$user_id'";
    dbi_query($sql);
 }
+// ***************************************************
+function random_password( $length = 8 ) {
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&?";
+    $password = substr( str_shuffle( $chars ), 0, $length );
+    return $password;
+}
 // EOF
 ?>
