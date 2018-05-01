@@ -102,7 +102,7 @@ function save_entered_pt_info($id, $surname, $postalcode, $dob, $nhsnumber)
 function add_to_timeline($patientEpisodeId, $name, $status, $type, 
                                $browser, $ip_address, $subsystem, $session_number)
 {
-   global $TBLTIMELINES;
+   global $TBLTIMELINES, $TBLPTEPISODES;
    if ($type=="CHANGELOG")
    {
       $createdBy=$_COOKIE['user_id'];
@@ -129,9 +129,16 @@ function add_to_timeline($patientEpisodeId, $name, $status, $type,
                c_ipAddress = '$ip_address',
                c_system = 'Verify',
                c_subsystem='$subsystem'";
-//echo $sql;
-//exit();
    dbi_query($sql);
+
+   // update c_hasAlert flag in pt episodes
+   if ($type=="Alert") {
+      $sql = "UPDATE $TBLPTEPISODES
+              SET c_hasAlert='Y',
+                  dateModified=NOW()
+              WHERE id='$patientEpisodeId'";
+      dbi_query($sql);
+   }
 }
 
 // ***************************************

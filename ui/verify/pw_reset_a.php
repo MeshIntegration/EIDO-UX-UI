@@ -6,7 +6,6 @@
 // **************************************
 
 include "./utilities.php";
-include "./lib/validation.php";
 session_start();
 $logfile = "wel.log";
 
@@ -19,8 +18,14 @@ if ($pwkey=="")
    exit();
 }
 $password = trim($_POST['password']);
+$hash = password_hash($password, PASSWORD_BCRYPT);
+if (!password_verify($password, $hash)) {
+   /* Invalid hash generation*/
+   header("Location:".$_SERVER['HTTP_REFERER']);
+   exit;
+}
 
-save_user_pw_reset($pwkey, $password);
+save_user_pw_reset($pwkey, $hash);
 
 $_SESSION['error_msg'] = "Your password has been reset.<br /><br /><a href='login.php'>Click here</a> to login to the EIDO Verify system.";
 

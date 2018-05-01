@@ -60,7 +60,9 @@ if ($mode=="edit")
            WHERE id='$id'";
    logMsg($sql,$logfile);
    dbi_query($sql);
-   add_to_timeline($id, "Edit Patient Details", "Closed", "CHANGELOG", 
+   $fname = $_POST['fname'];
+   $lname = $_POST['lname'];
+   add_to_timeline($id, "Edit Patient Details ($fname $lname)", "Closed", "CHANGELOG", 
                           $browser, $ip_address, "Patient Dashboard");
    header("Location: patients.php?m=editconfirm&id=$id");
    exit();
@@ -204,8 +206,14 @@ else if ($mode=="addconfirm")
    $hospitalname = $qryResult['name'];
    // INSERT
    $pe_id = uniqid();
-   // store with no spaces
+   // store postalcode with no spaces
    $add_postalcode=strtoupper(str_replace(" ", "", $_SESSION['add_postalcode']));
+   // default to EMAIL unless email is blank, then default to MOBILE
+   // validation won't let it thru without one having a value
+   if ($_SESSION['add_email']=="")
+      $preferred="MOBILE";
+   else
+      $preferred="EMAIL";
    $sql = "INSERT INTO $TBLPTEPISODES
            SET id='".$pe_id."',
                c_userId='$user_id',
@@ -223,14 +231,17 @@ else if ($mode=="addconfirm")
                c_address=".escapeQuote($_SESSION['add_address']).",
                c_city=".escapeQuote($_SESSION['add_city']).",
                c_county=".escapeQuote($_SESSION['add_county']).",
-               c_preferredContactMethod='EMAIL',
+               c_preferredContactMethod='$preferred',
                c_status='PENDING',
                c_acceptedTC='NO',
                dateModified=NOW(),
                dateCreated=NOW()";
    dbi_query($sql);
    if ($debug) logMsg($sql,$logfile);
-   add_to_timeline($pe_id, "New Patient Added", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
+   $fname=$_SESSION['fname'];
+   $lname=$_SESSION['lname'];
+   add_to_timeline($pe_id, "New Patient Added ($fname $lname)", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
+   add_to_timeline($pe_id, "New Patient Added", "Open", "Event", $browser, $ip_address, "Patient Dashboard");
    // go to the Procedure Proceed screen to ask what next 
    header("Location: patients.php?m=procproceed&id=$pe_id");
    exit();
@@ -240,6 +251,13 @@ else if ($mode=="gotoaddpt")
    clear_add_session();
    $_SESSION['workflow']="ADD";
    header("Location: patients.php?m=add");
+   exit();
+}
+else if ($mode=="gotoprocdate")
+{
+   clear_add_session();
+   $_SESSION['workflow']="PROCDATE";
+   header("Location: patients.php?m=procdate&id=$id");
    exit();
 }
 else if ($mode=="tl_view_all")
@@ -296,11 +314,18 @@ else if ($mode=="review")
    dbi_query($sql);
 
    // set the review request to closed
+   // we were using the timeline id to just do the one
+   // but do all of them in case there are multiples for this patient 
    $sql="UPDATE $TBLTIMELINES
          SET c_timelineAlertStatus='Closed'
-         WHERE id='$timeline_id'";
+         WHERE c_patientEpisodeId='$id'
+           AND c_timelineEntryType='Alert'
+           AND c_timelineEntryDetail='Request review'";
 logMsg("Update TL: $sql", $logfile);
    dbi_query($sql);
+
+   // update c_hasAlert in pt episodes
+   update_alert_status($id);
 
    $ip_address = $_SERVER['REMOTE_ADDR'];
    $browser = $_SERVER['HTTP_USER_AGENT'];
@@ -337,6 +362,9 @@ else if ($mode=="clearalert")
          WHERE id='$timeline_id'";
 //logMsg("Update TL: $sql", $logfile);
    dbi_query($sql);
+
+   // update c_hasAlert
+   update_alert_status($id);
    
    header("Location: patients.php?m=detail&id=$id");
    exit();
@@ -409,11 +437,25 @@ logMsg("patients_a: procselect: proc_id (from post[proc_id])= $proc_id",$logfile
 else if ($mode=="procdate")
 {
    $rtn=get_query_string('rtn'); // see where to return to
-logMsg("patients_a: procdate: rtn=$rtn",$logfile);
+   if ($rtn=="") $rtn=$_POST['rtn'];
+   logMsg("patients_a: procdate: rtn=$rtn",$logfile);
+
    //$date = new DateTime($_POST['proc_date']);
    $proc_date = $_POST['proc_date']; //  $date->format('d/m/Y');
-   $_SESSION['proc_date_entered']=$proc_date;
+   // check they did not enter a date in the past
+   list($d, $m, $y)=explode("/",$proc_date);
+   $pdate="$y-$m-$d";
+   $pdate=strtotime($pdate);
+   $today=strtotime("today");
+   if ($pdate<$today) {
+      $_SESSION['proc_date_error']=true;
+      header("Location: patients.php?m=procdate&id=$id");
+      exit();
+   }
+   else
+      $_SESSION['proc_date_error']=false;
 
+   $_SESSION['proc_date_entered']=$proc_date;
    $sql = "UPDATE $TBLPTEPISODES
            SET c_plannedProcedureDate='$proc_date' 
            WHERE id='$id'";
@@ -424,7 +466,7 @@ logMsg("patients_a: procdate: rtn=$rtn",$logfile);
    if ($rtn=="pd")
       header("Location: patients.php?m=procdetail&id=$id");
    else
-      header("Location: patients.php?m=procsurgeon&id=$id");
+      header("Location: patients.php?m=procsurgeon&id=$id&rtn=%rtn");
    exit();
 }
 else if ($mode=="procsurgeon")

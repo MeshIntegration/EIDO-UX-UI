@@ -1446,7 +1446,7 @@ a.off_status.selected {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-top: 12px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -1465,14 +1465,14 @@ a.off_status.selected {
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 5px;
+  left: -10px;
   height: 25px;
   width: 25px;
   background-color: #F7F5F5;
   border:1px solid #979797;
   margin:0;
-  padding:0;
+  padding:13px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -1505,3 +1505,4 @@ a.off_status.selected {
   background:#38AF62;
   
 }
+

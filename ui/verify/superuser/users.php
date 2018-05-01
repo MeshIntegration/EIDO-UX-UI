@@ -20,7 +20,26 @@ $logfile = "superuser.log";
 
 $mode = get_query_string('m');
 $id = get_query_string('id');
-
+// turn everything off
+$add_hide = "hide";
+$update_hide = "hide";
+$reset_hide = "hide";
+$delete_hide = "hide";
+$bulk_hide = "hide";
+if ($mode == "" || $mode == "add") {
+    $add_hide = "";
+} else if ($mode == "update") {
+    $update_hide = "";
+    $user_id = $id;
+} else if ($mode == "reset") {
+    $reset_hide = "";
+    $user_id = $id;
+} else if ($mode == "delete") {
+    $delete_hide = "";
+    $user_id = $id;
+} else if ($mode == "bulk") {
+    $bulk_hide = "";
+}
 // need to change according to session
 $script_name = substr(strrchr($_SERVER['PHP_SELF'],"/"),1);
 
@@ -89,52 +108,72 @@ $GetQuery = dbi_query($sql);
   <!-- Start Content -->
   <div class="grid-x grid-margin-x su">
     <!-- Start Content-Left -->
-    <div class="small-12 medium-6 large-6 cell content-left">
-      <table width="90%" border="0"  class="hoverTable su-table stack">
-  	    <tbody>
-		  <tr>  
-		    <td colspan="3">
-			  <a class="button fc">Bulk Actions<img src="../img/icons/add_light.png" alt="add icon" class="fc_add"/></a>&nbsp;&nbsp;
-			  <a class="button fc">Sort By<img src="../img/icons/add_white.png" alt="add icon" class="fc_add"/></a>
-			</td>
-          </tr>
-          <tr>
-            <td class="clickable-row"><input type="checkbox"></td>
-            <td class="clickable-row" colspan="2"></td>
-          </tr>
-          <?php
-            while ($qryResult=$GetQuery->fetch_assoc()) {
-               $list_id = $qryResult['id'];
-               $firstName = $qryResult['firstName'];
-               $lastName = $qryResult['lastName'];
-               $email = $qryResult['email'];
-			   
-			   $isSelected = '';
-			   if ($list_id == $id) {
-				   $isSelected = ' class="selected"';
-			   }
-          ?>
-	  <tr<?php echo $isSelected; ?>>
-        <td class="clickable-row"><input type="checkbox"></td>
-	    <td class='clickable-row su_data' data-href='users.php?m=update&id=<?php echo $list_id; ?>'><p><span class="uc"><?php echo $lastName; ?>, <?php echo $firstName; ?></span><br /><?php echo $email; ?></p></td>
-	    <td class="clickable-row"><a href="users.php?m=update&id=<?php echo $list_id; ?>"><img src="../img/icons/greater.png" alt="icon" class="align-right" /></a></td>
-	  </tr>
-         
-         <?php 
-            $sql = "SELECT u.*
-                    FROM ".DB_PREFIX."user u, ".DB_PREFIX."user_role ur
-                    WHERE u.id=ur.userId
-                    AND ur.roleId='ROLE_ADMIN'";
-            $GetQuery = dbi_query($sql);
-            $totalRecord = $GetQuery->num_rows;
-            $pagination = get_pagination($page, $totalRecord);
-         ?>
-	    </tbody>
-      </table>
-	  <div class="grid grid-x text-center">
-	    <div class="small-12 pagination-btm"><?php echo $pagination; ?></div>
-	  </div>
-    </div>
+      <div class="small-12 medium-6 large-6 cell content-left">
+          <div class="su-table stack large-12">
+              <?php include "../includes/admin_bulkActions.php"; ?>
+              <div class="row small-12 grid-padding-x" style="margin-bottom:25px;">
+                  <div class="float-left">
+                      <label class="eido-checkbox">
+                          <input class="eido-checkbox" style="margin-left:25px;" type="checkbox" name="actOnAll" id="actOnAll">
+                          <span class="checkmark" style="left:0px;"></span>
+                      </label>
+                  </div>
+                  <div class="small-offset-2">
+                      <p>User&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSurgeon&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAdmin</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <ul class="patient-list">
+                      <?php
+                      for($i = 0; $i < count ( $arr_users ); $i ++) {
+                          $uid = $arr_users [$i] ['id'];
+                          $firstName = ucfirst ( strtolower ( $arr_users [$i] ['firstName'] ) );
+                          $lastName = strtoupper ( $arr_users [$i] ['lastName'] );
+                          $full_name = $lastName . ", " . $firstName;
+                          $email = $arr_users [$i] ['email'];
+
+                          if($uid == $user_id) {
+                              $isSelected = ' class="selected"';
+                          }
+                          ?>
+                          <li<?php echo $isSelected; ?>>
+                              <a href=users.php?m=update&id=<?php echo $uid; ?>>
+                                  <div>
+                                      <label class="eido-checkbox">
+                                          <input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
+                                          <span class="checkmark"></span>
+                                      </label>
+                                  </div>
+                                  <div id="container" class="clickable-row">
+								        <span class="float-right right-arrow">
+                                            <i class="eido-icon-chevron-right"></i>
+                                        </span>
+                                      <div class="medium-offset-1">
+                                          <p>
+                                              <span><?php echo $full_name; ?></span><br/>
+                                              <?php echo $email; ?>
+                                          </p>
+                                      </div>
+                                  </div>
+                              </a>
+                          </li>
+                      <?php } ?>
+                  </ul>
+              </div>
+              <?php
+              $sql = "SELECT u.*
+	                    FROM dir_user u, dir_user_role ur
+	                    WHERE u.id = ur.userId
+	                    AND ur.roleId='ROLE_ADMIN'";
+              $GetQuery = dbi_query ( $sql );
+              $totalRecord = $GetQuery->num_rows;
+              $pagination = get_pagination ( $page, $totalRecord );
+              ?>
+              <div class="grid grid-x text-center">
+                  <div class="small-12 pagination-btm-users"><?php echo $pagination; ?></div>
+              </div>
+          </div>
+      </div>
 	<!-- End Content-Left -->  
  	<!-- Start Content-Right -->  
  	<!-- ADD USER SECTION -->  
@@ -143,12 +182,13 @@ $GetQuery = dbi_query($sql);
 	  <form id="add_form"  action="users_a.php?m=add" method="post">
   		<div class="grid-container">
     	  <div class="grid-x">
-		<div class="small-12 cell field">
+		    <div class="small-12 cell field">
 	                <?php if ($_SESSION['add_firstname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
                         else if ($_SESSION['add_firstname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>	
 			<label class="weight-normal">First Name <input type="text"
 	 			value="<?php echo $_SESSION['add_firstname']; ?>" name="firstname">
-			</label></div>
+			</label>
+            </div>
 	      	<div class="small-12 cell field">
  	               <?php if ($_SESSION['add_lastname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the last name</strong> - this is required</div>";
                        else if ($_SESSION['add_lastname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct the last name</strong> - no special characters are allowed</div>"; ?>
@@ -175,9 +215,9 @@ $GetQuery = dbi_query($sql);
         	  <br /><input type="submit" id="add" class="button large" value="Add User">
             </div>
     	  </div>
-  		</div>
+
 	  </form>
-	</div>  
+
  	<!-- UPDATE USER SECTION -->  
         <?php
            if ($mode=="update")
@@ -285,9 +325,11 @@ $GetQuery = dbi_query($sql);
           <div class="grid-x text-center">
           </div>
         </div>
+    </div>
+  </div>
 <!-- End SINGLE PW USERRESET SECTION -->
 <!-- End Content-Right -->
-  </div>
+
   <!-- End Content --> 
   <!-- Start Footer -->
      <?php include "../includes/footer.php"; ?>

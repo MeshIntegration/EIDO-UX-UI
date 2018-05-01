@@ -57,8 +57,10 @@ function get_pt_status($id)
    if (strtoupper($qryResult['c_status'])=="EPISODE COMPLETE" || 
                   strtoupper($qryResult['c_procedureStatus'])=="CANCEL")
       $status = "Inactive";
-   else if ($qryResult['c_procedureId']=="")
+   else if ($qryResult['c_procedureId']=="" || $qryResult['c_status']=="PENDING")
       $status = "Pending";
+   else if ($qryResult['c_hasAlert']=="Y")
+      $status = "Alert";
    else // not inactive so must be Active
       $status = "Active";
 //logMsg("GET PT STATUS>>> $sql",$logfile);
@@ -66,19 +68,20 @@ function get_pt_status($id)
 
    // but check to see if they have any open Alerts
    // get the most recent timeline entry
-   $sql = "SELECT * from $TBLTIMELINES 
-           WHERE c_patientEpisodeId = '$id'
-           AND c_timelineAlertStatus='Open'
-           ORDER BY dateCreated DESC
-           LIMIT 1";
+   //$sql = "SELECT * from $TBLTIMELINES 
+   //      WHERE c_patientEpisodeId = '$id'
+   //      AND c_timelineEntryType='Alert'
+   //      AND c_timelineAlertStatus='Open'
+   //      ORDER BY dateCreated DESC
+   //      LIMIT 1";
 
-   $GetQuery=dbi_query($sql);
-   if ($GetQuery->num_rows>0)
-   {
-      $qryResult = $GetQuery->fetch_assoc();
-      if ($qryResult['c_timelineEntryType']=="Alert")
-         $status = "Alert";
-   } 
+   // $GetQuery=dbi_query($sql);
+   // if ($GetQuery->num_rows>0)
+   // {
+   //    $qryResult = $GetQuery->fetch_assoc();
+   //    if ($qryResult['c_timelineEntryType']=="Alert")
+   //       $status = "Alert";
+   // } 
 //logMsg($sql,$logfile);
 //logMsg(">>> Status: $status",$logfile);
    return $status;
@@ -112,7 +115,7 @@ function date_cleanup($dt)
    if ($arr_date_cleanup['date_valid'])
    { 
       if (strlen($d)==1) $d="0".$d;
-      if (strlen($m)==1) $d="0".$m;
+      if (strlen($m)==1) $m="0".$m;
       $arr_date_cleanup['date_formatted']="$d/$m/$y";
    }
    return $arr_date_cleanup;
@@ -238,8 +241,9 @@ function save_user_pw_key($email, $pwkey)
 function  save_user_pw_reset($pwkey, $password)
 {
    $sql = "UPDATE dir_user
-           SET uipassword = '$password'
-           WHERE passwordResetKey = '".$pwkey."'";
+           SET uipassword = '$password',
+               c_passwordResetKey='****',
+           WHERE c_passwordResetKey = '".$pwkey."'";
    logMsg("save_user_pw_reset: $sql", "wel.log");
    dbi_query($sql);
 }
@@ -249,7 +253,7 @@ function get_user_info_by_pwkey($pwkey)
 {
    $arr_user_info = array();
    $sql = "SELECT * FROM dir_user
-           WHERE passwordResetKey='$pwkey'";
+           WHERE c_passwordResetKey='$pwkey'";
    logMsg("get_user_info_by_pwkey: $sql", "wel.log");
    $GetQuery = dbi_query($sql);
    if ($GetQuery->num_rows==0)
@@ -271,6 +275,7 @@ function get_user_info($user_id)
           WHERE id='$user_id'";
    $GetQuery = dbi_query($sql);
    $qryResult = $GetQuery->fetch_assoc();
+   $arr_user_info=$qryResult;
    $arr_user_info['password']=$qryResult['uipassword'];
    return $arr_user_info;
 }

@@ -13,7 +13,7 @@ $logfile = "admin.log";
 
 $email = trim($_POST['email']);
 
-$pwkey = uniqid();
+$pwkey = uniqid("FP");
 
 save_user_pw_key($email, $pwkey);
 

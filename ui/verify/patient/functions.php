@@ -40,36 +40,63 @@ function format_tl_date($tl_datetime)
 // ********************************************************
 function get_stat_counts($type)
 {
-   global $TBLTIMELINES;
+   global $TBLTIMELINES, $TBLPTEPISODES;
 
-   if ($type=='active')
-   {
+   if ($type=='active') {
       $sql = "SELECT COUNT(*) AS ct 
-              FROM app_fd_ver_patientEpisodes
+              FROM $TBLPTEPISODES
               WHERE c_status<>'Episode Complete'
+                AND c_status<>'PENDING'
               AND c_procedureStatus<>'Cancel'";
       $GetQuery = dbi_query($sql);
       $qryResult=$GetQuery->fetch_assoc();
       $ct = $qryResult['ct'];
       return $ct; 
    }
-   else if ($type=='inactive')
-   {
+   else if ($type=='inactive') {
       $sql = "SELECT COUNT(*) AS ct 
-              FROM app_fd_ver_patientEpisodes
+              FROM $TBLPTEPISODES
               WHERE c_status='Episode Complete'
-              OR c_procedureStatus='Cancel'";
+              OR c_procedureStatus='Cancel'
+              OR c_status='PENDING'";
       $GetQuery = dbi_query($sql);
       $qryResult=$GetQuery->fetch_assoc();
       $ct = $qryResult['ct'];
       return $ct; 
    }
-   else if ($type=='alert')
-   {
+   else if ($type=='total') {
+      $sql = "SELECT COUNT(*) AS ct 
+              FROM $TBLPTEPISODES";
+      $GetQuery = dbi_query($sql);
+      $qryResult=$GetQuery->fetch_assoc();
+      $ct = $qryResult['ct'];
+      return $ct; 
+   }
+   else if ($type=='alert') {
       $sql = "SELECT COUNT(*) AS ct
               FROM $TBLTIMELINES
               WHERE c_timelineAlertStatus='Open'
               AND c_timelineEntryType='Alert'";
+      $GetQuery = dbi_query($sql);
+      $qryResult=$GetQuery->fetch_assoc();
+      $ct = $qryResult['ct'];
+      return $ct;
+   }
+   else if ($type=='surveycomplete') {
+      $today=date("Y-m-d");
+      $sql = "SELECT COUNT(*) AS ct
+              FROM $TBLPTEPISODES
+              WHERE c_status='Session Complete'
+              AND DATE(dateModified)='$today'";
+      $GetQuery = dbi_query($sql);
+      $qryResult=$GetQuery->fetch_assoc();
+      $ct = $qryResult['ct'];
+      return $ct;
+   }
+   else if ($type=='surveyincomplete') {
+      $sql = "SELECT COUNT(*) AS ct
+              FROM $TBLPTEPISODES
+              WHERE c_status LIKE 'Invited to Session%'";
       $GetQuery = dbi_query($sql);
       $qryResult=$GetQuery->fetch_assoc();
       $ct = $qryResult['ct'];
@@ -402,5 +429,27 @@ logMsg("$i: Upcoming Survey".$arr_proc_info[$i][$varname], $logfile);
    }
 logMsg("AFTER: Items in TL array: ".count($arr_tl), $logfile);
    return $arr_tl;
+}
+
+// ***************************************************
+function update_alert_status($id)
+{
+   global $TBLTIMELINES, $TBLPTEPISODES;
+
+   $sql = "SELECT * 
+           FROM $TBLTIMELINES 
+           WHERE c_patientEpisodeId='$id'
+             AND c_timelineEntryType='Alert'
+             AND c_timelineAlertStatus='Open'";
+   $GetQuery=dbi_query($sql);
+   if ($GetQuery->num_rows==0) 
+      $c_hasAlert_str="";
+   else
+      $c_hasAlert_str="Y";
+   $sql = "UPDATE $TBLPTEPISODES
+           SET c_hasAlert='$c_hasAlert_str',
+               dateModified=NOW()
+           WHERE id='$id'";
+   dbi_query($sql);
 }
 ?>

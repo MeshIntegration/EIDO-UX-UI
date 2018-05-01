@@ -26,8 +26,13 @@ if ($mode=="delete")
    dbi_query($sql);
  */
 }
-else if ($mode=="add")
-{
+if ($mode=="reset") {
+   $sql = "UPDATE dir_user
+           SET c_pw_reset=1,
+           c_dateModified=NOW()
+           WHERE id='$id'";
+   dbi_query($sql);
+} else if ($mode=="add") {
    $firstname = $_POST['firstname'];
    $lastname = $_POST['lastname'];
    $email = $_POST['email'];
@@ -59,9 +64,7 @@ else if ($mode=="add")
          $_SESSION['add_gmc_number_length_error']=true; else $_SESSION['add_gmc_number_length_error']=false;
       if (!is_gmc_number_unique($gmc_number))
          $_SESSION['add_gmc_number_duplicate_error']=true; else $_SESSION['add_gmc_number_duplicate_error']=false;
-   }
-   else
-   {
+   } else {
       $_SESSION['add_gmc_number_error']=false;
       $_SESSION['add_gmc_number_format_error']=false;
       $_SESSION['add_gmc_number_length_error']=false;
@@ -104,7 +107,8 @@ else if ($mode=="add")
                username='$email',
                gmc_number='$gmc_number',
                isSurgeon='$is_surgeon',
-               password='".$hash."'";
+               password='".$hash."',
+               uipassword='".$hash."'";
    logMsg("ADD: $sql",$logfile);
    dbi_query($sql);
       if ($is_surgeon=="1")

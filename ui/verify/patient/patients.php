@@ -78,6 +78,10 @@ if(isset($_GET['filter']) && $_GET['filter'] == 1) {
 		$_SESSION['filter']['status'] = 3;
 	} else if(isset($_GET['status']) && $_GET['status'] == 4) {
 		$_SESSION['filter']['status'] = 4;
+	} else if(isset($_GET['status']) && $_GET['status'] == 5) {
+		$_SESSION['filter']['status'] = 5;
+	} else if(isset($_GET['status']) && $_GET['status'] == 6) {
+		$_SESSION['filter']['status'] = 6;
 	}
 	logMsg(">>> Filter-Status = " . $_SESSION['filter']['status'], $logfile);
 
@@ -311,11 +315,11 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter']) > 0) {
 		}
 	}
 
-	logMsg(">>>Mode: $mode -  Filrer-Status = " . $_SESSION['filter']['status'], $logfile);
+	logMsg(">>>Mode: $mode -  Filter-Status = " . $_SESSION['filter']['status'], $logfile);
 	if(isset($_SESSION['filter']['status'])) {
 		if($_SESSION['filter']['status'] == 1) {
 			// need to get status filter - red ALERTS
-			$where[] = "c_status <> 'PENDING' AND c_procedureStatus<>'CANCEL' && c_status<>'Episode Complete'";
+			$where[] = "c_hasAlert='Y'";
 			$order[] = "c_surname ASC";
 		} else if($_SESSION['filter']['status'] == 2) {
 			// need to get status filter - green ACTIVE
@@ -328,6 +332,15 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter']) > 0) {
 		} else if($_SESSION['filter']['status'] == 4) {
 			// need to get status filter - ALL/TOTAL
 			//$where[] = "" ;
+			$order[] = "c_surname ASC";
+		} else if($_SESSION['filter']['status'] == 5) {
+			// need to get status filter - COMPLETED SURVEYS/TODAY 
+                        $today=date("Y-m-d");
+			$where[] = "c_status='Session Complete' AND DATE(dateModified)='$today'" ;
+			$order[] = "c_surname ASC";
+		} else if($_SESSION['filter']['status'] == 6) {
+			// need to get status filter - INCOMPLETE SURVEYS/TOTAL 
+			$where[] = "c_status LIKE 'Invited to Session%'" ;
 			$order[] = "c_surname ASC";
 		}
 	}
@@ -701,8 +714,8 @@ $results_count = $GetQuery_all->num_rows;
 
 					<?php while($qryResult = $GetQuery->fetch_assoc()) {
 						$id = $qryResult['id'];
-						$c_surname = $qryResult['c_surname'];
-						$c_firstName = $qryResult['c_firstName'];
+						$c_surname = strtoupper($qryResult['c_surname']);
+						$c_firstName = ucfirst($qryResult['c_firstName']);
 						$c_referenceNumberHospitalId = $qryResult['c_referenceNumberHospitalId'];
 						$c_procedureId = $qryResult['c_procedureId'];
 						$c_description = $qryResult['c_description'];
@@ -713,8 +726,10 @@ $results_count = $GetQuery_all->num_rows;
 							$procedure = "";
 						$pt_status = get_pt_status($id);
 						if($pt_status == "Inactive" || $pt_status == "Pending")
-							$pt_status_class = "pending_status"; else if($pt_status == "Alert")
-							$pt_status_class = "off_status"; else if($pt_status == "Active")
+							$pt_status_class = "pending_status"; 
+                                                else if($pt_status == "Alert")
+							$pt_status_class = "off_status"; 
+                                                else if($pt_status == "Active")
 							$pt_status_class = "on_status";
 
 						$isSelected = '';
@@ -778,7 +793,7 @@ $results_count = $GetQuery_all->num_rows;
 			<hr class="gap"/>
 			<h3>Recent Notifications</h3>
 			<div class='emptyNotifications<?php echo($has_notifications == true ? " hide" : "") ?>'>
-				<strong>No notifications right now.</strong><br>Everything must be working.
+				<p><strong>No notifications right now.</strong><br>Everything must be working.</p>
 			</div>
 			<table class="notifications<?php echo($has_notifications == false ? " hide" : "") ?>">
 				<tbody>
@@ -817,11 +832,11 @@ $results_count = $GetQuery_all->num_rows;
 			<div class="grid-x<?php echo($has_notifications == false ? " hide" : "") ?>">
 				<div class="hide-for-small-only medium-2">&nbsp;</div>
 				<div class="small-12 medium-8">
-					<button type="button" name="" value="" class="button large expanded">View all</button>
+					<a href="patients.php?m=main&filter=1&status=1&page=1" class="button large expanded">View all</a>
 				</div>
 				<div class="hide-for-small-only medium-2">&nbsp;</div>
 			</div>
-			<hr class="gap"/>
+			<hr class=""/>
 			<h3>Stats</h3>
 			<br/>
 			<div class="grid-x field">
@@ -860,38 +875,38 @@ $results_count = $GetQuery_all->num_rows;
 				<div class="small-12 medium-12 large-12 cell">
 					<table width="100%" border="0" class="su-table stack">
 						<tr>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2" width="60%">
-								<a href="patients.php?m=stats&filter=1&status=2" class="no-u">
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2&page=1" width="60%">
+								<a href="patients.php?m=stats&filter=1&status=2&page=1" class="no-u">
 									<h4 class="">ACTIVE PATIENTS<a href="patients.php?m=stats"></h4></a>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2" width="20%">
-								<?php echo $active_stats_count . "<br />TOTAL"; ?>
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2&page=1" width="20%">
+								<?php echo  "<strong>".get_stat_counts('active')."</strong><br />TOTAL"; ?>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2" width="20%">
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=2&page=1" width="20%">
 								<img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle"/>
 							</td>
 						</tr>
 						<tr>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=3" width="60%">
-								<a href="patients.php?m=statsm=stats&filter=1&status=3" class="no-u">
-									<h4 class="">INACTIVE PATIENTS<a href="patients.php?m=stats&filter=1&status=3"></h4></a>
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=3&page=1" width="60%">
+								<a href="patients.php?m=statsm=stats&filter=1&status=3&page=1" class="no-u">
+									<h4 class="">INACTIVE PATIENTS<a href="patients.php?m=stats&filter=1&status=3&page=1"></h4></a>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=3" width="20%">
-								<?php echo $inactive_stats_count . "<br />TOTAL"; ?>
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=3&page=1" width="20%">
+								<?php echo  "<strong>".get_stat_counts('inactive')."</strong><br />TOTAL"; ?>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=3" width="20%">
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=3&page=1" width="20%">
 								<img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle"/>
 							</td>
 						</tr>
 						<tr>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=4" width="60%">
-								<a href="patients.php?m=stats&filter=1&status=4" class="no-u">
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=4&page=1" width="60%">
+								<a href="patients.php?m=stats&filter=1&status=4&page=1" class="no-u">
 									<h4 class="">TOTAL PATIENTS<a href="patients.php?m=stats"></h4></a>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=4" width="20%">
-								<?php echo $total_stats_count . "<br />TOTAL"; ?>
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=4&page=1" width="20%">
+								<?php echo  "<strong>".get_stat_counts('total')."</strong><br />TOTAL"; ?>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=4" width="20%">
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=4&page=1" width="20%">
 								<img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle"/>
 							</td>
 						</tr>
@@ -902,23 +917,23 @@ $results_count = $GetQuery_all->num_rows;
 						</tr>
 						<tr>
 							<td class="su-data clickable-row" data-href="patients.php?m=stats" width="60%">
-								<a href="patients.php?m=stats" class="no-u"><h4 class="">COMPLETED SURVEYS<a href="patients.php?m=stats"></h4></a>
+								<a href="patients.php?m=stats&filter=1&status=5&page=1" class="no-u"><h4 class="">COMPLETED SURVEYS<a href="patients.php?m=stats"></h4></a>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
-								<?php echo $completed_stats_count . "<br />TODAY"; ?>
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=5&page=1" width="20%">
+								<?php echo "<strong>".get_stat_counts('surveycomplete')."</strong><br />TODAY"; ?>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=5&page=1" width="20%">
 								<img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle"/>
 							</td>
 						</tr>
 						<tr>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats" width="60%">
-								<a href="patients.php?m=stats" class="no-u"><h4 class="">INCOMPLETE SURVEYS<a href="patients.php?m=stats"></h4></a>
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=5&page=1" width="60%">
+								<a href="patients.php?m=stats&filter=1&status=6&page=1" class="no-u"><h4 class="">INCOMPLETE SURVEYS<a href="patients.php?m=stats&filter=1&status=6&page=1"></h4></a>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
-								<?php echo $incomplete_stats_count . "<br />TODAY"; ?>
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=6&page=1" width="20%">
+								<?php echo "<strong>".get_stat_counts('surveyincomplete')."</strong><br />TOTAL"; ?>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=6&page=1" width="20%">
 								<img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle"/>
 							</td>
 						</tr>
@@ -928,13 +943,13 @@ $results_count = $GetQuery_all->num_rows;
 							</td>
 						</tr>
 						<tr>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats" width="60%">
-								<a href="patients.php?m=stats" class="no-u"><h4 class="">UNRESOLVED ALERTS<a href="patients.php?m=stats"></h4></a>
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=1&page=1" width="60%">
+								<a href="patients.php?m=stats&filter=1&status=1&page=1" class="no-u"><h4 class="">UNRESOLVED ALERTS<a href="patients.php?m=stats"></h4></a>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
-								<?php echo $alerts_stats_count . "<br />TOTAL"; ?>
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=1&page=1" width="20%">
+								<?php echo  "<strong>".get_stat_counts('alert')."</strong><br />TOTAL"; ?>
 							</td>
-							<td class="su-data clickable-row" data-href="patients.php?m=stats" width="20%">
+							<td class="su-data clickable-row" data-href="patients.php?m=stats&filter=1&status=1&page=1" width="20%">
 								<img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle"/>
 							</td>
 						</tr>
@@ -1954,7 +1969,7 @@ if($mode == "review") {
 <?php
 // ********************************************************************************
 // *
-// *  this code pulls data from procepisodes that is used by multiple sections
+// *  this code pulls data from patient episodes that is used by multiple sections
 // *
 // ********************************************************************************
 if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "procselect" || $mode == "procsummary" || $mode == "procsurgeon") {
@@ -1979,7 +1994,8 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 	$c_procedureId = $qryResult_pd['c_procedureId']; // the short code e.g. OS3
 	$c_description = $qryResult_pd['c_description'];
 	$c_displayName = $qryResult_pd['c_displayName'];
-	$c_procedure = $qryResult_pd['c_procedure'];  // the long rando Id
+	$c_procedure = $qryResult_pd['c_procedure'];  // the long random Id
+        $c_procedureStatus = $qryResult_pd['c_procedureStatus'];
 	$procedure = $c_procedureId . " - " . $c_displayName;
 	$pt_status = get_pt_status($id);
 	if($pt_status == "Inactive")
@@ -2092,6 +2108,10 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 </div>
 <!-- END PROCSELECT SECTION -->
 <!-- PROCDATE SECTION -->
+       <?php if ($_SESSION['workflow']=="PROCDATE") 
+                $procdate_rtn_mode="procdetail"; else $procdate_rtn_mode="procselect";
+             logMsg("Session Workflow: ".$_SESSION['workflow'],$logfile);
+        ?>
 <div class="small-12 medium-6 large-6 cell content-right <?php echo $procdate_hide; ?>">
 	<div class="back clickable-row" data-href="patients.php?m=<?php echo $procdate_rtn_mode; ?>&id=<?php echo $pe_id; ?>">
 		<a href="patients.php?m=<?php echo $procdate_rtn_mode; ?>&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left"/>Back</a>
@@ -2099,6 +2119,7 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 	<h3>Select Procedure Date<br><span class="small">What date is the procedure planned for?</span></h3>
 	<?php ; // &rtn=pd   ???  ?>
 	<form action="patients_a.php?m=procdate&id=<?php echo $pe_id; ?>" method="post">
+             <input type="hidden" name="rtn" value="<?php echo $rtn; ?>">
 		<div class="grid-container">
 			<div class="grid-x">
 				<div class="small-12 cell field">
@@ -2107,6 +2128,7 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 					</label>
 				</div>
 				<div class="small-12 field">
+                                   <?php if($_SESSION['proc_date_error']) echo "<div class='error_message fi-alert'><strong>Please correct the procedure date</strong> - the date cannot be in the past.<br /></div>"; ?>
 					<div class="input-group">
 						<span class="input-group-label"><i class="fi-calendar"></i></span>
 						<input class="input-group-field date_element" type="text" id="proc_date" name="proc_date" value="<?php echo $_SESSION['proc_date_entered']; ?>">
@@ -2168,20 +2190,20 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 				</div>
 				<div class="small-12 cell">
 					<label>Surgeon Name
-						<select id="proc_surgeonname" class="select_address" size="10">
+						<select id="proc_surgeonname" class="select_address proc_surgeonname" size="10">
 							<?php make_combo("app_fd_ver_surgeons", "id", "c_surgeonName", $_SESSION['proc_surgeon'], "", " ORDER BY c_surgeonName "); ?>
 						</select>
 					</label>
-					<input id="proc_surgeon" type="hidden" name="proc_surgeon" value=""/>
+					<input id="proc_surgeon" type="hidden" name="proc_surgeon" class="proc_surgeon" value=""/>
 				</div>
 				<div class="small-12 cell">
-					<select id="proc_surgeonname_temp" class="hide">
+					<select id="proc_surgeonname_temp" class="hide proc_surgeonname_temp">
 						<?php make_combo($TBLSURGEONS, "id", "c_gmcNumber", $_SESSION['proc_surgeon'], "", " ORDER BY c_surgeonName "); ?>
 					</select>
 					<label>GMC Number
-						<input id="proc_gmcnumber_temp" disabled type="text" value="<?php echo $_SESSION['proc_gmcnumber']; ?>">
+						<input id="proc_gmcnumber_temp" disabled type="text" class=proc_gmcnumber_temp" value="<?php echo $_SESSION['proc_gmcnumber']; ?>">
 					</label>
-					<input id="proc_gmcnumber" type="hidden" name="proc_gmcnumber" value="">
+					<input id="proc_gmcnumber" type="hidden" name="proc_gmcnumber" value="" class="proc_gmcnumber">
 				</div>
 			</div>
 		</div>
@@ -2273,9 +2295,10 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 			<td><?php echo $c_plannedProcedureDate; ?></td>
 		</tr>
 	</table>
-	<div class="small-12 medium-12 large-12 cell text-center clickable-row" data-href="patients.php?m=procdate<?php echo $procdetail_rtn_str; ?>&id=<?php echo $pe_id; ?>">
-		<a href="patients.php?m=procdate<?php echo $procdetail_rtn_str; ?>&id=<?php echo $pe_id; ?>" class="no-u">
-			<p class="directive">Change Procedure Date<a href="patients.php?m=procdate<?php echo $procdetail_rtn_str; ?>&id=<?php echo $pe_id; ?>"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle"/>
+      <?php if ($c_procedureStatus=="PRE") { ?>
+	<div class="small-12 medium-12 large-12 cell text-center clickable-row" data-href="patients_a.php?m=gotoprocdate&id=<?php echo $pe_id; ?>">
+		<a href="patients_a.php?m=gotoprocdate&id=<?php echo $pe_id; ?>" class="no-u">
+			<p class="directive">Change Procedure Date<a href="patients_a.php?m=gotoprocdate&id=<?php echo $pe_id; ?>"><img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle"/>
 			</p></a></a>
 	</div>
 	<h3>Mark Procedure Complete<br/><span class="small">This will trigger the post-op surveys</span></h3>
@@ -2294,6 +2317,7 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 		</div>
 		<div class="hide-for-small-only medium-2 large-2 cell"></div>
 	</div>
+     <?php } ?>
 </div>
 <!-- END PROCDETAIL -->
 <!-- PROCCANCEL SECTION -->
@@ -2335,40 +2359,39 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 			<td><?php echo $c_plannedProcedureDate; ?></td>
 		</tr>
 	</table>
-	<div class="grid-container">
-		<div class="grid-x grid-padding-x">
-			<div class="small-2 medium-2 large-2 cell"></div>
-			<div class="small-9 medium-9 large-9 cell">
-				<p>Mark the procedure as complete.</p>
-				<p>Search for the name of the surgeon who will perform this procedure</p>
-				<form action="patients_a.php?m=proccomplete&id=<?php echo $pe_id; ?>" method="post">
-					<label>Surgeon Name
-						<select name="proc_surgeon" class="select_address">
-							<?php make_combo("app_fd_ver_surgeons",
-								"c_surgeonName",
-								"c_surgeonName",
-								$c_surgeonName,
-								"",
-								" ORDER BY c_surgeonName "); ?>
-						</select>
-					</label>
-			</div>
-			<div class="small-2 medium-2 large-2 cell"></div>
-			<div class="small-9 medium-9 large-9 cell">
-				<label>GMC Number</label>
-				<?php echo $c_gmcNumber; ?>
-			</div>
-		</div>
-	</div>
+        <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                        <div class="small-2 medium-2 large-2 cell"></div>
+                                <div class="small-9 medium-9 large-9 cell">
+                                        <p>Mark the procedure as complete.</p>
+                                        <p>Search for the name of the surgeon who will perform this procedure</p>
+                                        <form action="patients_a.php?m=proccomplete&id=<?php echo $pe_id; ?>" method="post">
+                                        <label>Surgeon Name
+                                                <select id="proc_surgeonname_complete" class="select_address proc_surgeonname" size="10">
+                                                        <?php make_combo("app_fd_ver_surgeons", "id", "c_surgeonName", $c_surgeonName, "", " ORDER BY c_surgeonName "); ?>
+                                                </select>
+                                        </label>
+                                        <input id="proc_surgeon_complete" type="hidden" name="proc_surgeon" class="proc_surgeon" value="<?php echo $c_surgeonName; ?>"/>
+                                </div>
+                                <div class="small-2 medium-2 large-2 cell"></div>
+                                        <select id="proc_surgeonname_temp_complete" class="hide proc_surgeonname_temp">
+                                                <?php make_combo($TBLSURGEONS, "id", "c_gmcNumber", $c_surgeonName, "", " ORDER BY c_surgeonName "); ?>
+                                        </select>
+                                        <label>GMC Number
+                                                <input id="proc_gmcnumber_temp_complete" disabled type="text" class=proc_gmcnumber_temp" value="<?php echo $c_gmcNumber; ?>">
+                                        </label>
+                                        <input id="proc_gmcnumber_complete" type="hidden" name="proc_gmcnumber" value="<?php echo $c_gmcNumber; ?>" class="proc_gmcnumber">
+				
+                        </div>
+                </div>
 	<div class="grid-x">
 		<div class="hide-for-small-only medium-2 large-2 cell"></div>
 		<div class="small-12 medium-8 large-8 cell text-center">
-			<p>&nbsp;</p>
-			<p><br/><br/>&nbsp;</p>
+			<p><br/>&nbsp;</p>
 			<button type="submit" name="" value="confirm complete" class="button large expanded"/>
 			Confirm complete</button>
 			</form>
-		</div>
+			</div>
 		<div class="hide-for-small-only medium-2 large-2 cell"></div>
 	</div>
 </div>
@@ -2497,6 +2520,18 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 			$("#proc_gmcnumber").val(proc_gmcnumber);
 			$("#proc_gmcnumber_temp").val(proc_gmcnumber);
 		});
+		//duplicate for Procedute Comfirm section
+                $("#proc_surgeonname_complete").change(function() {
+                        var proc_surgeon_id = $(this).val();
+                        var proc_surgeon_name = $.trim($("#proc_surgeonname_complete :selected").text());
+                        $("#proc_surgeon_complete").val(proc_surgeon_name);
+
+                        $("#proc_surgeonname_temp_complete").val(proc_surgeon_id);
+                        var proc_gmcnumber = $("#proc_surgeonname_temp_complete :selected").text();
+
+                        $("#proc_gmcnumber_complete").val(proc_gmcnumber);
+                        $("#proc_gmcnumber_temp_complete").val(proc_gmcnumber);
+                });
 		$(document).ready(function() {
 			$("#addpt").on("click", function() {
 				$("form div").removeClass("error_message");
