@@ -105,10 +105,10 @@ else
    // INSERT
 
    $sql = "INSERT INTO dir_user
-           SET firstName=".escapeQuote($firstName).",
-               lastName=".escapeQuote($lastName).",
+           SET firstName=".escapeQuote($firstname).",
+               lastName=".escapeQuote($lastname).",
                email=".escapeQuote($email).",
-	       password='".$hash."',
+	       uipassword='".$hash."',
                active='1',
                timeZone='0',
                id='$id',

@@ -2849,3 +2849,19 @@
                c_displayName='NEW TEST - 04-14-17',
                dateModified=NOW(),
                dateCreated=NOW()
+05/01/2018 20:14:39 - 207.54.162.178: Procedures_a: update 5abe4d575be08
+05/01/2018 20:14:39 - 207.54.162.178: UPDATE app_fd_ver_procEpisodes
+           SET id='5abe4d575be08',
+               c_description='5 Session New Test Procedure',
+               c_procedureId='NEW-TEST-5',
+               c_displayName='New 5 Session Test Pocedure',
+               dateModified=NOW()
+           WHERE id='5abe4d575be08'
+05/01/2018 20:15:02 - 207.54.162.178: Procedures_a: update 5abe4d575be08
+05/01/2018 20:15:02 - 207.54.162.178: UPDATE app_fd_ver_procEpisodes
+           SET id='5abe4d575be08',
+               c_description='5 Session New Test Procedure',
+               c_procedureId='NEW-TEST-5',
+               c_displayName='New 5 Session Test Pocedure',
+               dateModified=NOW()
+           WHERE id='5abe4d575be08'

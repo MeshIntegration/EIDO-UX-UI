@@ -32,7 +32,7 @@ $arr_email['body']=$body;
 $result = send_email($arr_email);
 logMsg("forgot_pw: mail_send_result: $result", $logfile);
 
-$_SESSION['error_msg']="An e-mail has been sent to your mail account. Please click the link and use that page reset your password.<br /><br />Thank you.<br /><br />EIDO Verify Patient Communications";
+$_SESSION['error_msg']="An email has been sent to you with a password reset link. Click the link and follow the instructions to reset your password.<br /><br />Thank you.<br /><br />EIDO Verify Patient Communications";
 header("Location:message.php");
 exit();
 ?>

@@ -126,9 +126,10 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 				    if ( $arr_users [$i] ['isSurgeon'] == "1") {
 					$is_surgeon = true;
 				    }
-                                    if($uid == $user_id) {
-                                        $isSelected = ' class="selected"';
-                                    }
+				    $isSelected = '';
+				    if($uid == $user_id) {
+				        $isSelected = ' class="selected"';
+				    }
                             ?>
                             <li<?php echo $isSelected; ?>>
                                 <a href=users.php?m=update&id=<?php echo $uid; ?>>

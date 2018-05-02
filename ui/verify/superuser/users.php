@@ -23,6 +23,8 @@ $id = get_query_string('id');
 // turn everything off
 $add_hide = "hide";
 $update_hide = "hide";
+$userreset_hide = "hide";
+$userdelete_hide = "hide";
 $reset_hide = "hide";
 $delete_hide = "hide";
 $bulk_hide = "hide";
@@ -58,7 +60,12 @@ $sql = "SELECT u.*
         AND ur.roleId='ROLE_ADMIN'
 	AND u.active=1 LIMIT $start,$row";
 $GetQuery = dbi_query($sql);
-
+$i = 0;
+$arr_users = array ();
+while ( $qryResult = $GetQuery->fetch_assoc () ) {
+    $arr_users [$i] = $qryResult;
+    $i ++;
+}
 ?>
 <html class="no-js" lang="en" dir="ltr">
 <head>
@@ -131,7 +138,8 @@ $GetQuery = dbi_query($sql);
                           $lastName = strtoupper ( $arr_users [$i] ['lastName'] );
                           $full_name = $lastName . ", " . $firstName;
                           $email = $arr_users [$i] ['email'];
-
+                          logMsg ("$i $firstName $lastName", $logfile);
+                          $isSelected = '';
                           if($uid == $user_id) {
                               $isSelected = ' class="selected"';
                           }
@@ -217,7 +225,7 @@ $GetQuery = dbi_query($sql);
     	  </div>
 
 	  </form>
-
+        </div>
  	<!-- UPDATE USER SECTION -->  
         <?php
            if ($mode=="update")
@@ -344,6 +352,11 @@ $GetQuery = dbi_query($sql);
             $(".clickable-row").click(function() {
               window.location = $(this).data("href");
             });
+         });
+         $(document).ready(function(){
+             $('#actOnAll').click(function () {
+                 $("[id^=performAction]").prop('checked', this.checked);
+             });
          });
          $(document).ready(function(){
             $("#addsu").on("click",function(){

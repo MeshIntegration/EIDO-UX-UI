@@ -5562,3 +5562,149 @@
         WHERE u.username='gadmin@example.com'
         AND u.id=ug.userid
 05/01/2018 13:46:02 - 207.54.162.178: Gfirst Glast - GG - sitedivadmins
+05/01/2018 14:03:25 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 14:03:25 - 82.34.15.57: EIDO Admin - EA - eidoadmins
+05/01/2018 14:03:25 - 82.34.15.57: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/01/2018 15:30:04 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 15:30:04 - 207.54.162.178: James MacKnife - JM - eidoadmins
+05/01/2018 15:30:04 - 207.54.162.178: jmacknife@thenakedsurgeon.com - Logged in as SUPERUSER
+05/01/2018 15:34:19 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 15:34:19 - 207.54.162.178: James MacKnife - JM - staff
+05/01/2018 15:59:47 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 15:59:47 - 207.54.162.178: James MacKnife - JM - staff
+05/01/2018 16:00:07 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:00:07 - 207.54.162.178: Mm1 Admin - MA - sitedivadmins
+05/01/2018 16:00:31 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:00:32 - 207.54.162.178: EIDO Admin - EA - eidoadmins
+05/01/2018 16:00:32 - 207.54.162.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/01/2018 16:05:04 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:05:04 - 207.54.162.178: Mm1 Admin - MA - sitedivadmins
+05/01/2018 16:08:35 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:08:35 - 207.54.162.178: James MacKnife - JM - staff
+05/01/2018 16:08:35 - 207.54.162.178: >>>>  GroupID: staff
+05/01/2018 16:11:36 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:11:36 - 207.54.162.178: Mm1 Admin - MA - sitedivadmins
+05/01/2018 16:11:36 - 207.54.162.178: >>>>  GroupID: sitedivadmins
+05/01/2018 16:14:58 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:14:59 - 207.54.162.178: Mm1 Admin - MA - sitedivadmins
+05/01/2018 16:14:59 - 207.54.162.178: >>>>  GroupID: sitedivadmins
+05/01/2018 16:15:23 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:15:23 - 207.54.162.178: James MacKnife - JM - staff
+05/01/2018 16:15:23 - 207.54.162.178: >>>>  GroupID: staff
+05/01/2018 16:16:10 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:16:10 - 207.54.162.178: EIDO Admin - EA - eidoadmins
+05/01/2018 16:16:10 - 207.54.162.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/01/2018 16:20:49 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='ajm@mm.st'
+        AND u.id=ug.userid
+05/01/2018 16:20:49 - 207.54.162.178: Incorrect email or password. ajm@mm.st %password - back to login.php
+05/01/2018 16:21:15 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='ajm@mm.st'
+        AND u.id=ug.userid
+05/01/2018 16:21:15 - 207.54.162.178: Incorrect email or password. ajm@mm.st %password - back to login.php
+05/01/2018 16:23:48 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:23:48 - 207.54.162.178: Mm1 Admin - MA - sitedivadmins
+05/01/2018 16:23:48 - 207.54.162.178: >>>>  GroupID: sitedivadmins
+05/01/2018 16:27:33 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidodmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:27:33 - 207.54.162.178: Incorrect email or password. eidodmin@thenakedsurgeon.com %password - back to login.php
+05/01/2018 16:27:50 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 16:27:50 - 207.54.162.178: EIDO Admin - EA - eidoadmins
+05/01/2018 16:27:50 - 207.54.162.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/01/2018 16:31:02 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='testuser@email.com'
+        AND u.id=ug.userid
+05/01/2018 16:31:02 - 207.54.162.178: Test User - TU - eidoadmins
+05/01/2018 16:31:02 - 207.54.162.178: 5ae89628bb7a8 - Logged in as SUPERUSER
+05/01/2018 17:07:01 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='gadmin@example.com'
+        AND u.id=ug.userid
+05/01/2018 17:07:01 - 207.54.162.178: Gfirst Glast - GG - sitedivadmins
+05/01/2018 17:07:01 - 207.54.162.178: >>>>  GroupID: sitedivadmins
+05/01/2018 17:24:22 - 68.107.189.223: forgot_pw: mail_send_result: 1
+05/01/2018 17:33:23 - 68.107.189.223: forgot_pw: mail_send_result: 1
+05/01/2018 17:37:28 - 68.107.189.223: forgot_pw: mail_send_result: 1
+05/01/2018 19:59:55 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 19:59:55 - 68.107.189.223: EIDO Admin - EA - eidoadmins
+05/01/2018 19:59:55 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/01/2018 20:22:00 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 20:22:00 - 207.54.162.178: Mm1 Admin - MA - sitedivadmins
+05/01/2018 20:22:00 - 207.54.162.178: >>>>  GroupID: sitedivadmins
+05/01/2018 20:24:30 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 20:24:30 - 68.107.189.223: Incorrect email or password. mm1admin@thenakedsurgeon.com %password - back to login.php
+05/01/2018 20:24:40 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/01/2018 20:24:40 - 68.107.189.223: Mm1 Admin - MA - sitedivadmins
+05/01/2018 20:24:40 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/01/2018 20:31:57 - 207.54.162.178: Users_a: mode: add - ID: 
+05/02/2018 01:14:59 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 01:14:59 - 184.56.244.84: James MacKnife - JM - staff
+05/02/2018 01:14:59 - 184.56.244.84: >>>>  GroupID: staff
+05/02/2018 03:04:36 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 03:04:36 - 24.101.155.16: Mm1 Admin - MA - sitedivadmins
+05/02/2018 03:04:36 - 24.101.155.16: >>>>  GroupID: sitedivadmins

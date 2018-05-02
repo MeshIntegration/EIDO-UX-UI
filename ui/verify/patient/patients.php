@@ -180,6 +180,7 @@ if($mode == "" || $mode == "main") {
 } else if($mode == "overview") {
 	$overview_hide = "";
 	$pe_id = $id;
+        $timeline_mode=get_query_string('tlm');
 } else if($mode == "stats") {
 	$stats_hide = "";
 } else if($mode == "detail" || $mode == "addreview" || $mode == "editreview") {
@@ -739,7 +740,7 @@ $results_count = $GetQuery_all->num_rows;
 						?>
 
 						<li<?php echo $isSelected; ?>>
-							<a href="patients.php?m=overview&id=<?php echo $id; ?>">
+							<a href="patients.php?m=overview&tlm=key&id=<?php echo $id; ?>">
 								<span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
 								<p class="<?php echo $pt_status_class; ?>">
 									<span class="uc"><?php echo $pt_name; ?></span><br/>
@@ -818,12 +819,12 @@ $results_count = $GetQuery_all->num_rows;
 					?>
 					<tr>
 						<td class="icon_frame text-center"><i class="fi-<?php echo $n_icon; ?> align-middle"></td>
-						<td class="upper clickable-row su_data" data-href="patients.php?m=overview&id=<?php echo $n_patientEpisodeId; ?>"><?php echo $n_name; ?>
+						<td class="upper clickable-row su_data" data-href="patients.php?m=overview&tlm=key&id=<?php echo $n_patientEpisodeId; ?>"><?php echo $n_name; ?>
 							<br/>
 							Patient <strong><?php echo $n_patient_name; ?></strong>
 						</td>
 						<td>
-							<a href="patients.php?m=overview&id=<?php echo $n_patientEpisodeId; ?>"><img src="../img/icons/greater.png" alt="" class="align-right"></a>
+							<a href="patients.php?m=overview&tlm=key&id=<?php echo $n_patientEpisodeId; ?>"><img src="../img/icons/greater.png" alt="" class="align-right"></a>
 						</td>
 					</tr>
 				<?php } ?>
@@ -1087,6 +1088,7 @@ $results_count = $GetQuery_all->num_rows;
 		$c_emailAddress = $qryResult_o['c_emailAddress'];
 		$c_mobileNumber = $qryResult_o['c_mobileNumber'];
 		$c_procedureId = $qryResult_o['c_procedureId'];
+		$c_procedure = $qryResult_o['c_procedure'];  // long id key
 		$c_description = $qryResult_o['c_description'];
 		$c_surgeonName = $qryResult_o['c_surgeonName'];
 		$c_status = $qryResult_o['c_status'];
@@ -1120,14 +1122,13 @@ $results_count = $GetQuery_all->num_rows;
 		$session_resumed = false;
 		$session_complete = false;
 		$procedure_complete = false;
-		if(isset($_SESSION['tl_view_all']) && !$_SESSION['tl_view_all'])
-			$tl_view_all_str = "AND tl.c_sessionNumber='$current_session'";
+		//if(isset($_SESSION['tl_view_all']) && !$_SESSION['tl_view_all'])
+			//$tl_view_all_str = "AND tl.c_sessionNumber='$current_session'";
 		$sql_tl = "SELECT *
                            FROM $TBLTIMELINES tl
                            WHERE tl.c_patientEpisodeId='$pe_id'
                            AND (tl.c_timelineEntryType='Event' 
                                 OR (tl.c_timelineEntryType='Alert' AND tl.c_timelineAlertStatus='Open'))
-                           $tl_view_all_str
                            ORDER BY dateCreated";
 		logMsg($sql_tl, $logfile);
 		$GetQuery_tl = dbi_query($sql_tl);
@@ -1137,9 +1138,12 @@ $results_count = $GetQuery_all->num_rows;
 		while($qryResult_tl = $GetQuery_tl->fetch_assoc()) {
 			$device_type = $qryResult_tl['c_deviceType'];
 			if(strpos(strtolower($device_type), "datasift"))
-				logMsg("BAD DEVICE: $device_type", $logfile); else if(strtolower($qryResult_tl['c_timelineEntryDetail']) == "survey complete")
+				logMsg("BAD DEVICE: $device_type", $logfile); 
+                        else if(strtolower($qryResult_tl['c_timelineEntryDetail']) == "survey complete")
 				;  //  skip
-			else {
+			else if ($timeline_mode=='all' || 
+                                 ($qryResult_tl['c_timelineEntryDetail']=="Report Generated" || 
+                                        $qryResult_tl['c_timelineEntryDetail']=="Request review")) {
 				$arr_tl[$tl] = $qryResult_tl;
 				$tl++;
 			}
@@ -1217,8 +1221,7 @@ $results_count = $GetQuery_all->num_rows;
 		</table>
 		<div class="<?php if($timeline)
 			echo "timeline timeline-right"; ?>">
-			<h5>Patient Timeline:<?php if(!$timeline)
-					echo " No Survey Activity"; ?></h5>
+			<h5>Patient Timeline:<?php if ($timeline) echo "<span class='float-right'><a href='patients.php?m=overview&id=$pe_id&tlm=key'>Key events</a> | <a href='patients.php?m=overview&id=$pe_id&tlm=all'>All events</a></span>"; else echo " No Survey Activity"; ?></h5>
 			<table class="su-table">
 				<?php for($tl = 0; $tl < count($arr_tl); $tl++) {
 					$tl_desc = trim($arr_tl[$tl]['c_timelineEntryDetail']);
@@ -1230,45 +1233,57 @@ $results_count = $GetQuery_all->num_rows;
 					$tl_id = $arr_tl[$tl]['id'];
 					$tl_imgfile = $arr_tl_data[$tl_desc];
 					$tl_session = $arr_tl[$tl]['c_sessionNumber'];
+                                        $varname = "c_session".$tl_session."Name";
+                                        $arr_proc_info=get_proc_info($c_procedure);
+                                        $tl_session_name=$arr_proc_info[$tl_session][$varname];
+//echo "$tl_session - $varname - $tl_session_name<br />";
+//echo "<PRE>";
+//print_r($arr_proc_info);
+//echo "</PRE>";
+//exit();
 					if($tl_type == "Alert") {
 						$tl_class = "timeline-icon-cs";
-						$tl_iconfile = "caution.png";
+						$tl_iconfile = "exclaimation_red.png";  // "caution.png";
 					} else if($tl_type == "Event") {
 						$tl_class = "timeline-icon-green";
 						$tl_iconfile = "white_circle.png";
 					} else if($tl_type == "Future Event") {
 						$tl_class = "timeline-icon-cs";
-						$tl_iconfile = "arrow.png";
+						$tl_iconfile = "white_circle.png";   //arrow.png";
 					}
 
 					$tl_link = "";
 					$tl_btn_str = "";
 					unset($tl_link2);
 					if($tl_desc == "Procedure Completed") {
-						$tl_class = "timeline-icon-cs";
-						$tl_iconfile = "white_circle.png";
-						$tl_desc = "Procedure ";
+						//$tl_class = "timeline-icon-cs";
+						//$tl_iconfile = "white_circle.png";
+						$tl_desc = "PROCEDURE ";
 						$tl_link = "patients.php?m=proccomplete&id=$pe_id";
 						$tl_btn_str = "&nbsp;&nbsp;&nbsp;<a href='$tl_link'><button class='button active'>Procedure Completed</button></a>";
 						// get procedure date into mysql format then pass to UK format func
 						list($d, $m, $y) = explode("/", $c_plannedProcedureDate);
 						$c_plannedProcedureDate2 = "$y-$m-$d";
 						$tl_date = format_tl_date($c_plannedProcedureDate2);
-					} else if($tl_desc == "Procedure Op Complete") {
-						$tl_class = "timeline-icon-cs";
-						$tl_iconfile = "arrow.png";
+					} else if($tl_desc == "PROCEDURE COMPLETE") {
+						//$tl_class = "timeline-icon-cs";
+						//$tl_iconfile = "arrow.png";
 						$tl_link = "patients.php?m=procdetail&id=$pe_id";
 						// get procedure date into mysql format then pass to UK format func
 						list($d, $m, $y) = explode("/", $c_plannedProcedureDate);
 						$c_plannedProcedureDate2 = "$y-$m-$d";
 						$tl_date = format_tl_date($c_plannedProcedureDate2);
 						logMsg("$c_plannedProcedureDate - $c_plannedProcedureDate2 - $tl_date", $logfile);
-					} else if(in_array($tl_desc, $arr_tl_sess))
-						$tl_desc = str_replace("Session", "Survey", $tl_desc); else if($tl_desc == "Report Generated") {
+					} else if(strpos($tl_desc, "Scheduled Survey")) {
+                                                $tl_link="none";
+					} else if(in_array($tl_desc, $arr_tl_sess)) {
+						$tl_desc = str_replace("Session", "Survey", $tl_desc); 
+                                                $tl_desc = $tl_desc."<br />".$tl_session_name;
+                                        }  else if($tl_desc == "Report Generated") {
 						$fieldname = "c_survey" . $tl_session . "PdfLink";
 						$sql_link = "SELECT $fieldname 
-                                      FROM $TBLPTEPISODES 
-                                      WHERE id='$pe_id'";
+                                                             FROM $TBLPTEPISODES 
+                                                             WHERE id='$pe_id'";
 						$GetQuery_link = dbi_query($sql_link);
 						$qryResult_link = $GetQuery_link->fetch_assoc();
 						$tl_link = $qryResult_link[$fieldname];
@@ -1278,11 +1293,20 @@ $results_count = $GetQuery_all->num_rows;
 						logMsg("Report Link: $sql_link - $tl_link", $logfile);
 						logMsg("Link2: $tl_link2", $logfile);
 					} else if($tl_desc == "Request review") {
+                                                $tl_desc="Sign In Review"; 
 						$tl_link = "patients.php?m=review&id=$pe_id&tid=$tl_id";
-						$tl_btn_str = "&nbsp;&nbsp;&nbsp;<a href='$tl_link'><button class='button active align-right'>Request Review</button></a>";
-					} else if(strpos($tl_desc, "validation error") || $tl_desc == "Email Bounced" || $tl_desc == "SMS Bounced") {
+						$tl_btn_str = "&nbsp;&nbsp;&nbsp;<a href='$tl_link'><button class='button active align-right'>Check Patient Details</button></a>";
+					} else if(strpos($tl_desc, "validation error") || $tl_desc == "Email Bounced") {
 						$tl_link = "patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id";
-					}
+						$tl_btn_str = "&nbsp;&nbsp;&nbsp;<a href='$tl_link'><button class='button active align-right'>Check Patient Details</button></a>";
+					} else if($tl_desc == "SMS Bounced") {
+                                                $tl_desc="SMS Rejected"; 
+						$tl_link = "patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id";
+						$tl_btn_str = "&nbsp;&nbsp;&nbsp;<a href='$tl_link'><button class='button active align-right'>Check Patient Details</button></a>";
+					} else {
+                                                $tl_desc = $tl_desc."<br />".$tl_session_name;
+                                                $tl_link = "none";
+                                        }
 					logMsg("Desc: $tl_desc Date: $tl_date Type: $tl_type Image: $tl_imgfile Icon: $tl_iconfile Class: $tl_class", $logfile);
 					?>
 					<tr>
@@ -1303,19 +1327,23 @@ $results_count = $GetQuery_all->num_rows;
 		                            echo "<br />$tl_link"; else echo $tl_btn_str; ?>
                             </p>
                           </span>
-						</td>
-						<?php if($tl_btn_str == "") { ?>
-							<td width="10%" class="tlbdr">
-								<a href="<?php if(isset($tl_link2))
-									echo $tl_link2; else echo $tl_link; ?>"><img src="../img/icons/greater.png" alt="greater than icon" class="align-right"/></a>
-							</td>
-						<?php } ?>
-					</tr>
+				</td>
+				<?php if($tl_btn_str == "") { ?>
+					<td width="10%" class="tlbdr">
+                                           <?php if ($tl_link=="none") echo "&nbsp;"; else { ?>
+						<a href="<?php if(isset($tl_link2)) echo $tl_link2; else echo $tl_link; ?>">
+                                                  <img src="../img/icons/greater.png" alt="greater than icon" class="align-right"/>
+                                                </a>
+                                           <?php } ?>
+					</td>
+				<?php } ?>
+				</tr>
 				<?php } ?>
 			</table>
 		</div>
 		<table class="su-table">
-			<?php if($timeline) {
+			<?php if($timeline && false) {
+                               // TURNED OFF FOR NOW
 				if($_SESSION['tl_view_all'])
 					$view_all_str = "Current Survey Activity"; else $view_all_str = "View All"; ?>
 				<tr>
@@ -2280,8 +2308,8 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
 <!-- PROCCONFIRM END -->
 <!-- PROCDETAIL SECTION -->
 <div class="small-12 medium-6 large-6 cell content-right <?php echo $procdetail_hide; ?>">
-	<div class="back clickable-row" data-href="patients.php?m=overview&id=<?php echo $pe_id; ?>">
-		<a href="patients.php?m=overview&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left"/></a>Back
+	<div class="back clickable-row" data-href="patients.php?m=overview&tlm=key&id=<?php echo $pe_id; ?>">
+		<a href="patients.php?m=overview&tlm=key&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left"/></a>Back
 	</div>
 	<h3>Procedure Details<br/><span class="small">The patient's procedure.</span></h3>
 	<h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>

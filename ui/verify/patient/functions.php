@@ -243,12 +243,19 @@ function clear_add_session()
    unset($_SESSION['proc_date_entered']);
    unset($_SESSION['proctl_proc_id']);
    unset($_SESSION['add_fname_error']);
+   unset($_SESSION['add_fname_format_error']);
    unset($_SESSION['add_lname_error']);
+   unset($_SESSION['add_lname_format_error']);
    unset($_SESSION['add_nhsnumber_error']);
+   unset($_SESSION['add_nhsnumber_length_error']);
+   unset($_SESSION['add_nhsnumber_format_error']);
    unset($_SESSION['add_hospitalnumber_error']);
    unset($_SESSION['add_gender_error']);
    unset($_SESSION['add_dob_error']);
+   unset($_SESSION['add_dob_invalid_error']);
+   unset($_SESSION['add_dob_format_error']);
    unset($_SESSION['add_postalcode_error']);
+   unset($_SESSION['add_postalcode_format_error']);
    unset($_SESSION['add_bad_email_error']);
    unset($_SESSION['add_no_contact_error']);
    unset($_SESSION['proc_select_error']);
@@ -412,7 +419,7 @@ logMsg("$i: Procedure Completed", $logfile);
          $arr_tl[$tl]['dateCreated']="";
          $arr_tl[$tl]['id']=0;
          $arr_tl[$tl]['c_timelineEntryType']="Event";   
-         $arr_tl[$tl]['c_timelineEntryDetail']="Procedure Op Complete";
+         $arr_tl[$tl]['c_timelineEntryDetail']="PROCEDURE COMPLETE";
          $complete_flag=true; 
          $tl++;
       }
@@ -422,7 +429,7 @@ logMsg("$i: Procedure Completed", $logfile);
          $arr_tl[$tl]['dateCreated']="";
          $arr_tl[$tl]['id']=0;
          $arr_tl[$tl]['c_timelineEntryType']="Future Event";   
-         $arr_tl[$tl]['c_timelineEntryDetail']="<strong>Upcoming Survey</strong><br />".$arr_proc_info[$i][$varname];
+         $arr_tl[$tl]['c_timelineEntryDetail']="<strong>Scheduled Survey</strong><br />".$arr_proc_info[$i][$varname];
 logMsg("$i: Upcoming Survey".$arr_proc_info[$i][$varname], $logfile);
          $tl++;
       }
@@ -435,6 +442,7 @@ logMsg("AFTER: Items in TL array: ".count($arr_tl), $logfile);
 function update_alert_status($id)
 {
    global $TBLTIMELINES, $TBLPTEPISODES;
+   $logfile = "patient.log";
 
    $sql = "SELECT * 
            FROM $TBLTIMELINES 
@@ -442,6 +450,7 @@ function update_alert_status($id)
              AND c_timelineEntryType='Alert'
              AND c_timelineAlertStatus='Open'";
    $GetQuery=dbi_query($sql);
+logMsg($sql,$logfile);
    if ($GetQuery->num_rows==0) 
       $c_hasAlert_str="";
    else
@@ -450,6 +459,7 @@ function update_alert_status($id)
            SET c_hasAlert='$c_hasAlert_str',
                dateModified=NOW()
            WHERE id='$id'";
+logMsg($sql,$logfile);
    dbi_query($sql);
 }
 ?>

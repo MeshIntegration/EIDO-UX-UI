@@ -2,7 +2,6 @@
 <?php
 
 require_once './utilities.php';
-require_once './lib/validation.php';
 session_start();
 $arr_pt_info = $_SESSION['arr_pt_info'];
 $logfile = "wel.log";
@@ -15,7 +14,7 @@ $_SESSION['error_msg']="";
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - Patient Auth V3 - Screen 2</title>
+  <title>Eido Verify</title>
   <link rel="stylesheet" href="./css/foundation.css">
   <link rel="stylesheet" href="./css/eido.css">
   <link rel="stylesheet" href="./css/dashboard.css">
@@ -31,7 +30,7 @@ $_SESSION['error_msg']="";
 <body class="registration">
 <div class="grid-container">
   <!-- Start Header -->
-      <?php include './includes/val_header.php';?>
+      <?php include './includes/header.php';?>
   <!-- End Header -->
   <!-- Start Content -->
   <div class="grid-x grid-margin-x su">
@@ -50,7 +49,7 @@ $_SESSION['error_msg']="";
   </div>
 <!-- End Content-Full -->
   <!-- footer --> 
-      <?php include "./includes/footer.php"; ?>
+  <?php include "./includes/footer.php"; ?>
   <!-- end footer --> 
   <!-- End Content --> 
 </div>

@@ -45,8 +45,13 @@ logMsg("Validation_Mobile page: ".$arr_pt_info['id'],$logfile);
 		  <p>&nbsp;</p>
 		  <form class="login" action="validation_mobile_a.php" method="post">
 			<p>&nbsp;</p>
-			<p>We don't have a mobile number for you.</p>
-            <p>If you add it, we can text you with updates...</p>
+                        <?php if ( $arr_pt_info['c_mobileNumber']=="") { ?>
+			    <p>We don't have a mobile number for you.</p>
+                            <p>If you add it, we can text you with updates...</p>
+                        <?php } else { ?>
+			    <p>Do we have the latest mobile number for you?</p>
+                            <p>Please check the number below and change if necessary.</p>
+                        <?php } ?>
 			<label>Mobile Number
 			  <div class="input-group">
                 <span class="input-group-label"><i class="fi-telephone"></i></span>

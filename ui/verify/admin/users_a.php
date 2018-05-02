@@ -107,7 +107,6 @@ if ($mode=="reset") {
                username='$email',
                gmc_number='$gmc_number',
                isSurgeon='$is_surgeon',
-               password='".$hash."',
                uipassword='".$hash."'";
    logMsg("ADD: $sql",$logfile);
    dbi_query($sql);
