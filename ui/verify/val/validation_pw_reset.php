@@ -54,8 +54,9 @@ if ($arr_pt_info['c_surname']=="ERROR")
 	    <div class="small-12 medium-6 align-center-middle cell">
 		  <p>&nbsp;</p>
 		  <form class="login" action="validation_pw_reset_a.php" method="post" id="form_container" >
-			<p>&nbsp;</p>
-			<h5>Reset your password. Enter a new password below.</h5>
+                        <p>&nbsp;</p>
+                        <h1>Reset Password</h1>
+                        <p>Create a password for your account. Please use a secure format.</p>
 			<label>Password
 			  <div class="input-group">
                 <span class="input-group-label"><i class="fi-lock"></i></span>

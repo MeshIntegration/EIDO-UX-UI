@@ -27,9 +27,8 @@ if (!password_verify($password, $hash)) {
 
 save_user_pw_reset($pwkey, $hash);
 
-$_SESSION['error_msg'] = "Your password has been reset.<br /><br /><a href='login.php'>Click here</a> to login to the EIDO Verify system.";
-
-//logMsg("pw_reset: reset done for: ".$arr_pt_info['c_patientEpisodeId'],$logfile);
-header("Location:message.php");
+$_SESSION['error_msg']="<center><p>Your password has been reset. Use your new password to login.</p>
+                       <a href='login.php' class='button large active'>Goto Login</a></center>";
+header ("Location: message.php");
 exit();
 ?>

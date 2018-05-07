@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import "skeen_eido.css";
+@import "/ui/verify/css/icons/eido-icons.css";
 @charset "utf-8";
 /* CSS Document */
 /* Copyright 2017 */
@@ -465,7 +467,6 @@ table.notifications {
 }
 .tabs-title .fc_plus {
   display: inline;
-  height: ;
 }
 .tabs-title .fc_minus {
   display: none;
@@ -475,7 +476,6 @@ table.notifications {
 }
 .tabs-title.is-active .fc_minus {
   display: inline;
-  height: ;
 }
 .tabs-title.fl-left {
   float: left;
@@ -696,17 +696,17 @@ button.type,
 button.type:hover,
 button.type:active,
 button.type:focus {
-  height: 53px;
-  width: 53px;
-  display: block;
+  height: 65px;
+  width: 65px;
+  display: flow-root;
   margin: 15px auto;
   background: transparent !important;
   font-family: 'ArialMT', 'Arial';
-  font-weight: 700;
+  font-weight: 800;
   font-style: normal;
   font-size: 20px;
   color: #687e9e;
-  text-align: left;
+  text-align: -moz-center;
   line-height: normal;
   padding: 15px 15px 15px 10px;
   border: 2px solid #5A7195;
@@ -1304,12 +1304,20 @@ label.weight-normal {
 .patient-list li i {
   font-size: 16px;
   color: #A1A1A1;
+  display:inline !important;
+  vertical-align: middle !important;
+	position:absolute;
+	top:40%;
+	right:0;
 }
 .patient-list .right-arrow {
   right: 15px;
-  top: 42%;
+  top: 0;
   position: absolute;
   margin-right: 5px;
+	display:inline;
+	height:100% !important;
+
 }
 .content-right {
   padding: 18px 0 20px 0 !important;
@@ -1443,7 +1451,7 @@ a.off_status.selected {
 
 /* Customize the label (the container) */
 .eido-checkbox {
-  display: block;
+  display: inline;
   position: relative;
   padding-left: 35px;
   margin-top: 12px;
@@ -1475,6 +1483,11 @@ a.off_status.selected {
   padding:13px;
 }
 
+.checkmark.small {
+	width:20px;
+	height:20px;
+}
+
 /* On mouse-over, add a grey background color */
 .eido-checkbox:hover input ~ .checkmark {
   background-color: #ccc;
@@ -1503,6 +1516,5 @@ a.off_status.selected {
   width: 60%;
   height: 60%;
   background:#38AF62;
-  
-}
 
+}

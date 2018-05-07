@@ -1,6 +1,6 @@
 <div class="grid-x hide-for-small-only show-for-medium">
   <div class="small-12 medium-2 large-2 cell">
-    <button class="button type shift" type="button" data-toggle="example-dropdown-bottom-left">
+    <button class="button type shift" style="font-family: 'Lato-Bold', 'Lato Bold', 'Lato'; text-align: center;" type="button" data-toggle="example-dropdown-bottom-left">
       <?php echo $user_initials; ?>
     </button>
     <?php include "admin_dropdown_pane.php"; ?>
@@ -17,12 +17,12 @@
   </div>
 -->
 
- <div class="small-12 medium-6 large-6 cell" style="padding-top: 15px;">
+ <div class="small-12 medium-6 large-6 cell" style="padding-top: 26px;">
     	  <!--  <div class="grid" style="padding-top: 15px;"> -->
       	  
 	   <div id="addpt" class="row links">
-              <a href="/ui/verify/patient/patients_a.php?m=gotoaddpt" style="">
-	              <i class="eido-icon-plus"></i> Add Patient</a>
+              <a href="/ui/verify/patient/patients_a.php?m=gotoaddpt" style="left: -20px; padding-bottom: 2px;">
+	              <i class="eido-icon-plus"></i>Add patient</a>
            </div>
       
 
@@ -30,8 +30,8 @@
 
        <?php if ($user_role=="ADMIN"): ?>
       	  <div class="row links">
-            <a href="/ui/verify/admin/users.php">
-	            <i class="eido-icon-plus"></i> User Administration
+            <a href="/ui/verify/admin/users.php" style="left: -20px">
+	            <i class="eido-icon-plus"></i>User administration
             </a>
    	    </div>
        <?php endif; ?>

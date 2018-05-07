@@ -45,6 +45,13 @@ if (!password_verify($password, $hash)) {
 }
 
 save_password($user_id, $hash);
+
+$_SESSION['error_msg']="<center><h1>Reset Password</h1><p>Your password has been reset. Use your new password to login.</p>
+                       <a href='login.php' class='button large active'>Goto Login</a></center>";
+header ("Location: message.php");
+exit();
+
+// ****** not used now ******
 if ($rt=="suu") $return_to="superuser/users.php";
 else if ($rt=="suo") $return_to="superuser/organisations.php";
 else if ($rt=="sup") $return_to="superuser/procedures.php";

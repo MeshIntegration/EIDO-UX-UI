@@ -50,7 +50,14 @@ logMsg("Validation_Mobile page: ".$arr_pt_info['id'],$logfile);
                             <p>If you add it, we can text you with updates...</p>
                         <?php } else { ?>
 			    <p>Do we have the latest mobile number for you?</p>
-                            <p>Please check the number below and change if necessary.</p>
+                            <p>Please check the number below and change it if necessary.</p>
+                        <?php } ?>
+                        <?php if ( $arr_pt_info['c_emailAddress']=="") { ?>
+			    <p>We don't have an email address for you.</p>
+                            <p>If you add it, we can send you email with updates...</p>
+                        <?php } ?>
+                        <?php if($error_msg=='NO_MOBILE') { ?>
+                                <div class='error_message fi-alert'><strong>Please enter a mobile number</strong></div>
                         <?php } ?>
 			<label>Mobile Number
 			  <div class="input-group">
@@ -58,11 +65,20 @@ logMsg("Validation_Mobile page: ".$arr_pt_info['id'],$logfile);
                 <input class="input-group-field" name="mobile" type="text" value="<?php echo $arr_pt_info['c_mobileNumber']; ?>" placeholder="Enter your mobile number"><br />
               </div>
 			</label>
+                        <?php if($error_msg=='NO_EMAIL') { ?>
+                                <div class='error_message fi-alert'><strong>Please enter an email address</strong></div>
+                        <?php } ?>
+			<label>Email
+			  <div class="input-group">
+                <span class="input-group-label"><i class="fi-mail"></i></span>
+                <input class="input-group-field" name="email" type="text" value="<?php echo $arr_pt_info['c_emailAddress']; ?>" placeholder="Enter your email"><br />
+              </div>
+			</label>
 			<div class="grid-x grid-padding-x">
   			  <div class="small-12 cell">
                 <label>Which contact method would you prefer?<br />
-                <input type="radio" name="preferred" value="EMAIL" id="preferred_contact_email" required><label for="preferred_contactRed">E-mail</label><br />
-                <input type="radio" name="preferred" value="MOBILE" id="preferred_contact_mobile"><label for="preferred_contactBlue">Mobile</label>
+                <input type="radio" name="preferred" value="MOBILE" id="preferred_contact_mobile"><label for="preferred_contactBlue">Mobile</label><br />
+                <input type="radio" name="preferred" value="EMAIL" id="preferred_contact_email" required><label for="preferred_contactRed">E-mail</label>
 				</label>
               </div>
 			</div>

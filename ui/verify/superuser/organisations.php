@@ -144,50 +144,77 @@ logMsg("Organisations: $sql",$logfile);
   <div class="grid-x grid-margin-x su" data-equalizer data-equalize-on="medium">
      <!-- Start Content-Left -->
      <div class="small-12 medium-6 large-6 cell content-left">
-        <table width="100%" border="0"  class="su-table stack">
-  	     <tbody>
-              <tr>  
-	         <td colspan="3">
-                    <a class="button fc">Bulk Actions<img src="../img/icons/add_light.png" alt="add icon" class="fc_add"/></a>&nbsp;&nbsp;
-		    <a class="button fc">Sort By<img src="../img/icons/add_white.png" alt="add icon" class="fc_add"/></a>
-                 </td>
-              </tr>
-              <tr>
-                 <td><input type="checkbox"></td>
-                 <td colspan="2">&nbsp;</td>
-              </tr>
-               <?php while ($qryResult=$GetQuery->fetch_assoc())
-                     {
-                        $list_id=$qryResult['id'];
-                        $c_name=$qryResult['c_name'];
-                        $c_type=$qryResult['c_type'];
-						
-						$isSelected = '';
-						if ($list_id == $id) {
-							$isSelected = ' class="selected"';
-						}
-               ?>
-	       <tr<?php echo $isSelected; ?>>
-                  <td><input type="checkbox"></td>
-	          <td class='clickable-row su_data' data-href='organisations.php?m=overview&id=<?php echo $list_id; ?>'>
-		    <p>
-		  <a href="organisations.php?m=overview&id=<?php echo $list_id; ?>"><span class="uc"><?php echo $c_name; ?></span><br />
-		  <?php echo $c_type; ?></a>
-		    </p>
-		  </td>
-	          <td><a href="organisations.php?m=overview&id=<?php echo $list_id; ?>"><img src="../img/icons/greater.png" alt="icon" class="align-right" /></a></td>
-	       </tr>
-              <?php } ?>
-               <?php 
+
+	     <div id="bulk_action_tabs" class="tabs tab-actions" data-tab data-active-collapse="true" data-responsive-accordion-tabs="tabs medium-accordion large-tabs">
+			<span class="tabs-title">
+				<a href="#panel1" class="btn btn-actions" role="tab" id="BulkActions">Bulk Actions
+					<i class="eido-icon-plus fc_add fc_plus "></i>
+					<i class="eido-icon-minus fc_add fc_minus"></i>
+				</a>
+			</span>
+		     <span class="tabs-title">
+				<a href="#panel2" class="btn btn-actions" role="tab">Sort &amp; Search
+					<i class="eido-icon-plus fc_add fc_plus"></i>
+					<i class="eido-icon-minus fc_add fc_minus"></i>
+				</a>
+			</span>
+
+	     </div>
+
+	     <!-- INSERT ACTIONS DIV .tabs-panel HERE -->
+
+	     <div class="grid-x grid-header" style="">
+		     <div class="small-2 columns column-first" style="">
+			     <label class="eido-checkbox">
+				     <input class="eido-checkbox" style="margin-left:25px;" type="checkbox" name="actOnAll" id="actOnAll">
+				     <span class="checkmark" style="left:0px;"></span>
+			     </label>
+		     </div>
+
+	     </div>
+
+	     <div class="row">
+		     <ul class="patient-list">
+			     <?php while ($qryResult=$GetQuery->fetch_assoc()) {
+			     $list_id=$qryResult['id'];
+			     $c_name=$qryResult['c_name'];
+			     $c_type=$qryResult['c_type'];
+
+			     $isSelected = '';
+			     if ($list_id == $id) {
+				     $isSelected = 'selected';
+			     }
+			     ?>
+			     <li class="<?php echo $isSelected; ?>">
+				     <a href="organisations.php?m=overview&id=<?php echo $list_id; ?>">
+					     <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+					     <div class="grid-x">
+						     <div class="small-2 columns column-first">
+							     <label class="eido-checkbox">
+								     <input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
+								     <span class="checkmark"></span>
+							     </label>
+						     </div>
+						     <div class="small-6 columns">
+							     <p>
+								     <strong><?php echo $c_name; ?></strong><br/>
+								     <?php echo $c_type; ?>
+							     </p>
+						     </div>
+					     </div>
+				     </a>
+			     </li>
+			     <?php } ?>
+		     </ul>
+	     </div>
+               <?php
                // pagination 
                   $sql = "SELECT * FROM $TBLORGANISATIONS";
                   $GetQuery = dbi_query($sql);
                   $totalRecord = $GetQuery->num_rows;
                   $pagination = get_pagination($page, $totalRecord);
-               ?>   
-  	    </tbody>
-        </table>
-     <div class="grid grid-x text-center">
+               ?>
+     <div class="grid grid-x text-center row">
         <div class="small-12 pagination-btm"><?php echo $pagination; ?></div>
      </div>
    </div>
@@ -195,32 +222,38 @@ logMsg("Organisations: $sql",$logfile);
 <!-- Start Content-Right -->  
 <!-- ADD SECTION -->
 <div class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
-          <h3>Add Organisation</h3>
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="small-12 cell field">
+                <h3>&nbsp;&nbsp;Add Organisation</h3>
+            </div>
+        </div>
+    </div>
           <form action="organisations_a.php?m=add" method="post" enctype="multipart/form-data">
     <div class="grid-container">
        <div class="grid-x">
             <div class="small-12 cell field">
-                  <label>Name
+                <label class="weight-normal">Name
                 <input type="text" name="name" placeholder="">
               </label>
             </div>
             <div class="small-12 cell field">
-              <label>Administrator Contact First Name
+                <label class="weight-normal">Administrator Contact First Name
                 <input type="text" name="fname"  placeholder="">
               </label>
             </div>
             <div class="small-12 cell field">
-              <label>Administrator Contact Surname
+                <label class="weight-normal">Administrator Contact Surname
                 <input type="text" name="lname"  placeholder="">
               </label>
             </div>
             <div class="small-12 cell field">
-              <label>E-mail Address
+                <label class="weight-normal">E-mail Address
                 <input type="text" name="email" placeholder="">
               </label>
             </div>
             <div class="small-12 cell field">
-              <label>Type
+                <label class="weight-normal">Type
                 <select name="type">
                   <option value=""></option>
                   <option value="Government Hospital" >Government Hospital</option>
@@ -229,13 +262,13 @@ logMsg("Organisations: $sql",$logfile);
                 </select>
               </label>
               <div class="small-6 medium-6 large-6 cell">
-                <label>Organisation Header Logo
+                  <label class="weight-normal">Organisation Header Logo
                   <img src="/ui/verify/img/org_logos/blank.jpg">&nbsp;&nbsp;<input type="file" name="header_logo" placeholder="">
                 </label>
               </div>
               <div class="small-12 medium-12 large-12 cell">
                <fieldset class="large-6 cell">
-               <label>Organisation has subdivisions?&nbsp;&nbsp;
+                   <label class="weight-normal">Organisation has subdivisions?&nbsp;&nbsp;
                <input type="radio" name="subdivision"  value="Yes" id="subdivisionRed" required><label for="subdivisionRed">Yes</label>
                <input type="radio" name="subdivision"  value="No" id="subdivisionBlue"><label for="subdivisionBlue">No</label>
                              </label>
@@ -243,7 +276,7 @@ logMsg("Organisations: $sql",$logfile);
               </div>
             </div>
             <div class="small-12 cell field text-center">
-                  <br /><input type="submit" id="add" class="button large" value="Add Organization">
+                  <br /><input type="submit" id="add" class="button large" value="Add organization">
             </div>
           </div>
         </div>
@@ -757,6 +790,12 @@ logMsg("AddProc: $sql_pa", $logfile);
             $(".clickable-row").click(function() {
               window.location = $(this).data("href");
             });
+         });
+
+         $(document).ready(function(){
+	         $('#actOnAll').click(function () {
+		         $("[id^=performAction]").prop('checked', this.checked);
+	         });
          });
       </script>  
    </body>

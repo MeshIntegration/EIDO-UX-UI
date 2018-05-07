@@ -42,7 +42,7 @@ $arr_email['body']=$body;
 
 $result = send_email($arr_email);
 
-$_SESSION['error_msg']="An e-mail has been sent to your mail account. Please click the link and use that page reset your password.<br /><br />Thank you.<br /><br />EIDO Verify Patient Communications";
+$_SESSION['error_msg']="<center>>Forgot Password</h1></center>An e-mail has been sent to your mail account. Please click the link and use that page reset your password.<br /><br />Thank you.<br /><br />EIDO Verify Patient Communications";
 header("Location:validation_message.php");
 exit();
 ?>

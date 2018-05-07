@@ -1,0 +1,383 @@
+/**
+* Jayme Skeen's additions start here
+* Date: 4/24/2018
+**/
+//
+//.patient-list {
+//	list-style: none;
+//	margin:0;
+//	padding:0;
+//	li {
+//		display: block;
+//		border-bottom:1px solid #D3D1D1;
+//		padding:0;
+//		margin:0;
+//		a {
+//			position: relative;
+//			display: block;
+//			padding:10px 10px;
+//
+//			&:hover, &:focus {
+//				background:#F7F5F5;
+//				cursor: pointer !important;
+//				color:#333;
+//			}
+//			p {
+//				margin-bottom:0 !important;
+//			}
+//		}
+//		&:before {
+//
+//		}
+//		.uc {
+//			font-weight:bold;
+//			font-size:20px;
+//		}
+//
+//		&:last-child {
+//			border-bottom: none !important;
+//		}
+//
+//		&.selected {
+//			background: #D3D1D1;
+//		}
+//		i {
+//			font-size:16px;
+//			color:#A1A1A1;
+//		}
+//
+//	}
+//	.right-arrow {
+//		right:15px;
+//		top:42%;
+//		position: absolute;
+//		margin-right:5px;
+//	}
+//}
+//
+//.content-right {
+//	padding:18px 0 20px 0 !important;
+//}
+//.inactive {
+//	&:hover {
+//		color:#fff !important;
+//	}
+//}
+//
+//.padding-10 {
+//	padding:5px 10px;
+//}
+//
+//
+//.row {
+//	&:after, &:before {
+//		clear:both;
+//		content:'';
+//	}
+//}
+//
+//.aux_help {
+//	i {
+//		font-size:30px;
+//	}
+//}
+//
+//.links {
+//	a {
+//		vertical-align: top;
+//		i {
+//			font-size:20px;
+//			margin-right:10px;
+//		}
+//	}
+//
+//}
+//
+//.clear-icon {
+//	color:#000;
+//	opacity:0.2;
+//	&:hover, &:focus {
+//		opacity:0.3;
+//		color:#000;
+//	}
+//	i {
+//		top:11px !important;
+//
+//	}
+//
+//}
+//
+//.btn-back {
+//	font-size:18px;
+//	color:#a4a4a4 !important;
+//	display:block;
+//	i {
+//		color:#A4A4A4;
+//		font-size:16px;
+//	}
+//}
+//
+//.sub-text {
+//	display:block;
+//	font-size:14px !important;
+//}
+//
+//label {
+//	font-weight:normal !important;
+//}
+//
+//.su .content-right form hr {
+//	margin:27px -20px !important;
+//}
+//
+//.button {
+//	font-weight: bold;
+//}
+//
+//a.off_status {
+//	&.selected {
+//		background:#D0021B !important;
+//	}
+//}
+//
+//.button.on_status {
+//	border-left: none !important;
+//	border-right:5px solid #3dae65;
+//}
+//
+//.main_menu {
+//	.button, .button:hover, .button:active, .button:focus {
+//		background:#0d2240 !important;
+//		color: #fff !important;
+//		border: none !important;
+//		font-size:15px;
+//		width: 40px;
+//		height:40px;
+//		line-height:5px;
+//		margin:10px auto;
+//
+//	}
+//
+//	&:before {
+//		width: 0;
+//		height: 0;
+//		border-style: solid;
+//		border-width: 0 16px 16px 16px;
+//		border-color: transparent transparent #979797 transparent;
+//		content:'';
+//		top:-16px;
+//		left:10px;
+//		position: absolute;
+//	}
+//	&:after {
+//		width: 0;
+//		height: 0;
+//		border-style: solid;
+//		border-width: 0 15px 16px 15px;
+//		border-color: transparent transparent #f7f5f5 transparent;
+//
+//		content:'';
+//		top:-15px;
+//		left:11px;
+//		position: absolute;
+//	}
+//}
+//
+//.basic-list {
+//	margin:0;
+//	padding:0;
+//	li {
+//		display:block;
+//		margin:0;
+//		padding:0;
+//		border-top:1px solid #979797;
+//		border-bottom: none !important;
+//		a {
+//			&:hover, &:active, &:focus {
+//				background: #d3d1d1;
+//			}
+//			padding:10px 10px;
+//			display:block;
+//		}
+//
+//		&:last-child {
+//		}
+//	}
+//
+//}
+
+@greenBG: #3DAE65;
+@fontColor: #0D2240;
+.superuser {
+	.page-title {
+		background: @greenBG;
+		color:#fff;
+		text-transform: uppercase;
+	}
+
+	.navigation-bar, .menu.simple {
+		background: @greenBG;
+		li, a {
+			color:#fff;
+			text-transform: uppercase;
+		}
+		li {
+			border-right-color: #fff;
+		}
+	}
+}
+
+.back-row {
+	background:#DDDDDD;
+	padding:8px 0 8px 10px;
+	a {
+		font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
+		color: @fontColor;
+		i {
+			top:1px;
+			position: relative;
+			color:(#DDD - 50)
+		}
+	}
+}
+
+.page-title {
+	border-bottom:solid #E3DDDF 1px;
+}
+
+
+.tab-actions {
+	border:none;
+	background:transparent;
+	margin-bottom:20px;
+
+}
+
+.btn-actions {
+	margin-left:18px;
+	font-size:12px;
+	vertical-align: middle;
+	padding:10px !important;
+	background:#ddd;
+
+	i {
+		position: relative;
+		top:-1px;
+		font-size:19px;
+		color:(#DDD - 50);
+		display:inline-block;
+		vertical-align: text-top;
+	}
+
+	&:hover, &:active, &:focus {
+		background:@fontColor;
+		color:#fff;
+
+	}
+}
+
+.column-first {
+	padding-left:18px;
+}
+
+.grid-header {
+	padding-bottom:10px;
+	border-bottom:1px solid #ddd;
+	strong {
+		position:relative;
+		top:14px;
+
+		&.no-check {
+			top:0;
+			left:10px;
+		}
+	}
+}
+/**
+override shit tab
+ */
+.tabs-title {
+	display:inline !important;
+	float:none !important;
+	a {
+		display:inline;
+		&:hover, &:active, &:focus {
+			background:@fontColor;
+			color:#fff;
+
+		}
+
+	}
+
+	&.is-active {
+		a {
+			color:@fontColor;
+			background:#ddd;
+		}
+	}
+}
+
+.tabs-content {
+	border:0;
+}
+
+#ResetFilter {
+	position: relative;
+	top:-2px;
+}
+div.sort:first-of-type {
+	padding-top:5px !important;
+}
+
+//for the map
+.datepicker td span.active, .datepicker td.active.day, .datepicker td.active.year {
+	background:#3DAE65 !important;
+	color:#fff;
+	border-radius:50%;
+
+}
+
+.datepicker.dropdown-menu, .datepicker, .datepicker-days, .datepicker-days tbody, .datepicker td, .datepicker th {
+	background:#F7F5F5;
+}
+
+.datepicker {
+
+	&.dropdown-menu {
+		border-radius: 0;
+		border: 1px solid #979797;
+		&:before {
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 16px 16px 16px;
+			border-color: transparent transparent #979797 transparent;
+			content: '';
+			top: -16px;
+			left: 10px;
+			position: absolute;
+		}
+		&:after {
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 15px 16px 15px;
+			border-color: transparent transparent #f7f5f5 transparent;
+
+			content: '';
+			top: -15px;
+			left: 11px;
+			position: absolute;
+		}
+	}
+}
+
+.ui-sortable-handle {
+	span.not-allow-move {
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+}
+.pagination li {
+	border-radius: 0 !important;
+}

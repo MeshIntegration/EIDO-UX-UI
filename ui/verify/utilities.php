@@ -57,10 +57,8 @@ function get_pt_status($id)
    if (strtoupper($qryResult['c_status'])=="EPISODE COMPLETE" || 
                   strtoupper($qryResult['c_procedureStatus'])=="CANCEL")
       $status = "Inactive";
-   else if ($qryResult['c_procedureId']=="" || $qryResult['c_status']=="PENDING")
+   else if ($qryResult['c_procedureId']=="")
       $status = "Pending";
-   else if ($qryResult['c_hasAlert']=="Y")
-      $status = "Alert";
    else // not inactive so must be Active
       $status = "Active";
 //logMsg("GET PT STATUS>>> $sql",$logfile);
@@ -68,20 +66,19 @@ function get_pt_status($id)
 
    // but check to see if they have any open Alerts
    // get the most recent timeline entry
-   //$sql = "SELECT * from $TBLTIMELINES 
-   //      WHERE c_patientEpisodeId = '$id'
-   //      AND c_timelineEntryType='Alert'
-   //      AND c_timelineAlertStatus='Open'
-   //      ORDER BY dateCreated DESC
-   //      LIMIT 1";
+   $sql = "SELECT * from $TBLTIMELINES 
+           WHERE c_patientEpisodeId = '$id'
+           AND c_timelineAlertStatus='Open'
+           ORDER BY dateCreated DESC
+           LIMIT 1";
 
-   // $GetQuery=dbi_query($sql);
-   // if ($GetQuery->num_rows>0)
-   // {
-   //    $qryResult = $GetQuery->fetch_assoc();
-   //    if ($qryResult['c_timelineEntryType']=="Alert")
-   //       $status = "Alert";
-   // } 
+   $GetQuery=dbi_query($sql);
+   if ($GetQuery->num_rows>0)
+   {
+      $qryResult = $GetQuery->fetch_assoc();
+      if ($qryResult['c_timelineEntryType']=="Alert")
+         $status = "Alert";
+   } 
 //logMsg($sql,$logfile);
 //logMsg(">>> Status: $status",$logfile);
    return $status;
@@ -135,12 +132,12 @@ function is_email_unique($email)
 }
 
 // **************************************************
-function is_gmc_number_unique($gmc_number)
-{
+function is_gmc_number_unique($gmc_number, $id='xxxx'){
    $sql="SELECT * 
          FROM dir_user 
          WHERE gmc_number='$gmc_number'
-         AND active=1";
+         AND active=1
+         AND id<>'$id'";
    $GetQuery=dbi_query($sql);
    if ($GetQuery->num_rows>0)
       return false;
@@ -232,7 +229,8 @@ function save_user_pw_key($email, $pwkey)
    // save the key used to authenicate an admin password reset
    $sql = "UPDATE dir_user
            SET c_passwordResetKey = '$pwkey'
-           WHERE username = '".$email."'";
+           WHERE username = '".$email."'
+             AND active=1";
    logMsg("save_user_pw_key: $sql", "wel.log");
    dbi_query($sql);
 }
@@ -242,7 +240,7 @@ function  save_user_pw_reset($pwkey, $password)
 {
    $sql = "UPDATE dir_user
            SET uipassword = '$password',
-               c_passwordResetKey='****',
+               c_passwordResetKey = '*!*!*!*'
            WHERE c_passwordResetKey = '".$pwkey."'";
    logMsg("save_user_pw_reset: $sql", "wel.log");
    dbi_query($sql);

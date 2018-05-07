@@ -22,14 +22,15 @@ $password= $_POST['password'];
 $sql = "SELECT u.*, ug.*
         FROM dir_user u, dir_user_group ug
         WHERE u.username='$username'
-        AND u.id=ug.userid";
+        AND u.id=ug.userid
+        AND u.active=1";
 logMsg($sql,$logfile);
 
 $GetQuery=dbi_query($sql);
 if ($GetQuery->num_rows==0)
 {
    $_SESSION['error_msg']="Incorrect email or password. Please try again.";
-   logMsg("Incorrect email or password. $username %password - back to login.php", $logfile);
+   logMsg("Incorrect email (user not found) $username $password - back to login.php", $logfile);
    header("Location: login.php");
    exit();
 }
@@ -40,7 +41,7 @@ else {
     if (!password_verify($password, $hash)) {
         /* Invalid */
         $_SESSION['error_msg'] = "Incorrect email or password. Please try again.";
-        logMsg("Incorrect email or password. $username %password - back to login.php", $logfile);
+        logMsg("Incorrect password. $username $password - back to login.php", $logfile);
         header("Location: login.php");
         exit();
     }

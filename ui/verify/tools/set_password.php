@@ -6,7 +6,7 @@ include "../utilities.php";
 
 // hard code these and run from the command line:  "php set_password.php"
 $username = "wayne@mindstreams.com";
-$password = "password";
+$password = "JwcZY5eG";
 
 $hash = password_hash($password, PASSWORD_BCRYPT);
 if (!password_verify($password, $hash)) {

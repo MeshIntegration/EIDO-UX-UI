@@ -14,16 +14,46 @@ $id = get_query_string('id');
 
 logMsg("Users_a: mode: $mode - ID: $id",$logfile);
 
-if ($mode=="update")
-{
-   $sql = "UPDATE dir_user
-           SET firstName=".escapeQuote($firstName).",
-               lastName=".escapeQuote($lastName).",
-               email=".escapeQuote($email)."
+if ($mode=="update") {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    //  check for required fields and formats here
+    if ($firstname == "")
+        $_SESSION['add_firstname_error'] = true; else $_SESSION['add_firstname_error'] = false;
+    if (!preg_match("/^[a-zA-Z]*$/", $firstname))
+        $_SESSION['add_firstname_format_error'] = true; else $_SESSION['add_firstname_format_error'] = false;
+    if ($lastname == "")
+        $_SESSION['add_lastname_error'] = true; else $_SESSION['add_lastname_error'] = false;
+    if (!preg_match("/^[a-zA-Z]*$/", $lastname))
+        $_SESSION['add_lastname_format_error'] = true; else $_SESSION['add_lastname_format_error'] = false;
+    if ($email == "")
+        $_SESSION['add_email_error'] = true; else $_SESSION['add_email_error'] = false;
+    if ($email <> "" && !filter_var($email, FILTER_VALIDATE_EMAIL))
+        $_SESSION['add_bad_email_error'] = true; else $_SESSION['add_bad_email_error'] = false;
+    if (!is_email_unique($email))
+        $_SESSION['add_email_duplicate_error'] = true; else $_SESSION['add_email_duplicate_error'] = false;
+    if ($_SESSION['add_firstname_error'] || $_SESSION['add_lastname_error'] ||
+        $_SESSION['add_bad_email_error'] || $_SESSION['add_email_error'] || $_SESSION['add_email_duplicate_error'] ||
+        $_SESSION['add_firstname_format_error'] || $_SESSION['add_lastname_format_error']) {
+        $_SESSION['add_firstname'] = $firstname;
+        $_SESSION['add_lastname'] = $lastname;
+        $_SESSION['add_email'] = $email;
+        $_SESSION['add_password'] = $password;
+    }
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+
+    $sql = "UPDATE dir_user
+           SET firstName=" . escapeQuote($firstName) . ",
+               lastName=" . escapeQuote($lastName) . ",
+               email=" . escapeQuote($email) . "
            WHERE id='$id'";
-   dbi_query($sql);
-   logMsg("UPDATE: $sql",$logfile);
-} 
+    dbi_query($sql);
+    logMsg("UPDATE: $sql", $logfile);
+}
 else if ($mode=="userreset")
 {
    //global $TBLPTEPISODES;

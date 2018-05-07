@@ -5708,3 +5708,2108 @@
         AND u.id=ug.userid
 05/02/2018 03:04:36 - 24.101.155.16: Mm1 Admin - MA - sitedivadmins
 05/02/2018 03:04:36 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/02/2018 03:30:11 - 65.25.77.151: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='gadmin@example.com'
+        AND u.id=ug.userid
+05/02/2018 03:30:11 - 65.25.77.151: Gfirst Glast - GG - sitedivadmins
+05/02/2018 03:30:11 - 65.25.77.151: >>>>  GroupID: sitedivadmins
+05/02/2018 08:19:46 - 39.36.189.0: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='gadmin@example.com'
+        AND u.id=ug.userid
+05/02/2018 08:19:46 - 39.36.189.0: Gfirst Glast - GG - sitedivadmins
+05/02/2018 08:19:46 - 39.36.189.0: >>>>  GroupID: sitedivadmins
+05/02/2018 08:21:20 - 82.34.15.57: forgot_pw: mail_send_result: 1
+05/02/2018 08:24:28 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 08:24:28 - 82.34.15.57: James MacKnife - JM - staff
+05/02/2018 08:24:28 - 82.34.15.57: >>>>  GroupID: staff
+05/02/2018 08:37:04 - 82.34.15.57: forgot_pw: mail_send_result: 1
+05/02/2018 08:46:46 - 82.34.15.57: forgot_pw: mail_send_result: 1
+05/02/2018 08:59:40 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 08:59:40 - 82.34.15.57: James MacKnife - JM - staff
+05/02/2018 08:59:40 - 82.34.15.57: >>>>  GroupID: staff
+05/02/2018 09:04:40 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 09:04:40 - 82.34.15.57: James MacKnife - JM - staff
+05/02/2018 09:04:40 - 82.34.15.57: >>>>  GroupID: staff
+05/02/2018 10:09:59 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 10:09:59 - 82.34.15.57: James MacKnife - JM - staff
+05/02/2018 10:09:59 - 82.34.15.57: >>>>  GroupID: staff
+05/02/2018 11:47:07 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 11:47:08 - 207.54.162.178: Mm1 Admin - MA - sitedivadmins
+05/02/2018 11:47:08 - 207.54.162.178: >>>>  GroupID: sitedivadmins
+05/02/2018 11:48:11 - 207.54.162.178: Users_a: mode: add - ID: 
+05/02/2018 11:48:11 - 207.54.162.178: ADD: INSERT INTO dir_user
+           SET firstName='Todd',
+               lastName='Ingraham',
+               email='tingraham@meshintegration.com',
+               active=1,
+               timeZone='0',
+               id='5ae9a57b78250',
+               username='tingraham@meshintegration.com',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$wsO77pTwE5ZzQdyRs01mtuQaBmtDmGgTAPHRFFaSWS/I5SbWa/g9e'
+05/02/2018 11:48:11 - 207.54.162.178: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='tingraham@meshintegration.com',
+               userId='5ae9a57b78250'
+05/02/2018 11:48:11 - 207.54.162.178: INSERT INTO dir_user_group
+           SET groupId='admin',
+               username='tingraham@meshintegration.com',
+               userId='5ae9a57b78250'
+05/02/2018 11:49:05 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/02/2018 11:49:05 - 207.54.162.178: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/02/2018 11:49:33 - 207.54.162.178: forgot_pw: mail_send_result: 1
+05/02/2018 11:52:35 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/02/2018 11:52:35 - 207.54.162.178: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/02/2018 11:53:09 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/02/2018 11:53:09 - 207.54.162.178: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/02/2018 11:53:35 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/02/2018 11:53:35 - 207.54.162.178: Todd Ingraham - TI - admin
+05/02/2018 11:53:35 - 207.54.162.178: >>>>  GroupID: admin
+05/02/2018 12:03:45 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 12:03:45 - 207.54.162.178: James MacKnife - JM - staff
+05/02/2018 12:03:45 - 207.54.162.178: >>>>  GroupID: staff
+05/02/2018 12:45:13 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 12:45:13 - 207.54.162.178: EIDO Admin - EA - eidoadmins
+05/02/2018 12:45:13 - 207.54.162.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/02/2018 12:48:02 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='bunkers@zoominternet.net'
+        AND u.id=ug.userid
+05/02/2018 12:48:02 - 207.54.162.178: Tom Watson - TW - eidoadmins
+05/02/2018 12:48:02 - 207.54.162.178: 5ae9b35a55224 - Logged in as SUPERUSER
+05/02/2018 12:49:58 - 68.107.189.223: forgot_pw: mail_send_result: 1
+05/02/2018 12:52:58 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/02/2018 12:52:58 - 68.107.189.223: Wayne Newton - WN - admin
+05/02/2018 12:52:58 - 68.107.189.223: >>>>  GroupID: admin
+05/02/2018 12:53:13 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/02/2018 12:53:13 - 68.107.189.223: Incorrect email or password. wayne@mindstreams.com %password - back to login.php
+05/02/2018 12:54:03 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/02/2018 12:54:03 - 68.107.189.223: Wayne Newton - WN - admin
+05/02/2018 12:54:03 - 68.107.189.223: >>>>  GroupID: admin
+05/02/2018 12:55:39 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 12:55:39 - 68.107.189.223: James MacKnife - JM - staff
+05/02/2018 12:55:39 - 68.107.189.223: >>>>  GroupID: staff
+05/02/2018 14:23:35 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/02/2018 14:23:35 - 68.107.189.223: Wayne Newton - WN - admin
+05/02/2018 14:23:35 - 68.107.189.223: >>>>  GroupID: admin
+05/02/2018 14:25:18 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/02/2018 14:25:19 - 68.107.189.223: Wayne Newton - WN - admin
+05/02/2018 14:25:19 - 68.107.189.223: >>>>  GroupID: admin
+05/02/2018 14:29:18 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/02/2018 14:29:18 - 68.107.189.223: Wayne Newton - WN - sitedivadmins
+05/02/2018 14:29:18 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/02/2018 14:30:12 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/02/2018 14:30:12 - 68.107.189.223: Wayne Newton - WN - sitedivadmins
+05/02/2018 14:30:12 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/02/2018 15:23:18 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='gadmin@example.com'
+        AND u.id=ug.userid
+05/02/2018 15:23:18 - 76.188.180.118: Gfirst Glast - GG - sitedivadmins
+05/02/2018 15:23:18 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/02/2018 15:24:11 - 76.188.180.118: Users_a: mode: add - ID: 
+05/02/2018 15:24:50 - 76.188.180.118: Users_a: mode: add - ID: 
+05/02/2018 15:24:51 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='Andrew',
+               lastName='Molenaar',
+               email='amolenaar@meshintegration.com',
+               active=1,
+               timeZone='0',
+               id='5ae9d842ed33c',
+               username='amolenaar@meshintegration.com',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$apR2EMQ.DTQqJvL44ZbCAO4q3WlQ1ngfTVytZUg9mnYXKYB/JRggq'
+05/02/2018 15:24:51 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='amolenaar@meshintegration.com',
+               userId='5ae9d842ed33c'
+05/02/2018 15:24:51 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               username='amolenaar@meshintegration.com',
+               userId='5ae9d842ed33c'
+05/02/2018 15:26:03 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND u.id=ug.userid
+05/02/2018 15:26:03 - 76.188.180.118: Incorrect email or password. amolenaar@meshintegration.com %password - back to login.php
+05/02/2018 15:26:26 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND u.id=ug.userid
+05/02/2018 15:26:26 - 76.188.180.118: Incorrect email or password. amolenaar@meshintegration.com %password - back to login.php
+05/02/2018 15:26:43 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='amolenaar@meshintegration.com'
+        AND u.id=ug.userid
+05/02/2018 15:26:43 - 76.188.180.118: Incorrect email or password. amolenaar@meshintegration.com %password - back to login.php
+05/02/2018 15:46:02 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='bunkers@zoominternet.net'
+        AND u.id=ug.userid
+05/02/2018 15:46:02 - 207.54.162.178:   -  - eidoadmins
+05/02/2018 15:46:02 - 207.54.162.178: 5ae9b35a55224 - Logged in as SUPERUSER
+05/02/2018 15:46:43 - 207.54.162.178: forgot_pw: mail_send_result: 1
+05/02/2018 15:48:51 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='bunkers@zoominternet.net'
+        AND u.id=ug.userid
+05/02/2018 15:48:51 - 207.54.162.178: Incorrect email or password. bunkers@zoominternet.net %password - back to login.php
+05/02/2018 15:49:09 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='bunkers@zoominternet.net'
+        AND u.id=ug.userid
+05/02/2018 15:49:09 - 207.54.162.178:   -  - eidoadmins
+05/02/2018 15:49:09 - 207.54.162.178: 5ae9b35a55224 - Logged in as SUPERUSER
+05/02/2018 18:10:46 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 18:10:46 - 76.188.180.118: James MacKnife - JM - staff
+05/02/2018 18:10:46 - 76.188.180.118: >>>>  GroupID: staff
+05/02/2018 18:45:44 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='gadmin@example.com'
+        AND u.id=ug.userid
+05/02/2018 18:45:45 - 207.54.162.178: Gfirst Glast - GG - sitedivadmins
+05/02/2018 18:45:45 - 207.54.162.178: >>>>  GroupID: sitedivadmins
+05/02/2018 19:31:49 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 19:31:49 - 207.54.162.178: Mm1 Admin - MA - sitedivadmins
+05/02/2018 19:31:49 - 207.54.162.178: >>>>  GroupID: sitedivadmins
+05/02/2018 20:58:36 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='gadmin@example.com'
+        AND u.id=ug.userid
+05/02/2018 20:58:36 - 76.188.180.118: Gfirst Glast - GG - sitedivadmins
+05/02/2018 20:58:36 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/02/2018 21:10:21 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='gadmin@example.com'
+        AND u.id=ug.userid
+05/02/2018 21:10:21 - 76.188.180.118: Gfirst Glast - GG - sitedivadmins
+05/02/2018 21:10:21 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/02/2018 21:27:44 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 21:27:44 - 184.56.244.84: James MacKnife - JM - staff
+05/02/2018 21:27:44 - 184.56.244.84: >>>>  GroupID: staff
+05/02/2018 21:37:02 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 21:37:02 - 68.107.189.223: EIDO Admin - EA - eidoadmins
+05/02/2018 21:37:02 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/02/2018 22:27:30 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 22:27:30 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/02/2018 22:27:30 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/02/2018 22:48:14 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 22:48:14 - 76.188.180.118: James MacKnife - JM - staff
+05/02/2018 22:48:14 - 76.188.180.118: >>>>  GroupID: staff
+05/02/2018 22:51:20 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 22:51:20 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/02/2018 22:51:20 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/02/2018 22:52:06 - 76.188.180.118: Users_a: mode: add - ID: 
+05/02/2018 22:52:07 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='Andrew',
+               lastName='Surname',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5aea4116e77cd',
+               username='ajm@mm.st',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$.KFn1eKUMmdKHTIXZWrJY.uMAHwyOqTdYc3SajtobosPgu90jgZPa'
+05/02/2018 22:52:07 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='ajm@mm.st',
+               userId='5aea4116e77cd'
+05/02/2018 22:52:07 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='admin',
+               username='ajm@mm.st',
+               userId='5aea4116e77cd'
+05/02/2018 23:07:21 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='gadmin@example.com'
+        AND u.id=ug.userid
+05/02/2018 23:07:21 - 76.188.180.118: Incorrect email or password. gadmin@example.com %password - back to login.php
+05/02/2018 23:07:45 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/02/2018 23:07:46 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/02/2018 23:07:46 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/02/2018 23:10:00 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='ajm@mm.st'
+        AND u.id=ug.userid
+05/02/2018 23:10:00 - 76.188.180.118: Andrew Surname - AS - sitedivadmins
+05/02/2018 23:10:00 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/02/2018 23:10:36 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 00:01:47 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 00:02:21 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 00:16:11 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 03:18:53 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 03:18:53 - 184.56.244.84: James MacKnife - JM - staff
+05/03/2018 03:18:53 - 184.56.244.84: >>>>  GroupID: staff
+05/03/2018 03:29:09 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 03:29:09 - 68.107.189.223: EIDO Admin - EA - eidoadmins
+05/03/2018 03:29:09 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 03:32:13 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 03:32:13 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/03/2018 03:32:13 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 03:37:05 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 03:37:05 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/03/2018 03:37:05 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 04:00:53 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 04:00:53 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/03/2018 04:00:53 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/03/2018 04:01:33 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 04:02:03 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 04:02:03 - 76.188.180.118: UPDATE dir_user
+           SET firstName='Andreww',
+               lastName='Surnamew',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5aea4116e77cd',
+               username='ajm@mm.st',
+               isSurgeon='',
+               gmc_number=''
+           WHERE id='5aea4116e77cd'
+05/03/2018 04:02:03 - 76.188.180.118: UPDATE dir_user_group
+              SET groupId='sitedivadmin',
+                  username='ajm@mm.st'
+              WHERE userId='5aea4116e77cd'
+05/03/2018 04:02:03 - 76.188.180.118: UPDATE dir_user_role
+           SET roleId='ROLE_USER',
+               username='ajm@mm.st'
+           WHERE userId='5aea4116e77cd'
+05/03/2018 04:05:53 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 04:05:53 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/03/2018 04:05:53 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 04:06:17 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 04:06:17 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/03/2018 04:06:17 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/03/2018 04:07:55 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 04:07:55 - 76.188.180.118: UPDATE dir_user
+           SET firstName='Andrewww',
+               lastName='Surnameww',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5aea4116e77cd',
+               username='ajm@mm.st',
+               isSurgeon='',
+               gmc_number=''
+           WHERE id='5aea4116e77cd'
+05/03/2018 04:07:55 - 76.188.180.118: UPDATE dir_user_group
+              SET groupId='sitedivadmin',
+                  username='ajm@mm.st'
+              WHERE userId='5aea4116e77cd'
+05/03/2018 04:07:55 - 76.188.180.118: UPDATE dir_user_role
+           SET roleId='ROLE_USER',
+               username='ajm@mm.st'
+           WHERE userId='5aea4116e77cd'
+05/03/2018 04:12:41 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 04:30:38 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 04:30:38 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/03/2018 04:30:38 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/03/2018 04:44:56 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 04:47:42 - 76.188.180.118: Users_a: mode: update - ID: 5aea4116e77cd
+05/03/2018 05:09:17 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 05:09:17 - 68.107.189.223: Incorrect email or password. mm1admin@thenakedsurgeon.com %password - back to login.php
+05/03/2018 05:09:28 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 05:09:28 - 68.107.189.223: Mm1 Admin - MA - sitedivadmins
+05/03/2018 05:09:28 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/03/2018 05:09:37 - 68.107.189.223: Users_a: mode: add - ID: 
+05/03/2018 05:09:42 - 68.107.189.223: Users_a: mode: gotoupdate - ID: jmacknife@thenakedsurgeon.com
+05/03/2018 05:09:47 - 68.107.189.223: Users_a: mode: gotoupdate - ID: 5ae3274dd0beb
+05/03/2018 05:24:19 - 76.188.180.118: Users_a: mode: gotoupdate - ID: 5aea4116e77cd
+05/03/2018 05:24:22 - 76.188.180.118: Users_a: mode: gotoupdate - ID: s.scalpel
+05/03/2018 05:24:24 - 76.188.180.118: Users_a: mode: gotoupdate - ID: 5aea4116e77cd
+05/03/2018 05:24:39 - 76.188.180.118: Users_a: mode: add - ID: 
+05/03/2018 05:24:45 - 76.188.180.118: Users_a: mode: gotoupdate - ID: 5addfcd5e97b2
+05/03/2018 05:24:49 - 76.188.180.118: Users_a: mode: gotoupdate - ID: 5aea4116e77cd
+05/03/2018 05:25:00 - 76.188.180.118: Users_a: mode: add - ID: 
+05/03/2018 05:35:02 - 76.188.180.118: Users_a: mode: gotoupdate - ID: 5aea4116e77cd
+05/03/2018 05:35:05 - 76.188.180.118: Users_a: mode: gotoaddpt - ID: 
+05/03/2018 05:35:07 - 76.188.180.118: Users_a: mode: add - ID: 
+05/03/2018 05:35:12 - 76.188.180.118: Users_a: mode: gotoaddpt - ID: 
+05/03/2018 05:35:16 - 76.188.180.118: Users_a: mode: add - ID: 
+05/03/2018 05:35:21 - 76.188.180.118: Users_a: mode: gotoaddpt - ID: 
+05/03/2018 06:09:55 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 06:09:55 - 24.101.155.16: EIDO Admin - EA - eidoadmins
+05/03/2018 06:09:55 - 24.101.155.16: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 06:11:04 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 06:11:04 - 24.101.155.16: Mm1 Admin - MA - sitedivadmins
+05/03/2018 06:11:04 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/03/2018 06:11:25 - 24.101.155.16: Users_a: mode: gotoupdate - ID: 5ae9a57b78250
+05/03/2018 06:23:33 - 24.101.155.16: forgot_pw: mail_send_result: 1
+05/03/2018 06:24:57 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 06:24:57 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 06:25:22 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 06:25:23 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 06:38:15 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 06:38:15 - 24.101.155.16: Mm1 Admin - MA - sitedivadmins
+05/03/2018 06:38:15 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/03/2018 06:53:11 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 06:53:12 - 24.101.155.16: EIDO Admin - EA - eidoadmins
+05/03/2018 06:53:12 - 24.101.155.16: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 06:55:55 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 06:55:55 - 24.101.155.16: EIDO Admin - EA - eidoadmins
+05/03/2018 06:55:55 - 24.101.155.16: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 07:00:14 - 24.101.155.16: forgot_pw: mail_send_result: 1
+05/03/2018 07:04:48 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:04:48 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:04:58 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:04:58 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:05:11 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:05:11 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:05:35 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 07:05:35 - 24.101.155.16: Mm1 Admin - MA - sitedivadmins
+05/03/2018 07:05:35 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/03/2018 07:05:42 - 24.101.155.16: Users_a: mode: gotoupdate - ID: 5ae9a57b78250
+05/03/2018 07:06:11 - 24.101.155.16: Users_a: mode: reset - ID: 5ae9a57b78250
+05/03/2018 07:06:34 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:06:34 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:07:48 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:07:48 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:09:17 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:09:17 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:10:55 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:10:55 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:11:11 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:11:11 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:11:32 - 24.101.155.16: forgot_pw: mail_send_result: 1
+05/03/2018 07:15:55 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:15:55 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:17:17 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 07:17:17 - 24.101.155.16: Mm1 Admin - MA - sitedivadmins
+05/03/2018 07:17:17 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/03/2018 07:17:30 - 24.101.155.16: Users_a: mode: gotoupdate - ID: 5ae9a57b78250
+05/03/2018 07:17:46 - 24.101.155.16: Users_a: mode: reset - ID: 5ae9a57b78250
+05/03/2018 07:18:29 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:18:30 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:18:45 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:18:45 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:20:52 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 07:20:53 - 24.101.155.16: Mm1 Admin - MA - sitedivadmins
+05/03/2018 07:20:53 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/03/2018 07:20:58 - 24.101.155.16: Users_a: mode: gotoupdate - ID: 5ae9a57b78250
+05/03/2018 07:21:05 - 24.101.155.16: Users_a: mode: delete - ID: 5ae9a57b78250
+05/03/2018 07:21:30 - 24.101.155.16: Users_a: mode: add - ID: 
+05/03/2018 07:21:30 - 24.101.155.16: ADD: INSERT INTO dir_user
+           SET firstName='Todd',
+               lastName='Ingraham',
+               email='tingraham@meshintegration.com',
+               active=1,
+               timeZone='0',
+               id='5aeab87a952cb',
+               username='tingraham@meshintegration.com',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$mWnOmCD2ctHPCTBaqwoe8eBMXrAKhbuqna4ZP7HerbBLlW7agyM9y'
+05/03/2018 07:21:30 - 24.101.155.16: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='tingraham@meshintegration.com',
+               userId='5aeab87a952cb'
+05/03/2018 07:21:30 - 24.101.155.16: INSERT INTO dir_user_group
+           SET groupId='sitedivadmin',
+               username='tingraham@meshintegration.com',
+               userId='5aeab87a952cb'
+05/03/2018 07:23:23 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:23:23 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 07:24:05 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+05/03/2018 07:24:05 - 24.101.155.16: Incorrect email or password. tingraham@meshintegration.com %password - back to login.php
+05/03/2018 12:54:36 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 12:54:36 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/03/2018 12:54:36 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/03/2018 12:58:41 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 12:58:41 - 68.107.189.223: Mm1 Admin - MA - sitedivadmins
+05/03/2018 12:58:41 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/03/2018 13:01:19 - 76.188.180.118: Users_a: mode: gotoaddpt - ID: 
+05/03/2018 13:01:28 - 76.188.180.118: Users_a: mode: gotoupdate - ID: 5aea4116e77cd
+05/03/2018 13:01:40 - 76.188.180.118: Users_a: mode: reset - ID: 5aea4116e77cd
+05/03/2018 13:06:38 - 68.107.189.223: Users_a: mode: gotoupdate - ID: 5ae3274dd0beb
+05/03/2018 13:06:44 - 68.107.189.223: Users_a: mode: delete - ID: 5ae3274dd0beb
+05/03/2018 13:07:30 - 68.107.189.223: Users_a: mode: add - ID: 
+05/03/2018 13:07:43 - 68.107.189.223: Users_a: mode: add - ID: 
+05/03/2018 13:07:50 - 68.107.189.223: Users_a: mode: add - ID: 
+05/03/2018 13:07:51 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Wayne',
+               lastName='Adams',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5aeb09a6e369a',
+               username='wayne@mindstreams.com',
+               gmc_number='7654321',
+               isSurgeon='1',
+               uipassword='$2y$10$mnn2cCp2N1UWEIlV8G6PeOrI/3OJvgGxg3T0LbnYAUIWgNzMhVUqe'
+05/03/2018 13:07:51 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5aeb09a6e369a',
+                  c_userId='5aeb09a6e369a',
+                  c_surgeonName='Wayne Adams',
+                  c_gmcNumber='7654321',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+05/03/2018 13:07:51 - 68.107.189.223: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='wayne@mindstreams.com',
+               userId='5aeb09a6e369a'
+05/03/2018 13:07:51 - 68.107.189.223: INSERT INTO dir_user_group
+           SET groupId='sitedivadmin',
+               username='wayne@mindstreams.com',
+               userId='5aeb09a6e369a'
+05/03/2018 13:08:01 - 68.107.189.223: Users_a: mode: gotoaddpt - ID: 
+05/03/2018 13:26:11 - 68.107.189.223: Users_a: mode: add - ID: 
+05/03/2018 13:26:11 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Wayne',
+               lastName='Adams',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5aeb0df35bf4b',
+               username='wayne@mindstreams.com',
+               gmc_number='7654321',
+               isSurgeon='1',
+               uipassword='$2y$10$bv2U0AdQtDuuhEpTDt9FqewmGQ4senE2HYJZY73YjUIpNidXpfD/C'
+05/03/2018 13:26:11 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5aeb0df35bf4b',
+                  c_userId='5aeb0df35bf4b',
+                  c_surgeonName='Wayne Adams',
+                  c_gmcNumber='7654321',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+05/03/2018 13:26:11 - 68.107.189.223: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='wayne@mindstreams.com',
+               userId='5aeb0df35bf4b'
+05/03/2018 13:26:11 - 68.107.189.223: INSERT INTO dir_user_group
+           SET groupId='sitedivadmin',
+               username='wayne@mindstreams.com',
+               userId='5aeb0df35bf4b'
+05/03/2018 13:35:42 - 68.107.189.223: Users_a: mode: add - ID: 
+05/03/2018 13:35:42 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Wayne',
+               lastName='Adams',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5aeb102e20515',
+               username='wayne@mindstreams.com',
+               gmc_number='7654321',
+               isSurgeon='1',
+               uipassword='$2y$10$XHJ/1SCM/cF4/YVWEfdtCu530bZAAK8tCTj1FBqfmOO6JF4zNgxKW'
+05/03/2018 13:35:42 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5aeb102e20515',
+                  c_userId='5aeb102e20515',
+                  c_surgeonName='Wayne Adams',
+                  c_gmcNumber='7654321',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'Mm1 Admin'
+05/03/2018 13:35:42 - 68.107.189.223: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='wayne@mindstreams.com',
+               userId='5aeb102e20515'
+05/03/2018 13:35:42 - 68.107.189.223: INSERT INTO dir_user_group
+           SET groupId='sitedivadmins',
+               username='wayne@mindstreams.com',
+               userId='5aeb102e20515'
+05/03/2018 13:37:10 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/03/2018 13:37:10 - 68.107.189.223: Incorrect email or password. wayne@mindstreams.com %password - back to login.php
+05/03/2018 13:37:38 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/03/2018 13:37:38 - 68.107.189.223: Incorrect email or password. wayne@mindstreams.com %password - back to login.php
+05/03/2018 13:42:45 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/03/2018 13:42:45 - 68.107.189.223: Incorrect email or password. wayne@mindstreams.com %password - back to login.php
+05/03/2018 13:50:03 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/03/2018 13:50:03 - 68.107.189.223: Incorrect password. wayne@mindstreams.com JwcZY5eG - back to login.php
+05/03/2018 13:51:28 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 13:51:29 - 68.107.189.223: Incorrect password. mm1admin@thenakedsurgeon.com JwcZY5eG - back to login.php
+05/03/2018 13:52:24 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/03/2018 13:52:24 - 68.107.189.223: Wayne Adams - WA - sitedivadmins
+05/03/2018 13:52:24 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/03/2018 13:58:01 - 68.107.189.223: Users_a: mode: gotoaddpt - ID: 
+05/03/2018 13:58:30 - 68.107.189.223: Users_a: mode: gotoupdate - ID: 5aeb102e20515
+05/03/2018 13:58:34 - 68.107.189.223: Users_a: mode: delete - ID: 5aeb102e20515
+05/03/2018 14:00:08 - 68.107.189.223: Users_a: mode: add - ID: 
+05/03/2018 14:00:08 - 68.107.189.223: pw: H5v?CwaU - hash: $2y$10$KPpJEhSoQXABkClT1ktj9ucx.AgFc8SmF1F40QHyk1Iws.cyllFPO
+05/03/2018 14:00:08 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='WAYNE',
+               lastName='BAKER',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5aeb15e811aac',
+               username='wayne@mindstreams.com',
+               gmc_number='7654321',
+               isSurgeon='1',
+               uipassword='$2y$10$KPpJEhSoQXABkClT1ktj9ucx.AgFc8SmF1F40QHyk1Iws.cyllFPO'
+05/03/2018 14:00:08 - 68.107.189.223: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5aeb15e811aac',
+                  c_userId='5aeb15e811aac',
+                  c_surgeonName='WAYNE BAKER',
+                  c_gmcNumber='7654321',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='5aeb102e20515',
+                  createdByName = 'Wayne Adams'
+05/03/2018 14:00:08 - 68.107.189.223: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='wayne@mindstreams.com',
+               userId='5aeb15e811aac'
+05/03/2018 14:00:08 - 68.107.189.223: INSERT INTO dir_user_group
+           SET groupId='sitedivadmins',
+               username='wayne@mindstreams.com',
+               userId='5aeb15e811aac'
+05/03/2018 14:01:12 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+05/03/2018 14:01:12 - 68.107.189.223: Incorrect password. wayne@mindstreams.com H5v?CwaU - back to login.php
+05/03/2018 14:03:50 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+05/03/2018 14:03:50 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/03/2018 14:03:50 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 14:31:58 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 14:31:58 - 68.107.189.223: WAYNE BAKER - WB - sitedivadmins
+05/03/2018 14:31:58 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/03/2018 19:59:29 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 19:59:30 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/03/2018 19:59:30 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 21:16:01 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:16:01 - 184.56.244.84: James MacKnife - JM - staff
+05/03/2018 21:16:01 - 184.56.244.84: >>>>  GroupID: staff
+05/03/2018 21:16:43 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:16:43 - 184.56.244.84: James MacKnife - JM - staff
+05/03/2018 21:16:43 - 184.56.244.84: >>>>  GroupID: staff
+05/03/2018 21:17:03 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:17:03 - 184.56.244.84: James MacKnife - JM - staff
+05/03/2018 21:17:03 - 184.56.244.84: >>>>  GroupID: staff
+05/03/2018 21:17:45 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:17:45 - 184.56.244.84: Incorrect email (user not found) mm1admin@thenakedsurgeon.com password - back to login.php
+05/03/2018 21:17:56 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:17:56 - 184.56.244.84: James MacKnife - JM - staff
+05/03/2018 21:17:56 - 184.56.244.84: >>>>  GroupID: staff
+05/03/2018 21:19:33 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:19:33 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/03/2018 21:19:33 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 21:20:14 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:20:14 - 184.56.244.84: Incorrect email (user not found) mm1admin@thenakedsurgeon.com password - back to login.php
+05/03/2018 21:20:36 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:20:36 - 184.56.244.84: James MacKnife - JM - staff
+05/03/2018 21:20:36 - 184.56.244.84: >>>>  GroupID: staff
+05/03/2018 21:20:45 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:20:45 - 184.56.244.84: James MacKnife - JM - staff
+05/03/2018 21:20:45 - 184.56.244.84: >>>>  GroupID: staff
+05/03/2018 21:20:55 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:20:55 - 184.56.244.84: James MacKnife - JM - staff
+05/03/2018 21:20:55 - 184.56.244.84: >>>>  GroupID: staff
+05/03/2018 21:22:53 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:22:53 - 76.188.180.118: Incorrect email (user not found) mm1admin@thenakedsurgeon.com password - back to login.php
+05/03/2018 21:23:02 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:23:03 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/03/2018 21:23:03 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/03/2018 21:23:12 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='ajm@mm.st'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:23:12 - 76.188.180.118: Incorrect password. ajm@mm.st password - back to login.php
+05/03/2018 21:23:29 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='ajm@mm.st'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:23:29 - 76.188.180.118: Incorrect password. ajm@mm.st Password12! - back to login.php
+05/03/2018 21:23:51 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:23:51 - 76.188.180.118: Incorrect email (user not found) mm1admin@thenakedsurgeon.com Password12! - back to login.php
+05/03/2018 21:25:02 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:25:02 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/03/2018 21:25:02 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/03/2018 21:25:25 - 76.188.180.118: Users_a: mode: gotoupdate - ID: 5aea4116e77cd
+05/03/2018 21:25:53 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 21:25:53 - 184.56.244.84: Mm1 Admin - MA - sitedivadmins
+05/03/2018 21:25:53 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+05/03/2018 23:27:48 - 108.94.128.67: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/03/2018 23:27:48 - 108.94.128.67: Mm1 Admin - MA - sitedivadmins
+05/03/2018 23:27:48 - 108.94.128.67: >>>>  GroupID: sitedivadmins
+05/03/2018 23:49:24 - 68.107.189.223: forgot_pw: mail_send_result: 1
+05/04/2018 00:06:08 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 00:06:09 - 68.107.189.223: WAYNE BAKER - WB - sitedivadmins
+05/04/2018 00:06:09 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 00:07:59 - 68.107.189.223: Users_a: mode: delete - ID: 5aeb15e811aac
+05/04/2018 00:08:47 - 68.107.189.223: Users_a: mode: add - ID: 
+05/04/2018 00:08:47 - 68.107.189.223: pw: KHG24#Dd - hash: $2y$10$rvES.zmZFCNOit7DRRYPBOr6Tm78delliblwuabX4mumOIO4XxQYS
+05/04/2018 00:08:47 - 68.107.189.223: ADD: INSERT INTO dir_user
+           SET firstName='Charlie',
+               lastName='Carson',
+               email='wayne@mindstreams.com',
+               active=1,
+               timeZone='0',
+               id='5aeba48f2f81f',
+               username='wayne@mindstreams.com',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$rvES.zmZFCNOit7DRRYPBOr6Tm78delliblwuabX4mumOIO4XxQYS'
+05/04/2018 00:08:47 - 68.107.189.223: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='wayne@mindstreams.com',
+               userId='5aeba48f2f81f'
+05/04/2018 00:08:47 - 68.107.189.223: INSERT INTO dir_user_group
+           SET groupId='sitedivadmins',
+               username='wayne@mindstreams.com',
+               userId='5aeba48f2f81f'
+05/04/2018 00:09:13 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 00:09:13 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 00:09:13 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 00:09:26 - 68.107.189.223: forgot_pw: mail_send_result: 1
+05/04/2018 00:09:56 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 00:09:56 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 00:09:56 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 00:14:08 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 00:14:08 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 00:14:08 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 00:14:37 - 68.107.189.223: Users_a: mode: reset - ID: 5aeba48f2f81f
+05/04/2018 00:18:26 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 00:21:03 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 00:21:03 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 00:21:03 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 02:00:05 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@the nakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:00:05 - 24.101.155.16: Incorrect email (user not found) mm1admin@the nakedsurgeon.com password - back to login.php
+05/04/2018 02:00:38 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:00:38 - 24.101.155.16: EIDO Admin - EA - eidoadmins
+05/04/2018 02:00:38 - 24.101.155.16: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 02:02:16 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:02:16 - 24.101.155.16: Mm1 Admin - MA - sitedivadmins
+05/04/2018 02:02:16 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/04/2018 02:03:20 - 24.101.155.16: Users_a: mode: add - ID: 
+05/04/2018 02:03:20 - 24.101.155.16: pw: 9Tb?PYp7 - hash: $2y$10$wmS2P7p9KsiU3H07fTnaYe7ZdwA/jpGx2vRpfTWHvANS0aKpt0nLS
+05/04/2018 02:03:20 - 24.101.155.16: ADD: INSERT INTO dir_user
+           SET firstName='Todd',
+               lastName='Ingraham',
+               email='tingraham@meshintegration.com',
+               active=1,
+               timeZone='0',
+               id='5aebbf688aaa7',
+               username='tingraham@meshintegration.com',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$wmS2P7p9KsiU3H07fTnaYe7ZdwA/jpGx2vRpfTWHvANS0aKpt0nLS'
+05/04/2018 02:03:20 - 24.101.155.16: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='tingraham@meshintegration.com',
+               userId='5aebbf688aaa7'
+05/04/2018 02:03:20 - 24.101.155.16: INSERT INTO dir_user_group
+           SET groupId='sitedivadmins',
+               username='tingraham@meshintegration.com',
+               userId='5aebbf688aaa7'
+05/04/2018 02:04:14 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:04:14 - 24.101.155.16: Todd Ingraham - TI - sitedivadmins
+05/04/2018 02:04:14 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/04/2018 02:04:54 - 24.101.155.16: Users_a: mode: reset - ID: 5aebbf688aaa7
+05/04/2018 02:05:38 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:06:39 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:06:39 - 24.101.155.16: Todd Ingraham - TI - sitedivadmins
+05/04/2018 02:06:39 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/04/2018 02:08:24 - 24.101.155.16: forgot_pw: mail_send_result: 1
+05/04/2018 02:10:27 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='tingraham@meshintegration.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:10:27 - 24.101.155.16: Todd Ingraham - TI - sitedivadmins
+05/04/2018 02:10:27 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/04/2018 02:35:52 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:35:52 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/04/2018 02:35:52 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 02:55:13 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:55:13 - 184.56.244.84: James MacKnife - JM - staff
+05/04/2018 02:55:13 - 184.56.244.84: >>>>  GroupID: staff
+05/04/2018 02:56:05 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 02:56:05 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/04/2018 02:56:05 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 03:03:42 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 03:03:42 - 184.56.244.84: James MacKnife - JM - staff
+05/04/2018 03:03:42 - 184.56.244.84: >>>>  GroupID: staff
+05/04/2018 03:15:04 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 03:15:04 - 184.56.244.84: Mm1 Admin - MA - sitedivadmins
+05/04/2018 03:15:04 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+05/04/2018 10:15:23 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 10:15:23 - 82.34.15.57: Mm1 Admin - MA - sitedivadmins
+05/04/2018 10:15:23 - 82.34.15.57: >>>>  GroupID: sitedivadmins
+05/04/2018 10:15:41 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob.hughes@eidosystems.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 10:15:41 - 82.34.15.57: Rob Hughes - RH - eidoadmins
+05/04/2018 10:15:41 - 82.34.15.57: eidoadmin - Logged in as SUPERUSER
+05/04/2018 10:15:52 - 82.34.15.57: forgot_pw: mail_send_result: 1
+05/04/2018 10:16:35 - 82.34.15.57: forgot_pw: mail_send_result: 1
+05/04/2018 10:24:17 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 10:24:17 - 82.34.15.57: James MacKnife - JM - staff
+05/04/2018 10:24:17 - 82.34.15.57: >>>>  GroupID: staff
+05/04/2018 10:35:44 - 82.34.15.57: forgot_pw: mail_send_result: 1
+05/04/2018 12:11:52 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 12:11:52 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 12:11:52 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 12:15:08 - 108.94.128.67: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 12:15:08 - 108.94.128.67: Mm1 Admin - MA - sitedivadmins
+05/04/2018 12:15:08 - 108.94.128.67: >>>>  GroupID: sitedivadmins
+05/04/2018 12:16:09 - 108.94.128.67: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 12:16:09 - 108.94.128.67: EIDO Admin - EA - eidoadmins
+05/04/2018 12:16:09 - 108.94.128.67: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 12:35:29 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 12:35:29 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 12:35:29 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 12:37:15 - 108.94.128.67: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 12:37:15 - 108.94.128.67: Mm1 Admin - MA - sitedivadmins
+05/04/2018 12:37:15 - 108.94.128.67: >>>>  GroupID: sitedivadmins
+05/04/2018 12:47:21 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 12:47:21 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 12:47:21 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 12:47:43 - 68.107.189.223: Users_a: mode: reset - ID: 5aeba48f2f81f
+05/04/2018 12:47:54 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 12:52:19 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 12:52:19 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 12:52:19 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 12:53:09 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 12:53:10 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 12:53:10 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 13:07:19 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 13:07:19 - 68.107.189.223: Incorrect password. wayne@mindstreams.com waynewasheretoday - back to login.php
+05/04/2018 13:07:28 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 13:07:28 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/04/2018 13:07:28 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/04/2018 13:33:28 - 207.54.162.178: forgot_pw: mail_send_result: 1
+05/04/2018 13:41:35 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 13:41:35 - 207.54.162.178: James MacKnife - JM - staff
+05/04/2018 13:41:35 - 207.54.162.178: >>>>  GroupID: staff
+05/04/2018 13:42:07 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 13:42:07 - 207.54.162.178: EIDO Admin - EA - eidoadmins
+05/04/2018 13:42:07 - 207.54.162.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 13:42:55 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 13:42:55 - 207.54.162.178: Mm1 Admin - MA - sitedivadmins
+05/04/2018 13:42:55 - 207.54.162.178: >>>>  GroupID: sitedivadmins
+05/04/2018 13:54:56 - 108.94.128.67: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 13:54:56 - 108.94.128.67: EIDO Admin - EA - eidoadmins
+05/04/2018 13:54:56 - 108.94.128.67: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 14:57:07 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 14:57:07 - 82.34.15.57: Mm1 Admin - MA - sitedivadmins
+05/04/2018 14:57:07 - 82.34.15.57: >>>>  GroupID: sitedivadmins
+05/04/2018 14:57:22 - 82.34.15.57: Users_a: mode: add - ID: 
+05/04/2018 14:57:46 - 82.34.15.57: Users_a: mode: add - ID: 
+05/04/2018 14:57:46 - 82.34.15.57: pw: rp?6lNfc - hash: $2y$10$8Ef7ZnMcPfjZUdPWYKp0Lu7r8Ykyl0zcH.0SMzMmFt3JX9H03JUp2
+05/04/2018 14:57:46 - 82.34.15.57: ADD: INSERT INTO dir_user
+           SET firstName='Dave',
+               lastName='Davidson',
+               email='dave@dave.com',
+               active=1,
+               timeZone='0',
+               id='5aec74ea77410',
+               username='dave@dave.com',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$8Ef7ZnMcPfjZUdPWYKp0Lu7r8Ykyl0zcH.0SMzMmFt3JX9H03JUp2'
+05/04/2018 14:57:46 - 82.34.15.57: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='dave@dave.com',
+               userId='5aec74ea77410'
+05/04/2018 14:57:46 - 82.34.15.57: INSERT INTO dir_user_group
+           SET groupId='staff',
+               username='dave@dave.com',
+               userId='5aec74ea77410'
+05/04/2018 14:57:57 - 82.34.15.57: Users_a: mode: delete - ID: 5aec74ea77410
+05/04/2018 14:58:26 - 82.34.15.57: Users_a: mode: add - ID: 
+05/04/2018 14:59:01 - 82.34.15.57: Users_a: mode: add - ID: 
+05/04/2018 14:59:01 - 82.34.15.57: pw: RMOZI9P? - hash: $2y$10$vVHgsxoOyfrLp/7H3I2FC.I2nFoVQ0R1y5QWNevAh/r51X.ksbQpu
+05/04/2018 14:59:01 - 82.34.15.57: ADD: INSERT INTO dir_user
+           SET firstName='Geoff',
+               lastName='OFlaherty',
+               email='geoff@me.com',
+               active=1,
+               timeZone='0',
+               id='5aec7535a69c1',
+               username='geoff@me.com',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$vVHgsxoOyfrLp/7H3I2FC.I2nFoVQ0R1y5QWNevAh/r51X.ksbQpu'
+05/04/2018 14:59:01 - 82.34.15.57: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='geoff@me.com',
+               userId='5aec7535a69c1'
+05/04/2018 14:59:01 - 82.34.15.57: INSERT INTO dir_user_group
+           SET groupId='staff',
+               username='geoff@me.com',
+               userId='5aec7535a69c1'
+05/04/2018 14:59:17 - 82.34.15.57: Users_a: mode: add - ID: 
+05/04/2018 15:14:50 - 108.94.128.67: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 15:14:50 - 108.94.128.67: Mm1 Admin - MA - sitedivadmins
+05/04/2018 15:14:50 - 108.94.128.67: >>>>  GroupID: sitedivadmins
+05/04/2018 15:15:07 - 108.94.128.67: Users_a: mode: update - ID: 5aea4116e77cd
+05/04/2018 15:15:22 - 108.94.128.67: Users_a: mode: update - ID: 5aea4116e77cd
+05/04/2018 17:49:43 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 17:49:43 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/04/2018 17:49:43 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 17:49:46 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 17:49:46 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/04/2018 17:49:46 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 17:57:51 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 17:57:51 - 184.56.244.84: Mm1 Admin - MA - sitedivadmins
+05/04/2018 17:57:51 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+05/04/2018 18:03:06 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 18:03:06 - 184.56.244.84: Mm1 Admin - MA - sitedivadmins
+05/04/2018 18:03:06 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+05/04/2018 19:43:25 - 184.56.244.84: UPDATE dir_user SET c_pwd_reset=1, c_dateModified=NOW() WHERE id=''
+05/04/2018 19:43:25 - 184.56.244.84: UPDATE dir_user SET c_pwd_reset=1, c_dateModified=NOW() WHERE id=''
+05/04/2018 19:45:53 - 184.56.244.84: Users_a: mode: add - ID: 
+05/04/2018 19:45:53 - 184.56.244.84: pw: eM0f@qW6 - hash: $2y$10$STF0MXp4hJwyxGSkzBE0teesKB3VzrjzvPmZYrwhQvMbPw920fkhS
+05/04/2018 19:45:53 - 184.56.244.84: ADD: INSERT INTO dir_user
+           SET firstName='Jayme',
+               lastName='Jaye',
+               email='jayisdabomb@aol.com',
+               active=1,
+               timeZone='0',
+               id='5aecb871251d3',
+               username='jayisdabomb@aol.com',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$STF0MXp4hJwyxGSkzBE0teesKB3VzrjzvPmZYrwhQvMbPw920fkhS'
+05/04/2018 19:45:53 - 184.56.244.84: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='jayisdabomb@aol.com',
+               userId='5aecb871251d3'
+05/04/2018 19:45:53 - 184.56.244.84: INSERT INTO dir_user_group
+           SET groupId='sitedivadmins',
+               username='jayisdabomb@aol.com',
+               userId='5aecb871251d3'
+05/04/2018 19:46:23 - 184.56.244.84: UPDATE dir_user SET active=0, c_dateModified=NOW() WHERE id='5aecb871251d3'
+05/04/2018 19:47:23 - 184.56.244.84: UPDATE dir_user SET active=0, c_dateModified=NOW() WHERE id='5aecb871251d3'
+05/04/2018 19:54:25 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 19:54:26 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/04/2018 19:54:26 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 20:33:43 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 20:33:43 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/04/2018 20:33:43 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/04/2018 20:34:39 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 20:34:40 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/04/2018 20:34:40 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/04/2018 20:46:13 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 20:46:13 - 184.56.244.84: Mm1 Admin - MA - sitedivadmins
+05/04/2018 20:46:13 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+05/04/2018 22:33:09 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 22:33:09 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/04/2018 22:33:09 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/04/2018 22:41:47 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/04/2018 22:41:47 - 184.56.244.84: EIDO Admin - EA - eidoadmins
+05/04/2018 22:41:47 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/05/2018 03:19:52 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/05/2018 03:19:52 - 184.56.244.84: Mm1 Admin - MA - sitedivadmins
+05/05/2018 03:19:52 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+05/05/2018 21:12:14 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/05/2018 21:12:14 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/05/2018 21:12:14 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/05/2018 21:15:56 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/05/2018 21:15:56 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/05/2018 21:15:56 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/05/2018 21:16:56 - 76.188.180.118: UPDATE dir_user SET active=0, c_dateModified=NOW() WHERE id='5aecb871251d3'
+05/06/2018 19:25:56 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='wayne@mindstreams.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/06/2018 19:25:56 - 68.107.189.223: Charlie Carson - CC - sitedivadmins
+05/06/2018 19:25:56 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/06/2018 21:32:37 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/06/2018 21:32:37 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/06/2018 21:32:37 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/06/2018 21:34:12 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/06/2018 21:34:12 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/06/2018 21:34:12 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/06/2018 21:34:23 - 76.188.180.118: Users_a: mode: add - ID: 
+05/06/2018 23:00:38 - 76.188.180.118: UPDATE dir_user SET active=0, c_dateModified=NOW() WHERE id='5aea4116e77cd'
+05/06/2018 23:47:12 - 76.188.180.118: Users_a: mode: add - ID: 
+05/06/2018 23:47:12 - 76.188.180.118: pw: O6HS4Wq! - hash: $2y$10$pUG6ordnjl8y7csbs0/RfuzUM93BeeT0KkFZA2tZFfs9MjmHOvMyC
+05/06/2018 23:47:12 - 76.188.180.118: ADD: INSERT INTO dir_user
+           SET firstName='Andrew',
+               lastName='Surname',
+               email='ajm@mm.st',
+               active=1,
+               timeZone='0',
+               id='5aef9400278a9',
+               username='ajm@mm.st',
+               gmc_number='',
+               isSurgeon='',
+               uipassword='$2y$10$pUG6ordnjl8y7csbs0/RfuzUM93BeeT0KkFZA2tZFfs9MjmHOvMyC'
+05/06/2018 23:47:12 - 76.188.180.118: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='ajm@mm.st',
+               userId='5aef9400278a9'
+05/06/2018 23:47:12 - 76.188.180.118: INSERT INTO dir_user_group
+           SET groupId='sitedivadmins',
+               username='ajm@mm.st',
+               userId='5aef9400278a9'
+05/06/2018 23:53:15 - 76.188.180.118: UPDATE dir_user SET c_pwd_reset=1, c_dateModified=NOW() WHERE id='5aef9400278a9'
+05/07/2018 00:31:16 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 00:31:16 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/07/2018 00:31:16 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/07/2018 00:55:15 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 00:55:15 - 24.101.155.16: James MacKnife - JM - staff
+05/07/2018 00:55:15 - 24.101.155.16: >>>>  GroupID: staff
+05/07/2018 01:03:51 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 01:03:51 - 24.101.155.16: Mm1 Admin - MA - sitedivadmins
+05/07/2018 01:03:51 - 24.101.155.16: >>>>  GroupID: sitedivadmins
+05/07/2018 01:13:25 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 01:13:25 - 24.101.155.16: EIDO Admin - EA - eidoadmins
+05/07/2018 01:13:25 - 24.101.155.16: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/07/2018 01:17:09 - 24.101.155.16: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 01:17:09 - 24.101.155.16: James MacKnife - JM - staff
+05/07/2018 01:17:09 - 24.101.155.16: >>>>  GroupID: staff
+05/07/2018 01:51:28 - 68.107.189.223: UPDATE dir_user SET c_pwd_reset=1, c_dateModified=NOW() WHERE id='mm1admin@thenakedsurgeon.com'
+05/07/2018 01:51:28 - 68.107.189.223: UPDATE dir_user SET c_pwd_reset=1, c_dateModified=NOW() WHERE id='5aeba48f2f81f'
+05/07/2018 01:56:06 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 01:56:06 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/07/2018 01:56:06 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/07/2018 01:56:28 - 76.188.180.118: UPDATE dir_user SET c_pwd_reset=1, c_dateModified=NOW() WHERE id='5aef9400278a9'
+05/07/2018 02:43:47 - 68.107.189.223: In BULK CONFIRM
+05/07/2018 02:53:03 - 68.107.189.223: In BULK CONFIRM
+05/07/2018 02:53:03 - 68.107.189.223: Mode: delete
+05/07/2018 02:58:00 - 68.107.189.223: In BULK CONFIRM
+05/07/2018 02:58:00 - 68.107.189.223: Mode: delete
+05/07/2018 02:58:00 - 68.107.189.223: Mode: bulkdelete
+05/07/2018 02:58:01 - 68.107.189.223: Mode: 
+05/07/2018 02:59:59 - 68.107.189.223: Mode: bulkdelete
+05/07/2018 03:00:30 - 68.107.189.223: Mode: bulkdelete
+05/07/2018 03:01:07 - 68.107.189.223: Mode: bulkdelete
+05/07/2018 03:01:50 - 76.188.180.118: Mode: 
+05/07/2018 03:02:06 - 76.188.180.118: Mode: 
+05/07/2018 03:02:09 - 76.188.180.118: Mode: update
+05/07/2018 03:02:25 - 68.107.189.223: Mode: bulkdelete
+05/07/2018 03:02:30 - 68.107.189.223: Mode: bulkdelete
+05/07/2018 03:02:35 - 68.107.189.223: Mode: 
+05/07/2018 03:04:37 - 68.107.189.223: USERS Mode: 
+05/07/2018 03:05:04 - 68.107.189.223: In BULK CONFIRM
+05/07/2018 03:05:04 - 68.107.189.223: Bulk Confirm Mode: delete
+05/07/2018 03:05:04 - 68.107.189.223: USERS Mode: bulkdelete
+05/07/2018 03:05:05 - 68.107.189.223: USERS Mode: 
+05/07/2018 03:07:13 - 68.107.189.223: USERS Mode: update
+05/07/2018 03:07:17 - 68.107.189.223: USERS Mode: reset
+05/07/2018 03:12:55 - 68.107.189.223: USERS Mode: bulkdelete
+05/07/2018 03:15:08 - 68.107.189.223: USERS Mode: bulkdelete
+05/07/2018 03:15:12 - 68.107.189.223: USERS Mode: 
+05/07/2018 03:15:26 - 68.107.189.223: In BULK CONFIRM
+05/07/2018 03:15:26 - 68.107.189.223: Bulk Confirm Mode: delete
+05/07/2018 03:15:26 - 68.107.189.223: USERS Mode: bulkdelete
+05/07/2018 03:15:26 - 68.107.189.223: USERS Mode: 
+05/07/2018 03:18:28 - 68.107.189.223: USERS Mode: 
+05/07/2018 03:19:09 - 68.107.189.223: In BULK CONFIRM
+05/07/2018 03:19:09 - 68.107.189.223: Bulk Confirm Mode: delete
+05/07/2018 03:19:09 - 68.107.189.223: USERS Mode: bulkdelete
+05/07/2018 03:19:09 - 68.107.189.223: USERS Mode: 
+05/07/2018 03:24:47 - 68.107.189.223: USERS Mode: 
+05/07/2018 03:24:47 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 03:24:48 - 68.107.189.223: USERS Mode: 
+05/07/2018 03:24:48 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 03:25:19 - 68.107.189.223: USERS Mode: update
+05/07/2018 03:25:19 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 03:25:44 - 68.107.189.223: In BULK CONFIRM
+05/07/2018 03:25:44 - 68.107.189.223: Bulk Confirm Mode: delete
+05/07/2018 03:25:44 - 68.107.189.223: USERS Mode: bulkdelete
+05/07/2018 03:25:44 - 68.107.189.223: HI WAYNE & ANDREW
+05/07/2018 03:25:44 - 68.107.189.223: USERS bulkdelete_hide: 
+05/07/2018 03:25:44 - 68.107.189.223: USERS Mode: update
+05/07/2018 03:25:44 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 03:27:04 - 68.107.189.223: In BULK CONFIRM
+05/07/2018 03:27:04 - 68.107.189.223: Bulk Confirm Mode: delete
+05/07/2018 03:27:04 - 68.107.189.223: USERS Mode: bulkdelete
+05/07/2018 03:27:04 - 68.107.189.223: HI WAYNE & ANDREW
+05/07/2018 03:27:04 - 68.107.189.223: USERS bulkdelete_hide: 
+05/07/2018 03:27:04 - 68.107.189.223: USERS Mode: update
+05/07/2018 03:27:04 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 03:32:54 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:32:54 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:32:54 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:32:54 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:32:54 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:32:54 - 76.188.180.118: USERS Mode: update
+05/07/2018 03:32:54 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:33:58 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:33:58 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:33:58 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:33:58 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:33:58 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:33:58 - 76.188.180.118: USERS Mode: update
+05/07/2018 03:33:58 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:36:18 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:36:18 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:36:18 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:36:18 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:36:18 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:36:19 - 76.188.180.118: USERS Mode: update
+05/07/2018 03:36:19 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:37:14 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:37:14 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:37:14 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:37:14 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:37:14 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:37:14 - 76.188.180.118: USERS Mode: update
+05/07/2018 03:37:14 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:37:45 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:37:45 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:37:45 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:37:45 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:37:45 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:37:46 - 76.188.180.118: USERS Mode: update
+05/07/2018 03:37:46 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:39:21 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:39:21 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:39:21 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:39:21 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:39:21 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:39:22 - 76.188.180.118: USERS Mode: update
+05/07/2018 03:39:22 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:39:45 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:39:45 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:39:45 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:39:45 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:39:45 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:39:46 - 76.188.180.118: USERS Mode: update
+05/07/2018 03:39:46 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:40:04 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:40:04 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:40:04 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:40:24 - 76.188.180.118: USERS Mode: 
+05/07/2018 03:40:24 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:40:45 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:40:45 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:40:45 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:47:40 - 76.188.180.118: USERS Mode: 
+05/07/2018 03:47:40 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:48:00 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:48:00 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:48:00 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:48:00 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:48:00 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:48:00 - 76.188.180.118: USERS Mode: 
+05/07/2018 03:48:00 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:48:26 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:48:26 - 76.188.180.118: Bulk Confirm Mode: reset
+05/07/2018 03:48:26 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:48:26 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:48:26 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:48:26 - 76.188.180.118: USERS Mode: 
+05/07/2018 03:48:26 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:48:51 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:48:51 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:48:51 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:48:51 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:48:51 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:48:51 - 76.188.180.118: USERS Mode: 
+05/07/2018 03:48:51 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:55:21 - 76.188.180.118: USERS Mode: 
+05/07/2018 03:55:21 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 03:55:32 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 03:55:32 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 03:55:32 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 03:55:32 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 03:55:32 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 03:55:33 - 76.188.180.118: USERS Mode: 
+05/07/2018 03:55:33 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:00:09 - 76.188.180.118: USERS Mode: 
+05/07/2018 04:00:09 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:00:17 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 04:00:17 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 04:00:17 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 04:00:17 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 04:00:17 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 04:00:17 - 76.188.180.118: USERS Mode: 
+05/07/2018 04:00:17 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:05:15 - 68.107.189.223: USERS Mode: 
+05/07/2018 04:05:15 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 04:05:31 - 68.107.189.223: USERS Mode: update
+05/07/2018 04:05:31 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 04:06:18 - 68.107.189.223: USERS Mode: update
+05/07/2018 04:06:18 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 04:06:29 - 68.107.189.223: USERS Mode: 
+05/07/2018 04:06:29 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 04:07:30 - 68.107.189.223: USERS Mode: 
+05/07/2018 04:07:30 - 68.107.189.223: USERS bulkdelete_hide: hide
+05/07/2018 04:07:53 - 76.188.180.118: USERS Mode: 
+05/07/2018 04:07:53 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:07:58 - 76.188.180.118: USERS Mode: 
+05/07/2018 04:07:58 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:08:13 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 04:08:13 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 04:08:13 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 04:08:13 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 04:08:13 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 04:08:14 - 76.188.180.118: USERS Mode: 
+05/07/2018 04:08:14 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:08:18 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 04:08:18 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 04:08:18 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 04:08:18 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 04:08:37 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 04:08:37 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 04:08:37 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 04:08:37 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 04:14:40 - 76.188.180.118: USERS Mode: 
+05/07/2018 04:14:40 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:15:39 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 04:15:39 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 04:15:39 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 04:15:39 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 04:15:39 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 04:15:40 - 76.188.180.118: USERS Mode: 
+05/07/2018 04:15:40 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:29:59 - 76.188.180.118: USERS Mode: add
+05/07/2018 04:29:59 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:30:10 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 04:30:10 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 04:30:10 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 04:30:10 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 04:30:10 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 04:30:10 - 76.188.180.118: USERS Mode: add
+05/07/2018 04:30:10 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:31:22 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 04:31:22 - 76.188.180.118: Incorrect password. eidoadmin@thenakedsurgeon.com paassword - back to login.php
+05/07/2018 04:31:34 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 04:31:34 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/07/2018 04:31:34 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/07/2018 04:43:52 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 04:43:52 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/07/2018 04:43:52 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/07/2018 04:43:56 - 76.188.180.118: USERS Mode: 
+05/07/2018 04:43:56 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:44:06 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 04:44:06 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 04:44:06 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 04:44:06 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 04:44:06 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 04:48:51 - 76.188.180.118: USERS Mode: 
+05/07/2018 04:48:51 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 04:49:01 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 04:49:01 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 04:49:01 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 04:49:01 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 04:49:01 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:01:01 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:01:01 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:01:09 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:01:09 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:01:09 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:01:09 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:01:09 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:01:09 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:01:09 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:01:09 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:01:18 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:01:18 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:01:18 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:01:18 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:02:40 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:02:40 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:02:40 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:02:50 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:02:50 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:02:50 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:02:50 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:02:50 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:02:51 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:02:51 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:02:51 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:03:01 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:03:01 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:03:01 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:03:01 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:19:47 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:19:47 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:19:54 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:19:54 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:19:54 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:19:54 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:19:54 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:19:54 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:19:54 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:19:54 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:19:54 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:19:54 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:20:26 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:20:26 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:20:26 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:21:35 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:21:35 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:21:49 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:21:49 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:21:49 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:21:49 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:21:49 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:21:49 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:21:49 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:21:49 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:21:49 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:21:49 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:21:55 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:21:55 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:21:55 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:26:30 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:26:30 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:26:36 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:26:36 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:26:36 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:26:36 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:26:36 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:26:36 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:26:36 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:26:36 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:26:36 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:26:36 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:26:48 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:26:48 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:26:48 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:27:02 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:27:02 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:27:02 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:27:02 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:27:03 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:27:03 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:27:03 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:27:03 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:27:03 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:27:03 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:34:35 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:34:35 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:34:47 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:34:47 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:34:47 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:34:47 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:34:47 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:34:47 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:34:47 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:34:47 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:44:25 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:44:25 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:44:25 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:44:38 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:44:38 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:44:38 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:44:38 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:44:38 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:44:39 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:44:39 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:44:39 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:44:48 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:44:48 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:44:48 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:46:04 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:46:04 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:46:04 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:47:40 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:47:40 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:47:40 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:47:40 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:47:40 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:47:40 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:47:40 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:47:40 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:47:43 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:47:43 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:47:43 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:50:29 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 05:50:29 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 05:50:29 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:50:29 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:50:29 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:50:29 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:50:29 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:50:29 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:55:10 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:55:10 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:55:10 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:55:26 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:55:26 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:55:26 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:55:27 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:55:27 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:55:27 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:55:41 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:55:41 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:55:41 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:55:42 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:55:42 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:55:42 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 05:57:38 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 05:57:38 - 76.188.180.118: USERS Mode: 
+05/07/2018 05:57:38 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 05:57:38 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 05:57:38 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 05:57:38 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 06:00:02 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 06:00:02 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 06:00:02 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 06:00:15 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 06:00:15 - 76.188.180.118: USERS Mode: 
+05/07/2018 06:00:15 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:00:16 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 06:00:16 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 06:00:16 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 06:01:30 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 06:01:30 - 76.188.180.118: Bulk Confirm Mode: delete
+05/07/2018 06:01:30 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 06:01:30 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 06:01:30 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 06:01:35 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 06:01:36 - 76.188.180.118: USERS Mode: 
+05/07/2018 06:01:36 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:01:36 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 06:01:36 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 06:01:36 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 06:02:13 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 06:02:13 - 76.188.180.118: USERS Mode: 
+05/07/2018 06:02:13 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:02:13 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 06:02:13 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 06:02:13 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 06:03:42 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 06:03:42 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 06:03:42 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 06:03:48 - 76.188.180.118: In BULK_ACTONS_A.PHP
+05/07/2018 06:03:48 - 76.188.180.118: UPDATE dir_user 
+                                SET active=0, c_dateModified=NOW() 
+                                WHERE id='5aef9400278a9'
+05/07/2018 06:03:48 - 76.188.180.118: USERS Mode: 
+05/07/2018 06:03:48 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:03:48 - 76.188.180.118: USERS Mode: bulkdelete
+05/07/2018 06:03:48 - 76.188.180.118: HI WAYNE & ANDREW
+05/07/2018 06:03:48 - 76.188.180.118: USERS bulkdelete_hide: 
+05/07/2018 06:04:08 - 76.188.180.118: USERS Mode: update
+05/07/2018 06:04:08 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:04:33 - 76.188.180.118: In BULK CONFIRM
+05/07/2018 06:04:33 - 76.188.180.118: Bulk Confirm Mode: reset
+05/07/2018 06:04:34 - 76.188.180.118: USERS Mode: bulkreset
+05/07/2018 06:04:34 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:17:29 - 76.188.180.118: USERS Mode: bulkreset
+05/07/2018 06:17:29 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:18:38 - 76.188.180.118: USERS Mode: update
+05/07/2018 06:18:38 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:27:40 - 76.188.180.118: USERS Mode: update
+05/07/2018 06:27:40 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:28:14 - 76.188.180.118: USERS Mode: update
+05/07/2018 06:28:14 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:29:15 - 76.188.180.118: USERS Mode: update
+05/07/2018 06:29:15 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 06:30:40 - 76.188.180.118: USERS Mode: add
+05/07/2018 06:30:40 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:03:46 - 76.188.180.118: USERS Mode: add
+05/07/2018 07:03:46 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:04:40 - 76.188.180.118: USERS Mode: add
+05/07/2018 07:04:40 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:04:54 - 76.188.180.118: USERS Mode: add
+05/07/2018 07:04:54 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:09:56 - 76.188.180.118: USERS Mode: add
+05/07/2018 07:09:56 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:11:58 - 76.188.180.118: USERS Mode: add
+05/07/2018 07:11:58 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:12:07 - 76.188.180.118: USERS Mode: add
+05/07/2018 07:12:07 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:12:38 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:12:38 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:15:55 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:15:55 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:16:07 - 76.188.180.118: USERS Mode: update
+05/07/2018 07:16:07 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:18:12 - 76.188.180.118: USERS Mode: update
+05/07/2018 07:18:12 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:18:14 - 76.188.180.118: USERS Mode: update
+05/07/2018 07:18:14 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:18:44 - 76.188.180.118: USERS Mode: add
+05/07/2018 07:18:44 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:23:22 - 76.188.180.118: USERS Mode: add
+05/07/2018 07:23:22 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:23:25 - 76.188.180.118: USERS Mode: update
+05/07/2018 07:23:25 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:24:06 - 76.188.180.118: USERS Mode: update
+05/07/2018 07:24:06 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:24:13 - 76.188.180.118: USERS Mode: update
+05/07/2018 07:24:13 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:31:30 - 76.188.180.118: USERS Mode: update
+05/07/2018 07:31:30 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:33:55 - 76.188.180.118: USERS Mode: update
+05/07/2018 07:33:55 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:35:16 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:35:16 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:35:23 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:35:23 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:35:37 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:35:37 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:35:46 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:35:46 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:39:14 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:39:14 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:43:37 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:43:37 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:44:37 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:44:37 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:44:42 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:44:42 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:44:46 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:44:46 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:44:50 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:44:50 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:44:54 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:44:54 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:44:58 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:44:58 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:45:09 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:45:09 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:45:16 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:45:16 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:45:22 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:45:22 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:45:30 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:45:30 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:47:29 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:47:29 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:47:51 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 07:47:51 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/07/2018 07:47:51 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/07/2018 07:55:39 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 07:55:39 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/07/2018 07:55:39 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/07/2018 07:56:00 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:56:00 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:56:05 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:56:05 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:56:53 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:56:53 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:58:22 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:58:22 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 07:59:28 - 76.188.180.118: USERS Mode: 
+05/07/2018 07:59:28 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 10:12:58 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 10:12:58 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/07/2018 10:12:58 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/07/2018 10:23:25 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 10:23:25 - 76.188.180.118: Incorrect password. mm1admin@thenakedsurgeon.com  - back to login.php
+05/07/2018 10:23:35 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 10:23:36 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/07/2018 10:23:36 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/07/2018 10:26:08 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 10:26:08 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/07/2018 10:26:08 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/07/2018 10:26:33 - 76.188.180.118: USERS Mode: 
+05/07/2018 10:26:33 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 10:28:45 - 76.188.180.118: USERS Mode: 
+05/07/2018 10:28:45 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 10:30:11 - 76.188.180.118: USERS Mode: 
+05/07/2018 10:30:11 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 10:40:57 - 76.188.180.118: Users_a: mode: add - ID: 
+05/07/2018 10:40:57 - 76.188.180.118: USERS Mode: add
+05/07/2018 10:40:57 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 11:04:33 - 76.188.180.118: USERS Mode: 
+05/07/2018 11:04:33 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 11:04:36 - 76.188.180.118: USERS Mode: add
+05/07/2018 11:04:36 - 76.188.180.118: USERS bulkdelete_hide: hide
+05/07/2018 11:05:11 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 11:05:11 - 76.188.180.118: EIDO Admin - EA - eidoadmins
+05/07/2018 11:05:11 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/07/2018 11:21:23 - 172.58.200.145: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 11:21:23 - 172.58.200.145: James MacKnife - JM - staff
+05/07/2018 11:21:23 - 172.58.200.145: >>>>  GroupID: staff
+05/07/2018 11:25:30 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 11:25:30 - 76.188.180.118: Mm1 Admin - MA - sitedivadmins
+05/07/2018 11:25:30 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/07/2018 11:27:49 - 172.58.200.145: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 11:27:50 - 172.58.200.145: Mm1 Admin - MA - sitedivadmins
+05/07/2018 11:27:50 - 172.58.200.145: >>>>  GroupID: sitedivadmins
+05/07/2018 11:28:23 - 172.58.200.145: USERS Mode: 
+05/07/2018 11:28:23 - 172.58.200.145: USERS bulkdelete_hide: hide
+05/07/2018 11:29:06 - 172.58.200.145: USERS Mode: 
+05/07/2018 11:29:06 - 172.58.200.145: USERS bulkdelete_hide: hide
+05/07/2018 11:31:07 - 172.58.200.145: USERS Mode: 
+05/07/2018 11:31:07 - 172.58.200.145: USERS bulkdelete_hide: hide
+05/07/2018 11:33:23 - 172.58.200.145: USERS Mode: 
+05/07/2018 11:33:23 - 172.58.200.145: USERS bulkdelete_hide: hide
+05/07/2018 11:36:48 - 172.58.200.145: USERS Mode: 
+05/07/2018 11:36:48 - 172.58.200.145: USERS bulkdelete_hide: hide
+05/07/2018 11:50:31 - 172.58.200.145: USERS Mode: 
+05/07/2018 11:50:31 - 172.58.200.145: USERS bulkdelete_hide: hide
+05/07/2018 12:19:30 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 12:19:30 - 207.54.162.178: EIDO Admin - EA - eidoadmins
+05/07/2018 12:19:30 - 207.54.162.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/07/2018 12:26:03 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 12:26:03 - 207.54.162.178: EIDO Admin - EA - eidoadmins
+05/07/2018 12:26:03 - 207.54.162.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+05/07/2018 12:57:11 - 207.54.162.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/07/2018 12:57:11 - 207.54.162.178: James MacKnife - JM - staff
+05/07/2018 12:57:11 - 207.54.162.178: >>>>  GroupID: staff

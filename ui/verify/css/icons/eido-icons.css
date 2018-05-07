@@ -51,6 +51,7 @@
   transform: rotate(-90deg);
   display:inline-block;
 }
-.eido-icon-chevron-circle-left:before {
+.eido-icon-minus:before {
   content: "\e904";
 }
+

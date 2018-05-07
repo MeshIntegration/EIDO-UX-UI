@@ -118,17 +118,24 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
       <div class="small-12 medium-6 large-6 cell content-left">
           <div class="su-table stack large-12">
               <?php include "../includes/admin_bulkActions.php"; ?>
-              <div class="row small-12 grid-padding-x" style="margin-bottom:25px;">
-                  <div class="float-left">
-                      <label class="eido-checkbox">
-                          <input class="eido-checkbox" style="margin-left:25px;" type="checkbox" name="actOnAll" id="actOnAll">
-                          <span class="checkmark" style="left:0px;"></span>
-                      </label>
-                  </div>
-                  <div class="small-offset-2">
-                      <p>User&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSurgeon&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAdmin</p>
-                  </div>
-              </div>
+	          <div class="grid-x grid-header" style="">
+		          <div class="small-2 columns column-first" style="">
+			          <label class="eido-checkbox">
+				          <input class="eido-checkbox" style="margin-left:25px;" type="checkbox" name="actOnAll" id="actOnAll">
+				          <span class="checkmark" style="left:0px;"></span>
+			          </label>
+		          </div>
+		          <div class="small-6 columns">
+			          <label>User</label>
+		          </div>
+		          <div class="small-2 columns">
+			          <label style="left: -10px;">Surgeon</label>
+		          </div>
+		          <div class="small-1 columns">
+			          <label style="left: -18px;">Admin</label>
+		          </div>
+
+	          </div>
               <div class="row">
                   <ul class="patient-list">
                       <?php
@@ -141,30 +148,42 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
                           logMsg ("$i $firstName $lastName", $logfile);
                           $isSelected = '';
                           if($uid == $user_id) {
-                              $isSelected = ' class="selected"';
+                              $isSelected = 'selected';
                           }
                           ?>
-                          <li<?php echo $isSelected; ?>>
-                              <a href=users.php?m=update&id=<?php echo $uid; ?>>
-                                  <div>
-                                      <label class="eido-checkbox">
-                                          <input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
-                                          <span class="checkmark"></span>
-                                      </label>
-                                  </div>
-                                  <div id="container" class="clickable-row">
-								        <span class="float-right right-arrow">
-                                            <i class="eido-icon-chevron-right"></i>
-                                        </span>
-                                      <div class="medium-offset-1">
-                                          <p>
-                                              <span><?php echo $full_name; ?></span><br/>
-                                              <?php echo $email; ?>
-                                          </p>
-                                      </div>
-                                  </div>
-                              </a>
-                          </li>
+	                      <li class="<?php echo $isSelected; ?>">
+		                      <a href="users.php?m=update&id=<?php echo $uid; ?>">
+			                      <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+			                      <div class="grid-x">
+				                      <div class="small-2 columns column-first">
+					                      <label class="eido-checkbox">
+						                      <input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
+						                      <span class="checkmark"></span>
+					                      </label>
+				                      </div>
+				                      <div class="small-6 columns">
+					                      <p>
+						                      <strong><?php echo $full_name; ?></strong><br/>
+						                      <?php echo $email; ?>
+					                      </p>
+				                      </div>
+				                      <div class="small-2 columns text-center">
+					                      <label class="indicator-checkbox eido-checkbox">
+						                      <input type="checkbox" name="is_surgeon"<?php if ($is_surgeon) echo "checked"; ?>>
+						                      <span class="checkmark"></span>
+					                      </label>
+				                      </div>
+
+				                      <div class="small-1 columns text-center">
+					                      <label class="indicator-checkbox eido-checkbox">
+						                      <input type="checkbox" name="is_admin"<?php if ($is_admin) echo "checked"; ?>>
+						                      <span class="checkmark"></span>
+					                      </label>
+				                      </div>
+			                      </div>
+
+		                      </a>
+	                      </li>
                       <?php } ?>
                   </ul>
               </div>
@@ -173,12 +192,13 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 	                    FROM dir_user u, dir_user_role ur
 	                    WHERE u.id = ur.userId
 	                    AND ur.roleId='ROLE_ADMIN'";
+              $i = 0;
               $GetQuery = dbi_query ( $sql );
               $totalRecord = $GetQuery->num_rows;
               $pagination = get_pagination ( $page, $totalRecord );
               ?>
-              <div class="grid grid-x text-center">
-                  <div class="small-12 pagination-btm-users"><?php echo $pagination; ?></div>
+              <div class="grid grid-x text-center row">
+                  <div class="small-12 pagination-btm-users pagination-btm"><?php echo $pagination; ?></div>
               </div>
           </div>
       </div>
@@ -186,7 +206,13 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
  	<!-- Start Content-Right -->  
  	<!-- ADD USER SECTION -->  
 	<div class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
-	  <h3>Add SuperUser</h3>
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="small-12 cell field">
+                    <h3>&nbsp;&nbsp;Add superuser</h3>
+                </div>
+            </div>
+        </div>
 	  <form id="add_form"  action="users_a.php?m=add" method="post">
   		<div class="grid-container">
     	  <div class="grid-x">
@@ -210,12 +236,12 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		       <label class="weight-normal">Email Address <input type="text" 
 		               value="<?php echo $_SESSION['add_email']; ?>" name="email"></label> </div></div>
         <div class="small-12 cell field password-field">
-                <label>Password
+            <label class="weight-normal">Password
                 <input type="password" id="password" name="password" placeholder="" required>
               </label>
             </div>
             <div class="small-12 cell field password-confirmation-field">
-                  <label>Retype Password
+                <label class="weight-normal">Retype Password
                 <input type="password" required data-equalto="password">
  <small class="form-error">The password did not match</small>
               </label>
@@ -248,7 +274,13 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
             }
         ?>
 	<div class="small-12 medium-6 large-6 cell content-right <?php echo $update_hide; ?>">
-	  <h3>Update SuperUser</h3>
+        <div class="grid-container">
+            <div class="grid-x">
+        <div class="small-12 cell field">
+	  <h3>&nbsp;&nbsp;View user</h3>
+            </div>
+            </div>
+        </div>
 	  <form action="users_a.php?m=update&id=<?php echo $id; ?>" method="post">
   		<div class="grid-container">
     	  <div class="grid-x">

@@ -60,7 +60,7 @@ function get_pt_info_by_pwkey($pwkey)
 }
 
 // ***************************************
-function save_pt_info($id, $surname, $postalcode, $dob, $nhsnumber, $password, $mobile, $preferred)
+function save_pt_info($id, $surname, $postalcode, $dob, $nhsnumber, $password, $mobile, $preferred, $email)
 {
    global $TBLPTEPISODES;
    
@@ -69,10 +69,11 @@ function save_pt_info($id, $surname, $postalcode, $dob, $nhsnumber, $password, $
    else
       $mpd_str = ", c_mobilePageDone='YES' ";
 
-   $sql = "UPDATE  $TBLPTEPISODES
+   $sql = "UPDATE $TBLPTEPISODES
           SET c_surnameEntered=".escapeQuote($surname).",
               c_postalCodeEntered=".escapeQuote($postalcode).",
               c_dateOfBirthEntered=".escapeQuote($dob).",
+              c_emailAddress=".escapeQuote($email).",
               c_nhsNumberEntered=".escapeQuote($nhsnumber).",
               c_password=".escapeQuote($password).",
               c_mobileNumber=".escapeQuote($mobile).",

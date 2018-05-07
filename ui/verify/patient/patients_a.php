@@ -238,8 +238,8 @@ else if ($mode=="addconfirm")
                dateCreated=NOW()";
    dbi_query($sql);
    if ($debug) logMsg($sql,$logfile);
-   $fname=$_SESSION['fname'];
-   $lname=$_SESSION['lname'];
+   $fname=$_SESSION['add_fname'];
+   $lname=$_SESSION['add_lname'];
    add_to_timeline($pe_id, "New Patient Added ($fname $lname)", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
    add_to_timeline($pe_id, "New Patient Added", "Open", "Event", $browser, $ip_address, "Patient Dashboard");
    // go to the Procedure Proceed screen to ask what next 
@@ -552,6 +552,15 @@ else if ($mode=="procconfirm")
    dbi_query($sql);
    $ar = dbi_affected_rows();
    logMsg("Patients_a: records updated to new procId: $ar", $logfile);
+
+   // update the patientEpisodeId in the timeline table with the new ID 
+   // so those entries are still associated with this patient
+   $sql  = "UPDATE $TBLTIMELINES
+            SET c_patientEpisodeId='$processId'
+          WHERE c_patientEpisodeId='$id'";
+   dbi_query($sql);
+   $ar = dbi_affected_rows();
+   logMsg("Patients_a: Timeline records updated to new patientId: $ar", $logfile);
 
    // use the activity ID and Org Episode ID (procedure ID) to kick off the process
    $url = $BASE_WORKFLOW_URL."assignment/complete/".$activityId."?j_username=eidoverify2017&hash=C03B449319B694BD223A7E39142B7E34&loginAs=admin&var_organizationEpisodeId=".$org_episode_id; 

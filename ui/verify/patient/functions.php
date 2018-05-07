@@ -398,19 +398,34 @@ logMsg("BEFORE: Items in TL array: ".count($arr_tl), $logfile);
    $current_pre_post=$arr_pt_info['c_procedureStatus'];
 logMsg("Max Sessions: $MAX_SESSIONS - Curr Sess: $current_session - Curr PrePost: $current_pre_post", $logfile);
    $tl = count($arr_tl);
+   if ($current_sesssion==1) {
+      $sql="SELECT * FROM $TBLTIMELINES 
+            WHERE c_timelineEntryType='Event' 
+            AND c-tielineEntryDetail='Survey Email Sent' 
+            AND c_sessionNumber='1'";
+      $GetQuery=dbi_query($sql);
+      if ($GetQuery->num_rows==0) {
+         $arr_tl[$tl]['dateCreated']="";
+         $arr_tl[$tl]['id']=0;
+         $arr_tl[$tl]['c_timelineEntryType']="Future Event";
+         $arr_tl[$tl]['c_timelineEntryDetail']="<strong>Scheduled Survey</strong><br />".$arr_proc_info[$i]['c_session1Name'];
+logMsg("1: TIMELINE - Upcoming Survey".$arr_proc_info[$i][$varname], $logfile);
+         $tl++;
+      }
+   }
    $complete_flag=false;
    for ($i=$current_session+1; $i<=$MAX_SESSIONS; $i++)
    {
       $varname="c_prePost".$i;
       $pre_post=$arr_proc_info[$i][$varname];
 logMsg("PrePost: $pre_post", $logfile);
-      if ($pre_post<>$current_pre_post && !$complete_flag && $arr_pt_info['c_procedureStatus']=="PRE")
+      if ($pre_post<>$current_pre_post && !$complete_flag && $arr_pt_info['c_procedureStatus']=="PRE" )
       {
          $arr_tl[$tl]['dateCreated']="";
          $arr_tl[$tl]['id']=0;
          $arr_tl[$tl]['c_timelineEntryType']="Event";   
          $arr_tl[$tl]['c_timelineEntryDetail']="Procedure Completed";
-logMsg("$i: Procedure Completed", $logfile);
+logMsg("$i: TIMELINE - Mark Procedure Completed", $logfile);
          $complete_flag=true; 
          $tl++;
       }
@@ -421,6 +436,7 @@ logMsg("$i: Procedure Completed", $logfile);
          $arr_tl[$tl]['c_timelineEntryType']="Event";   
          $arr_tl[$tl]['c_timelineEntryDetail']="PROCEDURE COMPLETE";
          $complete_flag=true; 
+logMsg("$i: TIMELINE - Procedure is Complete", $logfile);
          $tl++;
       }
       $varname = "c_session".$i."Name";
@@ -430,7 +446,7 @@ logMsg("$i: Procedure Completed", $logfile);
          $arr_tl[$tl]['id']=0;
          $arr_tl[$tl]['c_timelineEntryType']="Future Event";   
          $arr_tl[$tl]['c_timelineEntryDetail']="<strong>Scheduled Survey</strong><br />".$arr_proc_info[$i][$varname];
-logMsg("$i: Upcoming Survey".$arr_proc_info[$i][$varname], $logfile);
+logMsg("$i: TIMELINE - Upcoming Survey".$arr_proc_info[$i][$varname], $logfile);
          $tl++;
       }
    }

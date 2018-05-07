@@ -33,6 +33,7 @@ $update_hide = "hide";
 $managesurveys_hide = "hide";
 $addsurveys_hide = "hide";
 
+
 if ($mode=="" || $mode=="add")
 {
    $add_hide = "";
@@ -135,38 +136,116 @@ $_SESSION['page'][$script_name]['no'] = $page ;
   <div class="grid-x su" data-equalizer data-equalize-on="medium">
     <!-- Start Content-Left -->
     <div class="small-12 medium-6 large-6 cell content-left">
-      <table width="100%" border="0"  class="su-table stack">
-  	    <tbody>
-          <tr>  
-		<td colspan="3">
-		    <a class="button fc">Bulk Actions<img src="../img/icons/add_light.png" alt="add icon" class="fc_add"/></a>&nbsp;&nbsp;
-		    <a class="button fc">Sort By<img src="../img/icons/add_white.png" alt="add icon" class="fc_add"/></a>
-		</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <?php 
-              $sql = "SELECT * FROM $TBLPROCEPISODES ORDER BY c_procedureId LIMIT $start,$row";
-              $GetQuery = dbi_query($sql);
-              while ($qryResult=$GetQuery->fetch_assoc()) {
-                 $list_id = $qryResult['id'];
-				 
-				 $isSelected = '';
-				 if ($list_id == $id) {
-					 $isSelected = ' class="selected"';
-				 }
-          ?>
-	  <tr<?php echo $isSelected; ?>>
-        <td><input type="checkbox"></td>
-	    <td class='clickable-row su_data' data-href='procedures.php?m=update&id=<?php echo $list_id; ?>'><p><span class="uc"><?php echo $qryResult['c_procedureId']." - ".$qryResult['c_description']; ?></span><br />
-            <?php echo $qryResult['c_displayName']; ?></p></td>
-	    <td><a href="procedures.php?m=update&id=<?php echo $id; ?>"><img src="../img/icons/greater.png" alt="greater than icon" class="align-right" /></a></td>
-	  </tr>
-            <?php } ?>
-<?php 
+	    <div class="grid-x row">
+		    <div class="medium-12 cell" style="min-height:40px;">
+			    <div class="accordion clearfix" data-accordion data-allow-all-closed="true">
+				    <div class="accordion-item" data-accordion-item>
+					    <a href="#" class="accordion-title sort"></a>
+					    <!-- Accordion tab title -->
+
+					    <div class="accordion-content sort" data-tab-content>
+						    <?php
+						    // Reset Filter button is not shown if filter is default
+						    if(!$is_default_filter) {
+							    ?>
+							    <div class="grid-x rule">
+								    <div class="small-12 cell">
+									    <!--<a href="clear_filter.php" class="float-right align-center-middle"><img src="../img/close-icon.png" alt="" style="margin:7px;"></a>-->
+									    <a href="clear_filter.php" class="align-center-middle" id="ResetFilter">Reset Filters</a>
+								    </div>
+							    </div>
+						    <?php } ?>
+						    <div class="grid-x rule">
+							    <div class="small-12 medium-4 cell">
+								    <label for="middle-label" class="middle">Time Added</label>
+							    </div>
+							    <div class="small-12 medium-8 cell">
+								    <a href="patients.php?filter=1&time_added=1" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added'] == 1) ? "selected" : "inactive"; ?>">Newest First</a>&nbsp;<a href="patients.php?filter=1&time_added=2" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added'] == 2) ? "selected" : "inactive"; ?>">Oldest First</a>
+							    </div>
+						    </div>
+						    <div class="grid-x rule">
+							    <div class="small-12 medium-4 cell">
+								    <label for="middle-label" class="middle">Name</label>
+							    </div>
+							    <div class="small-12 medium-8 cell">
+								    <a href="patients.php?filter=1&name=1" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name'] == 1) ? "selected" : "inactive"; ?>">A-Z</a>&nbsp;<a href="patients.php?filter=1&name=2" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name'] == 2) ? "selected" : "inactive"; ?>">Z-A</a>
+							    </div>
+						    </div>
+						    <div class="grid-x rule">
+							    <div class="small-12 medium-4 cell">
+								    <label for="middle-label" class="middle">Activity</label>
+							    </div>
+							    <div class="small-12 medium-8 cell">
+								    <a href="patients.php?filter=1&activity=1" class="button <?php echo (isset($_SESSION['filter']['activity']) && $_SESSION['filter']['activity'] == 1) ? "selected" : "inactive"; ?>">Most Active</a>&nbsp;<a href="patients.php?filter=1&activity=2" class="button <?php echo (isset($_SESSION['filter']['activity']) && $_SESSION['filter']['activity'] == 2) ? "selected" : "inactive"; ?>">Least Active</a>
+							    </div>
+						    </div>
+						    <div class="grid-x rule">
+							    <div class="small-12 medium-4 cell">
+								    <label for="middle-label" class="middle">Status</label>
+							    </div>
+							    <div class="small-12 medium-8 cell">
+								    <a href="patients.php?filter=1&status=1" class="button off_status <?php echo (isset($_SESSION['filter']['status']) && $_SESSION['filter']['status'] == 1) ? "selected" : "inactive"; ?>">Red</a>&nbsp;<a href="patients.php?filter=1&status=2" class="button on_status <?php echo (isset($_SESSION['filter']['status']) && $_SESSION['filter']['status'] == 2) ? "selected" : "inactive"; ?>">Green</a>
+							    </div>
+						    </div>
+
+						    <div class="grid-x rule">
+							    <div class="small-12 medium-4 cell">
+								    <label for="middle-label" class="middle">Gender:</label>
+							    </div>
+							    <div class="small-12 medium-8 cell">
+								    <a href="patients.php?filter=1&gender=1" class="button <?php echo (isset($_SESSION['filter']['gender']) && $_SESSION['filter']['gender'] == 1) ? "selected" : "inactive"; ?>">Any</a>&nbsp;<a href="patients.php?filter=1&gender=2" class="button <?php echo (isset($_SESSION['filter']['gender']) && $_SESSION['filter']['gender'] == 2) ? "selected" : "inactive"; ?>">Male</a>&nbsp;<a href="patients.php?filter=1&gender=3" class="button <?php echo (isset($_SESSION['filter']['gender']) && $_SESSION['filter']['gender'] == 3) ? "selected" : "inactive"; ?>">Female</a>
+							    </div>
+						    </div>
+						    <div class="grid-x rule">
+							    <div class="small-12 medium-4 cell">
+								    <label for="middle-label" class="ml_label">Search:<br/>within results</label>
+							    </div>
+							    <form method="post" enctype="multipart/form-data" action="patients.php?filter=1">
+								    <div class="small-12 medium-8 cell">
+									    <div class="input-group">
+										    <input class="input-group-field searchbox" placeholder="Hobbs" type="text" name="search_within_query" value="<?php if(!empty($_SESSION['filter']['search_within_query']))
+											    echo $_SESSION['filter']['search_within_query']; ?>">
+										    <div class="input-group-button">
+											    <button type="submit" class="button" value="Go" name="search_within_submit">Go</button>
+										    </div>
+									    </div>
+								    </div>
+							    </form>
+						    </div>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+
+	    </div>
+
+
+	    <ul class="patient-list">
+		    <?php
+		    $sql = "SELECT * FROM $TBLPROCEPISODES ORDER BY c_procedureId LIMIT $start,$row";
+		    $GetQuery = dbi_query($sql);
+		    while ($qryResult=$GetQuery->fetch_assoc()) {
+		    $list_id = $qryResult['id'];
+
+		    $isSelected = '';
+		    if ($list_id == $id) {
+			    $isSelected = ' class="selected"';
+		    }
+		    ?>
+		    <li<?php echo $isSelected; ?>>
+			    <a href="procedures.php?m=update&id=<?php echo $list_id; ?>">
+				    <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+				    <p>
+					    <span class="uc"><?php echo $qryResult['c_procedureId']." - ".$qryResult['c_description']; ?></span><br />
+					    <?php echo $qryResult['c_displayName']; ?>
+				    </p>
+			    </a>
+		    </li>
+		    <?php } ?>
+
+	    </ul>
+
+<?php
 $sql = "SELECT * FROM $TBLPROCEPISODES ORDER BY c_procedureId";
 $GetQuery = dbi_query($sql);
 $totalRecord = $GetQuery->num_rows;
@@ -189,8 +268,6 @@ $pagination = get_pagination($page, $totalRecord);
 			</td>
 		  </tr>
 <?php */ ?>
-  	    </tbody>
-      </table>
 	  <div class="grid grid-x text-center">
 	    <div class="small-12 pagination-btm"><?php echo $pagination; ?></div>
 	  </div>
@@ -203,22 +280,28 @@ $pagination = get_pagination($page, $totalRecord);
                }
         ?>
 	<div class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
-	  <h3>Add Procedure</h3>
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="small-12 cell field">
+                    <h3>&nbsp;&nbsp;Add procedure</h3>
+                </div>
+            </div>
+        </div>
 	  <form action="procedures_a.php?m=add" method="post">
         <div class="grid-container">
     	  <div class="grid-x">
       	    <div class="small-12 cell field">
-        	  <label>Procedure Name
+                <label class="weight-normal">Procedure Name
                 <input type="text" name="c_description" placeholder="">
               </label>
             </div>
       	    <div class="small-12 cell field">
-        	  <label>EIDO Procedure Code
+                <label class="weight-normal">EIDO Procedure Code
                 <input type="text" name="c_procedureId" placeholder="">
               </label>
             </div>
       	    <div class="small-12 cell field">
-        	  <label>Display Name
+                <label class="weight-normal">Display Name
                 <input type="text" name="c_displayName" placeholder="">
               </label>
             </div>
@@ -251,22 +334,28 @@ $pagination = get_pagination($page, $totalRecord);
                }
         ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $update_hide; ?>">
-          <h3>View Procedure</h3>
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="small-12 cell field">
+                        <h3>&nbsp;&nbsp;View procedure</h3>
+                    </div>
+                </div>
+            </div>
           <form action="procedures_a.php?m=update&id=<?php echo $pe_id; ?>" method="post">
                 <div class="grid-container">
-          <div class="grid-x grid-padding-x">
-                <div class="small-12 medium-12 large-12 cell field">
-                  <label>Procedure Name
+          <div class="grid-x">
+                <div class="small-12 cell field">
+                    <label class="weight-normal">Procedure Name
                 <input type="text" name="c_description" value="<?php echo $name; ?>">
               </label>
             </div>
                 <div class="small-12 medium-12 large-12 cell field">
-                  <label>EIDO Procedure Code
+                    <label class="weight-normal">EIDO Procedure Code
                 <input type="text" name="c_procedureId" value="<?php echo $code; ?>">
               </label>
             </div>
                 <div class="small-12 medium-12 large-12 cell field">
-                  <label>Display Name
+                    <label class="weight-normal">Display Name
                 <input type="text" name="c_displayName" value="<?php echo $dname; ?>">
               </label>
             </div>
@@ -334,7 +423,7 @@ $pagination = get_pagination($page, $totalRecord);
             }
         ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $managesurveys_hide; ?>">
-          <div class="back"><a href="procedures.php?m=update&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+          <div class="back back-row"><a href="procedures.php?m=update&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <h2>Procedure Setup<br /><span class="small">Add surveys to the procedure session</span></h2>
 		  <hr />
           <form action="procedures_a.php?m=updateproc&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>" method="post">
@@ -389,7 +478,7 @@ $pagination = get_pagination($page, $totalRecord);
             </div>
             <div class="small-12 medium-12 large-12 cell" id="session_delay_time">
                <p><h5>Session Delay Time</h5>
-               <input type="text" size="4" name="session_delay"><b: /></p>
+               <input type="text" size="4" name="session_delay" value="<?php echo isset($arr_proc_episode['sessionDelay']) ? $arr_proc_episode['sessionDelay'] : ''; ?>"><b: /></p>
             </div>
             <div class="small-12 medium-12 large-12 cell">
                      <ul class="sort" id="sortable" >
@@ -399,7 +488,14 @@ $pagination = get_pagination($page, $totalRecord);
                               $arr_survey_info = get_survey_by_num($survey_ids[$i]);
                               if(!empty($arr_survey_info)){
                           ?>
-                              <li><i class="fi-list sort-icon move"></i><span class="not-allow-move"><?php echo $survey_ids[$i]." - ".$arr_survey_info['c_description']; ?><a href="functions.php?m=delete_proc_survey&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>&survey=<?php echo $survey_ids[$i]; ?>"><i class="fi-trash sort-icon float-right"></i></a></span></li>
+                              <li data-survey="<?php echo $survey_ids[$i]; ?>">
+	                              <i class="fi-list sort-icon move"></i>
+	                              <span class="not-allow-move">
+		                              <a href="functions.php?m=delete_proc_survey&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>&survey=<?php echo ($i+1); ?>" class="float-right"><i class="fi-trash sort-icon float-right"></i></a>
+		                              <?php echo $survey_ids[$i]." - ".$arr_survey_info['c_description']; ?>
+
+	                              </span>
+                              </li>
                           <?php    }
                                } ?>
                           <a href="procedures.php?m=addsurveys&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>"><li class="add"><button class="button expanded text-center add-survey" type="button"><img src="../img/icons/add_white.png" alt="add icon" /></button></li></a>
@@ -644,9 +740,31 @@ $pagination = get_pagination($page, $totalRecord);
         // add sortable feature
            $("#sortable").sortable({
                axis:"y",
-               cancel: "span"
+               cancel: "span",
+	           update: function(e, ui) {
+		           //update our id based on our id
+		           var order = [],
+			           currentSession = $('select[name=session_number]').val();
+		           $(this).find("li").each(function() {
+		           	    var $li = $(this);
+		           	    order.push($li.attr('data-survey'));
+		           });
+		           $.post("./ajax/set_session_data.php", { type: 'sort_surveys', pe_id: '<?php echo $pe_id; ?>', sess_id: currentSession, surveys: order });
+	           }
            });
            $("#sortable").disableSelection();
+
+           $("input[name=sessionName]").on("change", function(e) {
+           	    var $this = $(this),
+	                currentSession = $('select[name=session_number]').val();
+           	    $.post("./ajax/set_session_data.php", { type: 'update_session_name', pe_id: '<?php echo $pe_id; ?>', sess_id: currentSession, session_name: $this.val()});
+           });
+	        $("input[name=session_delay]").on("change", function(e) {
+		        var $this = $(this),
+			        currentSession = $('select[name=session_number]').val();
+		        $.post("./ajax/set_session_data.php", { type: 'update_session_delay', pe_id: '<?php echo $pe_id; ?>', sess_id: currentSession, session_delay: $this.val()});
+	        });
+
      });
 
      </script>  

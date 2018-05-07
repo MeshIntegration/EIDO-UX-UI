@@ -72,7 +72,8 @@ $return_to = get_query_string('rt');
 			</div>
                       <?php } ?>
 			<p>&nbsp;</p>
-			<h5>Change your password</h5>
+			<h1>Reset Password</h1>
+			<p>Create a password for your account. Please use a secure format.</p>
 			<div class="grid-x">
 			  <div class="small-11 cell"><label class="adjust">Current Password</label></div>
                           <input type ="password" name="old_password">

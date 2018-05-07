@@ -1,5 +1,7 @@
 <!doctype html>
 <?php
+// message.php
+// Copyright 2018, Mesh Integration LLC
 
 require_once './utilities.php';
 session_start();

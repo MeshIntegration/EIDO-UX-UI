@@ -19,12 +19,17 @@ $home = "users.php";
 $logfile = "admin.log";
 $mode = get_query_string ( 'm' );
 $id = get_query_string ( 'id' );
+
+logMsg("USERS Mode: $mode",$logfile);
+
 // turn everythign off
 $add_hide = "hide";
 $update_hide = "hide";
 $reset_hide = "hide";
 $delete_hide = "hide";
 $bulk_hide = "hide";
+$bulkreset_hide = "hide";
+$bulkdelete_hide = "hide";
 if ($mode == "" || $mode == "add") {
 	$add_hide = "";
 } else if ($mode == "update") {
@@ -38,6 +43,11 @@ if ($mode == "" || $mode == "add") {
 	$user_id = $id;
 } else if ($mode == "bulk") {
 	$bulk_hide = "";
+} else if ($mode == "bulkreset") {
+	$bulkreset_hide = "";
+} else if ($mode == "bulkdelete") {
+logMsg("HI WAYNE & ANDREW", $logfile);
+	$bulkdelete_hide = "";
 }
 $script_name = substr ( strrchr ( $_SERVER ['PHP_SELF'], "/" ), 1 );
 if ((isset ( $_GET ['page'] ) && ! empty ( $_GET ['page'] ))) {
@@ -90,7 +100,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
         <!-- End Header -->
 		<!-- Start Title Bar & Navigation -->
 		        <div class="grid-x padding-x">
-                    <div class="cell page-title">User Administration</div>
+                    <div class="cell page-title">User administration</div>
 		        </div>
 		<!-- End Title Bar & Navigation -->
 		<!-- Start Content -->
@@ -99,96 +109,106 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
         <div class="small-12 medium-6 large-6 cell content-left">
             <div class="su-table stack large-12">
                 <?php include "../includes/admin_bulkActions.php"; ?>
-		<div class="row small-12 grid-padding-x" style="margin-bottom:25px;">
-                <div class="float-left">
-                        <label class="eido-checkbox">
-                        <input class="eido-checkbox" style="margin-left:25px;" type="checkbox" name="actOnAll" id="actOnAll">
-                        <span class="checkmark" style="left:0px;"></span>
-			</label>
-                </div>
-                <div class="small-offset-2">
-                        <p>User&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSurgeon&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAdmin</p>
-                </div>
-		</div>
-		<div class="row">
-			<ul class="patient-list">
-                            <?php
-			        for($i = 0; $i < count ( $arr_users ); $i ++) {
-				    $uid = $arr_users [$i] ['id'];
-				    $firstName = ucfirst ( strtolower ( $arr_users [$i] ['firstName'] ) );
-				    $lastName = strtoupper ( $arr_users [$i] ['lastName'] );
-				    $full_name = $lastName . ", " . $firstName;
-				    $email = $arr_users [$i] ['email'];
-				    $is_admin = $is_surgeon = false;
-				    if (strtolower ( $arr_users [$i] ['groupid'] ) == "admin") {
-                                       $is_admin = true;
-                                 }
-				    if ( $arr_users [$i] ['isSurgeon'] == "1") {
-					$is_surgeon = true;
-				    }
-				    $isSelected = '';
-				    if($uid == $user_id) {
-				        $isSelected = ' class="selected"';
-				    }
-                            ?>
-                            <li<?php echo $isSelected; ?>>
-                                <a href=users.php?m=update&id=<?php echo $uid; ?>>
-	                                <div>
-                                        <label class="eido-checkbox">
-                                            <input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-							        <div id="container" class="clickable-row">
-								        <span class="float-right right-arrow">
-                                            <i class="eido-icon-chevron-right"></i>
-                                        </span>
-								        <div class="medium-offset-8">
-                                            <label class="indicator-checkbox eido-checkbox">
-                                                <input type="checkbox" name="is_surgeon"<?php if ($is_surgeon) echo "checked"; ?>>
-                                                <span class="checkmark"></span>
-                                            </label>
-								        </div>
-                                        <div class="medium-offset-10">
-                                            <label class="indicator-checkbox eido-checkbox">
-                                                <input type="checkbox" name="is_admin"<?php if ($is_admin) echo "checked"; ?>>
-                                                <span class="checkmark"></span>
-                                            </label>
-								        </div>
-								        <div class="medium-offset-1">
-                                            <p>
-                                                <span><?php echo $full_name; ?></span><br/>
-                                                <?php echo $email; ?>
-                                            </p>
-								        </div>
-							        </div>
-                                </a>
-                            </li>
-                            <?php } ?>
-                        </ul>
-                </div>
-	                    <?php
-                        $sql = "SELECT u.*, ug.groupId
-	                    FROM dir_user u, dir_user_role ur, dir_user_group ug
-	                    WHERE u.id=ur.userId
-	                    AND u.id = ug.userId
-	                    AND ur.roleId='ROLE_USER'";
-						$GetQuery = dbi_query ( $sql );
-						$totalRecord = $GetQuery->num_rows;
-						$pagination = get_pagination ( $page, $totalRecord );
-                        ?>
-				        <div class="grid grid-x text-center">
-					        <div class="small-12 pagination-btm-users"><?php echo $pagination; ?></div>
-				        </div>
-              </div>
-        </div>
+				<div class="grid-x grid-header" style="">
+	                <div class="small-2 columns column-first" style="">
+		                <label class="eido-checkbox">
+			                <input class="eido-checkbox" style="margin-left:25px;" type="checkbox" name="actOnAll" id="actOnAll">
+	                        <span class="checkmark" style="left:0px;"></span>
+						</label>
+	                </div>
+					<div class="small-6 columns">
+						<label style="margin-left: 10px;">User</label>
+					</div>
+					<div class="small-2 columns" style="left: -15px;">
+						<label>Surgeon</label>
+					</div>
+					<div class="small-1 columns">
+						<label style="left: -28px;">Admin</label>
+					</div>
+
+				</div>
+			<div class="row">
+				<ul class="patient-list">
+	                            <?php
+				        for($i = 0; $i < count ( $arr_users ); $i ++) {
+					    $uid = $arr_users [$i] ['id'];
+					    $firstName = ucfirst ( strtolower ( $arr_users [$i] ['firstName'] ) );
+					    $lastName = strtoupper ( $arr_users [$i] ['lastName'] );
+					    $full_name = $lastName . ", " . $firstName;
+					    $email = $arr_users [$i] ['email'];
+					    $is_admin = $is_surgeon = false;
+					    if (strtolower ( $arr_users [$i] ['groupid'] ) == "sitedivadmins") {
+	                                       $is_admin = true;
+	                                 }
+					    if ( $arr_users [$i] ['isSurgeon'] == "1") {
+						$is_surgeon = true;
+					    }
+					    $isSelected = '';
+					    if($uid == $user_id) {
+					        $isSelected = 'selected';
+					    }
+	                            ?>
+
+	                            <li class="<?php echo $isSelected; ?>">
+	                                <a href="users.php?m=update&id=<?php echo $uid; ?>">
+		                                <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+		                                <div class="grid-x">
+                                            <div class="small-2 columns column-first">
+                                                <label class="eido-checkbox">
+                                                    <input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+			                                <div class="small-6 columns">
+				                                <p>
+					                                <strong><?php echo $full_name; ?></strong><br/>
+					                                <?php echo $email; ?>
+				                                </p>
+			                                </div>
+			                                <div class="small-2 columns text-center">
+				                                <label class="indicator-checkbox eido-checkbox">
+					                                <input type="checkbox" name="is_surgeon"<?php if ($is_surgeon) echo "checked"; ?>>
+					                                <span class="checkmark"></span>
+				                                </label>
+			                                </div>
+
+			                                <div class="small-1 columns text-center">
+				                                <label class="indicator-checkbox eido-checkbox">
+					                                <input type="checkbox" name="is_admin"<?php if ($is_admin) echo "checked"; ?>>
+					                                <span class="checkmark"></span>
+				                                </label>
+			                                </div>
+		                                </div>
+
+	                                </a>
+	                            </li>
+	                            <?php } ?>
+	                        </ul>
+	                </div>
+		                    <?php
+	                        $sql = "SELECT u.*, ug.groupId
+		                    FROM dir_user u, dir_user_role ur, dir_user_group ug
+		                    WHERE u.id=ur.userId
+		                    AND u.id = ug.userId
+		                    AND ur.roleId='ROLE_USER'";
+
+							$GetQuery = dbi_query ( $sql );
+							$totalRecord = $GetQuery->num_rows;
+							$pagination = get_pagination ( $page, $totalRecord );
+	                        ?>
+					        <div class="grid grid-x text-center row">
+						        <div class="small-12 pagination-btm-users pagination-btm"><?php echo $pagination; ?></div>
+					        </div>
+	              </div>
+            </div>
 			<!-- End Content-Left -->
 			<!-- Start Content-Right -->
 	<!-- ADD USER SECTION -->
 	<div class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
 		<!--  <h3>Add Verify User</h3>  -->
-		<div class="section-title">Add Verify User</div>
+
 		<form action="users_a.php?m=add" method="post">
+            <div class="section-title">Add Verify user</div>
 			<div class="grid-container">
 				<div class="grid-x">
 					<div class="small-12 cell field">
@@ -265,7 +285,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 				</div>
 		    </div>
 	    </div>
-<!-- UPDATE USER SECTION -->
+<!-- VIEW USER SECTION -->
         <?php
 			if ($mode == "update") {
 					$sql_u = "SELECT u.*, ug.groupId 
@@ -294,21 +314,22 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 			}
 			?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $update_hide; ?>">
-		<h3>View User</h3>
+
 		<form action="users_a.php?m=update&id=<?php echo $user_id; ?>" method="post">
+            <h3>View user</h3>
 			<div class="grid-container">
 				<div class="grid-x">
 					<div class="small-12 cell field">
-						<label>First Name <input type="text" name="fname" value="<?php echo $firstName; ?>">
+                        <label class="weight-normal">First Name <input type="text" name="fname" value="<?php echo $firstName; ?>">
 						</label>
 				</div>
 				<div class="small-12 cell field">
-				<label>Surname <input type="text" name="lname"
+                    <label class="weight-normal">Surname <input type="text" name="lname"
 					value="<?php echo $lastName; ?>">
 				</label>
 				</div>
 				<div class="small-12 cell field">
-					<label>Email Address <input type="text" name="email" value="<?php echo $email; ?>">
+                    <label class="weight-normal">Email Address <input type="text" name="email" value="<?php echo $email; ?>">
 					</label>
 				</div>
                 		<div class="row small-12 grid-padding-x">
@@ -329,16 +350,14 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
                 		</div>
 
 				<div class="small-12 cell field">
-					<label>GMC Number <input type="text" name="gmc_number"
+                    <label class="weight-normal">GMC Number <input type="text" name="gmc_number"
 						value="<?php echo $gmc_number; ?>">
 					</label>
 				</div>
 				<div class="small-12 cell field">&nbsp;</div>
 				<div class="small-12 cell field text-center">
-					<button type="submit" class="button large">Update User</button>
-					<br /> <br /> <a
-						href="users.php?m=reset&id=<?php echo $user_id; ?>" class="button large inactive">Reset Password</a><br /> <br /> <a
-						href="users.php?m=delete&id=<?php echo $user_id; ?>" class="button large red">Delete User</a>
+					<button type="submit" class="button large">Update user</button>
+					<br /> <br /> <a href="users.php?m=reset&id=<?php echo $user_id; ?>" class="button large inactive">Reset password</a><br /> <br /> <a href="users.php?m=delete&id=<?php echo $user_id; ?>" class="button large red">Delete user</a>
 				</div>
 			</div>
 		</div>
@@ -370,6 +389,42 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
         </form>
 </div>
 <!-- End RESET USER PASSWORD SECTION -->
+<!-- BULK DELETE USER SECTION (checkboxes) -->
+<?php logMsg("USERS bulkdelete_hide: $bulkdelete_hide", $logfile); ?>
+<div class="small-12 medium-6 large-6 cell content-right <?php echo $bulkdelete_hide; ?>">
+                <div class="grid-container">
+                        <div class="grid-x grid-padding-x">
+                                <div class="small-12 medium-12 large-12 cell text-center">
+                                        <h3>Are you sure you wish to delete these users?</h3>
+                                        <p>This will not affect any patient data, but the users will no
+                                                longer be able to access the system.</p>
+                                </div>
+                                <div class="small-12 medium-12 large-12 cell text-center">
+                                        <div class="grid-x">
+                                                <div class="small-3">&nbsp;</div>
+                                                <div class="small-6">
+                                                        <br> <a href="users.php" class="button large expanded inactive" />No</a>
+                                                              <a href="bulk_actions_a.php?actionRequested=delete"  class="button large red expanded" />Confirm Delete</a>
+                                                </div>
+                                                <div class="small-3">&nbsp;</div>
+                                        </div>
+                                    <div class="small-12 medium-8 cell">
+                                        <form action="bulk_actions_a.php?actionRequested=reset" method="post" name="reset" class="bulk-action" id="ResetAction">
+                                            <!--							<input type="hidden" name="users[]" value="" />-->
+                                            <button class="button" type="submit">Force Password Reset</button>
+                                        </form>
+                                    </div>
+                                    <div class="small-12 medium-8 cell">
+                                        <form action="bulk_actions_a.php?actionRequested=delete" method="post" class="bulk-action" id="DeleteAction">
+                                            <button class="button" type="submit">Delete User</button>
+                                        </form>
+                                    </div>
+                                        <p>&nbsp;</p>
+                                </div>
+                        </div>
+                </div>
+</div>
+<!-- End DELETE USER SECTION -->
 <!-- BULK RESET PW SECTION -->
 <div class="small-12 medium-6 large-6 cell content-right reveal"
 	id="pwdResetModal" data-reveal>
@@ -383,7 +438,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 			<span aria-hidden="true">&times;</span>
 		</button>
 		<button name="pwresetbulk" id="pwresetbulk" class="pwreset-button"
-			onclick="bulkaction(this)" data-close aria-label="Confirm Reset"
+			onclick="bulkaction(this)" data-close aria-label="Confirm reset"
 			type="button">
 			<span aria-hidden="true">&times;</span>
 		</button>
@@ -406,7 +461,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 						<div class="small-6">
 							<br> <a href="users.php?m=main"><input type="button" name=""
 								value="No" class="button large expanded inactive" /></a> 
-                                                              <a href="users_a.php?m=delete&id=<?php echo $user_id; ?>"> <input type="button" name="" value="Confirm Delete" class="button large red expanded" /></a>
+                                                              <a href="users_a.php?m=delete&id=<?php echo $user_id; ?>"> <input type="button" name="" value="Confirm delete" class="button large red expanded" /></a>
 						</div>
 						<div class="small-3">&nbsp;</div>
 					</div>

@@ -1,6 +1,6 @@
 <div class="grid-x hide-for-small-only show-for-medium">
     <div class="small-12 medium-2 large-2 cell">
-        <button class="button type shift" type="button" data-toggle="example-dropdown-bottom-left">
+        <button class="button type shift" style="font-family: 'Lato-Bold', 'Lato Bold', 'Lato'; text-align: center;" type="button" data-toggle="example-dropdown-bottom-left">
             <?php echo $user_initials; ?>
         </button>
         <?php include "admin_dropdown_pane.php"; ?>
@@ -17,12 +17,12 @@
   </div>
 -->
 
-    <div class="small-12 medium-6 large-6 cell" style="padding-top: 15px;">
+    <div class="small-12 medium-6 large-6 cell" style="padding-top: 26px;">
         <!--  <div class="grid" style="padding-top: 15px;"> -->
 
         <div id="addusr" class="row links">
-            <a href="/ui/verify/admin/users.php?m=add" style="">
-                <i class="eido-icon-plus"></i> Add User</a>
+            <a href="/ui/verify/admin/users.php?m=add" style="left -10px">
+                <i class="eido-icon-plus"></i>Add user</a>
         </div>
     </div>
 
@@ -34,8 +34,8 @@
 
 <div class="small-12 medium-4 large-4 cell">
     <div class="back-row">
-        <a  class="back-btn" href="/ui/verify/patient/patients.php?m=main">
-            <i class="eido-icon-chevron-left">&nbsp&nbspBack to dashboard</i>
+        <a style="zoom: .8; margin-left: 13px" class="back-btn" href="/ui/verify/patient/patients.php?m=main">
+            <i class="eido-icon-chevron-left"></i>&nbsp;&nbsp;Back to dashboard
         </a>
     </div>
 </div>

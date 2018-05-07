@@ -2865,3 +2865,875 @@
                c_displayName='New 5 Session Test Pocedure',
                dateModified=NOW()
            WHERE id='5abe4d575be08'
+05/02/2018 21:39:17 - 68.107.189.223: Procedures_a: add 
+05/02/2018 21:39:17 - 68.107.189.223: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5aea3005d1a76',
+               c_description='WAYNE PROC',
+               c_procedureId='W001',
+               c_displayName='Wayne procedure',
+               dateModified=NOW(),
+               dateCreated=NOW()
+05/02/2018 21:43:30 - 68.107.189.223: Procedures_a: updateproc 5aea3005d1a76
+05/02/2018 21:43:30 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='Session 1',
+              c_session1Survey1='', 
+              c_session1Survey2='', 
+              c_session1Survey3='', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/02/2018 21:43:30 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2',
+              c_session2Survey1='', 
+              c_session2Survey2='', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/02/2018 21:43:30 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Session 3',
+              c_session3Survey1='', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/02/2018 21:43:30 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/02/2018 21:43:30 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 00:35:09 - 184.56.244.84: Procedures_a: updateproc 5aea3005d1a76
+05/03/2018 00:35:09 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='',
+              c_session1Name='Session 1',
+              c_session1Survey1='90026035', 
+              c_session1Survey2='90034110', 
+              c_session1Survey3='90077861', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 00:35:09 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='',
+              c_session2Name='Session 2',
+              c_session2Survey1='', 
+              c_session2Survey2='', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 00:35:09 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='',
+              c_session3Survey1='', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 00:35:09 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 00:35:09 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 00:58:42 - 184.56.244.84: Procedures_a: add 
+05/03/2018 00:58:42 - 184.56.244.84: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5aea5ec273ccb',
+               c_description='TEST - JAY',
+               c_procedureId='W0016',
+               c_displayName='Jayme Jay',
+               dateModified=NOW(),
+               dateCreated=NOW()
+05/03/2018 01:18:45 - 184.56.244.84: Procedures_a: updateproc 5aea5ec273ccb
+05/03/2018 01:18:45 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='',
+              c_session1Name='Session 1',
+              c_session1Survey1='', 
+              c_session1Survey2='', 
+              c_session1Survey3='', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:18:45 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='',
+              c_session2Name='Session 2',
+              c_session2Survey1='', 
+              c_session2Survey2='', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:18:45 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='',
+              c_session3Survey1='', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:18:45 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:18:45 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:26:39 - 184.56.244.84: Procedures_a: updateproc 5aea5ec273ccb
+05/03/2018 01:26:39 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='',
+              c_session1Name='Session Test ',
+              c_session1Survey1='', 
+              c_session1Survey2='', 
+              c_session1Survey3='', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:26:39 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='',
+              c_session2Name='Session 2',
+              c_session2Survey1='', 
+              c_session2Survey2='', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:26:39 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='',
+              c_session3Survey1='', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:26:39 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:26:39 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:44:12 - 184.56.244.84: Procedures_a: updateproc 5aea5ec273ccb
+05/03/2018 01:44:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='Session Test ',
+              c_session1Survey1='', 
+              c_session1Survey2='', 
+              c_session1Survey3='', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:44:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Post Session',
+              c_session2Survey1='', 
+              c_session2Survey2='', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:44:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='',
+              c_session3Survey1='', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:44:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 01:44:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 02:05:48 - 184.56.244.84: Procedures_a: add 
+05/03/2018 02:05:48 - 184.56.244.84: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5aea6e7c3f28a',
+               c_description='JAY JAY',
+               c_procedureId='W0017',
+               c_displayName='Jayme Proc',
+               dateModified=NOW(),
+               dateCreated=NOW()
+05/03/2018 02:15:29 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 02:15:29 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION',
+              c_session1Survey1='90078412', 
+              c_session1Survey2='90041391', 
+              c_session1Survey3='', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:15:29 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2',
+              c_session2Survey1='90032084', 
+              c_session2Survey2='90054433', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:15:29 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3',
+              c_session3Survey1='', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:15:29 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:15:29 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:54:22 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 02:54:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION',
+              c_session1Survey1='90078412', 
+              c_session1Survey2='90041391', 
+              c_session1Survey3='', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:54:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2',
+              c_session2Survey1='90032084', 
+              c_session2Survey2='90054433', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:54:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3',
+              c_session3Survey1='', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:54:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:54:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:55:28 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 02:55:28 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION',
+              c_session1Survey1='90078412', 
+              c_session1Survey2='90041391', 
+              c_session1Survey3='', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:55:28 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2',
+              c_session2Survey1='90032084', 
+              c_session2Survey2='90054433', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:55:28 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3',
+              c_session3Survey1='', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:55:28 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 02:55:28 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea6e7c3f28a';
+05/03/2018 03:00:03 - 184.56.244.84: Procedures_a: update 5aea6e7c3f28a
+05/03/2018 03:00:03 - 184.56.244.84: UPDATE app_fd_ver_procEpisodes
+           SET id='5aea6e7c3f28a',
+               c_description='JAY JAY',
+               c_procedureId='W0017',
+               c_displayName='Jayme Proc',
+               dateModified=NOW()
+           WHERE id='5aea6e7c3f28a'
+05/03/2018 03:32:08 - 68.107.189.223: Procedures_a: updateproc 5aea3005d1a76
+05/03/2018 03:32:08 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='Session 1',
+              c_session1Survey1='90026035', 
+              c_session1Survey2='90034110', 
+              c_session1Survey3='90077861', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 03:32:08 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2',
+              c_session2Survey1='90078390', 
+              c_session2Survey2='', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 03:32:08 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Session 3',
+              c_session3Survey1='90077863', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 03:32:08 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 03:32:08 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea3005d1a76';
+05/03/2018 03:33:22 - 68.107.189.223: Procedures_a: updateproc 5aea5ec273ccb
+05/03/2018 03:33:22 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='',
+              c_session1Name='Session 1',
+              c_session1Survey1='90064617', 
+              c_session1Survey2='', 
+              c_session1Survey3='', 
+              c_session1Survey4='', 
+              c_session1Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 03:33:22 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='',
+              c_session2Name='Session 2',
+              c_session2Survey1='90032016', 
+              c_session2Survey2='', 
+              c_session2Survey3='', 
+              c_session2Survey4='', 
+              c_session2Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 03:33:22 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='',
+              c_session3Survey1='', 
+              c_session3Survey2='', 
+              c_session3Survey3='', 
+              c_session3Survey4='', 
+              c_session3Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 03:33:22 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='',
+              c_session4Survey1='', 
+              c_session4Survey2='', 
+              c_session4Survey3='', 
+              c_session4Survey4='', 
+              c_session4Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 03:33:22 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='',
+              c_session5Survey1='', 
+              c_session5Survey2='', 
+              c_session5Survey3='', 
+              c_session5Survey4='', 
+              c_session5Survey5='' 
+          WHERE id='5aea5ec273ccb';
+05/03/2018 03:37:58 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:37:58 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:37:58 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:37:58 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:37:58 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:37:58 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:38:23 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:38:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:38:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:38:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:38:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:38:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:16 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:39:16 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:16 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:16 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:16 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:16 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:21 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:39:21 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='',
+              c_session1Name='', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:21 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='',
+              c_session2Name='', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:21 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:21 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:39:21 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_sessionDelay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:40:22 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:40:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:40:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:40:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:40:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:40:22 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_sessionDelay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:14 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:41:14 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:14 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:14 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_session3Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:14 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_session4Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:14 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_session5Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:26 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:41:26 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='',
+              c_session1Name='', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:26 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='',
+              c_session2Name='', c_session2Delay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:26 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='', c_session3Delay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:26 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_session4Delay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:41:26 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_session5Delay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:15 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:42:15 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='',
+              c_session1Name='', c_session1Delay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:15 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='',
+              c_session2Name='', c_session2Delay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:15 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='', c_session3Delay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:15 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_session4Delay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:15 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_session5Delay='',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:38 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:42:38 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_session1Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:38 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:38 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_session3Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:38 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_session4Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:38 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_session5Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:54 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:42:54 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_session1Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:54 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:54 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_session3Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:54 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_session4Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:42:54 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_session5Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:43:24 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:43:24 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_session1Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:43:24 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:43:24 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_session3Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:43:24 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_session4Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:43:24 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_session5Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:45:52 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:45:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_session1Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:45:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:45:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_session3Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:45:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_session4Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:45:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_session5Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:47:59 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:47:59 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_session1Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:47:59 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:47:59 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_session3Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:47:59 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_session4Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:47:59 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_session5Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:49:08 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:49:08 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:49:08 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:49:08 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:49:08 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:49:08 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:10 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:50:10 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:10 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:10 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:10 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:10 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:23 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:50:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:23 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:52 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:50:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='4',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:50:52 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:52:36 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:52:36 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:52:36 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='3',WHERE id='5aea6e7c3f28a';
+05/03/2018 03:52:36 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:52:36 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:52:36 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='', WHERE id='5aea6e7c3f28a';
+05/03/2018 03:54:47 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:54:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:54:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='3' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:54:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:54:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:54:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:55:12 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:55:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:55:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='3' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:55:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:55:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:55:12 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:56:47 - 184.56.244.84: Procedures_a: updateproc 5aea6e7c3f28a
+05/03/2018 03:56:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='TEST SESSION' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:56:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='3' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:56:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Test Session 3' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:56:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:56:47 - 184.56.244.84: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='' WHERE id='5aea6e7c3f28a';
+05/03/2018 03:57:14 - 68.107.189.223: Procedures_a: updateproc 5aea3005d1a76
+05/03/2018 03:57:14 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='Session 1' WHERE id='5aea3005d1a76';
+05/03/2018 03:57:14 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2', c_session2Delay='2' WHERE id='5aea3005d1a76';
+05/03/2018 03:57:14 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Session 3' WHERE id='5aea3005d1a76';
+05/03/2018 03:57:14 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='' WHERE id='5aea3005d1a76';
+05/03/2018 03:57:14 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='' WHERE id='5aea3005d1a76';
+05/03/2018 04:11:38 - 68.107.189.223: Procedures_a: updateproc 5aea3005d1a76
+05/03/2018 04:11:38 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost1='PRE',
+              c_session1Name='Session 1' WHERE id='5aea3005d1a76';
+05/03/2018 04:11:38 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost2='POST',
+              c_session2Name='Session 2' WHERE id='5aea3005d1a76';
+05/03/2018 04:11:38 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost3='',
+              c_session3Name='Session 3' WHERE id='5aea3005d1a76';
+05/03/2018 04:11:38 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost4='',
+              c_session4Name='' WHERE id='5aea3005d1a76';
+05/03/2018 04:11:38 - 68.107.189.223: updateproc: UPDATE app_fd_ver_procEpisodes
+          SET c_prePost5='',
+              c_session5Name='' WHERE id='5aea3005d1a76';
+05/04/2018 09:30:17 - 82.34.15.57: Procedures_a: updateproc b3bce54b-23b1f8f7-6edadd0e-b5a6ba0a
+05/07/2018 12:21:14 - 207.54.162.178: Procedures_a: add 
+05/07/2018 12:21:14 - 207.54.162.178: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5af044ba67c05',
+               c_description='Todd Test Survey',
+               c_procedureId='8675309',
+               c_displayName='Testy McTesterson',
+               dateModified=NOW(),
+               dateCreated=NOW()
+05/07/2018 12:25:44 - 207.54.162.178: Procedures_a: updateproc 5af044ba67c05
+05/07/2018 12:28:41 - 207.54.162.178: Procedures_a: updateproc 5af044ba67c05
+05/07/2018 12:29:17 - 207.54.162.178: Procedures_a: updateproc 5af044ba67c05
