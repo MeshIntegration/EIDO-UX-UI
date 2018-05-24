@@ -179,7 +179,7 @@ if ($_SESSION['dob_error'])
 });
 	  </script>
 </head>
-<body class="alert_msg">
+<body class="alert_msg registration">
 <div class="grid-container">
   <!-- Start Header -->
   <?php include '../includes/val_header.php';?>
@@ -191,12 +191,11 @@ if ($_SESSION['dob_error'])
 	  <div class="grid-x">
 		<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	    <div class="small-12 medium-6 align-center-middle cell">
-		  <p>&nbsp;</p>
-		  <form class="login" action="validation_review_a.php" method="post">
-			<p>&nbsp;</p>
-			<p class="text-center alert"><i class="fi-alert alert alert_icon"></i><br /><?php echo $data_msg; ?></p>
-			<p><?php echo $data_msg2; ?></p>
-            <?php if ($_SESSION['surname_error']) { ?>
+			<p class="text-center alert lead" style="margin-bottom: 0;"><i class="fi-alert alert alert_icon"></i><br /><?php echo $data_msg; ?></p>
+			<p class="text-center lead"><?php echo $data_msg2; ?></p>
+		    <form class="login standard-padding two-x" action="validation_review_a.php" method="post">
+
+		    <?php if ($_SESSION['surname_error']) { ?>
 		<label class="alert">Surname
 		  <div class="input-group">
                      <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check the spelling of your surname" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="fi-torso alert"></i></span>
@@ -213,18 +212,25 @@ if ($_SESSION['dob_error'])
 	      </label>
             <?php } ?>
             <?php if ($_SESSION['dob_error']) { ?>
-		<label class="alert">Date of Birth
+		<label class="alert label-dob" style="margin-bottom:20px !important;">Date of Birth
 		  <div class="input-group">
-                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your Date of Birth is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="fi-calendar alert"></i></span>
-                <select class="input-group-field" name="dob_day" placeholder="Day">
-                   <?php include "../includes/select_day.html"; ?>
-                </select>
-                <select class="input-group-field" name="dob_month" placeholder="Month">
-                   <?php include "../includes/select_month.html"; ?>
-                </select>
-                <select class="input-group-field" name="dob_year" placeholder="Year">
-                   <?php include "../includes/select_year.html"; ?>
-                </select>
+                     <span class="input-group-label has-tip input-bg-white" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your Date of Birth is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="fi-calendar alert"></i></span>
+			    <div class="select">
+				    <select class="input-group-field" name="dob_day" placeholder="Day">
+					    <?php include "../includes/select_day.html"; ?>
+				    </select>
+			    </div>
+                <div class="select">
+	                <select class="input-group-field" name="dob_month" placeholder="Month">
+		                <?php include "../includes/select_month.html"; ?>
+	                </select>
+                </div>
+                <div class="select">
+	                <select class="input-group-field" name="dob_year" placeholder="Year">
+		                <?php include "../includes/select_year.html"; ?>
+	                </select>
+                </div>
+
                  </div>
 	      </label>
             <?php } ?>

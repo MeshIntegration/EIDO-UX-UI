@@ -63,10 +63,10 @@ if ($arr_pt_info['c_surname']<>"ERROR") {
 	  <div class="grid-x">
 		<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	    <div class="small-12 medium-6 align-center-middle cell">
-		  <p>&nbsp;</p>
-		  <form class="login" action="validation_a.php?patientEpisodeId=<?php echo $patientEpisodeId; ?>&moreReminders=<?php echo $moreReminders; ?>" method="post">
-		    <h1>Hello <?php echo $arr_pt_info['c_firstName']; ?>,</h1>
-			<p>To help us check your identity, please enter your surname and address below.</p>
+
+		    <h1 class="text-center">Hello, <?php echo $arr_pt_info['c_firstName']; ?>.</h1>
+			<p class="lead text-center">To help us check your identity, please enter your surname and address below.</p>
+		    <form class="login standard-padding two-x" action="validation_a.php?patientEpisodeId=<?php echo $patientEpisodeId; ?>&moreReminders=<?php echo $moreReminders; ?>" method="post">
 			<p>&nbsp;</p>
                         <?php if ($_SESSION['surname_error']) { ?>
                               <div class='error_message fi-alert'><strong>Please enter your Surname</strong> - this is required</div>

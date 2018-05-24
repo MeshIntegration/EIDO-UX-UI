@@ -1,7 +1,7 @@
 <?php
 // ***************************************
 // superuser/users_a.php
-// 2017 Copyright, Mesh Integration LLC
+// 2018 Copyright, Mesh Integration LLC
 // 02/19/18 - SD
 // ***************************************
 
@@ -59,18 +59,15 @@ if ($mode=="update") {
     dbi_query($sql);
     logMsg("UPDATE: $sql", $logfile);
 }
-else if ($mode=="userreset")
-{
+else if ($mode=="userreset") {
    //global $TBLPTEPISODES;
    $sql = "UPDATE dir_user
            SET c_pw_reset=1,
                c_dateModified=NOW()
            WHERE id='$id'";
    dbi_query($sql);
-   logMsg("PWRESET: $sql",$logfile);
-}
-else if ($mode=="userdelete")
-{
+   logMsg("USERRESET (password): $sql",$logfile);
+} else if ($mode=="userdelete") {
 
     $sql = "DELETE FROM dir_user_group 
            WHERE userid='$id'";
@@ -82,7 +79,7 @@ else if ($mode=="userdelete")
            WHERE id='$id'";
     dbi_query($sql);
 
-   logMsg("DELETE: $sql",$logfile);   
+   logMsg("USERDELETE: $sql",$logfile);   
 
    unset($_SESSION['add_firstname']); 
    unset($_SESSION['add_lastname']); 

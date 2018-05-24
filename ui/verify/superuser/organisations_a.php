@@ -33,6 +33,14 @@ if ($mode=="update")
    $subdivision = $_POST['subdivision'];
    $existing_header_logo = $_POST['existing_header_logo'];
    logMsg("$mode $id $name $type $admin",$logfile);
+   
+   // get the original oganisation name in case it change
+   $sql = "SELECT c_name 
+           FROM $TBLORGANISATIONS
+           WHERE id='$org_id'";
+   $GetQuery=dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   $org_name = $qryResult['c_name'];
 
    if ($_FILES['header_logo']['name']<>"")
    {
@@ -94,6 +102,15 @@ if ($mode=="update")
                dateModified=NOW()
            WHERE id='$id'";
    dbi_query($sql);
+
+   // if the name changed - update the name in ptepisodes
+   // Aipent is too stupid to do a two table lookup  
+   if ($org_name<>$name) {  
+      $sql = "UPDATE $TBLPTEPISODES
+              SET c_hospitalName=".escapeQuote($name)."
+              WHERE c_hospitalName=".escapeQuote($org_name);
+      dbi_query($sql);
+   }
 
    $sql = "UPDATE dir_user 
            SET username=".escapeQuote($email).",

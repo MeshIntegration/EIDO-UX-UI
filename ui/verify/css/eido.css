@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 @import "skeen_eido.css";
 @import "/ui/verify/css/icons/eido-icons.css";
 @charset "utf-8";
@@ -23,7 +23,7 @@ body {
   color: #0d2240;
   font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 16px;
 }
 body.registration,
@@ -1416,8 +1416,7 @@ a.off_status.selected {
   background: #D0021B !important;
 }
 .button.on_status {
-  border-left: none !important;
-  border-right: 5px solid #3dae65;
+  border-left: 5px solid #3dae65;
 }
 .main_menu .button,
 .main_menu .button:hover,

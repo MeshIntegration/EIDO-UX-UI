@@ -48,6 +48,7 @@ else {
     }
 
     $user_id = $qryResult['id'];
+logMsg("User ID: $user_id",$logfile);
     is_setcookie("user_id", $user_id, 0, "/", $cookie_domain);
 
     // password reset required
@@ -63,7 +64,7 @@ else {
     is_setcookie("user_fullname", $fullname, 0, "/", $cookie_domain);
     is_setcookie("user_initials", $initials, 0, "/", $cookie_domain);
 
-    logMsg("$fullname - $initials - " . $qryResult['groupId'], $logfile);
+    logMsg("AFTER COOKIES: FN $fullname - INITIALS $initials - GROUP" . $qryResult['groupId'], $logfile);
     if (strtolower($qryResult['groupId']) == "eidoadmins") {
         logMsg("$user_id - Logged in as SUPERUSER", $logfile);
         is_setcookie("user_role", "SUPERUSER", 0, "/", $cookie_domain);
@@ -102,8 +103,9 @@ logMsg(">>>>  GroupID: ".$qryResult['groupId'], $logfile);
         header("Location: /ui/verify/patient/patients.php");
         exit();
     }
+logMsg("MESSED UP - TRY AGAIN",$logfile);
     $_SESSION['login_error'] = true;
-    header("Location: /ui/verify/message.php");
+    header("Location: /ui/verify/login.php");
     exit();
 }
 ?>

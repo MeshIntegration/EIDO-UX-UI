@@ -46,33 +46,41 @@ $logfile = "validation.log";
 	  <div class="grid-x">
 		<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	    <div class="small-12 medium-6 align-center-middle cell">
-		  <p>&nbsp;</p>
-		  <form class="login" action="validation2_a.php" method="post">
-			<p>&nbsp;</p>
-			<h6>What is your date of birth?</h6>
+		  <form class="login standard-padding two-x" action="validation2_a.php" method="post">
+			  <p class='lead'>What is your date of birth?</p>
                             <?php if ($_SESSION['dob_error']) { ?>
                                   <div class='error_message fi-alert'><strong>Please enter your Date of Birth</strong> - this is required</div>
                             <?php } ?>
-			<label class="<?php echo $date_class; ?>">Date of Birth
+
+		  <label class="<?php echo $date_class; ?> label-dob" style="">Date of Birth
 			  <div class="input-group">
           <?php if ($date_class=="caution") { ?>
              <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please enter your date of birth - this is required" data-position="top" data-alignment="left" id="tooltip_error_day">
           <?php } else { ?>
-             <span class="input-group-label">
+             <span class="input-group-label input-bg-white">
           <?php } ?>
              <i class="fi-calendar <?php echo $date_class; ?>"></i></span>
-                <select class="input-group-field" name="dob_day" placeholder="Day">
+	             <div class="select">
+		             <select class="input-group-field" name="dob_day" placeholder="Day">
                    <?php include "../includes/select_day.html"; ?>
                 </select>
-		<select class="input-group-field" name="dob_month" placeholder="Month">
+	             </div>
+
+	             <div class="select">
+
+				<select class="input-group-field" name="dob_month" placeholder="Month">
                    <?php include "../includes/select_month.html"; ?>
                 </select>
-		<select class="input-group-field" name="dob_year" placeholder="Year">
+	             </div>
+	             <div class="select">
+
+				<select class="input-group-field" name="dob_year" placeholder="Year">
                    <?php include "../includes/select_year.html"; ?>
                 </select>
+	             </div>
               </div>
 	</label>
-	<h6>And finally your NHS number?</h6>
+			  <p class="lead">And finally your NHS number?</p>
                             <?php if ($_SESSION['nhsnumber_error']) { ?>
                                   <div class='error_message fi-alert'><strong>Please enter your NHS Number</strong> - this is required</div>
                             <?php } ?>
@@ -81,7 +89,7 @@ $logfile = "validation.log";
                 <span class="input-group-label"><i class="fi-target"></i></span>
                <input class="input-group-field" type="text" name="c_nhsNumber" placeholder="Enter your number">
           </div>
-		  <p class="note text-center">You can find your NHS Number on a letter from your GP or hospital, or on a medical ID card</p>
+		  <p class="note text-left font-normal">You can find your NHS Number on a letter from your GP or hospital, or on a medical ID card</p>
 	</label>
 	<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 		<div class="small-12 cell">

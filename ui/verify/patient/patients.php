@@ -520,7 +520,7 @@ $results_count = $GetQuery_all->num_rows;
 
 	<link rel="stylesheet" href="/ui/verify/css/icons/eido-icons.css" type="text/css" />
 	<link rel="icon" type="image/png" href="../favicon.png">
-    <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
 
 	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -841,18 +841,20 @@ $results_count = $GetQuery_all->num_rows;
 					$n_imgfile = $arr_tl_data[$n_desc];
 					$n_class = "status action_needed";
 
-					$n_icon = "envelope-open-o22";
-					if($n_type == "Whatever signifies a bounced email") {
-						$n_icon = "envelope-open-o22";
-					} elseif($n_type == "Whatever signifies a rejected text message") {
-						$n_icon = "comment";
+					$n_icon = "eido-icon-envelope-open-o22";
+					if($arr_notifications[$n]['c_timelineEntryDetail'] == "Sms Bounce") {
+						$n_icon = "fa fa-mobile";
 					}
-					?>
+					if($arr_notifications[$n]['c_timelineEntryDetail'] == 'Request Review') {
+						$n_icon = "eido-icon-en";
+					}
+
+						?>
 					<li>
 						<a class="link-full-block" href="patients.php?m=overview&tlm=key&id=<?php echo $n_patientEpisodeId; ?>">
 							<span class="right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
 							<div class="n-icon">
-								<i class="icon eido-icon-<?php echo $n_icon; ?>"></i>
+								<i class="<?php echo $n_icon; ?>"></i>
 							</div>
 							<p><?php echo $n_name; ?><br/>Patient <strong><?php echo $n_patient_name; ?></strong></p>
 
@@ -1479,13 +1481,22 @@ $results_count = $GetQuery_all->num_rows;
 		$c_procedureId = $qryResult_d['c_procedureId'];
 		$c_description = $qryResult_d['c_description'];
 		$procedure = $c_procedureId . " - " . $c_description;
-		$pt_status = get_pt_status($pe_id);
-		if($pt_status == "Inactive" || $pt_status == "Pending")
-			$pt_status_class = "ps_grey"; 
-                else if(Spt_status == "Alert")
-			$pt_status_class = "ps_red"; 
-                else if($pt_status == "Active")
-			$pt_status_class = "ps_green";
+		$pt_status = trim(get_pt_status($pe_id));
+		switch($pt_status) {
+			case "Inactive":
+			case "Pending":
+				$pt_status_class = 'ps_grey';
+				break;
+			case "Alert":
+				$pt_status_class = 'ps_red';
+				break;
+			case "Active":
+				$pt_status_class = 'ps_green';
+				break;
+			default:
+				$pt_status_class = 'ps_grey';
+
+		}
 	} else if($mode == "addreview") {
 		$c_surname = $_SESSION['add_lname'];
         $c_surname_uc = strtoupper($_SESSION['add_lname']);
@@ -1522,6 +1533,7 @@ $results_count = $GetQuery_all->num_rows;
 			$pt_status_class = "ps_grey"; else if(Spt_status == "Alert")
 			$pt_status_class = "ps_red"; else if($pt_status == "Active")
 			$pt_status_class = "ps_green";
+
 	}
 	// logMsg("c_surname: $c_surname c_address: $c_address Session_surname ".$_SESSION['add_surname']." session_address: ".$_SESSION['add_address'], $logfile);
 	?>
@@ -1544,7 +1556,7 @@ $results_count = $GetQuery_all->num_rows;
 		   </h3>
                 <?php } ?>
 		<h5 style="margin-left: 20px; margin-right: 20px;" class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname_uc, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
-		<form action="" method="post" class="" style="margin-right: 20px;margin-left: 20px;padding-left: 0;">
+		<form action="" method="post" class="standard-padding" style="">
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
 					<div class="small-12 medium-12 large-12 cell">

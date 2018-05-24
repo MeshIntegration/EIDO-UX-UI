@@ -192,6 +192,9 @@ h4.vertical-middle {
 .standard-padding {
   padding: 0 20px;
 }
+.standard-padding.two-x {
+  padding: 0 45px;
+}
 .link-standard-color {
   color: #0d2240 !important;
   text-decoration: none !important;
@@ -473,6 +476,11 @@ p.small {
   margin-left: -10px;
   margin-top: -9px;
 }
+#Notifications .n-icon i.fa {
+  font-size: 40px;
+  margin-left: -8px;
+  margin-top: -18px;
+}
 #Notifications .right-arrow {
   right: 15px;
   top: 50%;
@@ -486,4 +494,41 @@ p.small {
   color: #959595;
   display: inline;
   vertical-align: middle;
+}
+.registration label {
+  font-weight: bold !important;
+}
+.registration input[type='text'] {
+  border: none !important;
+}
+.registration .button.large {
+  padding: 0.85em 50px !important;
+}
+.input-bg-white {
+  background: #fff !important;
+}
+.label-dob {
+  margin-bottom: 40px !important;
+}
+.select {
+  position: relative;
+  margin-right: 20px;
+  display: inline-block;
+}
+.select select {
+  padding-right: 40px !important;
+  color: #9b9b9b;
+}
+.select:after {
+  width: 14px;
+  height: 14px;
+  content: '';
+  position: absolute;
+  display: block;
+  top: 50%;
+  margin-top: -3px;
+  right: 5px;
+  border: solid;
+  border-width: 7px 7px 0 7px;
+  border-color: #9B9B9B transparent transparent transparent;
 }

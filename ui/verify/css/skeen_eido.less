@@ -434,6 +434,9 @@ h4.vertical-middle {
 
 .standard-padding {
 	padding: 0 20px;
+	&.two-x {
+		padding:0 45px;
+	}
 }
 
 .link-standard-color {
@@ -767,6 +770,12 @@ p.small {
 			left:50%;
 			margin-left:-10px;
 			margin-top:-9px;
+
+			&.fa {
+				font-size:40px;
+				margin-left:-8px;
+				margin-top:-18px;
+			}
 		}
 	}
 
@@ -785,4 +794,56 @@ p.small {
 		}
 	}
 
+}
+
+.registration {
+	label {
+		font-weight:bold !important;
+	}
+
+	input[type='text'] {
+		border:none !important;
+	}
+
+	.button {
+		&.large {
+
+			padding:0.85em 50px !important;
+		}
+	}
+}
+
+
+.input-bg-white {
+	background:#fff !important;
+}
+
+.label-dob {
+	margin-bottom:40px !important;
+}
+
+.select {
+	position: relative;
+	margin-right:20px;
+
+	select {
+		padding-right:40px !important;
+		color:#9b9b9b;
+
+	}
+	display: inline-block;
+	&:after {
+		width:14px;
+		height:14px;
+		content:'';
+		position: absolute;
+		display:block;
+		top:50%;
+		margin-top:-3px;
+		right:5px;
+		border:solid;
+		border-width:7px 7px 0 7px;
+		border-color:#9B9B9B transparent transparent transparent;
+
+	}
 }
