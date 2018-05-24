@@ -9,7 +9,6 @@ include "../utilities.php";
 $logfile = "validation.log";
 
 session_start();
-$_SESSION['error_msg']="";
 $arr_pt_info=$_SESSION['arr_pt_info'];
 
 $dob_day = $_POST['dob_day'];
@@ -20,11 +19,15 @@ $c_nhsNumber = $_POST['c_nhsNumber'];
 logMsg("day: $dob_day  month: $dob_month year: $dob_year ",$logfile);
 
 if ($dob_day=="" || $dob_month=="" || $dob_year=="")
-{
-   $_SESSION['error_msg']="NO_DATE";
+   $_SESSION['dob_error']=true; else $_SESSION['dob_error']=false;
+if ($c_nhsNumber=="")
+   $_SESSION['nhsnumber_error']=true; else $_SESSION['nhsnumber_error']=false;
+
+if ($_SESSION['dob_error'] || $_SESSION['nhsnumber_error']) {
    header ("Location: validation2.php");
    exit();
 }
+
 $_SESSION['entered_dob'] = "$dob_day/$dob_month/$dob_year";
 $_SESSION['entered_nhsnumber'] = "$c_nhsNumber";
 

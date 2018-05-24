@@ -15,25 +15,26 @@ $logfile = "validation.log";
 
 session_start();
 $arr_pt_info = $_SESSION['arr_pt_info'];
-$_SESSION['error_msg'] = "";
 
 $c_surname = $_POST['c_surname'];
 $c_postalCode = $_POST['c_postalCode'];
 $c_address = $_POST['c_address'];
-echo "WEL3 ";
 
+logMsg("Surname: $c_surname Postal Code: $c_postalCode",$logfile);
+
+if ($c_surname=="")
+   $_SESSION['surname_error']=true; else $_SESSION['surname_error']=false;
+if ($c_postalCode=="")
+   $_SESSION['postalcode_error']=true; else $_SESSION['postalcode_error']=false;
+if ($_SESSION['surname_error'] || $_SESSION['postalcode_error'])
+{
+   header ("Location: validation.php?patientEpisodeId=$patientEpisodeId&moreReminders=$moreReminders");
+   exit();
+}
 
 // get rid of spaces and be sure upper case
 $c_postalCode=strtoupper(str_replace(" ", "", $c_postalCode));
  
-logMsg("Surname: $c_surname Postal Code: $c_postalCode",$logfile);
-
-if ($c_surname=="" || $c_postalCode=="")
-{
-   $_SESSION['error_msg'] = "Surname and address are both required fields";
-   header ("Location: validation.php?patientEpisodeId=$patientEpisodeId&moreReminders=$moreReminders");
-   exit();
-}
 $_SESSION['entered_surname'] = $c_surname; 
 $_SESSION['entered_postalcode'] = $c_postalCode; 
 $_SESSION['entered_address'] = $c_address; 

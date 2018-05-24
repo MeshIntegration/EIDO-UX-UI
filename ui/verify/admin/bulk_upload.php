@@ -125,13 +125,34 @@ $action = $_POST['action'];
          dbi_query($sql);
          logMsg($sql,$logfile);
       
-         //  send mail to the new user
-         $body_template = "<FIRSTNAME>,<br /><br />
-      We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
-      Username: <EMAIL><br />
-      Password: <PASSWORD><br /><br />
-      <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
-      
+         // send mail to the new user
+         include "../includes/inc_email_template.php";
+   
+         // need a button - include it into template
+         include "../includes/inc_email_button.php";
+         $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
+   
+         $email_template = str_replace("**FIRSTNAME**", $firstname, $email_template);
+         $email_template = str_replace("**HEADER`**", "Welcome", $email_template);
+   
+         $content1 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
+         Username: $email<br />
+         Password: $password<br /><br />
+         <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
+         $email_template = str_replace("**CONTENT1**", $content1, $email_template);
+         
+         $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
+         <p>Username: $email<br />
+         Password: $password</p>
+         <p>Click the button below to log into the EIDO Verify systemi</p>";
+         $email_template = str_replace("**CONTENT2**", $content2, $email_template);
+   
+         // set up the button
+         $button_text = "Get Started";
+         $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
+         $button_url = "https://verify.eidosystems.com";
+         $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
+
          $arr_email = array();
          $arr_email['mail_to']=$email;
          $arr_email['mail_to_name']="$firstname $lastname";
@@ -139,17 +160,16 @@ $action = $_POST['action'];
          $arr_email['mail_from']=$verify_mail_from;
          $arr_email['mail_from_name']=$verify_mail_from_name;
          $arr_email['subject']="EIDO Verify Account Information";
-         $body_template = str_replace("<FIRSTNAME>", $firstname, $body_template);
-         $body_template = str_replace("<EMAIL>", $email, $body_template);
-         $body_template = str_replace("<PASSWORD>", $password, $body_template);
-         $arr_email['body']=$body_template;
+         $arr_email['body']=$email_template;
          send_email($arr_email);
+
+         $ct++;
       }
    }
 
 if ($action=="A") $action_str="added"; else $action_str="removed";
 $msg = "$ct users $action_str<br />";
-$_SESSION['error_msg'] = $msg;
+$_SESSION['bulk_msg'] = $msg;
 header ("Location: users.php?m=bulk");
 exit();
 ?>

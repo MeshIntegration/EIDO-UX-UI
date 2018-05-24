@@ -13,7 +13,7 @@ $logfile = "validation.log";
 session_start();
 $arr_pt_info = $_SESSION['arr_pt_info'];
 $moreReminders = $_SESSION['moreReminders'];
-$_SESSION['error_msg']="";
+$_SESSION['login_error']=false;
 $_SESSION['login_email']="";
 
 // limit password attempts
@@ -30,11 +30,13 @@ logMsg("Pt Login: DB Email: ".$arr_pt_info['c_emailAddress']." DB PW: ".$arr_pt_
 
 if ($email==$arr_pt_info['c_emailAddress'] && $password==$arr_pt_info['c_password'])
 {
-   unset($_SESSION['pw_num_tries']);
-   unset($_SESSION['error_msg']);
-   unset($_SESSION['login_email_entered']);
+   //unset($_SESSION['pw_num_tries']);
+   //unset($_SESSION['error_msg']);
+   //unset($_SESSION['login_email_entered']);
    logMsg("Pt login sucessful. Going to survey...",$logfile);
    $goto_url = get_survey_url($arr_pt_info);
+   $_SESSION = array();
+   session_destroy();
    header("Location:$goto_url");
    exit();
 }
@@ -45,7 +47,7 @@ else
    if ($pw_num_tries<$pw_max_tries)
    {
       $_SESSION['pw_num_tries']=$pw_num_tries;
-      $_SESSION['error_msg']="LOGIN ERROR";
+      $_SESSION['login_error']=true;
       $_SESSION['login_email_entered']=$email;
       header("Location:login.php");
       exit();

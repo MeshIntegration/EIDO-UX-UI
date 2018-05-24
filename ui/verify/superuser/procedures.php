@@ -280,28 +280,22 @@ $pagination = get_pagination($page, $totalRecord);
                }
         ?>
 	<div class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
-        <div class="grid-container">
-            <div class="grid-x">
-                <div class="small-12 cell field">
-                    <h3>&nbsp;&nbsp;Add procedure</h3>
-                </div>
-            </div>
-        </div>
+	  <h3>Add Procedure</h3>
 	  <form action="procedures_a.php?m=add" method="post">
         <div class="grid-container">
     	  <div class="grid-x">
       	    <div class="small-12 cell field">
-                <label class="weight-normal">Procedure Name
+        	  <label>Procedure Name
                 <input type="text" name="c_description" placeholder="">
               </label>
             </div>
       	    <div class="small-12 cell field">
-                <label class="weight-normal">EIDO Procedure Code
+        	  <label>EIDO Procedure Code
                 <input type="text" name="c_procedureId" placeholder="">
               </label>
             </div>
       	    <div class="small-12 cell field">
-                <label class="weight-normal">Display Name
+        	  <label>Display Name
                 <input type="text" name="c_displayName" placeholder="">
               </label>
             </div>
@@ -334,28 +328,22 @@ $pagination = get_pagination($page, $totalRecord);
                }
         ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $update_hide; ?>">
-            <div class="grid-container">
-                <div class="grid-x">
-                    <div class="small-12 cell field">
-                        <h3>&nbsp;&nbsp;View procedure</h3>
-                    </div>
-                </div>
-            </div>
+          <h3>View Procedure</h3>
           <form action="procedures_a.php?m=update&id=<?php echo $pe_id; ?>" method="post">
                 <div class="grid-container">
-          <div class="grid-x">
-                <div class="small-12 cell field">
-                    <label class="weight-normal">Procedure Name
+          <div class="grid-x grid-padding-x">
+                <div class="small-12 medium-12 large-12 cell field">
+                  <label>Procedure Name
                 <input type="text" name="c_description" value="<?php echo $name; ?>">
               </label>
             </div>
                 <div class="small-12 medium-12 large-12 cell field">
-                    <label class="weight-normal">EIDO Procedure Code
+                  <label>EIDO Procedure Code
                 <input type="text" name="c_procedureId" value="<?php echo $code; ?>">
               </label>
             </div>
                 <div class="small-12 medium-12 large-12 cell field">
-                    <label class="weight-normal">Display Name
+                  <label>Display Name
                 <input type="text" name="c_displayName" value="<?php echo $dname; ?>">
               </label>
             </div>
@@ -423,14 +411,14 @@ $pagination = get_pagination($page, $totalRecord);
             }
         ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $managesurveys_hide; ?>">
-          <div class="back back-row"><a href="procedures.php?m=update&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+          <div class="back"><a href="procedures.php?m=update&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
           <h2>Procedure Setup<br /><span class="small">Add surveys to the procedure session</span></h2>
 		  <hr />
           <form action="procedures_a.php?m=updateproc&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>" method="post">
                 <div class="grid-container">
           <div class="grid-x grid-padding-x">
                         <div class="small-12 medium-12 large-12 cell">
-              <h4><?php echo $arr_proc_episode['c_procedureId']." - ".$arr_proc_episode['c_description']; ?></h4>
+              <h4 class="vertical-middle"><?php echo $arr_proc_episode['c_procedureId']." - ".$arr_proc_episode['c_description']; ?></h4>
 			  <hr />
             </div>
                <div class="small-12 medium-12 large-12 cell">
@@ -472,8 +460,8 @@ $pagination = get_pagination($page, $totalRecord);
             <div class="small-12 cell"><input type="text" name="sessionName" value="<?php echo $sessionName; ?>" placeholder=""><br /></div>
                <div class="input-group">
                    <span class="input-group-label">Type</span>
-                      <a href="functions.php?m=prepost&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>&t=pre"><button class="button <?php echo $pre_color; ?>" type="button">&nbsp;&nbsp;Pre&nbsp;&nbsp; </button></a>
-                      &nbsp;&nbsp; <a href="functions.php?m=prepost&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>&t=post"><button class="button <?php echo $post_color; ?>" type="button">Post</button></a>
+                      <a href="functions.php?m=prepost&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>&t=pre"><button class="button <?php echo $pre_color; ?> btn-pre" type="button">&nbsp;&nbsp;Pre&nbsp;&nbsp; </button></a>
+                      &nbsp;&nbsp; <a href="functions.php?m=prepost&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>&t=post"><button class="button <?php echo $post_color; ?> btn-pre" type="button">Post</button></a>
                </div>
             </div>
             <div class="small-12 medium-12 large-12 cell" id="session_delay_time">
@@ -481,7 +469,7 @@ $pagination = get_pagination($page, $totalRecord);
                <input type="text" size="4" name="session_delay" value="<?php echo isset($arr_proc_episode['sessionDelay']) ? $arr_proc_episode['sessionDelay'] : ''; ?>"><b: /></p>
             </div>
             <div class="small-12 medium-12 large-12 cell">
-                     <ul class="sort" id="sortable" >
+                     <ul class="sort" id="sortable" style="margin-bottom:40px;" >
                           <?php 
                            $survey_ids = get_surveys_by_proc($pe_id,$sess_id); // $_SESSION['pe_id'.$pe_id]["sess_id".$sess_id];
                            for ($i=0; $i<count($survey_ids); $i++) { 

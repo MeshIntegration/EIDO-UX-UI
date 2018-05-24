@@ -28,6 +28,7 @@ if (isset($forgot_login_flag))
   <link rel="stylesheet" href="../css/app.css">
   <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!--following script is required for comodo secure seal logo, there is a corresponding required script tag inside the html body tag-->
   <script>
 	    $( function() {
    $( "#tooltip_error_day" ).tooltip().tooltip("open");
@@ -35,6 +36,7 @@ if (isset($forgot_login_flag))
 	  </script>
 </head>
 <body class="registration">
+
 <div class="grid-container">
   <!-- Start Header -->
   <?php include '../includes/val_header.php';?>
@@ -50,8 +52,8 @@ if (isset($forgot_login_flag))
 		  <form class="login" action="login_a.php" method="post">
 			<p>&nbsp;</p>
 			<h1>Login</h1>
-                    <?php if (strlen($error_msg)) { ?>
-                       <label class="caution" >The e-mail or password entered do not match our records.<br />Please try again.</label>
+                    <?php if ($_SESSION['login_error']) { ?>
+                          <div class='error_message fi-alert'><strong>Your email or password was incorrect.</strong> - please try again</div>
                     <?php } ?>
 			<label>E-mail
 			  <div class="input-group">
@@ -69,7 +71,7 @@ if (isset($forgot_login_flag))
 			</label>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 			<div class="small-12 cell">
-			  <button type="submit" name="" value="" class="button large float-right">login</button>
+			  <button type="submit" name="" value="" class="button large float-right">Login</button>
 			</div>
 		  </form>
 		    <div class="small-12 cell">

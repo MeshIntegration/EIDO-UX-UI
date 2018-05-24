@@ -3737,3 +3737,28 @@
 05/07/2018 12:25:44 - 207.54.162.178: Procedures_a: updateproc 5af044ba67c05
 05/07/2018 12:28:41 - 207.54.162.178: Procedures_a: updateproc 5af044ba67c05
 05/07/2018 12:29:17 - 207.54.162.178: Procedures_a: updateproc 5af044ba67c05
+05/09/2018 13:20:52 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+05/09/2018 13:23:45 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+05/11/2018 04:38:47 - 76.188.180.118: Procedures_a: add 
+05/11/2018 04:38:47 - 76.188.180.118: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5af51e57c5a3f',
+               c_description='USE THIS PROCEDURE (full amputation of great toe - elective)',
+               c_procedureId='123456',
+               c_displayName='TEST - USE THIS PROCEDURE',
+               dateModified=NOW(),
+               dateCreated=NOW()
+05/11/2018 04:41:21 - 76.188.180.118: Procedures_a: updateproc 5af51e57c5a3f
+05/11/2018 04:42:43 - 76.188.180.118: Procedures_a: updateproc 5af51e57c5a3f
+05/11/2018 04:43:10 - 76.188.180.118: Procedures_a: updateproc 5af51e57c5a3f
+05/11/2018 04:43:30 - 76.188.180.118: Procedures_a: updateproc 5af51e57c5a3f
+05/11/2018 04:43:54 - 76.188.180.118: Procedures_a: updateproc b3bce54b-23b1f8f7-6edadd0e-b5a6ba0a
+05/11/2018 04:44:17 - 76.188.180.118: Procedures_a: updateproc b3bce54b-23b1f8f7-6edadd0e-b5a6ba0a
+05/11/2018 04:45:09 - 76.188.180.118: Procedures_a: updateproc b3bce54b-23b1f8f7-6edadd0e-b5a6ba0a
+05/11/2018 04:46:52 - 76.188.180.118: Procedures_a: updateproc b3bce54b-23b1f8f7-6edadd0e-b5a6ba0a
+05/11/2018 04:47:23 - 76.188.180.118: Procedures_a: updateproc b3bce54b-23b1f8f7-6edadd0e-b5a6ba0a
+05/11/2018 05:33:52 - 76.188.180.118: Procedures_a: updateproc b3bce54b-23b1f8f7-6edadd0e-b5a6ba0a
+05/11/2018 05:34:37 - 76.188.180.118: Procedures_a: updateproc 5af51e57c5a3f
+05/11/2018 05:36:06 - 76.188.180.118: Procedures_a: updateproc 5af51e57c5a3f
+05/11/2018 05:37:04 - 76.188.180.118: Procedures_a: updateproc 5af51e57c5a3f
+05/11/2018 05:37:27 - 76.188.180.118: Procedures_a: updateproc 5af51e57c5a3f
+05/11/2018 05:38:21 - 76.188.180.118: Procedures_a: updateproc 5af51e57c5a3f

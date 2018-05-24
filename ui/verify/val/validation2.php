@@ -5,12 +5,6 @@ require_once '../utilities.php';
 session_start();
 $arr_pt_info = $_SESSION['arr_pt_info'];
 $logfile = "validation.log";
-$error_msg = $_SESSION['error_msg'];
-$_SESSION['error_msg']="";
-if ($error_msg=="NO_DATE")
-   $date_class="caution";
-else
-   $date_class="";
 
 // we don't think bots will make it to the second screen
 //$browser = $_SERVER['HTTP_USER_AGENT'];
@@ -56,6 +50,9 @@ else
 		  <form class="login" action="validation2_a.php" method="post">
 			<p>&nbsp;</p>
 			<h6>What is your date of birth?</h6>
+                            <?php if ($_SESSION['dob_error']) { ?>
+                                  <div class='error_message fi-alert'><strong>Please enter your Date of Birth</strong> - this is required</div>
+                            <?php } ?>
 			<label class="<?php echo $date_class; ?>">Date of Birth
 			  <div class="input-group">
           <?php if ($date_class=="caution") { ?>
@@ -76,6 +73,9 @@ else
               </div>
 	</label>
 	<h6>And finally your NHS number?</h6>
+                            <?php if ($_SESSION['nhsnumber_error']) { ?>
+                                  <div class='error_message fi-alert'><strong>Please enter your NHS Number</strong> - this is required</div>
+                            <?php } ?>
 	<label>NHS Number
 	  <div class="input-group login">
                 <span class="input-group-label"><i class="fi-target"></i></span>

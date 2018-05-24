@@ -1,6 +1,6 @@
 <div class="grid-x hide-for-small-only show-for-medium">
   <div class="small-12 medium-2 large-2 cell">
-    <button class="button type shift" style="font-family: 'Lato-Bold', 'Lato Bold', 'Lato'; text-align: center;" type="button" data-toggle="example-dropdown-bottom-left">
+    <button class="button type shift btn-header" type="button" data-toggle="example-dropdown-bottom-left">
       <?php echo $user_initials; ?>
     </button>
     <?php include "admin_dropdown_pane.php"; ?>
@@ -20,19 +20,20 @@
  <div class="small-12 medium-6 large-6 cell" style="padding-top: 26px;">
     	  <!--  <div class="grid" style="padding-top: 15px;"> -->
       	  
-	   <div id="addpt" class="row links">
-              <a href="/ui/verify/patient/patients_a.php?m=gotoaddpt" style="left: -20px; padding-bottom: 2px;">
-	              <i class="eido-icon-plus"></i>Add patient</a>
+	   <div id="addpt" class="row links" style="margin-top: -2px; margin-bottom: 4px; height: 20px; zoom: 1.14;">
+              <a href="/ui/verify/patient/patients_a.php?m=gotoaddpt" style="padding-bottom: 2px; vertical-align: center;">
+	              <i class="icon eido-icon-plus-circle" style="margin-right: 7px;"></i>Add Patient</a>
            </div>
       
 
 <!-- ONLY SHOW IF USER IS SITE ADMIN  -->
+     <!--style="left: -20px; margin-top: 5px; vertical-align: auto"
+     style="zoom: 1.14;"-->
 
        <?php if ($user_role=="ADMIN"): ?>
-      	  <div class="row links">
-            <a href="/ui/verify/admin/users.php" style="left: -20px">
-	            <i class="eido-icon-plus"></i>User administration
-            </a>
+      	  <div id="addpt" class="row links" style="height: 20px; zoom: 1.14;">
+            <a href="/ui/verify/admin/users.php" style="padding-bottom: 2px; vertical-align: center;">
+                <i class="icon eido-icon-chevron-circle-right" style="margin-right: 7px;"></i>User Administration</a>
    	    </div>
        <?php endif; ?>
 </div>

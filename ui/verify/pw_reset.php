@@ -1,7 +1,7 @@
 <!doctype html>
 <?php
 // this is password reset for users - pw_reset.php
-// Copyright 2018, Mest Intgration LLC
+// Copyright 2018, Mesh Intgration LLC
 // WEL 3/1/18
 
 require_once './utilities.php';
@@ -14,7 +14,7 @@ $pwkey = get_query_string('k');
 $arr_user_info = get_user_info_by_pwkey($pwkey);
 if ($arr_user_info['lastName']=="ERROR")
 {
-   $_SESSION['error_msg']="You are using an invalid link or the link contains bad data. Please contact EIDO Verify Support to resolve this issue.";
+   $_SESSION['error_msg']="<center><h1>Reset Password</h1><p>This password has expired. Request a new link via the login page.</p><br /><a href='login.php' class='button active large'>Back to Login</a></center>";
    header("Location:message.php");
 }
 ?>

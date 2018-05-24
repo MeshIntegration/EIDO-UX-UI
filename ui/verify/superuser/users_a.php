@@ -19,6 +19,7 @@ if ($mode=="update") {
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+
     //  check for required fields and formats here
     if ($firstname == "")
         $_SESSION['add_firstname_error'] = true; else $_SESSION['add_firstname_error'] = false;
@@ -26,7 +27,7 @@ if ($mode=="update") {
         $_SESSION['add_firstname_format_error'] = true; else $_SESSION['add_firstname_format_error'] = false;
     if ($lastname == "")
         $_SESSION['add_lastname_error'] = true; else $_SESSION['add_lastname_error'] = false;
-    if (!preg_match("/^[a-zA-Z]*$/", $lastname))
+    if (!preg_match("/^[a-zA-Z']*$/", $lastname))
         $_SESSION['add_lastname_format_error'] = true; else $_SESSION['add_lastname_format_error'] = false;
     if ($email == "")
         $_SESSION['add_email_error'] = true; else $_SESSION['add_email_error'] = false;
@@ -34,13 +35,17 @@ if ($mode=="update") {
         $_SESSION['add_bad_email_error'] = true; else $_SESSION['add_bad_email_error'] = false;
     if (!is_email_unique($email))
         $_SESSION['add_email_duplicate_error'] = true; else $_SESSION['add_email_duplicate_error'] = false;
+    if ($password == "")
+        $_SESSION['add_password_error'] = true; else $_SESSION['add_password_error'] = false;
     if ($_SESSION['add_firstname_error'] || $_SESSION['add_lastname_error'] ||
         $_SESSION['add_bad_email_error'] || $_SESSION['add_email_error'] || $_SESSION['add_email_duplicate_error'] ||
         $_SESSION['add_firstname_format_error'] || $_SESSION['add_lastname_format_error']) {
-        $_SESSION['add_firstname'] = $firstname;
-        $_SESSION['add_lastname'] = $lastname;
-        $_SESSION['add_email'] = $email;
-        $_SESSION['add_password'] = $password;
+            $_SESSION['add_firstname'] = $firstname;
+            $_SESSION['add_lastname'] = $lastname;
+            $_SESSION['add_email'] = $email;
+            $_SESSION['add_password'] = $password;
+            header("Location: users.php?m=update&id=$id");
+            exit();
     }
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -66,12 +71,23 @@ else if ($mode=="userreset")
 }
 else if ($mode=="userdelete")
 {
-   $sql = "UPDATE dir_user
-           SET active=0,
-           c_dateModified=NOW()
+
+    $sql = "DELETE FROM dir_user_group 
+           WHERE userid='$id'";
+    dbi_query($sql);
+    $sql = "DELETE FROM dir_user_role 
+           WHERE userid='$id'";
+    dbi_query($sql);
+    $sql = "DELETE FROM dir_user 
            WHERE id='$id'";
-   dbi_query($sql);
+    dbi_query($sql);
+
    logMsg("DELETE: $sql",$logfile);   
+
+   unset($_SESSION['add_firstname']); 
+   unset($_SESSION['add_lastname']); 
+   unset($_SESSION['add_email']); 
+   unset($_SESSION['add_password']); 
 }
 
 /* *******************API STUFF COMMENTED OUT*********************************************
@@ -92,20 +108,25 @@ echo $resp;
 echo "<br />";
 exit();
 *************************************************************************  */
-else
-{
+else if ($mode=="add") {
+logMsg("IN SUPERUSER ADD MODE",$logfile);
    $firstname = $_POST['firstname'];
    $lastname = $_POST['lastname'];
    $email = $_POST['email'];
    $password = $_POST['password'];
+   $password2 = $_POST['password2'];
+
    //  check for required fields and formats here
-   if ($firstname=="")
-      $_SESSION['add_firstname_error']=true; else $_SESSION['add_firstname_error']=false;
+   if ($firstname=="") {
+logMsg("FIRSTNAME ERROR blank",$logfile);
+      $_SESSION['add_firstname_error']=true; }
+   else $_SESSION['add_firstname_error']=false;
+  
    if (!preg_match("/^[a-zA-Z]*$/",$firstname))
       $_SESSION['add_firstname_format_error']=true; else $_SESSION['add_firstname_format_error']=false;
    if ($lastname=="")
       $_SESSION['add_lastname_error']=true; else $_SESSION['add_lastname_error']=false;
-   if (!preg_match("/^[a-zA-Z]*$/",$lastname))
+   if (!preg_match("/^[a-zA-Z']*$/",$lastname))
       $_SESSION['add_lastname_format_error']=true; else $_SESSION['add_lastname_format_error']=false;
    if ($email=="")
       $_SESSION['add_email_error']=true; else $_SESSION['add_email_error']=false;
@@ -113,16 +134,22 @@ else
       $_SESSION['add_bad_email_error']=true; else $_SESSION['add_bad_email_error']=false;
    if (!is_email_unique($email))
       $_SESSION['add_email_duplicate_error']=true; else $_SESSION['add_email_duplicate_error']=false;
+    if ($password == "")
+        $_SESSION['add_password_error'] = true; else $_SESSION['add_password_error'] = false;
+    if ($password <> $password2)
+        $_SESSION['add_password_match_error'] = true; else $_SESSION['add_password_match_error'] = false;
    if ($_SESSION['add_firstname_error'] || $_SESSION['add_lastname_error'] ||
-       $_SESSION['add_bad_email_error'] || $_SESSION['add_email_error'] || $_SESSION['add_email_duplicate_error'] ||
-       $_SESSION['add_firstname_format_error'] || $_SESSION['add_lastname_format_error'])
-   {
-      $_SESSION['add_firstname']=$firstname;
-      $_SESSION['add_lastname']=$lastname;
-      $_SESSION['add_email']=$email;
-      $_SESSION['add_password']=$password;
+       $_SESSION['add_bad_email_error'] || $_SESSION['add_email_error'] || 
+       $_SESSION['add_email_duplicate_error'] || $_SESSION['add_password_error'] ||
+       $_SESSION['add_password_match_error'] || $_SESSION['add_firstname_format_error'] || 
+       $_SESSION['add_lastname_format_error']) {
+           $_SESSION['add_firstname']=$firstname;
+           $_SESSION['add_lastname']=$lastname;
+           $_SESSION['add_email']=$email;
+           $_SESSION['add_password']=$password;
+           header("Location: users.php?m=add");
+           exit();
    }
-
 
    $id = uniqid();
    $hash = password_hash($password, PASSWORD_BCRYPT);
@@ -133,7 +160,6 @@ else
    }
 
    // INSERT
-
    $sql = "INSERT INTO dir_user
            SET firstName=".escapeQuote($firstname).",
                lastName=".escapeQuote($lastname).",
@@ -161,6 +187,10 @@ else
    dbi_query($sql);
    logMsg("ADD: $sql",$logfile);
 
+   unset($_SESSION['add_firstname']); 
+   unset($_SESSION['add_lastname']); 
+   unset($_SESSION['add_email']); 
+   unset($_SESSION['add_password']); 
 }
 header("Location: users.php");
 exit();

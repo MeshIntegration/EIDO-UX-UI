@@ -60,11 +60,11 @@ function get_pt_info_by_pwkey($pwkey)
 }
 
 // ***************************************
-function save_pt_info($id, $surname, $postalcode, $dob, $nhsnumber, $password, $mobile, $preferred, $email)
+function save_pt_info($id, $surname, $postalcode, $dob, $nhsnumber, $password, $mobile, $preferred, $email, $preferenceset)
 {
    global $TBLPTEPISODES;
    
-   if ($preferred=="")
+   if ($preferenceset=="")
       $mpd_str = "";
    else
       $mpd_str = ", c_mobilePageDone='YES' ";
@@ -77,7 +77,8 @@ function save_pt_info($id, $surname, $postalcode, $dob, $nhsnumber, $password, $
               c_nhsNumberEntered=".escapeQuote($nhsnumber).",
               c_password=".escapeQuote($password).",
               c_mobileNumber=".escapeQuote($mobile).",
-              c_preferredContactMethod=".escapeQuote($preferred)."$mpd_str
+              c_preferenceSet=".escapeQuote($preferenceset).",
+              c_preferredContactMethod=".escapeQuote($preferred)."$mpd_str           
           WHERE id='$id'";
    logMsg("Save Pt Info - Validation: $sql", "validation.log");
    dbi_query($sql);
@@ -177,7 +178,7 @@ function get_survey_url($arr_pt_info)
    $goto_url .= "&eid=" . $arr_pt_info['id'];
    // $goto_url .= "&dev=" . $dev;
 
-logMsg($goto_url, "validation.log");
+   // logMsg($goto_url, "validation.log");
    return $goto_url;
 } 
 

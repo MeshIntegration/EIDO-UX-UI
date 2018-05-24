@@ -88,27 +88,59 @@ if ($_SESSION['moreReminders']=="true")
 
 // this code can only be hit if they get 0 or 1 error first try
 // otherwise this gets done in review_a.php
-if ($error_ct==0 || $error_ct==1)
+if ($error_ct==0 || $error_ct==1) 
 {
    // Need to save the entered data so it can be checked in the request review section 3/8/18
    //     last two params are mobile and preferred which we don't have yet after flow change 
    //     so just rewrite what is in db for now
    $mobile=$arr_pt_info['c_mobileNumber'];
-   $preferred=$arr_pt_info['c_preferredContactNethod'];
-   save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $mobile, $preferred);
+   $preferred=$arr_pt_info['c_preferredContactMethod'];
+   save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $mobile, $preferred, $arr_pt_info['c_emailAddress']);
 
-   // take them to the validation_pw screen 
-   header ("Location: validation_pw.php");
-   exit();
+
+
+    // Ammends to validation flow, now we go to mobile page and badger the patient for more peices of contact information.
+    // - Andrew
+
+
+   if ( $arr_pt_info['c_emailAddress']<>"" && $arr_pt_info['c_mobilePageDone']=="YES") {
+       logMsg("Mobile page done already - pt has email - going to validate_pw, then on to survey...",$logfile);
+      // patient has an email so can create a password to login
+       // and they have completed mobile/email contact preferences page,
+       // so take them to the validation_pw screen (patient can create a new password, or they can skip and go straight to survey)
+       // patients with contact preference set to mobile, but who also have an email will be directed here.
+       // they can create a password and then login with email & password, or skip through the screen and go straight to surveys.
+       //  This may need modified to pass patients set to mobile phone preference directly to surveys.
+      header ("Location: validation_pw.php");
+      exit();
+   } else {
+       if ($arr_pt_info['c_mobilePageDone']=="YES") {
+           logMsg("Mobile page done already - no email - go directly to survey...",$logfile);
+           // WE HAVE LIFT OFF - take them to the correct survey
+
+      // no email - go to survey if the mobile page was already done
+
+
+         $goto_url = get_survey_url($arr_pt_info);
+         $_SESSION = array();
+         session_destroy();
+         header ("Location: $goto_url");
+         exit();
+      } else {
+         logMsg("Going to mobile.php...",$logfile);
+         header ("Location: validation_mobile.php");
+         exit();
+      }
+   }
 }
-else if ($error_ct==2)
-   add_to_timeline($arr_pt_info['id'], "Patient validation error (soft fail)", "Open", "Alert", 
-                   $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
-else if ($error_ct>=3)
-   add_to_timeline($arr_pt_info['id'], "Patient validation error (hard fail)", "Open", "Alert", 
-                   $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
+// else if ($error_ct==2)
+//   add_to_timeline($arr_pt_info['id'], "Patient validation error (soft fail)", "Open", "Info", 
+//                   $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
+//else if ($error_ct>=3)
+//   add_to_timeline($arr_pt_info['id'], "Patient validation error (hard fail)", "Open", "Alert", 
+//                   $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
 
-if (false)   // ($_SESSION['error_ct']==1)  just habging onto this for the messages
+if (false)   // ($_SESSION['error_ct']==1)  just hanging onto this for the messages
 {
    $data_msg = "Data Check";
    if ($_SESSION['surname_error']) $data_msg2 = "Please check the spelling of your Surname.";

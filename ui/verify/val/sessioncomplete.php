@@ -33,10 +33,13 @@ $c_firstName=$arr_pt_info['c_firstName'];
 	  <div class="grid-x">
             <div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	    <div class="small-12 medium-6 align-center-middle cell">
-		  <p>&nbsp;</p>
-		  <h1><?php echo $arr_pt_info['c_firstName']; ?>,</h1>
-		  <p>You have completed your survey and have successfully logged out. Thank you for your participation.</p>
-                  <p>&nbsp;</p>
+                  <center>
+		  <p><img src="../img/session-complete.gif" width="50%"></p>
+		  <h1>Thanks <?php echo ucfirst($arr_pt_info['c_firstName']); ?>,</h1>
+		  <p>Everything has been sent to your healthcare team.</p>
+                  <p>We will be in touch if we need more information.</p>
+                  <p><br />You have been logged out of the system.</p>
+                  </center>
              </div>	  
           </div>
     <!-- End Content-Full -->

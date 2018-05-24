@@ -1,6 +1,6 @@
 <div class="grid-x hide-for-small-only show-for-medium">
   <div class="small-12 medium-2 large-2 cell">
-    <button class="button type shift" style="font-family: 'Lato-Bold', 'Lato Bold', 'Lato'; text-align: center;" type="button" data-toggle="example-dropdown-bottom-left">
+    <button class="button type shift btn-header" style="" type="button" data-toggle="example-dropdown-bottom-left">
       <?php echo $user_initials; ?>
     </button>
     <?php include "admin_dropdown_pane.php"; ?>
@@ -12,7 +12,7 @@
 
         <div id="addusr" class="row links">
             <a href="/ui/verify/superuser/users.php?m=add" style="left -20px">
-                <i class="eido-icon-plus"></i>Add user</a>
+                <i class="icon eido-icon-plus"></i>Add user</a>
         </div>
     </div>
 

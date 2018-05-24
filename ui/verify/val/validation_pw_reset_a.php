@@ -17,6 +17,8 @@ logMsg("Validation_pw_reset: reset done for: ".$arr_pt_info['c_patientEpisodeId'
 
 // once they reset just log them in per Rob
 $goto_url = get_survey_url($arr_pt_info);
+$_SESSION = array();
+session_destroy();
 header("Location:$goto_url");
 exit();
 

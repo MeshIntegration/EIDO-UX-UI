@@ -1,5 +1,10 @@
 <div class="grid-x hide-for-small-only show-for-medium">
   <div class="medium-8 large-8 cell">
+      <script type="text/javascript">//<![CDATA[
+          var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+          document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+          //]]>
+      </script>
     &nbsp; 
   </div>
   <div class="medium-4 large-4 cell"><a href="/"><img src="/ui/verify/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a></div>

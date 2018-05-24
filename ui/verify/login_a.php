@@ -15,6 +15,7 @@
 include "utilities.php";
 $logfile = "admin.log";
 session_start();
+$_SESSION['login_error']=false;
 
 $username = $_POST['username'];
 $password= $_POST['password'];
@@ -29,7 +30,7 @@ logMsg($sql,$logfile);
 $GetQuery=dbi_query($sql);
 if ($GetQuery->num_rows==0)
 {
-   $_SESSION['error_msg']="Incorrect email or password. Please try again.";
+   $_SESSION['login_error']=true;
    logMsg("Incorrect email (user not found) $username $password - back to login.php", $logfile);
    header("Location: login.php");
    exit();
@@ -40,7 +41,7 @@ else {
     $hash = $qryResult['uipassword'];
     if (!password_verify($password, $hash)) {
         /* Invalid */
-        $_SESSION['error_msg'] = "Incorrect email or password. Please try again.";
+        $_SESSION['login_error'] = true;
         logMsg("Incorrect password. $username $password - back to login.php", $logfile);
         header("Location: login.php");
         exit();
@@ -101,7 +102,7 @@ logMsg(">>>>  GroupID: ".$qryResult['groupId'], $logfile);
         header("Location: /ui/verify/patient/patients.php");
         exit();
     }
-    $_SESSION['error_msg'] = "Please contact EIDO support.";
+    $_SESSION['login_error'] = true;
     header("Location: /ui/verify/message.php");
     exit();
 }

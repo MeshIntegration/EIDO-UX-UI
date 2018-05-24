@@ -206,19 +206,20 @@
 //
 //}
 
-@greenBG: #3DAE65;
-@fontColor: #0D2240;
+@greenBG: #3dae65;
+@fontColor: #0d2240;
+
 .superuser {
 	.page-title {
 		background: @greenBG;
-		color:#fff;
+		color: #fff;
 		text-transform: uppercase;
 	}
 
 	.navigation-bar, .menu.simple {
 		background: @greenBG;
 		li, a {
-			color:#fff;
+			color: #fff;
 			text-transform: uppercase;
 		}
 		li {
@@ -228,82 +229,84 @@
 }
 
 .back-row {
-	background:#DDDDDD;
-	padding:8px 0 8px 10px;
+	&.back-row-head {
+		background: #dddddd;
+	}
+	padding: 8px 0 8px 20px;
 	a {
 		font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
 		color: @fontColor;
 		i {
-			top:1px;
+			top: 1px;
 			position: relative;
-			color:(#DDD - 50)
+			color: (#ddd - 50)
 		}
 	}
 }
 
 .page-title {
-	border-bottom:solid #E3DDDF 1px;
+	border-bottom: solid #e3dddf 1px;
 }
 
-
 .tab-actions {
-	border:none;
-	background:transparent;
-	margin-bottom:20px;
+	border: none;
+	background: transparent;
+	margin-bottom: 20px;
 
 }
 
 .btn-actions {
-	margin-left:18px;
-	font-size:12px;
+	margin-left: 18px;
+	font-size: 12px;
 	vertical-align: middle;
-	padding:10px !important;
-	background:#ddd;
+	padding: 10px !important;
+	background: #ddd;
 
 	i {
 		position: relative;
-		top:-1px;
-		font-size:19px;
-		color:(#DDD - 50);
-		display:inline-block;
+		top: -1px;
+		font-size: 19px;
+		color: (#ddd - 50);
+		display: inline-block;
 		vertical-align: text-top;
 	}
 
 	&:hover, &:active, &:focus {
-		background:@fontColor;
-		color:#fff;
+		background: @fontColor;
+		color: #fff;
 
 	}
 }
 
 .column-first {
-	padding-left:18px;
+	padding-left: 18px;
 }
 
 .grid-header {
-	padding-bottom:10px;
-	border-bottom:1px solid #ddd;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
 	strong {
-		position:relative;
-		top:14px;
+		position: relative;
+		top: 14px;
 
 		&.no-check {
-			top:0;
-			left:10px;
+			top: 0;
+			left: 10px;
 		}
 	}
 }
+
 /**
 override shit tab
  */
 .tabs-title {
-	display:inline !important;
-	float:none !important;
+	display: inline !important;
+	float: none !important;
 	a {
-		display:inline;
+		display: inline;
 		&:hover, &:active, &:focus {
-			background:@fontColor;
-			color:#fff;
+			background: @fontColor;
+			color: #fff;
 
 		}
 
@@ -311,34 +314,35 @@ override shit tab
 
 	&.is-active {
 		a {
-			color:@fontColor;
-			background:#ddd;
+			color: @fontColor;
+			background: #ddd;
 		}
 	}
 }
 
 .tabs-content {
-	border:0;
+	border: 0;
 }
 
 #ResetFilter {
 	position: relative;
-	top:-2px;
+	top: -2px;
 }
+
 div.sort:first-of-type {
-	padding-top:5px !important;
+	padding-top: 5px !important;
 }
 
 //for the map
 .datepicker td span.active, .datepicker td.active.day, .datepicker td.active.year {
-	background:#3DAE65 !important;
-	color:#fff;
-	border-radius:50%;
+	background: #3dae65 !important;
+	color: #fff;
+	border-radius: 50%;
 
 }
 
 .datepicker.dropdown-menu, .datepicker, .datepicker-days, .datepicker-days tbody, .datepicker td, .datepicker th {
-	background:#F7F5F5;
+	background: #f7f5f5;
 }
 
 .datepicker {
@@ -352,10 +356,11 @@ div.sort:first-of-type {
 			border-style: solid;
 			border-width: 0 16px 16px 16px;
 			border-color: transparent transparent #979797 transparent;
-			content: '';
+			content: ' ';
 			top: -16px;
 			left: 10px;
 			position: absolute;
+			z-index: 99999;
 		}
 		&:after {
 			width: 0;
@@ -364,10 +369,11 @@ div.sort:first-of-type {
 			border-width: 0 15px 16px 15px;
 			border-color: transparent transparent #f7f5f5 transparent;
 
-			content: '';
+			content: ' ';
 			top: -15px;
 			left: 11px;
 			position: absolute;
+			z-index: 99999;
 		}
 	}
 }
@@ -378,6 +384,345 @@ div.sort:first-of-type {
 		overflow: hidden;
 	}
 }
+
 .pagination li {
 	border-radius: 0 !important;
+}
+
+.patient-list {
+	p > span {
+		line-height: 1.2;
+	}
+}
+
+.input-group-field {
+	padding: 0.78em !important;
+}
+
+h4.vertical-middle {
+	position: relative;
+	top: 3px;
+}
+
+.btn-pre {
+	padding: 8px 30px;
+}
+
+.btn-header.type {
+	text-indent: 6px;
+
+	&:hover, &:focus, &:active {
+
+	}
+
+}
+
+.padding-right-column {
+	padding: 0 0.825rem;
+
+	.standard-hr {
+		margin: 0 -0.825rem;
+	}
+}
+
+.standard-hr {
+	border-bottom: 1px solid #d3d1d1;
+	padding: 0;
+	line-height: 1px;
+	background: transparent !important;
+}
+
+.standard-padding {
+	padding: 0 20px;
+}
+
+.link-standard-color {
+	color: @greenBG !important;
+	text-decoration: underline !important;
+	&:focus, &:hover, &:active {
+		text-decoration: none !important;
+	}
+}
+
+.link-active {
+	color: @fontColor !important;
+	text-decoration: none !important;
+}
+
+.standard-weight {
+	font-weight: normal;
+}
+.standard-border-bottom {
+	border-bottom:1px solid #D3D1D1;
+}
+
+.link-full-block {
+	display:block;
+	text-decoration: none !important;
+	//default font sizes
+	line-height:1.4em;
+	font-size:14px;
+	&:hover, &:focus, &:active {
+		background: #F7F5F5;
+		color:#333;
+	}
+
+	p {
+		line-height:1.4em;
+		font-size:14px;
+	}
+}
+
+.org-logo {
+	vertical-align: middle;
+	padding-right: 5px;
+	img {
+		background: #f5f5f5;
+		border: 1px solid #797979;
+	}
+
+	.button {
+		margin-top: 30px;
+
+	}
+
+}
+
+.btn-block {
+	width: 100%;
+	display: block;
+}
+
+.grid-padding-15 {
+	padding: 15px 0;
+
+}
+
+.eido-radio {
+	display: inline;
+	position: relative;
+	cursor: pointer;
+	font-size: 22px;
+	z-index: 1;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: 8px 15px;
+	margin-right: 5px;
+	background-color: #e4e4e4;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		&:checked {
+			~ .checkmark {
+				display: block;
+			}
+
+			~ .text {
+				color: #fff;
+				position: relative;
+				z-index: 2;
+			}
+		}
+	}
+
+	.text {
+
+	}
+	.checkmark {
+		position: absolute;
+		padding: 5px 10px;
+		background-color: #c9c9c9;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		display: none;
+
+	}
+}
+
+/** timeline stuff */
+
+.patientcontent .timeline::before {
+	display: none !important;
+}
+
+.timeline-wrapper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	&:before {
+		width: 5px;
+		height: 100%;
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 13px;
+		margin-left: 0;
+
+		background: #ccc;
+	}
+}
+
+.timeline-right .timeline-icon, .timeline-right .timeline-icon-cs, .timeline-right .timeline-icon-green {
+	top: 50% !important;
+	margin-top: -11px !important;
+}
+.timeline a {
+	&:hover {
+		box-shadow: none !important;
+	}
+}
+
+/** similiar to .patient-list */
+.patient-data {
+	position: relative;
+	p {
+		margin-bottom:0;
+	}
+	.right-arrow {
+		right: 15px;
+		top: 42%;
+		position: absolute;
+		margin-right: 5px;
+		i {
+			font-size: 16px;
+			color: #a1a1a1;
+		}
+	}
+
+	.link-full-block, > div {
+		padding-top:0.825rem;
+		padding-bottom:0.825rem;
+	}
+}
+
+.notification-bell {
+	margin:0px -20px;
+	padding:25px 0;
+	background: #e4e4e4;
+	.icon {
+		font-size:110px;
+		margin-bottom:8px;
+		i {
+			display:inline-block;
+			transform: rotate(-15deg);
+			color:#bcbcbc;
+
+		}
+	}
+}
+
+.eido-block-radio {
+	display:block;
+	position: relative;
+	background:#F2F2F2;
+	margin-bottom:5px;
+	font-size:14px;
+	padding:10px;
+	cursor: pointer;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	.entry {
+		display:block;
+		padding-left:30px;
+	}
+	.separator {
+		display:inline-block;
+		border-left:1px solid #C9C9C9;
+		margin-left:10px;
+		padding-left:25px;
+	}
+
+	&:before {
+		content: '';
+		position:absolute;
+		left:0;
+		top:0;
+		height:100%;
+		width:12px;
+		background:@greenBG;
+	}
+
+	&.active {
+		background:#E4E4E4;
+		&:before {
+			background:#66CCFF;
+		}
+	}
+
+	&.dim:before {
+		background:#D7D7D7;
+	}
+
+	input[type='text'] {
+		border:none !important;
+		height:24px;
+
+	}
+
+}
+
+.eido-simple-radio {
+	display:block;
+	position: relative;
+	top:2px;
+	left:-25px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+
+		&:checked {
+			~ .checkmark {
+				background:@greenBG;
+
+
+				//need the checkmark
+				&:after {
+					display:block;
+					content:'';
+					position:absolute;
+					left:5px;
+					top:2px;
+					width:8px;
+					height:12px;
+					border:solid #eee;
+					border-width:0 3px 3px 0;
+					transform:rotate(45deg);
+				}
+			}
+		}
+	}
+
+	.checkmark {
+		position:absolute;
+		width:22px;
+		height:22px;
+		border-radius: 50%;
+		border:2px solid @greenBG;
+		margin:0;
+
+	}
+
+
+}
+
+
+p.small {
+	font-size:12px;
 }

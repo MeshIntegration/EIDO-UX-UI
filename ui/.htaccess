@@ -1,3 +1,30 @@
 php_value include_path  ".:PATH:/var/www/html:/var/www/html/lib:/var/www/html/lib/classes:/var/www/html/lib/vendor"
 Options -Indexes 
 
+
+#RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^yourdomain\.com [NC]
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ https://www.yourdomain.com/$1 [R,L]
+#</IfModule>
+
+
+#SSLOptions +StrictRequire
+#SSLRequireSSL
+#SSLRequire %{HTTP_HOST} eq "verify.eidosystems.com"
+
+
+
+#<Limit GET POST>
+#order allow,deny
+#allow from all
+#</Limit>
+#<Limit PUT DELETE>
+#order allow,deny
+#allow from all
+#</Limit>

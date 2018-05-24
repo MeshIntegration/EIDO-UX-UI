@@ -490,6 +490,7 @@ select.select_address option:checked, .select_address option:hover {
 	background: #e4e4e4 url('../img/icons/bell.png') no-repeat center 20px;
 	text-align: center;
 	padding: 150px 0 20px 0;
+	zoom: 60%;
 }
 
 table.notifications {
@@ -1393,6 +1394,32 @@ a.aux_help {
 	border-right: none !important;
 }
 
+.tc::first-letter {
+	text-transform: uppercase;
+}
+
+.right-panel-margin {
+	margin-left: 20px;
+	margin-right: 20px;
+
+}
+
+.right-panel-left-margin{
+	margin-left: 20px !important;
+}
+
+.tc {
+	text-transform: lowercase;
+}
+
+.capitalize  {
+	text-transform: capitalize;
+}
+.newnew{
+
+}
+
+
 /*.tb-search .right-append [type='text'] { border-left:none !important; }*/
 
 /* add user form */
@@ -1490,3 +1517,278 @@ label.weight-normal {
 		text-align: center !important;
 	}
 }
+
+
+/**
+* Jayme Skeen's additions start here
+* Date: 4/24/2018
+**/
+.superuser .page-title {
+	background: #3DAE65;
+	color: #fff;
+	text-transform: uppercase;
+}
+.superuser .navigation-bar,
+.superuser .menu.simple {
+	background: #3DAE65;
+}
+.superuser .navigation-bar li,
+.superuser .menu.simple li,
+.superuser .navigation-bar a,
+.superuser .menu.simple a {
+	color: #fff;
+	text-transform: uppercase;
+}
+.superuser .navigation-bar li,
+.superuser .menu.simple li {
+	border-right-color: #fff;
+}
+.back-row {
+	padding: 8px 0 8px 20px;
+}
+.back-row.back-row-head {
+	background: #DDDDDD;
+}
+.back-row a {
+	font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
+	color: #0D2240;
+}
+.back-row a i {
+	top: 1px;
+	position: relative;
+	color: #ababab;
+}
+.page-title {
+	border-bottom: solid #E3DDDF 1px;
+}
+.tab-actions {
+	border: none;
+	background: transparent;
+	margin-bottom: 20px;
+}
+.btn-actions {
+	margin-left: 18px;
+	font-size: 12px;
+	vertical-align: middle;
+	padding: 10px !important;
+	background: #ddd;
+}
+.btn-actions i {
+	position: relative;
+	top: -1px;
+	font-size: 19px;
+	color: #ababab;
+	display: inline-block;
+	vertical-align: text-top;
+}
+.btn-actions:hover,
+.btn-actions:active,
+.btn-actions:focus {
+	background: #0D2240;
+	color: #fff;
+}
+.column-first {
+	padding-left: 18px;
+}
+.grid-header {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+}
+.grid-header strong {
+	position: relative;
+	top: 14px;
+}
+.grid-header strong.no-check {
+	top: 0;
+	left: 10px;
+}
+/**
+override shit tab
+ */
+.tabs-title {
+	display: inline !important;
+	float: none !important;
+}
+.tabs-title a {
+	display: inline;
+}
+.tabs-title a:hover,
+.tabs-title a:active,
+.tabs-title a:focus {
+	background: #0D2240;
+	color: #fff;
+}
+.tabs-title.is-active a {
+	color: #0D2240;
+	background: #ddd;
+}
+.tabs-content {
+	border: 0;
+}
+#ResetFilter {
+	position: relative;
+	top: -2px;
+}
+div.sort:first-of-type {
+	padding-top: 5px !important;
+}
+.datepicker td span.active,
+.datepicker td.active.day,
+.datepicker td.active.year {
+	background: #3DAE65 !important;
+	color: #fff;
+	border-radius: 50%;
+}
+.datepicker.dropdown-menu,
+.datepicker,
+.datepicker-days,
+.datepicker-days tbody,
+.datepicker td,
+.datepicker th {
+	background: #F7F5F5;
+}
+.datepicker.dropdown-menu {
+	border-radius: 0;
+	border: 1px solid #979797;
+}
+.datepicker.dropdown-menu:before {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 16px 16px 16px;
+	border-color: transparent transparent #979797 transparent;
+	content: ' ';
+	top: -16px;
+	left: 10px;
+	position: absolute;
+	z-index: 99999;
+}
+.datepicker.dropdown-menu:after {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 15px 16px 15px;
+	border-color: transparent transparent #f7f5f5 transparent;
+	content: ' ';
+	top: -15px;
+	left: 11px;
+	position: absolute;
+	z-index: 99999;
+}
+.ui-sortable-handle span.not-allow-move {
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.pagination li {
+	border-radius: 0 !important;
+}
+.patient-list p > span {
+	line-height: 1.2;
+}
+.input-group-field {
+	padding: 0.78em !important;
+}
+h4.vertical-middle {
+	position: relative;
+	top: 3px;
+}
+.btn-pre {
+	padding: 8px 30px;
+}
+.btn-header.type {
+	text-indent: 6px;
+}
+.padding-right-column {
+	padding: 0 0.825rem;
+}
+.padding-right-column .standard-hr {
+	margin: 0 -0.825rem;
+}
+.standard-hr {
+	border-bottom: 1px solid #D3D1D1;
+	padding: 0;
+	line-height: 1px;
+	background: transparent !important;
+}
+.org-logo {
+	vertical-align: middle;
+	padding-right: 5px;
+}
+.org-logo img {
+	background: #f5f5f5;
+	border: 1px solid #797979;
+}
+.org-logo .button {
+	margin-top: 30px;
+}
+.btn-block {
+	width: 100%;
+	display: block;
+}
+.grid-padding-15 {
+	padding: 15px 0;
+}
+.eido-radio {
+	display: inline;
+	position: relative;
+	cursor: pointer;
+	font-size: 22px;
+	z-index: 1;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: 8px 15px;
+	margin-right: 5px;
+	background-color: #e4e4e4;
+}
+.eido-radio input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+.eido-radio input:checked ~ .checkmark {
+	display: block;
+}
+.eido-radio input:checked ~ .text {
+	color: #fff;
+	position: relative;
+	z-index: 2;
+}
+.eido-radio .checkmark {
+	position: absolute;
+	padding: 5px 10px;
+	background-color: #C9c9c9;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	display: none;
+}
+/** timeline stuff */
+.patientcontent .timeline::before {
+	display: none !important;
+}
+.timeline-wrapper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.timeline-wrapper:before {
+	width: 5px;
+	height: 100%;
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 13px;
+	margin-left: 0;
+	background: #ccc;
+}
+.timeline-right .timeline-icon,
+.timeline-right .timeline-icon-cs,
+.timeline-right .timeline-icon-green {
+	top: 50% !important;
+	margin-top: -11px !important;
+}
+/*# sourceMappingURL=skeen_eido.css.map */

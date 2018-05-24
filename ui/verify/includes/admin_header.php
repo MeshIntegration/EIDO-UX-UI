@@ -1,6 +1,6 @@
 <div class="grid-x hide-for-small-only show-for-medium">
     <div class="small-12 medium-2 large-2 cell">
-        <button class="button type shift" style="font-family: 'Lato-Bold', 'Lato Bold', 'Lato'; text-align: center;" type="button" data-toggle="example-dropdown-bottom-left">
+        <button class="button type shift btn-header" style="" type="button" data-toggle="example-dropdown-bottom-left">
             <?php echo $user_initials; ?>
         </button>
         <?php include "admin_dropdown_pane.php"; ?>
@@ -17,25 +17,26 @@
   </div>
 -->
 
+
+
     <div class="small-12 medium-6 large-6 cell" style="padding-top: 26px;">
         <!--  <div class="grid" style="padding-top: 15px;"> -->
 
-        <div id="addusr" class="row links">
-            <a href="/ui/verify/admin/users.php?m=add" style="left -10px">
-                <i class="eido-icon-plus"></i>Add user</a>
+        <div id="addusr" class="row links" style="margin-top: -2px; margin-bottom: 4px; height: 20px; zoom: 1.14;">
+            <a href="/ui/verify/admin/users_a.php?m=gotoadd" style="padding-bottom: 2px; vertical-align: center;">
+                <i class="icon eido-icon-plus-circle" style="margin-right: 7px;"></i>Add User</a>
         </div>
+
     </div>
 
-
-
-    <div class="medium-4 large-4 cell"><a href="users.php"><img src="/ui/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a></div>
+    <div class="medium-4 large-4 cell"><a href="/ui/verify/admin/users_a.php?m=gotoadd"><img src="/ui/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a></div>
 </div>
 
 
 <div class="small-12 medium-4 large-4 cell">
-    <div class="back-row">
+    <div class="back-row back-row-head">
         <a style="zoom: .8; margin-left: 13px" class="back-btn" href="/ui/verify/patient/patients.php?m=main">
-            <i class="eido-icon-chevron-left"></i>&nbsp;&nbsp;Back to dashboard
+            <i class="icon eido-icon-chevron-left"></i>&nbsp;&nbsp;Back To Dashboard
         </a>
     </div>
 </div>

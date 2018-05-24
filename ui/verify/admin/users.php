@@ -35,6 +35,9 @@ if ($mode == "" || $mode == "add") {
 } else if ($mode == "update") {
 	$update_hide = "";
 	$user_id = $id;
+} else if ($mode == "view") {
+	$update_hide = "";
+	$user_id = $id;
 } else if ($mode == "reset") {
 	$reset_hide = "";
 	$user_id = $id;
@@ -46,7 +49,6 @@ if ($mode == "" || $mode == "add") {
 } else if ($mode == "bulkreset") {
 	$bulkreset_hide = "";
 } else if ($mode == "bulkdelete") {
-logMsg("HI WAYNE & ANDREW", $logfile);
 	$bulkdelete_hide = "";
 }
 $script_name = substr ( strrchr ( $_SERVER ['PHP_SELF'], "/" ), 1 );
@@ -100,7 +102,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
         <!-- End Header -->
 		<!-- Start Title Bar & Navigation -->
 		        <div class="grid-x padding-x">
-                    <div class="cell page-title">User administration</div>
+                    <div class="cell page-title">User Administration</div>
 		        </div>
 		<!-- End Title Bar & Navigation -->
 		<!-- Start Content -->
@@ -108,7 +110,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
         <!-- Start Content-Left -->
         <div class="small-12 medium-6 large-6 cell content-left">
             <div class="su-table stack large-12">
-                <?php include "../includes/admin_bulkActions.php"; ?>
+              
 				<div class="grid-x grid-header" style="">
 	                <div class="small-2 columns column-first" style="">
 		                <label class="eido-checkbox">
@@ -150,8 +152,8 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 	                            ?>
 
 	                            <li class="<?php echo $isSelected; ?>">
-	                                <a href="users.php?m=update&id=<?php echo $uid; ?>">
-		                                <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+	                                <a href="users_a.php?m=gotoupdate&id=<?php echo $uid; ?>">
+		                                <span class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
 		                                <div class="grid-x">
                                             <div class="small-2 columns column-first">
                                                 <label class="eido-checkbox">
@@ -190,6 +192,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		                    FROM dir_user u, dir_user_role ur, dir_user_group ug
 		                    WHERE u.id=ur.userId
 		                    AND u.id = ug.userId
+                                    AND u.active=1
 		                    AND ur.roleId='ROLE_USER'";
 
 							$GetQuery = dbi_query ( $sql );
@@ -208,36 +211,36 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		<!--  <h3>Add Verify User</h3>  -->
 
 		<form action="users_a.php?m=add" method="post">
-            <div class="section-title">Add Verify user</div>
+            <div class="section-title">Add Verify User</div>
 			<div class="grid-container">
 				<div class="grid-x">
 					<div class="small-12 cell field">
-                                            <?php if ($_SESSION['add_firstname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
-                                                   else if ($_SESSION['add_firstname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
-						<label class="weight-normal">First Name <input type="text"
-						value="<?php echo $_SESSION['add_firstname']; ?>" name="firstname">
+                                            <?php if ($_SESSION['add_firstname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                                                   else if ($_SESSION['add_firstname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+						<label class="weight-normal validated-field">First Name <input type="text" class="firstnamefield"
+						value="<?php echo $_SESSION['add_afirstname']; ?>" name="firstname">
 						</label>
 					</div>
 					<hr />
 					<div class="small-12 cell field">
-                                            <?php if ($_SESSION['add_lastname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the last name</strong> - this is required</div>";
-                                                   else if ($_SESSION['add_lastname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct the last name</strong> - no special characters are allowed</div>"; ?>
-						<label class="weight-normal">Surname <input type="text"
-							value="<?php echo $_SESSION['add_lastname']; ?>" name="lastname">
+                                            <?php if ($_SESSION['add_lastname_error']) echo "<div class='lastnameval error_message fi-alert'><strong>Please enter the last name</strong> - this is required</div>";
+                                                   else if ($_SESSION['add_lastname_format_error']) echo "<div class='lastnameval error_message fi-alert'><strong>Please correct the last name</strong> - no special characters are allowed</div>"; ?>
+						<label class="weight-normal validated-field">Surname <input type="text"  class="lastnamefield"
+							value="<?php echo $_SESSION['add_alastname']; ?>" name="lastname">
 						</label>
 					</div>
 					<div class="small-12 cell field">
-                                            <?php if ($_SESSION['add_email_error']) echo "<div class='error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
-                                                   else if ($_SESSION['add_bad_email_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>"; 
-                                                   else if ($_SESSION['add_email_duplicate_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
-						<label class="weight-normal">Email Address <input type="text"
-							value="<?php echo $_SESSION['add_email']; ?>" name="email">
+                                            <?php if ($_SESSION['add_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                                                   else if ($_SESSION['add_bad_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
+                                                   else if ($_SESSION['add_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+						<label class="weight-normal validated-field">Email Address <input type="text" class="emailfield"
+							value="<?php echo $_SESSION['add_aemail']; ?>" name="email">
 						</label>
 					</div>
 					<div class="row small-12 grid-padding-x">
 		<div class="float-left" style="margin-left:25px; margin-top:12px;">
 			<label class="eido-checkbox">
-			<input class="eido-checkbox user-checkbox1" type="checkbox" <?php if ($_SESSION['add_is_surgeon']=="1") echo "checked"; ?> name="is_surgeon" value="1"><label class="weight-normal"
+			<input class="eido-checkbox user-checkbox1" type="checkbox" <?php if ($_SESSION['add_ais_surgeon']=="1") echo "checked"; ?> name="is_surgeon" value="1"><label class="weight-normal"
 								for="checkbox1">Is a surgeon</label>
 			<span class="checkmark"></span>
 			</label>
@@ -245,18 +248,18 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		<div class="float-right" style="margin-top:12px">
 		
 			<label class="eido-checkbox"> 
-                        <input class="eido-checkbox user-checkbox2" type="checkbox" name="is_admin" value="1" <?php if ($_SESSION['add_is_admin']=="1") echo "checked"; ?> >
+                        <input class="eido-checkbox user-checkbox2" type="checkbox" name="is_admin" value="1" <?php if ($_SESSION['add_ais_admin']=="1") echo "checked"; ?> >
                                         <label class="weight-normal" for="checkbox2" style="padding-right:25px;">Is a system administrator</label>
 			<span class="checkmark"</span>
 		</div>
 					</div>
 					<div class="small-12 cell field">
-                                            <?php if ($_SESSION['add_gmc_number_error']) echo "<div class='error_message fi-alert'><strong>Please enter the GMC Number</strong> - this is required for a surgeon</div>";
-                                                   else if ($_SESSION['add_gmc_number_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct the GMC Number</strong> - no letters or special characters are allowed</div>"; 
-                                                   else if ($_SESSION['add_gmc_number_length_error']) echo "<div class='error_message fi-alert'><strong>Please correct the GMC Number</strong> - it should be 6 or 7 digits</div>"; 
-                                                   else if ($_SESSION['add_gmc_number_duplicate_error']) echo "<div class='error_message fi-alert'><strong>Please correct the GMC number</strong> - that GMC number already exists</div>"; ?>
-						<label class="weight-normal">GMC Number <input type="text"
-						value="<?php echo $_SESSION['add_gmc_number']; ?>" name="gmc_number">
+                                            <?php if ($_SESSION['add_gmc_number_error']) echo "<div class='gmcval error_message fi-alert'><strong>Please enter the GMC Number</strong> - this is required for a surgeon</div>";
+                                                   else if ($_SESSION['add_gmc_number_format_error']) echo "<div class='gmcval error_message fi-alert'><strong>Please correct the GMC Number</strong> - no letters or special characters are allowed</div>";
+                                                   else if ($_SESSION['add_gmc_number_length_error']) echo "<div class='gmcval error_message fi-alert'><strong>Please correct the GMC Number</strong> - it should be 6 or 7 digits</div>";
+                                                   else if ($_SESSION['add_gmc_number_duplicate_error']) echo "<div class='gmcval error_message fi-alert'><strong>Please correct the GMC number</strong> - that GMC number already exists</div>"; ?>
+						<label class="weight-normal validated-field">GMC Number <input type="text" class="gmcfield"
+						value="<?php echo $_SESSION['add_agmc_number']; ?>" name="gmc_number">
 						</label>
 					</div>
 					<div class="small-12 cell">&nbsp;</div>
@@ -268,15 +271,16 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 			</div>
 		</form>
 		<div class="divide">
-			<div class="section-title">Bulk Edit</div>
+
 				<div class="grid-container">
+                    <div class="section-title" style="margin-left:20px;">Bulk Edit</div>
 					<div class="grid-x">
 						<div class="small-12 cell field">
 							<div class="grid-x">
 								<div class="small-2 cell">&nbsp;</div>
 								<div class="small-8 cell text-center">
                                                                    <p>Add or remove users from the system using a CSV file</p>
-                                                                    <a href="users.php?m=bulk" class="button large active expanded">Upload Users</a>
+                                    <a href="users.php?m=bulk" class="button large active expanded"><strong>Upload Users</strong></a>
 								</div>
 								<div class="small-2 cell">&nbsp;</div>
 							</div>
@@ -303,7 +307,26 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 					$is_admin = true;
 				if ( $qryResult_u ['isSurgeon'] == "1")
 					$is_surgeon = true;
-	
+
+                if( !isset($_SESSION['update_firstname'])) {
+                    $_SESSION['update_firstname'] = $firstName;
+                }
+                if( !isset($_SESSION['update_lastname'])) {
+                    $_SESSION['update_lastname'] = $lastName;
+                }
+                if( !isset($_SESSION['update_email'])) {
+                    $_SESSION['update_email'] = $email;
+                }
+                if( !isset($_SESSION['update_gmc_number'])) {
+                    $_SESSION['update_gmc_number'] = $gmc_number;
+                }
+                if( !isset($_SESSION['update_is_surgeon'])) {
+                    $_SESSION['update_is_surgeon'] = $is_surgeon;
+                }
+                if( !isset($_SESSION['update_is_admin'])) {
+                    $_SESSION['update_is_admin'] = $is_admin;
+                }
+
 			/*	as surgeon can also be an admin, removed surgeon group from dir_user_group, surgeon role is now denoted by a boolean flag in dir_user table
 				$is_admin = $is_surgeon = false;
 				if (strtolower ( $qryResult_u ['groupid'] ) == "sitedivadmins")
@@ -316,53 +339,68 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $update_hide; ?>">
 
 		<form action="users_a.php?m=update&id=<?php echo $user_id; ?>" method="post">
-            <h3>View user</h3>
+            <h3>View User</h3>
 			<div class="grid-container">
 				<div class="grid-x">
-					<div class="small-12 cell field">
-                        <label class="weight-normal">First Name <input type="text" name="fname" value="<?php echo $firstName; ?>">
+                    <div class="small-12 cell field">
+                        <?php if ($_SESSION['add_firstname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                        else if ($_SESSION['add_firstname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+                        <label class="weight-normal validated-field">First Name <input type="text" class="firstnamefield"
+                                                                                       value="<?php echo $_SESSION['update_firstname']; ?>" name="firstname">
 						</label>
 				</div>
-				<div class="small-12 cell field">
-                    <label class="weight-normal">Surname <input type="text" name="lname"
-					value="<?php echo $lastName; ?>">
+                    <div class="small-12 cell field">
+                        <?php if ($_SESSION['add_lastname_error']) echo "<div class='lastnameval error_message fi-alert'><strong>Please enter the last name</strong> - this is required</div>";
+                        else if ($_SESSION['add_lastname_format_error']) echo "<div class='lastnameval error_message fi-alert'><strong>Please correct the last name</strong> - no special characters are allowed</div>"; ?>
+                        <label class="weight-normal validated-field">Surname <input type="text" class="lastnamefield"
+                                                                                    value="<?php echo $_SESSION['update_lastname']; ?>" name="lastname">
 				</label>
 				</div>
-				<div class="small-12 cell field">
-                    <label class="weight-normal">Email Address <input type="text" name="email" value="<?php echo $email; ?>">
+                    <div class="small-12 cell field">
+                    <?php if ($_SESSION['add_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                    else if ($_SESSION['add_bad_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
+                    else if ($_SESSION['add_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+                    <label class="weight-normal validated-field">Email Address <input type="text" class="emailfield"
+                                                                                      value="<?php echo $_SESSION['update_email']; ?>" name="email">
 					</label>
 				</div>
                 		<div class="row small-12 grid-padding-x">
                 		<div class="float-left" style="margin-left:25px; margin-top:12px;">
                         		<label class="eido-checkbox">
-                        		<input class="eido-checkbox user-checkbox1" type="checkbox" <?php if ($is_surgeon) echo "checked"; ?> name="is_surgeon" value="1">
+                        		<input class="eido-checkbox user-checkbox1" type="checkbox" <?php if ($_SESSION['update_gmc_number']) echo "checked"; ?> name="is_surgeon" value="1">
                         		<label class="weight-normal" for="checkbox1">Is a surgeon</label>
                         		<span class="checkmark"></span>
 					</label>
                 		</div>
                 		<div class="float-right" style="margin-top:12px">
                         		<label class="eido-checkbox">
-                        		<input class="eido-checkbox user-checkbox2" type="checkbox" name="is_admin" value="1" <?php if ($is_admin) echo "checked"; ?> >
+                        		<input class="eido-checkbox user-checkbox2" type="checkbox" name="is_admin" value="1" <?php if ($_SESSION['update_is_admin']) echo "checked"; ?> >
                         		<label class="weight-normal" for="checkbox2" style="padding-right:25px;">Is a system administrator</label>
                         		<span class="checkmark"</span>
                         		</label>
                 		</div>
                 		</div>
 
-				<div class="small-12 cell field">
-                    <label class="weight-normal">GMC Number <input type="text" name="gmc_number"
-						value="<?php echo $gmc_number; ?>">
+                    <div class="small-12 cell field">
+                        <?php if ($_SESSION['add_gmc_number_error']) echo "<div class='gmcval error_message fi-alert'><strong>Please enter the GMC Number</strong> - this is required for a surgeon</div>";
+                        else if ($_SESSION['add_gmc_number_format_error']) echo "<div class='gmcval error_message fi-alert'><strong>Please correct the GMC Number</strong> - no letters or special characters are allowed</div>";
+                        else if ($_SESSION['add_gmc_number_length_error']) echo "<div class='gmcval error_message fi-alert'><strong>Please correct the GMC Number</strong> - it should be 6 or 7 digits</div>";
+                        else if ($_SESSION['add_gmc_number_duplicate_error']) echo "<div class='gmcval error_message fi-alert'><strong>Please correct the GMC number</strong> - that GMC number already exists</div>"; ?>
+                        <label class="weight-normal validated-field">GMC Number <input type="text" class="gmcfield"
+                                                                                       value="<?php echo $_SESSION['update_gmc_number']; ?>" name="gmc_number">
 					</label>
 				</div>
 				<div class="small-12 cell field">&nbsp;</div>
 				<div class="small-12 cell field text-center">
-					<button type="submit" class="button large">Update user</button>
-					<br /> <br /> <a href="users.php?m=reset&id=<?php echo $user_id; ?>" class="button large inactive">Reset password</a><br /> <br /> <a href="users.php?m=delete&id=<?php echo $user_id; ?>" class="button large red">Delete user</a>
-				</div>
+					<button type="submit" class="button large">Update User</button>
+                </div>
 			</div>
 		</div>
 	</form>
-</div>
+            <div class="small-12 cell field text-center" style="margin-top: -25px;">
+                <br /> <br /> <a href="users.php?m=reset&id=<?php echo $user_id; ?>" class="button large inactive"><strong>Reset password</strong></a><br /> <br /> <a href="users.php?m=delete&id=<?php echo $user_id; ?>" class="button large red"><strong>Delete User</strong></a>
+            </div>
+        </div>
 <!-- END VIEW USER -->
 <!-- RESET USER PASSWORD SECTION -->
 <div class="small-12 medium-6 large-6 cell content-right <?php echo $reset_hide; ?>">
@@ -473,12 +511,14 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 </div>
 <!-- End DELETE USER SECTION -->
 <!-- BULK ADD/DELETE USER SECTION -->
+<?php if ($mode=="bulk") $bulk_msg=$_SESSION['bulk_msg']; unset($_SESSION['bulk_msg']); ?>
 <div class="small-12 medium-6 large-6 cell content-right <?php echo $bulk_hide; ?>">
       <div class="section-title">Bulk Edit Users</div>
                <form id="bulk_upload" name="bulk_upload" action="bulk_upload.php" method="post" enctype="multipart/form-data">
                 <div class="grid-container">
                         <div class="grid-x grid-padding-x">
                                 <div class="small-12 medium-12 large-12 cell text-center">
+                                      <?php if (strlen($bulk_msg)) echo "<p><strong>$bulk_msg</strong></p>"; ?>
                                         <p>To add or remove users from the system in bulk, you may use a CSV from your admin system</p>
                                 </div>
                                 <div class="small-12 medium-12 large-12 cell text-center">
@@ -577,16 +617,67 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 			$("[id^=performAction]").prop('checked', this.checked);    
 		});
 	});
-	$(document).ready(function(){	
-        	$("#adduser").on("click",function(){
-		$.get("clearsession.php");
-  		$("form div").removeClass("error_message");
-  		$("form label").removeClass("error_message");
-		$("form div").removeClass("fi-alert");
-		$("form label").removeClass("fi-alert");
-  		$("form")[0].reset();
-		});
-	});
+
+       // $("#emailval div").attr("class", "");
+
+
+        $(document).ready(function() {
+                            $(".firstnamefield").on("focus",function () {
+                                $(".firstnameval").removeClass("error_message");
+                                $(".firstnameval").removeClass("fi-alert");
+                                $(".firstnameval").hide();
+                            })
+                            $(".lastnamefield").on("focus",function () {
+                                $(".lastnameval").removeClass("error_message");
+                                $(".lastnameval").removeClass("fi-alert");
+                                $(".lastnameval").hide();
+                            })
+                            $(".emailfield").on("focus",function () {
+                                $(".emailval").removeClass("error_message");
+                                $(".emailval").removeClass("fi-alert");
+                                $(".emailval").hide();
+                            })
+                            $(".gmcfield").on("focus",function () {
+                                $(".gmcval").removeClass("error_message");
+                                $(".gmceval").removeClass("fi-alert");
+                                $(".gmcval").hide();
+            })
+            $("#addpt").on("click",function () {
+                $(".firstnameval").removeClass("error_message");
+                $(".firstnameval").removeClass("fi-alert");
+                $(".firstnameval").hide();
+                $(".lastnameval").removeClass("error_message");
+                $(".lastnameval").removeClass("fi-alert");
+                $(".lastnameval").hide();
+                $(".emailval").removeClass("error_message");
+                $(".emailval").removeClass("fi-alert");
+                $(".emailval").hide();
+                $(".gmcval").removeClass("error_message");
+                $(".gmceval").removeClass("fi-alert");
+                $(".gmcval").hide();
+            })
+
+        });
+	//$(document).ready(function(){
+     //   	$("#adduser").on("click",function(){
+	//	$.get("clearsession.php");
+  	//	$("form div").removeClass("error_message");
+  	//	$("form label").removeClass("error_message");
+	//	$("form div").removeClass("fi-alert");
+	//	$("form label").removeClass("fi-alert");
+  	//	$("form")[0].reset();
+	//	});
+	// });
+       // $(document).ready(function(){
+        //    $(".validated-field").on("focus",function(){
+
+           //     $(this).removeClass("error_message");
+         //       $(this).removeClass("error_message");
+           //     $(this).removeClass("fi-alert");
+          //      $(this).removeClass("fi-alert");
+
+         //   });
+      //  });
 
 
      </script>

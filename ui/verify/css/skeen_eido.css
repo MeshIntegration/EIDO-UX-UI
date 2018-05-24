@@ -3,13 +3,13 @@
 * Date: 4/24/2018
 **/
 .superuser .page-title {
-  background: #3DAE65;
+  background: #3dae65;
   color: #fff;
   text-transform: uppercase;
 }
 .superuser .navigation-bar,
 .superuser .menu.simple {
-  background: #3DAE65;
+  background: #3dae65;
 }
 .superuser .navigation-bar li,
 .superuser .menu.simple li,
@@ -23,12 +23,14 @@
   border-right-color: #fff;
 }
 .back-row {
-  background: #DDDDDD;
-  padding: 8px 0 8px 10px;
+  padding: 8px 0 8px 20px;
+}
+.back-row.back-row-head {
+  background: #dddddd;
 }
 .back-row a {
   font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
-  color: #0D2240;
+  color: #0d2240;
 }
 .back-row a i {
   top: 1px;
@@ -36,7 +38,7 @@
   color: #ababab;
 }
 .page-title {
-  border-bottom: solid #E3DDDF 1px;
+  border-bottom: solid #e3dddf 1px;
 }
 .tab-actions {
   border: none;
@@ -50,18 +52,10 @@
   padding: 10px !important;
   background: #ddd;
 }
-.btn a {
-  font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
-  color: #0D2240;
-}
-.btn-actions a {
-  font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
-  color: #0D2240;
-}
 .btn-actions i {
   position: relative;
   top: -1px;
-  font-size: 20px;
+  font-size: 19px;
   color: #ababab;
   display: inline-block;
   vertical-align: text-top;
@@ -69,7 +63,7 @@
 .btn-actions:hover,
 .btn-actions:active,
 .btn-actions:focus {
-  background: #0D2240;
+  background: #0d2240;
   color: #fff;
 }
 .column-first {
@@ -100,11 +94,11 @@ override shit tab
 .tabs-title a:hover,
 .tabs-title a:active,
 .tabs-title a:focus {
-  background: #0D2240;
+  background: #0d2240;
   color: #fff;
 }
 .tabs-title.is-active a {
-  color: #0D2240;
+  color: #0d2240;
   background: #ddd;
 }
 .tabs-content {
@@ -120,7 +114,7 @@ div.sort:first-of-type {
 .datepicker td span.active,
 .datepicker td.active.day,
 .datepicker td.active.year {
-  background: #3DAE65 !important;
+  background: #3dae65 !important;
   color: #fff;
   border-radius: 50%;
 }
@@ -130,7 +124,7 @@ div.sort:first-of-type {
 .datepicker-days tbody,
 .datepicker td,
 .datepicker th {
-  background: #F7F5F5;
+  background: #f7f5f5;
 }
 .datepicker.dropdown-menu {
   border-radius: 0;
@@ -142,10 +136,11 @@ div.sort:first-of-type {
   border-style: solid;
   border-width: 0 16px 16px 16px;
   border-color: transparent transparent #979797 transparent;
-  content: '';
+  content: ' ';
   top: -16px;
   left: 10px;
   position: absolute;
+  z-index: 99999;
 }
 .datepicker.dropdown-menu:after {
   width: 0;
@@ -153,10 +148,11 @@ div.sort:first-of-type {
   border-style: solid;
   border-width: 0 15px 16px 15px;
   border-color: transparent transparent #f7f5f5 transparent;
-  content: '';
+  content: ' ';
   top: -15px;
   left: 11px;
   position: absolute;
+  z-index: 99999;
 }
 .ui-sortable-handle span.not-allow-move {
   text-overflow: ellipsis;
@@ -165,4 +161,275 @@ div.sort:first-of-type {
 .pagination li {
   border-radius: 0 !important;
 }
-/*# sourceMappingURL=skeen_eido.css.map */
+.patient-list p > span {
+  line-height: 1.2;
+}
+.input-group-field {
+  padding: 0.78em !important;
+}
+h4.vertical-middle {
+  position: relative;
+  top: 3px;
+}
+.btn-pre {
+  padding: 8px 30px;
+}
+.btn-header.type {
+  text-indent: 6px;
+}
+.padding-right-column {
+  padding: 0 0.825rem;
+}
+.padding-right-column .standard-hr {
+  margin: 0 -0.825rem;
+}
+.standard-hr {
+  border-bottom: 1px solid #d3d1d1;
+  padding: 0;
+  line-height: 1px;
+  background: transparent !important;
+}
+.standard-padding {
+  padding: 0 20px;
+}
+.link-standard-color {
+  color: #3dae65 !important;
+  text-decoration: underline !important;
+}
+.link-standard-color:focus,
+.link-standard-color:hover,
+.link-standard-color:active {
+  text-decoration: none !important;
+}
+.link-active {
+  color: #0d2240 !important;
+  text-decoration: none !important;
+}
+.standard-weight {
+  font-weight: normal;
+}
+.standard-border-bottom {
+  border-bottom: 1px solid #D3D1D1;
+}
+.link-full-block {
+  display: block;
+  text-decoration: none !important;
+  line-height: 1.4em;
+  font-size: 14px;
+}
+.link-full-block:hover,
+.link-full-block:focus,
+.link-full-block:active {
+  background: #F7F5F5;
+  color: #333;
+}
+.link-full-block p {
+  line-height: 1.4em;
+  font-size: 14px;
+}
+.org-logo {
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.org-logo img {
+  background: #f5f5f5;
+  border: 1px solid #797979;
+}
+.org-logo .button {
+  margin-top: 30px;
+}
+.btn-block {
+  width: 100%;
+  display: block;
+}
+.grid-padding-15 {
+  padding: 15px 0;
+}
+.eido-radio {
+  display: inline;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 8px 15px;
+  margin-right: 5px;
+  background-color: #e4e4e4;
+}
+.eido-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.eido-radio input:checked ~ .checkmark {
+  display: block;
+}
+.eido-radio input:checked ~ .text {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+.eido-radio .checkmark {
+  position: absolute;
+  padding: 5px 10px;
+  background-color: #c9c9c9;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: none;
+}
+/** timeline stuff */
+.patientcontent .timeline::before {
+  display: none !important;
+}
+.timeline-wrapper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.timeline-wrapper:before {
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 13px;
+  margin-left: 0;
+  background: #ccc;
+}
+.timeline-right .timeline-icon,
+.timeline-right .timeline-icon-cs,
+.timeline-right .timeline-icon-green {
+  top: 50% !important;
+  margin-top: -11px !important;
+}
+.timeline a:hover {
+  box-shadow: none !important;
+}
+/** similiar to .patient-list */
+.patient-data {
+  position: relative;
+}
+.patient-data p {
+  margin-bottom: 0;
+}
+.patient-data .right-arrow {
+  right: 15px;
+  top: 42%;
+  position: absolute;
+  margin-right: 5px;
+}
+.patient-data .right-arrow i {
+  font-size: 16px;
+  color: #a1a1a1;
+}
+.patient-data .link-full-block,
+.patient-data > div {
+  padding-top: 0.825rem;
+  padding-bottom: 0.825rem;
+}
+.notification-bell {
+  margin: 0px -20px;
+  padding: 25px 0;
+  background: #e4e4e4;
+}
+.notification-bell .icon {
+  font-size: 110px;
+  margin-bottom: 8px;
+}
+.notification-bell .icon i {
+  display: inline-block;
+  transform: rotate(-15deg);
+  color: #bcbcbc;
+}
+.eido-block-radio {
+  display: block;
+  position: relative;
+  background: #F2F2F2;
+  margin-bottom: 5px;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.eido-block-radio .entry {
+  display: block;
+  padding-left: 30px;
+}
+.eido-block-radio .separator {
+  display: inline-block;
+  border-left: 1px solid #C9C9C9;
+  margin-left: 10px;
+  padding-left: 25px;
+}
+.eido-block-radio:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 12px;
+  background: #3dae65;
+}
+.eido-block-radio.active {
+  background: #E4E4E4;
+}
+.eido-block-radio.active:before {
+  background: #66CCFF;
+}
+.eido-block-radio.dim:before {
+  background: #D7D7D7;
+}
+.eido-block-radio input[type='text'] {
+  border: none !important;
+  height: 24px;
+}
+.eido-simple-radio {
+  display: block;
+  position: relative;
+  top: 2px;
+  left: -25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.eido-simple-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.eido-simple-radio input:checked ~ .checkmark {
+  background: #3dae65;
+}
+.eido-simple-radio input:checked ~ .checkmark:after {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 8px;
+  height: 12px;
+  border: solid #eee;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.eido-simple-radio .checkmark {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #3dae65;
+  margin: 0;
+}
+p.small {
+  font-size: 12px;
+}

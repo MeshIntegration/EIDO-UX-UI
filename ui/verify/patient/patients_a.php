@@ -72,12 +72,12 @@ else if ($mode=="add")
    // required field check
    if ($fname=="")
       $_SESSION['add_fname_error']=true; else $_SESSION['add_fname_error']=false;
-   if (!preg_match("/^[a-zA-Z]*$/",$fname))
+   if (!preg_match("/^[a-zA-Z- ']*$/",$fname))
       $_SESSION['add_fname_format_error']=true; else $_SESSION['add_fname_format_error']=false;
 
    if ($lname=="")
       $_SESSION['add_lname_error']=true; else $_SESSION['add_lname_error']=false;
-   if (!preg_match("/^[a-zA-Z]*$/",$lname))
+   if (!preg_match("/^[a-zA-Z- ']*$/",$lname))
       $_SESSION['add_lname_format_error']=true; else $_SESSION['add_lname_format_error']=false;
 
    if ($nhsnumber=="")
@@ -234,6 +234,7 @@ else if ($mode=="addconfirm")
                c_preferredContactMethod='$preferred',
                c_status='PENDING',
                c_acceptedTC='NO',
+               c_hasAlert=' ',
                dateModified=NOW(),
                dateCreated=NOW()";
    dbi_query($sql);
@@ -334,18 +335,37 @@ logMsg("Update TL: $sql", $logfile);
 
    $arr_pt_info=get_pt_info($id);
    // send mail to the patient 
-   $body_template = "<FIRSTNAME>,<br /><br />
-We have reviewed your information in our system and made the appropriate corrections. You will be receiving another email inviting you to log in and use the EIDO Verify system.<br /><br />";
+   include "../includes/inc_email_template.php";
 
+   // need a button - include it into template
+   include "../includes/inc_email_button.php";
+   $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
+
+   $email_template = str_replace("**FIRSTNAME**", $arr_pt_info['c_firstName'], $email_template);
+   $email_template = str_replace("**HEADER**", "Account Review", $email_template);
+
+   // CONTENT1 is the preview text
+   $content1 = "We're sorry you had problems accessing the system. A member of staff has reviewed your information and reset your account. Please try again and if you have any more issues just get in touch with your medical team.";
+   $email_template = str_replace("**CONTENT1**", $content1, $email_template);
+
+   // CONTENT2 is the actual message
+   $content2 = "We're sorry you had problems accessing the system. A member of staff has reviewed your information and reset your account. Please try again and if you have any more issues just get in touch with your medical team.";
+   $email_template = str_replace("**CONTENT2**", $content2, $email_template);
+
+   // set up the button
+   $button_text = "Get Started";
+   $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
+   $button_url = $SITE_URL."val/validation.php?patientEpisodeId=$id&moreReminders=true";
+   $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
+   
    $arr_email = array();
-   $arr_email['mail_to']=$arr_pt_info['c_email'];
+   $arr_email['mail_to']=$arr_pt_info['c_emailAddress'];
    $arr_email['mail_to_name']=$arr_pt_info['c_firstName']." ". $arr_pt_info['c_lastName'];
    $arr_email['bcc']="wayne@mindstreams.com";
    $arr_email['mail_from']=$verify_mail_from;
    $arr_email['mail_from_name']=$verify_mail_from_name;
    $arr_email['subject']="EIDO Verify Account Review";
-   $body_template = str_replace("<FIRSTNAME>", $arr_pt_info['c_firstName'], $body_template);
-   $arr_email['body']=$body_template;
+   $arr_email['body']=$email_template;
 
    send_email($arr_email);
   
@@ -604,6 +624,7 @@ else if ($mode=="proccomplete" || $mode=="proccancel")
       $c_procedureStatus = "POST";
       $value="Proceed";
       add_to_timeline($id, "Mark Procedure Complete", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
+      add_to_timeline($id, "PROCEDURE COMPLETE", "Open", "Event", $browser, $ip_address, "Patient Dashboard");
    }
    else
    {

@@ -309,6 +309,19 @@ else if ($mode=="adddiv" || $mode=="addcust")
    header("Location: organisations.php?m=listdivs&id=$org_id");
    exit(); 
 }
+
+if($mode == "removelogo") {
+	$target_file_path = $ABS_PATH."img/org_logos/";
+	// get the current logo address
+	$sql = "SELECT * FROM $TBLORGANISATIONS WHERE id='$id'";
+	$GetQuery=dbi_query($sql);
+	$qryResult=$GetQuery->fetch_assoc();
+	unlink($target_file_path."{$qryResult['c_logo']}");
+
+	//update
+    dbi_query("UPDATE $TBLORGANISATIONS SET c_logo = NULL WHERE id='$id'");
+
+}
 header("Location: organisations.php");
 exit();
 ?>

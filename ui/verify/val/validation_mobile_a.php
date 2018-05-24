@@ -15,7 +15,8 @@ $tc=get_query_string('tc'); // accepted terms and conditions
 $mobile=$_POST['mobile'];
 $email=$_POST['email'];
 $preferred=$_POST['preferred'];
-logMsg("mobile: $mobile  email: $email Preferred: $preferred",$logfile);
+$preferenceset=$_POST['preferenceset'];
+logMsg("mobile: $mobile  email: $email Preferred: $preferred PreferenceSet: $preferenceset",$logfile);
 
 if ($preferred=="MOBILE" && $mobile=="") {
    $_SESSION['error_msg']="NO_MOBILE";
@@ -29,11 +30,13 @@ if ($preferred=="EMAIL" && $email=="") {
 }
 
 // save the entered data 
-save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $mobile, $preferred, $email);
+save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $mobile, $preferred, $email, $preferenceset);
 
 // WE HAVE LIFT OFF
 // take them to the correct survey
 $goto_url = get_survey_url($arr_pt_info);
+$_SESSION = array();
+session_destroy();
 header ("Location: $goto_url");
 exit();
 ?>

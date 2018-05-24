@@ -1,0 +1,268 @@
+@font-face {
+  font-family: 'eido';
+  src:  url('fonts/eido.eot?2q7orh');
+  src:  url('fonts/eido.eot?2q7orh#iefix') format('embedded-opentype'),
+    url('fonts/eido.ttf?2q7orh') format('truetype'),
+    url('fonts/eido.woff?2q7orh') format('woff'),
+    url('fonts/eido.svg?2q7orh#eido') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'eido' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.eido-icon-plus3:before {
+  content: "\f067";
+}
+.eido-icon-minus2:before {
+  content: "\f068";
+}
+.eido-icon-check:before {
+  content: "\f00c";
+}
+.eido-icon-close:before {
+  content: "\f00d";
+}
+.eido-icon-remove2:before {
+  content: "\f00d";
+}
+.eido-icon-times:before {
+  content: "\f00d";
+}
+.eido-icon-power-off:before {
+  content: "\f011";
+}
+.eido-icon-cog2:before {
+  content: "\f013";
+}
+.eido-icon-gear:before {
+  content: "\f013";
+}
+.eido-icon-tag:before {
+  content: "\f02b";
+}
+.eido-icon-tags:before {
+  content: "\f02c";
+}
+.eido-icon-plus-circle:before {
+  content: "\f055";
+}
+.eido-icon-minus-circle:before {
+  content: "\f056";
+}
+.eido-icon-chevron-circle-left:before {
+  content: "\f137";
+}
+.eido-icon-chevron-circle-right:before {
+  content: "\f138";
+}
+.eido-icon-female:before {
+  content: "\f182";
+}
+.eido-icon-male:before {
+  content: "\f183";
+}
+.eido-icon-plus-alt:before {
+  content: "\e906";
+}
+.eido-icon-minus-alt:before {
+  content: "\e907";
+}
+.eido-icon-move-vertical:before {
+  content: "\e908";
+}
+.eido-icon-user:before {
+  content: "\e909";
+}
+.eido-icon-map-pin-alt:before {
+  content: "\e90a";
+}
+.eido-icon-office:before {
+  content: "\e904";
+}
+.eido-icon-pencil:before {
+  content: "\e905";
+}
+.eido-icon-envelop:before {
+  content: "\e945";
+}
+.eido-icon-location:before {
+  content: "\e947";
+}
+.eido-icon-location2:before {
+  content: "\e948";
+}
+.eido-icon-clock:before {
+  content: "\e94e";
+}
+.eido-icon-clock2:before {
+  content: "\e94f";
+}
+.eido-icon-bell:before {
+  content: "\e951";
+}
+.eido-icon-calendar:before {
+  content: "\e953";
+}
+.eido-icon-printer:before {
+  content: "\e954";
+}
+.eido-icon-mobile:before {
+  content: "\e958";
+}
+.eido-icon-mobile2:before {
+  content: "\e959";
+}
+.eido-icon-user-plus:before {
+  content: "\e973";
+}
+.eido-icon-search:before {
+  content: "\e986";
+}
+.eido-icon-cog:before {
+  content: "\e994";
+}
+.eido-icon-bin:before {
+  content: "\e9ac";
+}
+.eido-icon-bin2:before {
+  content: "\e9ad";
+}
+.eido-icon-switch:before {
+  content: "\e9b6";
+}
+.eido-icon-menu2:before {
+  content: "\e9be";
+}
+.eido-icon-cloud-download:before {
+  content: "\e9c2";
+}
+.eido-icon-download2:before {
+  content: "\e9c5";
+}
+.eido-icon-download3:before {
+  content: "\e9c7";
+}
+.eido-icon-bookmark:before {
+  content: "\e9d2";
+}
+.eido-icon-bookmarks:before {
+  content: "\e9d3";
+}
+.eido-icon-man:before {
+  content: "\e9dc";
+}
+.eido-icon-woman:before {
+  content: "\e9dd";
+}
+.eido-icon-man-woman:before {
+  content: "\e9de";
+}
+.eido-icon-plus:before {
+  content: "\ea0a";
+}
+.eido-icon-minus:before {
+  content: "\ea0b";
+}
+.eido-icon-blocked:before {
+  content: "\ea0e";
+}
+.eido-icon-cross:before {
+  content: "\ea0f";
+}
+.eido-icon-checkmark:before {
+  content: "\ea10";
+}
+.eido-icon-checkmark2:before {
+  content: "\ea11";
+}
+.eido-icon-circle-up:before {
+  content: "\ea41";
+}
+.eido-icon-circle-right:before {
+  content: "\ea42";
+}
+.eido-icon-circle-down:before {
+  content: "\ea43";
+}
+.eido-icon-circle-left:before {
+  content: "\ea44";
+}
+.eido-icon-sort-alpha-asc:before {
+  content: "\ea48";
+}
+.eido-icon-sort-alpha-desc:before {
+  content: "\ea49";
+}
+.eido-icon-sort-numeric-asc:before {
+  content: "\ea4a";
+}
+.eido-icon-sort-numberic-desc:before {
+  content: "\ea4b";
+}
+.eido-icon-sort-amount-asc:before {
+  content: "\ea4c";
+}
+.eido-icon-sort-amount-desc:before {
+  content: "\ea4d";
+}
+.eido-icon-checkbox-checked:before {
+  content: "\ea52";
+}
+.eido-icon-checkbox-unchecked:before {
+  content: "\ea53";
+}
+.eido-icon-radio-checked:before {
+  content: "\ea54";
+}
+.eido-icon-radio-checked2:before {
+  content: "\ea55";
+}
+.eido-icon-radio-unchecked:before {
+  content: "\ea56";
+}
+.eido-icon-insert-template:before {
+  content: "\ea72";
+}
+.eido-icon-mail:before {
+  content: "\ea83";
+}
+.eido-icon-mail2:before {
+  content: "\ea84";
+}
+.eido-icon-mail3:before {
+  content: "\ea85";
+}
+.eido-icon-mail4:before {
+  content: "\ea86";
+}
+.eido-icon-file-pdf:before {
+  content: "\eadf";
+}
+.eido-icon-plus2:before {
+  content: "\e900";
+}
+.eido-icon-remove:before {
+  content: "\e901";
+}
+
+.eido-icon-bell-o3:before {
+  content: "\f0a5";
+}
+
+.eido-icon-chevron:before {
+  content: "\e903";
+}

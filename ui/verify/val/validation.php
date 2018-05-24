@@ -3,16 +3,18 @@
 require_once '../utilities.php';
 session_start();
 
+// initialize
+$_SESSION = array();
+$_SESSION['hard_fail']=false;
+
 $patientEpisodeId = get_query_string('patientEpisodeId');
 $moreReminders = get_query_string('moreReminders');
 $dev = get_query_string('dev');
 
 $arr_pt_info = get_pt_info($patientEpisodeId);
-if ($arr_pt_info['c_surname']<>"ERROR")
-{
+if ($arr_pt_info['c_surname']<>"ERROR") {
    $browser = $_SERVER['HTTP_USER_AGENT'];
-   if (strpos(strtolower($browser), "bit.ly"))
-   {
+   if (strpos(strtolower($browser), "bit.ly")) {
       logMsg("Validation: bitlybot detected", $logfile);
       exit();
    }
@@ -25,16 +27,13 @@ if ($arr_pt_info['c_surname']<>"ERROR")
    $_SESSION['dev'] = $dev;
    logMsg("validation: DB pw: ".$arr_pt_info['c_password'],"validation.log");
    logMsg("validation: Session login_failed: ".$_SESSION['login_failed'], "validation.log");
-   if ($arr_pt_info['c_password']<>"" && !isset($_SESSION['login_failed']))
-   {
+   if ($arr_pt_info['c_password']<>"" && !isset($_SESSION['login_failed'])) {
       logMsg("Going to Pt Login...",$logfile);
       $_SESSION['pe_id']=$patientEpisodeId;
       header("Location:login.php");
       exit();
    }
-}
-else
-{
+} else {
    logMsg("Validation: got a bad PatientEpisondeId in the URL: $patientEpisodeId", $logfile);
    ; // got a bad PatientEpisondeId in the URL - how to notify and who?
 }
@@ -69,12 +68,18 @@ else
 		    <h1>Hello <?php echo $arr_pt_info['c_firstName']; ?>,</h1>
 			<p>To help us check your identity, please enter your surname and address below.</p>
 			<p>&nbsp;</p>
+                        <?php if ($_SESSION['surname_error']) { ?>
+                              <div class='error_message fi-alert'><strong>Please enter your Surname</strong> - this is required</div>
+                        <?php } ?>
 			<label>Surname
 			  <div class="input-group">
                 <span class="input-group-label"><i class="fi-torso"></i></span>
                 <input class="input-group-field" type="text" name="c_surname" placeholder="Enter your surname">
               </div>
 			</label>
+                        <?php if ($_SESSION['postalcode_error']) { ?>
+                              <div class='error_message fi-alert'><strong>Please enter your Postcode</strong> - this is required</div>
+                        <?php } ?>
 			<label>Postcode
 			  <div class="input-group login">
                 <span class="input-group-label"><i class="fi-marker"></i></span>

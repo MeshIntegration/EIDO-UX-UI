@@ -87,18 +87,21 @@ save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entere
 
 if ($new_error_ct==2)
 {
-   logMsg("validation_review_a: SOFT FAIL logged", $logfile);
-   add_to_timeline($arr_pt_info['id'], "Patient validation error (soft fail)", "Open", "Alert", 
-                   $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
+   // logMsg("validation_review_a: SOFT FAIL logged", $logfile);
+   // add_to_timeline($arr_pt_info['id'], "Patient validation error (soft fail)", "Open", "Alert", 
+   //                 $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
    header("Location: validation_review.php");
    exit();
 }
 
 if ($new_error_ct>=3)
 {
-   logMsg("validation_review_a: HARD FAIL logged", $logfile);
-   add_to_timeline($arr_pt_info['id'], "Patient validation error (hard fail)", "Open", "Alert", 
-                   $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
+   if (!$_SESSION['hard_fail']) {
+      logMsg("validation_review_a: HARD FAIL logged", $logfile);
+      add_to_timeline($arr_pt_info['id'], "Patient validation error (hard fail)", "Open", "Event", 
+                      $browser, $ip_address, "Validation", $arr_pt_info['c_currentSessionNumber']);
+      $_SESSION['hard_fail']=true;
+   }
    header("Location: validation_review.php");
    exit();
 }

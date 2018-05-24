@@ -20,7 +20,7 @@
 .timeline-right table.su-table td.tlbdr { border-bottom:1px solid #d3d1d1; padding-bottom:15px; padding-top:15px; }
 
 .timeline::before {
-  background: #cdcdcd;
+  /*background: #cdcdcd;*/
   content: '';
   height:85%;
   left: 5%;
@@ -40,13 +40,15 @@
 
 .timeline a {
   color: #0d2240;
-  font-weight: bold;
+  font-weight: normal;
   transition: all 0.25s ease-in;
 }
 
 .timeline a:hover {
   box-shadow: 0 1px 0px 0px #000000;
-  transition: all 0.25s ease-in;
+
+  color:##3dae65 !important;
+
 }
 
 .timeline .timeline-item {

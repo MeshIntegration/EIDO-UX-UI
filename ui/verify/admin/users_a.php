@@ -10,22 +10,35 @@ session_start();
 $logfile = "admin.log";
 $mode = get_query_string('m');
 $id = get_query_string('id');
+
+
 logMsg("Users_a: mode: $mode - ID: $id",$logfile);
 
 if ($mode=="delete")
 {
-   $sql = "UPDATE dir_user
-           SET active=0,
-           c_dateModified=NOW()
-           WHERE id='$id'";
-   dbi_query($sql);
- /*  $sql = "DELETE FROM dir_user_role WHERE userId='$id'";
-   dbi_query($sql);
-   $sql = "DELETE FROM dir_user_group WHERE userId='$id'";
-   dbi_query($sql);
-   $sql = "DELETE FROM $TBLSURGEONS WHERE c_userId='$id'";
-   dbi_query($sql);
- */
+
+    $sql = "DELETE FROM dir_user_group 
+            WHERE userid='$id'";
+    dbi_query($sql);
+    $sql = "DELETE FROM dir_user_role 
+            WHERE userid='$id'";
+    dbi_query($sql);
+    $sql = "DELETE FROM dir_user 
+            WHERE id='$id'";
+    dbi_query($sql);
+    $sql = "DELETE FROM $TBLSURGEONS 
+            WHERE c_userId='$id'";
+    dbi_query($sql);
+
+    logMsg("DELETE: $sql",$logfile);
+
+    /*  $sql = "DELETE FROM dir_user_role WHERE userId='$id'";
+      dbi_query($sql);
+      $sql = "DELETE FROM dir_user_group WHERE userId='$id'";
+      dbi_query($sql);
+      $sql = "DELETE FROM $TBLSURGEONS WHERE c_userId='$id'";
+      dbi_query($sql);
+    */
 }
 if ($mode=="reset") {
    $sql = "UPDATE dir_user
@@ -44,11 +57,11 @@ if ($mode=="add") {
    //  check for required fields and formats here
    if ($firstname=="")
       $_SESSION['add_firstname_error']=true; else $_SESSION['add_firstname_error']=false;
-   if (!preg_match("/^[a-zA-Z]*$/",$firstname))
+   if (!preg_match("/^[a-zA-Z' -]*$/",$firstname))
       $_SESSION['add_firstname_format_error']=true; else $_SESSION['add_firstname_format_error']=false;
    if ($lastname=="")
       $_SESSION['add_lastname_error']=true; else $_SESSION['add_lastname_error']=false;
-   if (!preg_match("/^[a-zA-Z]*$/",$lastname))
+   if (!preg_match("/^[a-zA-Z' -]*$/",$lastname))
       $_SESSION['add_lastname_format_error']=true; else $_SESSION['add_lastname_format_error']=false;
    if ($email=="")
       $_SESSION['add_email_error']=true; else $_SESSION['add_email_error']=false;
@@ -78,12 +91,12 @@ if ($mode=="add") {
        $_SESSION['add_gmc_number_format_error'] || $_SESSION['add_gmc_number_length_error'] ||
        $_SESSION['add_gmc_number_duplicate_error'])
    {
-      $_SESSION['add_ufirstname']=$firstname;
-      $_SESSION['add_ulastname']=$lastname;
-      $_SESSION['add_uemail']=$email;
-      $_SESSION['add_ugmc_number']=$gmc_number;
-      $_SESSION['add_uis_surgeon']=$is_surgeon;
-      $_SESSION['add_uis_admin']=$is_admin;
+      $_SESSION['add_afirstname']=$firstname;
+      $_SESSION['add_alastname']=$lastname;
+      $_SESSION['add_aemail']=$email;
+      $_SESSION['add_agmc_number']=$gmc_number;
+      $_SESSION['add_ais_surgeon']=$is_surgeon;
+      $_SESSION['add_ais_admin']=$is_admin;
       header("Location: users.php?m=add");
       exit();
    }
@@ -136,29 +149,46 @@ if ($mode=="add") {
    dbi_query($sql);
    logMsg($sql,$logfile);
    // Group
-   if ($is_admin=="1")
-      $group_str="sitedivadmins";
-   else
-      $group_str="staff";
+   if ($is_admin=="1") {
+       $group_str = "sitedivadmins";
+   }
+   if ($is_admin<>"1") {
+       $group_str = "staff";
+   }
    $sql = "INSERT INTO dir_user_group
            SET groupId='$group_str',
                username='$email',
                userId='$admin_user_id'";
    dbi_query($sql);
    logMsg($sql,$logfile);
-   unset($_SESSION['add_ufirstname']);
-   unset($_SESSION['add_ulastname']);
-   unset($_SESSION['add_uemail']);
-   unset($_SESSION['add_ugmc_number']);
-   unset($_SESSION['add_uis_surgeon']);
-   unset($_SESSION['add_uis_admin']);
 
-   //  send mail to the new user
-   $body_template = "<FIRSTNAME>,<br /><br />
-We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
-Username: <EMAIL><br />
-Password: <PASSWORD><br /><br />
-<a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
+   // send mail to the new user
+   include "../includes/inc_email_template.php";
+
+   // need a button - include it into template
+   include "../includes/inc_email_button.php";
+   $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
+
+   $email_template = str_replace("**FIRSTNAME**", $firstname, $email_template);
+   $email_template = str_replace("**HEADER**", "Welcome", $email_template);
+
+   $content1 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
+         Username: $email<br />
+         Password: $password<br /><br />
+         <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
+         $email_template = str_replace("**CONTENT1**", $content1, $email_template);
+
+   $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
+         <p>Username: $email<br />
+         Password: $password</p>
+         <p>Click the button below to log into the EIDO Verify systemi</p>";
+         $email_template = str_replace("**CONTENT2**", $content2, $email_template);
+
+   // set up the button
+   $button_text = "Get Started";
+   $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
+   $button_url = "https://verify.eidosystems.com";
+   $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
  
    $arr_email = array();
    $arr_email['mail_to']=$email;
@@ -167,46 +197,93 @@ Password: <PASSWORD><br /><br />
    $arr_email['mail_from']=$verify_mail_from;
    $arr_email['mail_from_name']=$verify_mail_from_name;
    $arr_email['subject']="EIDO Verify Account Information";
-   $body_template = str_replace("<FIRSTNAME>", $firstname, $body_template);
-   $body_template = str_replace("<EMAIL>", $email, $body_template);
-   $body_template = str_replace("<PASSWORD>", $password, $body_template);
-   $arr_email['body']=$body_template;
+   $arr_email['body']=$email_template;
 
    send_email($arr_email);
+   header("Location: users.php?m=update&id=$admin_user_id");
+   exit();
 }
 
-if ($mode=="gotoaddpt") {
-   session_start();
-   session_destroy();
+if ($mode=="gotoadd") {
+    $_SESSION['add_firstname_error']=false;
+    $_SESSION['add_firstname_format_error']=false;
+    $_SESSION['add_lastname_error']=false;
+    $_SESSION['add_lastname_format_error']=false;
+    $_SESSION['add_bad_email_error']=false;
+    $_SESSION['add_email_error']=false;
+    $_SESSION['add_email_duplicate_error']=false;
+    $_SESSION['add_gmc_number_error']=false;
+    $_SESSION['add_gmc_number_format_error']=false;
+    $_SESSION['add_gmc_number_length_error']=false;
+    $_SESSION['add_gmc_number_duplicate_error']=false;
+    unset($_SESSION['add_afirstname']);
+    unset($_SESSION['add_alastname']);
+    unset($_SESSION['add_aemail']);
+    unset($_SESSION['add_agmc_number']);
+    unset($_SESSION['add_ais_surgeon']);
+    unset($_SESSION['add_ais_admin']);
    header("Location: users.php?m=add");
    exit();
 }
 if ($mode=="gotoupdate") {
-   session_start();
-   session_destroy();
-   header("Location: users.php?m=update&id=$id");
-   exit();
+    $_SESSION['add_firstname_error']=false;
+    $_SESSION['add_firstname_format_error']=false;
+    $_SESSION['add_lastname_error']=false;
+    $_SESSION['add_lastname_format_error']=false;
+    $_SESSION['add_bad_email_error']=false;
+    $_SESSION['add_email_error']=false;
+    $_SESSION['add_email_duplicate_error']=false;
+    $_SESSION['add_gmc_number_error']=false;
+    $_SESSION['add_gmc_number_format_error']=false;
+    $_SESSION['add_gmc_number_length_error']=false;
+    $_SESSION['add_gmc_number_duplicate_error']=false;
+
+ //  header("Location: users.php?m=update&id=$id");
+ //  exit();
+//}
+//if ($mode="view") {
+
+        $_SESSION['update_firstname'] = $firstName;
+
+        $_SESSION['update_lastname'] = $lastName;
+
+        $_SESSION['update_email'] = $email;
+
+        $_SESSION['update_gmc_number'] = $gmc_number;
+
+        $_SESSION['update_is_surgeon'] = $is_surgeon;
+
+        $_SESSION['update_is_admin'] = $is_admin;
+
+    header("Location: users.php?m=update&id=$id");
+    exit();
+
 }
 if ($mode=="update") {
+
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $is_surgeon = $_POST['is_surgeon'];
     $is_admin = $_POST['is_admin'];
     $gmc_number = $_POST['gmc_number'];
+    $user_id = $id;
+
     //  check for required fields and formats here
     if ($firstname=="")
         $_SESSION['add_firstname_error']=true; else $_SESSION['add_firstname_error']=false;
-    if (!preg_match("/^[a-zA-Z]*$/",$firstname))
+    if (!preg_match("/^[a-zA-Z' -]*$/",$firstname))
         $_SESSION['add_firstname_format_error']=true; else $_SESSION['add_firstname_format_error']=false;
     if ($lastname=="")
         $_SESSION['add_lastname_error']=true; else $_SESSION['add_lastname_error']=false;
-    if (!preg_match("/^[a-zA-Z]*$/",$lastname))
+    if (!preg_match("/^[a-zA-Z' -]*$/",$lastname))
         $_SESSION['add_lastname_format_error']=true; else $_SESSION['add_lastname_format_error']=false;
     if ($email=="")
         $_SESSION['add_email_error']=true; else $_SESSION['add_email_error']=false;
     if ($email<>"" && !filter_var($email, FILTER_VALIDATE_EMAIL))
         $_SESSION['add_bad_email_error']=true; else $_SESSION['add_bad_email_error']=false;
+    if (!is_email_unique($email, $id))
+        $_SESSION['add_email_duplicate_error']=true; else $_SESSION['add_email_duplicate_error']=false;
     if ($is_surgeon=="1")
     {
         if ($gmc_number=="")
@@ -224,29 +301,36 @@ if ($mode=="update") {
         $_SESSION['add_gmc_number_duplicate_error']=false;
     }
     if ($_SESSION['add_firstname_error'] || $_SESSION['add_lastname_error'] || $_SESSION['add_gmc_number_error'] ||
-        $_SESSION['add_bad_email_error'] || $_SESSION['add_email_error'] ||
+        $_SESSION['add_bad_email_error'] || $_SESSION['add_email_error'] || $_SESSION['add_email_duplicate_error'] ||
         $_SESSION['add_firstname_format_error'] || $_SESSION['add_lastname_format_error'] ||
         $_SESSION['add_gmc_number_format_error'] || $_SESSION['add_gmc_number_length_error'] ||
         $_SESSION['add_gmc_number_duplicate_error'])
+    {
+        $_SESSION['update_firstname']= $firstname;
+        $_SESSION['update_lastname']= $lastname;
+        $_SESSION['update_email']= $email;
+        $_SESSION['update_gmc_number']= $gmc_number;
+        $_SESSION['update_is_surgeon']= $is_surgeon;
+        $_SESSION['update_is_admin']= $is_admin;
 
-
-   {
-       $_SESSION['add_ufirstname']=$firstname;
-       $_SESSION['add_ulastname']=$lastname;
-       $_SESSION['add_uemail']=$email;
-       $_SESSION['add_ugmc_number']=$gmc_number;
-       $_SESSION['add_uis_surgeon']=$is_surgeon;
-       $_SESSION['add_uis_admin']=$is_admin;
-       header("Location: users.php?m=update&id=$id");
-       exit();
+        header("Location: users.php?m=view&id=$user_id");
+        exit();
    }
 
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $is_surgeon = $_POST['is_surgeon'];
-    $is_admin = $_POST['is_admin'];
-    $gmc_number = $_POST['gmc_number'];
+
+    // delete records from user_group user_role surgeons table
+    // and then recreate
+    $sql = "DELETE FROM dir_user_group 
+           WHERE userid='$id'";
+    dbi_query($sql);
+    $sql = "DELETE FROM dir_user_role 
+           WHERE userid='$id'";
+    dbi_query($sql);
+    $sql = "DELETE FROM $TBLSURGEONS 
+           WHERE id='$id'";
+    dbi_query($sql);
+
+
     // UPDATE User
     $sql = "UPDATE dir_user
            SET firstName=".escapeQuote($firstname).",
@@ -254,64 +338,54 @@ if ($mode=="update") {
                email=".escapeQuote($email).",
                active=1,
                timeZone='0',
-               id='$id',
                username='$email',
                isSurgeon='$is_surgeon',
                gmc_number='$gmc_number'
            WHERE id='$id'";
     dbi_query($sql);
     logMsg($sql,$logfile);
-   
-   // delete records from user_group user_role surgeons table 
-   // and then recreate
-   $sql = "DELETE FROM dir_user_group 
-           WHERE userid='$id'";
-   dbi_query($sql);
-   $sql = "DELETE FROM dir_user_role 
-           WHERE userid='$id'";
-   dbi_query($sql);
-   $sql = "DELETE FROM $TBLSURGEONS 
-           WHERE c_userid='$id'";
-   dbi_query($sql);
-   
 
-   // ADD Surgeon
-   if ($is_surgeon=="1")
-   {
-      $fullname = "$firstname $lastname";
-      $sql = "INSERT INTO $TBLSURGEONS
-              SET id='$admin_user_id',
-                  c_userId='$admin_user_id',
-                  c_surgeonName='$fullname',
-                  c_gmcNumber='$gmc_number',
-                  dateCreated=NOW(),
-                  dateModified=NOW(),
-                  createdBy='$user_id',
-                  createdByName = '$user_fullname'";
-      dbi_query($sql);
-      logMsg("ADD SURGEON: $sql",$logfile);
-    }
     // DETERMINE Group
-    if ($is_admin=="1")
-        $group_str="sitedivadmins";
+    if ($is_admin=="1") {
+        $group_str = "sitedivadmins";
+    }
     else
-        $group_str="staff";
+        $group_str = "staff";
+
+
     // UPDATE Group
     $sql = "INSERT INTO dir_user_group
            SET groupId='$group_str',
                username='$email',
-               userId='$admin_user_id'";
+               userId='$id'";
     dbi_query($sql);
     logMsg($sql,$logfile);
     // UPDATE Role
     $sql = "INSERT INTO dir_user_role
            SET roleId='ROLE_USER',
                username='$email',
-               userId='$admin_user_id'";
+               userId='$id'";
     dbi_query($sql);
     logMsg($sql,$logfile);
+
+    // ADD Surgeon
+    if ($is_surgeon=="1")
+    {
+        $fullname = "$lastname, $firstname";
+        $sql = "INSERT INTO $TBLSURGEONS
+              SET id='$id',
+                  c_userId='$id',
+                  c_surgeonName='$fullname',
+                  c_gmcNumber='$gmc_number',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='$user_id'";
+
+        dbi_query($sql);
+        logMsg("UPDATE SURGEON: $sql",$logfile);
+    }
 }
 
-header("Location: users.php");
+header("Location: users_a.php?m=gotoupdate&id=$user_id");
 exit();
 ?>

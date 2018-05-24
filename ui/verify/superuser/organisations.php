@@ -267,12 +267,25 @@ logMsg("Organisations: $sql",$logfile);
                 </label>
               </div>
               <div class="small-12 medium-12 large-12 cell">
-               <fieldset class="large-6 cell">
-                   <label class="weight-normal">Organisation has subdivisions?&nbsp;&nbsp;
-               <input type="radio" name="subdivision"  value="Yes" id="subdivisionRed" required><label for="subdivisionRed">Yes</label>
-               <input type="radio" name="subdivision"  value="No" id="subdivisionBlue"><label for="subdivisionBlue">No</label>
-                             </label>
-               </fieldset>
+	              <div class="row grid-x grid-padding-15">
+		              <div class="small-5" style="padding-right:20px;">
+			              <label class="eido-radio">
+				              <input type="radio" name="subdivision"  value="Yes" id="subdivisionRed" required />
+				              <span class="checkmark"></span>
+				              <span class="text">Yes</span>
+			              </label>
+			              <label class="eido-radio">
+				              <input type="radio" name="subdivision" value="No" id="subdivisionBlue" />
+				              <span class="checkmark"></span>
+				              <span class="text">No</span>
+			              </label>
+		              </div>
+		              <div class="small-7">
+			              <label class="weight-normal">Organisation has subdivisions?</label>
+		              </div>
+	              </div>
+
+
               </div>
             </div>
             <div class="small-12 cell field text-center">
@@ -285,8 +298,7 @@ logMsg("Organisations: $sql",$logfile);
         <!-- END ADD SECTION -->
         <!-- OVERVIEW SECTION -->
         <?php
-           if ($mode=="overview")
-           {
+           if ($mode=="overview") {
               $sql_o = "SELECT *
                         FROM $TBLORGANISATIONS
                         WHERE id='$org_id'";
@@ -305,26 +317,83 @@ logMsg("Organisations: $sql",$logfile);
             }
          ?>
      <div class="small-12 medium-6 large-6 cell content-right <?php echo $overview_hide; ?>">
-        <h5>Organisation Overview</h5>
-        <h6>View and Edit an Organisation</h6><br />
-         <div class="grid-container">
+	     <h3>Patient Overview<span class="small display-block">View and edit an Organisation</span></h3>
+
+         <div class="grid-container content-container row">
              <div class="grid-x grid-padding-x">
-                  <div class="small-12 medium-12 large-12 cell">
-                         <h4><?php echo $org_name; ?></h4>
-                         <p>Administrative Contact<br /><?php echo $org_admin; ?> <br /><br />
-                         Email<br /><?php echo $org_email; ?> <br /> <br />
-                         Type<br /><?php echo $org_type; ?> Type</p>
-                         Header Logo<br /> 
-                          <?php if ($org_logo<>"") { ?>
-                             <img src="<?php echo "/ui/verify/img/org_logos/".$org_logo; ?>">
-                         <?php } ?>
-                         <a href="organisations.php?m=orgproc&id=<?php echo $org_id; ?>" class="no-u"><p class="directive">Manage Procedures<img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a>
-                     <?php if (strpos(strtoupper($org_type),"HOSPITAL")) { ?> 
-                         <a href="organisations.php?m=listdivs&id=<?php echo $org_id; ?>" class="no-u"><p class="directive">Manage Divisions<img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a>
-                     <?php } else { ?>
-                         <a href="organisations.php?m=listdivs&id=<?php echo $org_id; ?>" class="no-u"><p class="directive">Manage Customers<img src="../img/icons/greater.png" alt="greater than icon" class="float-right align-middle" /></p></a>
-                     <?php } ?>
-                         <center><a href="organisations.php?m=update&id=<?php echo $org_id; ?>"><button class="button large">Edit Organisation</button></a></center>
+                  <div class="small-12 medium-12 large-12 padding-right-column">
+	                  <h5 class="ps_grey"><?php echo $org_name; ?></h5>
+	                  <div class="grid-x grid-padding-x row grid-padding-15" style="padding-top:0;">
+		                  <div class="small-12 medium-12 large-12 cell">
+			                  <label>Administrative Contact</label>
+			                  <h5><?php echo $org_admin ? $org_admin : 'None'; ?></h5>
+		                  </div>
+		                  <div class="small-12 medium-12 large-12 cell">
+			                  <label>Email</label>
+			                  <h5><?php echo $org_email; ?></h5>
+		                  </div>
+		                  <div class="small-12 medium-12 large-12 cell">
+			                  <label>Type</label>
+			                  <h5><?php echo $org_type; ?></h5>
+		                  </div>
+
+	                  </div>
+	                  <hr class="standard-hr" />
+	                  <!-- spacer -->
+	                  <div class="grid-x grid-padding-x row grid-padding-15" style="">
+		                  <div class="small-12 cell">
+			                  <label>Header Organization Logo</label>
+			                  <?php if($org_logo != ""): ?>
+				                  <div class="row grid-x">
+					                  <div class="medium-9" style="">
+						                  <div class="org-logo position-relative">
+							                  <img src="<?php echo "/ui/verify/img/org_logos/".$org_logo; ?>" />
+						                  </div>
+					                  </div>
+					                  <div class="medium-3">
+						                  <a class="button inactive position-relative btn-block" href="organisations_a.php?m=removelogo&id=<?php echo $org_id; ?>" style="top:30%;">Remove</a>
+					                  </div>
+				                  </div>
+
+			                  <?php else: ?>
+				                  <h5>None</h5>
+			                  <?php endif; ?>
+		                  </div>
+
+	                  </div>
+	                  <hr class="standard-hr" />
+	                  <div class="grid grid-padding-x grid-padding-15" style="padding-top:0;">
+		                  <ul class="patient-list" style="margin:0px -15px;">
+			                  <li>
+				                  <a href="organisations.php?m=orgproc&id=<?php echo $org_id; ?>" class="no-u">
+					                  <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+					                  <p class="">Manage Procedures</p>
+				                  </a>
+			                  </li>
+			                  <li>
+				                  <?php if(strpos(strtoupper($org_type),"HOSPITAL")): ?>
+					                  <a href="organisations.php?m=listdivs&id=<?php echo $org_id; ?>" class="no-u">
+						                  <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+
+						                  <p class="">Manage Divisions</p>
+					                  </a>
+				                  <?php else: ?>
+					                  <a href="organisations.php?m=listdivs&id=<?php echo $org_id; ?>" class="no-u">
+						                  <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+
+						                  <p class="">Manage Customers</p>
+					                  </a>
+
+				                  <?php endif; ?>
+			                  </li>
+		                  </ul>
+		                  <hr class="standard-hr"/>
+	                  </div>
+	                  <div class="grid grid-padding-x grid-padding-15" style="">
+		                  <span style="text-align: center" class="display-block"><a href="organisations.php?m=update&id=<?php echo $org_id; ?>"><button class="button large">Edit Organisation</button></a></span>
+	                  </div>
+
+
                   </div>
                </div>
             </div>
@@ -581,13 +650,26 @@ logMsg("Organisations: $sql",$logfile);
            </label>
         </div>
         <div class="small-12 medium-12 large-12 cell">
-                <p>&nbsp;</p>
-                YES&nbsp;&nbsp;<input type="radio" name="subdivision" value="YES" <?php if ($org_subdivision=="YES") echo "checked"; ?>>
-                NO&nbsp;&nbsp;<input type="radio" name="subdivision" value="NO" <?php if ($org_subdivision=="NO") echo "checked"; ?>>
-                &nbsp;&nbsp;<b>Organisation has subdivisions?i</b>
+	        <div class="row grid-x grid-padding-15">
+		        <div class="small-5" style="padding-right:20px;">
+			        <label class="eido-radio">
+				        <input type="radio" name="subdivision"  value="Yes" id="subdivisionRed" required <?php if ($org_subdivision=="YES") echo "checked"; ?> />
+				        <span class="checkmark"></span>
+				        <span class="text">Yes</span>
+			        </label>
+			        <label class="eido-radio">
+				        <input type="radio" name="subdivision" value="No" id="subdivisionBlue" <?php if ($org_subdivision=="NO") echo "checked"; ?> />
+				        <span class="checkmark"></span>
+				        <span class="text">No</span>
+			        </label>
+		        </div>
+		        <div class="small-7">
+			        <label class="weight-normal">Organisation has subdivisions?</label>
+		        </div>
+	        </div>
         </div>
         <div class="small-12 medium-12 large-12 cell text-center">
-                  <br /><input type="submit" id="update" class="button large" value="UPDATE ORGANISATION">
+	        <br /><input type="submit" id="update" class="button large" value="UPDATE ORGANISATION">
         </div>
         </div>
   </div>
@@ -620,11 +702,12 @@ logMsg("Organisations: $sql",$logfile);
         ?>
 
    <div class="small-12 medium-6 large-6 cell content-right <?php echo $orgproc_hide; ?>">
-      <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back
+      <div class="back row back-row clickable-row">
+	      <a href="organisations_a.php" class="btn-back"><i class="eido-icon-chevron-left"></i> Back</a>
       </div>
           <h2 class="sub">Organisation Procedures<br /><span class="small"><?php echo $org_name; ?></span></h2>
           <div class="grid-container">
-             <div class="grid-x grid-padding-x">
+             <div class="grid-x grid-padding-x padding-right-column">
                 <div class="small-12 medium-12 large-12 cell">
                    <div class="grid-x">
                       <div class="small-10 cell">

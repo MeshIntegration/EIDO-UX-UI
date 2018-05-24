@@ -19,30 +19,40 @@ $pwkey = uniqid();
 save_pw_key($arr_pt_info, $pwkey);
 
 $firstname = $arr_pt_info['c_firstName'];
-logMsg($firstname,$logfile);
-$content = "You recently requested to change the password for your EIDO Verify account. Click the button below to reset it.<br /><br />If you didn't request a password reset, please ignore this email.<br /><br />If you're having problems with the reset button, just copy and paste this link into your browser.<br /><a href='".$SITE_URL."val/validation_pw_reset.php?k=$pwkey'>".$SITE_URL."val/validation_pw_reset.php?k=$pwkey</a><br /><br />EIDO Healthcare Ltd, 19-21 Main Street, Keyworth, Nottinghamshire, NG12 5AA"; 
-$button = "<a href='".$SITE_URL."val/validation_pw_reset.php?k=$pwkey'><img src='".$SITE_URL."img/reset_pw_btn.png'></a>";
 
-$body = str_replace("**FIRSTNAME**", $firstname, $email_template);
-$body = str_replace("**CONTENT**", $content, $body);
-$body = str_replace("**BUTTON**", $button, $body);
+   // send mail with forgot password instructions
+   include "../includes/inc_email_template.php";
 
-$subject = "Password Reset";
-$mail_from = $verify_mail_from;
-$mail_from_name = $verify_mail_from_name;
-$mail_to = $email;
-$mail_to_name = $arr_pt_info['c_firstName']." ".$arr_pt_info['c_surame'];;
+   // need a button - include it into template
+   include "../includes/inc_email_button.php";
+   $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
 
-$arr_email['subject']=$subject;
-$arr_email['mail_from']=$mail_from;
-$arr_email['mail_from_name']=$mail_from_name;
-$arr_email['mail_to']=$mail_to;
-$arr_email['mail_to_name']=$mail_to_name;
-$arr_email['body']=$body;
+   $email_template = str_replace("**FIRSTNAME**", ucfirst(strtolower($firstname)), $email_template);
+   $email_template = str_replace("**HEADER**", "Password Reset", $email_template);
+
+   $content1 = "You recently requested to change the password for your EIDO Verify account. Click the button below to reset it.<br /><br />If you didn't request a password reset, please ignore this email.<br /><br />If you're having problems with the reset button, just copy and paste this link into your browser.<a href='".$SITE_URL."val/validation_pw_reset.php?k=$pwkey'>".$SITE_URL."val/validation_pw_reset.php?k=$pwkey</a><br /><br />";
+   $email_template = str_replace("**CONTENT1**", $content1, $email_template);
+
+   $content2 = "<p>You recently requested to change the password for your EIDO Verify account. Click the button below to reset it.</p><p>If you didn't request a password reset, please ignore this email.</p><p>If you're having problems with the reset button, just copy and paste this link into your browser.<a href='".$SITE_URL."val/validation_pw_reset.php?k=$pwkey'>".$SITE_URL."val/validation_pw_reset.php?k=$pwkey</a></p>";
+
+   $email_template = str_replace("**CONTENT2**", $content2, $email_template);
+
+   // set up the button
+   $button_text = "Reset your password";
+   $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
+   $button_url = $SITE_URL."val/validation_pw_reset.php?k=$pwkey";
+   $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
+
+$arr_email['subject']="Password Reset";
+$arr_email['mail_from']=$verify_mail_from;
+$arr_email['mail_from_name']=$verify_mail_from_name;
+$arr_email['mail_to']=$email;
+$arr_email['mail_to_name']=ucwords(strtolower($arr_pt_info['c_firstName']." ".$arr_pt_info['c_surame']));
+$arr_email['body']=$email_template;
 
 $result = send_email($arr_email);
 
-$_SESSION['error_msg']="<center>>Forgot Password</h1></center>An e-mail has been sent to your mail account. Please click the link and use that page reset your password.<br /><br />Thank you.<br /><br />EIDO Verify Patient Communications";
+$_SESSION['error_msg']="<center><h1>Forgot Password</h1></center>An e-mail has been sent to your mail account. Please click the link and use that page reset your password.<br /><br />Thank you.<br /><br />EIDO Verify Patient Communications";
 header("Location:validation_message.php");
 exit();
 ?>

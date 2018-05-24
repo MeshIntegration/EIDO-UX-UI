@@ -11,18 +11,21 @@
 	   -->
 
 		<div id="bulk_action_tabs" class="tabs tab-actions" data-tab data-active-collapse="true" data-responsive-accordion-tabs="tabs medium-accordion large-tabs">
-			<span class="tabs-title">
-				<a href="#panel1" class="btn btn-actions" role="tab" id="BulkActions">Bulk Actions
+			<div class="tabs-title" style="margin-left: -30px;">
+				<a href="#panel1" class="btn btn-actions" role="tab" id="BulkActions">
 					<i class="eido-icon-plus fc_add fc_plus "></i>
-					<i class="eido-icon-minus fc_add fc_minus"></i>
+					<i class="eido-icon-minus fc_add fc_minus"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bulk Actions
 				</a>
-			</span>
-			<span class="tabs-title">
-				<a href="#panel2" class="btn btn-actions" role="tab">Sort &amp; Search
-					<i class="eido-icon-plus fc_add fc_plus"></i>
+			</div>
+			<div class="tabs-title" style="margin-left: 200px; padding-bottom: 230px;">
+                <a href="#panel2" class="btn btn-actions" role="tab">
+                    <label style="text-align: right; vertical-align: top">Sort & Search
+					<i class="eido-icon-plus fc_add fc_plus" style="margin-top: ;: 30px;"></i>
 					<i class="eido-icon-minus fc_add fc_minus"></i>
-				</a>
-			</span>
+                </label>
+                </a>
+
+			</div>
 
 		</div>
 

@@ -8,31 +8,50 @@
 include "./utilities.php";
 //include "./lib/validation.php";
 session_start();
-$arr_pt_info = $_SESSION['arr_pt_info'];
 $logfile = "admin.log";
 
 $email = trim($_POST['email']);
 
 $pwkey = uniqid("FP");
 
-save_user_pw_key($email, $pwkey);
+$arr_user_info = save_user_pw_key($email, $pwkey);
+if ($arr_user_info['lastname']=="ERROR") {
+   logMsg("Bad email entered in forgot password screen: $email");
+} else {
+   // send mail with forgot password instructions 
+   include "includes/inc_email_template.php";
 
-$subject = "EIDO Verify Password Reset";
-$mail_from = $verify_mail_from;
-$mail_from_name = $verify_mail_from_name;
-$mail_to = $email;
-$body = "Hello,<br /><br />A request was made to reset the password for EIDO Verify. If you did not make this request you may ignore this message. If you did request a reset, please click the link below and use that page to enter your new password.<br /><br /><a href='".$SITE_URL."pw_reset.php?k=$pwkey'>Click here to reset your password.</a><br /><br />Thank you<br /><br />EIDO Verify Patient Communications"; 
+   // need a button - include it into template
+   include "includes/inc_email_button.php";
+   $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
 
-$arr_email['subject']=$subject;
-$arr_email['mail_from']=$mail_from;
-$arr_email['mail_from_name']=$mail_from_name;
-$arr_email['mail_to']=$mail_to;
-$arr_email['body']=$body;
+   $email_template = str_replace("**FIRSTNAME**", ucfirst(strtolower($arr_user_info['firstname'])), $email_template);
+   $email_template = str_replace("**HEADER**", "Password Reset", $email_template);
 
-$result = send_email($arr_email);
-logMsg("forgot_pw: mail_send_result: $result", $logfile);
+   $content1 = "You recently requested to change the password for your EIDO Verify account. Click the button below to reset it.<br /><br />If you didn't request a password reset, please ignore this email.<br /><br />If you're having problems with the reset button, just copy and paste this link into your browser.<a href='".$SITE_URL."pw_reset.php?k=$pwkey'>".$SITE_URL."pw_reset.php?k=$pwkey</a><br /><br />";
+   $email_template = str_replace("**CONTENT1**", $content1, $email_template);
 
-$_SESSION['error_msg']="<center><h1>Forgot Password</h1></center>An email has been sent to you with a password reset link. Click the link and follow the instructions to reset your password.";
+   $content2 = "<p>You recently requested to change the password for your EIDO Verify account. Click the button below to reset it.</p><p>If you didn't request a password reset, please ignore this email.</p><p>If you're having problems with the reset button, just copy and paste this link into your browser.<a href='".$SITE_URL."val/validation_pw_reset.php?k=$pwkey'>".$SITE_URL."val/validation_pw_reset.php?k=$pwkey</a></p>";
+   $email_template = str_replace("**CONTENT2**", $content2, $email_template);
+
+   // set up the button
+   $button_text = "Reset your password";
+   $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
+   $button_url = $SITE_URL."pw_reset.php?k=$pwkey";
+   $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
+
+   $arr_email['subject']="EIDO Verify Password Reset";
+   $arr_email['mail_from']=$verify_mail_from;
+   $arr_email['mail_from_name']=$verify_mail_from_name;
+   $arr_email['mail_to']=$email;
+   $arr_email['mail_to_name']=ucwords(strtolower($arr_user_info['firstname']." ".$arr_user_info['lastname']));
+   $arr_email['body']=$email_template;
+
+   $result = send_email($arr_email);
+   logMsg("forgot_pw: email: $email - mail_send_result: $result", $logfile);
+
+   $_SESSION['error_msg']="<center><h1>Forgot Password</h1></center>An email has been sent to you with a password reset link. Click the link and follow the instructions to reset your password.";
+}
 header("Location:message.php");
 exit();
 ?>

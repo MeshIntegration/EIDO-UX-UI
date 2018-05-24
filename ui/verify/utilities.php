@@ -57,7 +57,7 @@ function get_pt_status($id)
    if (strtoupper($qryResult['c_status'])=="EPISODE COMPLETE" || 
                   strtoupper($qryResult['c_procedureStatus'])=="CANCEL")
       $status = "Inactive";
-   else if ($qryResult['c_procedureId']=="")
+   else if ($qryResult['c_procedureId']=="" || $qryResult['c_status']=='PENDING')
       $status = "Pending";
    else // not inactive so must be Active
       $status = "Active";
@@ -65,22 +65,25 @@ function get_pt_status($id)
 //logMsg(">>> Status: $status",$logfile);
 
    // but check to see if they have any open Alerts
-   // get the most recent timeline entry
-   $sql = "SELECT * from $TBLTIMELINES 
-           WHERE c_patientEpisodeId = '$id'
-           AND c_timelineAlertStatus='Open'
-           ORDER BY dateCreated DESC
-           LIMIT 1";
+   if ($qryResult['c_hasAlert']=="Y")
+              $status = "Alert";
 
-   $GetQuery=dbi_query($sql);
-   if ($GetQuery->num_rows>0)
-   {
-      $qryResult = $GetQuery->fetch_assoc();
-      if ($qryResult['c_timelineEntryType']=="Alert")
-         $status = "Alert";
-   } 
+      // get the most recent timeline entry
+      // $sql = "SELECT * from $TBLTIMELINES 
+      //         WHERE c_patientEpisodeId = '$id'
+      //         AND c_timelineAlertStatus='Open'
+      //         ORDER BY dateCreated DESC
+      //         LIMIT 1";
+
+      // $GetQuery=dbi_query($sql);
+      // if ($GetQuery->num_rows>0)
+      // {
+      //    $qryResult = $GetQuery->fetch_assoc();
+      //    if ($qryResult['c_timelineEntryType']=="Alert")
+      //       $status = "Alert";
+      // } 
 //logMsg($sql,$logfile);
-//logMsg(">>> Status: $status",$logfile);
+// logMsg(">>> IN GET STATUS FUNCTION >>>  Status: $status",$logfile);
    return $status;
 }
   
@@ -118,12 +121,13 @@ function date_cleanup($dt)
    return $arr_date_cleanup;
 }
 // **************************************************
-function is_email_unique($email)
+function is_email_unique($email, $id)
 {
    $sql="SELECT * 
          FROM dir_user 
          WHERE username='$email'
-         AND active=1";
+         AND active=1
+         AND id<>'$id'";
    $GetQuery=dbi_query($sql);
    if ($GetQuery->num_rows>0)
       return false;
@@ -132,7 +136,7 @@ function is_email_unique($email)
 }
 
 // **************************************************
-function is_gmc_number_unique($gmc_number, $id='xxxx'){
+function is_gmc_number_unique($gmc_number, $id){
    $sql="SELECT * 
          FROM dir_user 
          WHERE gmc_number='$gmc_number'
@@ -212,7 +216,7 @@ function send_email($arr_email)
    }
     if(!$mail->Send())
    {
-      logMsg("send_mail ERROR: " . $mail->ErrorInfo, "email.log");
+      logMsg("send_mail ERROR: $mail_to - ($mail_to_name) " . $mail->ErrorInfo, "email.log");
       return false;
    }
    else
@@ -226,13 +230,30 @@ function send_email($arr_email)
 // *************************************************************
 function save_user_pw_key($email, $pwkey)
 {
-   // save the key used to authenicate an admin password reset
-   $sql = "UPDATE dir_user
-           SET c_passwordResetKey = '$pwkey'
-           WHERE username = '".$email."'
-             AND active=1";
-   logMsg("save_user_pw_key: $sql", "wel.log");
-   dbi_query($sql);
+   $arr_user_info=array();
+   // see if the email they put in is valid
+   $sql = "SELECT * 
+            FROM dir_user 
+            WHERE username = '".$email."'
+            AND active=1";
+   $GetQuery = dbi_query($sql);
+   if ($GetQuery->num_rows) {
+      $qryResult=$GetQuery->fetch_assoc();
+      $arr_user_info=array();
+      $arr_user_info['firstname']=$qryResult['firstName'];
+      $arr_user_info['lastname']=$qryResult['lastName'];
+
+      // save the key used to authenicate an admin password reset
+      $sql = "UPDATE dir_user
+              SET c_passwordResetKey = '$pwkey'
+              WHERE username = '".$email."'
+              AND active=1";
+      logMsg("save_user_pw_key: $sql", "wel.log");
+      dbi_query($sql);
+   } else {
+      $arr_user_info['lastname']="ERROR";
+   }    
+   return $arr_user_info;
 }
 
 // ***************************************************************

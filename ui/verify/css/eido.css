@@ -7,6 +7,18 @@
 /* Developed by:Scott Largent@Mindstreams */
 /* Client:Eido */
 /* Google Fonts */
+
+::placeholder  {
+  color: #bbb !important;
+}
+:-ms-input-placeholder {
+  color: #bbb !important;
+}
+::-ms-input-placeholder {
+  color: #bbb !important;
+}
+
+
 body {
   color: #0d2240;
   font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
@@ -50,12 +62,14 @@ h2 {
   font-style: normal;
   font-weight: 200;
   line-height: 0.85em;
-  margin: 0px 0px 20px 0px;
 }
 h3 {
   font-size: 1.25em;
   font-family: 'Lato-Bold', 'Lato Bold', 'Lato', sans-serif;
   font-weight: 700;
+  margin-left: 20px;
+  margin-right: 20px;
+  
 }
 h4 {
   font-size: 1.125em;
@@ -65,6 +79,7 @@ h4 {
   border-bottom: 3px solid #3eaf65;
   padding-bottom: 5px;
   margin-bottom: 15px;
+  margin-left: 20px;
 }
 h4 .active {
   font-size: 0.55em;
@@ -75,19 +90,22 @@ h4 .active {
   margin-top: 7px;
 }
 h5 {
-  font-size: 1em;
+  font-size: large;
   font-family: 'Lato-Bold', 'Lato Bold', 'Lato', sans-serif;
   font-weight: 700;
   color: #0d2240;
+
 }
 h5.notification {
   padding: 10px;
   margin-bottom: 28px;
+  margin-left: 20px;
   text-align: center;
 }
 h5.notification-red {
   padding: 10px;
   margin-bottom: 28px;
+  margin-left: 20px;
   border-bottom: 3px solid #d0021b;
   text-align: center;
   color: #d0021b;
@@ -95,16 +113,15 @@ h5.notification-red {
 /*  Patient Status */
 h5.ps_green {
   border-bottom: 3px solid #39ae65;
-  margin: 0.9rem 0.825rem;
-  padding: 0 0.825rem 0 0;
+  margin: 20px 20px;
 }
 h5.ps_red {
   border-bottom: 3px solid #d0021b;
-  margin: 15px 0px;
+  margin: 20px 20px;
 }
 h5.ps_grey {
   border-bottom: 3px solid #6b6b6b;
-  margin: 15px 0px;
+  margin: 20px 20px;
 }
 h5.ps_green .small,
 h5.ps_red .small,
@@ -141,7 +158,8 @@ a:link,
 a:hover,
 a:visited,
 a.button {
-  text-decoration: none !important;
+  text-decoration: none;
+  font-weight:normal;
 }
 a.button {
   color: #fff;
@@ -435,7 +453,7 @@ table.notifications {
   margin: 20px auto;
 }
 .error_message {
-  background: #ae3526;
+  background: #D0021B;
   margin: 5px 0 -5px 0;
   padding: 5px;
   color: #fff;
@@ -447,7 +465,7 @@ table.notifications {
 }
 .error_message strong::before {
   content: "";
-  border-top: 10px solid #ae3526;
+  border-top: 10px solid #D0021B;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -456,11 +474,11 @@ table.notifications {
   top: 25px;
 }
 .error_message + label {
-  color: #ae3526;
+  color: #D0021B;
 }
 .error_message + label > input,
 .error_message + label > select {
-  border-color: #ae3526 !important;
+  border-color: #D0021B !important;
 }
 .clickable-row {
   cursor: pointer !important;
@@ -698,19 +716,20 @@ button.type:active,
 button.type:focus {
   height: 65px;
   width: 65px;
-  display: flow-root;
+  display: block;
   margin: 15px auto;
   background: transparent !important;
   font-family: 'ArialMT', 'Arial';
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
   font-size: 20px;
   color: #687e9e;
-  text-align: -moz-center;
+  text-align: left;
   line-height: normal;
   padding: 15px 15px 15px 10px;
   border: 2px solid #5A7195;
   border-radius: 50%;
+  font-family: 'Lato-Bold', 'Lato Bold', 'Lato'; text-align: center;
 }
 .type {
   height: 50px;
@@ -991,11 +1010,18 @@ div.pagination-btm-users {
   background: #d7d7d7;
   padding: 0 0 10px 0;
 }
+.content_right h5{
+  margin-left: 20px;
+}
+.content_right h3{
+  margin-left: 20px;
+}
 .cta {
   padding: 45px;
   margin: 50px 10px 0 10px;
   background: #f2f2f2;
 }
+
 .go {
   width: 175px;
   float: right;
@@ -1294,6 +1320,8 @@ label.weight-normal {
 .patient-list li .uc {
   font-weight: bold;
   font-size: 20px;
+  padding-right:25px;
+  display:inline-block;
 }
 .patient-list li:last-child {
   border-bottom: none !important;
@@ -1356,13 +1384,20 @@ label.weight-normal {
   top: 11px !important;
 }
 .btn-back {
-  font-size: 18px;
-  color: #a4a4a4 !important;
+  padding-top: 10px;
+  color: #0d2240 !important;
   display: block;
 }
 .btn-back i {
   color: #A4A4A4;
-  font-size: 16px;
+}
+.btn-back a {
+  color: #0D2240;
+}
+
+.btn-back:focus,
+.btn-back:hover {
+  background-color: #f7f5f5;
 }
 .sub-text {
   display: block;
@@ -1372,7 +1407,7 @@ label {
   font-weight: normal !important;
 }
 .su .content-right form hr {
-  margin: 27px -20px !important;
+  /*margin: 27px -20px !important;*/
 }
 .button {
   font-weight: bold;
@@ -1405,7 +1440,7 @@ a.off_status.selected {
   border-color: transparent transparent #979797 transparent;
   content: '';
   top: -16px;
-  left: 10px;
+  left: 15px;
   position: absolute;
 }
 .main_menu:after {
@@ -1416,7 +1451,7 @@ a.off_status.selected {
   border-color: transparent transparent #f7f5f5 transparent;
   content: '';
   top: -15px;
-  left: 11px;
+  left: 16px;
   position: absolute;
 }
 .basic-list {
@@ -1471,12 +1506,12 @@ a.off_status.selected {
 }
 
 /* Create a custom checkbox */
-.checkmark {
+.eido-checkbox .checkmark {
   position: absolute;
   top: 5px;
   left: -10px;
-  height: 25px;
-  width: 25px;
+  height: 26px;
+  width: 26px;
   background-color: #F7F5F5;
   border:1px solid #979797;
   margin:0;
@@ -1498,7 +1533,7 @@ a.off_status.selected {
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.eido-checkbox .checkmark:after {
   content: "";
   position: absolute;
   display: none;
@@ -1511,10 +1546,299 @@ a.off_status.selected {
 
 /* Style the checkmark/indicator */
 .eido-checkbox .checkmark:after {
-  left: 18%;
-  top: 18%;
-  width: 60%;
-  height: 60%;
+  left: 5px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
   background:#38AF62;
 
+}
+.superuser .page-title {
+  background: #3DAE65;
+  color: #fff;
+  text-transform: uppercase;
+}
+.superuser .navigation-bar,
+.superuser .menu.simple {
+  background: #3DAE65;
+}
+.superuser .navigation-bar li,
+.superuser .menu.simple li,
+.superuser .navigation-bar a,
+.superuser .menu.simple a {
+  color: #fff;
+  text-transform: uppercase;
+}
+.superuser .navigation-bar li,
+.superuser .menu.simple li {
+  border-right-color: #fff;
+}
+.back-row {
+  padding: 8px 0 8px 20px;
+}
+.back-row.back-row-head {
+  background: #DDDDDD;
+}
+.back-row a {
+  font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
+  color: #0D2240;
+}
+.back-row a i {
+  top: 1px;
+  position: relative;
+  color: #ababab;
+}
+.page-title {
+  border-bottom: solid #E3DDDF 1px;
+}
+.tab-actions {
+  border: none;
+  background: transparent;
+  margin-bottom: 20px;
+}
+.btn-actions {
+  margin-left: 18px;
+  font-size: 12px;
+  vertical-align: middle;
+  padding: 10px !important;
+  background: #ddd;
+}
+.btn-actions i {
+  position: relative;
+  top: -1px;
+  font-size: 19px;
+  color: #ababab;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.btn-actions:hover,
+.btn-actions:active,
+.btn-actions:focus {
+  background: #0D2240;
+  color: #fff;
+}
+.column-first {
+  padding-left: 18px;
+}
+.grid-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.grid-header strong {
+  position: relative;
+  top: 14px;
+}
+.grid-header strong.no-check {
+  top: 0;
+  left: 10px;
+}
+/**
+override shit tab
+ */
+.tabs-title {
+  display: inline !important;
+  float: none !important;
+}
+.tabs-title a {
+  display: inline;
+}
+.tabs-title a:hover,
+.tabs-title a:active,
+.tabs-title a:focus {
+  background: #0D2240;
+  color: #fff;
+}
+.tabs-title.is-active a {
+  color: #0D2240;
+  background: #ddd;
+}
+.tabs-content {
+  border: 0;
+}
+#ResetFilter {
+  position: relative;
+  top: -2px;
+}
+div.sort:first-of-type {
+  padding-top: 5px !important;
+}
+.datepicker td span.active,
+.datepicker td.active.day,
+.datepicker td.active.year {
+  background: #3DAE65 !important;
+  color: #fff;
+  border-radius: 50%;
+}
+.datepicker.dropdown-menu,
+.datepicker,
+.datepicker-days,
+.datepicker-days tbody,
+.datepicker td,
+.datepicker th {
+  background: #F7F5F5;
+}
+.datepicker.dropdown-menu {
+  border-radius: 0;
+  border: 1px solid #979797;
+}
+.datepicker.dropdown-menu:before {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 16px 16px 16px;
+  border-color: transparent transparent #979797 transparent;
+  content: ' ';
+  top: -16px;
+  left: 10px;
+  position: absolute;
+  z-index: 99999;
+}
+.datepicker.dropdown-menu:after {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 16px 15px;
+  border-color: transparent transparent #f7f5f5 transparent;
+  content: ' ';
+  top: -15px;
+  left: 11px;
+  position: absolute;
+  z-index: 99999;
+}
+.ui-sortable-handle span.not-allow-move {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.pagination li {
+  border-radius: 0 !important;
+}
+.patient-list p > span {
+  line-height: 1.2;
+}
+.input-group-field {
+  padding: 0.78em !important;
+}
+h4.vertical-middle {
+  position: relative;
+  top: 3px;
+}
+.btn-pre {
+  padding: 8px 30px;
+}
+.btn-header.type {
+  text-indent: 6px;
+}
+.padding-right-column {
+  padding: 0 0.825rem;
+}
+.padding-right-column .standard-hr {
+  margin: 0 -0.825rem;
+}
+.standard-hr {
+  border-bottom: 1px solid #D3D1D1;
+  padding: 0;
+  line-height: 1px;
+  background: transparent !important;
+}
+.org-logo {
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.org-logo img {
+  background: #f5f5f5;
+  border: 1px solid #797979;
+}
+.org-logo .button {
+  margin-top: 30px;
+}
+.btn-block {
+  width: 100%;
+  display: block;
+}
+.grid-padding-15 {
+  padding: 15px 0;
+}
+.eido-radio {
+  display: inline;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 8px 15px;
+  margin-right: 5px;
+  background-color: #e4e4e4;
+}
+.eido-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.eido-radio input:checked ~ .checkmark {
+  display: block;
+}
+.eido-radio input:checked ~ .text {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+.eido-radio .checkmark {
+  position: absolute;
+  padding: 5px 10px;
+  background-color: #C9c9c9;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: none;
+}
+/** timeline stuff */
+.patientcontent .timeline::before {
+  display: none !important;
+}
+.timeline-wrapper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.timeline-wrapper:before {
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 13px;
+  margin-left: 0;
+  background: #ccc;
+}
+.timeline-right .timeline-icon,
+.timeline-right .timeline-icon-cs,
+.timeline-right .timeline-icon-green {
+  top: 50% !important;
+  margin-top: -11px !important;
+}
+
+.fancy-eido-round-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.fancy-eido-round-checkbox span:before {
+    font-family: "eido";
+    font-style: normal;
+    width: 1em;
+    height: 1em;
+    content: '\ea56';
+    margin-right: .3em;
+}
+
+.fancy-eido-round-checkbox input[type="checkbox"]:checked ~ span:before {
+    content: '\ea59';
+}
+
+.fancy-eido-round ul{
+    list-style: none !important;
 }

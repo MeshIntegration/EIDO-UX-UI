@@ -9,6 +9,8 @@
 
 require_once '../utilities.php';
 require_once "../alert_intruders.php";
+session_start();
+
 if ($user_role<>"SUPERUSER")
 {
    header("Location: /ui/verify/login.php");
@@ -66,6 +68,11 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
     $arr_users [$i] = $qryResult;
     $i ++;
 }
+
+// no cache
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
 ?>
 <html class="no-js" lang="en" dir="ltr">
 <head>
@@ -126,12 +133,12 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 			          </label>
 		          </div>
 		          <div class="small-6 columns">
-			          <label>User</label>
+			          <label style="text-indent: 10px;">User</label>
 		          </div>
 		          <div class="small-2 columns">
 			          <label style="left: -10px;">Surgeon</label>
 		          </div>
-		          <div class="small-1 columns">
+		          <div class="small-2 columns">
 			          <label style="left: -18px;">Admin</label>
 		          </div>
 
@@ -153,7 +160,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
                           ?>
 	                      <li class="<?php echo $isSelected; ?>">
 		                      <a href="users.php?m=update&id=<?php echo $uid; ?>">
-			                      <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+			                      <span class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
 			                      <div class="grid-x">
 				                      <div class="small-2 columns column-first">
 					                      <label class="eido-checkbox">
@@ -174,7 +181,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 					                      </label>
 				                      </div>
 
-				                      <div class="small-1 columns text-center">
+				                      <div class="small-2 columns text-center">
 					                      <label class="indicator-checkbox eido-checkbox">
 						                      <input type="checkbox" name="is_admin"<?php if ($is_admin) echo "checked"; ?>>
 						                      <span class="checkmark"></span>
@@ -219,8 +226,8 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		    <div class="small-12 cell field">
 	                <?php if ($_SESSION['add_firstname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
                         else if ($_SESSION['add_firstname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>	
-			<label class="weight-normal">First Name <input type="text"
-	 			value="<?php echo $_SESSION['add_firstname']; ?>" name="firstname">
+			<label class="weight-normal">First Name 
+                            <input type="text" value="<?php echo $_SESSION['add_firstname']; ?>" name="firstname">
 			</label>
             </div>
 	      	<div class="small-12 cell field">
@@ -236,14 +243,16 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		       <label class="weight-normal">Email Address <input type="text" 
 		               value="<?php echo $_SESSION['add_email']; ?>" name="email"></label> </div></div>
         <div class="small-12 cell field password-field">
+                       <?php if ($_SESSION['add_password_error']) echo "<div class='error_message fi-alert'><strong>Please enter a password</strong> - this is required</div>"; ?>
             <label class="weight-normal">Password
-                <input type="password" id="password" name="password" placeholder="" required>
+                <input type="password" id="password" name="password" placeholder="" >
               </label>
             </div>
             <div class="small-12 cell field password-confirmation-field">
+                <?php if ($_SESSION['add_password_match_error']) echo "<div class='error_message fi-alert'><strong>The passwords you entered do not match</strong></div>"; ?>
                 <label class="weight-normal">Retype Password
-                <input type="password" required data-equalto="password">
- <small class="form-error">The password did not match</small>
+                   <input type="password" name="password2">
+                   <!-- <small class="form-error">The password did not match</small> -->
               </label>
             </div><div class="small-12 cell text-center">
         	  <br /><input type="submit" id="add" class="button large" value="Add User">
@@ -257,14 +266,13 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
            if ($mode=="update")
            {
               $sql_u = "SELECT *  
-                        FROM ".DB_PREFIX."user 
+                        FROM dir_user 
                         WHERE id='$id'";
                $GetQuery_u = dbi_query($sql_u);
                $qryResult_u = $GetQuery_u->fetch_assoc();
-               $firstName = $qryResult_u['firstName'];
-               $lastName = $qryResult_u['lastName'];
-               $email = $qryResult_u['email'];
-	       
+               $_SESSION['add_firstname'] = $qryResult_u['firstName'];
+               $_SESSION['add_lastname'] = $qryResult_u['lastName'];
+               $_SESSION['add_email'] = $qryResult_u['email'];
             }
             else
             {
@@ -286,21 +294,21 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
     	  <div class="grid-x">
 		<div class="small-12 cell field">
 					    <?php if ($_SESSION['add_firstname_error']) echo "<div class='error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";else if ($_SESSION['add_firstname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
-						<label class="weight-normal">First Name <input type="text"
-						value="<?php echo $_SESSION['add_firstname']; ?>" name="firstname">
-						</label></div>
-					<div class="small-12 cell field">
-					    <?php if ($_SESSION['add_lastname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the last name</strong> - this is required</div>";
-                                                   else if ($_SESSION['add_lastname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct the last name</strong> - no special characters are allowed</div>"; ?>
-					<label class="weight-normal">Surname <input type="text"value="<?php echo $_SESSION['add_lastname']; ?>" name="lastname"></label>
-					</div>
-					<div class="small-12 cell field">
-					    <?php if ($_SESSION['add_email_error']) echo "<div class='error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
-                                                   else if ($_SESSION['add_bad_email_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>"; 
-                                                   else if ($_SESSION['add_email_duplicate_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
-					<label class="weight-normal">Email Address <input type="text" value="<?php echo $_SESSION['add_email']; ?>" name="email">
-					</label>
-					</div>
+				<label class="weight-normal">First Name <input type="text"
+				value="<?php echo $_SESSION['add_firstname']; ?>" name="firstname">
+				</label></div>
+			<div class="small-12 cell field">
+			    <?php if ($_SESSION['add_lastname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the last name</strong> - this is required</div>";
+                                  else if ($_SESSION['add_lastname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct the last name</strong> - no special characters are allowed</div>"; ?>
+				<label class="weight-normal">Surname <input type="text"value="<?php echo $_SESSION['add_lastname']; ?>" name="lastname"></label>
+			</div>
+			<div class="small-12 cell field">
+			    <?php if ($_SESSION['add_email_error']) echo "<div class='error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                                  else if ($_SESSION['add_bad_email_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>"; 
+                                  else if ($_SESSION['add_email_duplicate_error']) echo "<div class='error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+			<label class="weight-normal">Email Address <input type="text" value="<?php echo $_SESSION['add_email']; ?>" name="email">
+			</label>
+			</div>
         <div class="small-12 medium-12 large-12 cell field">&nbsp;</div>
             <div class="small-3 medium-3 large-3 cell field">&nbsp;</div>
             <div class="small-6 medium-6 large-6 cell field text-center">
