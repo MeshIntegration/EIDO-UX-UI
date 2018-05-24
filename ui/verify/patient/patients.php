@@ -827,9 +827,9 @@ $results_count = $GetQuery_all->num_rows;
 		            <p><strong>No notifications right now.</strong><br>Everything must be working.</p>
 	            </div>
             </div>
-			<table style="margin-left: 20px;margin-right: 20px;" class="notifications<?php echo($has_notifications == false ? " hide" : "") ?>">
-				<tbody>
-				<?php for($n = 0; $n < count($arr_notifications); $n++) {
+			<div class="standard-padding <?php echo($has_notifications == false ? "hide" : "") ?>" style="margin-bottom:30px;">
+				<ul class="" id="Notifications">
+					<?php for($n = 0; $n < count($arr_notifications); $n++) {
 					$n_name = $arr_notifications[$n]['c_timelineEntryDetail'];
 					$n_date = $arr_notifications[$n]['dateCreated'];
 					$n_date = substr($n_date, 0, strpos($n_date, " "));
@@ -841,26 +841,27 @@ $results_count = $GetQuery_all->num_rows;
 					$n_imgfile = $arr_tl_data[$n_desc];
 					$n_class = "status action_needed";
 
-					$n_icon = "torso";
+					$n_icon = "envelope-open-o22";
 					if($n_type == "Whatever signifies a bounced email") {
-						$n_icon = "mail";
+						$n_icon = "envelope-open-o22";
 					} elseif($n_type == "Whatever signifies a rejected text message") {
 						$n_icon = "comment";
 					}
 					?>
-					<tr>
-						<td style="background-color: red" class="icon_frame text-center"><i style="zoom:60%;" class="icon eido-icon-envelope-o<?php echo $n_icon; ?> align-middle"></td>
-						<td class="upper clickable-row su_data" data-href="patients.php?m=overview&tlm=key&id=<?php echo $n_patientEpisodeId; ?>"><?php echo $n_name; ?>
-							<br/>
-							Patient <strong><?php echo $n_patient_name; ?></strong>
-						</td>
-						<td>
-							<a href="patients.php?m=overview&tlm=key&id=<?php echo $n_patientEpisodeId; ?>"><img src="../img/icons/greater.png" alt="" class="align-right"></a>
-						</td>
-					</tr>
-				<?php } ?>
-				</tbody>
-			</table>
+					<li>
+						<a class="link-full-block" href="patients.php?m=overview&tlm=key&id=<?php echo $n_patientEpisodeId; ?>">
+							<span class="right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
+							<div class="n-icon">
+								<i class="icon eido-icon-<?php echo $n_icon; ?>"></i>
+							</div>
+							<p><?php echo $n_name; ?><br/>Patient <strong><?php echo $n_patient_name; ?></strong></p>
+
+						</a>
+					</li>
+					<?php } ?>
+				</ul>
+			</div>
+
 			<div class="grid-x<?php echo($has_notifications == false ? " hide" : "") ?>">
 				<div class="hide-for-small-only medium-2">&nbsp;</div>
 				<div class="small-12 medium-8">

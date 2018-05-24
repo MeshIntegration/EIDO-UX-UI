@@ -193,17 +193,22 @@ h4.vertical-middle {
   padding: 0 20px;
 }
 .link-standard-color {
-  color: #3dae65 !important;
-  text-decoration: underline !important;
+  color: #0d2240 !important;
+  text-decoration: none !important;
 }
 .link-standard-color:focus,
 .link-standard-color:hover,
 .link-standard-color:active {
-  text-decoration: none !important;
+  font-weight: 700;
 }
 .link-active {
-  color: #0d2240 !important;
-  text-decoration: none !important;
+  color: #3dae65 !important;
+  text-decoration: underline !important;
+}
+.link-active:focus,
+.link-active:hover,
+.link-active:active {
+  font-weight: normal !important;
 }
 .standard-weight {
   font-weight: normal;
@@ -432,4 +437,53 @@ h4.vertical-middle {
 }
 p.small {
   font-size: 12px;
+}
+#Notifications {
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
+}
+#Notifications li {
+  margin: 0 0px 5px 0;
+  padding: 0;
+}
+#Notifications li a {
+  background: #D7D7D7;
+  position: relative;
+  padding: 5px 0;
+}
+#Notifications p {
+  padding-left: 66px;
+  margin-bottom: 0 !important;
+}
+#Notifications .n-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50px;
+  background: #BC271A;
+}
+#Notifications .n-icon i {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -9px;
+}
+#Notifications .right-arrow {
+  right: 15px;
+  top: 50%;
+  margin-top: -9px;
+  position: absolute;
+  display: inline-block;
+  height: 100% !important;
+}
+#Notifications .right-arrow i {
+  font-size: 20px;
+  color: #959595;
+  display: inline;
+  vertical-align: middle;
 }

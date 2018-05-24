@@ -141,10 +141,10 @@ $action = $_POST['action'];
          <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
          $email_template = str_replace("**CONTENT1**", $content1, $email_template);
          
-         $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
+         $content2 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
          <p>Username: $email<br />
          Password: $password</p>
-         <p>Click the button below to log into the EIDO Verify systemi</p>";
+         <p>Click the button below to log into the EIDO Verify system.";
          $email_template = str_replace("**CONTENT2**", $content2, $email_template);
    
          // set up the button
@@ -152,6 +152,10 @@ $action = $_POST['action'];
          $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
          $button_url = "https://verify.eidosystems.com";
          $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
+ 
+         // contnt3 after the button
+         $content3="";
+         $email_template = str_replace("**CONTENT3**", $content3, $email_template);
 
          $arr_email = array();
          $arr_email['mail_to']=$email;

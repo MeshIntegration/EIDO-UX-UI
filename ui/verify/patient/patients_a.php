@@ -357,6 +357,10 @@ logMsg("Update TL: $sql", $logfile);
    $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
    $button_url = $SITE_URL."val/validation.php?patientEpisodeId=$id&moreReminders=true";
    $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
+
+   // CONTENT3 is  after the button
+   $content3 = "";
+   $email_template = str_replace("**CONTENT3**", $content3, $email_template);
    
    $arr_email = array();
    $arr_email['mail_to']=$arr_pt_info['c_emailAddress'];

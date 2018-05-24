@@ -189,7 +189,11 @@ if ($mode=="add") {
    $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
    $button_url = "https://verify.eidosystems.com";
    $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
- 
+
+   // contnt3 after the button
+   $content3="";
+   $email_template = str_replace("**CONTENT3**", $content3, $email_template);
+
    $arr_email = array();
    $arr_email['mail_to']=$email;
    $arr_email['mail_to_name']="$firstname $lastname";

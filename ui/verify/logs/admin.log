@@ -13331,3 +13331,31 @@
         AND u.active=1
 05/24/2018 09:18:45 - 82.34.15.57: Mm Admin - MA - sitedivadmins
 05/24/2018 09:18:45 - 82.34.15.57: >>>>  GroupID: sitedivadmins
+05/24/2018 13:06:17 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/24/2018 13:06:17 - 76.188.180.118: Mm Admin - MA - sitedivadmins
+05/24/2018 13:06:17 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+05/24/2018 13:32:22 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+05/24/2018 13:32:22 - 68.107.189.223: Mm Admin - MA - sitedivadmins
+05/24/2018 13:32:22 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+05/24/2018 14:09:08 - 82.34.15.57: USERS Mode: 
+05/24/2018 14:09:08 - 82.34.15.57: USERS bulkdelete_hide: hide
+05/24/2018 14:09:12 - 82.34.15.57: USERS Mode: 
+05/24/2018 14:09:12 - 82.34.15.57: USERS bulkdelete_hide: hide
+05/24/2018 14:09:19 - 82.34.15.57: USERS Mode: bulk
+05/24/2018 14:09:19 - 82.34.15.57: USERS bulkdelete_hide: hide
+05/24/2018 14:09:29 - 82.34.15.57: USERS Mode: 
+05/24/2018 14:09:29 - 82.34.15.57: USERS bulkdelete_hide: hide
+05/24/2018 14:11:04 - 82.34.15.57: USERS Mode: 
+05/24/2018 14:11:04 - 82.34.15.57: USERS bulkdelete_hide: hide
+05/24/2018 14:12:21 - 82.34.15.57: USERS Mode: 
+05/24/2018 14:12:21 - 82.34.15.57: USERS bulkdelete_hide: hide
+05/24/2018 14:13:52 - 76.188.180.118: USERS Mode: 
+05/24/2018 14:13:52 - 76.188.180.118: USERS bulkdelete_hide: hide
