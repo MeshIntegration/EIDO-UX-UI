@@ -27,22 +27,17 @@ $add_hide = "hide";
 $update_hide = "hide";
 $userreset_hide = "hide";
 $userdelete_hide = "hide";
-$reset_hide = "hide";
-$delete_hide = "hide";
-$bulk_hide = "hide";
-if ($mode == "" || $mode == "add") {
+if ($mode == "" || $mode == "add" || $mode=="main") {
     $add_hide = "";
 } else if ($mode == "update") {
     $update_hide = "";
     $user_id = $id;
-} else if ($mode == "reset") {
-    $reset_hide = "";
+} else if ($mode == "userreset") {
+    $userreset_hide = "";
     $user_id = $id;
-} else if ($mode == "delete") {
-    $delete_hide = "";
+} else if ($mode == "userdelete") {
+    $userdelete_hide = "";
     $user_id = $id;
-} else if ($mode == "bulk") {
-    $bulk_hide = "";
 }
 // need to change according to session
 $script_name = substr(strrchr($_SERVER['PHP_SELF'],"/"),1);
@@ -313,8 +308,8 @@ header('Expires: 0');
             <div class="small-3 medium-3 large-3 cell field">&nbsp;</div>
             <div class="small-6 medium-6 large-6 cell field text-center">
                <button type="submit"  class="button large expanded" />UPDATE USER</button><br />
-               <a href="users_a.php?m=userreset&id=<?php echo $id; ?>" class="button large inactive expanded" />RESET PASSWORD</a><br />
-               <a href="users_a.php?m=userdelete&id=<?php echo $id; ?>" class="button large red expanded" />DELETE USER</a>
+               <a href="users.php?m=userreset&id=<?php echo $id; ?>" class="button large inactive expanded" />RESET PASSWORD</a><br />
+               <a href="users.php?m=userdelete&id=<?php echo $id; ?>" class="button large red expanded" />DELETE USER</a>
             </div>
             <div class="small-3 medium-3 large-3 cell field">&nbsp;</div>
     	  </div>
@@ -335,7 +330,7 @@ header('Expires: 0');
                   <div class="grid-x">
                       <div class="small-3">&nbsp;</div>
                            <div class="small-6"><br>
-                                 <a href="users_a.php?m=main" class="button large inactive expanded" name=""/>NO</a>
+                                 <a href="users.php?m=main" class="button large inactive expanded" name=""/>NO</a>
                                  <a href="users_a.php?m=userdelete&id=<?php echo $id; ?>" class="button large expanded red" name=""/>CONFIRM DELETE</a>
                            </div>
                        <div class="small-3">&nbsp;</div>
@@ -361,7 +356,7 @@ header('Expires: 0');
                   <div class="grid-x">
                       <div class="small-3">&nbsp;</div>
                            <div class="small-6"><br>
-                                 <a href="users_a.php?m=main" class="button large inactive expanded" name=""/>NO</a>
+                                 <a href="users.php?m=main" class="button large inactive expanded" name=""/>NO</a>
                                  <a href="users_a.php?m=userreset&id=<?php echo $id; ?>" class="button large expanded active" name=""/>CONFIRM RESET</a>
                            </div>
                        <div class="small-3">&nbsp;</div>

@@ -55497,3 +55497,461 @@
               WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
               AND u.id = e.userId 
               AND o.c_name=e.departmentId
+05/24/2018 21:16:55 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22820_gov_patientEpisode'
+05/24/2018 21:16:55 - 68.107.189.223: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/24/2018 23:08:00 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22926_ug07Proms_patientEpisode'
+05/24/2018 23:08:00 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/24/2018 23:13:57 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22926_ug07Proms_patientEpisode'
+05/24/2018 23:13:57 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/24/2018 23:18:57 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='false'
+05/24/2018 23:18:57 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/24/2018 23:24:53 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22926_ug07Proms_patientEpisode'
+05/24/2018 23:24:53 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/25/2018 00:30:58 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22950_ug07Proms_patientEpisode'
+05/25/2018 00:30:58 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/25/2018 00:33:54 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22950_ug07Proms_patientEpisode'
+05/25/2018 00:33:54 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/25/2018 00:37:14 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22950_ug07Proms_patientEpisode'
+05/25/2018 00:37:14 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/25/2018 00:42:49 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='false'
+05/25/2018 00:42:49 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/25/2018 00:49:15 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22950_ug07Proms_patientEpisode'
+05/25/2018 00:49:15 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/25/2018 00:53:38 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22950_ug07Proms_patientEpisode'
+05/25/2018 00:53:38 - 107.10.10.162: get_pt_info: ERROR finding patientEpisode
+05/25/2018 00:54:20 - 184.56.244.84: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '22900_gov_patientEpisode'
+05/25/2018 00:54:20 - 184.56.244.84: validation_review: Surname Entered: Test - DB: Review
+05/25/2018 00:54:20 - 184.56.244.84: Surname Error
+05/25/2018 00:54:20 - 184.56.244.84: validation_review: PostalCode Entered: 12345 - DB: 123456
+05/25/2018 00:54:20 - 184.56.244.84: PostalCode Error
+05/25/2018 00:54:20 - 184.56.244.84: validation_review: DOB Entered: 05/02/2004 - DB: 02/01/2002
+05/25/2018 00:54:20 - 184.56.244.84: DOB Error
+05/25/2018 00:54:20 - 184.56.244.84: validation_review: NHS Entered: 1619684964 - DB: 123456789
+05/25/2018 00:54:20 - 184.56.244.84: NHS Error
+05/25/2018 00:54:20 - 184.56.244.84: validation_review: Error Count: 4
+05/25/2018 00:54:20 - 184.56.244.84: Date parts: 05  02  2004
+05/25/2018 00:54:58 - 184.56.244.84: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '22900_gov_patientEpisode'
+05/25/2018 00:54:58 - 184.56.244.84: validation_review: Surname Entered: Test - DB: Review
+05/25/2018 00:54:58 - 184.56.244.84: Surname Error
+05/25/2018 00:54:58 - 184.56.244.84: validation_review: PostalCode Entered: 12345 - DB: 123456
+05/25/2018 00:54:58 - 184.56.244.84: PostalCode Error
+05/25/2018 00:54:58 - 184.56.244.84: validation_review: DOB Entered: 05/02/2004 - DB: 02/01/2002
+05/25/2018 00:54:58 - 184.56.244.84: DOB Error
+05/25/2018 00:54:58 - 184.56.244.84: validation_review: NHS Entered: 1619684964 - DB: 123456789
+05/25/2018 00:54:58 - 184.56.244.84: NHS Error
+05/25/2018 00:54:58 - 184.56.244.84: validation_review: Error Count: 4
+05/25/2018 00:54:58 - 184.56.244.84: Date parts: 05  02  2004
+05/25/2018 00:55:03 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 00:56:11 - 184.56.244.84: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '22900_gov_patientEpisode'
+05/25/2018 00:56:11 - 184.56.244.84: validation_review: Surname Entered: Test - DB: Review
+05/25/2018 00:56:11 - 184.56.244.84: Surname Error
+05/25/2018 00:56:11 - 184.56.244.84: validation_review: PostalCode Entered: 12345 - DB: 123456
+05/25/2018 00:56:11 - 184.56.244.84: PostalCode Error
+05/25/2018 00:56:11 - 184.56.244.84: validation_review: DOB Entered: 05/02/2004 - DB: 02/01/2002
+05/25/2018 00:56:11 - 184.56.244.84: DOB Error
+05/25/2018 00:56:11 - 184.56.244.84: validation_review: NHS Entered: 1619684964 - DB: 123456789
+05/25/2018 00:56:11 - 184.56.244.84: NHS Error
+05/25/2018 00:56:11 - 184.56.244.84: validation_review: Error Count: 4
+05/25/2018 00:56:11 - 184.56.244.84: Date parts: 05  02  2004
+05/25/2018 01:27:55 - 184.56.244.84: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '22900_gov_patientEpisode'
+05/25/2018 01:27:55 - 184.56.244.84: validation_review: Surname Entered: Test - DB: Review
+05/25/2018 01:27:55 - 184.56.244.84: Surname Error
+05/25/2018 01:27:55 - 184.56.244.84: validation_review: PostalCode Entered: 12345 - DB: 123456
+05/25/2018 01:27:55 - 184.56.244.84: PostalCode Error
+05/25/2018 01:27:55 - 184.56.244.84: validation_review: DOB Entered: 05/02/2004 - DB: 02/01/2002
+05/25/2018 01:27:55 - 184.56.244.84: DOB Error
+05/25/2018 01:27:55 - 184.56.244.84: validation_review: NHS Entered: 1619684964 - DB: 123456789
+05/25/2018 01:27:55 - 184.56.244.84: NHS Error
+05/25/2018 01:27:55 - 184.56.244.84: validation_review: Error Count: 4
+05/25/2018 01:27:55 - 184.56.244.84: Date parts: 05  02  2004
+05/25/2018 01:40:47 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:44:49 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:45:01 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:48:30 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:48:48 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:50:58 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:51:31 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:51:41 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:51:53 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:52:10 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:52:17 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:52:32 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:54:20 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:54:36 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:55:08 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:55:25 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:56:41 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:57:43 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:58:45 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:59:01 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:59:25 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 01:59:41 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:00:24 - 34.228.6.255: Validation_Mobile page: 
+05/25/2018 02:00:56 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:01:24 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:02:11 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:03:04 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:03:18 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:07:11 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:07:22 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:09:21 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:09:52 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 02:11:12 - 184.56.244.84: Validation_Mobile page: 22900_gov_patientEpisode
+05/25/2018 10:53:31 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22832_gov_patientEpisode'
+05/25/2018 10:53:31 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:53:34 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22832_gov_patientEpisode'
+05/25/2018 10:53:34 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:53:39 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22832_gov_patientEpisode'
+05/25/2018 10:53:39 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:53:49 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22920_gov_patientEpisode'
+05/25/2018 10:53:49 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:53:55 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22856_gov_patientEpisode'
+05/25/2018 10:53:55 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:53:57 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22856_gov_patientEpisode'
+05/25/2018 10:53:57 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:01 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22856_gov_patientEpisode'
+05/25/2018 10:54:01 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:06 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22820_gov_patientEpisode'
+05/25/2018 10:54:06 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:09 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22820_gov_patientEpisode'
+05/25/2018 10:54:09 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:18 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22820_gov_patientEpisode'
+05/25/2018 10:54:18 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:24 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22820_gov_patientEpisode'
+05/25/2018 10:54:24 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:37 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22854_gov_patientEpisode'
+05/25/2018 10:54:37 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:40 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22854_gov_patientEpisode'
+05/25/2018 10:54:40 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:45 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22854_gov_patientEpisode'
+05/25/2018 10:54:45 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:48 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22854_gov_patientEpisode'
+05/25/2018 10:54:48 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:51 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22854_gov_patientEpisode'
+05/25/2018 10:54:51 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:54 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22904_gov_patientEpisode'
+05/25/2018 10:54:54 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:56 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22904_gov_patientEpisode'
+05/25/2018 10:54:56 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 10:54:59 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22904_gov_patientEpisode'
+05/25/2018 10:54:59 - 82.34.15.57: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:05:15 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22832_gov_patientEpisode'
+05/25/2018 13:05:15 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:06:03 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22904_gov_patientEpisode'
+05/25/2018 13:06:03 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:06:20 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22904_gov_patientEpisode'
+05/25/2018 13:06:20 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:06:26 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22900_gov_patientEpisode'
+05/25/2018 13:06:26 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:06:27 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22820_gov_patientEpisode'
+05/25/2018 13:06:27 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:06:30 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22904_gov_patientEpisode'
+05/25/2018 13:06:30 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:06:37 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22900_gov_patientEpisode'
+05/25/2018 13:06:37 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:06:40 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22896_gov_patientEpisode'
+05/25/2018 13:06:40 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:07:58 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22820_gov_patientEpisode'
+05/25/2018 13:07:58 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:11:03 - 54.86.37.102: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:11:03 - 54.86.37.102: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:11:03 - 54.86.37.102: Validation: bitlybot detected
+05/25/2018 13:11:16 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:11:16 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:11:16 - 71.72.32.10: validation: DB pw: 
+05/25/2018 13:11:16 - 71.72.32.10: validation: Session login_failed: 
+05/25/2018 13:11:28 - 185.20.6.14: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:11:28 - 185.20.6.14: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:11:28 - 185.20.6.14: validation: DB pw: 
+05/25/2018 13:11:28 - 185.20.6.14: validation: Session login_failed: 
+05/25/2018 13:12:52 - 71.72.32.10: Surname: Lage Postal Code: NG12 5HP
+05/25/2018 13:13:46 - 71.72.32.10: day: 06  month: 08 year: 1996 
+05/25/2018 13:13:46 - 71.72.32.10: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Lage',
+              c_postalCodeEntered='NG125HP',
+              c_dateOfBirthEntered='06/08/1996',
+              c_nhsNumberEntered='123123123'
+          WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:14:18 - 71.72.32.10: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '22962_gov_patientEpisode'
+05/25/2018 13:14:18 - 71.72.32.10: validation_review: Surname Entered: Lage - DB: Lage
+05/25/2018 13:14:18 - 71.72.32.10: validation_review: PostalCode Entered: NG125HP - DB: NG125HP
+05/25/2018 13:14:18 - 71.72.32.10: validation_review: DOB Entered: 06/08/1996 - DB: 06/08/1996
+05/25/2018 13:14:18 - 71.72.32.10: validation_review: NHS Entered: 123123123 - DB: 123123123
+05/25/2018 13:14:18 - 71.72.32.10: validation_review: Error Count: 0
+05/25/2018 13:14:18 - 71.72.32.10: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Lage',
+              c_postalCodeEntered='NG125HP',
+              c_dateOfBirthEntered='06/08/1996',
+              c_emailAddress='dlage@meshintegration.com',
+              c_nhsNumberEntered='123123123',
+              c_password='',
+              c_mobileNumber='5022971678',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:14:18 - 71.72.32.10: Going to mobile.php...
+05/25/2018 13:14:18 - 71.72.32.10: Validation_Mobile page: 22962_gov_patientEpisode
+05/25/2018 13:14:39 - 71.72.32.10: mobile: 5022971678  email: dlage@meshintegration.com Preferred: EMAIL PreferenceSet: 
+05/25/2018 13:14:39 - 71.72.32.10: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Lage',
+              c_postalCodeEntered='NG125HP',
+              c_dateOfBirthEntered='06/08/1996',
+              c_emailAddress='dlage@meshintegration.com',
+              c_nhsNumberEntered='123123123',
+              c_password='',
+              c_mobileNumber='5022971678',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:18:55 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:18:55 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:20:17 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22920_gov_patientEpisode'
+05/25/2018 13:20:17 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'mm1admin@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:23:27 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:23:27 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:23:27 - 71.72.32.10: validation: DB pw: 
+05/25/2018 13:23:27 - 71.72.32.10: validation: Session login_failed: 
+05/25/2018 13:23:31 - 71.72.32.10: Surname: Lage Postal Code: NG12 5HP
+05/25/2018 13:23:43 - 71.72.32.10: day: 06  month: 07 year: 1997 
+05/25/2018 13:23:43 - 71.72.32.10: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Lage',
+              c_postalCodeEntered='NG125HP',
+              c_dateOfBirthEntered='06/07/1997',
+              c_nhsNumberEntered='4578963321'
+          WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:23:43 - 71.72.32.10: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '22962_gov_patientEpisode'
+05/25/2018 13:23:43 - 71.72.32.10: validation_review: Surname Entered: Lage - DB: Lage
+05/25/2018 13:23:43 - 71.72.32.10: validation_review: PostalCode Entered: NG125HP - DB: NG125HP
+05/25/2018 13:23:43 - 71.72.32.10: validation_review: DOB Entered: 06/07/1997 - DB: 06/08/1996
+05/25/2018 13:23:43 - 71.72.32.10: DOB Error
+05/25/2018 13:23:43 - 71.72.32.10: validation_review: NHS Entered: 4578963321 - DB: 123123123
+05/25/2018 13:23:43 - 71.72.32.10: NHS Error
+05/25/2018 13:23:43 - 71.72.32.10: validation_review: Error Count: 2
+05/25/2018 13:23:43 - 71.72.32.10: Date parts: 06  07  1997
+05/25/2018 13:24:01 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:24:01 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:26:10 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:26:10 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:26:10 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:26:10 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:48:16 - 71.72.32.10: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22962_gov_patientEpisode'
+05/25/2018 13:48:16 - 71.72.32.10: get_pt_info: SELECT o.c_logo 
+              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
+              WHERE u.id = 'jmacknife@thenakedsurgeon.com' 
+              AND u.id = e.userId 
+              AND o.c_name=e.departmentId
+05/25/2018 13:48:16 - 71.72.32.10: validation: DB pw: 
+05/25/2018 13:48:16 - 71.72.32.10: validation: Session login_failed: 
