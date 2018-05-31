@@ -13,10 +13,10 @@ logMsg("userId: ".$user_id, $logfile);
 if ($user_id)
 {
    $user_role = stripslashes($_COOKIE["user_role"]);
-logMsg("userRole: ".$user_role, $logfile);
+//logMsg("userRole: ".$user_role, $logfile);
    $user_initials = stripslashes($_COOKIE["user_initials"]);
    $user_fullname = stripslashes($_COOKIE["user_fullname"]);
-logMsg("userInitials: ".$user_initials, $logfile);
+//logMsg("userInitials: ".$user_initials, $logfile);
 }
 else
 {

@@ -121,7 +121,7 @@ function date_cleanup($dt)
    return $arr_date_cleanup;
 }
 // **************************************************
-function is_email_unique($email, $id)
+function is_email_unique($email, $id="XXJUNKXX")
 {
    $sql="SELECT * 
          FROM dir_user 

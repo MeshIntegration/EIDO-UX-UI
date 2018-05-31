@@ -18,7 +18,7 @@ if ($mode=="update") {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    //$password = $_POST['password'];
 
     //  check for required fields and formats here
     if ($firstname == "")
@@ -33,33 +33,61 @@ if ($mode=="update") {
         $_SESSION['add_email_error'] = true; else $_SESSION['add_email_error'] = false;
     if ($email <> "" && !filter_var($email, FILTER_VALIDATE_EMAIL))
         $_SESSION['add_bad_email_error'] = true; else $_SESSION['add_bad_email_error'] = false;
-    if (!is_email_unique($email))
+    if (!is_email_unique($email, $id))
         $_SESSION['add_email_duplicate_error'] = true; else $_SESSION['add_email_duplicate_error'] = false;
-    if ($password == "")
-        $_SESSION['add_password_error'] = true; else $_SESSION['add_password_error'] = false;
+    //if ($password == "")
+        //$_SESSION['add_password_error'] = true; else $_SESSION['add_password_error'] = false;
     if ($_SESSION['add_firstname_error'] || $_SESSION['add_lastname_error'] ||
         $_SESSION['add_bad_email_error'] || $_SESSION['add_email_error'] || $_SESSION['add_email_duplicate_error'] ||
         $_SESSION['add_firstname_format_error'] || $_SESSION['add_lastname_format_error']) {
             $_SESSION['add_firstname'] = $firstname;
             $_SESSION['add_lastname'] = $lastname;
             $_SESSION['add_email'] = $email;
-            $_SESSION['add_password'] = $password;
+            //$_SESSION['add_password'] = $password;
             header("Location: users.php?m=update&id=$id");
             exit();
     }
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
 
     $sql = "UPDATE dir_user
-           SET firstName=" . escapeQuote($firstName) . ",
-               lastName=" . escapeQuote($lastName) . ",
+           SET firstName=" . escapeQuote($firstname) . ",
+               lastName=" . escapeQuote($lastname) . ",
                email=" . escapeQuote($email) . "
            WHERE id='$id'";
     dbi_query($sql);
+    unset($_SESSION['add_firstname']);
+    unset($_SESSION['add_lastname']);
+    unset($_SESSION['add_email']);
     logMsg("UPDATE: $sql", $logfile);
-}
-else if ($mode=="userreset") {
+} else if ($mode=="gotoadd") {
+    $_SESSION['add_firstname_error']=false;
+    $_SESSION['add_firstname_format_error']=false;
+    $_SESSION['add_lastname_error']=false;
+    $_SESSION['add_lastname_format_error']=false;
+    $_SESSION['add_bad_email_error']=false;
+    $_SESSION['add_email_error']=false;
+    $_SESSION['add_email_duplicate_error']=false;
+    $_SESSION['add_password_error']=false;
+    $_SESSION['add_password_match_error']=false;
+    unset($_SESSION['add_firstname']);
+    unset($_SESSION['add_lastname']);
+    unset($_SESSION['add_email']);
+    unset($_SESSION['add_password']);
+   header("Location: users.php?m=add");
+   exit();
+} else if ($mode=="gotoupdate") {
+    $_SESSION['add_firstname_error']=false;
+    $_SESSION['add_firstname_format_error']=false;
+    $_SESSION['add_lastname_error']=false;
+    $_SESSION['add_lastname_format_error']=false;
+    $_SESSION['add_bad_email_error']=false;
+    $_SESSION['add_email_error']=false;
+    $_SESSION['add_email_duplicate_error']=false;
+    unset($_SESSION['add_firstname']);
+    unset($_SESSION['add_lastname']);
+    unset($_SESSION['add_email']);
+    header("Location: users.php?m=update&id=$id");
+    exit();
+} else if ($mode=="userreset") {
    //global $TBLPTEPISODES;
    $sql = "UPDATE dir_user
            SET c_pw_reset=1,
@@ -106,7 +134,6 @@ echo "<br />";
 exit();
 *************************************************************************  */
 else if ($mode=="add") {
-logMsg("IN SUPERUSER ADD MODE",$logfile);
    $firstname = $_POST['firstname'];
    $lastname = $_POST['lastname'];
    $email = $_POST['email'];
@@ -115,10 +142,8 @@ logMsg("IN SUPERUSER ADD MODE",$logfile);
 
    //  check for required fields and formats here
    if ($firstname=="") {
-logMsg("FIRSTNAME ERROR blank",$logfile);
       $_SESSION['add_firstname_error']=true; }
    else $_SESSION['add_firstname_error']=false;
-  
    if (!preg_match("/^[a-zA-Z]*$/",$firstname))
       $_SESSION['add_firstname_format_error']=true; else $_SESSION['add_firstname_format_error']=false;
    if ($lastname=="")
@@ -184,6 +209,48 @@ logMsg("FIRSTNAME ERROR blank",$logfile);
    dbi_query($sql);
    logMsg("ADD: $sql",$logfile);
 
+   // send email to the new user 
+   include "../includes/inc_email_template.php";
+
+   // need a button - include it into template
+   include "../includes/inc_email_button.php";
+   $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
+
+   $email_template = str_replace("**FIRSTNAME**", $firstname, $email_template);
+   $email_template = str_replace("**HEADER**", "Welcome", $email_template);
+
+   $content1 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
+         Username: $email<br />
+         Password: $password<br /><br />
+         <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
+         $email_template = str_replace("**CONTENT1**", $content1, $email_template);
+
+   $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
+         <p>Username: $email<br />
+         Password: $password</p>
+         <p>Click the button below to log into the EIDO Verify systemi</p>";
+         $email_template = str_replace("**CONTENT2**", $content2, $email_template);
+
+   // set up the button
+   $button_text = "Get Started";
+   $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
+   $button_url = "https://verify.eidosystems.com";
+   $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
+
+   // contnt3 after the button
+   $content3="";
+   $email_template = str_replace("**CONTENT3**", $content3, $email_template);
+
+   $arr_email = array();
+   $arr_email['mail_to']=$email;
+   $arr_email['mail_to_name']="$firstname $lastname";
+   $arr_email['bcc']="wayne@mindstreams.com";
+   $arr_email['mail_from']=$verify_mail_from;
+   $arr_email['mail_from_name']=$verify_mail_from_name;
+   $arr_email['subject']="EIDO Verify Account Information";
+   $arr_email['body']=$email_template;
+   send_email($arr_email);
+   
    unset($_SESSION['add_firstname']); 
    unset($_SESSION['add_lastname']); 
    unset($_SESSION['add_email']); 

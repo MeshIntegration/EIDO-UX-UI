@@ -1843,12 +1843,20 @@ h4.vertical-middle {
   cursor: pointer;
 }
 
-.fancy-eido-round-checkbox input:disabled ~ span {
-  border-color:#eee;
+.fancy-eido-round-checkbox input:disabled ~ .checkmark {
+  border-color:#eee !important;
+}
+
+.fancy-eido-round-checkbox input:disabled ~ .checkmark:before {
+  display:none !important;
+}
+
+.fancy-eido-round-checkbox input:disabled ~ .control-label {
+  color:#eee !important;
 }
 
 
-.fancy-eido-round-checkbox span {
+.fancy-eido-round-checkbox .checkmark {
   position: absolute;
   left:0;
   top:3px;
@@ -1860,11 +1868,11 @@ h4.vertical-middle {
 }
 
 
-.fancy-eido-round-checkbox input:checked ~ span {
+.fancy-eido-round-checkbox input:checked ~ .checkmark {
   border-color:#3dae65;
 }
 
-.fancy-eido-round-checkbox input:checked ~ span:before {
+.fancy-eido-round-checkbox input:checked ~ .checkmark:before {
   content:'';
   position: absolute;
   top:50%;

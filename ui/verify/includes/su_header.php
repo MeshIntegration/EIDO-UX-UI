@@ -11,7 +11,7 @@
         <!--  <div class="grid" style="padding-top: 15px;"> -->
 
         <div id="addusr" class="row links">
-            <a href="/ui/verify/superuser/users.php?m=add" style="left -20px">
+            <a href="/ui/verify/superuser/users_a.php?m=gotoadd" style="left -20px">
                 <i class="icon eido-icon-plus"></i>Add user</a>
         </div>
     </div>

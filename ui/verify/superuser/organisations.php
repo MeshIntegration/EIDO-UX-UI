@@ -19,9 +19,13 @@ if ($user_role<>"SUPERUSER")
 session_start();
 $return_to = "suo";
 $home = "organisations.php";
-$logfile = "superuser.log";
+$logfile = "organisation.log";
 
-// turn eerything off
+$mode = get_query_string('m');
+$id = get_query_string('id');
+logMsg("Organisations: mode: $mode OrgID: $id",$logfile);
+
+// turn everything off
 $add_hide = "hide";
 $update_hide = "hide";
 $orgproc_hide = "hide";
@@ -32,11 +36,7 @@ $editdiv_hide = "hide";
 $adddiv_hide = "hide";
 $addcust_hide = "hide";
 
-$mode = get_query_string('m');
-$id = get_query_string('id');
-logMsg("Organisations: mode: $mode OrgID: $id",$logfile);
-
-if ($mode=="" || mode=="add")
+if ($mode=="" || $mode=="add")
 {
    $add_hide = "";
 }
@@ -125,7 +125,7 @@ logMsg("Organisations: $sql",$logfile);
     <div class="cell navigation-bar">
 	  <ul class="menu simple show-for-medium">
 		<li><a href="users.php">Users</a></li>
-		<li class="current"><a href="organisations.php">Organisations</a></li>
+		<li class="current"><a href="organisations_a.php?m=gotoaddorg">Organisations</a></li>
 		<li><a href="procedures.php">Procedures</a></li>
 		<li><a href="https://p.datadoghq.com/sb/58e98b188-f2dbe0e7169491992f629b07c0d075c1" target="_blank">System Health &amp; Logs</a></li>
 		<li><a href="http://piwik.cyberacc.net/index.php?module=CoreHome&action=index&idSite=2&period=day&date=yesterday&updated=1#?idSite=2&period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1" target="_blank">System Analytics</a></li>
@@ -233,26 +233,36 @@ logMsg("Organisations: $sql",$logfile);
     <div class="grid-container">
        <div class="grid-x">
             <div class="small-12 cell field">
+                	   <?php if ($_SESSION['add_orgname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the oranization name</strong> - this is required</div>";
+                                 else if ($_SESSION['add_orgname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct organization name</strong> - no special characters are allowed</div>"; ?>
                 <label class="weight-normal">Name
                 <input type="text" name="name" placeholder="">
               </label>
             </div>
             <div class="small-12 cell field">
+	         <?php if ($_SESSION['add_fname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                 else if ($_SESSION['add_fname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
                 <label class="weight-normal">Administrator Contact First Name
                 <input type="text" name="fname"  placeholder="">
               </label>
             </div>
             <div class="small-12 cell field">
+	         <?php if ($_SESSION['add_lname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your last name</strong> - this is required</div>";
+                 else if ($_SESSION['add_lname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
                 <label class="weight-normal">Administrator Contact Surname
                 <input type="text" name="lname"  placeholder="">
               </label>
             </div>
             <div class="small-12 cell field">
+               <?php if ($_SESSION['add_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                 else if ($_SESSION['add_bad_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
+                 else if ($_SESSION['add_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
                 <label class="weight-normal">E-mail Address
                 <input type="text" name="email" placeholder="">
               </label>
             </div>
             <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_type_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please select a type</strong> - this is required</div>"; ?>
                 <label class="weight-normal">Type
                 <select name="type">
                   <option value=""></option>
@@ -262,6 +272,8 @@ logMsg("Organisations: $sql",$logfile);
                 </select>
               </label>
               <div class="small-6 medium-6 large-6 cell">
+                 <?php if ($_SESSION['add_logo_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please upload your file again</strong> - there was an error during upload</div>";
+                  if ($_SESSION['add_logo_type_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please upload an image file</strong> - the file must be a JPG PNG or GIF</div>"; ?>
                   <label class="weight-normal">Organisation Header Logo
                   <img src="/ui/verify/img/org_logos/blank.jpg">&nbsp;&nbsp;<input type="file" name="header_logo" placeholder="">
                 </label>
@@ -653,12 +665,12 @@ logMsg("Organisations: $sql",$logfile);
 	        <div class="row grid-x grid-padding-15">
 		        <div class="small-5" style="padding-right:20px;">
 			        <label class="eido-radio">
-				        <input type="radio" name="subdivision"  value="Yes" id="subdivisionRed" required <?php if ($org_subdivision=="YES") echo "checked"; ?> />
+				        <input type="radio" name="subdivision"  value="Yes" id="subdivisionRed" required <?php if (strtoupper($org_subdivision)=="YES") echo "checked"; ?> />
 				        <span class="checkmark"></span>
 				        <span class="text">Yes</span>
 			        </label>
 			        <label class="eido-radio">
-				        <input type="radio" name="subdivision" value="No" id="subdivisionBlue" <?php if ($org_subdivision=="NO") echo "checked"; ?> />
+				        <input type="radio" name="subdivision" value="No" id="subdivisionBlue" <?php if (strtoupper($org_subdivision)=="NO") echo "checked"; ?> />
 				        <span class="checkmark"></span>
 				        <span class="text">No</span>
 			        </label>

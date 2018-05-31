@@ -46,6 +46,71 @@ if ($mode=="edit")
    // store postal code with no spaces all caps
    //    $postalcode=strtoupper(str_replace(" ", "", $_POST['postalcode']));
    //            c_postalCode=".escapeQuote($postalcode).",
+
+   // required field check
+   if ($fname=="")
+      $_SESSION['add_fname_error']=true; else $_SESSION['add_fname_error']=false;
+   if (!preg_match("/^[a-zA-Z- ']*$/",$fname))
+      $_SESSION['add_fname_format_error']=true; else $_SESSION['add_fname_format_error']=false;
+
+   if ($lname=="")
+      $_SESSION['add_lname_error']=true; else $_SESSION['add_lname_error']=false;
+   if (!preg_match("/^[a-zA-Z- ']*$/",$lname))
+      $_SESSION['add_lname_format_error']=true; else $_SESSION['add_lname_format_error']=false;
+
+   if ($nhsnumber=="")
+      $_SESSION['add_nhsnumber_error']=true; else $_SESSION['add_nhsnumber_error']=false;
+   if (!preg_match("/^[0-9]*$/",$nhsnumber))
+      $_SESSION['add_nhsnumber_format_error']=true; else $_SESSION['add_nhsnumber_format_error']=false;
+   if (strlen($nhsnumber)<>10)
+      $_SESSION['add_nhsnumber_length_error']=true; else $_SESSION['add_nhsnumber_length_error']=false;
+
+   if ($hospitalnumber=="")
+      $_SESSION['add_hospitalnumber_error']=true; else $_SESSION['add_hospitalnumber_error']=false;
+   if (!preg_match("/^[a-zA-Z0-9]*$/",$hospitalnumber))
+      $_SESSION['add_hospitalnumber_format_error']=true; else $_SESSION['add_hospitalnumber_format_error']=false;
+
+   if ($gender=="")
+      $_SESSION['add_gender_error']=true; else $_SESSION['add_gender_error']=false;
+
+   if ($dob=="")
+      $_SESSION['add_dob_error']=true;
+   else
+   {
+      $_SESSION['add_dob_error']=false;
+      if (!preg_match("/^[0-9\/\-]*$/",$dob))
+         $_SESSION['add_dob_format_error']=true;
+      else
+      {
+         $_SESSION['add_dob_format_error']=false;
+         $arr_date_cleanup=date_cleanup($dob);
+         if (!$arr_date_cleanup['date_valid'])
+            $_SESSION['add_dob_invalid_error']=true;
+         else
+         {
+            $_SESSION['add_dob_invalid_error']=false;
+            $dob=$arr_date_cleanup['date_formatted'];
+         }
+      }
+   }
+
+   if ($email<>"" && !filter_var($email, FILTER_VALIDATE_EMAIL))
+      $_SESSION['add_bad_email_error']=true; else $_SESSION['add_bad_email_error']=false;
+   if ($email=="" && $mobilenumber=="")
+      $_SESSION['add_no_contact_error']=true; else $_SESSION['add_no_contact_error']=false;
+
+   if ($_SESSION['add_fname_error'] || $_SESSION['add_lname_error'] || $_SESSION['add_nhsnumber_error'] ||
+       $_SESSION['add_hospitalnumber_error'] || $_SESSION['add_gender_error'] || $_SESSION['add_dob_error'] ||
+       $_SESSION['add_bad_email_error'] || $_SESSION['add_no_contact_error'] ||
+       $_SESSION['add_fname_format_error'] || $_SESSION['add_lname_format_error'] ||
+       $_SESSION['add_nhsnumber_format_error'] || $_SESSION['add_hospitalnumber_format_error'] ||
+       $_SESSION['add_nhsnumber_length_error'] || $_SESSION['add_dob_invalid_error'] ||
+       $_SESSION['add_dob_format_error'])
+   {
+      header("Location: patients.php?m=edit&id=$id");
+      exit();
+   }
+
    $sql = "UPDATE $TBLPTEPISODES
            SET c_firstName=".escapeQuote($_POST['fname']).",
                c_surname=".escapeQuote($_POST['lname']).",
@@ -84,7 +149,7 @@ else if ($mode=="add")
       $_SESSION['add_nhsnumber_error']=true; else $_SESSION['add_nhsnumber_error']=false;
    if (!preg_match("/^[0-9]*$/",$nhsnumber))
       $_SESSION['add_nhsnumber_format_error']=true; else $_SESSION['add_nhsnumber_format_error']=false;
-   if (strlen($nhsnumber)<>9)
+   if (strlen($nhsnumber)<>10)
       $_SESSION['add_nhsnumber_length_error']=true; else $_SESSION['add_nhsnumber_length_error']=false;
 
    if ($hospitalnumber=="")
@@ -247,6 +312,13 @@ else if ($mode=="addconfirm")
    header("Location: patients.php?m=procproceed&id=$pe_id");
    exit();
 }
+else if ($mode=="gotoedit")
+{
+   clear_add_session();
+   //$_SESSION['workflow']="ADD";
+   header("Location: patients.php?m=edit&id=$id");
+   exit();
+}
 else if ($mode=="gotoaddpt")
 {
    clear_add_session();
@@ -373,8 +445,8 @@ logMsg("Update TL: $sql", $logfile);
 
    send_email($arr_email);
   
-   header("Location: resend_invite.php?rtn=reviewconfirm&id=$id");
-   // header("Location: patients.php?m=reviewconfirm&id=$id");
+   // header("Location: resend_invite.php?rtn=reviewconfirm&id=$id");
+   header("Location: patients.php?m=reviewconfirm&id=$id");
    exit();
 }
 else if ($mode=="clearalert")

@@ -9,7 +9,7 @@ $logfile = "validation.log";
 
 function get_pt_info($patientEpisodeId)
 {
-   global $TBLPTEPISODES;
+   global $TBLPTEPISODES, $TBLORGANISATIONS;
 
    $arr_pt_info = array();
    $sql = "SELECT * FROM $TBLPTEPISODES
@@ -25,11 +25,10 @@ function get_pt_info($patientEpisodeId)
    {
       $arr_pt_info = $GetQuery->fetch_assoc();
       $sql = "SELECT o.c_logo 
-              FROM dir_employment e, app_fd_ver_organizations o, dir_user u
-              WHERE u.id = '".$arr_pt_info['c_userId']."' 
-              AND u.id = e.userId 
-              AND o.c_name=e.departmentId";
-      logMsg("get_pt_info: $sql", "validation.log");
+              FROM $TBLORGANISATIONS o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='".$arr_pt_info['c_userId']."'";
+      logMsg("get_pt_info LOGO: $sql", "validation.log");
       $GetQuery = dbi_query($sql);
       $qryResult = $GetQuery->fetch_assoc();
       $arr_pt_info['logo'] = $qryResult['c_logo'];

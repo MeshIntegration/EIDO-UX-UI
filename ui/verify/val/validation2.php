@@ -89,7 +89,7 @@ $logfile = "validation.log";
                 <span class="input-group-label"><i class="fi-target"></i></span>
                <input class="input-group-field" type="text" name="c_nhsNumber" placeholder="Enter your number">
           </div>
-		  <p class="note text-left font-normal">You can find your NHS Number on a letter from your GP or hospital, or on a medical ID card</p>
+		  <p class="note text-left font-normal">You can find your NHS Number on a letter from your GP or hospital, or on a medical ID card.</p>
 	</label>
 	<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 		<div class="small-12 cell">

@@ -1,6 +1,7 @@
 <!doctype html>
 <?php
 require_once '../utilities.php';
+$logfile="validation.log";
 session_start();
 
 // initialize
@@ -12,6 +13,8 @@ $moreReminders = get_query_string('moreReminders');
 $dev = get_query_string('dev');
 
 $arr_pt_info = get_pt_info($patientEpisodeId);
+logMsg("Logo: ".$arr_pt_info['logo'],$logfile);
+
 if ($arr_pt_info['c_surname']<>"ERROR") {
    $browser = $_SERVER['HTTP_USER_AGENT'];
    if (strpos(strtolower($browser), "bit.ly")) {

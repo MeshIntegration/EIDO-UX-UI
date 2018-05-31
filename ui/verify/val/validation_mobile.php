@@ -115,14 +115,14 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 							<div name="preferred" id="contactpreference" class="<?php echo $contactmethod; ?> small-12">
 								<p class="lead">Which contact method would you prefer?</p>
 			                      <label class="fancy-eido-round-checkbox">
-				                      Email
 			                          <input type="radio" name="preferred" value="EMAIL" <?php echo $email_checked; ?> id="preferred_contact_email"/>
-			                          <span for="preferred_contactRed"></span>
+			                          <span for="preferred_contactRed" class="checkmark"></span>
+				                      <span class="control-label">Email</span>
 			                      </label>
 			                      <label class="fancy-eido-round-checkbox">
-				                      Mobile
 			                          <input type="radio" name="preferred" value="MOBILE" <?php echo $mobile_checked; ?> id="preferred_contact_mobile"/>
-			                          <span for="preferred_contactBlue"</span>
+			                          <span for="preferred_contactBlue" class="checkmark"></span>
+				                      <span class="control-label">Mobile</span>
 			                      </label>
 							</div>
 						</div>

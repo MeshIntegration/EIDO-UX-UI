@@ -35,7 +35,7 @@ if($f == "delete_orgproc") {
 	$goto = "procedures.php?m=managesurveys&id=$pe_id&sess_id=$sess_id";
 
 } else if($mode == "add_survey_to_temp") {
-
+logMsg("In: add_survey_to_temp","procedure.log");
 	$indx = get_query_string('s');  // index into survey array
 	$c_surveyNumber = get_query_string('sn');  // survey number
 	$pe_id = get_query_string('id'); // procedure id
@@ -44,14 +44,29 @@ if($f == "delete_orgproc") {
 
 	// check for number of survey limit
 	$no_of_survey_stored = get_num_surveys_by_proc($pe_id, $sess_id);
-	if(($no_of_survey_stored + count($arr_add_surveys) >= $MAX_SURVEYS)) {
-		// max survey allready selected
+$surveyct = count($arr_add_surveys);
+logMsg("MaxSurveys: $MAX_SURVEYS - PEID: $pe_id - SESS: $sess_id - NUMSURV: $surveyct","procedure.log");
+
+	//if(($no_of_survey_stored + count($arr_add_surveys) >= $MAX_SURVEYS)) {
+	if((count($arr_add_surveys) >= $MAX_SURVEYS)) {
+logMsg("In: too many surveys","procedure.log");
+		// max survey already selected
 		// dont allow this add operation
 		$_SESSION['error_msg'] = "The current number of surveys plus the selected ones are greater that the maximum of (" . $MAX_SURVEYS . ") allowed.";
 		$goto = "procedures.php?m=addsurveys&id=$pe_id&sess_id=$sess_id";
 	} else {
+logMsg("In: add to array","procedure.log");
 		unset($_SESSION['arr_add_surveys']);
+//echo "------------<br />";
+//echo "<PRE>";
+//print_r($arr_add_surveys);
+//echo "</PRE>";
 		$arr_add_surveys[] = $c_surveyNumber;
+//echo "------------<br />";
+//echo "<PRE>";
+//print_r($arr_add_surveys);
+//echo "</PRE>";
+//exit();
 		$_SESSION['arr_add_surveys'][$pe_id] = array_unique($arr_add_surveys);
 
 		// take it out of the all survey list

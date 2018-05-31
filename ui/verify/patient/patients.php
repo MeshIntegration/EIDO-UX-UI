@@ -522,14 +522,18 @@ $results_count = $GetQuery_all->num_rows;
 	<link rel="icon" type="image/png" href="../favicon.png">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
 
-	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="../css/eido.css">
-    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>-->
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.js"></script>
 
 </head>
 <body>
@@ -1029,7 +1033,7 @@ $results_count = $GetQuery_all->num_rows;
 							<?php if($_SESSION['add_nhsnumber_error'])
 								echo "<div class='error_message fi-alert'><strong>Please enter your NHS Numbr</strong> - this is required</div>"; else if($_SESSION['add_nhsnumber_format_error'])
 								echo "<div class='error_message fi-alert'><strong>Please correct your NHS number</strong> - no letters or special characters are allowed</div>"; else if($_SESSION['add_nhsnumber_length_error'])
-								echo "<div class='error_message fi-alert'><strong>Please correct your NHS number</strong> - it should be nine (9) digits</div>"; ?>
+								echo "<div class='error_message fi-alert'><strong>Please correct your NHS number</strong> - it should be ten (10) digits</div>"; ?>
 							<label>NHS Number
 								<input type="text" name="nhsnumber" placeholder="" value="<?php echo $_SESSION['add_nhsnumber']; ?>">
 							</label>
@@ -1236,7 +1240,7 @@ $results_count = $GetQuery_all->num_rows;
 		<?php else: ?>
 
 			<div class="patient-data">
-				<a href="patients.php?m=detail&id=<?php echo $pe_id; ?>" class="link-full-block standard-padding standard-border-bottom">
+				<a href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>" class="link-full-block standard-padding standard-border-bottom">
 					<span class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
 					<!-- have to have this one in their row for wrapping to work correctly-->
 					<div class="grid-x">
@@ -1627,8 +1631,8 @@ $results_count = $GetQuery_all->num_rows;
 			<div class="small-12 medium-6 large-6 cell text-center">
 				<p>&nbsp;</p>
 				<?php if($mode == "detail") {
-					$goto = "patients.php";
-					$m = "edit";
+					$goto = "patients_a.php";
+					$m = "gotoedit";
 					$btn_class = "inactive";
 					$btn_text = "Edit Patient";
 				} else if($mode == "addreview") {
@@ -1687,11 +1691,17 @@ $results_count = $GetQuery_all->num_rows;
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
 					<div class="small-12 medium-12 large-12 cell">
+                                                        <?php if($_SESSION['add_fname_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please enter your First Name</strong> - this is required</div>"; else if($_SESSION['add_fname_format_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
 						<label>First Name
 							<input type="text" name="fname" value="<?php echo $c_firstName; ?>">
 						</label>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
+                                                        <?php if($_SESSION['add_lname_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please enter your First Name</strong> - this is required</div>"; else if($_SESSION['add_lname_format_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
 						<label>Surname
 							<input type="text" name="lname" value="<?php echo $c_surname; ?>">
 						</label>
@@ -1700,11 +1710,18 @@ $results_count = $GetQuery_all->num_rows;
 						&nbsp;
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
+                                                        <?php if($_SESSION['add_nhsnumber_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please enter your NHS Numbr</strong> - this is required</div>"; else if($_SESSION['add_nhsnumber_format_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please correct your NHS number</strong> - no letters or special characters are allowed</div>"; else if($_SESSION['add_nhsnumber_length_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please correct your NHS number</strong> - it should be ten (10) digits</div>"; ?>
 						<label>NHS Number
 							<input type="text" name="nhsnumber" value="<?php echo $c_nhsNumber; ?>">
 						</label>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
+                                                        <?php if($_SESSION['add_hospitalnumber_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please enter your Hospital Number</strong> - this is required</div>"; else if($_SESSION['add_hospitalnumber_format_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please correct your Hospital Number</strong> - no special characters are allowed</div>"; ?>
 						<label>Hospital Number
 							<input type="text" name="hospitalnumber" value="<?php echo $c_referenceNumberHospitalId; ?>">
 						</label>
@@ -1713,6 +1730,8 @@ $results_count = $GetQuery_all->num_rows;
 						&nbsp;
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
+                                                        <?php if($_SESSION['add_gender_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please enter your Gender</strong> - this is required</div>"; ?>
 						<label>Gender
 							<select name="gender" id="gender">
 								<option <?php if($c_gender == "Male")
@@ -1728,6 +1747,10 @@ $results_count = $GetQuery_all->num_rows;
 						</label>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
+                                                        <?php if($_SESSION['add_dob_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please enter your Date of Birth</strong> - this is required</div>"; else if($_SESSION['add_dob_format_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - special characters are not allowed</div>"; else if($_SESSION['add_dob_invalid_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - you enterd an invalid date</div>"; ?>
 						<label>Date of Birth
 							<input type="text" name="dob" value="<?php echo $c_dateOfBirth; ?>">
 						</label>
@@ -1750,9 +1773,13 @@ $results_count = $GetQuery_all->num_rows;
 						&nbsp;
 					</div>
 					<div class="small-12 medium-12 large-12 cell" style="margin-top: -2px">
+                                                        <?php if($_SESSION['add_no_contact_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please enter an Email Address OR Mobile Number</strong> - one is required</div>"; ?>
 						<span class="sub-text" >Please enter at least one contact method for the patient</span>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
+                                                        <?php if($_SESSION['add_bad_email_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>This is not a valid email address</strong> - please check</div>"; ?>
 						<label>Email Address
 							<input type="text" name="email" value="<?php echo $c_emailAddress; ?>">
 						</label>
@@ -2787,9 +2814,10 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
     $(".clickable-row").click(function() {
         window.location = $(this).data("href");
     });
- //   $(document).ready(function() {
- //      $("#proc_surgeonname").select2();
- //   });
+    $(document).ready(function() {
+       $(".select2").select2({
+    });
+    });
   //$(function() {
    //   var placeholder = "&#xf002 Select a place";
    //   $(".select2").select2({

@@ -28,7 +28,7 @@ if ($arr_user_info['lastname']=="ERROR") {
    $email_template = str_replace("**FIRSTNAME**", ucfirst(strtolower($arr_user_info['firstname'])), $email_template);
    $email_template = str_replace("**HEADER**", "Password Reset", $email_template);
 
-   $content1 = "You recently requested to change the password for your EIDO Verify account. Click the button below to reset it.<br /><br />If you didn't request a password reset, please ignore this email.<br /><br />If you're having problems with the reset button, just copy and paste this link into your browser.<a href='".$SITE_URL."pw_reset.php?k=$pwkey'>".$SITE_URL."pw_reset.php?k=$pwkey</a><br /><br />";
+   $content1 = "You recently requested to change the password for your EIDO Verify account. Click the button below to reset it.<br /><br />If you didn't request a password reset, please ignore this email.<br /><br />If you're having problems with the reset button, just copy and paste this link into your browser.<br /><a href='".$SITE_URL."pw_reset.php?k=$pwkey'>".$SITE_URL."pw_reset.php?k=$pwkey</a><br /><br />";
    $email_template = str_replace("**CONTENT1**", $content1, $email_template);
 
    $content2 = "You recently requested to change the password for your EIDO Verify account. Click the button below to reset it.</p><p>If you didn't request a password reset, please ignore this email.";
@@ -41,7 +41,7 @@ if ($arr_user_info['lastname']=="ERROR") {
    $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
 
    // content after the button
-   $content3 = "<p style='font-size:12px'>If you're having problems with the reset button, just copy and paste this link into your browser.<a href='".$SITE_URL."pw_reset.php?k=$pwkey'>".$SITE_URL."pw_reset.php?k=$pwkey</a></p>";
+   $content3 = "<p style='font-size:12px'>If you're having problems with the reset button, just copy and paste this link into your browser.<br /><a href='".$SITE_URL."pw_reset.php?k=$pwkey'>".$SITE_URL."pw_reset.php?k=$pwkey</a></p>";
    $email_template = str_replace("**CONTENT3**", $content3, $email_template);
 
    $arr_email['subject']="EIDO Verify Password Reset";

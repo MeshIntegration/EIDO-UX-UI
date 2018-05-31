@@ -131,10 +131,10 @@ header('Expires: 0');
 			          <label style="text-indent: 10px;">User</label>
 		          </div>
 		          <div class="small-2 columns">
-			          <label style="left: -10px;">Surgeon</label>
+			          <label style="left: -10px;">&nbsp;</label>
 		          </div>
 		          <div class="small-2 columns">
-			          <label style="left: -18px;">Admin</label>
+			          <label style="left: -18px;">&nbsp;</label>
 		          </div>
 
 	          </div>
@@ -154,7 +154,7 @@ header('Expires: 0');
                           }
                           ?>
 	                      <li class="<?php echo $isSelected; ?>">
-		                      <a href="users.php?m=update&id=<?php echo $uid; ?>">
+		                      <a href="users_a.php?m=gotoupdate&id=<?php echo $uid; ?>">
 			                      <span class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
 			                      <div class="grid-x">
 				                      <div class="small-2 columns column-first">
@@ -169,7 +169,11 @@ header('Expires: 0');
 						                      <?php echo $email; ?>
 					                      </p>
 				                      </div>
-				                      <div class="small-2 columns text-center">
+                                                      <div class="small-4 columns text-center">
+                                                         &nbsp;
+                                                      </div>
+                                                      <!-- *****
+                                                        <div class="small-2 columns text-center">
 					                      <label class="indicator-checkbox eido-checkbox">
 						                      <input type="checkbox" name="is_surgeon"<?php if ($is_surgeon) echo "checked"; ?>>
 						                      <span class="checkmark"></span>
@@ -181,7 +185,8 @@ header('Expires: 0');
 						                      <input type="checkbox" name="is_admin"<?php if ($is_admin) echo "checked"; ?>>
 						                      <span class="checkmark"></span>
 					                      </label>
-				                      </div>
+				                        </div>
+                                                      ***** -->
 			                      </div>
 
 		                      </a>

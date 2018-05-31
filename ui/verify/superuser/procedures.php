@@ -4,7 +4,7 @@
 // superuser/procedures.php
 // 2017 Copyright, Mesh Integration LLC
 // 1/14/18 - WEL
-// 03/14/19 - SD - add paggination value into session  
+// 03/14/19 - SD - add pagination value into session  
 // ***************************************
 
 require_once '../utilities.php';
@@ -388,10 +388,23 @@ $pagination = get_pagination($page, $totalRecord);
                if ($pe_id<>$_SESSION['pe_id_prev'])
                { 
                   $_SESSION['sessionSurvey1'] = $arr_proc_episode['sessionSurvey1'];
+                  if ($arr_proc_episode['sessionSurvey1']<>"")
+                     $arr_add_surveys[] = $arr_proc_episode['sessionSurvey1']; 
                   $_SESSION['sessionSurvey2'] = $arr_proc_episode['sessionSurvey2'];
+                  if ($arr_proc_episode['sessionSurvey2']<>"")
+                     $arr_add_surveys[] = $arr_proc_episode['sessionSurvey2']; 
                   $_SESSION['sessionSurvey3'] = $arr_proc_episode['sessionSurvey3'];
+                  if ($arr_proc_episode['sessionSurvey3']<>"")
+                     $arr_add_surveys[] = $arr_proc_episode['sessionSurvey3']; 
                   $_SESSION['sessionSurvey4'] = $arr_proc_episode['sessionSurvey4'];
+                  if ($arr_proc_episode['sessionSurvey4']<>"")
+                     $arr_add_surveys[] = $arr_proc_episode['sessionSurvey4']; 
                   $_SESSION['sessionSurvey5'] = $arr_proc_episode['sessionSurvey5'];
+                  if ($arr_proc_episode['sessionSurvey5']<>"")
+                     $arr_add_surveys[] = $arr_proc_episode['sessionSurvey5']; 
+                  // WEL 5/29/18 - we need to pre-populate SESSION['arr_add_surveys']
+                  $_SESSION['arr_add_surveys'][$pe_id] = array_unique($arr_add_surveys); // WEL
+logMsg("Loading SESSION['arr_add_surveys']",$logfile);
                }
                if ($_SESSION["pe_id".$pe_id]['session_type'.$sess_id]=="PRE")
                {
@@ -481,7 +494,6 @@ $pagination = get_pagination($page, $totalRecord);
 	                              <span class="not-allow-move">
 		                              <a href="functions.php?m=delete_proc_survey&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>&survey=<?php echo ($i+1); ?>" class="float-right"><i class="fi-trash sort-icon float-right"></i></a>
 		                              <?php echo $survey_ids[$i]." - ".$arr_survey_info['c_description']; ?>
-
 	                              </span>
                               </li>
                           <?php    }
