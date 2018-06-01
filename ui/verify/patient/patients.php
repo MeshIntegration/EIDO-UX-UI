@@ -515,7 +515,7 @@ $results_count = $GetQuery_all->num_rows;
 	<link rel="stylesheet" href="../css/app.css">
 	<link rel="stylesheet" href="../css/foundation-datepicker.min.css">
 	<link rel="stylesheet" href="../css/timeline.css">
-	<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
 
 
 	<link rel="stylesheet" href="/ui/verify/css/icons/eido-icons.css" type="text/css" />
@@ -527,7 +527,7 @@ $results_count = $GetQuery_all->num_rows;
 	<link rel="stylesheet" href="../css/eido.css">
 
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -824,12 +824,14 @@ $results_count = $GetQuery_all->num_rows;
 				</div>
 			</div>
 			<hr class="gap"/>
+            <div style="margin-right: 20px; margin-left: 20px;"
 			<h3>Recent Notifications</h3>
             <div class="standard-padding <?php echo($has_notifications == true ? " hide" : "") ?>">
 	            <div class='notification-bell text-center'>
 		            <span class="icon display-block"><i class="icon eido-icon-bell-o"></i></span>
 		            <p><strong>No notifications right now.</strong><br>Everything must be working.</p>
 	            </div>
+            </div>
             </div>
 			<div class="standard-padding <?php echo($has_notifications == false ? "hide" : "") ?>" style="margin-bottom:30px;">
 				<ul class="" id="Notifications">
@@ -871,7 +873,7 @@ $results_count = $GetQuery_all->num_rows;
 			<div class="grid-x<?php echo($has_notifications == false ? " hide" : "") ?>">
 				<div class="hide-for-small-only medium-2">&nbsp;</div>
 				<div class="small-12 medium-8">
-					<a href="patients.php?m=main&filter=1&status=1&page=1" class="button large expanded">View all</a>
+					<a href="patients.php?m=main&filter=1&status=1&page=1" class="button large expanded">View All</a>
 				</div>
 				<div class="hide-for-small-only medium-2">&nbsp;</div>
 			</div>
@@ -898,7 +900,7 @@ $results_count = $GetQuery_all->num_rows;
 			<p>&nbsp;</p>
 			<div class="grid-x">
 				<div class="hide-for-small-only medium-2">&nbsp;</div>
-				<div class="small-12 medium-8"><a href="patients.php?m=stats" class="button large expanded active">View stats</a></div>
+				<div class="small-12 medium-8"><a href="patients.php?m=stats" class="button large expanded active">View Stats</a></div>
 				<div class="hide-for-small-only medium-2">&nbsp;</div>
 			</div>
             </div>
@@ -913,7 +915,7 @@ $results_count = $GetQuery_all->num_rows;
                 </a>
 			</div>
 			<h3>Stats<br/><span class="small"></span></h3>
-			<p>User statistics for Verify</p>
+			<p style="margin-right: 20px; margin-left: 20px">User statistics for Verify</p>
 			<div class="grid-x text-center">
 				<div class="small-12 medium-12 large-12 cell">
 					<table width="100%" border="0" class="su-table stack">
@@ -1016,7 +1018,7 @@ $results_count = $GetQuery_all->num_rows;
 						<div class="small-12 cell">
 							<?php if($_SESSION['add_fname_error'])
 								echo "<div class='error_message fi-alert'><strong>Please enter your First Name</strong> - this is required</div>"; else if($_SESSION['add_fname_format_error'])
-								echo "<div class='error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+								echo "<div class='error_message fi-alert'><strong>Please correct your First Name</strong> - no special characters are allowed</div>"; ?>
 							<label>First Name
 								<input type="text" name="fname" placeholder="" value="<?php echo $_SESSION['add_fname']; ?>">
 							</label>
@@ -1024,7 +1026,7 @@ $results_count = $GetQuery_all->num_rows;
 						<div class="small-12 cell">
 							<?php if($_SESSION['add_lname_error'])
 								echo "<div class='error_message fi-alert'><strong>Please enter your Surname</strong> - this is required</div>"; else if($_SESSION['add_lname_format_error'])
-								echo "<div class='error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
+								echo "<div class='error_message fi-alert'><strong>Please correct your Surname</strong> - no special characters are allowed</div>"; ?>
 							<label>Surname
 								<input type="text" name="lname" placeholder="" value="<?php echo $_SESSION['add_lname']; ?>">
 							</label>
@@ -2514,11 +2516,11 @@ $c_surgeonId =$qryResult_sd['id'];
     <div style="margin-left: 20px; margin-right: 20px;">
 	<table class="su-table stack">
 		<tr>
-			<td style="padding-left: 0"><strong>Procedure</strong></td>
+			<td style="padding-left: 0"><strong>Procedure:</strong></td>
 			<td><?php echo $procedure; ?></td>
 		</tr>
 		<tr>
-			<td style="padding-left: 0"><strong>Procedure Date</strong></td>
+			<td style="padding-left: 0"><strong>Procedure Date:</strong></td>
 			<td><?php echo $c_plannedProcedureDate; ?></td>
 		</tr>
 	</table>
@@ -2527,7 +2529,7 @@ $c_surgeonId =$qryResult_sd['id'];
 		<div class="grid-container">
 			<div class="grid-x">
 				<div class="small-12 cell">
-					<h5>Search for the name of the surgeon who will perform this procedure.</h5>
+					<p>Search for the name of the surgeon who will perform this procedure.</p>
 				</div>
 				<div class="small-12 cell">
 					<label>Surgeon Name
@@ -2745,11 +2747,11 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
 	<div style="margin-left: 20px; margin-right: 20px;">
     <table class="su-table stack">
 		<tr style="border-bottom: none;">
-			<td style="padding-left: 0px; border-bottom: none;"><strong>Procedure</strong></td>
+			<td style="padding-left: 0px; border-bottom: none;"><strong>Procedure:</strong></td>
 			<td style="border-bottom: none;" ><?php echo $procedure; ?></td>
 		</tr>
 		<tr>
-			<td style="padding-left: 0px;"><strong>Procedure Date</strong></td>
+			<td style="padding-left: 0px;"><strong>Procedure Date:</strong></td>
 			<td><?php echo $c_plannedProcedureDate; ?></td>
 		</tr>
 	</table>
@@ -2758,7 +2760,7 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
                 <div class="grid-x">
                                 <div class="small-12 medium-12 large-12 cell">
 
-                                        <p style="padding-left: 15px; padding-right: 15px;text-align: center;">Search for the name of the surgeon who performed this procedure</p>
+                                        <p style="padding-left: 20px; padding-right: 20px;text-align: left;">Search for the name of the surgeon who performed this procedure</p>
 
                                         <form action="patients_a.php?m=proccomplete&id=<?php echo $pe_id; ?>" method="post">
                                             <div class="small-12 cell">

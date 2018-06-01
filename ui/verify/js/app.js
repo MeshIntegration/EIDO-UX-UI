@@ -25,9 +25,10 @@ function _init_superuser() {
 	}).trigger('eido-click');
 
 	//to handle the on load !!!! NOOB SCRIPT
-	$('.patient-list .column-first, .grid-header .column-first').css("display","none");
+//	$('.patient-list .column-first,').css("display","none");
+    $('.grid-header .column-first').css("display","none");
 	$('.grid-header strong').addClass("no-check");
-	$("#BulkActions").removeClass('is-active');
+//	$("#BulkActions").removeClass('is-active');
 
 	//when bulk actions are click
 	$(".bulk-action").on('submit', function(e) {

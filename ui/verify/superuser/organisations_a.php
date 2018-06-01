@@ -35,7 +35,7 @@ if ($mode=="update")
    $existing_header_logo = $_POST['existing_header_logo'];
    logMsg("$mode $id $name $type $c_admin",$logfile);
    
-   // get the original oganisation name in case it change
+   // get the original oganisation name in case it changes
    $sql = "SELECT c_name 
            FROM $TBLORGANISATIONS
            WHERE id='$org_id'";
@@ -135,13 +135,15 @@ if ($mode=="update")
    
    $sql = "INSERT INTO dir_user_role
            SET roleId = 'ROLE_USER',
-               userId = '$uid'";
+               userId = '$uid',
+               username = '$email'";
    dbi_query($sql);
    logMsg($sql,$logfile);
 
    $sql = "INSERT INTO dir_user_group
-           SET groupId = 'admin',
-               userId = '$uid'";
+           SET groupId = 'sitedivadmins',
+               userId = '$uid',
+               username = '$email'";
    dbi_query($sql);
    logMsg($sql,$logfile);
    header("Location: organisations.php");
@@ -296,14 +298,14 @@ else if ($mode=="add")
    $sql = "INSERT INTO dir_user_role
            SET roleId = 'ROLE_USER',
                userId = '$uid',
-               username='$uid'";
+               username='$email'";
    dbi_query($sql);
    logMsg($sql,$logfile);
 
    $sql = "INSERT INTO dir_user_group
-           SET groupId = 'admin',
+           SET groupId = 'sitedivadmins',
                userId = '$uid',
-               username='$uid'";
+               username='$email'";
    dbi_query($sql);
    logMsg($sql,$logfile);
 
@@ -320,7 +322,7 @@ else if ($mode=="add")
    $content1 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
          Username: $email<br />
          Password: $password<br /><br />
-         <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
+         <a href='http://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
          $email_template = str_replace("**CONTENT1**", $content1, $email_template);
 
    $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
@@ -332,7 +334,7 @@ else if ($mode=="add")
    // set up the button
    $button_text = "Get Started";
    $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
-   $button_url = "https://verify.eidosystems.com";
+   $button_url = "http://verify.eidosystems.com";
    $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
 
    // content3 after the button

@@ -126,8 +126,7 @@ if ($mode=="add") {
                uipassword='$hash'";
    logMsg("ADD: $sql",$logfile);
    dbi_query($sql);
-      if ($is_surgeon=="1")
-   {
+   if ($is_surgeon=="1") {
       $fullname = "$firstname $lastname";
       $sql = "INSERT INTO $TBLSURGEONS
               SET id='$admin_user_id',
@@ -320,7 +319,6 @@ if ($mode=="update") {
         header("Location: users.php?m=view&id=$user_id");
         exit();
    }
-
 
     // delete records from user_group user_role surgeons table
     // and then recreate

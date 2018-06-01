@@ -64,7 +64,7 @@ logMsg("User ID: $user_id",$logfile);
     is_setcookie("user_fullname", $fullname, 0, "/", $cookie_domain);
     is_setcookie("user_initials", $initials, 0, "/", $cookie_domain);
 
-    logMsg("AFTER COOKIES: FN $fullname - INITIALS $initials - GROUP" . $qryResult['groupId'], $logfile);
+    logMsg("AFTER COOKIES: FN $fullname - INITIALS $initials - GROUP " . $qryResult['groupId'], $logfile);
     if (strtolower($qryResult['groupId']) == "eidoadmins") {
         logMsg("$user_id - Logged in as SUPERUSER", $logfile);
         is_setcookie("user_role", "SUPERUSER", 0, "/", $cookie_domain);

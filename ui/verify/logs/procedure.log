@@ -3781,3 +3781,11 @@
 05/30/2018 02:43:30 - 68.107.189.223: In: add_survey_to_temp
 05/30/2018 02:43:30 - 68.107.189.223: MaxSurveys: 5 - PEID: 5aca22ebc26f5 - SESS: 1 - NUMSURV: 2
 05/30/2018 02:43:30 - 68.107.189.223: In: add to array
+06/01/2018 01:32:59 - 24.101.155.16: Procedures_a: update e1e886ab-23b1f8f7-1bc2ad19-bb0f25f1
+06/01/2018 01:32:59 - 24.101.155.16: UPDATE app_fd_ver_procEpisodes
+           SET id='e1e886ab-23b1f8f7-1bc2ad19-bb0f25f1',
+               c_description='Laparoscopic Cholecystectomy',
+               c_procedureId='UG07',
+               c_displayName='Laparoscopic Cholecystectomy',
+               dateModified=NOW()
+           WHERE id='e1e886ab-23b1f8f7-1bc2ad19-bb0f25f1'

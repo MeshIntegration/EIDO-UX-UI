@@ -115,7 +115,7 @@ $action = $_POST['action'];
          logMsg($sql,$logfile);
          // Group
          if ($is_admin=="1")
-            $group_str="admin";
+            $group_str="sitedivadmins";
          else
             $group_str="staff";
          $sql = "INSERT INTO dir_user_group
