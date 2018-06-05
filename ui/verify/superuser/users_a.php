@@ -222,7 +222,7 @@ else if ($mode=="add") {
    $content1 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
          Username: $email<br />
          Password: $password<br /><br />
-         <a href='http://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
+         <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
          $email_template = str_replace("**CONTENT1**", $content1, $email_template);
 
    $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
@@ -234,7 +234,7 @@ else if ($mode=="add") {
    // set up the button
    $button_text = "Get Started";
    $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
-   $button_url = "http://verify.eidosystems.com";
+   $button_url = "https://verify.eidosystems.com";
    $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
 
    // contnt3 after the button

@@ -109,7 +109,7 @@ logMsg("Organisations: $sql",$logfile);
   <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/app.css">
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
   <style>
      .clickable-row {cursor: pointer;}  
   </style>
@@ -127,14 +127,14 @@ logMsg("Organisations: $sql",$logfile);
 		<li><a href="users.php">Users</a></li>
 		<li class="current"><a href="organisations_a.php?m=gotoaddorg">Organisations</a></li>
 		<li><a href="procedures.php">Procedures</a></li>
-		<li><a href="http://p.datadoghq.com/sb/58e98b188-f2dbe0e7169491992f629b07c0d075c1" target="_blank">System Health &amp; Logs</a></li>
+		<li><a href="https://p.datadoghq.com/sb/58e98b188-f2dbe0e7169491992f629b07c0d075c1" target="_blank">System Health &amp; Logs</a></li>
 		<li><a href="http://piwik.cyberacc.net/index.php?module=CoreHome&action=index&idSite=2&period=day&date=yesterday&updated=1#?idSite=2&period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1" target="_blank">System Analytics</a></li>
 	  </ul>
 	  <ul class="vertical menu align-center hide-for-medium">
         <li><a href="users.php">Users</a></li>
 		<li class="current"><a href="organisations.php">Organisations</a></li>
 		<li><a href="procedures.php">Procedures</a></li>
-		<li><a href="http://p.datadoghq.com/sb/58e98b188-f2dbe0e7169491992f629b07c0d075c1" target="_blank">System Health &amp; Logs</a></li>
+		<li><a href="https://p.datadoghq.com/sb/58e98b188-f2dbe0e7169491992f629b07c0d075c1" target="_blank">System Health &amp; Logs</a></li>
 		<li><a href="http://piwik.cyberacc.net/index.php?module=CoreHome&action=index&idSite=2&period=day&date=yesterday&updated=1#?idSite=2&period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1" target="_blank">System Analytics</a></li>
       </ul>
   	</div>
@@ -240,29 +240,7 @@ logMsg("Organisations: $sql",$logfile);
               </label>
             </div>
             <div class="small-12 cell field">
-	         <?php if ($_SESSION['add_fname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
-                 else if ($_SESSION['add_fname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
-                <label class="weight-normal">Administrator Contact First Name
-                <input type="text" name="fname"  placeholder="">
-              </label>
-            </div>
-            <div class="small-12 cell field">
-	         <?php if ($_SESSION['add_lname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your last name</strong> - this is required</div>";
-                 else if ($_SESSION['add_lname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
-                <label class="weight-normal">Administrator Contact Surname
-                <input type="text" name="lname"  placeholder="">
-              </label>
-            </div>
-            <div class="small-12 cell field">
-               <?php if ($_SESSION['add_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
-                 else if ($_SESSION['add_bad_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
-                 else if ($_SESSION['add_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
-                <label class="weight-normal">E-mail Address
-                <input type="text" name="email" placeholder="">
-              </label>
-            </div>
-            <div class="small-12 cell field">
-                 <?php if ($_SESSION['add_type_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please select a type</strong> - this is required</div>"; ?>
+                 <?php if ($_SESSION['add_type_error']) echo "<div class='error_message fi-alert'><strong>Please select a type</strong> - this is required</div>"; ?>
                 <label class="weight-normal">Type
                 <select name="type">
                   <option value=""></option>
@@ -299,6 +277,58 @@ logMsg("Organisations: $sql",$logfile);
 
 
               </div>
+            </div>
+            <div class="small-12 cell field">
+               <hr>
+               <strong>Account Owner Information</strong>
+            </div>
+            <div class="small-12 cell field">
+	         <?php if ($_SESSION['add_fname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                 else if ($_SESSION['add_fname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">First Name
+                <input type="text" name="fname"  placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+	         <?php if ($_SESSION['add_lname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your last name</strong> - this is required</div>";
+                 else if ($_SESSION['add_lname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">Surname
+                <input type="text" name="lname"  placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+               <?php if ($_SESSION['add_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                 else if ($_SESSION['add_bad_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
+                 else if ($_SESSION['add_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+                <label class="weight-normal">E-mail Address
+                <input type="text" name="email" placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+               <hr>
+               <strong>Primary Admin User</strong>
+            </div>
+            <div class="small-12 cell field">
+	         <?php if ($_SESSION['add_admin_fname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                 else if ($_SESSION['add_admin_fname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">First Name
+                <input type="text" name="admin_fname"  placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+	         <?php if ($_SESSION['add_admin_lname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your last name</strong> - this is required</div>";
+                 else if ($_SESSION['add_admin_lname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">Surname
+                <input type="text" name="admin_lname"  placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+               <?php if ($_SESSION['add_admin_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                 else if ($_SESSION['add_bad_admin_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
+                 else if ($_SESSION['add_admin_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+                <label class="weight-normal">E-mail Address
+                <input type="text" name="admin_email" placeholder="">
+              </label>
             </div>
             <div class="small-12 cell field text-center">
                   <br /><input type="submit" id="add" class="button large" value="Add organization">

@@ -40,7 +40,7 @@ if($debug){
    ini_set("display_errors", 1);
 }
 
-$SITE_URL = "http://verify.eidosystems.com/ui/verify/";
+$SITE_URL = "https://verify.eidosystems.com/ui/verify/";
 $ABS_PATH = "/var/www/html/ui/verify/" ;
 
 $logdir = "/var/www/html/ui/verify/logs";

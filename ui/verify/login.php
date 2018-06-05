@@ -40,7 +40,7 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 <body class="registration">
 <!--//following script is required for comodo secure seal logo, there is a corresponding required script tag inside the html head tag-->
 <!--<script language="JavaScript" type="text/javascript">
-    TrustLogo("http://verify.eidosystems.com/ui/verify/img/comodo113x59.png", "SC5", "none");
+    TrustLogo("https://verify.eidosystems.com/ui/verify/img/comodo113x59.png", "SC5", "none");
 </script>
 <a href="https://ssl.comodo.com/ev-ssl-certificates.php" id="comodoTL">EV SSL</a>-->
 <div class="grid-container">

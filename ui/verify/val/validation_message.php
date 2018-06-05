@@ -19,8 +19,8 @@ $_SESSION['error_msg']="";
   <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/app.css">
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script>
 	    $( function() {
    $( "#tooltip_error_day" ).tooltip().tooltip("open");

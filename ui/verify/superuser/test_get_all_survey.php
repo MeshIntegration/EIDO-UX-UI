@@ -13,7 +13,7 @@ if ($_GET['c']=='02022018'){
    $arr_all_surveys=get_all_surveys();
  
    // setup the request for survey api
-   $URL_method = "http://restapi.surveygizmo.eu/v5/survey" ;
+   $URL_method = "https://restapi.surveygizmo.eu/v5/survey" ;
    // we have to set the token in global variable
    $requestParam = array(
       'api_token' => '0187a230cc294375e907f8c3059656cadd920acce87b54eb42',

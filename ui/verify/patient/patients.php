@@ -810,14 +810,22 @@ $results_count = $GetQuery_all->num_rows;
 		?>
 		<div class="small-12 medium-6 large-6 cell content-right <?php echo $main_hide; ?>">
 
-			<h3>Add Patient</h3>
+			<h3 style="margin-left: 0px; margin-right: 0px; padding-left:20px;">Add Patient
+            <br>
+            <span class="small sub-text">Start a Verify session with a new patient</span>
+            </h3>
 			<div style="margin-left: 20px; margin-right: 20px; padding-left: 0px" class="small-12 cell field">
-				<p>Start a Verify session with a new patient</p>
+                <div class="small-12 medium-6 large-6">&nbsp;</div>
 				<div class="grid-x">
-					<div class="hide-for-small-only medium-2">&nbsp;</div>
+                    <br>
+
+					<div class="hide-for-small-only medium-2">&nbsp;
+                    <br>
+                    </div>
+
 					<div class="small-12 medium-7">
 						<a href="patients_a.php?m=gotoaddpt">
-							<button class="button large expanded">Get Started</button>
+							<button class="button large expanded">Add Patient</button>
 						</a>
 					</div>
 					<div class="hide-for-small-only medium-2">&nbsp;</div>
@@ -869,16 +877,18 @@ $results_count = $GetQuery_all->num_rows;
 					<?php } ?>
 				</ul>
 			</div>
+        <hr class="gap"/>
 
 			<div class="grid-x<?php echo($has_notifications == false ? " hide" : "") ?>">
-				<div class="hide-for-small-only medium-2">&nbsp;</div>
+				<!--<div class="hide-for-small-only medium-2">&nbsp;</div>-->
+
 				<div class="small-12 medium-8">
 					<a href="patients.php?m=main&filter=1&status=1&page=1" class="button large expanded">View All</a>
 				</div>
-				<div class="hide-for-small-only medium-2">&nbsp;</div>
+				<!--<div class="hide-for-small-only medium-2">&nbsp;</div>-->
 			</div>
-			<hr style="margin-right: 20px; margin-left: 20px;" class=""/>
-			<h3>Stats</h3>
+			<!--<hr style="margin-right: 20px; margin-left: 20px;" class=""/>-->
+			<h3 style="margin-left: 0px; margin-right: 0px; padding-left:20px; padding-bottom: 5px;">Stats</h3>
 			<br/>
 			<div class="grid-x field">
 				<div class="small-12 auto cell text-center grey_bdr">
@@ -900,7 +910,7 @@ $results_count = $GetQuery_all->num_rows;
 			<p>&nbsp;</p>
 			<div class="grid-x">
 				<div class="hide-for-small-only medium-2">&nbsp;</div>
-				<div class="small-12 medium-8"><a href="patients.php?m=stats" class="button large expanded active">View Stats</a></div>
+                <div class="small-12 medium-7"><a href="patients.php?m=stats" class="button large expanded active"><strong>View Stats</strong></a></div>
 				<div class="hide-for-small-only medium-2">&nbsp;</div>
 			</div>
             </div>
@@ -2742,7 +2752,7 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
             Back</span>
         </a>
 	</div>
-	<h3>Mark Procedure Complete<br/><span class="small">Comfirm that the procedure has been completed and by who</span></h3>
+	<h3>Mark Procedure Complete<br/><span class="small">Confirm that the procedure has been completed and by which surgeon.</span></h3>
 	<h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname_uc, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
 	<div style="margin-left: 20px; margin-right: 20px;">
     <table class="su-table stack">
@@ -2942,7 +2952,7 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
                         $("#proc_gmcnumber").val(proc_gmcnumber);
                         $("#proc_gmcnumber_temp").val(proc_gmcnumber);
                     });
-                    //duplicate for Procedute Comfirm section
+                    //duplicate for Procedute Confirm section
 
                     $("#proc_surgeonname_complete").change(function() {
                         var proc_surgeon_id = $(this).val();

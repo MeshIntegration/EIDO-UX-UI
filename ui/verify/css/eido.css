@@ -1883,3 +1883,26 @@ h4.vertical-middle {
   margin:-3px 0 0 -3px;
   background:#3dae65;
 }
+
+.bluelink,
+.bluelink a div p span
+{
+text-decoration: underline #0d224096;
+color: #0d2240;
+}
+ 
+.bluelink:hover,
+.bluelink a:hover,
+.bluelink div:hover,
+.bluelink p:hover
+{color: #f5a623; text-decoration-color: #f5a623; }
+
+.orangelink,
+.orangelink a div p
+{color: #f5a623; text-decoration-color: #f5a623; }
+
+.orangelink:hover,
+.orangelink a:hover,
+.orangelink div:hover,
+.orangelink p:hover
+{color: #0d2240; text-decoration-color: #0d2240; }

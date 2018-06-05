@@ -17,7 +17,7 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/app.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="grid-container">
@@ -186,8 +186,8 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
     <script src="../js/vendor/what-input.js"></script>
     <script src="../js/vendor/foundation.js"></script>
     <script src="../js/app.js"></script>
-    <!--<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
     <script>
       $( function() {
       $( "#sortable" ).sortable({

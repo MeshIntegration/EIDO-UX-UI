@@ -3789,3 +3789,15 @@
                c_displayName='Laparoscopic Cholecystectomy',
                dateModified=NOW()
            WHERE id='e1e886ab-23b1f8f7-1bc2ad19-bb0f25f1'
+06/01/2018 19:43:36 - 68.107.189.223: In: add_survey_to_temp
+06/01/2018 19:43:36 - 68.107.189.223: MaxSurveys: 5 - PEID: 5aca22ebc26f5 - SESS: 1 - NUMSURV: 3
+06/01/2018 19:43:36 - 68.107.189.223: In: add to array
+06/04/2018 01:47:43 - 68.107.189.223: In: add_survey_to_temp
+06/04/2018 01:47:43 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 2
+06/04/2018 01:47:43 - 68.107.189.223: In: add to array
+06/04/2018 13:17:03 - 71.72.32.10: In: add_survey_to_temp
+06/04/2018 13:17:03 - 71.72.32.10: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 1 - NUMSURV: 2
+06/04/2018 13:17:03 - 71.72.32.10: In: add to array
+06/04/2018 13:17:13 - 71.72.32.10: In: add_survey_to_temp
+06/04/2018 13:17:13 - 71.72.32.10: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 1 - NUMSURV: 3
+06/04/2018 13:17:13 - 71.72.32.10: In: add to array

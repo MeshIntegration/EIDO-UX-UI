@@ -314,9 +314,9 @@ $GetQuery = dbi_query($sql);
   <link rel="stylesheet" href="../css/app.css">  
   <link rel="stylesheet" href="../css/foundation-datepicker.min.css">
   <link rel="stylesheet" href="../css/timeline.css">
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
   <link rel="icon" type="image/png" href="../favicon.png">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 <div class="grid-container">

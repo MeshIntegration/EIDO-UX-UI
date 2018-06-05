@@ -14564,3 +14564,342 @@
 06/01/2018 15:49:26 - 68.107.189.223: User ID: eidoadmin@thenakedsurgeon.com
 06/01/2018 15:49:26 - 68.107.189.223: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
 06/01/2018 15:49:26 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/01/2018 18:57:30 - 71.72.32.10: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/01/2018 18:57:30 - 71.72.32.10: User ID: mm1admin@thenakedsurgeon.com
+06/01/2018 18:57:30 - 71.72.32.10: AFTER COOKIES: FN MMOne Admin - INITIALS MA - GROUP sitedivadmins
+06/01/2018 18:57:30 - 71.72.32.10: >>>>  GroupID: sitedivadmins
+06/01/2018 19:42:47 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/01/2018 19:42:47 - 68.107.189.223: User ID: eidoadmin@thenakedsurgeon.com
+06/01/2018 19:42:47 - 68.107.189.223: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/01/2018 19:42:47 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/01/2018 23:49:24 - 76.188.180.118: USERS Mode: 
+06/01/2018 23:49:24 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/04/2018 00:45:51 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 00:45:51 - 68.107.189.223: User ID: eidoadmin@thenakedsurgeon.com
+06/04/2018 00:45:51 - 68.107.189.223: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/04/2018 00:45:51 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/04/2018 01:02:26 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 01:02:26 - 68.107.189.223: User ID: eidoadmin@thenakedsurgeon.com
+06/04/2018 01:02:26 - 68.107.189.223: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/04/2018 01:02:26 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/04/2018 01:02:46 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 01:02:47 - 68.107.189.223: User ID: mm1admin@thenakedsurgeon.com
+06/04/2018 01:02:47 - 68.107.189.223: AFTER COOKIES: FN MMOne Admin - INITIALS MA - GROUP sitedivadmins
+06/04/2018 01:02:47 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+06/04/2018 01:02:58 - 68.107.189.223: USERS Mode: 
+06/04/2018 01:02:58 - 68.107.189.223: USERS bulkdelete_hide: hide
+06/04/2018 01:20:36 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 01:20:37 - 68.107.189.223: User ID: eidoadmin@thenakedsurgeon.com
+06/04/2018 01:20:37 - 68.107.189.223: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/04/2018 01:20:37 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/04/2018 03:35:30 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 03:35:30 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/04/2018 03:35:30 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/04/2018 03:35:30 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/04/2018 03:37:52 - 76.188.180.118: USERS Mode: 
+06/04/2018 03:37:52 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/04/2018 03:38:19 - 76.188.180.118: Users_a: mode: gotoupdate - ID: eidoadmin
+06/04/2018 03:38:19 - 76.188.180.118: USERS Mode: update
+06/04/2018 03:38:19 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/04/2018 03:38:21 - 76.188.180.118: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
+06/04/2018 03:38:21 - 76.188.180.118: USERS Mode: update
+06/04/2018 03:38:21 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/04/2018 13:05:55 - 71.72.32.10: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 13:05:55 - 71.72.32.10: User ID: jmacknife@thenakedsurgeon.com
+06/04/2018 13:05:55 - 71.72.32.10: AFTER COOKIES: FN James MacKnife - INITIALS JM - GROUP staff
+06/04/2018 13:05:55 - 71.72.32.10: >>>>  GroupID: staff
+06/04/2018 13:11:09 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 13:11:10 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/04/2018 13:11:10 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/04/2018 13:11:10 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/04/2018 13:15:46 - 71.72.32.10: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 13:15:46 - 71.72.32.10: User ID: eidoadmin@thenakedsurgeon.com
+06/04/2018 13:15:46 - 71.72.32.10: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/04/2018 13:15:46 - 71.72.32.10: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/04/2018 13:18:09 - 71.72.32.10: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 13:18:09 - 71.72.32.10: User ID: jmacknife@thenakedsurgeon.com
+06/04/2018 13:18:09 - 71.72.32.10: AFTER COOKIES: FN James MacKnife - INITIALS JM - GROUP staff
+06/04/2018 13:18:09 - 71.72.32.10: >>>>  GroupID: staff
+06/04/2018 13:18:30 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/04/2018 13:18:30 - 68.107.189.223: User ID: eidoadmin@thenakedsurgeon.com
+06/04/2018 13:18:30 - 68.107.189.223: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/04/2018 13:18:30 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/05/2018 02:40:58 - 104.230.126.207: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 02:40:58 - 104.230.126.207: User ID: eidoadmin@thenakedsurgeon.com
+06/05/2018 02:40:58 - 104.230.126.207: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/05/2018 02:40:58 - 104.230.126.207: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/05/2018 12:02:42 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 12:02:42 - 76.188.180.118: User ID: eidoadmin@thenakedsurgeon.com
+06/05/2018 12:02:42 - 76.188.180.118: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/05/2018 12:02:42 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/05/2018 12:08:12 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 12:08:12 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 12:08:12 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 12:08:12 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/05/2018 13:33:43 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 13:33:43 - 76.188.180.118: User ID: eidoadmin@thenakedsurgeon.com
+06/05/2018 13:33:43 - 76.188.180.118: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/05/2018 13:33:43 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/05/2018 13:50:23 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 13:50:23 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 13:50:23 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 13:50:23 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/05/2018 14:38:12 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 14:38:12 - 82.34.15.57: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 14:38:12 - 82.34.15.57: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 14:38:12 - 82.34.15.57: >>>>  GroupID: sitedivadmins
+06/05/2018 15:01:53 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 15:01:53 - 82.34.15.57: User ID: eidoadmin@thenakedsurgeon.com
+06/05/2018 15:01:53 - 82.34.15.57: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/05/2018 15:01:53 - 82.34.15.57: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/05/2018 15:10:41 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 15:10:41 - 82.34.15.57: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 15:10:41 - 82.34.15.57: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 15:10:41 - 82.34.15.57: >>>>  GroupID: sitedivadmins
+06/05/2018 15:28:06 - 41.71.103.23: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 15:28:06 - 41.71.103.23: User ID: jmacknife@thenakedsurgeon.com
+06/05/2018 15:28:06 - 41.71.103.23: AFTER COOKIES: FN James MacKnife - INITIALS JM - GROUP staff
+06/05/2018 15:28:06 - 41.71.103.23: >>>>  GroupID: staff
+06/05/2018 15:37:13 - 41.71.103.23: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 15:37:13 - 41.71.103.23: User ID: jmacknife@thenakedsurgeon.com
+06/05/2018 15:37:13 - 41.71.103.23: AFTER COOKIES: FN James MacKnife - INITIALS JM - GROUP staff
+06/05/2018 15:37:13 - 41.71.103.23: >>>>  GroupID: staff
+06/05/2018 19:24:15 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 19:24:16 - 184.56.244.84: User ID: eidoadmin@thenakedsurgeon.com
+06/05/2018 19:24:16 - 184.56.244.84: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/05/2018 19:24:16 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/05/2018 19:25:48 - 76.188.180.118: USERS Mode: 
+06/05/2018 19:25:48 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 19:25:59 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 19:26:00 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 19:26:00 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 19:26:00 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/05/2018 19:26:26 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 19:26:26 - 76.188.180.118: User ID: eidoadmin@thenakedsurgeon.com
+06/05/2018 19:26:26 - 76.188.180.118: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/05/2018 19:26:26 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/05/2018 19:28:52 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 19:28:52 - 184.56.244.84: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 19:28:52 - 184.56.244.84: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 19:28:52 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+06/05/2018 19:28:54 - 184.56.244.84: USERS Mode: 
+06/05/2018 19:28:54 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 19:28:59 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 19:28:59 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 19:28:59 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 19:28:59 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/05/2018 19:29:12 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 19:29:12 - 76.188.180.118: User ID: eidoadmin@thenakedsurgeon.com
+06/05/2018 19:29:12 - 76.188.180.118: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/05/2018 19:29:12 - 76.188.180.118: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/05/2018 19:29:17 - 184.56.244.84: USERS Mode: 
+06/05/2018 19:29:17 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 19:32:46 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 19:32:46 - 184.56.244.84: User ID: eidoadmin@thenakedsurgeon.com
+06/05/2018 19:32:46 - 184.56.244.84: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/05/2018 19:32:46 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/05/2018 19:49:12 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 19:49:12 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 19:49:12 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 19:49:12 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/05/2018 19:49:20 - 76.188.180.118: USERS Mode: 
+06/05/2018 19:49:20 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 19:49:32 - 76.188.180.118: In BULK_ACTONS_A.PHP
+06/05/2018 19:49:32 - 76.188.180.118: UPDATE dir_user 
+                                SET active=0, c_dateModified=NOW() 
+                                WHERE id='customer@example.com'
+06/05/2018 19:49:32 - 76.188.180.118: UPDATE dir_user 
+                                SET active=0, c_dateModified=NOW() 
+                                WHERE id='joereacher@example.com'
+06/05/2018 19:49:32 - 76.188.180.118: USERS Mode: 
+06/05/2018 19:49:32 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 19:49:33 - 76.188.180.118: USERS Mode: 
+06/05/2018 19:49:33 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 19:52:27 - 76.188.180.118: USERS Mode: 
+06/05/2018 19:52:27 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 19:57:54 - 76.188.180.118: Users_a: mode: gotoupdate - ID: wayne.mindstreams@gmail.com
+06/05/2018 19:57:54 - 76.188.180.118: USERS Mode: update
+06/05/2018 19:57:54 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 19:58:56 - 76.188.180.118: Users_a: mode: gotoupdate - ID: eidoadmin
+06/05/2018 19:58:56 - 76.188.180.118: USERS Mode: update
+06/05/2018 19:58:56 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 19:59:38 - 76.188.180.118: USERS Mode: 
+06/05/2018 19:59:38 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 20:05:54 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 20:05:54 - 184.56.244.84: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 20:05:54 - 184.56.244.84: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 20:05:54 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+06/05/2018 20:05:58 - 184.56.244.84: USERS Mode: 
+06/05/2018 20:05:58 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:06:46 - 76.188.180.118: USERS Mode: 
+06/05/2018 20:06:46 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 20:07:12 - 184.56.244.84: USERS Mode: 
+06/05/2018 20:07:12 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:07:29 - 184.56.244.84: USERS Mode: 
+06/05/2018 20:07:29 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:08:53 - 184.56.244.84: USERS Mode: 
+06/05/2018 20:08:53 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:09:46 - 184.56.244.84: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
+06/05/2018 20:09:46 - 184.56.244.84: USERS Mode: update
+06/05/2018 20:09:46 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:10:37 - 76.188.180.118: USERS Mode: 
+06/05/2018 20:10:37 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 20:11:00 - 184.56.244.84: USERS Mode: update
+06/05/2018 20:11:00 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:11:14 - 184.56.244.84: USERS Mode: update
+06/05/2018 20:11:14 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:12:37 - 76.188.180.118: USERS Mode: 
+06/05/2018 20:12:37 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 20:12:39 - 184.56.244.84: USERS Mode: 
+06/05/2018 20:12:39 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:12:47 - 184.56.244.84: USERS Mode: 
+06/05/2018 20:12:47 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:12:53 - 76.188.180.118: USERS Mode: 
+06/05/2018 20:12:53 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 20:12:56 - 184.56.244.84: USERS Mode: 
+06/05/2018 20:12:56 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:12:59 - 184.56.244.84: USERS Mode: 
+06/05/2018 20:12:59 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:13:03 - 76.188.180.118: USERS Mode: 
+06/05/2018 20:13:03 - 76.188.180.118: USERS bulkdelete_hide: hide
+06/05/2018 20:14:33 - 184.56.244.84: Users_a: mode: gotoupdate - ID: eidoadmin
+06/05/2018 20:14:33 - 184.56.244.84: USERS Mode: update
+06/05/2018 20:14:33 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:14:34 - 184.56.244.84: Users_a: mode: gotoupdate - ID: eidoadmin
+06/05/2018 20:14:35 - 184.56.244.84: USERS Mode: update
+06/05/2018 20:14:35 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:14:36 - 184.56.244.84: Users_a: mode: gotoupdate - ID: eidoadmin
+06/05/2018 20:14:36 - 184.56.244.84: USERS Mode: update
+06/05/2018 20:14:36 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:14:42 - 184.56.244.84: Users_a: mode: gotoupdate - ID: jmacknife@thenakedsurgeon.com
+06/05/2018 20:14:42 - 184.56.244.84: USERS Mode: update
+06/05/2018 20:14:42 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:16:58 - 184.56.244.84: USERS Mode: 
+06/05/2018 20:16:58 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 20:17:02 - 184.56.244.84: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
+06/05/2018 20:17:02 - 184.56.244.84: USERS Mode: update
+06/05/2018 20:17:02 - 184.56.244.84: USERS bulkdelete_hide: hide

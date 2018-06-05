@@ -104,7 +104,7 @@ $_SESSION['page'][$script_name]['no'] = $page ;
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/app.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="grid-container">
@@ -119,14 +119,14 @@ $_SESSION['page'][$script_name]['no'] = $page ;
 		<li><a href="users.php">Users</a></li>
 		<li><a href="organisations.php">Organisations</a></li>
 		<li class="current"><a href="procedures.php">Procedures</a></li>
-		<li><a href="http://p.datadoghq.com/sb/58e98b188-f2dbe0e7169491992f629b07c0d075c1" target="_blank">System Health &amp; Logs</a></li>
+		<li><a href="https://p.datadoghq.com/sb/58e98b188-f2dbe0e7169491992f629b07c0d075c1" target="_blank">System Health &amp; Logs</a></li>
 		<li><a href="http://piwik.cyberacc.net/index.php?module=CoreHome&action=index&idSite=2&period=day&date=yesterday&updated=1#?idSite=2&period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1" target="_blank">System Analytics</a></li>
 	  </ul>
 	  <ul class="vertical menu align-center hide-for-medium">
         <li><a href="users.php">Users</a></li>
 		<li><a href="organisations.php">Organisations</a></li>
 		<li class="current"><a href="procedures.php">Procedures</a></li>
-		<li><a href="http://p.datadoghq.com/sb/58e98b188-f2dbe0e7169491992f629b07c0d075c1" target="_blank">System Health &amp; Logs</a></li>
+		<li><a href="https://p.datadoghq.com/sb/58e98b188-f2dbe0e7169491992f629b07c0d075c1" target="_blank">System Health &amp; Logs</a></li>
 		<li><a href="http://piwik.cyberacc.net/index.php?module=CoreHome&action=index&idSite=2&period=day&date=yesterday&updated=1#?idSite=2&period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1" target="_blank">System Analytics</a></li>
       </ul>
   	</div>
@@ -598,8 +598,8 @@ logMsg("Loading SESSION['arr_add_surveys']",$logfile);
     <script src="../js/vendor/what-input.js"></script>
     <script src="../js/vendor/foundation.js"></script>
     <script src="../js/app.js"></script>
-    <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!--
 
     <script>

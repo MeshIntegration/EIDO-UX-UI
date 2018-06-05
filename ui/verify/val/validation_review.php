@@ -60,7 +60,7 @@ if ($_SESSION['moreReminders']=="true")
    $requestParam = array( 'var_patientEpisodeId' => $id);
    // we need to get process number from DB and put into URL
    //Change the server URL for live vs. dev
-   $URL = "http://verify.eidosystems.com:8080/jw/web/json/workflow/process/list?packageId=".$packageId;
+   $URL = "https://verify.eidosystems.com:8080/jw/web/json/workflow/process/list?packageId=".$packageId;
    $response = getCurlResponse($URL, array(), 1, "POST", "BASIC_AUTH");
    if ($response->total > 0)
    {
@@ -78,7 +78,7 @@ if ($_SESSION['moreReminders']=="true")
    }
    //Change the server URL for live vs. dev
    if (isset($process_id)) {
-      $URL = "http://verify.eidosystems.com:8080/jw/web/json/workflow/process/start/" . $process_id;
+      $URL = "https://verify.eidosystems.com:8080/jw/web/json/workflow/process/start/" . $process_id;
       $resp = getCurlResponse($URL, $requestParam, 1, "POST");
    }
 // print response
@@ -171,8 +171,8 @@ if ($_SESSION['dob_error'])
   <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/app.css">
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script>
 	    $( function() {
    $( "#tooltip_error_day" ).tooltip().tooltip("open");

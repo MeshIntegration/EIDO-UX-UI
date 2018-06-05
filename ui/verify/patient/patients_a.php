@@ -737,7 +737,7 @@ else if ($mode=="proccomplete" || $mode=="proccancel")
 
    // pass over the proceedOrCancel variable
    // $url =  $BASE_WORKFLOW_URL."assignment/variable/".$activity_id."/proceedOrCancel?value=".$value."&j_username=eidoverify2017&hash=C03B449319B694BD223A7E39142B7E34&loginAs=admin";      // .$assignee_id;
-   $url = "http://verify.eidosystems.com:8080/jw/web/json/monitoring/process/variable/".$id."/proceedOrCancel?value=".$value."&j_username=eidoverify2017&hash=C03B449319B694BD223A7E39142B7E34&loginAs=admin";
+   $url = "https://verify.eidosystems.com:8080/jw/web/json/monitoring/process/variable/".$id."/proceedOrCancel?value=".$value."&j_username=eidoverify2017&hash=C03B449319B694BD223A7E39142B7E34&loginAs=admin";
 
    logMsg("Patients_A: Pass Variable: $url", $logfile);
    $resp = getCurlResponse($url, $requestParam, 1, "POST", "DEFAULT", "OBJECT", $loginas);
