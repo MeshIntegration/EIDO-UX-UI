@@ -246,7 +246,7 @@ logMsg("Organisations: $sql",$logfile);
                   <option value=""></option>
                   <option value="Government Hospital" >Government Hospital</option>
                   <option value="Private Hospital">Private Hospital</option>
-                  <option value="Medical Insurer" >Medical Insurer</option>
+                  <option value="Medical Malpractice Insurer" >Medical Malpractice Insurer</option>
                 </select>
               </label>
               <div class="small-6 medium-6 large-6 cell">
@@ -359,7 +359,7 @@ logMsg("Organisations: $sql",$logfile);
             }
          ?>
      <div class="small-12 medium-6 large-6 cell content-right <?php echo $overview_hide; ?>">
-	     <h3>Patient Overview<span class="small display-block">View and edit an Organisation</span></h3>
+	     <h3>Organisation Overview<span class="small display-block">View and edit an Organisation</span></h3>
 
          <div class="grid-container content-container row">
              <div class="grid-x grid-padding-x">
@@ -367,11 +367,11 @@ logMsg("Organisations: $sql",$logfile);
 	                  <h5 class="ps_grey"><?php echo $org_name; ?></h5>
 	                  <div class="grid-x grid-padding-x row grid-padding-15" style="padding-top:0;">
 		                  <div class="small-12 medium-12 large-12 cell">
-			                  <label>Administrative Contact</label>
+			                  <label>Account Owner</label>
 			                  <h5><?php echo $org_admin ? $org_admin : 'None'; ?></h5>
 		                  </div>
 		                  <div class="small-12 medium-12 large-12 cell">
-			                  <label>Email</label>
+			                  <label>Account Owner Email</label>
 			                  <h5><?php echo $org_email; ?></h5>
 		                  </div>
 		                  <div class="small-12 medium-12 large-12 cell">
@@ -432,7 +432,7 @@ logMsg("Organisations: $sql",$logfile);
 		                  <hr class="standard-hr"/>
 	                  </div>
 	                  <div class="grid grid-padding-x grid-padding-15" style="">
-		                  <span style="text-align: center" class="display-block"><a href="organisations.php?m=update&id=<?php echo $org_id; ?>"><button class="button large">Edit Organisation</button></a></span>
+		                  <span style="text-align: center" class="display-block"><a href="organisations_a.php?m=gotoupdate&id=<?php echo $org_id; ?>"><button class="button large">Edit Organisation</button></a></span>
 	                  </div>
 
 
@@ -624,17 +624,24 @@ logMsg("Organisations: $sql",$logfile);
                $GetQuery_u = dbi_query($sql_u);
                $qryResult_u = $GetQuery_u->fetch_assoc();
                $org_id = $qryResult_u['id'];
-               $org_name = $qryResult_u['c_name'];
-               $org_type = $qryResult_u['c_type'];
-               $org_admin = $qryResult_u['c_admin'];
-               $org_email = $qryResult_u['c_email'];
-               $org_subdivision = $qryResult_u['c_subdivision'];
-               $org_logo = $qryResult_u['c_logo'];
-               $loc=strpos($org_admin, " "); 
-               $org_fname=substr($org_admin,0,$loc);
-               $org_lname=substr($org_admin,$loc+1);
+               $_SESSION['name'] = $qryResult_u['c_name'];
+               $_SESSION['type'] = $qryResult_u['c_type'];
+               $admin = $qryResult_u['c_admin'];
+               $loc=strpos($admin, " "); 
+               $_SESSION['fname']=substr($admin,0,$loc);
+               $_SESSION['lname']=substr($admin,$loc+1);
+               $_SESSION['email'] = $qryResult_u['c_email'];
+               $_SESSION['subdivision'] = $qryResult_u['c_subdivision'];
+               $_SESSION['logo'] = $qryResult_u['c_logo'];
+               $_SESSION['admin_email']=$qryResult_u['c_firstUser'];
                $_SESSION['org_name']=$org_name;
                $_SESSION['org_id']=$org_id;
+
+               $sql_u2="SELECT * FROM dir_user WHERE id='".$_SESSION['admin_email']."'";
+               $GetQuery_u2 = dbi_query($sql_u2);
+               $qryResult_u2 = $GetQuery_u2->fetch_assoc();
+               $_SESSION['admin_fname']= $qryResult_u2['firstName'];
+               $_SESSION['admin_lname']= $qryResult_u2['lastName'];
             }
             else
             {
@@ -649,76 +656,120 @@ logMsg("Organisations: $sql",$logfile);
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $update_hide; ?>">
           <h2>View Organisation</h2>
           <form action="organisations_a.php?m=update&id=<?php echo $org_id; ?>" method="post" enctype="multipart/form-data">
-          <?php if ($org_logo<>"") { ?>
-             <input type="hidden" name="existing_header_logo" value="<?php echo $org_logo; ?>">
+          <?php if ($_SESSION['logo']<>"") { ?>
+             <input type="hidden" name="existing_header_logo" value="<?php echo $_SESSION['logo']; ?>">
           <?php } ?>
-                <div class="grid-container">
-          <div class="grid-x grid-padding-x">
-            <div class="small-12 medium-12 large-12 cell">
-                  <label>Name
-                <input type="text" name="name" value="<?php echo $org_name; ?>">
+    <div class="grid-container">
+       <div class="grid-x">
+            <div class="small-12 cell field">
+                           <?php if ($_SESSION['add_orgname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the oranization name</strong> - this is required</div>";
+                                 else if ($_SESSION['add_orgname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct organization name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">Name
+                <input type="text" name="name" placeholder="" value="<?php echo $_SESSION['name']; ?>">
               </label>
             </div>
-            <div class="small-12 medium-12 large-12 cell">
-              <label>Administrator Contact First Name
-                <input type="text" name="fname" value="<?php echo $org_fname; ?>">
+            <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_type_error']) echo "<div class='error_message fi-alert'><strong>Please select a type</strong> - this is required</div>"; ?>
+                <label class="weight-normal">Type
+                <select name="type">
+                  <option value=""></option>
+                  <option value="Government Hospital" <?php if ($_SESSION['type']=="Government Hospital") echo 'selected'; ?> >Government Hospital</option>
+                  <option value="Private Hospital" <?php if ($_SESSION['type']=="Private Hospital") echo 'selected'; ?>>Private Hospital</option>
+                  <option value="Medical Malpractice Insurer" <?php if ($_SESSION['type']=="Medical Malpractice Insurer") echo 'selected'; ?>>Medical Malpractice Insurer</option>
+                </select>
+              </label>
+              <div class="small-6 medium-6 large-6 cell">
+                 <?php if ($_SESSION['add_logo_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please upload your file again</strong> - there was an error during upload</div>";
+                  if ($_SESSION['add_logo_type_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please upload an image file</strong> - the file must be a JPG PNG or GIF</div>"; ?>
+                  <label class="weight-normal">Organisation Header Logo
+                  <?php if ($_SESSION['logo']=="") { ?>
+                     <img src="/ui/verify/img/org_logos/blank.jpg">&nbsp;&nbsp;<input type="file" name="header_logo" placeholder="">
+                  <?php } else { ?>
+                     <img src="/ui/verify/img/org_logos/<?php echo $_SESSION['logo']; ?>" width="35%" />&nbsp;&nbsp;<input type="file" name="header_logo" placeholder="">
+                  <?php } ?>
+                </label>
+              </div>
+              <div class="small-12 medium-12 large-12 cell">
+                      <div class="row grid-x grid-padding-15">
+                              <div class="small-5" style="padding-right:20px;">
+                                      <label class="eido-radio">
+                                              <input type="radio" name="subdivision"  value="Yes" id="subdivisionRed" required <?php if ($_SESSION['subdivision']=="Yes") echo 'checked'; ?> />
+                                              <span class="checkmark"></span>
+                                              <span class="text">Yes</span>
+                                      </label>
+                                      <label class="eido-radio">
+                                              <input type="radio" name="subdivision" value="No" id="subdivisionBlue" <?php if ($_SESSION['subdivision']=="No") echo 'checked'; ?> />
+                                              <span class="checkmark"></span>
+                                              <span class="text">No</span>
+                                      </label>
+                              </div>
+                              <div class="small-7">
+                                      <label class="weight-normal">Organisation has subdivisions?</label>
+                              </div>
+                      </div>
+              </div>
+            </div>
+            <div class="small-12 cell field">
+               <hr>
+               <strong>Account Owner Information</strong>
+            </div>
+            <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_fname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                 else if ($_SESSION['add_fname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">First Name
+                <input type="text" name="fname" value="<?php echo $_SESSION['fname']; ?>">
               </label>
             </div>
-            <div class="small-12 medium-12 large-12 cell">
-              <label>Administrator Contact Last Name
-                <input type="text" name="lname" value="<?php echo $org_lname; ?>">
+            <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_lname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your last name</strong> - this is required</div>";
+                 else if ($_SESSION['add_lname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">Surname
+                <input type="text" name="lname" value="<?php echo $_SESSION['lname']; ?>">
               </label>
             </div>
-                        <div class="small-12 medium-12 large-12 cell">
-                  <label>E-mail Address
-                <input type="text" name="email" value="<?php echo $org_email; ?>">
+            <div class="small-12 cell field">
+               <?php if ($_SESSION['add_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                 else if ($_SESSION['add_bad_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
+                 else if ($_SESSION['add_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+                <label class="weight-normal">E-mail Address
+                <input type="text" name="email" value="<?php echo $_SESSION['email']; ?>">
               </label>
             </div>
-                        <div class="small-12 medium-12 large-12 cell">
-                  <label>Type
-                      <select name="type">
-                      <option value="Private Hospital" <?php if ($org_type=="Private Hospital") echo "selected"; ?>>Private Hospital</option>
-                      <option value="Government Hospital" <?php if ($org_type=="Government Hospital") echo "selected"; ?>>Government Hospital</option>
-                      <option value="Medical Malpractice Insurer"  <?php if ($org_type=="Medical Malpractice Insurer") echo "selected"; ?>>Medical Malpractice Insurer</option>
-                      </select>
+            <div class="small-12 cell field">
+               <hr>
+               <strong>Primary Admin User</strong>
+            </div>
+            <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_admin_fname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                 else if ($_SESSION['add_admin_fname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">First Name
+                <input type="text" name="admin_fname" value="<?php echo $_SESSION['admin_fname']; ?>">
               </label>
             </div>
-        <div class="small-12 medium-12 large-12 cell">
-           <label>Organisation Header Logo
-           <?php if ($org_logo<>"") { ?>
-                <img src="/ui/verify/img/org_logos/<?php echo $org_logo; ?>">
-           <?php } ?>
-                <input type="file" name="header_logo" >
-           </label>
-        </div>
-        <div class="small-12 medium-12 large-12 cell">
-	        <div class="row grid-x grid-padding-15">
-		        <div class="small-5" style="padding-right:20px;">
-			        <label class="eido-radio">
-				        <input type="radio" name="subdivision"  value="Yes" id="subdivisionRed" required <?php if (strtoupper($org_subdivision)=="YES") echo "checked"; ?> />
-				        <span class="checkmark"></span>
-				        <span class="text">Yes</span>
-			        </label>
-			        <label class="eido-radio">
-				        <input type="radio" name="subdivision" value="No" id="subdivisionBlue" <?php if (strtoupper($org_subdivision)=="NO") echo "checked"; ?> />
-				        <span class="checkmark"></span>
-				        <span class="text">No</span>
-			        </label>
-		        </div>
-		        <div class="small-7">
-			        <label class="weight-normal">Organisation has subdivisions?</label>
-		        </div>
-	        </div>
-        </div>
-        <div class="small-12 medium-12 large-12 cell text-center">
+            <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_admin_lname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your last name</strong> - this is required</div>";
+                 else if ($_SESSION['add_admin_lname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">Surname
+                <input type="text" name="admin_lname" value="<?php echo $_SESSION['admin_lname']; ?>">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+               <?php if ($_SESSION['add_admin_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                 else if ($_SESSION['add_bad_admin_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
+                 else if ($_SESSION['add_admin_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+                <label class="weight-normal">E-mail Address
+                <input type="text" name="admin_email" value="<?php echo $_SESSION['admin_email']; ?>">
+              </label>
+            </div>
+          <div class="small-12 medium-12 large-12 cell text-center">
 	        <br /><input type="submit" id="update" class="button large" value="UPDATE ORGANISATION">
+          </div>
+          </form>
         </div>
-        </div>
+    </div>
   </div>
-  </form>
-</div>
   <!-- END UPDATE SECTION --> 
-        <!-- ORGPROC SECTION -->
+  <!-- ORGPROC SECTION -->
         <?php
            if ($mode=="orgproc")
            {

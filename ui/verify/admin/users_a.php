@@ -113,6 +113,8 @@ if ($mode=="add") {
 
    //  substr(strtolower($firstName),0,1).strtolower($lastName);
    // User
+   // get organization of current user
+   $org_id = $_COOKIE['org_id'];
    $sql = "INSERT INTO dir_user
            SET firstName=".escapeQuote($firstname).",
                lastName=".escapeQuote($lastname).",
@@ -122,6 +124,7 @@ if ($mode=="add") {
                id='$admin_user_id',
                username='$email',
                gmc_number='$gmc_number',
+               c_organizationId='$org_id',
                isSurgeon='$is_surgeon',
                uipassword='$hash'";
    logMsg("ADD: $sql",$logfile);
@@ -334,6 +337,8 @@ if ($mode=="update") {
 
 
     // UPDATE User
+    // get org for current user
+    $org_id = $_COOKIE['org_id'];
     $sql = "UPDATE dir_user
            SET firstName=".escapeQuote($firstname).",
                lastName=".escapeQuote($lastname).",
@@ -342,6 +347,7 @@ if ($mode=="update") {
                timeZone='0',
                username='$email',
                isSurgeon='$is_surgeon',
+               c_organizationId='$org_id',
                gmc_number='$gmc_number'
            WHERE id='$id'";
     dbi_query($sql);

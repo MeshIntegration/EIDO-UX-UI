@@ -58,9 +58,9 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
 	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 	<script>
-		$(function() {
-			$("#tooltip_error_day").tooltip().tooltip("open");
-		});
+	//	$(function() {
+	//		$("#tooltip_error_day").tooltip().tooltip("open");
+	//	});
 	</script>
 </head>
 <body class="registration">
@@ -111,7 +111,7 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 						</div>
 						</label>
 
-						<div id="contactdiv" class=" grid-x grid-padding-x">
+						<div id="contactdiv" class="hide grid-x grid-padding-x">
 							<div name="preferred" id="contactpreference" class="<?php echo $contactmethod; ?> small-12">
 								<p class="lead">Which contact method would you prefer?</p>
 			                      <label class="fancy-eido-round-checkbox">
@@ -154,66 +154,30 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 <script src="../js/vendor/foundation.js"></script>
 <script src="../js/app.js"></script>
 <script>
-	$(document).ready(function() {
-		$('[name="preferred"]:radio[readonly]:not(:checked)').attr('disabled', true);
+    $(document).ready(function() {
+     //   $('[name="preferred"]:radio[readonly]:not(:checked)').attr('disabled', true);
 
-		$("#mobile").onkeyup(function() {
-			//          if (var acceptedmobile = 'true') {
-			//     if   ( $('#mobile').val().length > 7 ) {
-			$(function() {
-				$("#contactpreference").removeClass('hide').addClass('show');
-				$("#contactdiv").addClass('show');
-			})
-			//        }
-		});
+        $("#email").keyup(function() {
 
+//   if   ( $('#email').val().length > 7 ) {
+         //    noinspection JSAnnotator
 
-		$(function() {
-			var acceptedemail = 'false';
-			var acceptedmobile = 'false';
-		});
-	});
-	$(document).ready(function() {
-
-		$('#email').bind('focus blur keyup click hover change', function() {
-			if(($(this).val().indexOf('@') = 0) && ($(this).val().indexOf('.') > -1) && ($(this).val().length > 4) && ($(this).val().length < 64) && ($(this).val().trim().indexOf(' ') < 1)) {
-				$(function() {
-					var acceptedemail = true;
-				})
-			} else {
-				$(function() {
-					var acceptedemail = false;
-				})
-			}
-		});
-
-		$('#mobile').bind('focus blur keyup click hover change', function() {
-
-			var mobiletext = $("#mobile").text();
-			var mobileDigitCount = (mobiletext).replace(/\D/g, '');
-			var Regex = '/^[- +()]*[0-9][- +()0-9]*$/';
-
-			if((Regex.test($("#mobilefield").val())) && (mobileDigitCount.length() > 7) && (mobileDigitCount.length() < 14)) {
-				$(function() {
-					var acceptedmobile = true;
-				})
-			} else {
-				$(function() {
-					var acceptedmobile = false;
-				})
-			}
-		});
-
-		$('#email').bind('focus blur keyup change', function() {
-			if(var acceptedemail = 'true'
-		)
-			{
-				$("#contactpreference").show();
-			}
-		});
-
-
-	});
+            if( this.value.indexOf('@') > -1 && this.value.indexOf('.') > -1 && this.value.length > 4 && this.value.length < 64 && this.value.slice(-1) !== ('.') ) {
+                $("#contactdiv").removeClass('hide').addClass('show');
+            }
+            else
+            {
+                $("#contactdiv").removeClass('show').addClass('hide');
+            }
+        })
+            //          if (var acceptedmobile = 'true') {
+            //     if   ( $('#mobile').val().length > 7 ) {
+          //  $(function() {
+          //      $("#contactpreference").removeClass('hide').addClass('show');
+          //      $("#contactdiv").addClass('show');
+         //   })
+            //        }
+        });
 </script>
 </body>
 </html>

@@ -14903,3 +14903,43 @@
 06/05/2018 20:17:02 - 184.56.244.84: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
 06/05/2018 20:17:02 - 184.56.244.84: USERS Mode: update
 06/05/2018 20:17:02 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/05/2018 23:09:53 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/05/2018 23:09:53 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/05/2018 23:09:53 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/05/2018 23:09:53 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/06/2018 02:36:22 - 107.10.10.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmacknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 02:36:22 - 107.10.10.162: User ID: jmacknife@thenakedsurgeon.com
+06/06/2018 02:36:22 - 107.10.10.162: AFTER COOKIES: FN James MacKnife - INITIALS JM - GROUP staff
+06/06/2018 02:36:22 - 107.10.10.162: >>>>  GroupID: staff
+06/06/2018 13:33:03 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 13:33:03 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/06/2018 13:33:03 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/06/2018 13:33:03 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/06/2018 14:21:24 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 14:21:24 - 68.107.189.223: User ID: eidoadmin@thenakedsurgeon.com
+06/06/2018 14:21:24 - 68.107.189.223: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/06/2018 14:21:24 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/06/2018 17:45:50 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 17:45:50 - 68.107.189.223: User ID: mm1admin@thenakedsurgeon.com
+06/06/2018 17:45:50 - 68.107.189.223: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/06/2018 17:45:50 - 68.107.189.223: >>>>  GroupID: sitedivadmins

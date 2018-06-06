@@ -259,15 +259,14 @@ else if ($mode=="addconfirm")
 {
    // get some info about the user putting this record in
    $user_id = $_COOKIE['user_id'];
-   $sql = "SELECT u.firstName, u.lastName, 
-                 e.departmentId, d.name
-           FROM dir_user u, dir_employment e, dir_department d
-           WHERE u.id='$user_id'
-           AND e.userid='$user_id'
-           AND d.id=e.departmentId";
+   $org_id = $_COOKIE['org_id'];
+   $sql = "SELECT firstName, lastName, 
+           FROM dir_user 
+           WHERE id='$user_id'";
    $GetQuery = dbi_query($sql);
    $qryResult=$GetQuery->fetch_assoc();
    $username = $qryResult['firstName']." ".$qryResult['lastName'];
+   $sql = "SELECT name FROM $TBLORGANISATIONS
    $hospitalname = $qryResult['name'];
    // INSERT
    $pe_id = uniqid();

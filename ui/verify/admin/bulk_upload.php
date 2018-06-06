@@ -87,6 +87,7 @@ $action = $_POST['action'];
                      username='$email',
                      gmc_number='$gmc_number',
                      isSurgeon='$is_surgeon',
+                     c_dateImported=NOW(),
                      password='".$hash."',
                      uipassword='".$hash."'";
          logMsg("ADD: $sql",$logfile);

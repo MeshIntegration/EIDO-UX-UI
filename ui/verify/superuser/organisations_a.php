@@ -30,42 +30,59 @@ if ($mode=="update")
    $email = $_POST['email'];
    $fname = $_POST['fname'];
    $lname = $_POST['lname'];
+   $admin_email = $_POST['admin_email'];
+   $admin_fname = $_POST['admin_fname'];
+   $admin_lname = $_POST['admin_lname'];
+
    $c_admin = $fname." ".$lname;
    $subdivision = $_POST['subdivision'];
    $existing_header_logo = $_POST['existing_header_logo'];
    logMsg("$mode $id $name $type $c_admin",$logfile);
-   
+
    // get the original oganisation name in case it changes
-   $sql = "SELECT c_name 
+   // and the primary admin id
+   $sql = "SELECT c_name, c_firstUser 
            FROM $TBLORGANISATIONS
            WHERE id='$org_id'";
    $GetQuery=dbi_query($sql);
    $qryResult = $GetQuery->fetch_assoc();
    $org_name = $qryResult['c_name'];
+   $c_firstUser_orig = $qryResult['c_firstUser'];
 
-   if ($_FILES['header_logo']['name']<>"")
-   {
-      // logMsg($_FILES['header_logo']['name'], $logfile);
-      if ($_FILES['header_logo']['error'] > 0)
-      {
-         $error_msg .= "There was an error uploading your file.<br >";
-         $error_msg .= $_FILES['header_logo']['error']."<br >";
-         logMsg("File Upload Error: ".$_FILES['header_logo']['error'], $logfile);
-      }
-      else
-      {
-         $loc = strrpos($_FILES['header_logo']['name'], ".");
-         $ext = strtolower(substr($_FILES['header_logo']['name'], $loc+1));
-         if (!in_array($ext, $arr_ext))
-            $error_msg .= "File must be an image format.<br >";
-      }
-   }
-   if (strlen($error_msg)>0)
-   {
-      $_SESSION['error_msg'] = $error_msg;
-      header("Location: organisations.php?m=update&id=$id");
-   }
+   include "inc_org_error_check.php";
 
+   // not going to check this one for now
+   // can't use the function I have as it looks in users
+   // if (!is_email_unique($email))
+   //    $_SESSION['add_email_duplicate_error']=true; else $_SESSION['add_email_duplicate_error']=false;
+
+   if (!is_email_unique($admin_email, $c_firstUser_orig))
+      $_SESSION['add_admin_email_duplicate_error']=true; else $_SESSION['add_admin_email_duplicate_error']=false;
+
+   if ($_SESSION['add_logo_type_error'] || $_SESSION['add_logo_error'] ||
+       $_SESSION['add_orgname_error'] || $_SESSION['add_orgname_format_error'] ||
+       $_SESSION['add_fname_error'] || $_SESSION['add_fname_format_error'] ||
+       $_SESSION['add_lname_error'] || $_SESSION['add_lname_format_error'] ||
+       $_SESSION['add_email_error'] ||
+       $_SESSION['add_bad_email_error'] || $_SESSION['add_type_error'] ||
+       $_SESSION['add_admin_fname_error'] || $_SESSION['add_admin_fname_format_error'] ||
+       $_SESSION['add_admin_lname_error'] || $_SESSION['add_admin_lname_format_error'] ||
+       $_SESSION['add_admin_email_error'] || $_SESSION['add_admin_email_duplicate_error'] ||
+       $_SESSION['add_admin_bad_email_error']) {
+         $_SESSION['error_msg'] = $error_msg;
+         $_SESSION['name'] = $name;
+         $_SESSION['type'] = $type;
+         $_SESSION['email'] = $email;
+         $_SESSION['fname'] = $fname;
+         $_SESSION['lname'] = $lname;
+         $_SESSION['admin_email'] = $admin_email;
+         $_SESSION['admin_fname'] = $admin_fname;
+         $_SESSION['admin_lname'] = $admin_lname;
+         $_SESSION['subdivision'] = $subdivision;
+         header ("Location: organisations.php?m=update&id=$id");
+         exit();
+   }
+   
    //Upload the file
    if ($_FILES['header_logo']['size'] > 0)
    {
@@ -82,14 +99,14 @@ if ($mode=="update")
    else
       $header_logo = "";
    
-   // get the user id for the org's admin
+   // get the user id for the org's first user/primary admin
    $sql = "SELECT u.id
            FROM dir_user u, $TBLORGANISATIONS o
            WHERE o.id='$id'
-           AND o.c_email=u.email";
+           AND o.c_firstUser=u.email";
    $GetQuery=dbi_query($sql);
    $qryResult=$GetQuery->fetch_assoc();
-   $uid=$qryResult['id'];
+   $admin_uid=$qryResult['id'];
    
    $user_id = $_COOKIE['user_id'];
    $sql = "UPDATE $TBLORGANISATIONS
@@ -99,6 +116,8 @@ if ($mode=="update")
                c_logo=".escapeQuote($header_logo).",
                c_admin=".escapeQuote($c_admin).",
                c_subdivision=".escapeQuote($subdivision).",
+               c_level='ORG',
+               c_firstUser=".escapeQuote($admin_email).",
                modifiedBy=".escapeQuote($user_id).",
                dateModified=NOW()
            WHERE id='$id'";
@@ -111,26 +130,15 @@ if ($mode=="update")
               SET c_hospitalName=".escapeQuote($name)."
               WHERE c_hospitalName=".escapeQuote($org_name);
       dbi_query($sql);
+      logMsg($sql, $logfile);
 
       $sql = "UPDATE dir_organization
               SET name=".escapeQuote($name).",
                   description=".escapeQuote($name)."
               WHERE id='$org_id'";
       dbi_query($sql);
-logMsg($sql, $logfile);
+      logMsg($sql, $logfile);
    }
-
-   $sql = "UPDATE dir_user 
-           SET username=".escapeQuote($email).",
-               password=".escapeQuote($password).",
-               firstName=".escapeQuote($fname).",
-               lastName=".escapeQuote($lname).",
-               email=".escapeQuote($email).",
-               active='1',
-               timezone='0'
-            WHERE id='$uid'";
-   dbi_query($sql);
-   logMsg($sql,$logfile);
 
    $sql = "DELETE FROM dir_user_role WHERE userId='$uid'";
    dbi_query($sql);
@@ -140,6 +148,20 @@ logMsg($sql, $logfile);
    dbi_query($sql);
    logMsg($sql,$logfile);
    
+   $sql = "UPDATE dir_user 
+           SET id=".escapeQuote($admin_email).",
+               username=".escapeQuote($admin_email).",
+               firstName=".escapeQuote($admin_fname).",
+               lastName=".escapeQuote($admin_lname).",
+               email=".escapeQuote($admin_email).",
+               c_organizationId=".escapeQuote($org_id).",
+               c_dateModified='NOW(),
+               active='1',
+               timezone='0'
+            WHERE id='$admin_uid'";
+   dbi_query($sql);
+   logMsg($sql,$logfile);
+
    $sql = "INSERT INTO dir_user_role
            SET roleId = 'ROLE_USER',
                userId = '$uid',
@@ -166,14 +188,25 @@ else if ($mode=="gotoaddorg") {
    unset($_SESSION['add_email_error']);
    unset($_SESSION['add_email_duplicate_error']);
    unset($_SESSION['add_bad_email_error']);
+   unset($_SESSION['add_admin_fname_error']);
+   unset($_SESSION['add_admin_fname_format_error']);
+   unset($_SESSION['add_admin_lname_error']);
+   unset($_SESSION['add_admin_lname_format_error']);
+   unset($_SESSION['add_admin_email_error']);
+   unset($_SESSION['add_admin_email_duplicate_error']);
+   unset($_SESSION['add_admin_bad_email_error']);
    unset($_SESSION['add_type_error']);
    unset($_SESSION['add_logo_error']);
    unset($_SESSION['add_logo_type_error']);
    header("Location: organisations.php?m=add");
    exit();
 }
-else if ($mode=="add")
-{
+else if ($mode=="gotoupdate") {
+   $_SESSION = array();
+   header ("Location: organisations.php?m=update&id=$id");
+   exit();
+}
+else if ($mode=="add") {
    logMsg("-------------- START ORG ADD ----------------",$logfile);
    // INSERT
    $org_id = uniqid();
@@ -189,68 +222,21 @@ else if ($mode=="add")
    $existing_header_logo = $_POST['existing_header_logo'];
    logMsg("$mode $id $name $type $admin",$logfile);
 
-   //  check for required fields and formats here
-   if ($name=="")
-      $_SESSION['add_orgname_error']=true; else $_SESSION['add_orgname_error']=false;
-   if (!preg_match("/^[a-zA-Z' -]*$/",$name))
-      $_SESSION['add_orgname_format_error']=true; else $_SESSION['add_orgname_format_error']=false;
-   // account owner
-   if ($fname=="")
-      $_SESSION['add_fname_error']=true; else $_SESSION['add_fname_error']=false;
-   if (!preg_match("/^[a-zA-Z' -]*$/",$fname))
-      $_SESSION['add_fname_format_error']=true; else $_SESSION['add_fname_format_error']=false;
-   if ($lname=="")
-      $_SESSION['add_lname_error']=true; else $_SESSION['add_lname_error']=false;
-   if (!preg_match("/^[a-zA-Z' -]*$/",$lname))
-      $_SESSION['add_lname_format_error']=true; else $_SESSION['add_lname_format_error']=false;
-   if ($email=="")
-      $_SESSION['add_email_error']=true; else $_SESSION['add_email_error']=false;
-   if ($email<>"" && !filter_var($email, FILTER_VALIDATE_EMAIL))
-      $_SESSION['add_bad_email_error']=true; else $_SESSION['add_bad_email_error']=false;
-   if (!is_email_unique($email))
-      $_SESSION['add_email_duplicate_error']=true; else $_SESSION['add_email_duplicate_error']=false;
-   // first admin
-   if ($admin_fname=="")
-      $_SESSION['add_admin_fname_error']=true; else $_SESSION['add_admin_fname_error']=false;
-   if (!preg_match("/^[a-zA-Z' -]*$/",$admin_fname))
-      $_SESSION['add_admin_fname_format_error']=true; else $_SESSION['add_admin_fname_format_error']=false;
-   if ($admin_lname=="")
-      $_SESSION['add_admin_lname_error']=true; else $_SESSION['add_admin_lname_error']=false;
-   if (!preg_match("/^[a-zA-Z' -]*$/",$admin_lname))
-      $_SESSION['add_admin_lname_format_error']=true; else $_SESSION['add_admin_lname_format_error']=false;
-   if ($admin_email=="")
-      $_SESSION['add_admin_email_error']=true; else $_SESSION['add_admin_email_error']=false;
-   if ($admin_email<>"" && !filter_var($admin_email, FILTER_VALIDATE_EMAIL))
-      $_SESSION['add_bad_admin_email_error']=true; else $_SESSION['add_bad_admin_email_error']=false;
+   include "inc_org_error_check.php";
+
+   // not going to check this one for now
+   // if (!is_email_unique($email))
+   //    $_SESSION['add_email_duplicate_error']=true; else $_SESSION['add_email_duplicate_error']=false;
+
+   // have to do this one here because it is different for add and update
    if (!is_email_unique($admin_email))
       $_SESSION['add_admin_email_duplicate_error']=true; else $_SESSION['add_admin_email_duplicate_error']=false;
-
-   if ($type=="")
-      $_SESSION['add_type_error']=true; else $_SESSION['add_type_error']=false;
-   // check logo file
-   if ($_FILES['header_logo']['name']<>"")
-   {
-      logMsg($_FILES['header_logo']['name'], $logfile);
-      if ($_FILES['header_logo']['error'] > 0)
-      {
-         $_SESSION['add_logo_error']=true;
-         logMsg("File Upload Error: ".$_FILES['header_logo']['error'], $logfile);
-      }
-      else
-      {
-         $_SESSION['add_logo_error']=false;
-         $loc = strrpos($_FILES['header_logo']['name'], ".");
-         $ext = strtolower(substr($_FILES['header_logo']['name'], $loc+1));
-         if (!in_array($ext, $arr_ext))
-            $_SESSION['add_logo_type_error']=true; else $_SESSION['add_logo_type_error']=false;
-      }
-   }
 
    if ($_SESSION['add_logo_type_error'] || $_SESSION['add_logo_error'] || 
        $_SESSION['add_orgname_error'] || $_SESSION['add_orgname_format_error'] || 
        $_SESSION['add_fname_error'] || $_SESSION['add_fname_format_error'] ||
        $_SESSION['add_lname_error'] || $_SESSION['add_lname_format_error'] ||
-       $_SESSION['add_email_error'] || $_SESSION['add_email_duplicate_error'] || 
+       $_SESSION['add_email_error'] || 
        $_SESSION['add_bad_email_error'] || $_SESSION['add_type_error'] || 
        $_SESSION['add_admin_fname_error'] || $_SESSION['add_admin_fname_format_error'] ||
        $_SESSION['add_admin_lname_error'] || $_SESSION['add_admin_lname_format_error'] ||
@@ -281,18 +267,24 @@ else if ($mode=="add")
       $header_logo=$target_file_name;
    }
 
+   // create ID for first user account
+   // we are using email as the USER ID
+   $firstuser_uid = $admin_email;
+
    $user_id = $_COOKIE['user_id'];
-   // we put the account owner inthe organisations table
+   // we put the account owner in the organisations table
    $owner = $fname." ".$lname;
    $sql = "INSERT INTO $TBLORGANISATIONS
            SET id='".$org_id."',
                c_name=".escapeQuote($name).",
                c_description=".escapeQuote($name).",
                c_type=".escapeQuote($type).",
+               c_level='ORG',
                c_email=".escapeQuote($email).",
                c_admin=".escapeQuote($owner).",
                c_logo=".escapeQuote($header_logo).",
                c_subdivision=".escapeQuote($subdivision).",
+               c_firstUser=".escapeQuote($firstuser_uid).",
                createdBy=".escapeQuote($user_id).",
                dateModified=NOW(),
                dateCreated=NOW()";
@@ -307,8 +299,6 @@ else if ($mode=="add")
    logMsg($sql,$logfile);
 
    // Ceate the firsr admin user 
-   // we are using email as the USER ID
-   $uid = $admin_email;
    // create and encrypt password
    $password = random_password();
    $hash = password_hash($password, PASSWORD_BCRYPT);
@@ -326,6 +316,8 @@ else if ($mode=="add")
                firstName=".escapeQuote($admin_fname).",
                lastName=".escapeQuote($admin_lname).",
                email=".escapeQuote($admin_email).",
+               c_organizationId='$org_id',
+               c_dateModified=NOW(),
                active='1',
                timezone='0',
                gmc_number=''";
@@ -334,17 +326,27 @@ else if ($mode=="add")
 
    $sql = "INSERT INTO dir_user_role
            SET roleId = 'ROLE_USER',
-               userId = '$uid',
+               userId = '$firstuser_uid',
                username='$admin_email'";
    dbi_query($sql);
    logMsg($sql,$logfile);
 
    $sql = "INSERT INTO dir_user_group
            SET groupId = 'sitedivadmins',
-               userId = '$uid',
+               userId = '$firstuser_uid',
                username='$admin_email'";
    dbi_query($sql);
    logMsg($sql,$logfile);
+
+   // Not sure if we need this at this level but can't hurt
+   // $emp_id = uniqid();
+   // $sql = "INSERT INTO dir_employment
+   //         SET id='$emp_id',
+   //             userid='$admin_email',
+   //             departmentId='n/a',
+   //             organizationId='$org_id'";
+   // dbi_query($sql);
+   // logMsg($sql,$logfile);
 
    // send mail to the new user
    include "../includes/inc_email_template.php";
@@ -404,17 +406,14 @@ else if ($mode=="adddiv" || $mode=="addcust")
    $user_id = $_COOKIE['user_id'];
 
    if ($mode=="adddiv")
-   {
-      $sql = "INSERT INTO dir_department 
+   { $sql = "INSERT INTO dir_department 
               SET id='".$div_id."',
                   name=".escapeQuote($name).",
                   description=".escapeQuote($name).",
                   organizationId=".escapeQuote($org_id).";";
       dbi_query($sql);
       logMsg($sql,$logfile);
-   }
-   else
-   {
+   } else {
       $sname="$fname $lname";
       $sql = "INSERT INTO $TBLSURGEONS
               SET id='".$div_id."',
@@ -480,7 +479,8 @@ if($mode == "removelogo") {
 }
 header("Location: organisations.php");
 exit();
-?>
+
+/*  *********************** EXTRA JUNK - NOT SURE HOW THIS GOT COPIED HERE ***************
          $_SESSION['error_msg'] = $error_msg;
          $_SESSION['name'] = $name;
          $_SESSION['type'] = $type;
@@ -536,7 +536,7 @@ exit();
    $password = random_password();
    $hash = password_hash($password, PASSWORD_BCRYPT);
    if (!password_verify($password, $hash)) {
-      /* Invalid hash generation*/
+      // Invalid hash generation
       header("Location:".$_SERVER['HTTP_REFERER']);
       exit;
    }
@@ -703,4 +703,6 @@ if($mode == "removelogo") {
 }
 header("Location: organisations.php");
 exit();
+
+***************************************************  */
 ?>
