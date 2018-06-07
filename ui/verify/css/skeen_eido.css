@@ -167,12 +167,15 @@ div.sort:first-of-type {
 .patient-list p > span {
   line-height: 1.2;
 }
+.patient-list .uc {
+  font-size: 16px !important;
+}
 .input-group-field {
   padding: 0.78em !important;
 }
 h4.vertical-middle {
   position: relative;
-  top: 3px;
+  top: 11px !important;
 }
 .btn-pre {
   padding: 8px 30px;
@@ -181,10 +184,10 @@ h4.vertical-middle {
   text-indent: 6px;
 }
 .padding-right-column {
-  padding: 0 0.825rem;
+  padding: 0 20px !important;
 }
 .padding-right-column .standard-hr {
-  margin: 0 -0.825rem;
+  margin: 0 0 !important;
 }
 .standard-hr {
   border-bottom: 1px solid #d3d1d1;
@@ -198,6 +201,9 @@ h4.vertical-middle {
 .standard-padding.two-x {
   padding: 0 45px;
 }
+.standard-margin-bottom {
+  margin-bottom: 10px !important;
+}
 .link-standard-color {
   color: #0d2240 !important;
   text-decoration: none !important;
@@ -205,7 +211,7 @@ h4.vertical-middle {
 .link-standard-color:focus,
 .link-standard-color:hover,
 .link-standard-color:active {
-  font-weight: 700;
+  color: #f5a623 !important;
 }
 .link-active {
   color: #3dae65 !important;
@@ -214,7 +220,7 @@ h4.vertical-middle {
 .link-active:focus,
 .link-active:hover,
 .link-active:active {
-  font-weight: normal !important;
+  color: #3dae65 !important;
 }
 .standard-weight {
   font-weight: normal;
@@ -254,7 +260,8 @@ h4.vertical-middle {
   display: block;
 }
 .grid-padding-15 {
-  padding: 15px 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .eido-radio {
   display: inline;
@@ -344,8 +351,12 @@ h4.vertical-middle {
   padding-top: 0.825rem;
   padding-bottom: 0.825rem;
 }
+.note-bell h3 {
+  margin: 0 20px !important;
+  padding: 0 !important;
+}
 .notification-bell {
-  margin: 0px -20px;
+  margin: 0px 0;
   padding: 25px 0;
   background: #e4e4e4;
 }
@@ -544,4 +555,44 @@ p.small {
   border: solid;
   border-width: 7px 7px 0 7px;
   border-color: #9B9B9B transparent transparent transparent;
+}
+/**
+fixes for messed up styling on the right content
+ */
+.content-right h3 {
+  margin: 0 0 0 -20px;
+  padding: 0 20px 0 40px;
+}
+.content-right .field {
+  margin: 0;
+  padding: 0;
+}
+.section-title {
+  padding: 0 20px 12px 20px;
+}
+.section-title.title-match-form-margin {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0 40px 12px 35px;
+}
+.su .content-right form .section-title {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 0 40px 12px 35px;
+}
+.position-top-10 {
+  position: relative;
+  top: 10px;
+}
+.no-margin {
+  margin: 0 !important;
+}
+.padding-bottom-1 {
+  padding-bottom: 10px !important;
+}
+/**
+super user dashboard
+ */
+.menu.simple.show-for-medium > li > a {
+  text-decoration: underline;
 }

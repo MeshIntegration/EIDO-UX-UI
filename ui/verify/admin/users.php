@@ -20,6 +20,35 @@ $logfile = "admin.log";
 $mode = get_query_string ( 'm' );
 $id = get_query_string ( 'id' );
 
+/** @var START FILTER */
+$_filter = [];
+$_order = [];
+if($filter = get_query_string('filter')) {
+	$_filter['filter'] = 1;
+}
+if($time_added = get_query_string("time_added")) {
+	$_filter['time_added'] = get_query_string('time_added');
+	switch($_filter['time_added']) {
+		case "1": $_order[] = 'u.id DESC'; break;
+		case "2": $_order[] = 'u.id ASC'; break;
+		case "3": $_order[] = 'u.dateImported DESC'; break;
+	}
+}
+if($name = get_query_string("name")) {
+	$_filter['name'] = get_query_string('name');
+	switch($_filter['name']) {
+		case "1": $_order[] = 'u.lastName ASC'; break;
+		case "2": $_order[] = 'u.lastName DESC'; break;
+	}
+}
+
+//setting default
+if(!$_order) {
+	$_order[] = 'u.lastName ASC';
+}
+unset($time_added, $name);
+/** END FILTER */
+
 logMsg("USERS Mode: $mode",$logfile);
 
 // turn everythign off
@@ -66,7 +95,7 @@ $sql = "SELECT u.*, ug.groupid
         AND u.id=ur.userid
         AND u.id = ug.userid
         AND ur.roleId='ROLE_USER' 
-        ORDER BY u.lastName
+        ORDER BY ".implode(',', $_order)." 
         LIMIT $start, $row";
 $GetQuery = dbi_query ( $sql );
 $i = 0;
@@ -142,65 +171,69 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
                     <div class="tabs-panel" id="panel1">
                         <div class="grid-x rule">
                             <div class="small-12 medium-8 cell">
-                                <form action="bulk_actions_a.php?actionRequested=pwdreset" method="post" class="bulk-action" id="ResetAction">
+                                <form action="users.php?m=reset" method="get" class="bulk-action" id="ResetAction">
                                     <!--							<-- <input type="hidden" name="users[]" value="" />-->
                                     <button class="button" type="submit">Force Password Reset</button>
                                 </form>
                             </div>
                             <div class="small-12 medium-8 cell">
-                                <form action="bulk_actions_a.php?actionRequested=delete" method="post" class="bulk-action" id="DeleteAction">
+                                <form action="users.php?m=delete" class="bulk-action" id="DeleteAction">
                                     <button class="button" type="submit">Delete User</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                     <div class="tabs-panel" id="panel2">
-                        <div class="grid-x rule">
-                            <div class="small-12 cell">
-                                <a href="clear_filter.php" class="float-right align-center-middle"><img src="../img/close-icon.png" alt="" style="margin:7px;"></a>
-                            </div>
-                        </div>
-                        <div class="grid-x rule">
-                            <div class="small-12 medium-4 cell">
-                                <label for="middle-label" class="middle">Time Added:</label>
-                            </div>
-                            <div class="small-12 medium-8 cell">
-                                <a href="users.php?filter=1&time_added=1" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added'] == 1) ? "selected" : "inactive"; ?>" type="submit">
-                                    Newest First</a>
-                                &nbsp;
-                                <a href="users.php?filter=1&time_added=2" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added'] == 2) ? "selected" : "inactive"; ?>">
-                                    Oldest First</a>
-                                &nbsp;
-                                <a href="users.php?filter=1&time_added=1" class="button<?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added'] == 2) ? "selected" : "inactive"; ?>">
-                                    Last Import</a>
-                            </div>
-                        </div>
-                        <div class="grid-x rule">
-                            <div class="small-12 medium-4 cell">
-                                <label for="middle-label" class="middle">Name:</label>
-                            </div>
-                            <div class="small-12 medium-8 cell">
-                                <a href="users.php?filter=1&name=1" class="button<?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name'] == 1) ? "selected" : "inactive"; ?>">A-Z</a>&nbsp;
-                                <a href="users.php?filter=1&name=2" class="button<?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name'] == 2) ? "selected" : "inactive"; ?>">Z-A</a>
-                            </div>
-                        </div>
-                        <div class="grid-x rule">
+
+	                    <div class="grid-x rule" style="margin-top: 0.875rem;">
+		                    <div class="small-12 medium-3 cell">
+			                    <label for="middle-label" class="middle">Time Added</label>
+		                    </div>
+		                    <div class="small-12 medium-9 cell">
+			                    <a href="users.php?<?php echo http_build_query(array_merge($_filter, ['time_added'=>1])); ?>" class="button <?php echo (isset($_filter['time_added']) && $_filter['time_added'] == 1) ? "selected" : "inactive"; ?>">Newest</a>&nbsp;
+			                    <a href="users.php?<?php echo http_build_query(array_merge($_filter, ['time_added'=>2])); ?>" class="button <?php echo (isset($_filter['time_added']) && $_filter['time_added'] == 2) ? "selected" : "inactive"; ?>">Oldest</a>
+			                    <a href="users.php?<?php echo http_build_query(array_merge($_filter, ['time_added'=>3])); ?>" class="button <?php echo (isset($_filter['time_added']) && $_filter['time_added'] == 3) ? "selected" : "inactive"; ?>">Last Import</a>
+		                    </div>
+	                    </div>
+	                    <div class="grid-x rule">
+		                    <div class="small-12 medium-3 cell">
+			                    <label for="middle-label" class="middle">Name</label>
+		                    </div>
+		                    <div class="small-12 medium-9 cell">
+			                    <a href="users.php?<?php echo http_build_query(array_merge($_filter, ['name'=>1])); ?>" class="button <?php echo (isset($_filter['name']) && $_filter['name'] == 1) ? "selected" : "inactive"; ?>">A-Z</a>&nbsp;
+			                    <a href="users.php?<?php echo http_build_query(array_merge($_filter, ['name'=>2])); ?>" class="button <?php echo (isset($_filter['name']) && $_filter['name'] == 2) ? "selected" : "inactive"; ?>"">Z-A</a>
+		                    </div>
+	                    </div>
+                        <!--<div class="grid-x rule">
                             <div class="small-12 medium-4 cell">
                                 <label for="middle-label" class="ml_label">Search:<br/>within results</label>
                             </div>
                             <div class="small-12 medium-8 cell">
                                 <div class="input-group">
-                                    <input class="input-group-field searchbox" placeholder="Hobbs" type="text" name="query" value="<?php if(!empty($_POST['query']))
-                                        echo $_POST['query']; ?>">
+                                    <input class="input-group-field searchbox" placeholder="Hobbs" type="text" name="query" value="<?php /*if(!empty($_POST['query']))
+                                        echo $_POST['query']; */?>">
                                     <div class="input-group-button">
                                         <button type="submit" class="button" value="Go" name="submit">Go</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
 
                     </div>
                 </div>
+	            <div class='grid-x row'>
+		            <div class="small-6 medium-6 cell text-left padding-10">
+
+		            </div>
+		            <div class="small-6 medium-6 cell  padding-10">
+			            <?php if(isset($_GET['time_added']) || isset($_GET['name'])): ?>
+				            <span class="float-right">Filters Active | <a href="users.php" class="float-right link-standard-color ">&nbsp; Reset</a></span>
+			            <?php else: ?>
+				            <span class="float-right">Filters Disabled</span>
+
+			            <?php endif; ?>
+		            </div>
+	            </div>
 
                 <!-- **********************************************
                             End Bulk Actions Panel
@@ -218,14 +251,14 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 	                        <span class="checkmark" style="left:0px;"></span>
 						</label>
 	                </div>
-					<div class="small-6 columns">
-						<label style="margin-left: 10px;">User</label>
+					<div class="small-6 columns position-top-10">
+						<label style="margin-left: 5px;">User</label>
 					</div>
-					<div class="small-2 columns" style="left: -15px;">
+					<div class="small-2 columns position-relative position-top-10" style="left: -7px;">
 						<label>Surgeon</label>
 					</div>
-					<div class="small-1 columns">
-						<label style="left: -28px;">Admin</label>
+					<div class="small-1 columns position-relative position-top-10" style="left: -20px;">
+						<label >Admin</label>
 					</div>
 
 				</div>
@@ -257,7 +290,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		                                <div class="grid-x">
                                             <div class="small-2 columns column-first">
                                                 <label class="eido-checkbox">
-                                                    <input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
+                                                    <input type="checkbox" name="id[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -309,9 +342,9 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 	<!-- ADD USER SECTION -->
 	<div class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
 		<!--  <h3>Add Verify User</h3>  -->
+		<h3 class="padding-bottom-1">Add Verify User</h3>
 
 		<form action="users_a.php?m=add" method="post">
-            <div class="section-title">Add Verify User</div>
 			<div class="grid-container">
 				<div class="grid-x">
 					<div class="small-12 cell field">
@@ -373,7 +406,8 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		<div class="divide">
 
 				<div class="grid-container">
-                    <div class="section-title" style="margin-left:20px;">Bulk Edit</div>
+					<h3 class="padding-bottom-1 standard-margin-bottom" style="">Bulk Edit</h3>
+
 					<div class="grid-x">
 						<div class="small-12 cell field">
 							<div class="grid-x">
@@ -437,9 +471,9 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 			}
 			?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $update_hide; ?>">
+	        <h3>View User</h3>
 
 		<form action="users_a.php?m=update&id=<?php echo $user_id; ?>" method="post">
-            <h3>View User</h3>
 			<div class="grid-container">
 				<div class="grid-x">
                     <div class="small-12 cell field">
@@ -503,20 +537,20 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
         </div>
 <!-- END VIEW USER -->
 <!-- RESET USER PASSWORD SECTION -->
+	    <?php $user_id = ['id'=>$user_id]; ?>
 <div class="small-12 medium-6 large-6 cell content-right <?php echo $reset_hide; ?>">
+	<h3 class="text-center padding-bottom-1">Are you sure you wish to reset the password for <?php echo count($user_id['id']) > 1 ? 'these users?' : 'this user?'; ?></h3>
+	<p class="text-center standard-padding">The user will be asked to enter a new password the next time they log into Verify.</p>
         <form name="resetuserfrm">
                 <div class="grid-container">
                         <div class="grid-x grid-padding-x">
-                                <div class="small-12 medium-12 large-12 cell text-center">
-                                        <h3>Are you sure you wish to reset the password for this user?</h3>
-                                        <p>The user will be asked to enter a new password the next time they log into Verify.</p>
-                                </div>
+
                                 <div class="small-12 medium-12 large-12 cell text-center">
                                         <div class="grid-x">
                                                 <div class="small-3">&nbsp;</div>
                                                 <div class="small-6">
                                                         <br> <a href="users.php?m=main"><input type="button" name="" value="No" class="button large expanded inactive" /></a>
-                                                              <a href="users_a.php?m=reset&id=<?php echo $user_id; ?>"> <input type="button" name="" value="Confirm Reset" class="button large red expanded" /></a>
+                                                              <a href="users_a.php?m=reset&<?php echo http_build_query($user_id); ?>"> <input type="button" name="" value="Confirm Reset" class="button large red expanded" /></a>
                                                 </div>
                                                 <div class="small-3">&nbsp;</div>
                                         </div>
@@ -584,22 +618,21 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 </div>
 <!-- End BULK RESET PW SECTION -->
 <!-- DELETE USER SECTION -->
+	    <?php $user_id = ['id'=>$user_id]; ?>
 <div class="small-12 medium-6 large-6 cell content-right <?php echo $delete_hide; ?>">
+	<h3 class="text-center">Are you sure you wish to delete <?php echo count($user_id['id']) > 1 ? 'these users?' : 'this user?'; ?></h3>
+	<p class="standard-padding text-center padding-bottom-1">This will not affect any patient data, but the user will no
+		longer be able to access the system.</p>
 	<form name="deleteuserfrm">
 		<div class="grid-container">
 			<div class="grid-x grid-padding-x">
-				<div class="small-12 medium-12 large-12 cell text-center">
-		                        <h3>Are you sure you wish to delete this user?</h3>
-					<p>This will not affect any patient data, but the user will no
-						longer be able to access the system.</p>
-				</div>
 				<div class="small-12 medium-12 large-12 cell text-center">
 					<div class="grid-x">
 						<div class="small-3">&nbsp;</div>
 						<div class="small-6">
 							<br> <a href="users.php?m=main"><input type="button" name=""
 								value="No" class="button large expanded inactive" /></a> 
-                                                              <a href="users_a.php?m=delete&id=<?php echo $user_id; ?>"> <input type="button" name="" value="Confirm delete" class="button large red expanded" /></a>
+                                                              <a href="users_a.php?m=delete&<?php echo http_build_query($user_id); ?>"> <input type="button" name="" value="Confirm delete" class="button large red expanded" /></a>
 						</div>
 						<div class="small-3">&nbsp;</div>
 					</div>
@@ -714,7 +747,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
      });
 	$(document).ready(function(){
 		$('#actOnAll').click(function () {    
-			$("[id^=performAction]").prop('checked', this.checked);    
+			$("[id^=id]").prop('checked', this.checked);
 		});
 	});
 

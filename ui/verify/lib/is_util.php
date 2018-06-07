@@ -649,6 +649,9 @@ function time_diff ($time1, $time2)
 ****************************************************************/
 function get_query_string($var)
 {
+    if(is_array($_GET[$var])) {
+        return $_GET[$var];
+    }
    $value = $_GET[$var];
    $value = ereg_replace("<", "", $value);
    $value = ereg_replace(">", "", $value);

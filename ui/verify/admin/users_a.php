@@ -14,20 +14,24 @@ $id = get_query_string('id');
 
 logMsg("Users_a: mode: $mode - ID: $id",$logfile);
 
-if ($mode=="delete")
-{
+if ($mode=="delete") {
+	if(is_array($id)) {
+		$id = "'".implode("','", $id)."'";
+	} else {
+		$id = "'$id'";
+	}
 
     $sql = "DELETE FROM dir_user_group 
-            WHERE userid='$id'";
+            WHERE userid IN ($id)";
     dbi_query($sql);
     $sql = "DELETE FROM dir_user_role 
-            WHERE userid='$id'";
+            WHERE userid IN ($id)";
     dbi_query($sql);
     $sql = "DELETE FROM dir_user 
-            WHERE id='$id'";
+            WHERE id IN ($id)";
     dbi_query($sql);
     $sql = "DELETE FROM $TBLSURGEONS 
-            WHERE c_userId='$id'";
+            WHERE c_userId IN ($id)";
     dbi_query($sql);
 
     logMsg("DELETE: $sql",$logfile);
@@ -41,10 +45,15 @@ if ($mode=="delete")
     */
 }
 if ($mode=="reset") {
+	if(is_array($id)) {
+		$id = "'".implode("','", $id)."'";
+	} else {
+		$id = "'$id'";
+	}
    $sql = "UPDATE dir_user
            SET c_pw_reset=1,
            c_dateModified=NOW()
-           WHERE id='$id'";
+           WHERE id IN ($id)";
    dbi_query($sql);
 }
 if ($mode=="add") {

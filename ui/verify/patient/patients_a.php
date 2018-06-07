@@ -267,6 +267,9 @@ else if ($mode=="addconfirm")
    $qryResult=$GetQuery->fetch_assoc();
    $username = $qryResult['firstName']." ".$qryResult['lastName'];
    $sql = "SELECT name FROM $TBLORGANISATIONS
+           WHERE id='$org_id'";
+   $GetQuery = dbi_query($sql);
+   $qryResult=$GetQuery->fetch_assoc();
    $hospitalname = $qryResult['name'];
    // INSERT
    $pe_id = uniqid();

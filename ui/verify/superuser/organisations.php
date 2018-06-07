@@ -106,13 +106,14 @@ logMsg("Organisations: $sql",$logfile);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manage Organizations</title>
   <link rel="stylesheet" href="../css/foundation.css">
-  <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/app.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
   <style>
      .clickable-row {cursor: pointer;}  
   </style>
+	<link rel="stylesheet" href="../css/eido.css">
+
 </head>
 <body>
 <div class="grid-container">
@@ -152,12 +153,12 @@ logMsg("Organisations: $sql",$logfile);
 					<i class="eido-icon-minus fc_add fc_minus"></i>
 				</a>
 			</span>
-		     <span class="tabs-title">
+		     <!--<span class="tabs-title">
 				<a href="#panel2" class="btn btn-actions" role="tab">Sort &amp; Search
 					<i class="eido-icon-plus fc_add fc_plus"></i>
 					<i class="eido-icon-minus fc_add fc_minus"></i>
 				</a>
-			</span>
+			</span>-->
 
 	     </div>
 
@@ -222,10 +223,11 @@ logMsg("Organisations: $sql",$logfile);
 <!-- Start Content-Right -->  
 <!-- ADD SECTION -->
 <div class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
-    <div class="grid-container">
+	<h3 class="padding-bottom-1">Add Organisation</h3>
+
+	<div class="grid-container">
         <div class="grid-x">
             <div class="small-12 cell field">
-                <h3>&nbsp;&nbsp;Add Organisation</h3>
             </div>
         </div>
     </div>
@@ -358,45 +360,42 @@ logMsg("Organisations: $sql",$logfile);
                unset($_SESSION['arr_add_procs']);
             }
          ?>
-     <div class="small-12 medium-6 large-6 cell content-right <?php echo $overview_hide; ?>">
-	     <h3>Organisation Overview<span class="small display-block">View and edit an Organisation</span></h3>
-
+   <div class="small-12 medium-6 large-6 cell content-right <?php echo $overview_hide; ?>">
+     <h3>Organisation Overview<span class="small display-block">View and edit an Organisation</span></h3>
          <div class="grid-container content-container row">
              <div class="grid-x grid-padding-x">
-                  <div class="small-12 medium-12 large-12 padding-right-column">
-	                  <h5 class="ps_grey"><?php echo $org_name; ?></h5>
-	                  <div class="grid-x grid-padding-x row grid-padding-15" style="padding-top:0;">
-		                  <div class="small-12 medium-12 large-12 cell">
-			                  <label>Account Owner</label>
-			                  <h5><?php echo $org_admin ? $org_admin : 'None'; ?></h5>
-		                  </div>
-		                  <div class="small-12 medium-12 large-12 cell">
-			                  <label>Account Owner Email</label>
-			                  <h5><?php echo $org_email; ?></h5>
-		                  </div>
-		                  <div class="small-12 medium-12 large-12 cell">
-			                  <label>Type</label>
-			                  <h5><?php echo $org_type; ?></h5>
-		                  </div>
-
+                <div class="small-12 medium-12 large-12 padding-right-column">
+	            <h5 class="ps_grey" style="margin:20px 0px;"><?php echo $org_name; ?></h5>
+	             <div class="grid-x grid-padding-x row grid-padding-15" style="padding-top:0;">
+	                  <div class="small-12 medium-12 large-12 cell">
+		                  <label>Account Owner</label>
+		                  <h5><?php echo $org_admin ? $org_admin : 'None'; ?></h5>
 	                  </div>
-	                  <hr class="standard-hr" />
-	                  <!-- spacer -->
-	                  <div class="grid-x grid-padding-x row grid-padding-15" style="">
-		                  <div class="small-12 cell">
-			                  <label>Header Organization Logo</label>
-			                  <?php if($org_logo != ""): ?>
-				                  <div class="row grid-x">
-					                  <div class="medium-9" style="">
-						                  <div class="org-logo position-relative">
-							                  <img src="<?php echo "/ui/verify/img/org_logos/".$org_logo; ?>" />
-						                  </div>
-					                  </div>
-					                  <div class="medium-3">
-						                  <a class="button inactive position-relative btn-block" href="organisations_a.php?m=removelogo&id=<?php echo $org_id; ?>" style="top:30%;">Remove</a>
+	                  <div class="small-12 medium-12 large-12 cell">
+		                  <label>Account Owner Email</label>
+		                  <h5><?php echo $org_email; ?></h5>
+	                  </div>
+	                  <div class="small-12 medium-12 large-12 cell">
+		                  <label>Type</label>
+		                  <h5><?php echo $org_type; ?></h5>
+	                  </div>
+	              </div>
+	              <hr class="standard-hr" />
+	              <!-- spacer -->
+	              <div class="grid-x grid-padding-x row grid-padding-15" style="">
+		            <div class="small-12 cell">
+		                  <label>Header Organization Logo</label>
+		                  <?php if($org_logo != ""): ?>
+			                  <div class="row grid-x">
+				                  <div class="medium-9" style="">
+					                  <div class="org-logo position-relative">
+						                  <img src="<?php echo "/ui/verify/img/org_logos/".$org_logo; ?>" />
 					                  </div>
 				                  </div>
-
+				                  <div class="medium-3">
+					                  <a class="button inactive position-relative btn-block" href="organisations_a.php?m=removelogo&id=<?php echo $org_id; ?>" style="top:30%;">Remove</a>
+				                  </div>
+			                  </div>
 			                  <?php else: ?>
 				                  <h5>None</h5>
 			                  <?php endif; ?>
@@ -405,7 +404,7 @@ logMsg("Organisations: $sql",$logfile);
 	                  </div>
 	                  <hr class="standard-hr" />
 	                  <div class="grid grid-padding-x grid-padding-15" style="padding-top:0;">
-		                  <ul class="patient-list" style="margin:0px -15px;">
+		                  <ul class="patient-list" style="margin:0;">
 			                  <li>
 				                  <a href="organisations.php?m=orgproc&id=<?php echo $org_id; ?>" class="no-u">
 					                  <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
@@ -413,20 +412,17 @@ logMsg("Organisations: $sql",$logfile);
 				                  </a>
 			                  </li>
 			                  <li>
-				                  <?php if(strpos(strtoupper($org_type),"HOSPITAL")): ?>
-					                  <a href="organisations.php?m=listdivs&id=<?php echo $org_id; ?>" class="no-u">
-						                  <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
-
-						                  <p class="">Manage Divisions</p>
-					                  </a>
-				                  <?php else: ?>
-					                  <a href="organisations.php?m=listdivs&id=<?php echo $org_id; ?>" class="no-u">
-						                  <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
-
-						                  <p class="">Manage Customers</p>
-					                  </a>
-
-				                  <?php endif; ?>
+				             <?php if(strpos(strtoupper($org_type),"HOSPITAL")): ?>
+					          <a href="organisations.php?m=listdivs&id=<?php echo $org_id; ?>" class="no-u">
+					             <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+						            <p class="">Manage Divisions</p>
+					            </a>
+				               <?php else: ?>
+					             <a href="organisations.php?m=listdivs&id=<?php echo $org_id; ?>" class="no-u">
+					                  <span class="float-right right-arrow"><i class="eido-icon-chevron-right"></i></span>
+						                <p class="">Manage Customers</p>
+					              </a>
+				                <?php endif; ?>
 			                  </li>
 		                  </ul>
 		                  <hr class="standard-hr"/>
@@ -473,17 +469,16 @@ logMsg("Organisations: $sql",$logfile);
               else
               {
                  $sql_ld = "SELECT s.*, u.email, u.firstName, u.lastName
-                           FROM $TBLSURGEONS s, dir_employment e, dir_user u
-                           WHERE e.organizationId='$org_id'
-                           AND e.userid=u.id
-                           AND u.id=s.id";
+                           FROM $TBLSURGEONS s, dir_user u
+                           WHERE u.c_organizationId='$org_id'
+                           AND s.c_userId=u.id";
                  logMsg($sql_ld,$logfile);
                  $GetQuery_ld = dbi_query($sql_ld);
+                 $d=0;
                  while ($qryResult_ld=$GetQuery_ld->fetch_assoc())
                  {
                     $arr_ld[$d]['id']=$qryResult_ld['id'];
-                    $arr_ld[$d]['name']=$qryResult_ld['c_surgeonName'];
-                    $arr_ld[$d]['description']=$qryResult_ld['description'];
+                    $arr_ld[$d]['c_gmcNumber']=$qryResult_ld['c_gmcNumber'];
                     $arr_ld[$d]['email']=$qryResult_ld['email'];
                     $arr_ld[$d]['firstName']=$qryResult_ld['firstName'];
                     $arr_ld[$d]['lastName']=$qryResult_ld['lastName'];
@@ -510,7 +505,7 @@ logMsg("Organisations: $sql",$logfile);
                                           $div_email = $arr_ld[$d]['email'];
                                           $div_firstName = $arr_ld[$d]['firstName'];
                                           $div_lastName = $arr_ld[$d]['lastName'];
-                                          $div_str = $div_firstName." ".$div_lastName." - ".$div_email;
+                                          $div_str = "<h5>".$div_firstName." ".$div_lastName."</h5>".$div_email;
                                ?>
                               <tr>
                                  <td class='clickable-row su_data' data-href='organisations.php?m=overview&id=<?php echo $id; ?>'><p><a href="organisations.php?m=editdiv=&div_id=<?php echo $div_id; ?>"><span class="uc"><?php echo $div_name; ?></span><br />
@@ -526,7 +521,7 @@ logMsg("Organisations: $sql",$logfile);
                         </table>
                   </div>
                   <div class="small-12 medium-12 large-12 cell text-center">
-                     <?php if ($div_str=="Division")
+                     <?php if ($div_type=="Division")
                               $btn_div_mode="adddiv";
                            else
                               $btn_div_mode="addcust";
@@ -545,39 +540,90 @@ logMsg("Organisations: $sql",$logfile);
                 $GetQuery_div = dbi_query($sql_div);
                 $qryResult_div=$GetQuery_div->fetch_assoc();
                 $org_name = $qryResult_div['c_name'];
+                $org_type = $qryResult_div['c_type'];
              }
        ?>
-       <div class="small-12 medium-6 large-6 cell content-right <?php echo $adddiv_hide; ?>">
-          <h3>Manage Divisions</h3>
-          <h5>Add Subdivisions to your organisation - <?php echo $org_name; ?></h5>
-          <form action="organisations_a.php?m=adddiv&id=<?php echo $org_id; ?>" method="post" >
-          <div class="grid-container">
-             <div class="grid-x">
-                  <div class="small-12 cell field">
-                      <label>Name
-                      <input type="text" name="name" placeholder="">
-                      </label>
-                  </div>
-                  <div class="small-12 cell field">
-                      <label>Administrator Contact First Name
-                      <input type="text" name="fname"  placeholder="">
-                      </label>
-                  </div>
-                  <div class="small-12 cell field">
-                      <label>Administrator Contact Surname 
-                      <input type="text" name="lname"  placeholder="">
-                      </label>
-                  </div>
-                  <div class="small-12 cell field">
-                      <label>E-mail Address
-                      <input type="text" name="email" placeholder="">
-                      </label>
-                  </div>
-                  <div class="small-12 cell field text-center">
-                      <br /><input type="submit" id="adddiv" class="button large" value="Add Division">
-                  </div>
-                </div>
-             </div>
+ <div class="small-12 medium-6 large-6 cell content-right <?php echo $adddiv_hide; ?>">
+      <h3>Manage Divisions</h3>
+      <h5>Add Subdivisions to your organisation - <?php echo $org_name; ?></h5>
+      <form action="organisations_a.php?m=adddiv&id=<?php echo $org_id; ?>" method="post" >
+         <input type="hidden" name="type" value="<?php echo $org_type; ?>">
+         <input type="hidden" name="subdivision" value="No">
+    <div class="grid-container">
+       <div class="grid-x">
+            <div class="small-12 cell field">
+                  <?php if ($_SESSION['add_orgname_error']) echo "<div class='error_message fi-alert'><strong>Please enter the oranization name</strong> - this is required</div>";
+                        else if ($_SESSION['add_orgname_format_error']) echo "<div class='error_message fi-alert'><strong>Please correct organization name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">Name
+                <input type="text" name="name" placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+              <div class="small-6 medium-6 large-6 cell">
+                 <?php if ($_SESSION['add_logo_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please upload your file again</strong> - there was an error during upload</div>";
+                  if ($_SESSION['add_logo_type_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please upload an image file</strong> - the file must be a JPG PNG or GIF</div>"; ?>
+                  <label class="weight-normal">Organisation Header Logo
+                  <img src="/ui/verify/img/org_logos/blank.jpg">&nbsp;&nbsp;<input type="file" name="header_logo" placeholder="">
+                </label>
+              </div>
+            </div>
+            <div class="small-12 cell field">
+               <hr>
+               <strong>Account Owner Information</strong>
+            </div>
+            <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_fname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                 else if ($_SESSION['add_fname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">First Name
+                <input type="text" name="fname"  placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_lname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your last name</strong> - this is required</div>";
+                 else if ($_SESSION['add_lname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">Surname
+                <input type="text" name="lname"  placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+               <?php if ($_SESSION['add_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                 else if ($_SESSION['add_bad_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
+                 else if ($_SESSION['add_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+                <label class="weight-normal">E-mail Address
+                <input type="text" name="email" placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+               <hr>
+               <strong>Primary Admin User</strong>
+            </div>
+            <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_admin_fname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your first name</strong> - this is required</div>";
+                 else if ($_SESSION['add_admin_fname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your first name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">First Name
+                <input type="text" name="admin_fname"  placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+                 <?php if ($_SESSION['add_admin_lname_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please enter your last name</strong> - this is required</div>";
+                 else if ($_SESSION['add_admin_lname_format_error']) echo "<div class='firstnameval error_message fi-alert'><strong>Please correct your last name</strong> - no special characters are allowed</div>"; ?>
+                <label class="weight-normal">Surname
+                <input type="text" name="admin_lname"  placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field">
+               <?php if ($_SESSION['add_admin_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please enter the email address</strong> - this is required</div>";
+                 else if ($_SESSION['add_bad_admin_email_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - enter a valid address</div>";
+                 else if ($_SESSION['add_admin_email_duplicate_error']) echo "<div class='emailval error_message fi-alert'><strong>Please correct the email address</strong> - that email address already exists</div>"; ?>
+                <label class="weight-normal">E-mail Address
+                <input type="text" name="admin_email" placeholder="">
+              </label>
+            </div>
+            <div class="small-12 cell field text-center">
+                 <br /><input type="submit" id="adddiv" class="button large" value="Add Division">
+            </div>
+          </div>
+         </div>
         </form>
       </div>
   <!-- END ADDDIV SECTION -->
@@ -601,6 +647,11 @@ logMsg("Organisations: $sql",$logfile);
                   <div class="small-12 cell field">
                       <label>E-mail Address
                       <input type="text" name="email" placeholder="">
+                      </label>
+                  </div>
+                  <div class="small-12 cell field">
+                      <label>GMC Number
+                      <input type="text" name="gmcnumber" placeholder="">
                       </label>
                   </div>
                   <div class="small-12 cell field text-center">

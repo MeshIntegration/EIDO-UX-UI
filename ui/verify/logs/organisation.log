@@ -4816,3 +4816,2283 @@
 06/06/2018 17:44:01 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
 06/06/2018 17:44:01 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
 06/06/2018 17:44:01 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/06/2018 20:22:43 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 20:22:43 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 20:22:43 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 20:22:43 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 20:22:43 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 20:22:43 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 20:22:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 20:22:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 20:22:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 20:22:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 20:22:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 20:22:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 20:22:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 20:22:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:41:37 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:41:37 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:41:37 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:41:37 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:41:37 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:41:37 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:41:37 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:41:37 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:41:37 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:41:37 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:41:37 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:41:37 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:41:37 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:41:37 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:45:27 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:45:27 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:45:27 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:45:27 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:45:27 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:45:27 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:45:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:45:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:45:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:45:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:45:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:45:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:45:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:45:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:46:10 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:46:10 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:46:10 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:46:10 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:46:10 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:46:10 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:46:10 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:46:10 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:46:10 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:46:10 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:46:10 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:46:10 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:46:10 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:46:10 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:45 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:51:45 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:51:45 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:51:45 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:51:45 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:51:45 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:51:45 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:45 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:45 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:45 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:45 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:45 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:45 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:45 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:58 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:51:58 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:51:58 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:51:58 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:51:58 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:51:58 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:51:58 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:58 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:58 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:58 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:58 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:58 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:58 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:51:58 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:11 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:52:11 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:52:11 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:52:11 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:52:11 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:52:11 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:52:11 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:11 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:11 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:11 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:11 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:11 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:11 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:11 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:28 - 184.56.244.84: Organisations: mode: overview OrgID: 5a8a6bb73d500
+06/06/2018 23:52:28 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:52:28 - 184.56.244.84: update: resetting Procedure Arrays
+06/06/2018 23:52:28 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/06/2018 23:52:28 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:52:28 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:52:28 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:52:28 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:52:28 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:52:28 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:52:28 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:52:28 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:52:44 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:52:44 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:52:44 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:52:44 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:52:44 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:52:44 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:52:44 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:44 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:44 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:44 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:44 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:44 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:44 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:52:44 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:53:27 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:53:27 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:53:27 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:53:27 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:53:27 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:53:27 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:53:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:53:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:53:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:53:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:53:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:53:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:53:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:53:27 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:26 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:55:26 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:55:26 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:55:26 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:55:26 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:55:26 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:55:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:30 - 184.56.244.84: Organisations: mode: overview OrgID: 5a8a6bb73d500
+06/06/2018 23:55:30 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:55:30 - 184.56.244.84: update: resetting Procedure Arrays
+06/06/2018 23:55:30 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/06/2018 23:55:30 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:55:30 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:55:30 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:55:30 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:55:30 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:55:30 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:55:30 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:55:30 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:55:32 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:55:32 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:55:32 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:55:32 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:55:32 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:55:32 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:55:32 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:32 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:32 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:32 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:32 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:32 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:32 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:55:32 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:20 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:56:20 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:56:20 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:56:20 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:56:20 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:56:20 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:56:20 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:20 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:20 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:20 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:20 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:20 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:20 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:20 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:26 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:56:26 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:56:26 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:56:26 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:56:26 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:56:26 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:56:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:56:26 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:22 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:57:22 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:57:22 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:57:22 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:57:22 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:57:22 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:57:22 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:22 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:22 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:22 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:22 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:22 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:22 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:22 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:43 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/06/2018 23:57:43 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:57:43 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/06/2018 23:57:43 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:57:43 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:57:43 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:57:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:43 - 184.56.244.84: >>>>>  <<<<<
+06/06/2018 23:57:58 - 184.56.244.84: Organisations: mode: overview OrgID: 5a8a6bb73d500
+06/06/2018 23:57:58 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/06/2018 23:57:58 - 184.56.244.84: update: resetting Procedure Arrays
+06/06/2018 23:57:58 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/06/2018 23:57:58 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:57:58 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/06/2018 23:57:58 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/06/2018 23:57:58 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:57:58 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:57:58 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:57:58 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/06/2018 23:57:58 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:00:19 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:00:19 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:00:19 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:00:19 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:00:19 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:00:19 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:00:19 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:00:19 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:00:19 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:00:19 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:00:19 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:00:19 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:00:19 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:00:19 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:03:10 - 184.56.244.84: Organisations: mode: overview OrgID: 5a8a6bb73d500
+06/07/2018 00:03:10 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:03:10 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:03:10 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/07/2018 00:03:10 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:03:10 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:03:10 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:03:10 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:03:10 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:03:10 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:03:10 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:03:10 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:03:47 - 184.56.244.84: Organisations: mode: overview OrgID: 5a8a6bb73d500
+06/07/2018 00:03:47 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:03:47 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:03:47 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/07/2018 00:03:47 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:03:47 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:03:47 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:03:47 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:03:47 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:03:47 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:03:47 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:03:47 - 184.56.244.84: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 00:04:47 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:04:47 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:04:47 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:04:47 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:04:47 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:04:47 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:04:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:52 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:04:52 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:04:52 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:04:52 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:04:52 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:04:52 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:04:52 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:52 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:52 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:52 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:52 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:52 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:52 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:52 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:04:59 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:04:59 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:04:59 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:04:59 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:04:59 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:04:59 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:04:59 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:04:59 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:04:59 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:04:59 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:04:59 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:04:59 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:04:59 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:05:49 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:05:49 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:05:49 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:05:49 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:05:49 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:05:49 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:05:49 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:05:49 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:05:49 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:05:49 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:05:49 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:05:49 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:05:49 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:07:07 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:07:07 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:07:07 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:07:07 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:07:07 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:07:07 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:07:07 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:07:07 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:07:07 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:07:07 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:07:07 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:07:07 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:07:07 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:00 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:08:00 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:08:00 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:08:00 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:08:00 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:08:00 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:08:00 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:08:00 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:00 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:00 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:00 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:00 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:00 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:02 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:08:02 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:08:02 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:08:02 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:08:02 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:08:02 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:08:02 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:08:02 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:02 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:02 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:02 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:02 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:02 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:05 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:08:05 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:08:05 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:08:05 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:08:05 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:08:05 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:08:05 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:08:05 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:05 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:05 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:05 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:05 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:05 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:50 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:08:50 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:08:50 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:08:50 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:08:50 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:08:50 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:08:50 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:08:50 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:50 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:50 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:50 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:50 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:08:50 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:09:31 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:09:31 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:09:31 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:09:31 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:09:31 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:09:31 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:09:31 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:09:31 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:09:31 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:09:31 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:09:31 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:09:31 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:09:31 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:10:53 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:10:53 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:10:53 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:10:53 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:10:53 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:10:53 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:10:53 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:10:53 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:10:53 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:10:53 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:10:53 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:10:53 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:10:53 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:11:18 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:11:18 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:11:18 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:11:18 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:11:18 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:11:18 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:11:18 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:11:18 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:11:18 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:11:18 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:11:18 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:11:18 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:11:18 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:17 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:12:17 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:12:17 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:12:17 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:12:17 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:12:17 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:12:17 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:12:17 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:17 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:17 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:17 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:17 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:17 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:26 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:12:26 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:12:26 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:12:26 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:12:26 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:12:26 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:12:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:12:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:12:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:12:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:12:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:12:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:12:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:12:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:12:35 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:12:35 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:12:35 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:12:35 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:12:35 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:12:35 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:12:35 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:12:35 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:35 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:35 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:35 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:35 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:12:35 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:09 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:13:09 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:13:09 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:13:09 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:13:09 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:13:09 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:13:09 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:13:09 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:09 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:09 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:09 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:09 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:09 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:16 - 184.56.244.84: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 00:13:16 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:13:16 - 184.56.244.84: update: resetting Procedure Arrays
+06/07/2018 00:13:16 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:13:16 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:13:16 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:13:16 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:13:16 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:16 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:16 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:16 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:16 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:16 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:26 - 184.56.244.84: Organisations: mode: update OrgID: 5abbab2e16727
+06/07/2018 00:13:26 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:13:26 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 00:13:26 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:13:26 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:13:26 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:13:26 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:26 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:26 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:26 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:26 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:26 - 184.56.244.84: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 00:13:42 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:13:42 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:13:42 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:13:42 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:13:42 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:13:42 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:13:42 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:13:42 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:13:42 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:13:42 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:13:42 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:13:42 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:13:42 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:13:42 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:22:59 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:22:59 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:22:59 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:22:59 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:22:59 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:22:59 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:22:59 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:22:59 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:22:59 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:22:59 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:22:59 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:22:59 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:22:59 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:22:59 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:26 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:23:26 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:23:26 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:23:26 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:23:26 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:23:26 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:23:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:26 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:36 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:23:36 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:23:36 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:23:36 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:23:36 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:23:36 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:23:36 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:36 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:36 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:36 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:36 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:36 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:36 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:23:36 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:28:47 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:28:47 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:28:47 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:28:47 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:28:47 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:28:47 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:28:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:28:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:28:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:28:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:28:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:28:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:28:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:28:47 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:31:05 - 184.56.244.84: Organisations: mode:  OrgID: 
+06/07/2018 00:31:05 - 184.56.244.84: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 00:31:05 - 184.56.244.84: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 00:31:05 - 184.56.244.84: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:31:05 - 184.56.244.84: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 00:31:05 - 184.56.244.84: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 00:31:05 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:31:05 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:31:05 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:31:05 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:31:05 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:31:05 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:31:05 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 00:31:05 - 184.56.244.84: >>>>>  <<<<<
+06/07/2018 01:08:47 - 68.107.189.223: Organisations: mode:  OrgID: 
+06/07/2018 01:08:47 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:08:47 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 01:08:47 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:08:47 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:08:47 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:08:47 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 01:08:47 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 01:08:47 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 01:08:47 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 01:08:47 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 01:08:47 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 01:08:47 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 01:08:47 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 01:10:05 - 68.107.189.223: Organisations: mode: overview OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 01:10:05 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:10:05 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 01:10:05 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 01:10:05 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:10:05 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:10:05 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:10:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:12 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 01:10:12 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:10:12 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_employment e, dir_user u
+                           WHERE e.organizationId='mm1admin@thenakedsurgeon.com'
+                           AND e.userid=u.id
+                           AND u.id=s.id
+06/07/2018 01:10:12 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 01:10:12 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:10:12 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:10:12 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:10:12 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:12 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:12 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:12 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:12 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:12 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:12 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:12 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:15 - 68.107.189.223: Organisations: mode: addcust OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 01:10:15 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:10:15 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 01:10:15 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:10:15 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:10:15 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:10:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:10:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:30:52 - 68.107.189.223: Organisations: mode: addcust OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 01:30:52 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:30:52 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 01:30:52 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:30:52 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:30:52 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:30:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:30:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:30:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:30:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:30:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:30:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:30:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:30:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:16 - 68.107.189.223: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 01:31:16 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:31:16 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 01:31:16 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 01:31:16 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:16 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:16 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:31:16 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:16 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:16 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:16 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:16 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:16 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:19 - 68.107.189.223: Organisations: mode: listdivs OrgID: 5abbab2e16727
+06/07/2018 01:31:19 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:31:19 - 68.107.189.223: SELECT d.name, d.description, u.id, u.email, u.firstName, u.lastName
+                           FROM dir_department d, dir_employment e, dir_user u
+                           WHERE d.organizationId='5abbab2e16727'
+                           AND e.organizationId='5abbab2e16727'
+                           AND e.userid=u.id
+06/07/2018 01:31:19 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 01:31:19 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:19 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:19 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:31:19 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:19 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:19 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:19 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:19 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:19 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:31:24 - 68.107.189.223: Organisations: mode: overview OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 01:31:24 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:31:24 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 01:31:24 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 01:31:24 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:24 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:24 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:31:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:27 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 01:31:27 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:31:27 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_employment e, dir_user u
+                           WHERE e.organizationId='mm1admin@thenakedsurgeon.com'
+                           AND e.userid=u.id
+                           AND u.id=s.id
+06/07/2018 01:31:27 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 01:31:27 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:27 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:27 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:31:27 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:27 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:27 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:27 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:27 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:27 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:27 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:27 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:31:35 - 68.107.189.223: Organisations: mode: overview OrgID: 5b0cdff33cf11
+06/07/2018 01:31:35 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:31:35 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 01:31:35 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5b0cdff33cf11'
+06/07/2018 01:31:35 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5b0cdff33cf11'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:35 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5b0cdff33cf11'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:35 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:31:35 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:35 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:35 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:35 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:35 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:35 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:35 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:35 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:38 - 68.107.189.223: Organisations: mode: listdivs OrgID: 5b0cdff33cf11
+06/07/2018 01:31:38 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:31:38 - 68.107.189.223: SELECT d.name, d.description, u.id, u.email, u.firstName, u.lastName
+                           FROM dir_department d, dir_employment e, dir_user u
+                           WHERE d.organizationId='5b0cdff33cf11'
+                           AND e.organizationId='5b0cdff33cf11'
+                           AND e.userid=u.id
+06/07/2018 01:31:38 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5b0cdff33cf11'
+06/07/2018 01:31:38 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5b0cdff33cf11'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:38 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5b0cdff33cf11'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:38 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:31:38 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:38 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:38 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:38 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:38 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:38 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:38 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:38 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:42 - 68.107.189.223: Organisations: mode: addcust OrgID: 5b0cdff33cf11
+06/07/2018 01:31:42 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:31:42 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5b0cdff33cf11'
+06/07/2018 01:31:42 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5b0cdff33cf11'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:42 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5b0cdff33cf11'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:42 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:31:42 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:42 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:42 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:42 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:42 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:42 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:42 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:42 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:52 - 68.107.189.223: Organisations: mode: listdivs OrgID: 5b0cdff33cf11
+06/07/2018 01:31:52 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:31:52 - 68.107.189.223: SELECT d.name, d.description, u.id, u.email, u.firstName, u.lastName
+                           FROM dir_department d, dir_employment e, dir_user u
+                           WHERE d.organizationId='5b0cdff33cf11'
+                           AND e.organizationId='5b0cdff33cf11'
+                           AND e.userid=u.id
+06/07/2018 01:31:52 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5b0cdff33cf11'
+06/07/2018 01:31:52 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5b0cdff33cf11'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:52 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5b0cdff33cf11'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:31:52 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:31:52 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:52 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:52 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:52 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:52 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:52 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:52 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:31:52 - 68.107.189.223: >>>>> 5b0cdff33cf11 <<<<<
+06/07/2018 01:32:18 - 68.107.189.223: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 01:32:18 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:32:18 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 01:32:18 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 01:32:18 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:18 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:18 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:32:18 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:18 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:18 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:18 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:18 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:18 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:25 - 68.107.189.223: Organisations: mode: overview OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 01:32:25 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:32:25 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 01:32:25 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 01:32:25 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:25 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:25 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:32:25 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:25 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:25 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:25 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:25 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:25 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:25 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:25 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:28 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 01:32:28 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:32:28 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_employment e, dir_user u
+                           WHERE e.organizationId='mm1admin@thenakedsurgeon.com'
+                           AND e.userid=u.id
+                           AND u.id=s.id
+06/07/2018 01:32:28 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 01:32:28 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:28 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:28 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:32:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 01:32:39 - 68.107.189.223: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 01:32:39 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:32:39 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 01:32:39 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 01:32:39 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:39 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:39 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:32:39 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:39 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:39 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:39 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:39 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:39 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:41 - 68.107.189.223: Organisations: mode: listdivs OrgID: 5abbab2e16727
+06/07/2018 01:32:41 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:32:41 - 68.107.189.223: SELECT d.name, d.description, u.id, u.email, u.firstName, u.lastName
+                           FROM dir_department d, dir_employment e, dir_user u
+                           WHERE d.organizationId='5abbab2e16727'
+                           AND e.organizationId='5abbab2e16727'
+                           AND e.userid=u.id
+06/07/2018 01:32:41 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 01:32:41 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:41 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:32:41 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:32:41 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:41 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:41 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:41 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:41 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:32:41 - 68.107.189.223: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 01:35:49 - 68.107.189.223: Organisations: mode: overview OrgID: 5ace960870547
+06/07/2018 01:35:49 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:35:49 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 01:35:49 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5ace960870547'
+06/07/2018 01:35:49 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5ace960870547'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:35:49 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5ace960870547'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:35:49 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:35:49 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:49 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:49 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:49 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:49 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:49 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:52 - 68.107.189.223: Organisations: mode: listdivs OrgID: 5ace960870547
+06/07/2018 01:35:52 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:35:52 - 68.107.189.223: SELECT d.name, d.description, u.id, u.email, u.firstName, u.lastName
+                           FROM dir_department d, dir_employment e, dir_user u
+                           WHERE d.organizationId='5ace960870547'
+                           AND e.organizationId='5ace960870547'
+                           AND e.userid=u.id
+06/07/2018 01:35:52 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5ace960870547'
+06/07/2018 01:35:52 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5ace960870547'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:35:52 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5ace960870547'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:35:52 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:35:52 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:52 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:52 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:52 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:52 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:52 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:56 - 68.107.189.223: Organisations: mode: adddiv OrgID: 5ace960870547
+06/07/2018 01:35:56 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 01:35:56 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5ace960870547'
+06/07/2018 01:35:56 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5ace960870547'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:35:56 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5ace960870547'
+                         AND pl.c_procedure=pe.id
+06/07/2018 01:35:56 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 01:35:56 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:56 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:56 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:56 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:56 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 01:35:56 - 68.107.189.223: >>>>> 5ace960870547 <<<<<
+06/07/2018 02:42:06 - 68.107.189.223: Organisations: mode: overview OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 02:42:06 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 02:42:06 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 02:42:06 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 02:42:06 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:42:06 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:42:06 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 02:42:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:42:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:42:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:42:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:42:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:42:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:42:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:42:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:42:12 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 02:42:12 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 02:42:12 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.userid=u.id
+06/07/2018 02:43:49 - 68.107.189.223: Organisations: mode: overview OrgID: 5af16d0875303
+06/07/2018 02:43:49 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 02:43:49 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 02:43:49 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5af16d0875303'
+06/07/2018 02:43:49 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5af16d0875303'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:49 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5af16d0875303'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:49 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 02:43:49 - 68.107.189.223: >>>>> 5af16d0875303 <<<<<
+06/07/2018 02:43:49 - 68.107.189.223: >>>>> 5af16d0875303 <<<<<
+06/07/2018 02:43:49 - 68.107.189.223: >>>>> 5af16d0875303 <<<<<
+06/07/2018 02:43:49 - 68.107.189.223: >>>>> 5af16d0875303 <<<<<
+06/07/2018 02:43:49 - 68.107.189.223: >>>>> 5af16d0875303 <<<<<
+06/07/2018 02:43:49 - 68.107.189.223: >>>>> 5af16d0875303 <<<<<
+06/07/2018 02:43:50 - 68.107.189.223: Organisations: mode: overview OrgID: 5aea84d095fa8
+06/07/2018 02:43:50 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 02:43:50 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 02:43:50 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5aea84d095fa8'
+06/07/2018 02:43:50 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5aea84d095fa8'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:50 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5aea84d095fa8'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:50 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 02:43:50 - 68.107.189.223: >>>>> 5aea84d095fa8 <<<<<
+06/07/2018 02:43:50 - 68.107.189.223: >>>>> 5aea84d095fa8 <<<<<
+06/07/2018 02:43:50 - 68.107.189.223: >>>>> 5aea84d095fa8 <<<<<
+06/07/2018 02:43:50 - 68.107.189.223: >>>>> 5aea84d095fa8 <<<<<
+06/07/2018 02:43:50 - 68.107.189.223: >>>>> 5aea84d095fa8 <<<<<
+06/07/2018 02:43:50 - 68.107.189.223: >>>>> 5aea84d095fa8 <<<<<
+06/07/2018 02:43:50 - 68.107.189.223: >>>>> 5aea84d095fa8 <<<<<
+06/07/2018 02:43:50 - 68.107.189.223: >>>>> 5aea84d095fa8 <<<<<
+06/07/2018 02:43:52 - 68.107.189.223: Organisations: mode: overview OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 02:43:52 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 02:43:52 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 02:43:52 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 02:43:52 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:52 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:52 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 02:43:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:52 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:55 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 02:43:55 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 02:43:55 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 02:43:55 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 02:43:55 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:55 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:55 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 02:43:55 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:55 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:55 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:55 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:55 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:55 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:55 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:55 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:57 - 68.107.189.223: Organisations: mode: addcust OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 02:43:57 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 02:43:57 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 02:43:57 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:57 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:43:57 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 02:43:57 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:57 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:57 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:57 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:57 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:57 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:57 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:43:57 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:44:45 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 02:44:45 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 02:44:45 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 02:44:45 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 02:44:45 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:44:45 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 02:44:45 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 02:44:45 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:44:45 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:44:45 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:44:45 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:44:45 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:44:45 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:44:45 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 02:44:45 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:00:28 - 68.107.189.223: Organisations: mode: addcust OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 03:00:28 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:00:28 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 03:00:28 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:00:28 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:00:28 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:00:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:00:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:00:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:00:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:00:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:00:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:00:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:00:28 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:01:04 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 03:01:04 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:01:04 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 03:01:04 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 03:01:04 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:01:04 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:01:04 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:01:04 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:01:04 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:01:04 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:01:04 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:01:04 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:01:04 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:01:04 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:01:04 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:15 - 68.107.189.223: Organisations: mode: addcust OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 03:05:15 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:05:15 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 03:05:15 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:05:15 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:05:15 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:05:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:15 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:48 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 03:05:48 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:05:48 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 03:05:48 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 03:05:48 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:05:48 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:05:48 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:05:48 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:48 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:48 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:48 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:48 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:48 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:48 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:05:48 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:05 - 68.107.189.223: Organisations: mode: addcust OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 03:15:05 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:15:05 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 03:15:05 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:15:05 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:15:05 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:15:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:05 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:32 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 03:15:32 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:15:32 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 03:15:32 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 03:15:32 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:15:32 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:15:32 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:15:32 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:32 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:32 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:32 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:32 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:32 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:32 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:15:32 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:06 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 03:30:06 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:30:06 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 03:30:06 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 03:30:06 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:30:06 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:30:06 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:30:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:06 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:15 - 68.107.189.223: Organisations: mode: editdiv OrgID: 5b18a35477cc9
+06/07/2018 03:30:15 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:30:15 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5b18a35477cc9'
+06/07/2018 03:30:15 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:30:15 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:30:15 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:30:15 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 03:30:15 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 03:30:15 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 03:30:15 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 03:30:15 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 03:30:15 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 03:30:15 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 03:30:15 - 68.107.189.223: >>>>>  <<<<<
+06/07/2018 03:30:22 - 68.107.189.223: Organisations: mode: overview OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 03:30:22 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:30:22 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 03:30:22 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 03:30:22 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:30:22 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:30:22 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:30:22 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:22 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:22 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:22 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:22 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:22 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:22 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:22 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:26 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 03:30:26 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 03:30:26 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 03:30:26 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 03:30:26 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:30:26 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 03:30:26 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 03:30:26 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:26 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:26 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:26 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:26 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:26 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:26 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 03:30:26 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:02:24 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 04:02:24 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 04:02:24 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 04:02:24 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 04:02:24 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:02:24 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:02:24 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 04:02:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:02:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:02:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:02:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:02:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:02:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:02:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:02:24 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:03:02 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 04:03:02 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 04:03:02 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 04:03:02 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 04:03:02 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:03:02 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:03:02 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 04:03:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:03:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:03:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:03:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:03:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:03:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:03:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:03:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:00 - 68.107.189.223: Organisations: mode: overview OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 04:04:00 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 04:04:00 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 04:04:00 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 04:04:00 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:00 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:00 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 04:04:00 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:00 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:00 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:00 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:00 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:00 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:00 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:00 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:02 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 04:04:02 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 04:04:02 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 04:04:02 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 04:04:02 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:02 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:02 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 04:04:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:02 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:08 - 68.107.189.223: Organisations: mode: addcust OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 04:04:08 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 04:04:08 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 04:04:08 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:08 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:08 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 04:04:08 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:08 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:08 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:08 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:08 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:08 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:08 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:08 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:38 - 68.107.189.223: Organisations: mode: listdivs OrgID: mm1admin@thenakedsurgeon.com
+06/07/2018 04:04:38 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 04:04:38 - 68.107.189.223: SELECT s.*, u.email, u.firstName, u.lastName
+                           FROM app_fd_ver_surgeons s, dir_user u
+                           WHERE u.c_organizationId='mm1admin@thenakedsurgeon.com'
+                           AND s.c_userId=u.id
+06/07/2018 04:04:38 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='mm1admin@thenakedsurgeon.com'
+06/07/2018 04:04:38 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:38 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='mm1admin@thenakedsurgeon.com'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:38 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 04:04:38 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:38 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:38 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:38 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:38 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:38 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:38 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:38 - 68.107.189.223: >>>>> mm1admin@thenakedsurgeon.com <<<<<
+06/07/2018 04:04:55 - 68.107.189.223: Organisations: mode: overview OrgID: 5acedcde28f0f
+06/07/2018 04:04:55 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 04:04:55 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 04:04:55 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5acedcde28f0f'
+06/07/2018 04:04:55 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5acedcde28f0f'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:55 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5acedcde28f0f'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:04:55 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 04:04:55 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:04:55 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:04:55 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:04:55 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:05:06 - 68.107.189.223: Organisations: mode: listdivs OrgID: 5acedcde28f0f
+06/07/2018 04:05:06 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 04:05:06 - 68.107.189.223: SELECT d.name, d.description, u.id, u.email, u.firstName, u.lastName
+                           FROM dir_department d, dir_employment e, dir_user u
+                           WHERE d.organizationId='5acedcde28f0f'
+                           AND e.organizationId='5acedcde28f0f'
+                           AND e.userid=u.id
+06/07/2018 04:05:06 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5acedcde28f0f'
+06/07/2018 04:05:06 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5acedcde28f0f'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:05:06 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5acedcde28f0f'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:05:06 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 04:05:06 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:05:06 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:05:06 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:05:06 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:05:10 - 68.107.189.223: Organisations: mode: adddiv OrgID: 5acedcde28f0f
+06/07/2018 04:05:10 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 04:05:10 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5acedcde28f0f'
+06/07/2018 04:05:10 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5acedcde28f0f'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:05:10 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5acedcde28f0f'
+                         AND pl.c_procedure=pe.id
+06/07/2018 04:05:10 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 04:05:10 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:05:10 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:05:10 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 04:05:10 - 68.107.189.223: >>>>> 5acedcde28f0f <<<<<
+06/07/2018 11:29:26 - 82.132.238.10: Organisations: mode:  OrgID: 
+06/07/2018 11:29:26 - 82.132.238.10: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 11:29:26 - 82.132.238.10: SELECT * FROM app_fd_ver_organizations WHERE id=''
+06/07/2018 11:29:26 - 82.132.238.10: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 11:29:26 - 82.132.238.10: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization=''
+                         AND pl.c_procedure=pe.id
+06/07/2018 11:29:26 - 82.132.238.10: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 11:29:26 - 82.132.238.10: >>>>>  <<<<<
+06/07/2018 11:29:26 - 82.132.238.10: >>>>>  <<<<<
+06/07/2018 11:29:26 - 82.132.238.10: >>>>>  <<<<<
+06/07/2018 11:29:26 - 82.132.238.10: >>>>>  <<<<<
+06/07/2018 11:29:26 - 82.132.238.10: >>>>>  <<<<<
+06/07/2018 11:29:26 - 82.132.238.10: >>>>>  <<<<<
+06/07/2018 11:29:26 - 82.132.238.10: >>>>>  <<<<<
+06/07/2018 11:29:26 - 82.132.238.10: >>>>>  <<<<<
+06/07/2018 11:29:37 - 82.132.238.10: Organisations: mode: overview OrgID: 5abbab2e16727
+06/07/2018 11:29:37 - 82.132.238.10: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 11:29:37 - 82.132.238.10: update: resetting Procedure Arrays
+06/07/2018 11:29:37 - 82.132.238.10: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 11:29:37 - 82.132.238.10: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 11:29:37 - 82.132.238.10: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 11:29:37 - 82.132.238.10: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 11:29:37 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:37 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:37 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:37 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:37 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:37 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:45 - 82.132.238.10: Organisations: mode: orgproc OrgID: 5abbab2e16727
+06/07/2018 11:29:45 - 82.132.238.10: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 11:29:45 - 82.132.238.10: SELECT * FROM app_fd_ver_organizations WHERE id='5abbab2e16727'
+06/07/2018 11:29:45 - 82.132.238.10: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 11:29:45 - 82.132.238.10: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5abbab2e16727'
+                         AND pl.c_procedure=pe.id
+06/07/2018 11:29:45 - 82.132.238.10: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 11:29:45 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:45 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:45 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:45 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:45 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 11:29:45 - 82.132.238.10: >>>>> 5abbab2e16727 <<<<<
+06/07/2018 12:44:04 - 68.107.189.223: Organisations: mode: overview OrgID: 5a8a6bb73d500
+06/07/2018 12:44:04 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 12:44:04 - 68.107.189.223: update: resetting Procedure Arrays
+06/07/2018 12:44:04 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/07/2018 12:44:04 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 12:44:04 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 12:44:04 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 12:44:04 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:04 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:04 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:04 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:04 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:07 - 68.107.189.223: Organisations: mode: listdivs OrgID: 5a8a6bb73d500
+06/07/2018 12:44:07 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 12:44:07 - 68.107.189.223: SELECT d.name, d.description, u.id, u.email, u.firstName, u.lastName
+                           FROM dir_department d, dir_employment e, dir_user u
+                           WHERE d.organizationId='5a8a6bb73d500'
+                           AND e.organizationId='5a8a6bb73d500'
+                           AND e.userid=u.id
+06/07/2018 12:44:07 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/07/2018 12:44:07 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 12:44:07 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 12:44:07 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 12:44:07 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:07 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:07 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:07 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:07 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:10 - 68.107.189.223: Organisations: mode: adddiv OrgID: 5a8a6bb73d500
+06/07/2018 12:44:10 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 12:44:10 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/07/2018 12:44:10 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 12:44:10 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 12:44:10 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 12:44:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:44:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:52:00 - 68.107.189.223: Organisations: mode: adddiv OrgID: 5a8a6bb73d500
+06/07/2018 12:52:00 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 12:52:00 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/07/2018 12:52:00 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 12:52:00 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 12:52:00 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 12:52:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:52:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:52:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:52:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 12:52:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:06:10 - 68.107.189.223: Organisations: mode: adddiv OrgID: 5a8a6bb73d500
+06/07/2018 13:06:10 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 13:06:10 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/07/2018 13:06:10 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 13:06:10 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 13:06:10 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 13:06:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:06:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:06:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:06:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:06:10 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:07:00 - 68.107.189.223: Organisations: mode: adddiv OrgID: 5a8a6bb73d500
+06/07/2018 13:07:00 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 13:07:00 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/07/2018 13:07:00 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 13:07:00 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 13:07:00 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 13:07:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:07:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:07:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:07:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:07:00 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:11:17 - 68.107.189.223: Organisations: mode: adddiv OrgID: 5a8a6bb73d500
+06/07/2018 13:11:17 - 68.107.189.223: Organisations: SELECT * FROM app_fd_ver_organizations LIMIT 0,10
+06/07/2018 13:11:17 - 68.107.189.223: SELECT * FROM app_fd_ver_organizations WHERE id='5a8a6bb73d500'
+06/07/2018 13:11:17 - 68.107.189.223: OrgProc: SELECT pe.*
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 13:11:17 - 68.107.189.223: AddProc: SELECT pe.id
+                         FROM app_fd_ver_procEpisodes pe, app_fd_ver_procLicenses pl
+                         WHERE pl.c_organization='5a8a6bb73d500'
+                         AND pl.c_procedure=pe.id
+06/07/2018 13:11:17 - 68.107.189.223: AddProc: SELECT *
+                        FROM app_fd_ver_procEpisodes pe
+                        WHERE 1 
+06/07/2018 13:11:17 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:11:17 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:11:17 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:11:17 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<
+06/07/2018 13:11:17 - 68.107.189.223: >>>>> 5a8a6bb73d500 <<<<<

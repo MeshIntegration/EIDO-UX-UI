@@ -8,37 +8,13 @@ $(document).foundation();
 function _init_superuser() {
 	'use strict';
 
-	$("#BulkActions").click( function() {
-		var $this = $(this);
-
-		if(!$this.hasClass("is-active")) {
-			$this.addClass('is-active');
-			$('.patient-list .column-first, .grid-header .column-first').css("display","block");
-			$('.grid-header strong').removeClass("no-check");
-		} else {
-			$('.patient-list .column-first, .grid-header .column-first').css("display","none");
-			$('.grid-header strong').addClass("no-check");
-			$this.removeClass('is-active');
-		}
-	}).click(function() {
-		$(this).trigger('eido-click', [ true ]);
-	}).trigger('eido-click');
-
-	//to handle the on load !!!! NOOB SCRIPT
-//	$('.patient-list .column-first,').css("display","none");
-    $('.grid-header .column-first').css("display","none");
-	$('.grid-header strong').addClass("no-check");
-//	$("#BulkActions").removeClass('is-active');
-
 	//when bulk actions are click
 	$(".bulk-action").on('submit', function(e) {
 		e.preventDefault();
 		var $form = $(this);
 		//get the checkboxes
-		$.post($form.attr("action"), { users: $('[name=performAction\\[\\]]:checked').serializeArray() }).done(function() {
-			//makes me cry :(
-			location.reload();
-		});
+
+		location.href = $form.attr("action")+'&'+$('[name=id\\[\\]]:checked').serialize();
 	});
 
 }

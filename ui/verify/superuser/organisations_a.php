@@ -22,8 +22,7 @@ $id = get_query_string('id');
 list($fname, $lname) = explode(" ", $admin);
 //$password = "password";
 
-if ($mode=="update")
-{
+if ($mode=="update") {
    $org_id=$id;
    $name = $_POST['name'];
    $type = $_POST['type'];
@@ -298,7 +297,7 @@ else if ($mode=="add") {
    dbi_query($sql);
    logMsg($sql,$logfile);
 
-   // Ceate the firsr admin user 
+   // Ceate the first admin user 
    // create and encrypt password
    $password = random_password();
    $hash = password_hash($password, PASSWORD_BCRYPT);
@@ -318,6 +317,7 @@ else if ($mode=="add") {
                email=".escapeQuote($admin_email).",
                c_organizationId='$org_id',
                c_dateModified=NOW(),
+               c_dateCreated=NOW(),
                active='1',
                timezone='0',
                gmc_number=''";
@@ -396,47 +396,102 @@ else if ($mode=="add") {
 else if ($mode=="adddiv" || $mode=="addcust")
 {
    logMsg("-------------- START SUBDIV ADD ----------------",$logfile);
-   $org_id=$id;
+   $org_id=uniqid();
+   $name = $_POST['name'];               // org name
    $fname = $_POST['fname'];
    $lname = $_POST['lname'];
    $email = $_POST['email'];
-   $name = $_POST['name'];
+   $admin_email = $_POST['admin_email'];
+   $admin_fname = $_POST['admin_fname'];
+   $admin_lname = $_POST['admin_lname'];
+   $type = $_POST['type'];               // defaults to same as parent
+   $subdivision = $_POST['subdivision']; // defalt so No
+   $gmcnumber = $_POST['gmcnumber'];     // blank for DIVs - only for ustomers
 
-   $div_id = uniqid();
-   $user_id = $_COOKIE['user_id'];
+   $user_id = $_COOKIE['user_id'];       // id of super user putting this in
+   // create ID for first user account
+   $firstuser_uid = $admin_email;        // we are using email as the USER ID
 
-   if ($mode=="adddiv")
-   { $sql = "INSERT INTO dir_department 
-              SET id='".$div_id."',
-                  name=".escapeQuote($name).",
-                  description=".escapeQuote($name).",
-                  organizationId=".escapeQuote($org_id).";";
+   if ($mode=="adddiv") { 
+      // add DIVISION
+      // we put the account owner in the organisations table
+      $owner = $fname." ".$lname;
+      $sql = "INSERT INTO $TBLORGANISATIONS
+              SET id='".$org_id."',
+                  c_name=".escapeQuote($name).",
+                  c_description=".escapeQuote($name).",
+                  c_type=".escapeQuote($type).",
+                  c_level='DIV',
+                  c_email=".escapeQuote($email).",
+                  c_admin=".escapeQuote($owner).",
+                  c_logo=".escapeQuote($header_logo).",
+                  c_subdivision=".escapeQuote($subdivision).",
+                  c_parentId=".escapeQuote($id).",
+                  c_firstUser=".escapeQuote($firstuser_uid).",
+                  createdBy=".escapeQuote($user_id).",
+                  dateModified=NOW(),
+                  dateCreated=NOW()";
       dbi_query($sql);
       logMsg($sql,$logfile);
+   
+      $sql = "INSERT INTO dir_organization
+              SET id='$org_id',
+                  name=".escapeQuote($name).",
+                  description=".escapeQuote($name).";";
+      dbi_query($sql);
+      logMsg($sql,$logfile);
+
+      // $sql = "INSERT INTO dir_department 
+      //         SET id='".$div_id."',
+      //             name=".escapeQuote($name).",
+      //             description=".escapeQuote($name).",
+      //             organizationId=".escapeQuote($org_id).";";
+      // dbi_query($sql);
+      // logMsg($sql,$logfile);
    } else {
+      // add CUSTOMER (surgeon)
       $sname="$fname $lname";
       $sql = "INSERT INTO $TBLSURGEONS
               SET id='".$div_id."',
                   dateCreated=NOW(),
                   dateModified=NOW(),
                   createdBy='$user_d',
+                  c_userId='$email',
+                  c_gmcNumber='$gmcnumber',
                   c_surgeonName='$sname'";
       dbi_query($sql);
       logMsg($sql,$logfile);
+      // so we can use these values to build user account
+      $admin_fname=$fname;
+      $admin_lname=$lname;
+      $admin_email=$email;
    }
 
-   // USER 
+   // CREATE PRIMARY ADMIN USER 
+   $password = random_password();
+   $hash = password_hash($password, PASSWORD_BCRYPT);
+   if (!password_verify($password, $hash)) {
+      // Invalid hash generation
+      header("Location:".$_SERVER['HTTP_REFERER']);
+      exit;
+   }
+   logMsg("pw: $password - hash: $hash", $logfile);
+
    $sql = "INSERT INTO dir_user
-           SET id=".escapeQuote($email).",
-               username=".escapeQuote($email).",
-               password='password',
-               email=".escapeQuote($email).",
-               firstName=".escapeQuote($fname).",
-               lastName=".escapeQuote($lname).",
+           SET id=".escapeQuote($admin_email).",
+               username=".escapeQuote($admin_email).",
+               uipassword=".escapeQuote($hash).", 
+               email=".escapeQuote($admin_email).",
+               firstName=".escapeQuote($admin_fname).",
+               lastName=".escapeQuote($admin_lname).",
                active=1,
                timezone='0',
-               gmc_number=''";
+               c_dateCreated=NOW(),
+               c_dateModified=NOW(),
+               c_organizationId='$org_id',
+               gmc_number='$gmcnumber'";
    dbi_query($sql);
+   logMsg($sql,$logfile);
 
    // ROLE - User or Admin
    $sql = "INSERT INTO dir_user_role
@@ -447,25 +502,68 @@ else if ($mode=="adddiv" || $mode=="addcust")
 
    // GROUP - Admin or Staff
    $sql = "INSERT INTO dir_user_group
-           SET groupId = 'admin',
+           SET groupId = 'sitedivadmins',
                userId = '$email'";
    dbi_query($sql);
    logMsg($sql,$logfile);
 
    // EMPLOYMENT - tie user/organisation/subdivision (or cust/surgeon) all together
    // $emp_id=uniqid();
-   $sql = "INSERT INTO dir_employment
-           SET id='$email',
-               userid='$email',
-               departmentId='$div_id',
-               organizationId='$org_id'";
-   dbi_query($sql);
-   logMsg($sql,$logfile);
+   // $sql = "INSERT INTO dir_employment
+   //         SET id='$email',
+   //             userid='$email',
+   //             departmentId='$div_id',
+   //             organizationId='$org_id'";
+   // dbi_query($sql);
+   // logMsg($sql,$logfile);
+
+   // send mail to the new user
+   include "../includes/inc_email_template.php";
+
+   // need a button - include it into template
+   include "../includes/inc_email_button.php";
+   $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
+
+   $email_template = str_replace("**FIRSTNAME**", $fname, $email_template);
+   $email_template = str_replace("**HEADER**", "Welcome", $email_template);
+
+   $content1 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
+         Username: $email<br />
+         Password: $password<br /><br />
+         <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
+         $email_template = str_replace("**CONTENT1**", $content1, $email_template);
+
+   $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
+         <p>Username: $email<br />
+         Password: $password</p>
+         <p>Click the button below to log into the EIDO Verify systemi</p>";
+         $email_template = str_replace("**CONTENT2**", $content2, $email_template);
+
+   // set up the button
+   $button_text = "Get Started";
+   $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
+   $button_url = "https://verify.eidosystems.com";
+   $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
+
+   // content3 after the button
+   $content3="";
+   $email_template = str_replace("**CONTENT3**", $content3, $email_template);
+
+   $arr_email = array();
+   $arr_email['mail_to']=$email;
+   $arr_email['mail_to_name']="$fname $lname";
+   $arr_email['bcc']="wayne@mindstreams.com";
+   $arr_email['mail_from']=$verify_mail_from;
+   $arr_email['mail_from_name']=$verify_mail_from_name;
+   $arr_email['subject']="EIDO Verify Account Information";
+   $arr_email['body']=$email_template;
+
+   send_email($arr_email);
+
    header("Location: organisations.php?m=listdivs&id=$org_id");
    exit(); 
 }
-
-if($mode == "removelogo") {
+else if ($mode == "removelogo") {
 	$target_file_path = $ABS_PATH."img/org_logos/";
 	// get the current logo address
 	$sql = "SELECT * FROM $TBLORGANISATIONS WHERE id='$id'";
@@ -475,7 +573,6 @@ if($mode == "removelogo") {
 
 	//update
     dbi_query("UPDATE $TBLORGANISATIONS SET c_logo = NULL WHERE id='$id'");
-
 }
 header("Location: organisations.php");
 exit();

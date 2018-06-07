@@ -51,11 +51,41 @@ if ((isset($_GET['page']) && !empty($_GET['page']))){
 }
 $_SESSION['page'][$script_name]['no'] = $page ;
 
+/** @var START FILTER */
+$_filter = [];
+$_order = [];
+if($filter = get_query_string('filter')) {
+	$_filter['filter'] = 1;
+}
+if($time_added = get_query_string("time_added")) {
+	$_filter['time_added'] = get_query_string('time_added');
+	switch($_filter['time_added']) {
+		case "1": $_order[] = 'u.id DESC'; break;
+		case "2": $_order[] = 'u.id ASC'; break;
+		case "3": $_order[] = 'u.dateImported DESC'; break;
+	}
+}
+if($name = get_query_string("name")) {
+	$_filter['name'] = get_query_string('name');
+	switch($_filter['name']) {
+		case "1": $_order[] = 'u.lastName ASC'; break;
+		case "2": $_order[] = 'u.lastName DESC'; break;
+	}
+}
+
+//setting default
+if(!$_order) {
+	$_order[] = 'u.lastName ASC';
+}
+unset($time_added, $name);
+/** END FILTER */
+
 $sql = "SELECT u.*
         FROM ".DB_PREFIX."user u, ".DB_PREFIX."user_role ur
         WHERE u.id=ur.userId
-        AND ur.roleId='ROLE_ADMIN'
-	AND u.active=1 LIMIT $start,$row";
+        AND ur.roleId='ROLE_ADMIN' AND u.active=1 
+        ORDER BY ".implode(',', $_order)." 
+        LIMIT $start,$row";
 $GetQuery = dbi_query($sql);
 $i = 0;
 $arr_users = array ();
@@ -127,15 +157,10 @@ header('Expires: 0');
 				          <span class="checkmark" style="left:0px;"></span>
 			          </label>
 		          </div>
-		          <div class="small-6 columns">
-			          <label style="text-indent: 10px;">User</label>
+		          <div class="small-6 columns position-top-10">
+			          <label style="text-indent: 5px;">User</label>
 		          </div>
-		          <div class="small-2 columns">
-			          <label style="left: -10px;">&nbsp;</label>
-		          </div>
-		          <div class="small-2 columns">
-			          <label style="left: -18px;">&nbsp;</label>
-		          </div>
+
 
 	          </div>
               <div class="row">
@@ -159,7 +184,7 @@ header('Expires: 0');
 			                      <div class="grid-x">
 				                      <div class="small-2 columns column-first">
 					                      <label class="eido-checkbox">
-						                      <input type="checkbox" name="performAction[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
+						                      <input type="checkbox" name="id[]" id="performAction<?php echo $i; ?>" value="<?php echo $uid; ?>">
 						                      <span class="checkmark"></span>
 					                      </label>
 				                      </div>
@@ -216,7 +241,7 @@ header('Expires: 0');
         <div class="grid-container">
             <div class="grid-x">
                 <div class="small-12 cell field">
-                    <h3>&nbsp;&nbsp;Add superuser</h3>
+                    <h3>Add superuser</h3>
                 </div>
             </div>
         </div>
@@ -285,7 +310,7 @@ header('Expires: 0');
         <div class="grid-container">
             <div class="grid-x">
         <div class="small-12 cell field">
-	  <h3>&nbsp;&nbsp;View user</h3>
+	  <h3>View user</h3>
             </div>
             </div>
         </div>
@@ -323,12 +348,18 @@ header('Expires: 0');
 	</div>
 <!-- END UPDATE SECTION -->
 <!-- SINGLE DELETEUSER SECTION -->
+	  <?php $id = ['id'=>$id]; ?>
     <div class="small-12 medium-6 large-6 cell content-right  <?php echo $userdelete_hide; ?>">
-        <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
+	    <div class="back clickable-row btn-back" data-href="patients.php?m=main">
+		    <a href="users.php">
+                    <span><i class="icon eido-icon-chevron-left"></i>
+                    Back</span>
+		    </a>
+	    </div>
           <div class="grid-container">
               <div class="grid-x grid-padding-x">
                  <div class="small-12 medium-12 large-12 cell text-center">
-                   <h2>Are you sure you want to delete this user?</h2>
+                   <h2>Are you sure you want to delete <?php echo count($id['id']) > 1 ? 'these users?' : 'this user?'; ?></h2>
                    <p>This will not affect any patient data, but the user will no longer be able to access the system.</p>
               </div>
               <div class="small-12 medium-12 large-12 cell text-center">
@@ -336,7 +367,7 @@ header('Expires: 0');
                       <div class="small-3">&nbsp;</div>
                            <div class="small-6"><br>
                                  <a href="users.php?m=main" class="button large inactive expanded" name=""/>NO</a>
-                                 <a href="users_a.php?m=userdelete&id=<?php echo $id; ?>" class="button large expanded red" name=""/>CONFIRM DELETE</a>
+                                 <a href="users_a.php?m=userdelete&<?php echo http_build_query($id); ?>" class="button large expanded red" name=""/>CONFIRM DELETE</a>
                            </div>
                        <div class="small-3">&nbsp;</div>
                      </div>
@@ -349,12 +380,18 @@ header('Expires: 0');
         </div>
 <!-- End SINGLE DELETEUSER SECTION -->
 <!-- SINGLE PW USERRESET SECTION -->
+	  <?php $id = ['id'=>$id]; ?>
     <div class="small-12 medium-6 large-6 cell content-right  <?php echo $userreset_hide; ?>">
-        <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
-          <div class="grid-container">
+	    <div class="back clickable-row btn-back" data-href="patients.php?m=main">
+		    <a href="users.php">
+                    <span><i class="icon eido-icon-chevron-left"></i>
+                    Back</span>
+		    </a>
+	    </div>
+	    <div class="grid-container">
               <div class="grid-x grid-padding-x">
                  <div class="small-12 medium-12 large-12 cell text-center">
-                   <h2>Are you sure you wish to reset the password?</h2>
+                   <h2>Are you sure you wish to reset the password(s)?</h2>
                    <p>The user will be asked to enter a new password the next time they login to Verify.</p>
               </div>
               <div class="small-12 medium-12 large-12 cell text-center">
@@ -362,7 +399,7 @@ header('Expires: 0');
                       <div class="small-3">&nbsp;</div>
                            <div class="small-6"><br>
                                  <a href="users.php?m=main" class="button large inactive expanded" name=""/>NO</a>
-                                 <a href="users_a.php?m=userreset&id=<?php echo $id; ?>" class="button large expanded active" name=""/>CONFIRM RESET</a>
+                                 <a href="users_a.php?m=userreset&<?php echo $id; ?>" class="button large expanded active" name=""/>CONFIRM RESET</a>
                            </div>
                        <div class="small-3">&nbsp;</div>
                      </div>

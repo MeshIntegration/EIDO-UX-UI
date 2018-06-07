@@ -27,8 +27,8 @@ h1, h2, h3, h4, h5, h6 { color:#0D2240; }
 label { color:#0D2240; font-family:'Lato', sans-serif; font-weight:bold; }
   label.middle { margin-bottom:0; }
 
-a, a:link, a:visited { color:#333; text-decoration:underline; }
-  a:hover, a:focus { color:#0d2240; font-weight:bold; text-decoration:none;}
+a, a:link, a:visited { color:#333; }
+  a:hover, a:focus { color:#0d2240; text-decoration:none;}
 
 table { font-size:14px; }
   table i { color:#aeaeae; font-family:'Lato-Bold', 'Lato Bold', 'Lato', sans-serif; font-weight:700; font-size:20px; }
@@ -128,7 +128,7 @@ input.number { width:40px; }
 .split { width:23px !important; }
 
 .content-right { background:#fff; padding:20px 0px; border-left:12px solid #efefef; }
-  .content-right h3 { padding:0 0 0 0; border-bottom:1px solid #d3d1d1; }
+  .content-right h3 { border-bottom:1px solid #d3d1d1; }
 .content-right h5 { padding:0 0.825rem 0.2rem 0;}
 .field { padding:0 0.825rem 0 0.825rem; }
 .field_bdr { padding:0 0.825rem 0.825rem 0.825rem; border-bottom:1px solid #d3d1d1; }

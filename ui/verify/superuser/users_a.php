@@ -88,23 +88,34 @@ if ($mode=="update") {
     header("Location: users.php?m=update&id=$id");
     exit();
 } else if ($mode=="userreset") {
+
+	if(is_array($id)) {
+		$id = "'".implode("','", $id)."'";
+	} else {
+		$id = "'$id'";
+	}
+
    //global $TBLPTEPISODES;
    $sql = "UPDATE dir_user
            SET c_pw_reset=1,
                c_dateModified=NOW()
-           WHERE id='$id'";
+           WHERE id IN ($id)";
    dbi_query($sql);
    logMsg("USERRESET (password): $sql",$logfile);
 } else if ($mode=="userdelete") {
-
+	if(is_array($id)) {
+		$id = "'".implode("','", $id)."'";
+	} else {
+		$id = "'$id'";
+	}
     $sql = "DELETE FROM dir_user_group 
-           WHERE userid='$id'";
+           WHERE userid IN ($id)";
     dbi_query($sql);
     $sql = "DELETE FROM dir_user_role 
-           WHERE userid='$id'";
+           WHERE userid IN ($id)";
     dbi_query($sql);
     $sql = "DELETE FROM dir_user 
-           WHERE id='$id'";
+           WHERE id IN ($id)";
     dbi_query($sql);
 
    logMsg("USERDELETE: $sql",$logfile);   

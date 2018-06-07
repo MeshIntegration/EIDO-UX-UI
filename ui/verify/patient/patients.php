@@ -631,7 +631,7 @@ $results_count = $GetQuery_all->num_rows;
                                               <?php if (!isset($_SESSION['filter']['name']) && !isset($_SESSION['filter']['status']) && !isset($_SESSION['filter']['activity']) && !isset($_SESSION['filter']['gender']) && !isset($_SESSION['filter']['search_within_query'])) { ?>
                                                    <span class="float-right">Filters Disabled</span>
                                               <?php } else { ?>
-                                                   <span class="float-right">Filters Active | <a href="clear_filter.php" class="float-right ">&nbsp; Reset</a></span>
+                                                   <span class="float-right">Filters Active | <a href="clear_filter.php" class="float-right link-standard-color ">&nbsp; Reset</a></span>
                                               <?php } ?>
 							</div>
 						</div>
@@ -832,14 +832,17 @@ $results_count = $GetQuery_all->num_rows;
 				</div>
 			</div>
 			<hr class="gap"/>
-            <div style="margin-right: 20px; margin-left: 20px;"
-			<h3>Recent Notifications</h3>
-            <div class="standard-padding <?php echo($has_notifications == true ? " hide" : "") ?>">
-	            <div class='notification-bell text-center'>
-		            <span class="icon display-block"><i class="icon eido-icon-bell-o"></i></span>
-		            <p><strong>No notifications right now.</strong><br>Everything must be working.</p>
-	            </div>
-            </div>
+            <div class="note-bell">
+	            <h3 class="">Recent Notifications</h3>
+
+	            <div class="standard-padding <?php echo($has_notifications == true ? " hide" : "") ?>">
+
+		            <div class='notification-bell text-center'>
+
+			            <span class="icon display-block"><i class="icon eido-icon-bell-o"></i></span>
+			            <p><strong>No notifications right now.</strong><br>Everything must be working.</p>
+		            </div>
+                </div>
             </div>
 			<div class="standard-padding <?php echo($has_notifications == false ? "hide" : "") ?>" style="margin-bottom:30px;">
 				<ul class="" id="Notifications">
@@ -1584,7 +1587,7 @@ $results_count = $GetQuery_all->num_rows;
 						<h5><?php echo $c_surname_uc; ?></h5>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
-						<hr style="margin-left: 0px;" class="full"/>
+						<hr class="full"/>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
 						<label>NHS Number</label>
@@ -1595,7 +1598,7 @@ $results_count = $GetQuery_all->num_rows;
 						<h5><?php echo $c_referenceNumberHospitalId; ?></h5>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
-						<hr style="margin-left: 0px;" class="full"/>
+						<hr  class="full"/>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
 						<label>Date of Birth</label>
@@ -1618,7 +1621,7 @@ $results_count = $GetQuery_all->num_rows;
 						<h5><?php echo $c_gender; ?></h5>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
-						<hr style="margin-left: 0px;" class="full"/>
+						<hr  class="full"/>
 					</div>
                     <?php if ($c_emailAddress<>"") { ?>
 					<div class="small-12 medium-12 large-12 cell">
@@ -1633,7 +1636,7 @@ $results_count = $GetQuery_all->num_rows;
 					</div>
                     <?php } ?>
 					<div class="small-12 medium-12 large-12 cell">
-						<hr style="margin-left: 0px;" class="full"/>
+						<hr  class="full"/>
 					</div>
 				</div>
 			</div>
@@ -2651,10 +2654,9 @@ $c_surgeonId =$qryResult_sd['id'];
             Back</span>
         </a>
 	</div>
-    <div style="margin-left: 20px; margin-right: 20px; line-height: 1.2">
-	<span style="font-size:medium;font-weight:700;">Procedure Details</span><br />
-        <span class="small" style="font-size:small;">The patient's procedure</span>
-    </div>
+	<h3>Procedure Details<br />
+        <span class="small sub-text" style="font-size:small;">The patient's procedure</span>
+	</h3>
 	<h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname_uc, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
         
 	<table class="" style="margin-bottom: 0px !important">

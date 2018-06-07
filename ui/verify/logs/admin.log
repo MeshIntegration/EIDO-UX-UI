@@ -14943,3 +14943,486 @@
 06/06/2018 17:45:50 - 68.107.189.223: User ID: mm1admin@thenakedsurgeon.com
 06/06/2018 17:45:50 - 68.107.189.223: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
 06/06/2018 17:45:50 - 68.107.189.223: >>>>  GroupID: sitedivadmins
+06/06/2018 19:37:41 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:37:41 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:39:00 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:39:00 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:39:25 - 184.56.244.84: Users_a: mode: gotoupdate - ID: eidoadmin
+06/06/2018 19:39:25 - 184.56.244.84: USERS Mode: update
+06/06/2018 19:39:25 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:40:01 - 184.56.244.84: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
+06/06/2018 19:40:02 - 184.56.244.84: USERS Mode: update
+06/06/2018 19:40:02 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:41:05 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:41:05 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:42:58 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:42:58 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:43:51 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:43:51 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:46:30 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:46:30 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:46:52 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:46:52 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:47:14 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@eidoverify.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 19:47:14 - 82.34.15.57: Incorrect email (user not found) mm1admin@eidoverify.com password - back to login.php
+06/06/2018 19:47:31 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:47:31 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:47:34 - 82.34.15.57: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 19:47:34 - 82.34.15.57: User ID: mm1admin@thenakedsurgeon.com
+06/06/2018 19:47:34 - 82.34.15.57: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/06/2018 19:47:34 - 82.34.15.57: >>>>  GroupID: sitedivadmins
+06/06/2018 19:47:52 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:47:52 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:48:03 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:48:03 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:48:25 - 82.34.15.57: USERS Mode: 
+06/06/2018 19:48:25 - 82.34.15.57: USERS bulkdelete_hide: hide
+06/06/2018 19:48:25 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:48:25 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:50:16 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:50:16 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:50:21 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:50:21 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:50:42 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:50:42 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:51:10 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:51:10 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:56:01 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:56:01 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:57:08 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:57:08 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:58:09 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:58:09 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:58:40 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:58:40 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 19:58:48 - 82.34.15.57: Users_a: mode: gotoupdate - ID: eidoadmin
+06/06/2018 19:58:48 - 82.34.15.57: USERS Mode: update
+06/06/2018 19:58:48 - 82.34.15.57: USERS bulkdelete_hide: hide
+06/06/2018 19:59:27 - 184.56.244.84: USERS Mode: 
+06/06/2018 19:59:27 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:00:34 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:00:34 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:00:46 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:00:46 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:01:02 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:01:02 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:01:14 - 184.56.244.84: In BULK_ACTONS_A.PHP
+06/06/2018 20:01:14 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:01:14 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:01:15 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:01:15 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:01:28 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:01:28 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:09:28 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:09:28 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:21:16 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:21:16 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:21:36 - 184.56.244.84: In BULK_ACTONS_A.PHP
+06/06/2018 20:21:36 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:21:36 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:21:37 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:21:37 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:22:05 - 184.56.244.84: Users_a: mode: add - ID: 
+06/06/2018 20:22:05 - 184.56.244.84: USERS Mode: add
+06/06/2018 20:22:05 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:22:10 - 184.56.244.84: Users_a: mode: add - ID: 
+06/06/2018 20:22:10 - 184.56.244.84: pw: #l@CW472 - hash: $2y$10$AZ1tqKlFY6K.l6k3/SAfduc.Dq1RClMLxn7VyaHwtrb.lHR1kmfCe
+06/06/2018 20:22:10 - 184.56.244.84: ADD: INSERT INTO dir_user
+           SET firstName='Jayme',
+               lastName='Skeen',
+               email='jskeen@ctmsohio.com',
+               active=1,
+               timeZone='0',
+               id='5b1842726c05b',
+               username='jskeen@ctmsohio.com',
+               gmc_number='0651651',
+               c_organizationId='',
+               isSurgeon='1',
+               uipassword='$2y$10$AZ1tqKlFY6K.l6k3/SAfduc.Dq1RClMLxn7VyaHwtrb.lHR1kmfCe'
+06/06/2018 20:22:10 - 184.56.244.84: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5b1842726c05b',
+                  c_userId='5b1842726c05b',
+                  c_surgeonName='Jayme Skeen',
+                  c_gmcNumber='0651651',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'MMONE Adminski'
+06/06/2018 20:22:10 - 184.56.244.84: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='jskeen@ctmsohio.com',
+               userId='5b1842726c05b'
+06/06/2018 20:22:10 - 184.56.244.84: INSERT INTO dir_user_group
+           SET groupId='sitedivadmins',
+               username='jskeen@ctmsohio.com',
+               userId='5b1842726c05b'
+06/06/2018 20:22:10 - 184.56.244.84: USERS Mode: update
+06/06/2018 20:22:10 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:22:37 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 20:22:38 - 184.56.244.84: User ID: eidoadmin@thenakedsurgeon.com
+06/06/2018 20:22:38 - 184.56.244.84: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/06/2018 20:22:38 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/06/2018 20:25:10 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 20:25:10 - 184.56.244.84: User ID: mm1admin@thenakedsurgeon.com
+06/06/2018 20:25:10 - 184.56.244.84: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/06/2018 20:25:10 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+06/06/2018 20:26:25 - 184.56.244.84: USERS Mode: 
+06/06/2018 20:26:25 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:26:31 - 184.56.244.84: Users_a: mode: gotoupdate - ID: 5b1842726c05b
+06/06/2018 20:26:31 - 184.56.244.84: USERS Mode: update
+06/06/2018 20:26:31 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:26:34 - 184.56.244.84: USERS Mode: delete
+06/06/2018 20:26:34 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 20:47:18 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 20:47:18 - 76.188.180.118: User ID: mm1admin@thenakedsurgeon.com
+06/06/2018 20:47:18 - 76.188.180.118: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/06/2018 20:47:18 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+06/06/2018 21:19:17 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:19:17 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:19:49 - 184.56.244.84: Users_a: mode: gotoupdate - ID: 5b1842726c05b
+06/06/2018 21:19:49 - 184.56.244.84: USERS Mode: update
+06/06/2018 21:19:49 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:20:28 - 184.56.244.84: USERS Mode: update
+06/06/2018 21:20:28 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:21:34 - 184.56.244.84: USERS Mode: update
+06/06/2018 21:21:34 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:21:47 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:21:47 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:24:09 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:24:09 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:24:47 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:24:47 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:25:17 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:25:17 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:25:52 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:25:52 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:26:35 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:26:35 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:26:46 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:26:46 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:26:57 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:26:57 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:34:14 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:34:14 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:34:36 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:34:36 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:35:24 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:35:24 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:35:49 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:35:49 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:36:14 - 184.56.244.84: USERS Mode: delete
+06/06/2018 21:36:14 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:39:34 - 184.56.244.84: Users_a: mode: delete - ID: Array
+06/06/2018 21:41:10 - 184.56.244.84: Users_a: mode: delete - ID: Array
+06/06/2018 21:41:17 - 184.56.244.84: Users_a: mode: delete - ID: Array
+06/06/2018 21:42:55 - 184.56.244.84: Users_a: mode: delete - ID: Array
+06/06/2018 21:42:55 - 184.56.244.84: DELETE: DELETE FROM app_fd_ver_surgeons 
+            WHERE c_userId IN ('5b1842726c05b','516516')
+06/06/2018 21:42:55 - 184.56.244.84: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
+06/06/2018 21:42:55 - 184.56.244.84: USERS Mode: update
+06/06/2018 21:42:55 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:43:11 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:43:11 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:45:14 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:45:14 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:45:21 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:45:21 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:45:31 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:45:31 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:45:40 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:45:40 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:45:57 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:45:57 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:46:04 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:46:04 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:46:24 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:46:24 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:46:27 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:46:27 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:47:31 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:47:31 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:47:49 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:47:49 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:49:13 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:49:13 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 21:49:25 - 184.56.244.84: USERS Mode: 
+06/06/2018 21:49:25 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:02:15 - 184.56.244.84: Users_a: mode: add - ID: 
+06/06/2018 22:02:15 - 184.56.244.84: pw: dIeiu8WA - hash: $2y$10$6WcDHbmy6RPFasGm742rf./aEtYppBpJ8YKDuf7qexPJ4I0WREXWm
+06/06/2018 22:02:15 - 184.56.244.84: ADD: INSERT INTO dir_user
+           SET firstName='Jayme',
+               lastName='Skeen',
+               email='jskeen@ctmsohio.com',
+               active=1,
+               timeZone='0',
+               id='5b1859e7c3024',
+               username='jskeen@ctmsohio.com',
+               gmc_number='456516',
+               c_organizationId='',
+               isSurgeon='1',
+               uipassword='$2y$10$6WcDHbmy6RPFasGm742rf./aEtYppBpJ8YKDuf7qexPJ4I0WREXWm'
+06/06/2018 22:02:15 - 184.56.244.84: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5b1859e7c3024',
+                  c_userId='5b1859e7c3024',
+                  c_surgeonName='Jayme Skeen',
+                  c_gmcNumber='456516',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'MMONE Adminski'
+06/06/2018 22:02:15 - 184.56.244.84: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='jskeen@ctmsohio.com',
+               userId='5b1859e7c3024'
+06/06/2018 22:02:15 - 184.56.244.84: INSERT INTO dir_user_group
+           SET groupId='sitedivadmins',
+               username='jskeen@ctmsohio.com',
+               userId='5b1859e7c3024'
+06/06/2018 22:02:16 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:02:16 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:02:38 - 184.56.244.84: USERS Mode: delete
+06/06/2018 22:02:38 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:05:19 - 184.56.244.84: Users_a: mode: delete - ID: 
+06/06/2018 22:05:19 - 184.56.244.84: DELETE: DELETE FROM app_fd_ver_surgeons 
+            WHERE c_userId IN ('')
+06/06/2018 22:05:20 - 184.56.244.84: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
+06/06/2018 22:05:20 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:05:20 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:05:20 - 184.56.244.84: USERS Mode: delete
+06/06/2018 22:05:20 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:05:46 - 184.56.244.84: Users_a: mode: delete[object Object] - ID: 
+06/06/2018 22:05:46 - 184.56.244.84: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
+06/06/2018 22:05:46 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:05:46 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:05:58 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:05:58 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:06:48 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:06:48 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:07:29 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:07:29 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:09:13 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:09:13 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:09:29 - 184.56.244.84: USERS Mode: delete
+06/06/2018 22:09:29 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:10:01 - 184.56.244.84: USERS Mode: delete
+06/06/2018 22:10:01 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:10:08 - 184.56.244.84: USERS Mode: delete
+06/06/2018 22:10:08 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:10:30 - 184.56.244.84: USERS Mode: delete
+06/06/2018 22:10:30 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:10:38 - 184.56.244.84: USERS Mode: delete
+06/06/2018 22:10:38 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:11:35 - 184.56.244.84: USERS Mode: delete
+06/06/2018 22:11:35 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:11:54 - 184.56.244.84: Users_a: mode: delete - ID: Array
+06/06/2018 22:11:54 - 184.56.244.84: DELETE: DELETE FROM app_fd_ver_surgeons 
+            WHERE c_userId IN ('5b1859e7c3024')
+06/06/2018 22:11:54 - 184.56.244.84: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
+06/06/2018 22:11:54 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:11:54 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:12:09 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:12:09 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:12:23 - 184.56.244.84: Users_a: mode: add - ID: 
+06/06/2018 22:12:23 - 184.56.244.84: pw: 4uwAefrJ - hash: $2y$10$05gg9G1oyUSdXJ7IJ9xY3ObzuK/vpGT0PabhK9u4ifncKN12.s5NW
+06/06/2018 22:12:23 - 184.56.244.84: ADD: INSERT INTO dir_user
+           SET firstName='Jayme',
+               lastName='Skeen',
+               email='jskeen@ctmsohio.com',
+               active=1,
+               timeZone='0',
+               id='5b185c47237de',
+               username='jskeen@ctmsohio.com',
+               gmc_number='516516',
+               c_organizationId='',
+               isSurgeon='1',
+               uipassword='$2y$10$05gg9G1oyUSdXJ7IJ9xY3ObzuK/vpGT0PabhK9u4ifncKN12.s5NW'
+06/06/2018 22:12:23 - 184.56.244.84: ADD SURGEON: INSERT INTO app_fd_ver_surgeons
+              SET id='5b185c47237de',
+                  c_userId='5b185c47237de',
+                  c_surgeonName='Jayme Skeen',
+                  c_gmcNumber='516516',
+                  dateCreated=NOW(),
+                  dateModified=NOW(),
+                  createdBy='mm1admin@thenakedsurgeon.com',
+                  createdByName = 'MMONE Adminski'
+06/06/2018 22:12:23 - 184.56.244.84: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='jskeen@ctmsohio.com',
+               userId='5b185c47237de'
+06/06/2018 22:12:23 - 184.56.244.84: INSERT INTO dir_user_group
+           SET groupId='sitedivadmins',
+               username='jskeen@ctmsohio.com',
+               userId='5b185c47237de'
+06/06/2018 22:12:23 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:12:23 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:12:27 - 184.56.244.84: USERS Mode: reset
+06/06/2018 22:12:27 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:13:06 - 184.56.244.84: USERS Mode: reset
+06/06/2018 22:13:06 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:13:26 - 184.56.244.84: USERS Mode: reset
+06/06/2018 22:13:26 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:13:51 - 184.56.244.84: USERS Mode: reset
+06/06/2018 22:13:51 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:14:40 - 184.56.244.84: USERS Mode: reset
+06/06/2018 22:14:40 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:15:48 - 184.56.244.84: USERS Mode: reset
+06/06/2018 22:15:48 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:16:09 - 184.56.244.84: Users_a: mode: reset - ID: Array
+06/06/2018 22:16:09 - 184.56.244.84: Users_a: mode: gotoupdate - ID: mm1admin@thenakedsurgeon.com
+06/06/2018 22:16:09 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:16:09 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:16:14 - 184.56.244.84: Users_a: mode: gotoupdate - ID: 5b185c47237de
+06/06/2018 22:16:14 - 184.56.244.84: USERS Mode: update
+06/06/2018 22:16:14 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:16:29 - 184.56.244.84: USERS Mode: reset
+06/06/2018 22:16:29 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:17:12 - 184.56.244.84: USERS Mode: reset
+06/06/2018 22:17:12 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:18:02 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 22:18:02 - 184.56.244.84: User ID: mm1admin@thenakedsurgeon.com
+06/06/2018 22:18:02 - 184.56.244.84: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/06/2018 22:18:02 - 184.56.244.84: >>>>  GroupID: sitedivadmins
+06/06/2018 22:18:10 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:18:10 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:18:15 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:18:15 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:19:53 - 184.56.244.84: Users_a: mode: gotoadd - ID: 
+06/06/2018 22:19:53 - 184.56.244.84: USERS Mode: add
+06/06/2018 22:19:53 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:20:36 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:20:36 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:22:20 - 184.56.244.84: Users_a: mode: gotoadd - ID: 
+06/06/2018 22:22:20 - 184.56.244.84: USERS Mode: add
+06/06/2018 22:22:20 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:25:40 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:25:40 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:26:13 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:26:13 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:26:21 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:26:21 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:26:44 - 184.56.244.84: Users_a: mode: gotoadd - ID: 
+06/06/2018 22:26:45 - 184.56.244.84: USERS Mode: add
+06/06/2018 22:26:45 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:26:48 - 184.56.244.84: Users_a: mode: gotoadd - ID: 
+06/06/2018 22:26:48 - 184.56.244.84: USERS Mode: add
+06/06/2018 22:26:48 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:28:06 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:28:06 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:28:21 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:28:21 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:28:51 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:28:51 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:29:35 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:29:35 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:29:55 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:29:55 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:42:37 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:42:37 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:42:45 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:42:45 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:43:09 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:43:09 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:43:42 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:43:42 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:46:21 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:46:21 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:46:43 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:46:43 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:55:28 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:58:18 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:58:18 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:58:26 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:58:26 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:58:51 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:58:51 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:58:56 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:58:56 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:59:01 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:59:01 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 22:59:21 - 184.56.244.84: USERS Mode: 
+06/06/2018 22:59:21 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:00:19 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:00:19 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:02:32 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:02:32 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:03:22 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:03:22 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:03:31 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:03:31 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:03:38 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:03:48 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:04:15 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:04:15 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:04:26 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:04:26 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:04:31 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:04:31 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:05:11 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:05:11 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:05:17 - 184.56.244.84: USERS Mode: 
+06/06/2018 23:05:17 - 184.56.244.84: USERS bulkdelete_hide: hide
+06/06/2018 23:17:01 - 184.56.244.84: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/06/2018 23:17:01 - 184.56.244.84: User ID: eidoadmin@thenakedsurgeon.com
+06/06/2018 23:17:01 - 184.56.244.84: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/06/2018 23:17:01 - 184.56.244.84: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/07/2018 01:08:42 - 68.107.189.223: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/07/2018 01:08:42 - 68.107.189.223: User ID: eidoadmin@thenakedsurgeon.com
+06/07/2018 01:08:42 - 68.107.189.223: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/07/2018 01:08:42 - 68.107.189.223: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+06/07/2018 10:56:13 - 82.132.238.10: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='mm1admin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/07/2018 10:56:13 - 82.132.238.10: User ID: mm1admin@thenakedsurgeon.com
+06/07/2018 10:56:13 - 82.132.238.10: AFTER COOKIES: FN MMONE Adminski - INITIALS MA - GROUP sitedivadmins
+06/07/2018 10:56:13 - 82.132.238.10: >>>>  GroupID: sitedivadmins
+06/07/2018 11:26:25 - 82.132.238.10: USERS Mode: 
+06/07/2018 11:26:25 - 82.132.238.10: USERS bulkdelete_hide: hide
+06/07/2018 11:27:30 - 82.132.238.10: USERS Mode: bulk
+06/07/2018 11:27:30 - 82.132.238.10: USERS bulkdelete_hide: hide
+06/07/2018 11:28:17 - 82.132.238.10: Users_a: mode: gotoupdate - ID: eidoadmin
+06/07/2018 11:28:17 - 82.132.238.10: USERS Mode: update
+06/07/2018 11:28:17 - 82.132.238.10: USERS bulkdelete_hide: hide
+06/07/2018 11:28:52 - 82.132.238.10: USERS Mode: 
+06/07/2018 11:28:52 - 82.132.238.10: USERS bulkdelete_hide: hide
+06/07/2018 11:29:19 - 82.132.238.10: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+06/07/2018 11:29:19 - 82.132.238.10: User ID: eidoadmin@thenakedsurgeon.com
+06/07/2018 11:29:19 - 82.132.238.10: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+06/07/2018 11:29:19 - 82.132.238.10: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER

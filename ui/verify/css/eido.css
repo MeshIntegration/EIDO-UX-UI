@@ -365,7 +365,7 @@ table tbody tr:nth-child(even) {
   padding: 0 20px;
 }
 .su .content-right form hr {
-  margin: 0.9375em -20px;
+  margin: 0.9375em 0;
 }
 .su .content-right h2 {
   padding: 0 20px;
@@ -1731,7 +1731,7 @@ h4.vertical-middle {
   padding: 0 0.825rem;
 }
 .padding-right-column .standard-hr {
-  margin: 0 -0.825rem;
+  margin: 0 0;
 }
 .standard-hr {
   border-bottom: 1px solid #D3D1D1;
