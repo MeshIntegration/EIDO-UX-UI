@@ -460,6 +460,16 @@ h4.vertical-middle {
 	}
 }
 
+.link-orange {
+	color:#f5a623 !important;
+	text-decoration: none !important;
+	&:focus, &:hover, &:active {
+		//text-decoration: underline !important;
+		color: @fontColor !important;
+	}
+
+}
+
 .link-active {
 	color: @greenBG !important;
 	text-decoration: underline !important;
@@ -634,14 +644,13 @@ h4.vertical-middle {
 .notification-bell {
 	margin:0px 0;
 	padding:25px 0;
-	background: #e4e4e4;
 	.icon {
-		font-size:110px;
+		font-size:60px;
 		margin-bottom:8px;
 		i {
 			display:inline-block;
 			transform: rotate(-15deg);
-			color:#bcbcbc;
+			color:@fontColor;
 
 		}
 	}

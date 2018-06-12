@@ -213,6 +213,15 @@ h4.vertical-middle {
 .link-standard-color:active {
   color: #f5a623 !important;
 }
+.link-orange {
+  color: #f5a623 !important;
+  text-decoration: none !important;
+}
+.link-orange:focus,
+.link-orange:hover,
+.link-orange:active {
+  color: #0d2240 !important;
+}
 .link-active {
   color: #3dae65 !important;
   text-decoration: underline !important;
@@ -358,16 +367,15 @@ h4.vertical-middle {
 .notification-bell {
   margin: 0px 0;
   padding: 25px 0;
-  background: #e4e4e4;
 }
 .notification-bell .icon {
-  font-size: 110px;
+  font-size: 60px;
   margin-bottom: 8px;
 }
 .notification-bell .icon i {
   display: inline-block;
   transform: rotate(-15deg);
-  color: #bcbcbc;
+  color: #0d2240;
 }
 .eido-block-radio {
   display: block;

@@ -631,7 +631,7 @@ $results_count = $GetQuery_all->num_rows;
                                               <?php if (!isset($_SESSION['filter']['name']) && !isset($_SESSION['filter']['status']) && !isset($_SESSION['filter']['activity']) && !isset($_SESSION['filter']['gender']) && !isset($_SESSION['filter']['search_within_query'])) { ?>
                                                    <span class="float-right">Filters Disabled</span>
                                               <?php } else { ?>
-                                                   <span class="float-right">Filters Active | <a href="clear_filter.php" class="float-right link-standard-color ">&nbsp; Reset</a></span>
+                                                   <span class="float-right">Filters Active | <a href="clear_filter.php" class="float-right link-orange ">&nbsp; Reset</a></span>
                                               <?php } ?>
 							</div>
 						</div>
@@ -832,8 +832,8 @@ $results_count = $GetQuery_all->num_rows;
 				</div>
 			</div>
 			<hr class="gap"/>
-            <div class="note-bell">
-	            <h3 class="">Recent Notifications</h3>
+            <div class="">
+	            <h3 class="padding-bottom-1">Recent Notifications</h3>
 
 	            <div class="standard-padding <?php echo($has_notifications == true ? " hide" : "") ?>">
 
@@ -891,7 +891,7 @@ $results_count = $GetQuery_all->num_rows;
 				<!--<div class="hide-for-small-only medium-2">&nbsp;</div>-->
 			</div>
 			<!--<hr style="margin-right: 20px; margin-left: 20px;" class=""/>-->
-			<h3 style="margin-left: 0px; margin-right: 0px; padding-left:20px; padding-bottom: 5px;">Stats</h3>
+			<h3 class="padding-bottom-1">Stats</h3>
 			<br/>
 			<div class="grid-x field">
 				<div class="small-12 auto cell text-center grey_bdr">
@@ -911,12 +911,17 @@ $results_count = $GetQuery_all->num_rows;
 				</div>
 			</div>
 			<p>&nbsp;</p>
-			<div class="grid-x">
-				<div class="hide-for-small-only medium-2">&nbsp;</div>
-                <div class="small-12 medium-7"><a href="patients.php?m=stats" class="button large expanded active"><strong>View Stats</strong></a></div>
-				<div class="hide-for-small-only medium-2">&nbsp;</div>
+			<div class="standard-padding">
+
+				<div class="grid-x">
+					<div class="hide-for-small-only medium-2"></div>
+	                <div class="small-12 medium-8 text-center">
+		                <a href="patients.php?m=stats" class="button large expanded active"><strong>View Stats</strong></a>
+	                </div>
+					<div class="hide-for-small-only medium-2"></div>
+				</div>
 			</div>
-            </div>
+		</div>
 
 		<!-- END MAIN SECTION -->
 		<!-- STATS SECTION -->
