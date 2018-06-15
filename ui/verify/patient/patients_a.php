@@ -260,17 +260,18 @@ else if ($mode=="addconfirm")
    // get some info about the user putting this record in
    $user_id = $_COOKIE['user_id'];
    $org_id = $_COOKIE['org_id'];
-   $sql = "SELECT firstName, lastName, 
+   $sql = "SELECT firstName, lastName 
            FROM dir_user 
            WHERE id='$user_id'";
    $GetQuery = dbi_query($sql);
    $qryResult=$GetQuery->fetch_assoc();
    $username = $qryResult['firstName']." ".$qryResult['lastName'];
-   $sql = "SELECT name FROM $TBLORGANISATIONS
+   $sql = "SELECT c_name FROM $TBLORGANISATIONS
            WHERE id='$org_id'";
+logMsg($sql,$logfile);
    $GetQuery = dbi_query($sql);
    $qryResult=$GetQuery->fetch_assoc();
-   $hospitalname = $qryResult['name'];
+   $hospitalname = $qryResult['c_name'];
    // INSERT
    $pe_id = uniqid();
    // store postalcode with no spaces
@@ -286,6 +287,7 @@ else if ($mode=="addconfirm")
                c_userId='$user_id',
                c_userName='$username',
                c_hospitalName='$hospitalname',
+               c_hospitalId='$org_id',
                c_firstName=".escapeQuote($_SESSION['add_fname']).",
                c_surname=".escapeQuote($_SESSION['add_lname']).",
                c_nhsNumber=".escapeQuote($_SESSION['add_nhsnumber']).",

@@ -62,7 +62,7 @@ if($time_added = get_query_string("time_added")) {
 	switch($_filter['time_added']) {
 		case "1": $_order[] = 'u.id DESC'; break;
 		case "2": $_order[] = 'u.id ASC'; break;
-		case "3": $_order[] = 'u.dateImported DESC'; break;
+		case "3": $_order[] = 'u.c_dateImported DESC'; break;
 	}
 }
 if($name = get_query_string("name")) {
@@ -125,7 +125,7 @@ header('Expires: 0');
   <!-- End Header -->
   <!-- Start Title Bar & Navigation -->  
   <div class="grid-x padding-x">
-    <div class="cell page-title">Superuser dashboard</div>
+    <div class="cell page-title">Superuser Dashboard</div>
     <div class="cell navigation-bar">
 	  <ul class="menu simple show-for-medium">
 		<li class="current"><a href="users.php">Users</a></li>
@@ -241,7 +241,7 @@ header('Expires: 0');
         <div class="grid-container">
             <div class="grid-x">
                 <div class="small-12 cell field">
-                    <h3>Add superuser</h3>
+                    <h3>Add Superuser</h3>
                 </div>
             </div>
         </div>
@@ -310,7 +310,7 @@ header('Expires: 0');
         <div class="grid-container">
             <div class="grid-x">
         <div class="small-12 cell field">
-	  <h3>View user</h3>
+	  <h3>View User</h3>
             </div>
             </div>
         </div>

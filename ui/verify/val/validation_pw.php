@@ -4,7 +4,9 @@ require_once '../utilities.php';
 $logfile = "validation.log";
 
 session_start();
-$arr_pt_info = $_SESSION['arr_pt_info'];
+$patientEpisodeId = get_query_string('patientEpisodeId');
+$arr_pt_info = get_pt_info($patientEpisodeId);
+$_SESSION['arr_pt_info'] = $arr_pt_info;
 $error_msg = $_SESSION['error_msg'];
 $_SESSION['error_msg'] = "";
 

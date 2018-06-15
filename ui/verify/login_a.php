@@ -83,12 +83,7 @@ logMsg(">>>>  GroupID: ".$qryResult['groupId'], $logfile);
         //  determine what organisation they are with
         //  and set a cookie for the ORG ID
 
-        $sql2 = "SELECT id
-              FROM app_fd_ver_organizations  
-              WHERE c_email='$email'";
-        $GetQuery2 = dbi_query($sql2);
-        $qryResult2 = $GetQuery2->fetch_assoc();
-        $org_id = $qryResult2['id'];
+        $org_id = $qryResult['c_organizationId'];
         is_setcookie("org_id", $org_id, 0, "/", $cookie_domain);
     }
 

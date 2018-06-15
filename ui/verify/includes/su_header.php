@@ -7,14 +7,27 @@
   </div>
 
 
+   <!-- <div class="small-12 medium-6 large-6 cell" style="padding-top: 26px;"> -->
+        <!--  <div class="grid" style="padding-top: 15px;"> -->
+
+        <!-- <div id="addusr" class="row links"> -->
+            <!-- <a href="/ui/verify/superuser/users_a.php?m=gotoadd" style="left -20px"> -->
+            <!--    <i class="icon eido-icon-plus-circle"></i>Add User</a> -->
+       <!--  </div> -->
+   <!--  </div> -->
+
+
+
     <div class="small-12 medium-6 large-6 cell" style="padding-top: 26px;">
         <!--  <div class="grid" style="padding-top: 15px;"> -->
 
-        <div id="addusr" class="row links">
-            <a href="/ui/verify/superuser/users_a.php?m=gotoadd" style="left -20px">
-                <i class="icon eido-icon-plus"></i>Add user</a>
+        <div id="addusr" class="row links" style="margin-top: -2px; margin-bottom: 4px; height: 20px; zoom: 1.14;">
+            <a href="/ui/verify/superuser/users_a.php?m=gotoadd" style="padding-bottom: 2px; vertical-align: center;">
+                <i class="icon eido-icon-plus-circle" style="margin-right: 7px;"></i>Add User</a>
         </div>
+
     </div>
+
 
   <div class="medium-4 large-4 cell"><a href="<?php echo $home; ?>"><img src="/ui/verify/img/eido_logo.png" alt="EIDO Logo" class="logo float-right"/></a></div>
 </div>

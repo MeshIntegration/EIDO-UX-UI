@@ -31,7 +31,7 @@ if($time_added = get_query_string("time_added")) {
 	switch($_filter['time_added']) {
 		case "1": $_order[] = 'u.id DESC'; break;
 		case "2": $_order[] = 'u.id ASC'; break;
-		case "3": $_order[] = 'u.dateImported DESC'; break;
+		case "3": $_order[] = 'u.c_dateImported DESC'; break;
 	}
 }
 if($name = get_query_string("name")) {
@@ -227,7 +227,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
 		            </div>
 		            <div class="small-6 medium-6 cell  padding-10">
 			            <?php if(isset($_GET['time_added']) || isset($_GET['name'])): ?>
-				            <span class="float-right">Filters Active | <a href="users.php" class="float-right link-standard-color ">&nbsp; Reset</a></span>
+				            <span class="float-right">Filters Active | <a href="users.php" class="float-right link-orange">&nbsp; Reset</a></span>
 			            <?php else: ?>
 				            <span class="float-right">Filters Disabled</span>
 
@@ -384,6 +384,7 @@ while ( $qryResult = $GetQuery->fetch_assoc () ) {
                         <input class="eido-checkbox user-checkbox2" type="checkbox" name="is_admin" value="1" <?php if ($_SESSION['add_ais_admin']=="1") echo "checked"; ?> >
                                         <label class="weight-normal" for="checkbox2" style="padding-right:25px;">Is a system administrator</label>
 			<span class="checkmark"</span>
+			</label>
 		</div>
 					</div>
 					<div class="small-12 cell field">

@@ -45,7 +45,7 @@ $ABS_PATH = "/var/www/html/ui/verify/" ;
 
 $logdir = "/var/www/html/ui/verify/logs";
 
-// API detail
+// Joget API detail
 $BASE_URL = "http://verify.eidosystems.com:8080/jw/web/json/data/";
 $BASE_WORKFLOW_URL = "http://verify.eidosystems.com:8080/jw/web/json/workflow/";
 $USERNAME = "eidoverify2017";
@@ -54,6 +54,11 @@ $HASH = "91FCC50BA6AC975A3876E556CCE7D986"; //  md5($USERNAME . "::" . md5($PASS
 //$USERNAME = "admin";
 //$PASSWORD = "mi526ApJo!";
 //$HASH = md5($USERNAME . "::" . md5($PASSWORD));
+
+// Survey Gizmo API 
+$sg_api_token = '0187a230cc294375e907f8c3059656cadd920acce87b54eb42';
+$sg_api_token_secret = 'A9tn4NkVvEPnU';
+$sg_url_method = "https://restapi.surveygizmo.eu/v5/survey" ;
 
 // use to set pagination
 $row = 10;

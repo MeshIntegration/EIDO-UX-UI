@@ -103,25 +103,33 @@ logMsg("In: add to array","procedure.log");
 
 } else if($mode == "add_selected_surveys") {
 
+logMsg("---------------------------------------","wel.log");
 	$pe_id = get_query_string('id'); // procedure id
 	$sess_id = get_query_string('sess_id'); // current session number
 	$arr_add_surveys = array_unique(array_filter($_SESSION['arr_add_surveys'][$pe_id]));
 
 	$num_current_surveys = get_num_surveys_by_proc($pe_id, $sess_id);
+logMsg("NumSurveysInDc: $num_current_surveys", "wel.log");
 	$num_selected_surveys = count($arr_add_surveys);
-	if($num_current_surveys + $num_selected_surveys > $MAX_SURVEYS) {
+logMsg("NumSelectedSurveys: $num_selected_surveys", "wel.log");
+	// if($num_current_surveys + $num_selected_surveys > $MAX_SURVEYS) {
+	if($num_selected_surveys > $MAX_SURVEYS) {
 		$_SESSION['error_msg'] = "The current number of surveys plus the selected ones are greater that the maximum of five (5) allowed.";
 		$goto = "procedures.php?m=addsurveys&id=$pe_id&sess_id=$sess_id";
 	} else {
 		// store to database
 		if($num_selected_surveys > 0) {
-			for($i = $num_current_surveys; $i < $MAX_SURVEYS; $i++) {
-				$relative_index = $i - $num_current_surveys;
-				$c_session_survey[] = "c_session" . $sess_id . "Survey" . ($relative_index + 1) . "='" . $arr_add_surveys[$relative_index] . "'";
+			// for($i = $num_current_surveys; $i < $MAX_SURVEYS; $i++) {
+		// 		$relative_index = $i - $num_current_surveys;
+		// 		$c_session_survey[] = "c_session" . $sess_id . "Survey" . ($relative_index + 1) . "='" . $arr_add_surveys[$relative_index] . "'";
+			for($i = 0; $i<$num_selected_surveys; $i++) {
+				//$relative_index = $i - $num_current_surveys;
+				$c_session_survey[] = "c_session" . $sess_id . "Survey" . ($i + 1) . "='" . $arr_add_surveys[$i] . "'";
 			}
 			echo $sql = "UPDATE $TBLPROCEPISODES
-            SET " . implode(",", $c_session_survey) . " 
-            WHERE id='$pe_id';";
+                                     SET " . implode(",", $c_session_survey) . " 
+                                     WHERE id='$pe_id';";
+logMsg($sql,"wel.log");
 		}
 		dbi_query($sql);
 		unset($_SESSION['arr_add_surveys'][$pe_id]);

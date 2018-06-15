@@ -3801,3 +3801,69 @@
 06/04/2018 13:17:13 - 71.72.32.10: In: add_survey_to_temp
 06/04/2018 13:17:13 - 71.72.32.10: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 1 - NUMSURV: 3
 06/04/2018 13:17:13 - 71.72.32.10: In: add to array
+06/07/2018 19:16:07 - 174.100.21.203: In: add_survey_to_temp
+06/07/2018 19:16:07 - 174.100.21.203: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 1
+06/07/2018 19:16:07 - 174.100.21.203: In: add to array
+06/07/2018 19:16:28 - 174.100.21.203: Procedures_a: updateproc 5abe4d575be08
+06/10/2018 15:04:57 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 15:04:57 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 2
+06/10/2018 15:04:57 - 68.107.189.223: In: add to array
+06/10/2018 15:05:07 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 15:05:07 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 3
+06/10/2018 15:05:07 - 68.107.189.223: In: add to array
+06/10/2018 15:05:24 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 15:05:24 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 4
+06/10/2018 15:05:24 - 68.107.189.223: In: add to array
+06/10/2018 17:32:34 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 17:32:34 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 2
+06/10/2018 17:32:34 - 68.107.189.223: In: add to array
+06/10/2018 20:34:27 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 20:34:27 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 5
+06/10/2018 20:34:27 - 68.107.189.223: In: too many surveys
+06/10/2018 20:56:51 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 20:56:51 - 68.107.189.223: MaxSurveys: 5 - PEID: 5aca22ebc26f5 - SESS: 1 - NUMSURV: 3
+06/10/2018 20:56:51 - 68.107.189.223: In: add to array
+06/10/2018 21:54:15 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 21:54:15 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 3
+06/10/2018 21:54:15 - 68.107.189.223: In: add to array
+06/10/2018 21:55:21 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 21:55:21 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 0
+06/10/2018 21:55:21 - 68.107.189.223: In: add to array
+06/10/2018 21:55:23 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 21:55:23 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 1
+06/10/2018 21:55:23 - 68.107.189.223: In: add to array
+06/10/2018 21:55:24 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 21:55:24 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 2
+06/10/2018 21:55:24 - 68.107.189.223: In: add to array
+06/10/2018 21:55:41 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+06/10/2018 21:56:01 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 21:56:01 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 3
+06/10/2018 21:56:01 - 68.107.189.223: In: add to array
+06/10/2018 23:36:50 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+06/10/2018 23:38:23 - 68.107.189.223: In: add_survey_to_temp
+06/10/2018 23:38:23 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 4
+06/10/2018 23:38:23 - 68.107.189.223: In: add to array
+06/11/2018 13:24:09 - 107.10.10.162: Procedures_a: update 5abe4d575be08
+06/11/2018 13:24:09 - 107.10.10.162: UPDATE app_fd_ver_procEpisodes
+           SET id='5abe4d575be08',
+               c_description='5 Session Test Delay 00:02:00',
+               c_procedureId='TEST5-DELAY02',
+               c_displayName='5 Session Test 2 Min Delay Short',
+               dateModified=NOW()
+           WHERE id='5abe4d575be08'
+06/12/2018 14:28:59 - 69.137.186.144: Procedures_a: add 
+06/12/2018 14:28:59 - 69.137.186.144: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b1fd8ab4253d',
+               c_description='',
+               c_procedureId='',
+               c_displayName='',
+               dateModified=NOW(),
+               dateCreated=NOW()
+06/12/2018 14:30:13 - 69.137.186.144: Procedures_a: update eb45e550-23b1f8f7-1bc2ad19-2b223900
+06/12/2018 14:30:13 - 69.137.186.144: UPDATE app_fd_ver_procEpisodes
+           SET id='eb45e550-23b1f8f7-1bc2ad19-2b223900',
+               c_description='Knee Arthroscopy - Shortened for Demo',
+               c_procedureId='OS03short',
+               c_displayName='Knee Arthroscopy - Shortened for Demo',
+               dateModified=NOW()
+           WHERE id='eb45e550-23b1f8f7-1bc2ad19-2b223900'

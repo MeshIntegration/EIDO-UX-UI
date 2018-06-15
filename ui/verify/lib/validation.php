@@ -63,11 +63,15 @@ function save_pt_info($id, $surname, $postalcode, $dob, $nhsnumber, $password, $
 {
    global $TBLPTEPISODES;
    
-   if ($preferenceset=="")
-      $mpd_str = "";
-   else
-      $mpd_str = ", c_mobilePageDone='YES' ";
-
+//   if ($preferenceset=="NO")
+//   {
+//       $mpd_str = "";
+//   }
+//   else
+//   {
+//       $mpd_str = ", c_mobilePageDone='YES' ";
+//   }
+//     $mpd_str  <-- removed from last SET line of query below, to replace: uncomment above if/else, add a comma after c_preferenceSet=... line and then add $mpd_str after the comma
    $sql = "UPDATE $TBLPTEPISODES
           SET c_surnameEntered=".escapeQuote($surname).",
               c_postalCodeEntered=".escapeQuote($postalcode).",
@@ -76,8 +80,9 @@ function save_pt_info($id, $surname, $postalcode, $dob, $nhsnumber, $password, $
               c_nhsNumberEntered=".escapeQuote($nhsnumber).",
               c_password=".escapeQuote($password).",
               c_mobileNumber=".escapeQuote($mobile).",
-              c_preferenceSet=".escapeQuote($preferenceset).",
-              c_preferredContactMethod=".escapeQuote($preferred)."$mpd_str           
+              c_preferredContactMethod=".escapeQuote($preferred).",
+	          c_preferenceSet=".escapeQuote($preferenceset)."
+	                   
           WHERE id='$id'";
    logMsg("Save Pt Info - Validation: $sql", "validation.log");
    dbi_query($sql);

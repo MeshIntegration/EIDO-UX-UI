@@ -86,7 +86,7 @@ $logfile = "validation.log";
                             <?php } ?>
 	<label>NHS Number
 	  <div class="input-group login">
-                <span class="input-group-label"><i class="fi-target"></i></span>
+                <span class="input-group-label"><i class="icon eido-icon-dot-circle-o"></i></span>
                <input class="input-group-field" type="text" name="c_nhsNumber" placeholder="Enter your number">
           </div>
 		  <p class="note text-left font-normal">You can find your NHS Number on a letter from your GP or hospital, or on a medical ID card.</p>

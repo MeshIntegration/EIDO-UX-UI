@@ -117,68 +117,30 @@ function get_surveys_by_proc($pe_id, $session_number)
 }
 
 // ***************************************************************
-function get_all_surveys()
+function get_all_surveys($search_term="")
 {
+   global $TBLSURVEYS;
+
    $logfile = "superuser.log";
    logMsg("-------------- Get_all_surveys ---------------",$logfile);
 
-   // this will pull from survey gizmo later
-   // SD : replaced : 02/03/2018
-   //$sql = "SELECT * FROM app_fd_ver_surveys`ORDER BY c_description";
-   //$GetQuery = dbi_query($sql);
-   //$arr_all_surveys=array();
-   //$i=0;
-   //while ($qryResult = $GetQuery->fetch_assoc())
-   //{
-   //   $arr_all_surveys[$i]=$qryResult;
-   //   $arr_all_surveys[$i]['added']=false; 
-   //   $i++;
-   //}
-
-   // setup the request for survey api
-   $URL_method = "https://restapi.surveygizmo.eu/v5/survey" ;
-   // we have to set the token in global variable
-   $requestParam = array(
-      'api_token' => '0187a230cc294375e907f8c3059656cadd920acce87b54eb42',
-      'api_token_secret' => 'A9tn4NkVvEPnU',
-   ) ;
-   $is_url_custom = 1 ;
-   $requestType = "GET" ;
-   $auth_type = "NONE" ;
-   $responseType = "OBJECT" ;
-   // call once to get the number of record
-   $data = getCurlResponse($URL_method, $requestParam, $is_url_custom, $requestType, $auth_type, $responseType);
-   $total_count = (int) $data->total_count;
-
-   if($total_count>$data->results_per_page){
-      // we need all surveys
-      $requestParam['resultsperpage'] = $total_count ;
-      $data = getCurlResponse($URL_method, $requestParam, $is_url_custom, $requestType, $auth_type, $responseType);
+   if ($search_term=="") $search_str = "1";
+   else $search_str="c_description LIKE '%".$search_term."%'";
+   $sql = "SELECT * 
+           FROM $TBLSURVEYS
+           WHERE $search_str
+           ORDER BY c_description";
+logMsg($sql,"wel.log");
+   $GetQuery = dbi_query($sql);
+   $arr_all_surveys=array();
+   $i=0;
+   while ($qryResult = $GetQuery->fetch_assoc())
+   {
+      $arr_all_surveys[$i]=$qryResult;
+      $arr_all_surveys[$i]['added']=false; 
+      $i++;
    }
-   
-   // all the survey list
-   $survey_result_list = $data->data;
-   foreach($survey_result_list as $survey_result){
-      $arr_all_surveys[] = array(
-         'id'=>$survey_result->id ,
-         'dateCreated'=>$survey_result->created_on,
-         'dateModified'=>$survey_result->modified_on,
-         'c_prePost'=>'Post',
-         'c_description'=>$survey_result->title,
-         'c_surveyNumber'=>$survey_result->id,
-         'createdBy'=>'',
-         'createdByName'=>'',
-         'modifiedBy'=>'',
-         'modifiedByName'=>'',
-         'added'=>false,
-      );
 
-      // sort column
-      $sort_c_description[] = $survey_result->title;
-   }
-   // sort survey by title
-   array_multisort($sort_c_description,SORT_ASC, $arr_all_surveys);
-   
    logMsg("Survey count: $i",$logfile);
    return $arr_all_surveys;
 }
@@ -190,7 +152,16 @@ function get_all_surveys()
 function get_survey_by_num($sn)
 {
    global $TBLSURVEYS;
-
+logMsg("survey number: $sn","wel.log");
+   $sql = "SELECT * FROM $TBLSURVEYS WHERE c_surveyNumber='$sn'";
+logMsg($sql, "wel.log");
+   $GetQuery = dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   return $qryResult;
+   //exit();
+   
+/* ********************************************************
+   //  below is the old way based on arrays - not used
    $logfile = "superuser.log";
    logMsg("-------------- GetSurveysByNum ---------------",$logfile);
 
@@ -210,6 +181,7 @@ function get_survey_by_num($sn)
       }
    }
    return $result;
+*************************  */
 }
 
 // *********************************************************************

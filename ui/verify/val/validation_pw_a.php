@@ -11,7 +11,6 @@ $arr_pt_info = $_SESSION['arr_pt_info'];
 $_SESSION['error_msg']="";
 
 $logfile = "validation.log";
-
 $password=$_POST['password'];
 $skip=get_query_string('skip');
 
@@ -25,9 +24,14 @@ if ($skip=="" && $password=="")
    exit();
 }
 
-if ($skip=="Y")
-    $_SESSION['entered_password']="";
-else
+if ($skip=="Y") {
+    $goto_url = get_survey_url($arr_pt_info);
+  //  $_SESSION = array();
+  //  session_destroy();
+    header("Location: $goto_url");
+    exit();
+}
+else {
     $_SESSION['entered_password']=$password;
 
 //Additions required to accomplish newly specified flow - Andrew 5/14/18
@@ -36,7 +40,7 @@ else
 
    logMsg("Mobile page done already - going to survey...",$logfile);
    // save the entered data to use in the request review section
-   save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $arr_pt_info['c_mobileNumber'], $arr_pt_info['c_preferred_ContactMethod'], $arr_pt_info['c_emailAddress']);
+   save_pt_info($arr_pt_info['id'], $arr_pt_info['c_surname'], $arr_pt_info['c_postalCode'], $arr_pt_info['c_dateOfBirth'], $arr_pt_info['c_nhsNumber'], $_SESSION['entered_password'], $arr_pt_info['c_mobileNumber'], $arr_pt_info['c_preferredContactMethod'], $arr_pt_info['c_emailAddress'], $arr_pt_info['c_preferenceSet']);
 
    // WE HAVE LIFT OFF - take them to the correct survey
    $goto_url = get_survey_url($arr_pt_info);

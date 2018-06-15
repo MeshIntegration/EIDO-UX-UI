@@ -58282,3 +58282,2043 @@
               FROM app_fd_ver_organizations o, dir_user u
               WHERE o.c_email=u.email
               AND u.id='5a8a6bb73d500'
+06/08/2018 15:28:18 - 34.230.78.27: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23000_gov_patientEpisode'
+06/08/2018 15:28:18 - 34.230.78.27: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/08/2018 15:28:18 - 34.230.78.27: Logo: mm1.png
+06/08/2018 15:28:18 - 34.230.78.27: Validation: bitlybot detected
+06/10/2018 22:57:24 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23000_gov_patientEpisode'
+06/10/2018 22:57:24 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:36:46 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23000_gov_patientEpisode'
+06/11/2018 05:36:46 - 68.107.189.223: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:37:00 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23000_gov_patientEpisode'
+06/11/2018 05:37:00 - 68.107.189.223: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:37:02 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23000_gov_patientEpisode'
+06/11/2018 05:37:02 - 68.107.189.223: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:39:15 - 34.230.78.27: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23002_gov_patientEpisode'
+06/11/2018 05:39:15 - 34.230.78.27: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:39:15 - 34.230.78.27: Logo: mm1.png
+06/11/2018 05:39:15 - 34.230.78.27: Validation: bitlybot detected
+06/11/2018 05:42:37 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23002_gov_patientEpisode'
+06/11/2018 05:42:37 - 68.107.189.223: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:54:34 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23002_gov_patientEpisode'
+06/11/2018 05:54:34 - 68.107.189.223: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:54:55 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23002_gov_patientEpisode'
+06/11/2018 05:54:55 - 68.107.189.223: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:55:16 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23002_gov_patientEpisode'
+06/11/2018 05:55:16 - 68.107.189.223: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:55:23 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23002_gov_patientEpisode'
+06/11/2018 05:55:23 - 68.107.189.223: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 05:55:24 - 68.107.189.223: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23002_gov_patientEpisode'
+06/11/2018 05:55:24 - 68.107.189.223: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 06:10:04 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23002_gov_patientEpisode'
+06/11/2018 06:10:04 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 09:52:34 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22992_gov_patientEpisode'
+06/11/2018 09:52:34 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 10:23:10 - 34.230.78.27: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 10:23:10 - 34.230.78.27: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 10:23:10 - 34.230.78.27: Logo: mm1.png
+06/11/2018 10:23:10 - 34.230.78.27: Validation: bitlybot detected
+06/11/2018 10:24:11 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 10:24:11 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 10:24:11 - 69.137.186.144: Logo: mm1.png
+06/11/2018 10:24:11 - 69.137.186.144: validation: DB pw: 
+06/11/2018 10:24:11 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 10:24:30 - 185.20.6.121: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 10:24:30 - 185.20.6.121: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 10:24:30 - 185.20.6.121: Logo: mm1.png
+06/11/2018 10:24:30 - 185.20.6.121: validation: DB pw: 
+06/11/2018 10:24:30 - 185.20.6.121: validation: Session login_failed: 
+06/11/2018 10:24:50 - 69.137.186.144: Surname: Jong Un Postal Code: LE11UT
+06/11/2018 10:26:11 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/11/2018 10:26:11 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jong Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 10:26:23 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 10:26:23 - 69.137.186.144: validation_review: Surname Entered: Jong Un - DB: Jong Un
+06/11/2018 10:26:23 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 10:26:23 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/11/2018 10:26:23 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/11/2018 10:26:23 - 69.137.186.144: validation_review: Error Count: 0
+06/11/2018 10:26:23 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jong Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 10:26:23 - 69.137.186.144: Going to mobile.php...
+06/11/2018 10:26:23 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 10:28:07 - 69.137.186.144: mobile:   email: ajm@mm.st Preferred: EMAIL PreferenceSet: 
+06/11/2018 10:28:07 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jong Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 10:28:47 - 69.137.186.144: Validation_Mobile page: 
+06/11/2018 10:28:55 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = ''
+06/11/2018 10:28:55 - 69.137.186.144: validation_review: Surname Entered:  - DB: 
+06/11/2018 10:28:55 - 69.137.186.144: validation_review: PostalCode Entered:  - DB: 
+06/11/2018 10:28:55 - 69.137.186.144: validation_review: DOB Entered:  - DB: 
+06/11/2018 10:28:55 - 69.137.186.144: validation_review: NHS Entered:  - DB: 
+06/11/2018 10:28:55 - 69.137.186.144: validation_review: Error Count: 0
+06/11/2018 10:28:55 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='',
+              c_postalCodeEntered='',
+              c_dateOfBirthEntered='',
+              c_emailAddress='',
+              c_nhsNumberEntered='',
+              c_password='',
+              c_mobileNumber='',
+              c_preferenceSet='',
+              c_preferredContactMethod=''           
+          WHERE id=''
+06/11/2018 10:28:55 - 69.137.186.144: Going to mobile.php...
+06/11/2018 10:28:55 - 69.137.186.144: Validation_Mobile page: 
+06/11/2018 10:52:36 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 10:52:36 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 10:53:16 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 10:53:16 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 10:53:20 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22998_gov_patientEpisode'
+06/11/2018 10:53:20 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 10:53:27 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22998_gov_patientEpisode'
+06/11/2018 10:53:27 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 10:53:32 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22998_gov_patientEpisode'
+06/11/2018 10:53:32 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 10:53:55 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22998_gov_patientEpisode'
+06/11/2018 10:53:55 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 10:55:28 - 54.86.37.102: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23006_gov_patientEpisode'
+06/11/2018 10:55:28 - 54.86.37.102: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 10:55:28 - 54.86.37.102: Logo: 
+06/11/2018 10:55:28 - 54.86.37.102: Validation: bitlybot detected
+06/11/2018 10:56:13 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23006_gov_patientEpisode'
+06/11/2018 10:56:13 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 10:56:13 - 174.100.21.203: Logo: 
+06/11/2018 10:56:13 - 174.100.21.203: validation: DB pw: 
+06/11/2018 10:56:13 - 174.100.21.203: validation: Session login_failed: 
+06/11/2018 10:56:23 - 174.100.21.203: Surname: Tester Postal Code: 44311
+06/11/2018 10:56:32 - 185.20.6.84: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23006_gov_patientEpisode'
+06/11/2018 10:56:32 - 185.20.6.84: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 10:56:32 - 185.20.6.84: Logo: 
+06/11/2018 10:56:32 - 185.20.6.84: validation: DB pw: 
+06/11/2018 10:56:32 - 185.20.6.84: validation: Session login_failed: 
+06/11/2018 10:56:51 - 174.100.21.203: day: 20  month: 01 year: 1990 
+06/11/2018 10:56:51 - 174.100.21.203: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Tester',
+              c_postalCodeEntered='44311',
+              c_dateOfBirthEntered='20/01/1990',
+              c_nhsNumberEntered='1212121212'
+          WHERE id='23006_gov_patientEpisode'
+06/11/2018 10:56:59 - 174.100.21.203: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23006_gov_patientEpisode'
+06/11/2018 10:56:59 - 174.100.21.203: validation_review: Surname Entered: Tester - DB: Tester
+06/11/2018 10:56:59 - 174.100.21.203: validation_review: PostalCode Entered: 44311 - DB: 44311
+06/11/2018 10:56:59 - 174.100.21.203: validation_review: DOB Entered: 20/01/1990 - DB: 22/11/1990
+06/11/2018 10:56:59 - 174.100.21.203: DOB Error
+06/11/2018 10:56:59 - 174.100.21.203: validation_review: NHS Entered: 1212121212 - DB: 1212121212
+06/11/2018 10:56:59 - 174.100.21.203: validation_review: Error Count: 1
+06/11/2018 10:56:59 - 174.100.21.203: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Tester',
+              c_postalCodeEntered='44311',
+              c_dateOfBirthEntered='20/01/1990',
+              c_emailAddress='bvasu@meshintegration.com',
+              c_nhsNumberEntered='1212121212',
+              c_password='',
+              c_mobileNumber='8775245005',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23006_gov_patientEpisode'
+06/11/2018 10:56:59 - 174.100.21.203: Going to mobile.php...
+06/11/2018 10:56:59 - 174.100.21.203: Validation_Mobile page: 23006_gov_patientEpisode
+06/11/2018 10:57:03 - 174.100.21.203: mobile: 8775245005  email: bvasu@meshintegration.com Preferred: EMAIL PreferenceSet: 
+06/11/2018 10:57:03 - 174.100.21.203: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Tester',
+              c_postalCodeEntered='44311',
+              c_dateOfBirthEntered='20/01/1990',
+              c_emailAddress='bvasu@meshintegration.com',
+              c_nhsNumberEntered='1212121212',
+              c_password='',
+              c_mobileNumber='8775245005',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23006_gov_patientEpisode'
+06/11/2018 10:57:54 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23006_gov_patientEpisode'
+06/11/2018 10:57:54 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 10:59:25 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23006_gov_patientEpisode'
+06/11/2018 10:59:25 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 10:59:42 - 174.100.21.203: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23006_gov_patientEpisode'
+06/11/2018 10:59:42 - 174.100.21.203: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 11:16:48 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 11:16:48 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 11:16:48 - 69.137.186.144: Logo: mm1.png
+06/11/2018 11:16:48 - 69.137.186.144: validation: DB pw: 
+06/11/2018 11:16:48 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 11:16:58 - 185.20.6.14: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 11:16:58 - 185.20.6.14: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 11:16:58 - 185.20.6.14: Logo: mm1.png
+06/11/2018 11:16:58 - 185.20.6.14: validation: DB pw: 
+06/11/2018 11:16:58 - 185.20.6.14: validation: Session login_failed: 
+06/11/2018 11:17:01 - 69.137.186.144: Surname: Jong Un Postal Code: LE11UT
+06/11/2018 11:18:14 - 69.137.186.144: day:   month:  year:  
+06/11/2018 11:18:18 - 69.137.186.144: day:   month:  year:  
+06/11/2018 11:18:33 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 11:18:33 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 11:18:33 - 69.137.186.144: Logo: mm1.png
+06/11/2018 11:18:33 - 69.137.186.144: validation: DB pw: 
+06/11/2018 11:18:33 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 11:26:32 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 11:26:32 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 11:26:32 - 69.137.186.144: Logo: mm1.png
+06/11/2018 11:26:32 - 69.137.186.144: validation: DB pw: 
+06/11/2018 11:26:32 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 11:26:56 - 69.137.186.144: Surname: Jong Un Postal Code: LE11UT
+06/11/2018 11:27:25 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/11/2018 11:27:25 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jong Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 11:27:25 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 11:27:25 - 69.137.186.144: validation_review: Surname Entered: Jong Un - DB: Jong Un
+06/11/2018 11:27:25 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 11:27:25 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/11/2018 11:27:25 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/11/2018 11:27:25 - 69.137.186.144: validation_review: Error Count: 0
+06/11/2018 11:27:26 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jong Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 11:27:26 - 69.137.186.144: Going to mobile.php...
+06/11/2018 11:27:26 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 11:33:32 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 11:33:58 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 11:35:11 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 12:12:52 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 12:15:33 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 12:23:50 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 12:32:38 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 12:32:38 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 12:32:38 - 69.137.186.144: Logo: mm1.png
+06/11/2018 12:32:38 - 69.137.186.144: validation: DB pw: 
+06/11/2018 12:32:38 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 12:32:53 - 69.137.186.144: Surname: Jung Un Postal Code: LE11UT
+06/11/2018 12:33:13 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/11/2018 12:33:13 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 12:33:13 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 12:33:13 - 69.137.186.144: validation_review: Surname Entered: Jung Un - DB: Jong Un
+06/11/2018 12:33:13 - 69.137.186.144: Surname Error
+06/11/2018 12:33:13 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 12:33:13 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/11/2018 12:33:13 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/11/2018 12:33:13 - 69.137.186.144: validation_review: Error Count: 1
+06/11/2018 12:33:13 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 12:33:13 - 69.137.186.144: Going to mobile.php...
+06/11/2018 12:33:14 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 12:40:08 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 13:01:36 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 13:02:10 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:02:10 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 13:02:10 - 69.137.186.144: Logo: mm1.png
+06/11/2018 13:02:10 - 69.137.186.144: validation: DB pw: 
+06/11/2018 13:02:10 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 13:02:22 - 69.137.186.144: Surname: Jung Un Postal Code: LE11UT
+06/11/2018 13:02:41 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/11/2018 13:02:41 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:02:41 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 13:02:41 - 69.137.186.144: validation_review: Surname Entered: Jung Un - DB: Jong Un
+06/11/2018 13:02:41 - 69.137.186.144: Surname Error
+06/11/2018 13:02:41 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 13:02:41 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/11/2018 13:02:41 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/11/2018 13:02:41 - 69.137.186.144: validation_review: Error Count: 1
+06/11/2018 13:02:42 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:02:42 - 69.137.186.144: Going to mobile.php...
+06/11/2018 13:02:42 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 13:07:33 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:07:33 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 13:07:33 - 69.137.186.144: Logo: mm1.png
+06/11/2018 13:07:33 - 69.137.186.144: validation: DB pw: 
+06/11/2018 13:07:33 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 13:07:43 - 69.137.186.144: Surname: Jung Un Postal Code: LE11UT
+06/11/2018 13:08:00 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/11/2018 13:08:00 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:08:00 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 13:08:00 - 69.137.186.144: validation_review: Surname Entered: Jung Un - DB: Jong Un
+06/11/2018 13:08:00 - 69.137.186.144: Surname Error
+06/11/2018 13:08:00 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 13:08:00 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/11/2018 13:08:00 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/11/2018 13:08:00 - 69.137.186.144: validation_review: Error Count: 1
+06/11/2018 13:08:00 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:08:00 - 69.137.186.144: Going to mobile.php...
+06/11/2018 13:08:01 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 13:08:09 - 69.137.186.144: mobile: 000000000000  email: ajm@mm.st Preferred: EMAIL PreferenceSet: 
+06/11/2018 13:08:09 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:12:57 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:12:57 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 13:12:57 - 69.137.186.144: Logo: mm1.png
+06/11/2018 13:12:57 - 69.137.186.144: validation: DB pw: 
+06/11/2018 13:12:57 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 13:13:11 - 69.137.186.144: Surname: Jung Un Postal Code: LE11UT
+06/11/2018 13:13:32 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/11/2018 13:13:32 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:13:32 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 13:13:32 - 69.137.186.144: validation_review: Surname Entered: Jung Un - DB: Jong Un
+06/11/2018 13:13:32 - 69.137.186.144: Surname Error
+06/11/2018 13:13:32 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 13:13:32 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/11/2018 13:13:32 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/11/2018 13:13:32 - 69.137.186.144: validation_review: Error Count: 1
+06/11/2018 13:13:32 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:13:32 - 69.137.186.144: Going to mobile.php...
+06/11/2018 13:13:33 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 13:16:25 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/11/2018 13:16:25 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:16:25 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 13:16:25 - 69.137.186.144: validation_review: Surname Entered: Jung Un - DB: Jong Un
+06/11/2018 13:16:25 - 69.137.186.144: Surname Error
+06/11/2018 13:16:25 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 13:16:25 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/11/2018 13:16:25 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/11/2018 13:16:25 - 69.137.186.144: validation_review: Error Count: 1
+06/11/2018 13:16:25 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:16:25 - 69.137.186.144: Going to mobile.php...
+06/11/2018 13:16:25 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 13:16:39 - 69.137.186.144: mobile: 000000000000  email: ajm@mm.st Preferred: EMAIL PreferenceSet: 
+06/11/2018 13:16:39 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:19:47 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:19:47 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 13:19:47 - 69.137.186.144: Logo: mm1.png
+06/11/2018 13:19:47 - 69.137.186.144: validation: DB pw: 
+06/11/2018 13:19:47 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 13:19:59 - 69.137.186.144: Surname: Jung Un Postal Code: LE11UT
+06/11/2018 13:20:18 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/11/2018 13:20:18 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:20:18 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 13:20:18 - 69.137.186.144: validation_review: Surname Entered: Jung Un - DB: Jong Un
+06/11/2018 13:20:18 - 69.137.186.144: Surname Error
+06/11/2018 13:20:18 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 13:20:18 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/11/2018 13:20:18 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/11/2018 13:20:18 - 69.137.186.144: validation_review: Error Count: 1
+06/11/2018 13:20:18 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:20:18 - 69.137.186.144: Going to mobile.php...
+06/11/2018 13:20:19 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 13:20:25 - 69.137.186.144: mobile: 0000000000000  email: ajm@mm.st Preferred: EMAIL PreferenceSet: 
+06/11/2018 13:20:25 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='0000000000000',
+              c_preferenceSet='',
+              c_preferredContactMethod='EMAIL'           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:32:01 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:32:01 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 13:32:01 - 69.137.186.144: Logo: mm1.png
+06/11/2018 13:32:01 - 69.137.186.144: validation: DB pw: 
+06/11/2018 13:32:01 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 13:32:15 - 69.137.186.144: Surname: Jung Un Postal Code: LE11UT
+06/11/2018 13:32:34 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/11/2018 13:32:34 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:32:34 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 13:32:34 - 69.137.186.144: validation_review: Surname Entered: Jung Un - DB: Jong Un
+06/11/2018 13:32:34 - 69.137.186.144: Surname Error
+06/11/2018 13:32:34 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 13:32:34 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/11/2018 13:32:34 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/11/2018 13:32:34 - 69.137.186.144: validation_review: Error Count: 1
+06/11/2018 13:32:34 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='0000000000000',
+              c_preferredContactMethod='EMAIL',
+	      c_preferenceSet='',           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:32:34 - 69.137.186.144: Going to mobile.php...
+06/11/2018 13:32:34 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/11/2018 13:32:37 - 54.86.37.102: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23010_gov_patientEpisode'
+06/11/2018 13:32:37 - 54.86.37.102: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 13:32:37 - 54.86.37.102: Logo: 
+06/11/2018 13:32:37 - 54.86.37.102: Validation: bitlybot detected
+06/11/2018 13:32:40 - 69.137.186.144: mobile: 000000000000000  email: ajm@mm.st Preferred: EMAIL PreferenceSet: 
+06/11/2018 13:32:40 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000000',
+              c_preferredContactMethod='EMAIL',
+	      c_preferenceSet='',           
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:33:07 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23010_gov_patientEpisode'
+06/11/2018 13:33:07 - 107.10.10.162: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 13:33:07 - 107.10.10.162: Logo: 
+06/11/2018 13:33:07 - 107.10.10.162: validation: DB pw: 
+06/11/2018 13:33:07 - 107.10.10.162: validation: Session login_failed: 
+06/11/2018 13:33:27 - 185.20.6.141: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23010_gov_patientEpisode'
+06/11/2018 13:33:27 - 185.20.6.141: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 13:33:27 - 185.20.6.141: Logo: 
+06/11/2018 13:33:27 - 185.20.6.141: validation: DB pw: 
+06/11/2018 13:33:27 - 185.20.6.141: validation: Session login_failed: 
+06/11/2018 13:36:54 - 107.10.10.162: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23010_gov_patientEpisode'
+06/11/2018 13:36:54 - 107.10.10.162: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/11/2018 13:36:54 - 107.10.10.162: Logo: 
+06/11/2018 13:36:54 - 107.10.10.162: validation: DB pw: 
+06/11/2018 13:36:54 - 107.10.10.162: validation: Session login_failed: 
+06/11/2018 13:37:03 - 107.10.10.162: Surname: Durden Postal Code: NG12 5HP
+06/11/2018 13:39:20 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:39:20 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/11/2018 13:39:20 - 69.137.186.144: Logo: mm1.png
+06/11/2018 13:39:20 - 69.137.186.144: validation: DB pw: 
+06/11/2018 13:39:20 - 69.137.186.144: validation: Session login_failed: 
+06/11/2018 13:39:34 - 69.137.186.144: Surname: asd Postal Code: LE11UT
+06/11/2018 13:39:48 - 69.137.186.144: day: 01  month: 01 year: 2018 
+06/11/2018 13:39:48 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='asd',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/2018',
+              c_nhsNumberEntered='1234566543'
+          WHERE id='23004_gov_patientEpisode'
+06/11/2018 13:39:49 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/11/2018 13:39:49 - 69.137.186.144: validation_review: Surname Entered: asd - DB: Jong Un
+06/11/2018 13:39:49 - 69.137.186.144: Surname Error
+06/11/2018 13:39:49 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/11/2018 13:39:49 - 69.137.186.144: validation_review: DOB Entered: 01/01/2018 - DB: 01/01/1990
+06/11/2018 13:39:49 - 69.137.186.144: DOB Error
+06/11/2018 13:39:49 - 69.137.186.144: validation_review: NHS Entered: 1234566543 - DB: 0000000000
+06/11/2018 13:39:49 - 69.137.186.144: NHS Error
+06/11/2018 13:39:49 - 69.137.186.144: validation_review: Error Count: 3
+06/11/2018 13:39:49 - 69.137.186.144: Date parts: 01  01  2018
+06/12/2018 13:58:22 - 54.86.37.102: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23014_gov_patientEpisode'
+06/12/2018 13:58:22 - 54.86.37.102: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/12/2018 13:58:22 - 54.86.37.102: Logo: mm1.png
+06/12/2018 13:58:22 - 54.86.37.102: Validation: bitlybot detected
+06/12/2018 14:02:02 - 34.230.78.27: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23018_gov_patientEpisode'
+06/12/2018 14:02:02 - 34.230.78.27: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/12/2018 14:02:02 - 34.230.78.27: Logo: mm1.png
+06/12/2018 14:02:02 - 34.230.78.27: Validation: bitlybot detected
+06/12/2018 14:42:45 - 184.56.244.84: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23018_gov_patientEpisode'
+06/12/2018 14:42:45 - 184.56.244.84: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/12/2018 18:16:10 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/12/2018 18:16:10 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/12/2018 18:16:10 - 69.137.186.144: Logo: mm1.png
+06/12/2018 18:16:10 - 69.137.186.144: validation: DB pw: 
+06/12/2018 18:16:10 - 69.137.186.144: validation: Session login_failed: 
+06/12/2018 18:16:26 - 185.20.6.14: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/12/2018 18:16:26 - 185.20.6.14: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/12/2018 18:16:26 - 185.20.6.14: Logo: mm1.png
+06/12/2018 18:16:26 - 185.20.6.14: validation: DB pw: 
+06/12/2018 18:16:26 - 185.20.6.14: validation: Session login_failed: 
+06/12/2018 18:16:50 - 69.137.186.144: Surname: Jung Un Postal Code: LE11UT
+06/12/2018 18:17:27 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/12/2018 18:17:27 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23004_gov_patientEpisode'
+06/12/2018 18:17:27 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23004_gov_patientEpisode'
+06/12/2018 18:17:27 - 69.137.186.144: validation_review: Surname Entered: Jung Un - DB: Jong Un
+06/12/2018 18:17:27 - 69.137.186.144: Surname Error
+06/12/2018 18:17:27 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/12/2018 18:17:27 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/12/2018 18:17:27 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/12/2018 18:17:27 - 69.137.186.144: validation_review: Error Count: 1
+06/12/2018 18:17:27 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='0000000000000',
+              c_preferredContactMethod='EMAIL',
+	      c_preferenceSet='',           
+          WHERE id='23004_gov_patientEpisode'
+06/12/2018 18:17:27 - 69.137.186.144: Going to mobile.php...
+06/12/2018 18:17:28 - 69.137.186.144: Validation_Mobile page: 23004_gov_patientEpisode
+06/12/2018 18:17:58 - 69.137.186.144: mobile: 0000000000000  email: ajm@mm.st Preferred: EMAIL PreferenceSet: 
+06/12/2018 18:17:58 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Jung Un',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='0000000000000',
+              c_preferredContactMethod='EMAIL',
+	      c_preferenceSet='',           
+          WHERE id='23004_gov_patientEpisode'
+06/13/2018 21:53:07 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 21:57:33 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 22:02:24 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 22:04:40 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 22:05:47 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 22:07:07 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 22:15:21 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 22:16:16 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 22:18:25 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 22:18:45 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 22:27:56 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 23:27:04 - 69.137.186.144: Validation_Mobile page: 
+06/13/2018 23:29:27 - 34.230.78.27: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:29:27 - 34.230.78.27: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/13/2018 23:29:27 - 34.230.78.27: Logo: mm1.png
+06/13/2018 23:29:27 - 34.230.78.27: Validation: bitlybot detected
+06/13/2018 23:29:50 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:29:50 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/13/2018 23:29:50 - 69.137.186.144: Logo: mm1.png
+06/13/2018 23:29:50 - 69.137.186.144: validation: DB pw: 
+06/13/2018 23:29:50 - 69.137.186.144: validation: Session login_failed: 
+06/13/2018 23:30:02 - 69.137.186.144: Surname: E Postal Code: LE11UT
+06/13/2018 23:30:10 - 185.20.6.141: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:30:10 - 185.20.6.141: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/13/2018 23:30:10 - 185.20.6.141: Logo: mm1.png
+06/13/2018 23:30:10 - 185.20.6.141: validation: DB pw: 
+06/13/2018 23:30:10 - 185.20.6.141: validation: Session login_failed: 
+06/13/2018 23:30:39 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/13/2018 23:30:39 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='9876598765'
+          WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:31:11 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23022_gov_patientEpisode'
+06/13/2018 23:31:11 - 69.137.186.144: validation_review: Surname Entered: E - DB: E
+06/13/2018 23:31:11 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/13/2018 23:31:11 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/13/2018 23:31:11 - 69.137.186.144: validation_review: NHS Entered: 9876598765 - DB: 9876598765
+06/13/2018 23:31:11 - 69.137.186.144: validation_review: Error Count: 0
+06/13/2018 23:31:11 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876598765',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='',
+	          , c_mobilePageDone='YES'            
+          WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:31:11 - 69.137.186.144: Going to mobile.php...
+06/13/2018 23:31:11 - 69.137.186.144: Validation_Mobile page: 23022_gov_patientEpisode
+06/13/2018 23:31:34 - 69.137.186.144: mobile: 121621346176  email: ajm@mm.st Preferred: EMAIL PreferenceSet: YES
+06/13/2018 23:31:34 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876598765',
+              c_password='',
+              c_mobileNumber='121621346176',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='YES',
+	          , c_mobilePageDone='YES'            
+          WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:48:08 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:48:08 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/13/2018 23:48:08 - 69.137.186.144: Logo: mm1.png
+06/13/2018 23:48:08 - 69.137.186.144: validation: DB pw: 
+06/13/2018 23:48:08 - 69.137.186.144: validation: Session login_failed: 
+06/13/2018 23:48:18 - 185.20.6.14: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:48:18 - 185.20.6.14: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/13/2018 23:48:18 - 185.20.6.14: Logo: mm1.png
+06/13/2018 23:48:18 - 185.20.6.14: validation: DB pw: 
+06/13/2018 23:48:18 - 185.20.6.14: validation: Session login_failed: 
+06/13/2018 23:48:19 - 69.137.186.144: Surname: E Postal Code: LE11UT
+06/13/2018 23:48:35 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/13/2018 23:48:35 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='9876598765'
+          WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:48:35 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23022_gov_patientEpisode'
+06/13/2018 23:48:35 - 69.137.186.144: validation_review: Surname Entered: E - DB: E
+06/13/2018 23:48:35 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/13/2018 23:48:35 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/13/2018 23:48:35 - 69.137.186.144: validation_review: NHS Entered: 9876598765 - DB: 9876598765
+06/13/2018 23:48:35 - 69.137.186.144: validation_review: Error Count: 0
+06/13/2018 23:48:35 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876598765',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='',
+	                   
+          WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:48:35 - 69.137.186.144: Going to mobile.php...
+06/13/2018 23:48:36 - 69.137.186.144: Validation_Mobile page: 23022_gov_patientEpisode
+06/13/2018 23:48:46 - 69.137.186.144: mobile: 121621346176  email: ajm@mm.st Preferred: EMAIL PreferenceSet: 
+06/13/2018 23:48:46 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876598765',
+              c_password='',
+              c_mobileNumber='121621346176',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='',
+	                   
+          WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:51:21 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:51:21 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/13/2018 23:51:21 - 69.137.186.144: Logo: mm1.png
+06/13/2018 23:51:21 - 69.137.186.144: validation: DB pw: 
+06/13/2018 23:51:21 - 69.137.186.144: validation: Session login_failed: 
+06/13/2018 23:51:29 - 69.137.186.144: Surname: E Postal Code: LE11UT
+06/13/2018 23:51:42 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/13/2018 23:51:42 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='9876598765'
+          WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:51:42 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23022_gov_patientEpisode'
+06/13/2018 23:51:42 - 69.137.186.144: validation_review: Surname Entered: E - DB: E
+06/13/2018 23:51:42 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/13/2018 23:51:42 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/13/2018 23:51:42 - 69.137.186.144: validation_review: NHS Entered: 9876598765 - DB: 9876598765
+06/13/2018 23:51:42 - 69.137.186.144: validation_review: Error Count: 0
+06/13/2018 23:51:42 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876598765',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='',
+	                   
+          WHERE id='23022_gov_patientEpisode'
+06/13/2018 23:51:42 - 69.137.186.144: Going to mobile.php...
+06/13/2018 23:51:42 - 69.137.186.144: Validation_Mobile page: 23022_gov_patientEpisode
+06/13/2018 23:51:54 - 69.137.186.144: mobile: 121621346176  email: ajm@mm.st Preferred: EMAIL PreferenceSet: 
+06/13/2018 23:51:54 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876598765',
+              c_password='',
+              c_mobileNumber='121621346176',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='',
+	                   
+          WHERE id='23022_gov_patientEpisode'
+06/14/2018 00:04:43 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/14/2018 00:04:43 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 00:04:43 - 69.137.186.144: Logo: mm1.png
+06/14/2018 00:04:43 - 69.137.186.144: validation: DB pw: 
+06/14/2018 00:04:43 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 00:04:52 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/14/2018 00:04:52 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 00:04:52 - 69.137.186.144: Logo: mm1.png
+06/14/2018 00:04:52 - 69.137.186.144: validation: DB pw: 
+06/14/2018 00:04:52 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 00:05:02 - 69.137.186.144: Surname: E Postal Code: LE11UT
+06/14/2018 00:05:19 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 00:05:19 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='LE11UT'
+          WHERE id='23022_gov_patientEpisode'
+06/14/2018 00:05:19 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23022_gov_patientEpisode'
+06/14/2018 00:05:19 - 69.137.186.144: validation_review: Surname Entered: E - DB: E
+06/14/2018 00:05:19 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 00:05:19 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 00:05:19 - 69.137.186.144: validation_review: NHS Entered: LE11UT - DB: 9876598765
+06/14/2018 00:05:19 - 69.137.186.144: NHS Error
+06/14/2018 00:05:19 - 69.137.186.144: validation_review: Error Count: 1
+06/14/2018 00:05:19 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='LE11UT',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23022_gov_patientEpisode'
+06/14/2018 00:05:19 - 69.137.186.144: Going to mobile.php...
+06/14/2018 00:05:19 - 69.137.186.144: Validation_Mobile page: 23022_gov_patientEpisode
+06/14/2018 00:05:37 - 69.137.186.144: mobile: 121621346176  email: ajm@mm.st Preferred: MOBILE preferenceSet: YES
+06/14/2018 00:05:37 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='LE11UT',
+              c_password='',
+              c_mobileNumber='121621346176',
+              c_preferredContactMethod='MOBILE',
+	          c_preferenceSet='YES'
+	                   
+          WHERE id='23022_gov_patientEpisode'
+06/14/2018 00:08:44 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/14/2018 00:08:44 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 00:08:44 - 69.137.186.144: Logo: mm1.png
+06/14/2018 00:08:44 - 69.137.186.144: validation: DB pw: 
+06/14/2018 00:08:44 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 00:08:54 - 69.137.186.144: Surname: E Postal Code: LE11UT
+06/14/2018 00:09:08 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 00:09:08 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='9876598765'
+          WHERE id='23022_gov_patientEpisode'
+06/14/2018 00:09:08 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23022_gov_patientEpisode'
+06/14/2018 00:09:08 - 69.137.186.144: validation_review: Surname Entered: E - DB: E
+06/14/2018 00:09:08 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 00:09:08 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 00:09:08 - 69.137.186.144: validation_review: NHS Entered: 9876598765 - DB: 9876598765
+06/14/2018 00:09:08 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 00:09:08 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='E',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876598765',
+              c_password='',
+              c_mobileNumber='121621346176',
+              c_preferredContactMethod='MOBILE',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23022_gov_patientEpisode'
+06/14/2018 00:09:08 - 69.137.186.144: Going to mobile.php...
+06/14/2018 00:46:57 - 54.210.113.231: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:46:57 - 54.210.113.231: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 00:46:57 - 54.210.113.231: Logo: mm1.png
+06/14/2018 00:46:57 - 54.210.113.231: Validation: bitlybot detected
+06/14/2018 00:47:14 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:47:14 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 00:47:14 - 69.137.186.144: Logo: mm1.png
+06/14/2018 00:47:14 - 69.137.186.144: validation: DB pw: 
+06/14/2018 00:47:14 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 00:47:29 - 69.137.186.144: Surname: Fareed Postal Code: LE11UT
+06/14/2018 00:47:34 - 185.20.6.84: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:47:34 - 185.20.6.84: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 00:47:34 - 185.20.6.84: Logo: mm1.png
+06/14/2018 00:47:34 - 185.20.6.84: validation: DB pw: 
+06/14/2018 00:47:34 - 185.20.6.84: validation: Session login_failed: 
+06/14/2018 00:47:55 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 00:47:55 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Fareed',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='9876543210'
+          WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:47:58 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23026_gov_patientEpisode'
+06/14/2018 00:47:58 - 69.137.186.144: validation_review: Surname Entered: Fareed - DB: Fareed
+06/14/2018 00:47:58 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 00:47:58 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 00:47:58 - 69.137.186.144: validation_review: NHS Entered: 9876543210 - DB: 9876543210
+06/14/2018 00:47:58 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 00:47:58 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Fareed',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876543210',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:47:58 - 69.137.186.144: Going to mobile.php...
+06/14/2018 00:47:59 - 69.137.186.144: Validation_Mobile page: 23026_gov_patientEpisode
+06/14/2018 00:48:42 - 69.137.186.144: mobile: 121621346176  email: ajm@mm.st Preferred: EMAIL preferenceSet: YES
+06/14/2018 00:48:42 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Fareed',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876543210',
+              c_password='',
+              c_mobileNumber='121621346176',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='YES'
+	                   
+          WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:48:58 - 69.137.186.144: password_a: Entered PW:  - Skip: Y
+06/14/2018 00:48:58 - 69.137.186.144: Mobile page done already - going to survey...
+06/14/2018 00:48:58 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Fareed',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876543210',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:50:03 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:50:03 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 00:50:23 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:50:23 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 00:51:00 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:51:00 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 00:51:00 - 69.137.186.144: Logo: mm1.png
+06/14/2018 00:51:00 - 69.137.186.144: validation: DB pw: 
+06/14/2018 00:51:00 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 00:51:23 - 69.137.186.144: Surname: Fareed Postal Code: LE11UT
+06/14/2018 00:51:41 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 00:51:41 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Fareed',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='9876543210'
+          WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:51:42 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23026_gov_patientEpisode'
+06/14/2018 00:51:42 - 69.137.186.144: validation_review: Surname Entered: Fareed - DB: Fareed
+06/14/2018 00:51:42 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 00:51:42 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 00:51:42 - 69.137.186.144: validation_review: NHS Entered: 9876543210 - DB: 9876543210
+06/14/2018 00:51:42 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 00:51:42 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Fareed',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876543210',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23026_gov_patientEpisode'
+06/14/2018 00:51:42 - 69.137.186.144: Going to mobile.php...
+06/14/2018 00:51:42 - 69.137.186.144: Validation_Mobile page: 23026_gov_patientEpisode
+06/14/2018 01:15:12 - 54.210.113.231: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:15:12 - 54.210.113.231: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 01:15:12 - 54.210.113.231: Logo: mm1.png
+06/14/2018 01:15:12 - 54.210.113.231: Validation: bitlybot detected
+06/14/2018 01:15:33 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23026_gov_patientEpisode'
+06/14/2018 01:15:33 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 01:15:33 - 69.137.186.144: Logo: mm1.png
+06/14/2018 01:15:33 - 69.137.186.144: validation: DB pw: 
+06/14/2018 01:15:33 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 01:15:43 - 185.20.6.84: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23026_gov_patientEpisode'
+06/14/2018 01:15:43 - 185.20.6.84: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 01:15:43 - 185.20.6.84: Logo: mm1.png
+06/14/2018 01:15:43 - 185.20.6.84: validation: DB pw: 
+06/14/2018 01:15:43 - 185.20.6.84: validation: Session login_failed: 
+06/14/2018 01:15:52 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:15:52 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 01:15:52 - 69.137.186.144: Logo: mm1.png
+06/14/2018 01:15:52 - 69.137.186.144: validation: DB pw: 
+06/14/2018 01:15:52 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 01:16:02 - 69.137.186.144: Surname: Flow Postal Code: LE11UT
+06/14/2018 01:16:12 - 185.20.6.141: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:16:12 - 185.20.6.141: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 01:16:12 - 185.20.6.141: Logo: mm1.png
+06/14/2018 01:16:12 - 185.20.6.141: validation: DB pw: 
+06/14/2018 01:16:12 - 185.20.6.141: validation: Session login_failed: 
+06/14/2018 01:16:16 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 01:16:16 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flow',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='9876543211'
+          WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:16:19 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23030_gov_patientEpisode'
+06/14/2018 01:16:19 - 69.137.186.144: validation_review: Surname Entered: Flow - DB: Flow
+06/14/2018 01:16:19 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 01:16:19 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 01:16:19 - 69.137.186.144: validation_review: NHS Entered: 9876543211 - DB: 9876543211
+06/14/2018 01:16:19 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 01:16:19 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flow',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876543211',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:16:19 - 69.137.186.144: Going to mobile.php...
+06/14/2018 01:16:20 - 69.137.186.144: Validation_Mobile page: 23030_gov_patientEpisode
+06/14/2018 01:16:30 - 69.137.186.144: mobile: 121621346177  email: ajm@mm.st Preferred: EMAIL preferenceSet: YES
+06/14/2018 01:16:30 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flow',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876543211',
+              c_password='',
+              c_mobileNumber='121621346177',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='YES'
+	                   
+          WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:16:36 - 69.137.186.144: password_a: Entered PW:  - Skip: Y
+06/14/2018 01:16:36 - 69.137.186.144: Mobile page done already - going to survey...
+06/14/2018 01:16:36 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flow',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876543211',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:17:25 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:17:25 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 01:17:53 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:17:53 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 01:17:53 - 69.137.186.144: Logo: mm1.png
+06/14/2018 01:17:53 - 69.137.186.144: validation: DB pw: 
+06/14/2018 01:17:53 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 01:17:59 - 69.137.186.144: Surname: Flow Postal Code: LE11UT
+06/14/2018 01:18:14 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 01:18:14 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flow',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='9876543211'
+          WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:18:14 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23030_gov_patientEpisode'
+06/14/2018 01:18:14 - 69.137.186.144: validation_review: Surname Entered: Flow - DB: Flow
+06/14/2018 01:18:14 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 01:18:14 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 01:18:14 - 69.137.186.144: validation_review: NHS Entered: 9876543211 - DB: 9876543211
+06/14/2018 01:18:14 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 01:18:14 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flow',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='9876543211',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23030_gov_patientEpisode'
+06/14/2018 01:18:14 - 69.137.186.144: Going to mobile.php...
+06/14/2018 01:18:14 - 69.137.186.144: Validation_Mobile page: 23030_gov_patientEpisode
+06/14/2018 01:24:05 - 54.86.37.102: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23034_gov_patientEpisode'
+06/14/2018 01:24:05 - 54.86.37.102: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 01:24:05 - 54.86.37.102: Logo: mm1.png
+06/14/2018 01:24:05 - 54.86.37.102: Validation: bitlybot detected
+06/14/2018 01:59:47 - 34.230.78.27: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 01:59:47 - 34.230.78.27: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 01:59:47 - 34.230.78.27: Logo: mm1.png
+06/14/2018 01:59:47 - 34.230.78.27: Validation: bitlybot detected
+06/14/2018 02:00:17 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:00:17 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 02:00:17 - 69.137.186.144: Logo: mm1.png
+06/14/2018 02:00:17 - 69.137.186.144: validation: DB pw: 
+06/14/2018 02:00:17 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 02:00:31 - 69.137.186.144: Surname: Flowtest Postal Code: LE11UT
+06/14/2018 02:00:37 - 185.20.6.121: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:00:37 - 185.20.6.121: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 02:00:37 - 185.20.6.121: Logo: mm1.png
+06/14/2018 02:00:37 - 185.20.6.121: validation: DB pw: 
+06/14/2018 02:00:37 - 185.20.6.121: validation: Session login_failed: 
+06/14/2018 02:00:49 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 02:00:49 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:00:55 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23038_gov_patientEpisode'
+06/14/2018 02:00:55 - 69.137.186.144: validation_review: Surname Entered: Flowtest - DB: Flowtest
+06/14/2018 02:00:55 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 02:00:55 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 02:00:55 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/14/2018 02:00:55 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 02:00:55 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:00:55 - 69.137.186.144: Going to mobile.php...
+06/14/2018 02:00:55 - 69.137.186.144: Validation_Mobile page: 23038_gov_patientEpisode
+06/14/2018 02:01:11 - 69.137.186.144: mobile: 000000000000  email: ajm@mm.st Preferred: EMAIL preferenceSet: YES
+06/14/2018 02:01:11 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='YES'
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:02:46 - 69.137.186.144: password_a: Entered PW:  - Skip: Y
+06/14/2018 02:02:46 - 69.137.186.144: Mobile page done already - going to survey...
+06/14/2018 02:02:46 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:37:45 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:37:45 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 02:37:45 - 69.137.186.144: Logo: mm1.png
+06/14/2018 02:37:45 - 69.137.186.144: validation: DB pw: 
+06/14/2018 02:37:45 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 02:37:55 - 185.20.6.121: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:37:55 - 185.20.6.121: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 02:37:55 - 185.20.6.121: Logo: mm1.png
+06/14/2018 02:37:55 - 185.20.6.121: validation: DB pw: 
+06/14/2018 02:37:55 - 185.20.6.121: validation: Session login_failed: 
+06/14/2018 02:37:57 - 69.137.186.144: Surname: Flowtest Postal Code: LE11UT
+06/14/2018 02:38:13 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 02:38:13 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:38:13 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23038_gov_patientEpisode'
+06/14/2018 02:38:13 - 69.137.186.144: validation_review: Surname Entered: Flowtest - DB: Flowtest
+06/14/2018 02:38:13 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 02:38:13 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 02:38:13 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/14/2018 02:38:13 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 02:38:13 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:38:13 - 69.137.186.144: Going to mobile.php...
+06/14/2018 02:38:14 - 69.137.186.144: Validation_Mobile page: 23038_gov_patientEpisode
+06/14/2018 02:38:23 - 69.137.186.144: mobile: 000000000000  email: ajm@mm.st Preferred: EMAIL preferenceSet: YES
+06/14/2018 02:38:23 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='YES'
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:38:23 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id=''
+06/14/2018 02:38:23 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/14/2018 02:42:17 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:42:17 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 02:42:17 - 69.137.186.144: Logo: mm1.png
+06/14/2018 02:42:17 - 69.137.186.144: validation: DB pw: 
+06/14/2018 02:42:17 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 02:42:27 - 69.137.186.144: Surname: Flowtest Postal Code: LE11UT
+06/14/2018 02:42:44 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 02:42:44 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:42:44 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23038_gov_patientEpisode'
+06/14/2018 02:42:44 - 69.137.186.144: validation_review: Surname Entered: Flowtest - DB: Flowtest
+06/14/2018 02:42:44 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 02:42:44 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 02:42:44 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/14/2018 02:42:44 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 02:42:44 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:42:44 - 69.137.186.144: Going to mobile.php...
+06/14/2018 02:42:45 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id=''
+06/14/2018 02:42:45 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/14/2018 02:46:27 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id=''
+06/14/2018 02:46:27 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/14/2018 02:46:44 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id=''
+06/14/2018 02:46:44 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/14/2018 02:52:43 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:52:43 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 02:52:43 - 69.137.186.144: Logo: mm1.png
+06/14/2018 02:52:43 - 69.137.186.144: validation: DB pw: 
+06/14/2018 02:52:43 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 02:52:58 - 69.137.186.144: Surname: Flowtest Postal Code: LE11UT
+06/14/2018 02:53:13 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 02:53:13 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:53:13 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23038_gov_patientEpisode'
+06/14/2018 02:53:13 - 69.137.186.144: validation_review: Surname Entered: Flowtest - DB: Flowtest
+06/14/2018 02:53:13 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 02:53:13 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 02:53:13 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/14/2018 02:53:13 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 02:53:13 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='000000000000',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:53:13 - 69.137.186.144: Going to mobile.php...
+06/14/2018 02:53:13 - 69.137.186.144: Validation_Mobile page: 23038_gov_patientEpisode
+06/14/2018 02:53:27 - 69.137.186.144: mobile: 0000000000000  email: ajm@mm.st Preferred: EMAIL preferenceSet: YES
+06/14/2018 02:53:27 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='0000000000000',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='YES'
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 02:53:27 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id=''
+06/14/2018 02:53:27 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/14/2018 12:32:44 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:32:44 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 12:32:44 - 69.137.186.144: Logo: mm1.png
+06/14/2018 12:32:44 - 69.137.186.144: validation: DB pw: 
+06/14/2018 12:32:44 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 12:32:51 - 69.137.186.144: Surname: Flowtest Postal Code: LE11UT
+06/14/2018 12:33:01 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 12:33:01 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:33:01 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23038_gov_patientEpisode'
+06/14/2018 12:33:01 - 69.137.186.144: validation_review: Surname Entered: Flowtest - DB: Flowtest
+06/14/2018 12:33:01 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 12:33:01 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 12:33:01 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/14/2018 12:33:01 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 12:33:01 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='0000000000000',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:33:01 - 69.137.186.144: Going to mobile.php...
+06/14/2018 12:33:01 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id=''
+06/14/2018 12:33:01 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/14/2018 12:33:04 - 185.20.6.121: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:33:04 - 185.20.6.121: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 12:33:04 - 185.20.6.121: Logo: mm1.png
+06/14/2018 12:33:04 - 185.20.6.121: validation: DB pw: 
+06/14/2018 12:33:04 - 185.20.6.121: validation: Session login_failed: 
+06/14/2018 12:33:17 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id=''
+06/14/2018 12:33:17 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/14/2018 12:37:51 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:37:51 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 12:37:51 - 69.137.186.144: Logo: mm1.png
+06/14/2018 12:37:51 - 69.137.186.144: validation: DB pw: 
+06/14/2018 12:37:51 - 69.137.186.144: validation: Session login_failed: 
+06/14/2018 12:37:59 - 69.137.186.144: Surname: Flowtest Postal Code: LE11UT
+06/14/2018 12:38:11 - 69.137.186.144: day: 01  month: 01 year: 1990 
+06/14/2018 12:38:11 - 69.137.186.144: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_nhsNumberEntered='0000000000'
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:38:11 - 69.137.186.144: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23038_gov_patientEpisode'
+06/14/2018 12:38:11 - 69.137.186.144: validation_review: Surname Entered: Flowtest - DB: Flowtest
+06/14/2018 12:38:11 - 69.137.186.144: validation_review: PostalCode Entered: LE11UT - DB: LE11UT
+06/14/2018 12:38:11 - 69.137.186.144: validation_review: DOB Entered: 01/01/1990 - DB: 01/01/1990
+06/14/2018 12:38:11 - 69.137.186.144: validation_review: NHS Entered: 0000000000 - DB: 0000000000
+06/14/2018 12:38:11 - 69.137.186.144: validation_review: Error Count: 0
+06/14/2018 12:38:11 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='0000000000000',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:38:11 - 69.137.186.144: Going to mobile.php...
+06/14/2018 12:38:11 - 69.137.186.144: Validation_Mobile page: 23038_gov_patientEpisode
+06/14/2018 12:38:24 - 69.137.186.144: mobile: 0000000000000  email: ajm@mm.st Preferred: EMAIL preferenceSet: YES
+06/14/2018 12:38:24 - 69.137.186.144: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='Flowtest',
+              c_postalCodeEntered='LE11UT',
+              c_dateOfBirthEntered='01/01/1990',
+              c_emailAddress='ajm@mm.st',
+              c_nhsNumberEntered='0000000000',
+              c_password='',
+              c_mobileNumber='0000000000000',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet='YES'
+	                   
+          WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:38:24 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:38:24 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 12:40:06 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:40:06 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 12:40:21 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 12:40:21 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:23:23 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23034_gov_patientEpisode'
+06/14/2018 13:23:23 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:32:29 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22966_gov_patientEpisode'
+06/14/2018 13:32:29 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:36:54 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='22966_gov_patientEpisode'
+06/14/2018 13:36:54 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:37:16 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 13:37:16 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:37:20 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 13:37:20 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:37:34 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 13:37:34 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:37:40 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 13:37:40 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:37:41 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 13:37:41 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:37:42 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 13:37:42 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:37:44 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/14/2018 13:37:44 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:44:47 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23004_gov_patientEpisode'
+06/14/2018 13:44:47 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:44:57 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23022_gov_patientEpisode'
+06/14/2018 13:44:57 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:49:29 - 54.210.113.231: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/14/2018 13:49:29 - 54.210.113.231: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:49:29 - 54.210.113.231: Logo: mm1.png
+06/14/2018 13:49:29 - 54.210.113.231: Validation: bitlybot detected
+06/14/2018 13:50:25 - 185.20.6.121: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/14/2018 13:50:25 - 185.20.6.121: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:50:25 - 185.20.6.121: Logo: mm1.png
+06/14/2018 13:50:25 - 185.20.6.121: validation: DB pw: 
+06/14/2018 13:50:25 - 185.20.6.121: validation: Session login_failed: 
+06/14/2018 13:53:24 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/14/2018 13:53:24 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/14/2018 13:53:24 - 82.34.15.57: Logo: mm1.png
+06/14/2018 13:53:24 - 82.34.15.57: validation: DB pw: 
+06/14/2018 13:53:24 - 82.34.15.57: validation: Session login_failed: 
+06/14/2018 13:53:40 - 82.34.15.57: Surname: McGrotty Postal Code: SA6 5PF
+06/14/2018 13:54:00 - 82.34.15.57: day: 20  month: 06 year: 1970 
+06/14/2018 13:54:00 - 82.34.15.57: Save Entered Pt Info - Validation: UPDATE  app_fd_ver_patientEpisodes
+          SET c_surnameEntered='McGrotty',
+              c_postalCodeEntered='SA65PF',
+              c_dateOfBirthEntered='20/06/1970',
+              c_nhsNumberEntered='1126220380'
+          WHERE id='23042_gov_patientEpisode'
+06/14/2018 13:54:04 - 82.34.15.57: Set TC: UPDATE app_fd_ver_patientEpisodes
+           SET c_acceptedTC = 'YES'
+           WHERE id = '23042_gov_patientEpisode'
+06/14/2018 13:54:04 - 82.34.15.57: validation_review: Surname Entered: McGrotty - DB: McGrotty
+06/14/2018 13:54:04 - 82.34.15.57: validation_review: PostalCode Entered: SA65PF - DB: SA65PF
+06/14/2018 13:54:04 - 82.34.15.57: validation_review: DOB Entered: 20/06/1970 - DB: 22/06/1970
+06/14/2018 13:54:04 - 82.34.15.57: DOB Error
+06/14/2018 13:54:04 - 82.34.15.57: validation_review: NHS Entered: 1126220380 - DB: 1126220380
+06/14/2018 13:54:04 - 82.34.15.57: validation_review: Error Count: 1
+06/14/2018 13:54:04 - 82.34.15.57: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='McGrotty',
+              c_postalCodeEntered='SA65PF',
+              c_dateOfBirthEntered='20/06/1970',
+              c_emailAddress='Kendell@thenakedsurgeon.com',
+              c_nhsNumberEntered='1126220380',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23042_gov_patientEpisode'
+06/14/2018 13:54:04 - 82.34.15.57: Going to mobile.php...
+06/14/2018 13:54:04 - 82.34.15.57: Validation_Mobile page: 23042_gov_patientEpisode
+06/14/2018 13:54:20 - 82.34.15.57: mobile:   email: Kendell@thenakedsurgeon.com Preferred: EMAIL preferenceSet: 
+06/14/2018 13:54:20 - 82.34.15.57: Save Pt Info - Validation: UPDATE app_fd_ver_patientEpisodes
+          SET c_surnameEntered='McGrotty',
+              c_postalCodeEntered='SA65PF',
+              c_dateOfBirthEntered='20/06/1970',
+              c_emailAddress='Kendell@thenakedsurgeon.com',
+              c_nhsNumberEntered='1126220380',
+              c_password='',
+              c_mobileNumber='',
+              c_preferredContactMethod='EMAIL',
+	          c_preferenceSet=''
+	                   
+          WHERE id='23042_gov_patientEpisode'
+06/14/2018 13:54:20 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/14/2018 13:54:20 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 11:51:19 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23010_gov_patientEpisode'
+06/15/2018 11:51:19 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='jmacknife@thenakedsurgeon.com'
+06/15/2018 12:05:32 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/15/2018 12:05:32 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 12:10:14 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/15/2018 12:10:14 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 12:19:38 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23038_gov_patientEpisode'
+06/15/2018 12:19:38 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 12:20:46 - 82.34.15.57: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/15/2018 12:20:46 - 82.34.15.57: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 12:20:46 - 82.34.15.57: Logo: mm1.png
+06/15/2018 12:20:46 - 82.34.15.57: validation: DB pw: 
+06/15/2018 12:20:46 - 82.34.15.57: validation: Session login_failed: 
+06/15/2018 12:21:07 - 185.20.6.141: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/15/2018 12:21:07 - 185.20.6.141: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 12:21:07 - 185.20.6.141: Logo: mm1.png
+06/15/2018 12:21:07 - 185.20.6.141: validation: DB pw: 
+06/15/2018 12:21:07 - 185.20.6.141: validation: Session login_failed: 
+06/15/2018 13:49:06 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/15/2018 13:49:06 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 13:50:17 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/15/2018 13:50:17 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 13:55:01 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='23042_gov_patientEpisode'
+06/15/2018 13:55:01 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 13:58:26 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='5b23a8b44f0ca'
+06/15/2018 13:58:26 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 13:59:19 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='5b23a8b44f0ca'
+06/15/2018 13:59:19 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 14:00:27 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='5b23a8b44f0ca'
+06/15/2018 14:00:27 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'
+06/15/2018 14:00:40 - 69.137.186.144: get_pt_info: SELECT * FROM app_fd_ver_patientEpisodes
+           WHERE id='5b23a8b44f0ca'
+06/15/2018 14:00:40 - 69.137.186.144: get_pt_info LOGO: SELECT o.c_logo 
+              FROM app_fd_ver_organizations o, dir_user u
+              WHERE o.c_email=u.email
+              AND u.id='mm1admin@thenakedsurgeon.com'

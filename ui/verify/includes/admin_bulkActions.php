@@ -79,7 +79,7 @@
 	</div>
 	<div class="small-6 medium-6 cell  padding-10">
 		<?php if(isset($_GET['time_added']) || isset($_GET['name'])): ?>
-			<span class="float-right">Filters Active | <a href="users.php" class="float-right link-standard-color ">&nbsp; Reset</a></span>
+			<span class="float-right">Filters Active | <a href="users.php" class="float-right link-orange ">&nbsp; Reset</a></span>
 		<?php else: ?>
 			<span class="float-right">Filters Disabled</span>
 

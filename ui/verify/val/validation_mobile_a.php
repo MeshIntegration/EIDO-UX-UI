@@ -8,6 +8,8 @@
 include "../utilities.php";
 session_start();
 $arr_pt_info=$_SESSION['arr_pt_info'];
+$password=$arr_pt_info['c_password'];
+$patientEpisodeId = $arr_pt_info['id'];
 $logfile = "validation.log";
 $tc=get_query_string('tc'); // accepted terms and conditions
 
@@ -16,7 +18,8 @@ $mobile=$_POST['mobile'];
 $email=$_POST['email'];
 $preferred=$_POST['preferred'];
 $preferenceset=$_POST['preferenceset'];
-logMsg("mobile: $mobile  email: $email Preferred: $preferred PreferenceSet: $preferenceset",$logfile);
+
+logMsg("mobile: $mobile  email: $email Preferred: $preferred preferenceSet: $preferenceset",$logfile);
 
 if ($preferred=="MOBILE" && $mobile=="") {
    $_SESSION['error_msg']="NO_MOBILE";
@@ -29,8 +32,20 @@ if ($preferred=="EMAIL" && $email=="") {
    exit();
 }
 
+
+
+
 // save the entered data 
-save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $mobile, $preferred, $email, $preferenceset);
+save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $password, $mobile, $preferred, $email, $preferenceset);
+
+
+//if no password is set and an email already existed, or was just provided, take them to create password
+if ($password=="" && $email<>"") {
+    header ("Location: validation_pw.php?patientEpisodeId=$patientEpisodeId");
+    exit();
+}
+
+
 
 // WE HAVE LIFT OFF
 // take them to the correct survey

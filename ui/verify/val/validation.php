@@ -76,7 +76,7 @@ if ($arr_pt_info['c_surname']<>"ERROR") {
                         <?php } ?>
 			<label>Surname
 			  <div class="input-group">
-                <span class="input-group-label"><i class="fi-torso"></i></span>
+                <span class="input-group-label"><i class="icon eido-icon-user2"></i></span>
                 <input class="input-group-field" type="text" name="c_surname" placeholder="Enter your surname">
               </div>
 			</label>
@@ -85,7 +85,7 @@ if ($arr_pt_info['c_surname']<>"ERROR") {
                         <?php } ?>
 			<label>Postcode
 			  <div class="input-group login">
-                <span class="input-group-label"><i class="fi-marker"></i></span>
+                <span class="input-group-label"><i class="icon eido-icon-location23"></i></span>
                 <input class="input-group-field" type="text" name="c_postalCode" placeholder="Enter your postcode">
               </div>
 			</label>

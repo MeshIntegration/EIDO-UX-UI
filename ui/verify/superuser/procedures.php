@@ -33,7 +33,6 @@ $update_hide = "hide";
 $managesurveys_hide = "hide";
 $addsurveys_hide = "hide";
 
-
 if ($mode=="" || $mode=="add")
 {
    $add_hide = "";
@@ -69,6 +68,11 @@ else if ($mode=="addsurveys")
    $addsurveys_hide = "";
    $sess_id = $_SESSION['session_number'] = get_query_string('sess_id');
    $pe_id=$id;
+   if (isset($_POST['survey_searchterm']))
+      $searchterm=$_POST['survey_searchterm'];
+   else
+      $searchterm="";
+logMsg("SURVEY SEARCH - P: ".$_POST['survey_searchterm']." V: $searchterm","wel.log");
 }
 
 logMsg("Procedures: Mode: $mode", $logfile);
@@ -273,9 +277,10 @@ $pagination = get_pagination($page, $totalRecord);
 	</div>
 	<!-- End Content-Left -->
 	<!-- ADD SECTION -->  
-        <?php  if ($mode=="add")
+        <?php  if ($mode=="add" || $mode=="")
                {
-                 ;
+                  $survey_msg=$_SESSION['survey_msg'];
+                  $_SESSION['survey_msg']="";
                }
         ?>
 	<div class="small-12 medium-6 large-6 cell content-right <?php echo $add_hide; ?>">
@@ -304,6 +309,16 @@ $pagination = get_pagination($page, $totalRecord);
     	  </div>
 	    </div>
 	  </form>
+          <h3 class="padding-bottom-1">Refresh Survey List</h3>
+          <p>&nbsp;</p>
+          <p class="standard-padding text-center padding-bottom-1">The Survey Gizmo surveys update once per day. If you need to manually refresh, use the button below.</p>
+          <div class="small-12 cell field text-center">
+              <a href="get_all_surveys.php" class="button large" name="" / >Refresh Surveys</a>
+              <?php if (strlen($survey_msg)){
+                       echo "<br /><strong>$survey_msg</strong>";
+                    }
+              ?>
+          </div>
     </div>  
     <!-- END ADD SECTION -->
     <!-- UPDATE SECTION -->
@@ -424,7 +439,12 @@ logMsg("Loading SESSION['arr_add_surveys']",$logfile);
             }
         ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $managesurveys_hide; ?>">
-          <div class="back"><a href="procedures.php?m=update&id=<?php echo $pe_id; ?>"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div>
+            <div class="back clickable-row btn-back" data-href="procedures.php?m=update&id=<?php echo $pe_id; ?>">
+                    <a href="procedures.php?m=update&id=<?php echo $pe_id; ?>">
+                    <span><i class="icon eido-icon-chevron-left"></i>
+                    Back</span>
+                    </a>
+            </div>
           <h3>Procedure Setup<br /><span class="small sub-text">Add surveys to the procedure session</span></h3>
           <form action="procedures_a.php?m=updateproc&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>" method="post"><div class="grid-container">
           <div class="grid-x grid-padding-x">
@@ -482,8 +502,12 @@ logMsg("Loading SESSION['arr_add_surveys']",$logfile);
             <div class="small-12 medium-12 large-12 cell">
                      <ul class="sort" id="sortable" style="margin-bottom:40px;" >
                           <?php 
+                           $survey_ids = array();
                            $survey_ids = get_surveys_by_proc($pe_id,$sess_id); // $_SESSION['pe_id'.$pe_id]["sess_id".$sess_id];
+logMsg("procId: $pe_id - sessId: $sess_id - numOfSurveys: ".count($survey_ids), "wel.log");
+                           // $_SESSION['arr_add_surveys'][$pe_id] = $survey_ids; // HACK WEL
                            for ($i=0; $i<count($survey_ids); $i++) { 
+    logMsg($survey_ids[$i], "wel.log");
                               $arr_survey_info = get_survey_by_num($survey_ids[$i]);
                               if(!empty($arr_survey_info)){
                           ?>
@@ -494,8 +518,8 @@ logMsg("Loading SESSION['arr_add_surveys']",$logfile);
 		                              <?php echo $survey_ids[$i]." - ".$arr_survey_info['c_description']; ?>
 	                              </span>
                               </li>
-                          <?php    }
-                               } ?>
+                          <?php  }
+                           } ?>
                           <a href="procedures.php?m=addsurveys&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>"><li class="add"><button class="button expanded text-center add-survey" type="button"><img src="../img/icons/add_white.png" alt="add icon" /></button></li></a>
                      </ul>
                   </div>
@@ -512,11 +536,11 @@ logMsg("Loading SESSION['arr_add_surveys']",$logfile);
             {
                if ($pe_id<>$_SESSION['pe_id_prev'] || $sess_id<>$_SESSION['sess_id_prev'])
                {
-                  $arr_all_surveys=get_all_surveys();
+                  $arr_all_surveys=get_all_surveys($searchterm);
                   $_SESSION['arr_all_surveys']=$arr_all_surveys;
                }     
 // added 4/8
-               $arr_all_surveys=get_all_surveys();
+               $arr_all_surveys=get_all_surveys($searchterm);
                $_SESSION['arr_all_surveys']=$arr_all_surveys;             
 // $arr_all_surveys=$_SESSION['arr_all_surveys'];
                $_SESSION['pe_id_prev']=$pe_id;
@@ -527,24 +551,29 @@ logMsg("Loading SESSION['arr_add_surveys']",$logfile);
             // $sess_id = 1;
         ?>
         <div class="small-12 medium-6 large-6 cell content-right <?php echo $addsurveys_hide; ?>">
-          <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div>
+            <div class="back clickable-row btn-back" data-href="procedures.php?m=managesurveys&id=<?php echo $pe_id; ?>">
+                    <a href="procedures.php?m=managesurveys&id=<?php echo $pe_id; ?>">
+                    <span><i class="icon eido-icon-chevron-left"></i>
+                    Back</span>
+                    </a>
+            </div>
           <h2>Add Surveys</h2>
-          <form>
+          <form action="procedures.php?m=addsurveys&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>" method="post">
                 <div class="grid-container">
           <div class="grid-x grid-padding-x">
                         <div class="small-12 medium-12 large-12 cell">
               <div class="grid-x">
                 <div class="small-10 cell">
-                  <input type="text" placeholder="oscopy" class="search-left">
+                  <input type="text" name="survey_searchterm" placeholder="" class="search-left">
                 </div>
                 <div class="small-2 cell">
-                  <div class="search-right"><a href="#" class="button postfix expanded search-btn"><i class="fi-magnifying-glass"></i></a></div>
+                  <div class="search-right"><input type="submit" class="button postfix expanded search-btn"><i class="fi-magnifying-glass"></i></a></div>
                 </div>
               </div>
             </div>
                         <div class="small-12 medium-12 large-12 cell">
                   <table width="100%" border="0" class="hover">
-                            <tbody>
+                   <tbody>
                        <?php 
                           for ($s=0; $s<count($arr_all_surveys); $s++) {
                              if (!$arr_all_surveys[$s]['added']) {  
@@ -561,18 +590,22 @@ logMsg("Loading SESSION['arr_add_surveys']",$logfile);
                                   </tr>
                                   <?php
                                      $arr_add_surveys = $_SESSION['arr_add_surveys'][$pe_id];
-                                     $arr_survey_list = get_survey_by_num($arr_add_surveys);
+logMsg("mode: $mode - AS arraddsurveys ct: ".count($arr_add_surveys),"wel.log");
+                                     //$arr_survey_list = get_survey_by_num($arr_add_surveys);
                                      $t = 0;
-                                     if(count($arr_survey_list)){ 
-                                        foreach ($arr_survey_list as $arr_survey_info){
+                                     for ($j=0; $j<count($arr_add_surveys); $j++) { 
+                                        $arr_survey_info=get_survey_by_num($arr_add_surveys[$j]);  
+                                          // if(count($arr_survey_list)){ 
+                                          //  foreach ($arr_survey_list as $arr_survey_info){
                                   ?>
                                   <tr>
                                      <td class="text-left" width="90%"><?php echo $arr_survey_info['c_surveyNumber']." - ".$arr_survey_info['c_description']; ?></td>
                                      <td class="text-right"><a href="functions.php?m=delete_survey_from_temp&id=<?php echo $pe_id; ?>&sess_id=<?php echo $sess_id; ?>&t=<?php echo $t; ?>&sn=<?php echo $arr_survey_info['c_surveyNumber']; ?>"><i class="fi-trash"></i></a></td>
                                   </tr>
                                   <?php
-                                        $t++;} 
-                                     } 
+                                        $t++;
+                                    } 
+                                     // } 
                                  ?>
                 </tbody>
               </table>

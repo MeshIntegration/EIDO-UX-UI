@@ -6,10 +6,20 @@ $logfile = "validation.log";
 require_once '../utilities.php';
 session_start();
 $arr_pt_info = $_SESSION['arr_pt_info'];
-if($arr_pt_info['c_mobilePageDone'] == "YES" && $arr_pt_info['c_acceptedTC'] == "YES") {
-	header("Location: validation_pw");
+$patientEpisodeId = $arr_pt_info['id'];
+if($arr_pt_info['c_preferenceSet'] == "YES" && $arr_pt_info['c_acceptedTC'] == "YES" && $arr_pt_info['c_password'] == "") {
+	header("Location: validation_pw.php?patientEpisodeId=$patientEpisodeId");
 	exit();
 }
+if($arr_pt_info['c_preferenceSet'] == "YES" && $arr_pt_info['c_acceptedTC'] == "YES" && $arr_pt_info['c_password'] <> "") {
+    $goto_url = get_survey_url($arr_pt_info);
+    $_SESSION = array();
+    session_destroy();
+    header ("Location: $goto_url");
+    exit();
+}
+
+
 $showmobile = "hide";
 $showemail = "hide";
 
@@ -20,7 +30,7 @@ if($arr_pt_info['c_mobileNumber'] == "") {
 	$prompt = "mobile";
 	$mobile_checked = "";
 	$email_checked = "checked";
-	$contactmethod = "readonly";
+	$contactmethod = "hide";
 
 }
 if($arr_pt_info['c_emailAddress'] == "") {
@@ -29,7 +39,7 @@ if($arr_pt_info['c_emailAddress'] == "") {
 	$prompt = "email";
 	$mobile_checked = "checked";
 	$email_checked = "";
-	$contactmethod = "readonly";
+	$contactmethod = "hide";
 }
 if($arr_pt_info['c_emailAddress'] <> "" && $arr_pt_info['c_mobileNumber'] <> "") {
 	$showmobile = "show";
@@ -111,8 +121,8 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 						</div>
 						</label>
 
-						<div id="contactdiv" class="hide grid-x grid-padding-x">
-							<div name="preferred" id="contactpreference" class="<?php echo $contactmethod; ?> small-12">
+						<div id="contactdiv" class="<?php echo $contactmethod; ?> grid-x grid-padding-x">
+							<div name="preferred" id="contactpreference" class="small-12">
 								<p class="lead">Which contact method would you prefer?</p>
 			                      <label class="fancy-eido-round-checkbox">
 			                          <input type="radio" name="preferred" value="EMAIL" <?php echo $email_checked; ?> id="preferred_contact_email"/>
@@ -125,6 +135,10 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 				                      <span class="control-label">Mobile</span>
 			                      </label>
 							</div>
+						</div>
+						<div name="preferenceset" id="preference_set" class="small-12">
+                            <input type="radio" name="preferenceset" value="NO" id="preference_set_no"><label for="NO"> NO</label><br>
+                            <input type="radio" name="preferenceset" value="YES" id="preference_set_yes"><label for="YES"> YES</label><br>
 						</div>
 						<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 						<div class="grid-x row">
@@ -155,28 +169,31 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 <script src="../js/app.js"></script>
 <script>
     $(document).ready(function() {
-     //   $('[name="preferred"]:radio[readonly]:not(:checked)').attr('disabled', true);
-
+//show contact preference div if email is entered and matches valid email format
         $("#email").keyup(function() {
-
-//   if   ( $('#email').val().length > 7 ) {
-         //    noinspection JSAnnotator
-
             if( this.value.indexOf('@') > -1 && this.value.indexOf('.') > -1 && this.value.length > 4 && this.value.length < 64 && this.value.slice(-1) !== ('.') ) {
                 $("#contactdiv").removeClass('hide').addClass('show');
+                $('input[type="radio"][name="preferenceset"]').last().prop('checked', true);
+            }
+            else
+            {
+                $('input[type="radio"][name="preferenceset"]').first().prop('checked', true);
+                $("#contactdiv").removeClass('show').addClass('hide');
+            }
+        })
+//show contact preference div if mobile is entered and is greater that ten length
+// NEEDS ADJUSTED TO ADD SOME TWILLIO COMPATIBLE PHONE NUMBER FORMAT VALIDATION
+	$("#mobile").keyup(function() {
+            if( this.value.length > 11 && this.value.length < 64 ) {
+                $("#contactdiv").removeClass('hide').addClass('show');
+                $('input[type="radio"][name="preferenceset"]').last().prop('checked', true);
             }
             else
             {
                 $("#contactdiv").removeClass('show').addClass('hide');
+                $('input[type="radio"][name="preferenceset"]').first().prop('checked', true);
             }
         })
-            //          if (var acceptedmobile = 'true') {
-            //     if   ( $('#mobile').val().length > 7 ) {
-          //  $(function() {
-          //      $("#contactpreference").removeClass('hide').addClass('show');
-          //      $("#contactdiv").addClass('show');
-         //   })
-            //        }
         });
 </script>
 </body>

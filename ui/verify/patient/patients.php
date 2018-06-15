@@ -520,16 +520,18 @@ $results_count = $GetQuery_all->num_rows;
 
 	<link rel="stylesheet" href="/ui/verify/css/icons/eido-icons.css" type="text/css" />
 	<link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="/ui/verify/css/fontawesome-all.css" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <!--<link rel="stylesheet" href="/ui/verify/css/fontawesome-all.css" type="text/css" />-->
 
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="../css/eido.css">
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/fontawesome-all.js"></script>
 
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
@@ -571,7 +573,7 @@ $results_count = $GetQuery_all->num_rows;
 								class="input-group-field">
 						<div class="input-group-button right-append">
 							<a href="clear_search.php?m=main" class="clear-icon">
-								<i class="eido-icon-remove"></i>
+								<i class="eido-icon-x-altx-alt"></i>
 							</a>
 							<!--<a href="clear_search.php?m=<?php echo $mode; ?>" class="float-right align-center-middle"><img src="../img/close-icon.png" alt="" style="margin:7px;"/></a>-->
 						</div>
@@ -584,13 +586,13 @@ $results_count = $GetQuery_all->num_rows;
 						<div class="input-group-button left-append">
 							<i class="fi-calendar"></i>
 						</div>
-						<input id="popupDatepicker" name="procedure_date" class="date_element" value="<?php if(isset($_SESSION['filter']['procedure_date'])) {
+						<input id="popupDatepicker" name="procedure_date" class="date_element" placeholder="ALL" value="<?php if(isset($_SESSION['filter']['procedure_date'])) {
 							echo $_SESSION['filter']['procedure_date'];
 						} ?>" type="text"
 								class="input-group-field">
 						<div class="input-group-button right-append">
 							<a href="clear_procdate_search.php?m=main" class="clear-icon">
-								<i class="eido-icon-remove"></i>
+								<i class="eido-icon-x-altx-alt"></i>
 							</a>
 						</div>
 					</div>
@@ -2434,9 +2436,11 @@ $c_surgeonId =$qryResult_sd['id'];
 				</div>
 	</form>
 	<?php if($c_procedureId == "") { ?>
+
 		<p class="text-center">
-			<strong><a href="patients.php?m=procproceed&id=<?php echo $pe_id; ?>">SKIP this step and add a procedure later.</a></strong><br/>
-			Note that nothing will be sent to the pateint until a procuedure is selected.</p>
+			<strong><a class="link-standard-color" href="patients.php?m=procproceed&id=<?php echo $pe_id; ?>">SKIP this step and add a procedure later.</a></strong><br/>
+			Note that nothing will be sent to the patient until a procedure is selected.</p>
+
 	<?php } ?>
 </div>
 </div>

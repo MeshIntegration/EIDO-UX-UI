@@ -198,7 +198,7 @@ if ($_SESSION['dob_error'])
 		    <?php if ($_SESSION['surname_error']) { ?>
 		<label class="alert">Surname
 		  <div class="input-group">
-                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check the spelling of your surname" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="fi-torso alert"></i></span>
+                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check the spelling of your surname" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="icon eido-icon-user2 alert"></i></span>
                      <input class="input-group-field" type="text" name="c_surname" value="<?php echo $_SESSION['entered_surname']; ?>">
                  </div>
 	      </label>
@@ -206,7 +206,7 @@ if ($_SESSION['dob_error'])
             <?php if ($_SESSION['postalcode_error']) { ?>
 		<label class="alert">Postal Code
 		  <div class="input-group">
-                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your Postal Cose is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="fi-torso alert"></i></span>
+                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your Postal Cose is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="ico eido-icon-user2 alert"></i></span>
                      <input class="input-group-field" type="text" name="c_postalCode" value="<?php echo $_SESSION['entered_postalcode']; ?>">
                  </div>
 	      </label>
@@ -237,7 +237,7 @@ if ($_SESSION['dob_error'])
             <?php if ($_SESSION['nhsnumber_error']) { ?>
 		<label class="alert">NHS NUMBER
 		  <div class="input-group">
-                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your NHS Number is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="fi-torso alert"></i></span>
+                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your NHS Number is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="icon eido-icon-dot-circle-o alert"></i></span>
                      <input class="input-group-field" type="text" name="c_nhsNumber" value="<?php echo $_SESSION['entered_nhsnumber']; ?>">
                  </div>
                  <p><span style="font-color:red;font-size:small;">You can find your NHS Number on a letter from your GP or hospital or on a medical ID card.</span><p>
