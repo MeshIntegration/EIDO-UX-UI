@@ -31,6 +31,8 @@ $GetQuery=dbi_query($sql);
 if ($GetQuery->num_rows==0)
 {
    $_SESSION['login_error']=true;
+   $_SESSION['username']=$username;
+   $_SESSION['password']=$password;
    logMsg("Incorrect email (user not found) $username $password - back to login.php", $logfile);
    header("Location: login.php");
    exit();
@@ -41,14 +43,17 @@ else {
     $hash = $qryResult['uipassword'];
     if (!password_verify($password, $hash)) {
         /* Invalid */
+        $_SESSION['username']=$username;
+        $_SESSION['password']=$password;
         $_SESSION['login_error'] = true;
         logMsg("Incorrect password. $username $password - back to login.php", $logfile);
         header("Location: login.php");
         exit();
     }
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
 
     $user_id = $qryResult['id'];
-logMsg("User ID: $user_id",$logfile);
     is_setcookie("user_id", $user_id, 0, "/", $cookie_domain);
 
     // password reset required

@@ -6,7 +6,7 @@
 
 require_once './utilities.php';
 require_once './lib/validation.php';
-$logfile = "wel.log";
+$logfile = "user.log";
 
 session_start();
 
@@ -14,7 +14,7 @@ $pwkey = get_query_string('k');
 $arr_user_info = get_user_info_by_pwkey($pwkey);
 if ($arr_user_info['lastName']=="ERROR")
 {
-   $_SESSION['error_msg']="<center><h1>Reset Password</h1><p>This password has expired. Request a new link via the login page.</p><br /><a href='login.php' class='button active large'>Back to Login</a></center>";
+   $_SESSION['error_msg']="<center><h1>Reset Password</h1><p>This link has expired. Request a new link via the login page.</p><br /><a href='login.php' class='button active large'>Back to Login</a></center>";
    header("Location:message.php");
 }
 ?>
@@ -23,7 +23,7 @@ if ($arr_user_info['lastName']=="ERROR")
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - Patient Auth V3 - Screen 3</title>
+  <title>EIDO Verify</title>
   <link rel="stylesheet" href="./css/foundation.css">
   <link rel="stylesheet" href="./css/eido.css">
   <link rel="stylesheet" href="./css/dashboard.css">

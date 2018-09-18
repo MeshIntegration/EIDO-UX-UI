@@ -77,6 +77,7 @@ $action = $_POST['action'];
          }
       
          // User
+         $org_id = $_COOKIE['org_id'];
          $sql = "INSERT INTO dir_user
                  SET firstName=".escapeQuote($firstname).",
                      lastName=".escapeQuote($lastname).",
@@ -87,6 +88,7 @@ $action = $_POST['action'];
                      username='$email',
                      gmc_number='$gmc_number',
                      isSurgeon='$is_surgeon',
+                     c_organizationId='$org_id',
                      c_dateImported=NOW(),
                      password='".$hash."',
                      uipassword='".$hash."'";

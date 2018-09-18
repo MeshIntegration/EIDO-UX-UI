@@ -9,8 +9,7 @@ require_once "../alert_intruders.php";
 session_start();
 $logfile = "admin.log";
 $mode = get_query_string('m');
-$id = get_query_string('id');
-
+$user_id = $id = get_query_string('id');
 
 logMsg("Users_a: mode: $mode - ID: $id",$logfile);
 
@@ -55,6 +54,8 @@ if ($mode=="reset") {
            c_dateModified=NOW()
            WHERE id IN ($id)";
    dbi_query($sql);
+   header("Location: users_a.php?m=gotoadd");
+   exit();
 }
 if ($mode=="add") {
    $firstname = $_POST['firstname'];
@@ -145,6 +146,7 @@ if ($mode=="add") {
                   c_userId='$admin_user_id',
                   c_surgeonName='$fullname',
                   c_gmcNumber='$gmc_number',
+                  c_organizationId='$org_id',
                   dateCreated=NOW(),
                   dateModified=NOW(),
                   createdBy='$user_id',
@@ -192,7 +194,7 @@ if ($mode=="add") {
    $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
          <p>Username: $email<br />
          Password: $password</p>
-         <p>Click the button below to log into the EIDO Verify systemi</p>";
+         <p>Click the button below to log into the EIDO Verify system.</p>";
          $email_template = str_replace("**CONTENT2**", $content2, $email_template);
 
    // set up the button
@@ -215,7 +217,15 @@ if ($mode=="add") {
    $arr_email['body']=$email_template;
 
    send_email($arr_email);
-   header("Location: users.php?m=update&id=$admin_user_id");
+
+   unset($_SESSION['add_afirstname']);
+   unset($_SESSION['add_alastname']);
+   unset($_SESSION['add_aemail']);
+   unset($_SESSION['add_agmc_number']);
+   unset($_SESSION['add_ais_surgeon']);
+   unset($_SESSION['add_ais_admin']);
+
+   header("Location: users.php?m=add");
    exit();
 }
 
@@ -332,6 +342,11 @@ if ($mode=="update") {
         exit();
    }
 
+    // if not a surgeon - don't save GMC #
+    if ($is_surgeon<>"1") {
+       $gmc_number="";
+    }
+
     // delete records from user_group user_role surgeons table
     // and then recreate
     $sql = "DELETE FROM dir_user_group 
@@ -343,7 +358,6 @@ if ($mode=="update") {
     $sql = "DELETE FROM $TBLSURGEONS 
            WHERE id='$id'";
     dbi_query($sql);
-
 
     // UPDATE User
     // get org for current user
@@ -388,16 +402,17 @@ if ($mode=="update") {
     // ADD Surgeon
     if ($is_surgeon=="1")
     {
+        $org_id=$_COOKIE['org_id'];
         $fullname = "$lastname, $firstname";
         $sql = "INSERT INTO $TBLSURGEONS
               SET id='$id',
                   c_userId='$id',
                   c_surgeonName='$fullname',
                   c_gmcNumber='$gmc_number',
+                  c_organizationId='$org_id',
                   dateCreated=NOW(),
                   dateModified=NOW(),
                   createdBy='$user_id'";
-
         dbi_query($sql);
         logMsg("UPDATE SURGEON: $sql",$logfile);
     }

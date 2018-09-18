@@ -82,7 +82,7 @@ function getCurlResponse($URL_method, $requestParam, $is_url_custom = 0, $reques
    global $USERNAME, $HASH, $BASE_URL, $PASSWORD;
    $logfile="wel.log";
 
-   logMsg("Funcions: getCurlResponse: loginas: $loginas", $logfile);
+   // logMsg("Funcions: getCurlResponse: loginas: $loginas", $logfile);
    if ($loginas=="")
    {
       $auth = array(
@@ -130,7 +130,7 @@ function getCurlResponse($URL_method, $requestParam, $is_url_custom = 0, $reques
          $URL = $BASE_URL . $URL_method;
       }
    }
-   logMsg("functions.php: GetCurlResponse: URL: $URL", $logfile);
+   // logMsg("functions.php: GetCurlResponse: URL: $URL", $logfile);
    // echo "<br / >$URL<br />";
    // Set some options - we are passing in a useragent too here
    curl_setopt_array($curl, array(

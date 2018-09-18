@@ -982,7 +982,7 @@ label {
   -ms-flex: 1 1 0px;
       flex: 1 1 0px;
   height: auto;
-  min-width: 0; }
+  max-width: 150%; }
 
 .input-group-button {
   padding-top: 0;
@@ -3162,7 +3162,6 @@ ol.list-upper-roman {
 .accordion-content {
   display: none;
   padding: 1rem;
-  border: 1px solid #e6e6e6;
   border-bottom: 0;
   color: #0a0a0a; }
   :last-child > .accordion-content:last-child {
@@ -3798,15 +3797,15 @@ table {
   table tbody,
   table tfoot {
     border:none;
-    background-color: #fefefe; }
+    background-color: #ffffff; }
   table caption {
     padding: 0.5rem 0.625rem 0.625rem;
     font-weight: bold; }
   table thead {
-    background: #f8f8f8;
+    background: #ffffff;
     color: #0a0a0a; }
   table tfoot {
-    background: #f1f1f1;
+    background: #ffffff;
     color: #0a0a0a; }
   table thead tr,
   table tfoot tr {
@@ -3823,13 +3822,13 @@ table {
     padding: 0.5rem 0.625rem 0.625rem; }
   table tbody tr:nth-child(even) {
     border-bottom: 0;
-    background-color: #f1f1f1; }
+    background-color: #ffffff; }
   table.unstriped tbody {
     background-color: #fefefe; }
     table.unstriped tbody tr {
       border-bottom: 0;
-      border-bottom: 1px solid #f1f1f1;
-      background-color: #fefefe; }
+      border-bottom: 1px solid #d3D1D1;
+      background-color: #ffffff; }
 
 @media screen and (max-width: 63.9375em) {
   table.stack thead {

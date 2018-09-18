@@ -7,7 +7,8 @@
 
 include "../utilities.php";
 session_start();
-$arr_pt_info=$_SESSION['arr_pt_info'];
+$arr_pt_info = get_pt_info($_SESSION['patientEpisodeId']);
+$_SESSION['patientEpisodeId'] = $arr_pt_info['id'];
 $logfile = "validation.log";
 $ip_address = $_SERVER['REMOTE_ADDR'];
 $browser = $_SERVER['HTTP_USER_AGENT'];
@@ -82,8 +83,9 @@ $_SESSION['error_ct']=$new_error_ct;
 //    we don't have mobile (well we might) or preferred yet
 //     so just rewrite what is in db for now
 $mobile=$arr_pt_info['c_mobileNumber'];
-$preferred=$arr_pt_info['c_preferredContactNethod'];
-save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $mobile, $preferred);
+$preferred=$arr_pt_info['c_preferredContactMethod'];
+$email=$arr_pt_info['c_emailAddress'];
+save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $mobile, $preferred, $email);
 
 if ($new_error_ct==2)
 {
@@ -107,7 +109,7 @@ if ($new_error_ct>=3)
 }
 
 // Data looks good - continue on 
-header ("Location: validation_pw.php");
+header ("Location: validation_mobile.php");
 exit();
 
 /* *************************  COMMENTED OUT **************************

@@ -3,13 +3,35 @@
 require_once '../utilities.php';
 $logfile="validation.log";
 session_start();
-
+$entered_postalcode = "";
+if ( $_SESSION['entered_postalcode']<>"") {
+    $entered_postalcode = $_SESSION['entered_postalcode'];
+}
+$entered_surname = "";
+if ( $_SESSION['entered_surname']<>"") {
+    $entered_surname = $_SESSION['entered_surname'];
+}
+if ($_SESSION['surname_error']) {
+    $surname_error = $_SESSION['surname_error'];
+}
+if ($_SESSION['postalcode_error']) {
+    $postalcode_error = $_SESSION['postalcode_error'];
+}
 // initialize
 $_SESSION = array();
 $_SESSION['hard_fail']=false;
 
+if ( $entered_postalcode<>"") {
+    $_SESSION['entered_postalcode'] = $entered_postalcode;
+}
+if ( $entered_surname<>"") {
+    $_SESSION['entered_surname'] = $entered_surname;
+}
+
 $patientEpisodeId = get_query_string('patientEpisodeId');
+$_SESSION['patientEpisodeId'] = $patientEpisodeId;
 $moreReminders = get_query_string('moreReminders');
+$_SESSION['moreReminders'] = $moreReminders;
 $dev = get_query_string('dev');
 
 $arr_pt_info = get_pt_info($patientEpisodeId);
@@ -47,7 +69,7 @@ if ($arr_pt_info['c_surname']<>"ERROR") {
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - Patient Authenication</title>
+  <title>EIDO Verify</title>
   <link rel="stylesheet" href="../css/foundation.css">
   <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
@@ -71,22 +93,22 @@ if ($arr_pt_info['c_surname']<>"ERROR") {
 			<p class="lead text-center">To help us check your identity, please enter your surname and address below.</p>
 		    <form class="login standard-padding two-x" action="validation_a.php?patientEpisodeId=<?php echo $patientEpisodeId; ?>&moreReminders=<?php echo $moreReminders; ?>" method="post">
 			<p>&nbsp;</p>
-                        <?php if ($_SESSION['surname_error']) { ?>
+                        <?php if ($surname_error) { ?>
                               <div class='error_message fi-alert'><strong>Please enter your Surname</strong> - this is required</div>
                         <?php } ?>
 			<label>Surname
 			  <div class="input-group">
                 <span class="input-group-label"><i class="icon eido-icon-user2"></i></span>
-                <input class="input-group-field" type="text" name="c_surname" placeholder="Enter your surname">
+                <input class="input-group-field" type="text" name="c_surname" placeholder="Enter your surname" value="<?php echo $entered_surname; ?>">
               </div>
 			</label>
-                        <?php if ($_SESSION['postalcode_error']) { ?>
+                        <?php if ($postalcode_error) { ?>
                               <div class='error_message fi-alert'><strong>Please enter your Postcode</strong> - this is required</div>
                         <?php } ?>
 			<label>Postcode
 			  <div class="input-group login">
                 <span class="input-group-label"><i class="icon eido-icon-location23"></i></span>
-                <input class="input-group-field" type="text" name="c_postalCode" placeholder="Enter your postcode">
+                <input class="input-group-field" type="text" name="c_postalCode" placeholder="Enter your postcode" value="<?php echo $entered_postalcode; ?>">
               </div>
 			</label>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>

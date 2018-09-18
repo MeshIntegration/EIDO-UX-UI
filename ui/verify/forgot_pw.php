@@ -15,13 +15,13 @@ $logfile = "validation.log";
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - Patient Auth V3 - Screen 2</title>
+  <title>EIDO Verify</title>
   <link rel="stylesheet" href="./css/foundation.css">
   <link rel="stylesheet" href="./css/eido.css">
   <link rel="stylesheet" href="./css/dashboard.css">
   <link rel="stylesheet" href="./css/app.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
-  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="./js/jquery-1.12.4.min.js"></script>
 </head>
 <body class="registration">
 <div class="grid-container">
@@ -45,16 +45,16 @@ $logfile = "validation.log";
                 <span class="input-group-label"><i class="fi-mail"></i></span>
                 <input id="email" class="input-group-field" name="email" type="text" placeholder="Enter your e-mail address" value="<?php echo $_SESSION['login_email']; ?>">
               </div>
-			  <p id="backtologin" class="note text-right"><a href="login.php">I remembered! Back to Login</a></p>
+			  <p id="backtologin" class="bluelink text-right"><a href="login.php">I remembered! Back to login</a></p>
 			</label>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 			<div class="small-12 cell">
 			  <button type="submit" name="" value="" class="button large float-right">Send Link</button>
 			</div>
 		  </form>
-		    <div class="small-12 cell">
+		    <!--<div class="small-12 cell">
 			  <p><hr></p>
-		    </div>
+		    </div>-->
 		  </div>
 		<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	  </div>	  

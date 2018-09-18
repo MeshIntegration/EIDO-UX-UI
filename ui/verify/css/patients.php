@@ -805,7 +805,7 @@ $GetQuery = dbi_query($sql);
        <h5 class="<?php echo $pt_status_class; ?>"><?php echo "$c_surname, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
         <table class="su-table stack">
             <tr>
-              <td class='clickable-row su_data' data-href='patients.php?m=detail&id=<?php echo $pe_id; ?>' colspan="2">
+              <td class='clickable-row su_data' data-href='patients.php?m=detail&id=<?php echo $pe_id; ?>' colspan="2" style="border-bottom: solid 0;">
 		        <strong>HospNo:</strong> <?php echo $c_referenceNumberHospitalId; ?><br />
                 <strong>NHS No:</strong> <?php echo $c_nhsNumber; ?><br />
                 <strong>DOB:</strong>  <?php echo $c_dateOfBirth; ?> 

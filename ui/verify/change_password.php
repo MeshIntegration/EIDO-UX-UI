@@ -28,13 +28,13 @@ $return_to = get_query_string('rt');
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - Patient Auth V3 - Screen 3</title>
+  <title>EIDO Verify</title>
   <link rel="stylesheet" href="css/foundation.css">
   <link rel="stylesheet" href="css/eido.css">
   <link rel="stylesheet" href="css/dashboard.css">
   <link rel="stylesheet" href="css/app.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
-  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="js/jquery-1.12.4.min.js"></script>
   <script>
   $(document).ready(function(){
   });
@@ -64,37 +64,52 @@ $return_to = get_query_string('rt');
 	    <div class="small-12 medium-6 align-center-middle cell">
 		  <p>&nbsp;</p>
 		  <form class="login" action="change_password_a.php?rt=<?php echo $return_to; ?>" method="post" id="form_container" >
-                     <?php if ($error_msg<>"") { ?>
-			<div class="grid-x">
-			  <div class="small-11 cell">
-                             <span style="color:red;"><strong><?php echo $msg; ?></strong></span>
-                          </div>
-			</div>
-                      <?php } ?>
-			<p>&nbsp;</p>
-			<h1>Reset Password</h1>
-			<p>Create a password for your account. Please use a secure format.</p>
-			<div class="grid-x">
+
+			<p></p>
+			<h1>Change Password</h1>
+			<p>Create a new password for your account.</p>
+			<!--<div class="grid-x">
 			  <div class="small-11 cell"><label class="adjust">Current Password</label></div>
                           <input type ="password" name="old_password">
                           </label>
-			</div>
+			</div>-->
 
-			<label>Enter Your New  Password
+
+
+              <div class="grid-x hide">
+                  <label class="hide">Email
+                  <input type="email" class="hide">
+                  </label>
+              </div>
+              <div class="small-12 cell field padding-bottom-1 padding-top-1 padding-left-0 padding-right-0">
+                  <?php if ($error_msg<>"") { ?><div class='oldpassval error_message fi-alert'><strong><?php echo $msg; ?></strong></div> <?php } ?>
+              <label class="">Current Password
+                  <div class="input-group">
+                      <span class="input-group-label"><i class="fi-lock"></i></span>
+                      <input class="input-group-field" id="old_password"  name="old_password" type="password" placeholder="Enter your current password" autocomplete="password"><br />
+                  </div>
+              </label>
+              </div>
+              <div class="grid-x hide">
+                  <label class="hide">Email
+                      <input type="email" class="hide">
+                  </label>
+              </div>
+			<label>New Password
 			  <div class="input-group">
                 <span class="input-group-label"><i class="fi-lock"></i></span>
-                <input class="input-group-field" id="form_password"  name="password" type="password" placeholder="Enter your password"><br />
+                <input class="input-group-field" id="form_password"  name="password" type="password" placeholder="Create a new password" autocomplete="new-password"><br />
               </div>
                         <div class="progress password_strength_indicator" role="progressbar" tabindex="0" aria-valuemax="100">
                            <span class="progress-meter" style="width: 0%">
-                              <p class="progress-meter-text" style="transform: translate(-0%, -50%)">Password Strength</p>
+                              <p class="progress-meter-text" style="transform: translate(-0%, -50%)">&nbsp;Password Strength</p>
                            </span>
                         </div>
                         </label>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 			<div class="small-12 cell">
-			  <button type="button" name="" value="" class="button large inactive text-left">Back</button>
-			  <button id="btn_next" type="submit" name="" value="" class="button large inactive not-active float-right">Next</button>
+			  <button type="button" name="" value="" class="hide button large inactive text-left">Back</button>
+			  <button id="btn_next" type="submit" name="" value="" class="button large inactive not-active float-right">Save</button>
 			</div>
 		  </form>
 		    <div class="small-12 cell">
@@ -212,7 +227,7 @@ $return_to = get_query_string('rt');
                   wordLetterNumberCharCombo: true
                }
             };
-            $(':password').pwstrength(options);  
+            $('#form_password').pwstrength(options);
          });
       </script>  
    </body>

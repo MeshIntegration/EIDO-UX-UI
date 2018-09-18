@@ -1,12 +1,18 @@
 <!doctype html>
 <?php
 // need to change according to session
+//php class used to detect mobile devices
+include_once '/ui/verify/lib/classes/Mobile_Detect.php';
+
 require_once 'utilities.php';
 session_start();
-$logfile = "wel.log";
+$logfile = "user.log";
 logMsg("Login Page - /ui/verify/login.php", $logfile);
+// execute Mobile_Detect and save results to variable
+$detect = new Mobile_Detect;
 $error_msg = $_SESSION['error_msg'];
 $_SESSION['error_msg'] = "";
+
 if ($error_msg<>"")
 {
    $modal_popup = "open" ;
@@ -17,13 +23,21 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
    $page = $_GET['page'];
    $start = ($page - 1) * $row;
 }
+if ($detect->isMobile() && !$detect->isTablet()) {
+    header ("Location: unsupported_browser.php");
+exit();
+}
+
 ?>
+
+
 <html class="no-js" lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - User Login</title>
+  <title>EIDO Verify</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="stylesheet" href="./css/foundation.css">
   <link rel="stylesheet" href="./css/eido.css">
   <link rel="stylesheet" href="./css/dashboard.css">
@@ -59,20 +73,21 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 			<p>&nbsp;</p>
 			<h1>Login</h1>
                           <?php if ($_SESSION['login_error']) { ?>
-                                <div class='error_message fi-alert'><strong>Your email or password was incorrect.</strong> - please try again</div>
+                                <div class='error_message fi-alert'><strong>Your e-mail or password was incorrect.&nbsp;  Please try again.</strong></div>
                           <?php } ?>
-			<label>E-mail
-			  <div class="input-group">
+			<label style="color: #0D2240 !important;">E-mail
+			  <div class="input-group login">
                                 <span class="input-group-label"><i class="fi-mail"></i></span>
-				<input id="username1" class="input-group-field" type="text" name="username" placeholder="Enter your e-mail address" autofocus>
+				<input id="username1" class="input-group-field" type="text" name="username" placeholder="Enter your e-mail address" value="<?php echo $_SESSION['username']; ?>" autofocus>
                           </div>
 			</label>
 			<label>Password
 			  <div class="input-group login">
                 <span class="input-group-label"><i class="fi-lock"></i></span>
-                <input id="password" class="input-group-field" type="password" name="password" placeholder="Enter your password">
+                <input id="password" class="input-group-field" type="password" name="password" placeholder="Enter your password" value="<?php echo $_SESSION['password']; ?>" >
+                <span class="input-group-label toggle-password" toggle="#password">SHOW</span>
               </div>
-			  <p id="forgotpw" class="text-right" style="font-weight:200"><a href="forgot_pw.php">I forgot my password</a></p>
+			  <p id="forgotpw" class="bluelink text-right"><a href="forgot_pw.php">I forgot my password</a></p>
 			</label>
 			<div class="small-12 cell">
 			  <button id="login" type="submit" name="" value="" class="button large float-right">Login</button>
@@ -87,12 +102,13 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
   <div class="grid-x">
     <div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	<div class="small-12 medium-6 cell">
-	  <div class="small-12 cell text-center">
-		<p>&nbsp;</p>
-		<p><a href="#" class="aux_help"><img src="./img/icons/help.png" alt="Need any help"/><br />Need any help?</a></p>
-	        <p>Copyright EIDO Systems Ltd, 2018. All rights reserved. <a href="#" class="aux">Legal</a></p>
-		<p>&nbsp;</p>
-	  </div>
+        <div class="small-12 cell text-center">
+            <p>&nbsp;</p>
+            <p><a href="#" class="aux_help" ><i class="icon eido-icon-chat"></i> <br><span style="font-size: large">Need any help?</span></a></p>
+            <br>
+            <p style="font-size: small;">Copyright EIDO Systems Ltd, 2018. All rights reserved. <a href="#" class="bluelink" style=""><span class="bluelink" style="font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif; font-weight: 400; font-style: normal;">Legal</span></a></p>
+
+        </div>
 	</div>  
     <div class="hide-for-small-only medium-3 cell">&nbsp;</div>  
   </div>
@@ -111,7 +127,19 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 <script src="./js/vendor/foundation.js"></script>
 <script src="./js/app.js"></script>
 <script>
-        //save the value that's in the email field upon click of login button and store the value to session storage, or store a value of 0 if blank
+    //save the value that's in the email field upon click of login button and store the value to session storage, or store a value of 0 if blank
+     $(document).ready(function () {
+        $(".toggle-password").click(function() {
+           var input = $($(this).attr("toggle"));
+           if (input.attr("type") == "password") {
+              input.attr("type", "text");
+              $(this).html("HIDE");
+           } else {
+              input.attr("type", "password");
+              $(this).html("SHOW");
+           }
+        })
+    });
     $(document).ready(function() {
         $('#login').click(function() {
             if ($("#username1").val().length > 0) {

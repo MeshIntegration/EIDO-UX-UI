@@ -1,5 +1,5 @@
 <div class="grid-x hide-for-small-only show-for-medium">
-  <div class="small-12 medium-2 large-2 cell">
+  <div class="small-12 medium-2 large-2 cell small-blank">
     <button class="button type shift btn-header" type="button" data-toggle="example-dropdown-bottom-left">
       <?php echo $user_initials; ?>
     </button>
@@ -17,10 +17,10 @@
   </div>
 -->
 
- <div class="small-12 medium-6 large-6 cell" style="padding-top: 26px;">
+ <div class="small-12 medium-6 large-6 cell small-blank" style="padding-top: 26px;">
     	  <!--  <div class="grid" style="padding-top: 15px;"> -->
       	  
-	   <div id="addpt" class="row links" style="margin-top: -2px; margin-bottom: 4px; height: 20px; zoom: 1.14;">
+	   <div id="addpt" class="row links bluelink" style="text-decoration: none; margin-top: -2px; margin-bottom: 4px; height: 20px; zoom: 1.14;">
               <a href="/ui/verify/patient/patients_a.php?m=gotoaddpt" style="padding-bottom: 2px; vertical-align: center;">
 	              <i class="icon eido-icon-plus-circle" style="margin-right: 7px;"></i>Add Patient</a>
            </div>
@@ -31,7 +31,7 @@
      style="zoom: 1.14;"-->
 
        <?php if ($user_role=="ADMIN"): ?>
-      	  <div id="addpt" class="row links" style="height: 20px; zoom: 1.14;">
+      	  <div id="addpt" class="row links bluelink" style="text-decoration: none; height: 20px; zoom: 1.14;">
             <a href="/ui/verify/admin/users.php" style="padding-bottom: 2px; vertical-align: center;">
                 <i class="icon eido-icon-chevron-circle-right" style="margin-right: 7px;"></i>User Administration</a>
    	    </div>
@@ -42,8 +42,8 @@
 </div>
 <!-- Start Mobile Nav -->
 <div class="grid-x hide-for-medium">
-  <div class="small-12 cell text-center"><a href="patients.php?m=main"><img src="/ui/img/eido_logo.png" alt="EIDO Logo" class="logo"/></a></div>  
-  <div class="small-12 cell toggle">
+  <div class="small-12 cell text-right"><a href="patients.php?m=main"><img src="/ui/img/eido_logo.png" alt="EIDO Logo" class="logo"/></a></div>
+  <div class="small-12 cell toggle small-blank">
     <div class="grid-x">
 	  <div class="small-10 cell">&nbsp;</div>
 	  <div class="small-2 cell text-right">

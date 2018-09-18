@@ -5,7 +5,7 @@
 // WEL 1/18/18
 // ***************************************
 
-$logfile = "wel.log";
+$logfile = "user.log";
 
 $user_id = stripslashes($_COOKIE["user_id"]);
 logMsg("userId: ".$user_id, $logfile);

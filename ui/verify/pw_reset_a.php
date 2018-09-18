@@ -7,7 +7,7 @@
 
 include "./utilities.php";
 session_start();
-$logfile = "wel.log";
+$logfile = "user.log";
 
 $pwkey = get_query_string('k');
 if ($pwkey=="")
@@ -28,7 +28,7 @@ if (!password_verify($password, $hash)) {
 save_user_pw_reset($pwkey, $hash);
 
 $_SESSION['error_msg']="<center><h1>Reset Password</h1><p>Your password has been reset. Use your new password to login.</p>
-                       <a href='login.php' class='button large active'>Goto Login</a></center>";
+                       <a href='login.php' class='button large active'>Go To Login</a></center>";
 header ("Location: message.php");
 exit();
 ?>

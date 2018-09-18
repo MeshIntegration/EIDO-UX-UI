@@ -4,7 +4,9 @@ require_once '../utilities.php';
 $logfile = "validation.log";
 
 session_start();
-$arr_pt_info = $_SESSION['arr_pt_info'];
+$arr_pt_info = get_pt_info($_SESSION['patientEpisodeId']);
+$_SESSION['patientEpisodeId'] = $arr_pt_info['id'];
+//$arr_pt_info = $_SESSION['arr_pt_info'];
 $error_msg = $_SESSION['error_msg'];
 $_SESSION['error_msg'] = "";
 
@@ -14,7 +16,7 @@ $_SESSION['error_msg'] = "";
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Eido Verify - Patient Auth V3 - Screen 2a</title>
+	<title>EIDO Verify</title>
 	<link rel="stylesheet" href="../css/foundation.css">
 	<link rel="stylesheet" href="../css/eido.css">
 	<link rel="stylesheet" href="../css/dashboard.css">
@@ -55,9 +57,10 @@ $_SESSION['error_msg'] = "";
 		<!-- Start Content-Full -->
 		<div class="small-12 medium-12 large-12 cell content-full">
 			<div class="grid-x">
-				<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
+                <div class="hide-for-small-only medium-3 large-3 cell">&nbsp;</div>
+				<!--<div class="hide-for-small-only medium-3 cell">&nbsp;</div>-->
 				<div class="small-12 medium-6 align-center-middle text-center cell">
-					<p>&nbsp;</p>
+                    <div class="hide-for-small-only show-for-medium show-for-large cell"><p>&nbsp;</p></div>
 					<h2>Terms &amp; Conditions</h2>
 					<p>Please read our <a href="#">Terms &amp; Conditions</a> of use.</p>
 					<div class="grid-x" style="background:#efefef; padding:20px;">
@@ -84,19 +87,19 @@ $_SESSION['error_msg'] = "";
 					<form class="login">
 						<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 						<div class="small-12 cell">
-							<button type="button" name="" value="" class="button large inactive float-left">Back</button>
+							<button type="button" name="" value="" class="button large inactive float-left" style="display: none">Back</button>
 							<a href="validation_review.php" class="not-active">
 								<button type="button" name="" id="btn_next" value="" class="button large inactive float-right">Next</button>
 							</a>
 						</div>
+                        <div class="small-12 text-right cell"><p>&nbsp;<br /></p></div>
 					</form>
-					<div class="small-12 cell">
-						<p><img src="../img/org_logos/<?php echo $arr_pt_info['logo']; ?>" alt="" class="vendor"/></p>
-					</div>
-				</div>
-				<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
-			</div>
-		</div>
+                    <img src="../img/org_logos/<?php echo $arr_pt_info['logo']; ?>" alt="" class="vendor"/><!--</p>-->
+                </div>
+                <div class="hide-for-small-only medium-3 large-3 cell">&nbsp;</div>
+            </div>
+        </div>
+    </div>
 		<!-- End Content-Full -->
 	</div>
 	<?php include "../includes/val_footer.php"; ?>

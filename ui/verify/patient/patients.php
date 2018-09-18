@@ -286,6 +286,10 @@ if(basename($dirname) != basename($req_dirname)) {
 	unset($_SESSION['filter']['search_within_query']);
 }
 
+// Set up default WHERE clause to get only patients for this user's organization/hospital
+$org_id = $_COOKIE['org_id'];
+$where[] = "c_hospitalId  = '$org_id'";
+
 if(isset($_SESSION['filter']) && sizeof($_SESSION['filter']) > 0) {
 	$limit = "$start,$row";
 
@@ -339,7 +343,7 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter']) > 0) {
 			$order[] = "c_surname ASC";
 		} else if($_SESSION['filter']['status'] == 3) {
 			// need to get status filter - gray INACTIVE
-			$where[] = "c_status='PENDING' OR c_procedureStatus='CANCEL' OR c_status='Episode Complete'";
+			$where[] = "(c_status='PENDING' OR c_procedureStatus='CANCEL' OR c_status='Episode Complete')";
 			$order[] = "c_surname ASC";
 		} else if($_SESSION['filter']['status'] == 4) {
 			// need to get status filter - ALL/TOTAL
@@ -460,7 +464,7 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter']) > 0) {
 		$sub_where_field = array("t.c_postalCode",
 			"t.c_description",
 			"t.c_surname",
-			"t.c_procedure",
+			"t.c_procedureId",
 			"t.c_userName",
 			"t.c_tags",
 			"t.c_firstName",
@@ -489,7 +493,11 @@ if(isset($_SESSION['filter']) && sizeof($_SESSION['filter']) > 0) {
 }
 
 // fetch tags value
-$tags_sql = "SELECT DISTINCT(c_tags) FROM $TBLPTEPISODES  WHERE c_tags is not null";
+$org_id = $_COOKIE['org_id'];
+$tags_sql = "SELECT DISTINCT(c_tags) 
+             FROM $TBLPTEPISODES  
+             WHERE c_tags IS NOT NULL
+             AND c_hospitalId  = '$org_id'";
 
 $tags_GetQuery = dbi_query($tags_sql);
 
@@ -504,17 +512,19 @@ $results_count = $GetQuery_all->num_rows;
 // logMsg(">>> results_count: $results_count",$logfile);
 
 ?>
-<html class="no-js" lang="en" dir="ltr">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Patient Lookup</title>
+	<title>EIDO Verify</title>
 	<link rel="stylesheet" href="../css/foundation.css">
 	<link rel="stylesheet" href="../css/dashboard.css">
 	<link rel="stylesheet" href="../css/app.css">
 	<link rel="stylesheet" href="../css/foundation-datepicker.min.css">
 	<link rel="stylesheet" href="../css/timeline.css">
+    <link rel="stylesheet" href="../css/select2.css">
+    <link rel="stylesheet" href="../css/bootstrap-select.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
 
 
@@ -522,32 +532,42 @@ $results_count = $GetQuery_all->num_rows;
 	<link rel="icon" type="image/png" href="../favicon.png">
     <link rel="stylesheet" href="/ui/verify/css/fontawesome-all.css" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="/ui/verify/css/fontawesome-all.css" type="text/css" />-->
 
 
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+    <!--link to local hosted copy-->
+    <link rel="stylesheet" href="../css/jquery-ui-1.12.1.min.css">
 	<link rel="stylesheet" href="../css/eido.css">
 
 
     <script src="../js/fontawesome-all.js"></script>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.js"></script>
+
+	<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+	<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+    <!--link to local hosted copy-->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery-ui-1.12.1.min.js"></script>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.js"></script>-->
+    <!--link to local hosted copy-->
+    <script src="../js/select2.full.js"></script>
+    <!--<script src="../js/bootstrap-select.min.js"></script>-->
 
 </head>
-<body>
+<!--<body>-->
+<body class="no-js" lang="en" dir="ltr">
 <div class="grid-container">
 	<!-- Start Header -->
 	<?php include '../includes/patient_header.php'; ?>
 	<!-- End Header -->
 	<!-- Start Title Bar & Navigation -->
 	<form action="patients.php?filter=1" method="POST">
-		<div class="grid-x grid-padding-x grey_header search_bar">
-			<div class="small-12 medium-2 cell gh_form">
-				<label>I'm looking for a:
+		<div class="grid-x grid-padding-x grey_header search_bar small-hide">
+			<div class="small-12 medium-2 cell gh_form_mod">
+				<label>Search for a:
 					<?php $looking_for = (isset($_SESSION['filter']['looking_for'])) ? $_SESSION['filter']['looking_for'] : ""; ?>
 					<select id="looking_for" name="looking_for" value="">
 						<option value="patient" <?php if($looking_for == "patient")
@@ -562,15 +582,17 @@ $results_count = $GetQuery_all->num_rows;
 					</select>
 				</label>
 			</div>
-			<div class="small-12 medium-4 cell gh_form basic">
+			<div class="small-12 medium-4 cell gh_form_mod basic">
 				<label>Search by:
 					<div class="input-group tb-search">
 						<div class="input-group-button left-append">
 							<i class="fi-magnifying-glass"></i>
 							<!--<a href="clear_search.php?m=<?php echo $mode; ?>" class="float-right align-center-middle"><img src="../img/close-icon.png" alt="" style="margin:7px;"/></a>-->
 						</div>
+
 						<input type="text" id="top_search_query" name="top_search_query" value="<?php echo isset($_SESSION['filter']['top_search_query']) ? $_SESSION['filter']['top_search_query'] : ''; ?>"
 								class="input-group-field">
+
 						<div class="input-group-button right-append">
 							<a href="clear_search.php?m=main" class="clear-icon">
 								<i class="eido-icon-x-altx-alt"></i>
@@ -580,16 +602,16 @@ $results_count = $GetQuery_all->num_rows;
 					</div>
 				</label>
 			</div>
-			<div class="small-12 medium-4 cell gh_form">
+			<div class="small-12 medium-4 cell gh_form_mod">
 				<label>Procedure Date:
 					<div class="input-group tb-search">
 						<div class="input-group-button left-append">
 							<i class="fi-calendar"></i>
 						</div>
-						<input id="popupDatepicker" name="procedure_date" class="date_element" placeholder="ALL" value="<?php if(isset($_SESSION['filter']['procedure_date'])) {
+						<input id="popupDatepicker" name="procedure_date" autocomplete="off" placeholder="ALL" value="<?php if(isset($_SESSION['filter']['procedure_date'])) {
 							echo $_SESSION['filter']['procedure_date'];
 						} ?>" type="text"
-								class="input-group-field">
+								class="date_element input-group-field">
 						<div class="input-group-button right-append">
 							<a href="clear_procdate_search.php?m=main" class="clear-icon">
 								<i class="eido-icon-x-altx-alt"></i>
@@ -598,16 +620,16 @@ $results_count = $GetQuery_all->num_rows;
 					</div>
 				</label>
 			</div>
-			<div class="small-12 medium-2 cell gh_form no-label text-right">
+			<div class="small-12 medium-2 cell gh_form_mod no-label text-right">
 				<button type="submit" name="top_search_submit" class="button" value="search">Search</button>
 			</div>
 		</div>
 	</form>
 	<!-- End Title Bar & Navigation -->
 	<!-- Start Content -->
-	<div class="grid-x su">
+	<div class="grid-x su small-hide">
 		<!-- Start Content-Left -->
-		<div class="small-12 medium-6 large-6 cell content-left">
+		<div class="small-12 medium-6 large-6 cell content-left" style="padding-top:0px;padding-bottom: 0px;">
 			<div border="0" class="su-table stack large-12">
 				<!-- **************************************************************
                          Start Filters Panel
@@ -615,28 +637,42 @@ $results_count = $GetQuery_all->num_rows;
 
 		<div class="grid-x">
 			<div class="small-12 cell">
-			<div class="accordion" data-accordion data-allow-all-closed="true">
-					<div class="accordion-item" data-accordion-item>
-						<a href="#" class="accordion-title sort"></a>
+			<!--<div class="accordion" data-accordion data-allow-all-closed="true">-->
+                <div id="bulk_action_tabs" class="tabs" data-active-collapse="true" data-tabs style="border:0;">
+					<!--<div class="accordion-item" data-accordion-item>-->
+                        <div class="tabs-title">
+						<!--<a href="#panel1" class="accordion-title sort sortr sortricon">-->
+                        <a href="#panel1" class="btn button2 inactive bulkbutton" style="top:9px;right:10px;position:absolute;padding-top: 0px;padding-bottom: 0px; max-width: 30%; padding: 0.68em .85em !important;font-size: 0.9rem!important; color: #6b6b6b;">Sort By
+                            <!--<i class="minus-alt" style="font-family:'eido' !important;; vertical-align: -.2pc; zoom: 1.4;margin-left: 2px; left:auto;right:15px;top:14px;position:absolute;"></i>-->
+                            <!--<i class="eido-icon-minus-alt fc_add fc_minus" style="vertical-align: -.2pc; zoom: 1.4;margin-left: 2px; left:auto;right:15px;top:14px;position:absolute;"></i>-->
+                            <i class="eido-icon-plus2 fc_add fc_plus" style="vertical-align: -.15pc; zoom: 1.3;margin-left: 5px;"></i>
+                            <i class="eido-icon-minus-alt fc_add fc_minus" style="vertical-align: -.15pc; zoom: 1.3;margin-left: 5px;"></i>
+                        </a>
+                        </div>
+                </div>
 						<!-- Accordion tab title -->
 						<div class='grid-x row'>
-							<div class="small-6 medium-8 cell text-left padding-10">
-								<a href='patients.php?filter=1&operation=1' class="button <?php echo (isset($_SESSION['filter']['operation']) && $_SESSION['filter']['operation'] == 1) ? "selected" : "inactive"; ?>">Post op</a>&nbsp;&nbsp;<a href='patients.php?filter=1&operation=2' class="button <?php echo (isset($_SESSION['filter']['operation']) && $_SESSION['filter']['operation'] == 2) ? "selected" : "inactive"; ?>">Pre op</a>
+							<div class="small-6 medium-8 cell text-left padding-10" style="padding-top: 9px;padding-bottom:0px">
+                                <a href='patients.php?filter=1&operation=2' class="button <?php echo (isset($_SESSION['filter']['operation']) && $_SESSION['filter']['operation'] == 2) ? "selected" : "inactive"; ?>" style="margin-bottom:0px;">Pre-op</a>
+                                &nbsp;&nbsp;
+                                <a href='patients.php?filter=1&operation=1' class="button <?php echo (isset($_SESSION['filter']['operation']) && $_SESSION['filter']['operation'] == 1) ? "selected" : "inactive"; ?>" style="margin-bottom:0px;">Post-op</a>
 							</div>
 						</div>
-						<div class="small-12 medium-12 cell"></div>
-						<div class='grid-x row'>
-							<div class="small-6 medium-6 cell text-left padding-10">
-								Results: <?php echo $results_count; ?>
-                                                        </div>
-							<div class="small-6 medium-6 cell  padding-10">
-                                              <?php if (!isset($_SESSION['filter']['name']) && !isset($_SESSION['filter']['status']) && !isset($_SESSION['filter']['activity']) && !isset($_SESSION['filter']['gender']) && !isset($_SESSION['filter']['search_within_query'])) { ?>
-                                                   <span class="float-right">Filters Disabled</span>
-                                              <?php } else { ?>
-                                                   <span class="float-right">Filters Active | <a href="clear_filter.php" class="float-right link-orange ">&nbsp; Reset</a></span>
-                                              <?php } ?>
-							</div>
-						</div>
+                <div class='grid-x row'>
+                    <div class="small-6 medium-6 cell text-left padding-10" style="padding-bottom: 0px;">
+                        Results: <?php echo $results_count; ?>
+                    </div>
+                    <div class="small-6 medium-6 cell  padding-10" style="padding-bottom: 0px;">
+                        <?php if (!isset($_SESSION['filter']['name']) && !isset($_SESSION['filter']['status']) && !isset($_SESSION['filter']['activity']) && !isset($_SESSION['filter']['gender']) && !isset($_SESSION['filter']['search_within_query']) && !isset($_SESSION['filter']['tags'])) { ?>
+                            <span class="float-right">Filters Disabled</span>
+                        <?php } else { ?>
+                            <span class="float-right">Filters Active | <a href="clear_filter.php" class="float-right link-orange ">&nbsp;Reset</a></span>
+                        <?php } ?>
+                    </div>
+                </div>
+						<!--<div class="small-12 medium-12 cell"></div>-->
+
+
 						<!-- // initial sort by tab
                   <a href="#" class="accordion-title sort">
 	    <div class="grid-x">
@@ -645,29 +681,33 @@ $results_count = $GetQuery_all->num_rows;
         </div>
 	  </a>
                   -->
-						<div class="accordion-content sort" data-tab-content>
+						<!--<div class="accordion-content sort" data-tab-content style="border-bottom: 0px !important;border-top: 1px solid #d3d1d1;">-->
+                <div class="tabs-content" data-tabs-content="bulk_action_tabs">
 							<?php
 							// Reset Filter button is not shown if filter is default
 							if(!$is_default_filter) {
 								?>
-								<div class="grid-x rule">
+                            <?php } ?>
+                     <div class="tabs-panel" id="panel1">
+								<div class="grid-x rule" style="border-top: 0px;border-bottom: 0px">
 									<div class="small-12 cell">
 										<!--<a href="clear_filter.php" class="float-right align-center-middle"><img src="../img/close-icon.png" alt="" style="margin:7px;"></a>
 										<a href="clear_filter.php" class="float-right align-center-middle">Reset Filters</a>-->
 									</div>
 								</div>
-							<?php } ?>
+								<!--</div>-->
+
 							<div class="grid-x rule" style="margin-top: 0.875rem;">
 								<div class="small-12 medium-4 cell">
-									<label for="middle-label" class="middle">Time Added</label>
+									<label for="middle-label" class="middle">Time Added:</label>
 								</div>
 								<div class="small-12 medium-8 cell">
-			<a href="patients.php?filter=1&time_added=1" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added'] == 1) ? 'selected' : 'inactive'; ?>">Newest First</a>&nbsp;<a href="patients.php?filter=1&time_added=2" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added'] == 2) ? 'selected' : 'inactive'; ?>">Oldest First</a>
+			                        <a href="patients.php?filter=1&time_added=1" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added'] == 1) ? 'selected' : 'inactive'; ?>">Newest First</a>&nbsp;<a href="patients.php?filter=1&time_added=2" class="button <?php echo (isset($_SESSION['filter']['time_added']) && $_SESSION['filter']['time_added'] == 2) ? 'selected' : 'inactive'; ?>">Oldest First</a>
 								</div>
 							</div>
 							<div class="grid-x rule">
 								<div class="small-12 medium-4 cell">
-									<label for="middle-label" class="middle">Name</label>
+									<label for="middle-label" class="middle">Name:</label>
 								</div>
 								<div class="small-12 medium-8 cell">
 			<a href="patients.php?filter=1&name=1" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name'] == 1) ? "selected" : "inactive"; ?>">A-Z</a>&nbsp;<a href="patients.php?filter=1&name=2" class="button <?php echo (isset($_SESSION['filter']['name']) && $_SESSION['filter']['name'] == 2) ? "selected" : "inactive"; ?>">Z-A</a>
@@ -675,7 +715,7 @@ $results_count = $GetQuery_all->num_rows;
 							</div>
 							<div class="grid-x rule">
 								<div class="small-12 medium-4 cell">
-									<label for="middle-label" class="middle">Activity</label>
+									<label for="middle-label" class="middle">Activity:</label>
 								</div>
 								<div class="small-12 medium-8 cell">
 			<a href="patients.php?filter=1&activity=1" class="button <?php echo (isset($_SESSION['filter']['activity']) && $_SESSION['filter']['activity'] == 1) ? "selected" : "inactive"; ?>">Most Active</a>&nbsp;<a href="patients.php?filter=1&activity=2" class="button <?php echo (isset($_SESSION['filter']['activity']) && $_SESSION['filter']['activity'] == 2) ? "selected" : "inactive"; ?>">Least Active</a>
@@ -683,7 +723,7 @@ $results_count = $GetQuery_all->num_rows;
 							</div>
 							<div class="grid-x rule">
 								<div class="small-12 medium-4 cell">
-									<label for="middle-label" class="middle">Status</label>
+									<label for="middle-label" class="middle">Status:</label>
 								</div>
 								<div class="small-12 medium-8 cell">
 									<a href="patients.php?filter=1&status=1" class="button off_status <?php echo (isset($_SESSION['filter']['status']) && $_SESSION['filter']['status'] == 1) ? "selected" : "inactive"; ?>">Red</a>&nbsp;<a href="patients.php?filter=1&status=2" class="button on_status <?php echo (isset($_SESSION['filter']['status']) && $_SESSION['filter']['status'] == 2) ? "selected" : "inactive"; ?>">Green</a>
@@ -700,37 +740,48 @@ $results_count = $GetQuery_all->num_rows;
 							</div>
 							<div class="grid-x rule">
 								<div class="small-12 medium-4 cell">
-									<label for="middle-label" class="ml_label">Search:<br/>within results</label>
+									<label for="middle-label" class="ml_label">Search<br/>within results:</label>
 								</div>
 								<form method="post" enctype="multipart/form-data" action="patients.php?filter=1">
-									<div class="small-12 medium-8 cell">
-										<div class="input-group">
-											<input class="input-group-field searchbox" placeholder="Hobbs" type="text" name="search_within_query" value="<?php if(!empty($_SESSION['filter']['search_within_query']))
+									<div class="small-12 medium-8 cell" style="width: 125%; max-width: 300px;">
+										<div class="input-group" style="max-inline-size: 100%; padding-right: 2%;min-width: 12pc;max-width:15pc;">
+											<input class="input-group-field searchbox" placeholder="Hobbs" type="text" style="width: 190% !important; margin-right: 20px; position: static;" name="search_within_query" value="<?php if(!empty($_SESSION['filter']['search_within_query']))
 												echo $_SESSION['filter']['search_within_query']; ?>">
-											<div class="input-group-button">
-												<button type="submit" class="button" value="Go" name="search_within_submit">Go</button>
+											<div class="input-group-button" style="padding-top: 2px;">
+												<button type="submit" class="button" value="Go" name="search_within_submit" style="margin-right: 2pc;">Go</button>
 											</div>
 										</div>
 									</div>
 								</form>
 							</div>
-							<div class="grid-x rule">
+							<div class="grid-x rule" style="border-bottom: 0px !important;">
 								<div class="small-12 medium-12 cell">
-									<label for="middle-label" class="ml_label">Recent tags</label>
+									<label for="middle-label" class="ml_label">Recent tags:</label>
 								</div>
 								<div class="small-12 medium-12 cell">
-									<?php
-									while($tags_qryResult = $tags_GetQuery->fetch_assoc()) {
-										?>
-										<a href="patients.php?filter=1&tags=<?php echo $tags_qryResult['c_tags']; ?>"><span class="label <?php echo (isset($_SESSION['filter']['tags']) && $_SESSION['filter']['tags'] == $tags_qryResult['c_tags']) ? "success" : "secondary"; ?> "><?php echo strtoupper($tags_qryResult['c_tags']); ?></span></a>
-									<?php } ?>
+                                                                        <?php
+                                                                        $arr_tags2=array();
+                                                                        while($tags_qryResult = $tags_GetQuery->fetch_assoc()) {
+                                                                              $arr_tags_temp=array();
+                                                                              $arr_tags_temp=explode(",", $tags_qryResult['c_tags']);
+                                                                              for ($atemp=0; $atemp<count($arr_tags_temp); $atemp++) {
+                                                                                 if (!in_array(trim($arr_tags_temp[$atemp]), $arr_tags2))
+                                                                                      $arr_tags2[]=trim($arr_tags_temp[$atemp]);
+                                                                              }
+                                                                         }   // end while loop
+                                                                         for ($tagx=0; $tagx<count($arr_tags2); $tagx++) {
+                                                                        ?>
+                                                                                <a class="" href="patients.php?filter=1&tags=<?php echo $arr_tags2[$tagx]; ?>"><span style="" class="label tag taglabel filtertag <?php echo (isset($_SESSION['filter']['tags']) && $_SESSION['filter']['tags'] == $arr_tags2[$tagx]) ? "selected" : "inactive"; ?> "><?php echo str_replace("_"," ",strtoupper($arr_tags2[$tagx])); ?></span></a>
+                                                                   <?php } // end for loop ?>
 								</div>
 							</div>
-						</div>
+                       </div>
 					</div>
+
 				</div>
+
 			</div>
-		</div>
+        <!--</div>-->
 
 <!-- **********************************************
             End Filters Panel
@@ -759,13 +810,21 @@ $results_count = $GetQuery_all->num_rows;
 							$procedure = $c_procedureId . " - " . $c_description; else
 							$procedure = "";
 						$pt_status = get_pt_status($id);
-						if($pt_status == "Inactive" || $pt_status == "Pending")
-							$pt_status_class = "pending_status"; 
-                                                else if($pt_status == "Alert")
-							$pt_status_class = "off_status"; 
-                                                else if($pt_status == "Active")
-							$pt_status_class = "on_status";
+                        switch($pt_status) {
+                            case "Inactive":
+                            case "Pending":
+                                $pt_status_class = 'pending_status';
+                                break;
+                            case "Alert":
+                                $pt_status_class = 'off_status';
+                                break;
+                            case "Active":
+                                $pt_status_class = 'on_status';
+                                break;
+                            default:
+                                $pt_status_class = 'pending_status';
 
+                        }
 						$isSelected = '';
 						if($pe_id == $id) {
 							$isSelected = ' class="selected"';
@@ -777,8 +836,8 @@ $results_count = $GetQuery_all->num_rows;
 								<span class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
 								<p class="<?php echo $pt_status_class; ?>">
 									<span class="uc"><?php echo $pt_name; ?></span><br/>
-									HospNo: <?php echo $c_referenceNumberHospitalId; ?><br/>
-									<?php echo $procedure; ?>
+                                    <span><span style="font-weight: normal">HospNo: </span><?php echo $c_referenceNumberHospitalId; ?></span><br/>
+                                    <?php echo $procedure; ?></p>
 								</p>
 							</a>
 						</li>
@@ -792,7 +851,7 @@ $results_count = $GetQuery_all->num_rows;
 			$pagination = get_pagination($page, $totalRecord);
 			?>
 			<div class="row text-center">
-				<div class="small-12 pagination-btm"><?php echo $pagination; ?></div>
+				<div class="small-12 medium-6 large-6 pagination-btm padding-top-2" style="padding-bottom: 1rem"><?php echo $pagination; ?></div>
 			</div>
 		</div>
 		<!-- End Content-Left -->
@@ -818,24 +877,21 @@ $results_count = $GetQuery_all->num_rows;
             </h3>
 			<div style="margin-left: 20px; margin-right: 20px; padding-left: 0px" class="small-12 cell field">
                 <div class="small-12 medium-6 large-6">&nbsp;</div>
-				<div class="grid-x">
-                    <br>
-
-					<div class="hide-for-small-only medium-2">&nbsp;
-                    <br>
+				<div class="grid-x" style="margin-left:-20px;margin-right: 20px;">
+					<div class="hide-for-small-only medium-3">&nbsp;
                     </div>
-
-					<div class="small-12 medium-7">
+					<div class="small-12 medium-6">
 						<a href="patients_a.php?m=gotoaddpt">
 							<button class="button large expanded">Add Patient</button>
 						</a>
 					</div>
-					<div class="hide-for-small-only medium-2">&nbsp;</div>
+					<div class="hide-for-small-only medium-3">&nbsp;
+                    </div>
 				</div>
 			</div>
 			<hr class="gap"/>
             <div class="">
-	            <h3 class="padding-bottom-1">Recent Notifications</h3>
+	            <h3 class="padding-bottom-1" style="margin-bottom: 30px;">Recent Notifications</h3>
 
 	            <div class="standard-padding <?php echo($has_notifications == true ? " hide" : "") ?>">
 
@@ -849,30 +905,46 @@ $results_count = $GetQuery_all->num_rows;
 			<div class="standard-padding <?php echo($has_notifications == false ? "hide" : "") ?>" style="margin-bottom:30px;">
 				<ul class="" id="Notifications">
 					<?php for($n = 0; $n < count($arr_notifications); $n++) {
-					$n_name = $arr_notifications[$n]['c_timelineEntryDetail'];
-					$n_date = $arr_notifications[$n]['dateCreated'];
-					$n_date = substr($n_date, 0, strpos($n_date, " "));
-					$n_date = format_uk_date($n_date);
-					$n_type = $arr_notifications[$n]['c_timelineEntryType']; // Alert or Event
-					$n_id = $arr_notifications[$n]['id'];
-					$n_patient_name = $arr_notifications[$n]['c_firstName'] . " " . $arr_notifications[$n]['c_surname'];
-					$n_patientEpisodeId = $arr_notifications[$n]['c_patientEpisodeId'];
-					$n_imgfile = $arr_tl_data[$n_desc];
-					$n_class = "status action_needed";
-
-					$n_icon = "eido-icon-envelope-open-o22";
-					if($arr_notifications[$n]['c_timelineEntryDetail'] == "Sms Bounce") {
-						$n_icon = "fa fa-mobile";
-					}
-					if($arr_notifications[$n]['c_timelineEntryDetail'] == 'Request Review') {
-						$n_icon = "eido-icon-en";
-					}
+                        $n_name = $arr_notifications[$n]['c_timelineEntryDetail'];
+                        $n_date = $arr_notifications[$n]['dateCreated'];
+                        $n_date = substr($n_date, 0, strpos($n_date, " "));
+                        $n_date = format_uk_date($n_date);
+                        $n_type = $arr_notifications[$n]['c_timelineEntryType']; // Alert or Event
+                        $n_id = $arr_notifications[$n]['id'];
+                        $n_patient_name = $arr_notifications[$n]['c_firstName'] . " " . $arr_notifications[$n]['c_surname'];
+                        $n_patientEpisodeId = $arr_notifications[$n]['c_patientEpisodeId'];
+                        $n_imgfile = $arr_tl_data[$n_desc];
+                        $n_class = "status action_needed";
+                        if ($arr_notifications[$n]['c_timelineEntryDetail'] == 'SMS undelivered') {
+                            $n_icon = "eido-icon-mobile";
+                            $n_icon_class = "n-icon2";
+                            $n_name = "SMS Bounce";
+                        }
+                        else if ($arr_notifications[$n]['c_timelineEntryDetail'] == 'SMS undelivered ') {
+                            $n_icon = "eido-icon-mobile";
+                            $n_icon_class = "n-icon2";
+                            $n_name = "SMS Bounce";
+                        }
+                        else if ($arr_notifications[$n]['c_timelineEntryDetail'] == 'SMS failed') {
+                            $n_icon = "eido-icon-mobile";
+                            $n_icon_class = "n-icon2";
+                            $n_name = "SMS Failed";
+                        }
+                        else if ($arr_notifications[$n]['c_timelineEntryDetail'] == 'Request review') {
+                            $n_icon = "eido-icon-user7";
+                            $n_icon_class = "n-icon3";
+                            $n_name = "Request Review";
+                        }
+                        else {
+                            $n_icon = "eido-icon-envelope-open-o22";
+                            $n_icon_class = "n-icon";
+                        }
 
 						?>
 					<li>
 						<a class="link-full-block" href="patients.php?m=overview&tlm=key&id=<?php echo $n_patientEpisodeId; ?>">
 							<span class="right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
-							<div class="n-icon">
+							<div class="<?php echo $n_icon_class; ?>">
 								<i class="<?php echo $n_icon; ?>"></i>
 							</div>
 							<p><?php echo $n_name; ?><br/>Patient <strong><?php echo $n_patient_name; ?></strong></p>
@@ -882,18 +954,21 @@ $results_count = $GetQuery_all->num_rows;
 					<?php } ?>
 				</ul>
 			</div>
-        <hr class="gap"/>
 
 			<div class="grid-x<?php echo($has_notifications == false ? " hide" : "") ?>">
-				<!--<div class="hide-for-small-only medium-2">&nbsp;</div>-->
+				<div class="hide-for-small-only medium-3">&nbsp;</div>
 
-				<div class="small-12 medium-8">
-					<a href="patients.php?m=main&filter=1&status=1&page=1" class="button large expanded">View All</a>
+				<div class="small-12 medium-6">
+                    <a href="patients.php?m=main&filter=1&status=1&page=1">
+                        <button style="width:100%;" class="button large active">View All</button>
+                    </a>
 				</div>
-				<!--<div class="hide-for-small-only medium-2">&nbsp;</div>-->
+				<div class="hide-for-small-only medium-3">&nbsp;</div>
 			</div>
-			<!--<hr style="margin-right: 20px; margin-left: 20px;" class=""/>-->
-			<h3 class="padding-bottom-1">Stats</h3>
+            <hr class="gap"/>
+
+            <!--<hr style="margin-right: 20px; margin-left: 20px;" class=""/>-->
+			<h3 class="padding-bottom-1">Statistics</h3>
 			<br/>
 			<div class="grid-x field">
 				<div class="small-12 auto cell text-center grey_bdr">
@@ -913,30 +988,46 @@ $results_count = $GetQuery_all->num_rows;
 				</div>
 			</div>
 			<p>&nbsp;</p>
-			<div class="standard-padding">
 
-				<div class="grid-x">
-					<div class="hide-for-small-only medium-2"></div>
-	                <div class="small-12 medium-8 text-center">
-		                <a href="patients.php?m=stats" class="button large expanded active"><strong>View Stats</strong></a>
+
+				<div class="grid-x" style="padding-left:0px;padding-right:0px;">
+					<div class="hide-for-small-only medium-3"></div>
+	                <div class="small-12 medium-6">
+                        <a href="patients.php?m=stats">
+                            <button style="width:100%;" class="button large active">View All Stats</button>
+                        </a>
 	                </div>
-					<div class="hide-for-small-only medium-2"></div>
+					<div class="hide-for-small-only medium-3"></div>
 				</div>
-			</div>
+
 		</div>
 
 		<!-- END MAIN SECTION -->
 		<!-- STATS SECTION -->
-		<div style="padding-top: 0px !important;" class="small-12 medium-6 large-6 cell content-right  <?php echo $stats_hide; ?>">
-			<div class="back clickable-row btn-back" data-href="patients.php?m=main">
+		<div style="padding-top: 0px !important;" class="small-12 medium-6 large-6 cell content-right standard-padding  <?php echo $stats_hide; ?>">
+			<div class="back clickable-row btn-back" style="margin-bottom: 0 !important;" data-href="patients.php?m=main">
 				<a href="patients.php?m=main">
                     <span><i class="icon eido-icon-chevron-left"></i>
                     Back</span>
                 </a>
 			</div>
-			<h3>Stats<br/><span class="small"></span></h3>
-			<p style="margin-right: 20px; margin-left: 20px">User statistics for Verify</p>
-			<div class="grid-x text-center">
+			<h3>Stats<br/><span class="small sub-text">User statistics for Verify</span></h3>
+
+			<!--<div class="patient-data standard-padding">
+                <a href="patients.php" class="link-full-block standard-border-bottom">
+                   <span class="float-right right-arrow" style="padding-right: 15px !important;">
+                       <i class="eido-icon-chevron-right"></i>
+                       </span>
+                <div class="grid-x">
+                    <div class="small-7">
+                        <span><strong>ACTIVE PATIENTS</strong></span>
+                    </div>
+                        <div class="small-4">
+                            <span><p class="large-text-center"><?php echo get_stat_counts('active'); ?></p></span>
+                        </div>
+                </div>
+            </a>
+                </div>-->
 				<div class="small-12 medium-12 large-12 cell">
 					<table width="100%" border="0" class="su-table stack">
 						<tr>
@@ -1021,7 +1112,7 @@ $results_count = $GetQuery_all->num_rows;
 					</table>
 				</div>
 			</div>
-		</div>
+
 		<!-- STATS END -->
 		<!-- ADD SECTION -->
 		<div style="padding-top: 0px !important;" class="small-12 medium-6 large-6 cell content-right  <?php echo $add_hide; ?>">
@@ -1088,9 +1179,13 @@ $results_count = $GetQuery_all->num_rows;
 						</div>
 						<div class="small-12 cell">
 							<?php if($_SESSION['add_dob_error'])
-								echo "<div class='error_message fi-alert'><strong>Please enter your Date of Birth</strong> - this is required</div>"; else if($_SESSION['add_dob_format_error'])
-								echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - special characters are not allowed</div>"; else if($_SESSION['add_dob_invalid_error'])
-								echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - you enterd an invalid date</div>"; ?>
+							          echo "<div class='error_message fi-alert'><strong>Please enter your Date of Birth</strong> - this is required</div>"; 
+                                                              else if($_SESSION['add_dob_format_error'])
+								  echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - special characters are not allowed</div>"; 
+                                                              else if($_SESSION['add_dob_future_error'])
+								  echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - the date cannot be in the future</div>"; 
+                                                              else if($_SESSION['add_dob_invalid_error'])
+								  echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - you enterd an invalid date</div>"; ?>
 							<label>Date of Birth
 								<input type="text" name="dob" placeholder="DD/MM/YYYY" value="<?php echo $_SESSION['add_dob']; ?>">
 							</label>
@@ -1119,6 +1214,8 @@ $results_count = $GetQuery_all->num_rows;
 							</label>
 						</div>
 						<div class="small-12 cell">
+                                                     <?php if($_SESSION['add_mobilenumber_format_error'])
+                                                     echo "<div class='error_message fi-alert'><strong>Please enter a valid Mobile Number</strong></div>"; ?>
 							<label>Mobile Number
 								<input type="text" name="mobilenumber" placeholder="" value="<?php echo $_SESSION['add_mobilenumber']; ?>">
 							</label>
@@ -1129,8 +1226,8 @@ $results_count = $GetQuery_all->num_rows;
 					<div class="hide-for-small-only medium-3 large-3 cell"></div>
 					<div class="small-12 medium-6 large-6 cell text-center">
 						<p>&nbsp;</p>
-						<button type="submit" name="add_patient" value="add patient" class="button large expanded btn-bold"/>
-						Add patient</button>
+						<button type="submit" name="add_patient" value="add patient" class="button large btn-bold"/>
+						Add Patient</button>
 					</div>
 					<div class="hide-for-small-only medium-3 large-3 cell"></div>
 			</form>
@@ -1170,14 +1267,25 @@ $results_count = $GetQuery_all->num_rows;
 			$ov_proc_link = "patients.php?m=procselect&rtn=ov&id=$pe_id";
 		}
 		$pt_status = get_pt_status($pe_id);
+        switch($pt_status) {
+            case "Inactive":
+            case "Pending":
+                $pt_status_class = 'pending_status';
+                $pt_status_class_right = 'ps_grey';
+                break;
+            case "Alert":
+                $pt_status_class = 'off_status';
+                $pt_status_class_right = 'ps_red';
+                break;
+            case "Active":
+                $pt_status_class = 'on_status';
+                $pt_status_class_right = 'ps_green';
+                break;
+            default:
+                $pt_status_class = 'pending_status';
+                $pt_status_class_right = 'ps_grey';
 
-		if ($pt_status == "Inactive" || $pt_status == "Pending")
-			$pt_status_class = "ps_grey"; 
-                  else if ($pt_status == "Active")
-			$pt_status_class = "ps_green";
-                  else //  if (Spt_status == "Alert") 
-			$pt_status_class = "ps_red"; 
-
+        }
 		$c_tags = $qryResult_o['c_tags'];
 		//$arr_tags = array();
 		if($c_tags <> "")
@@ -1230,29 +1338,42 @@ $results_count = $GetQuery_all->num_rows;
 		}
 	}
 	?>
-	<div class="small-12 medium-6 large-6 cell content-right <?php echo $overview_hide; ?>">
+	<div class="small-12 medium-6 large-6 cell content-right standard-padding <?php echo $overview_hide; ?>">
 		<!-- <div class="back clickable-row" data-href="patients.php?m=main"><a href="patients.php?m=main"><img src="../img/icons/back.png" alt="less than icon" class="float-left" /></a>Back</div> -->
 		<h3>Patient Overview<br/><span class="small sub-text">See a patient's progress through Verify</span></h3>
-		<h5 class="<?php echo $pt_status_class; ?>"><?php echo " $c_surname_uc , $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
-		<div class="patient-data">
-			<a href="patients.php?m=detail&id=<?php echo $pe_id; ?>" class="link-full-block standard-padding standard-border-bottom">
-				<span class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
-				<div class="grid-x">
-					<div class="small-4">
-						<p><strong>HospNo:</strong></p>
-						<p><strong>NHS No:</strong></p>
-						<p><strong>DOB:</strong></p>
-					</div>
-					<div class="small-8">
-						<p><?php echo $c_referenceNumberHospitalId; ?></p>
-						<p><?php echo $c_nhsNumber; ?></p>
-						<p><?php echo $c_dateOfBirth; ?></p>
-					</div>
-				</div>
-			</a>
+		<h5 class="<?php echo $pt_status_class_right; ?>"><?php echo "$c_surname_uc, $c_firstName"; ?><span class="small"><?php echo $pt_status; ?></span></h5>
+		<div class="patient-data standard-padding">
+			<a href="patients.php?m=detail&id=<?php echo $pe_id; ?>" class="link-full-block standard-border-bottom" style="border-top: 0px solid #d3d1d1 !important; border-bottom: 1px solid #d3d1d1 !important;">
+				<span class="float-right right-arrow" style="padding-right: 15px;"><i class="icon eido-icon-chevron-right"></i></span>
+                <!-- have to have this one in their row for wrapping to work correctly-->
+                <div class="grid-x">
+                    <div class="small-4">
+                        <p><strong>Hosp No:</strong></p>
+                    </div>
+                    <div class="small-7">
+                        <p><?php echo $c_referenceNumberHospitalId; ?></p>
+                    </div>
+                </div>
+                <div class="grid-x">
+                    <div class="small-4">
+                        <p><strong>NHS No:</strong></p>
+                    </div>
+                    <div class="small-7">
+                        <p><?php echo $c_nhsNumber; ?></p>
+                    </div>
+                </div>
+                <div class="grid-x">
+                    <div class="small-4">
+                        <p><strong>DOB:</strong></p>
+                    </div>
+                    <div class="small-7">
+                        <p><?php echo $c_dateOfBirth; ?></p>
+                    </div>
+                </div>
+            </a>
 		</div>
 		<?php if($c_procedureId == ""): ?>
-			<div class="patient-data">
+			<div class="patient-data standard-padding">
 				<div>
 					<span class="text-center display-block standard-border-bottom"><a href="<?php echo $ov_proc_link; ?>" class="button">Add Procedure</a></span>
 				</div>
@@ -1261,54 +1382,60 @@ $results_count = $GetQuery_all->num_rows;
 
 		<?php else: ?>
 
-			<div class="patient-data">
-				<a href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>" class="link-full-block standard-padding standard-border-bottom">
-					<span class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
+			<div class="patient-data standard-padding">
+				<a href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>" class="link-full-block standard-border-bottom" style="border-top: 0px; border-bottom: 1px solid #d3d1d1 !important;">
+					<span class="float-right right-arrow" style="padding-right: 15px;"><i class="icon eido-icon-chevron-right"></i></span>
 					<!-- have to have this one in their row for wrapping to work correctly-->
-					<div class="grid-x">
-						<div class="small-4">
-							<p><strong>Procedure:</strong></p>
-						</div>
-						<div class="small-8">
-							<p><?php echo $procedure; ?></p>
-						</div>
-					</div>
-					<div class="grid-x">
-						<div class="small-4">
-							<p><strong>Procedure Date:</strong></p>
-							<p><strong>Surgeon:</strong></p>
-						</div>
-						<div class="small-8">
-							<p><?php if($c_plannedProcedureDate == "")
-									echo "<span style='color:red;'>No date selected.</span>"; else echo $c_plannedProcedureDate; ?></p>
-							<p><?php if($c_surgeonName == "")
-									echo "<span style='color:red;'>No surgeon selected.</span>"; else echo $c_surgeonName; ?></p>
-						</div>
-					</div>
-				</a>
+                    <div class="grid-x">
+                        <div class="small-4">
+                            <p><strong>Procedure:</strong></p>
+                        </div>
+                        <div class="small-7">
+                            <p><?php echo $procedure; ?></p>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="small-4">
+                            <p><strong>Date:</strong></p>
+                        </div>
+                        <div class="small-7">
+                            <p><?php if($c_plannedProcedureDate == "")
+                                    echo "<span style='color:red;'>No date selected</span>"; else echo $c_plannedProcedureDate; ?></p>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="small-4">
+                            <p><strong>Surgeon:</strong></p>
+                        </div>
+                        <div class="small-7">
+                            <p><?php if($c_surgeonName == "")
+                                    echo "<span style='color:red;'>No surgeon selected</span>"; else echo $c_surgeonName; ?></p>
+                        </div>
+                    </div>
+                </a>
 			</div>
 		<?php endif; ?>
 
-		<div class="patient-data standard-padding standard-border-bottom">
-			<div class="grid-x">
+		<div class="patient-data standard-padding">
+			<div class="grid-x standard-border-bottom">
 				<div class="small-4">
 					<p><strong>Status:</strong></p>
 				</div>
-				<div class="small-8">
+				<div class="small-7">
 					<?php echo $c_status; ?>
 				</div>
 			</div>
 		</div>
 
 		<?php if(count($arr_tags) > 0): ?>
-		<div class="patient-data standard-padding standard-border-bottom">
-			<div class="grid-x">
-				<div class="small-4">
+		<div class="patient-data standard-padding">
+			<div class="grid-x standard-border-bottom">
+				<div class="small-2">
 					<p><strong>Tags:</strong></p>
 				</div>
-				<div class="small-8">
+				<div class="small-7">
 					<?php for($i = 0; $i < count($arr_tags); $i++): ?>
-						<span class="label tag"><?php echo $arr_tags[$i]; ?>&nbsp;&nbsp;&nbsp;</span>
+						<span class="label tag taglabel statictag"><?php echo str_replace("_"," ",$arr_tags[$i]); ?>&nbsp;&nbsp;&nbsp;</span>
 					<?php endfor; ?>
 				</div>
 			</div>
@@ -1318,16 +1445,16 @@ $results_count = $GetQuery_all->num_rows;
 		<div class="patient-data">
 			<div class="standard-padding">
 				<?php
-				if ($timeline) echo "<span class='float-right'>SHOW: <a href='patients.php?m=overview&id=$pe_id&tlm=key' class='link-standard-color ".($timeline_mode!='all' ? "link-active" : '')."' />Key events</a> | <a href='patients.php?m=overview&id=$pe_id&tlm=all' class='link-standard-color ".($timeline_mode=='all' ? "link-active" : '')."' />All events</a></span>";
+				if ($timeline) echo "<span class='float-right'><a href='patients.php?m=overview&id=$pe_id&tlm=key' class='link-standard-color ".($timeline_mode!='all' ? "link-active" : '')."' />Key events</a> | <a href='patients.php?m=overview&id=$pe_id&tlm=all' class='link-standard-color ".($timeline_mode=='all' ? "link-active" : '')."' />All events</a></span>";
 				else echo " No Survey Activity"; ?>
-				<h5 class="timeline-show-events standard-weight">Patient Timeline:</h5>
+				<h5 class="timeline-show-events standard-weight" style="font-size: 16px;">Patient Timeline:</h5>
 			</div>
 		</div>
 
 
 		<div class="<?php if($timeline)
                         echo "timeline timeline-right timeline-show-events"; ?>">
-			<table class="su-table">
+			<table class="su-table timeline-table" style="border-bottom: 0px;">
 				<?php for($tl = 0; $tl < count($arr_tl); $tl++) {
 					$tl_desc = trim($arr_tl[$tl]['c_timelineEntryDetail']);
 					$tl_date = $arr_tl[$tl]['dateCreated'];
@@ -1336,58 +1463,98 @@ $results_count = $GetQuery_all->num_rows;
 					$tl_date = format_tl_date($tl_date);
 					$tl_type = $arr_tl[$tl]['c_timelineEntryType']; // Alert or Event
 					$tl_id = $arr_tl[$tl]['id'];
+					$tl_alertstatus = $arr_tl[$tl]['c_timelineAlertStatus'];
 					$tl_imgfile = $arr_tl_data[$tl_desc];
 					$tl_session = $arr_tl[$tl]['c_sessionNumber'];
                                         $tl_data = $arr_tl[$tl]['c_data'];
                                         $varname = "c_session".$tl_session."Name";
-                                        $arr_proc_info=get_proc_info($c_procedure);
+                                        $arr_proc_info = get_proc_info($c_procedure);
                                         $tl_session_name=$arr_proc_info[$tl_session][$varname];
 //echo "$tl_session - $varname - $tl_session_name<br />";
 //echo "<PRE>";
 //print_r($arr_proc_info);
 //echo "</PRE>";
 //exit();
-					if($tl_type == "Alert" || strpos($tl_desc, "validation error")) {
-						$tl_class = "timeline-icon-cs";
-						$tl_iconfile = "exclaimation_red.png";  // "caution.png";
-					} else if($tl_type == "Event") {
-						$tl_class = "timeline-icon-green";
-						$tl_iconfile = "white_circle.png";
+					if($tl_type == "Alert") {
+						//$tl_class = "timeline-icon-cs";
+                        //$tl_class = "timeline-icon-cs";
+						//$tl_iconref = "exclaimation_red.png";  // "caution.png";
+                        //$tl_icon = "<img src='../img/icons/$tl_iconref' width='20'>";
+                        $tl_class = "timeline-icon-csdot";
+                        $tl_iconref = "eido-icon-exclamation-circle";
+                        $tl_iconclass = 'tlicon-alert';
+                        $tl_icon = "<i class='".$tl_iconclass." ".$tl_iconref."'></i>";
+                    } else if(strpos($tl_desc, "validation error")) {
+                        $tl_class = "timeline-icon-csdot";
+                        $tl_iconref = "eido-icon-exclamation-circle";
+                        $tl_iconclass = 'tlicon-alert';
+                        $tl_icon = "<i class='" . $tl_iconclass . " " . $tl_iconref . "'></i>";
+                    } else if($tl_desc == "PROCEDURE COMPLETE") {
+                        $tl_class = "timeline-icon-proc";
+                        $tl_iconref = "eido-icon-dot-circle-o";
+                        $tl_iconclass = 'tlicon-proccomplete';
+                        $tl_icon = "<i class='".$tl_iconclass." ".$tl_iconref."'></i>";
+                    } else if($tl_desc == "Procedure Completed") {
+                        $tl_class = "timeline-icon-proc";
+                        $tl_iconref = "eido-icon-dot-circle-o";
+                        $tl_iconclass = 'tlicon-proc';
+                        $tl_icon = "<i class='".$tl_iconclass." ".$tl_iconref."'></i>";
+                    } else if($tl_type == "Event") {
+						 $tl_class = "timeline-icon-green";
+						 $tl_iconref = "white_circle.png";
+                        $tl_icon = "<img src='../img/icons/$tl_iconref' width='20'>";
 					} else if($tl_type == "Future Event") {
-						$tl_class = "timeline-icon-cs";
-						$tl_iconfile = "white_circle.png";   //arrow.png";
+						//$tl_class = "timeline-icon-cs";
+                        $tl_class = "timeline-icon";
+						 $tl_iconref = "white_circle.png";   //arrow.png";
+                        $tl_icon = "<img src='../img/icons/$tl_iconref' width='20'>";
 					}
 
 					$tl_link = "";
 					$tl_btn_str = "";
+					$tr_class = 'class="timeline-no-hover"';
+					$tl_lineclass = "timeline-wrapper";
 					unset($tl_link2);
 					if($tl_desc == "Procedure Completed") {
-						//$tl_class = "timeline-icon-cs";
+						$tr_class = 'class="timeline-complete-before timeline-background"';
+                        $tl_lineclass = "";
 						//$tl_iconfile = "white_circle.png";
-						$tl_desc = "PROCEDURE ";
-						$tl_link = "patients.php?m=proccomplete&id=$pe_id";
-						$tl_btn_str = "<a href='$tl_link'><button class='button active'>Procedure Completed</button></a>";
+						$tl_desc = "<strong>PROCEDURE</strong>";
+                        $tl_class = "timeline-icon-proc";
+						//$tl_link = "patients.php?m=proccomplete&id=$pe_id";
+                        $tl_link = "none";
+						//$tl_btn_str = "<a href='$tl_link'><button class='button active'>Procedure Completed</button></a>";
+                        $tl_btn_str = "<a href='patients.php?m=proccomplete&id=$pe_id'><button class='button active'>Procedure Completed</button></a>";
 						// get procedure date into mysql format then pass to UK format func
 						list($d, $m, $y) = explode("/", $c_plannedProcedureDate);
 						$c_plannedProcedureDate2 = "$y-$m-$d";
 						$tl_date = format_tl_date($c_plannedProcedureDate2);
 					} else if($tl_desc == "PROCEDURE COMPLETE") {
-						//$tl_class = "timeline-icon-cs";
+                        $tl_desc = "<strong>PROCEDURE COMPLETE</strong>";
+						 $tr_class = 'class="timeline-complete-after timeline-background"';
+                        $tl_lineclass = "";
 						//$tl_iconfile = "arrow.png";
 						$tl_link = "none"; //  "patients.php?m=procdetail&id=$pe_id";
-                        $tl_iconfile = "procedure.png"; 
+                        $tl_iconref = "eido-icon-dot-circle-o";
+                        $tl_class = "timeline-icon-proc";
 						// get procedure date into mysql format then pass to UK format func
 						list($d, $m, $y) = explode("/", $c_plannedProcedureDate);
 						$c_plannedProcedureDate2 = "$y-$m-$d";
 						$tl_date = format_tl_date($c_plannedProcedureDate2);
 						// logMsg("$c_plannedProcedureDate - $c_plannedProcedureDate2 - $tl_date", $logfile);
+                    } else if($tl_desc == "Request for data review complete") {
+                        $tl_link = "none";
+                        $tl_desc = "<strong>Request for data review complete</strong>";
+                    } else if($tl_desc == "Patient Added") {
+                        $tl_link = "none";
+                        $tl_desc = "<strong>Patient Scheduled</strong><br />".$procedure;
 					} else if(strpos($tl_desc, "Scheduled Survey")) {
                                                 $tl_link="none";
 					} else if(in_array($tl_desc, $arr_tl_sess)) {
 						$tl_desc = str_replace("Session", "Survey", $tl_desc); 
-                                                $tl_desc = $tl_desc."<br />".$tl_session_name;
+                                                $tl_desc = "<strong>".$tl_desc."</strong><br />".$tl_session_name;
                                                 $tl_link="none";
-                                        }  else if($tl_desc == "Report Generated") {
+                    }  else if($tl_desc == "Report Generated") {
                                                 // 4/9/18 WEL - moved the PDF link from episodes to timeline table
 						//$fieldname = "c_survey" . $tl_session . "PdfLink";
 						//$sql_link = "SELECT $fieldname 
@@ -1397,57 +1564,77 @@ $results_count = $GetQuery_all->num_rows;
 						//$qryResult_link = $GetQuery_link->fetch_assoc();
                                                 //  $qryResult_link[$fieldname];
 						$tl_link = $tl_data;
-                                                $tl_link2 = "<a href='$tl_data' />$tl_session_name</a>";  
-                                                $tl_desc=$tl_desc."<br />".$tl_link2;
+						$tl_desc2 = $tl_desc;
+                                                $tl_link2 = "<a>$tl_session_name</a>";
+                                                // $tl_link2 = "<object data='$tl_data' type='application/pdf'>$tl_session_name</object>";
+                                                $tl_desc="<strong>".$tl_desc."</strong><br />".$tl_link2;
+
+                        $tr_class = 'class="timeline-hover"';
 						// $tl_link2 = substr($tl_link, 11);
 						// $loc = strpos($tl_link2, ">");
 						// $tl_link2 = substr($tl_link2, 0, $loc - 1);
 						// logMsg("Report Link: $sql_link - $tl_link", $logfile);
 						// logMsg("Link2: $tl_link2", $logfile);
 					} else if($tl_desc == "Request review") {
-                                                $tl_desc="Sign In Review"; 
-						$tl_link = "patients.php?m=review&id=$pe_id&tid=$tl_id";
-						$tl_btn_str = "<a href='$tl_link'><button class='button active align-right'>Check Patient Details</button></a>";
+                                                $tl_desc="<strong>Sign In Review</strong>";
+						//$tl_link = "patients.php?m=review&id=$pe_id&tid=$tl_id";
+                        $tl_link = "none";
+						//$tl_btn_str = "<a href='$tl_link'><button class='button active align-right'>Check Patient Details</button></a>";
+                        $tl_btn_str = "<a href='patients.php?m=review&id=$pe_id&tid=$tl_id'><button class='button active align-right'>Check Patient Details</button></a>";
+
 					// } else if(strpos($tl_desc, "validation error")) {
 					//      $tl_link = "patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id";
                                         //      $tl_btn_str = "&nbsp;&nbsp;&nbsp;<a href='$tl_link'><button class='button active align-right'>Check Patient Details</button></a>";
 					} else if($tl_desc == "Survey Email Sent") {
-                                                $tl_desc="Invite Email Sent"."<br />".$tl_session_name; 
+                                                $tl_desc="<strong>Invite Email Sent</strong>"."<br />".$tl_session_name;
 						$tl_link = "none";
 					} else if($tl_desc == "SMS Email Sent") {
-                                                $tl_desc="Invite SMS Sent"."<br />".$tl_session_name; 
+                                                $tl_desc="<strong>Invite SMS Sent</strong>"."<br />".$tl_session_name;
 						$tl_link = "none";
 					} else if($tl_desc == "Survey Email Clicked") {
-                                                $tl_desc="URL Invite Clicked"."<br />".$tl_session_name; 
+                                                $tl_desc="<strong>URL Invite Clicked</strong>"."<br />".$tl_session_name;
 						$tl_link = "none";
 					} else if($tl_desc == "Email Bounce") {
-                                                $tl_desc="Email Bounced"."<br />".$tl_session_name; 
-						$tl_link = "patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id";
-						$tl_btn_str = "<a href='$tl_link'><button class='button active align-right'>Update Patient Details</button></a>";
-					} else if($tl_desc == "SMS Bounce") {
-                                                $tl_desc="SMS Rejected"; 
-						$tl_link = "patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id";
-						$tl_btn_str = "<a href='$tl_link'><button class='button active align-right'>Check Patient Details</button></a>";
+                                                $tl_desc="<strong>Email Bounced</strong>"."<br />".$tl_session_name;
+						//$tl_link = "patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id";
+                        $tl_link = "none";
+						//$tl_btn_str = "<a href='$tl_link'><button class='button active align-right'>Update Patient Details</button></a>";
+                        $tl_btn_str = "<a href='patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id'><button class='button active align-right'>Update Patient Details</button></a>";
+					} else if($tl_desc == "SMS undelivered") {
+                                                $tl_desc="<strong>SMS Rejected</strong>"."<br />".$tl_session_name;
+						//$tl_link = "patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id";
+                        $tl_link = "none";
+						//$tl_btn_str = "<a href='$tl_link'><button class='button active align-right'>Check Patient Details</button></a>";
+                        $tl_btn_str = "<a href='patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id'><button class='button active align-right'>Update Patient Details</button></a>";
+                    } else if($tl_desc == "SMS failed") {
+                        $tl_desc="<strong>SMS Failed</strong>";
+                        //$tl_link = "patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id";
+                        $tl_link = "none";
+                        //$tl_btn_str = "<a href='$tl_link'><button class='button active align-right'>Check Patient Details</button></a>";
+                        $tl_btn_str = "<a href='patients_a.php?m=clearalert&id=$pe_id&tid=$tl_id'><button class='button active align-right'>Update Patient Details</button></a>";
 					} else {
-                                                $tl_desc = $tl_desc."<br />".$tl_session_name;
+                                                $tl_desc = "<strong>".$tl_desc."</strong><br />".$tl_session_name;
                                                 $tl_link = "none";
                                         }
 					// logMsg("Desc: $tl_desc Date: $tl_date Type: $tl_type Image: $tl_imgfile Icon: $tl_iconfile Class: $tl_class", $logfile);
 					?>
-			<tr <?php echo $tl_link != 'none' ? 'class="clickable-row" data-href="'.$tl_link.'"' : ''; ?>>
-				<td width="20%">
+
+                <tr <?php if ($tl_link<>"none") echo 'class="clickable-row timeline-hover"'; else echo $tr_class; ?>>
+
+				<td width="20%"><?php if($tl_desc2 == "Report Generated") echo "<a href='$tl_data' target='_blank'>"; ?>
 					<span class="date"><?php echo $tl_date; ?></span>
 				</td>
 				<td width="12%" class="timeline-item">
-					<span class="timeline-wrapper">
+					<span class="<?php echo $tl_lineclass; ?>">
 					     <span class="<?php echo $tl_class; ?>">
-					         <img src="../img/icons/<?php echo $tl_iconfile; ?>" width="20">
+
+                             <?php echo $tl_icon; ?>
                                                            </span>
 					</span>
 				</td>
-				<td <?php if ($tl_btn_str<>"") echo "colspan='2'"; else echo "width='58%'"; ?> class="timeline-item tlbdr <?php if ($tl_link<>"none") echo "clickable-row"; ?>" <?php if ($tl_link<>"none") echo "data-href='$tl_link'"; ?>>
+				<td <?php if ($tl_btn_str<>"") echo "colspan='2'"; else echo "width='58%'"; ?> class="timeline-item tlbdr <?php if ($tl_link<>"none") echo "clickable-row"; ?>" >
                           <span class="timeline-content">
-                               <?php echo "<p><strong>".$tl_desc."</strong></p>";
+                               <?php echo "<p>".$tl_desc."</p>";
                                      echo $tl_btn_str; 
 	                                 // if($tl_desc == "Report Generated")
 		                         // echo "<br />$tl_link"; else echo 
@@ -1457,11 +1644,14 @@ $results_count = $GetQuery_all->num_rows;
 			<?php if($tl_btn_str == "") { ?>
 				<td width="10%" class="tlbdr">
 					<?php if ($tl_link=="none") echo "&nbsp;"; else { ?>
-					<a href="<?php echo $tl_link; ?>"><img src="../img/icons/greater.png" alt="greater than icon" class="align-right"/></a>
+					<a href="<?php echo $tl_link; ?>"<?php if($tl_desc2 == "Report Generated") echo 'target="_blank"'; ?>><img src="../img/icons/greater.png" alt="greater than icon" class="align-right"/></a>
                                           <?php } ?>
 				</td>
+
 			<?php } ?>
+
 			</tr>
+
 			<?php } ?>
 		</table>
 		</div>
@@ -1538,29 +1728,39 @@ $results_count = $GetQuery_all->num_rows;
 		$c_gender = $_SESSION['add_gender'];
 		$c_emailAddress = $_SESSION['add_email'];
 		$c_mobileNumber = $_SESSION['add_mobilenumber'];
-		$pt_status_class = "ps_grey";
+		$pt_status_class = 'ps_grey';
 	} else if($mode == "editreview") {
-		$c_surname = $_SESSION['edit_lname'];
+        $c_surname = $_SESSION['edit_lname'];
         $c_surname_uc = strtoupper($_SESSION['edit_lname']);
-		$c_firstName = $_SESSION['edit_fname'];
-		$c_address = $_SESSION['edit_address'];
-		$c_address2 = $_SESSION['edit_address2'];
-		$c_city = $_SESSION['edit_city'];
-		$c_county = $_SESSION['edit_county'];
-		$c_postalCode = $_SESSION['edit_postalcode'];
-		$c_nhsNumber = $_SESSION['edit_nhsnumber'];
-		$c_referenceNumberHospitalId = $_SESSION['edit_hospitalnumber'];
-		$c_dateOfBirth = $_SESSION['edit_dob'];
-		$c_gender = $_SESSION['edit_gender'];
-		$c_emailAddress = $_SESSION['edit_email'];
-		$c_mobileNumber = $_SESSION['edit_mobilenumber'];
-		$pt_status = get_pt_status($pe_id);
-		if($pt_status == "Inactive")
-			$pt_status_class = "ps_grey"; else if(Spt_status == "Alert")
-			$pt_status_class = "ps_red"; else if($pt_status == "Active")
-			$pt_status_class = "ps_green";
+        $c_firstName = $_SESSION['edit_fname'];
+        $c_address = $_SESSION['edit_address'];
+        $c_address2 = $_SESSION['edit_address2'];
+        $c_city = $_SESSION['edit_city'];
+        $c_county = $_SESSION['edit_county'];
+        $c_postalCode = $_SESSION['edit_postalcode'];
+        $c_nhsNumber = $_SESSION['edit_nhsnumber'];
+        $c_referenceNumberHospitalId = $_SESSION['edit_hospitalnumber'];
+        $c_dateOfBirth = $_SESSION['edit_dob'];
+        $c_gender = $_SESSION['edit_gender'];
+        $c_emailAddress = $_SESSION['edit_email'];
+        $c_mobileNumber = $_SESSION['edit_mobilenumber'];
+        $pt_status = get_pt_status($pe_id);
+        switch ($pt_status) {
+            case "Inactive":
+            case "Pending":
+                $pt_status_class = 'ps_grey';
+                break;
+            case "Alert":
+                $pt_status_class = 'ps_red';
+                break;
+            case "Active":
+                $pt_status_class = 'ps_green';
+                break;
+            default:
+                $pt_status_class = 'ps_grey';
 
-	}
+        }
+    }
 	// logMsg("c_surname: $c_surname c_address: $c_address Session_surname ".$_SESSION['add_surname']." session_address: ".$_SESSION['add_address'], $logfile);
 	?>
 	<div style="padding-top: 0px !important;" class="small-12 medium-6 large-6 cell content-right patientcontent <?php echo $detail_hide; ?>">
@@ -1709,7 +1909,7 @@ $results_count = $GetQuery_all->num_rows;
             </a>
 		</div>
 		<h3>Edit Patient<br/><span class="small">View or edit the patient</span></h3>
-		<form action="patients_a.php?m=edit&id=<?php echo $pe_id; ?>" method="post">
+		<form action="patients_a.php?m=edit&id=<?php echo $id; ?>" method="post">
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
 					<div class="small-12 medium-12 large-12 cell">
@@ -1770,8 +1970,12 @@ $results_count = $GetQuery_all->num_rows;
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
                                                         <?php if($_SESSION['add_dob_error'])
-                                                                echo "<div class='error_message fi-alert'><strong>Please enter your Date of Birth</strong> - this is required</div>"; else if($_SESSION['add_dob_format_error'])
-                                                                echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - special characters are not allowed</div>"; else if($_SESSION['add_dob_invalid_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please enter your Date of Birth</strong> - this is required</div>"; 
+                                                          else if($_SESSION['add_dob_format_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - special characters are not allowed</div>"; 
+                                                          else if($_SESSION['add_dob_future_error'])
+                                                                echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - the date cannot be in the future</div>";
+                                                          else if($_SESSION['add_dob_invalid_error'])
                                                                 echo "<div class='error_message fi-alert'><strong>Please correct your Date of Birth</strong> - you enterd an invalid date</div>"; ?>
 						<label>Date of Birth
 							<input type="text" name="dob" value="<?php echo $c_dateOfBirth; ?>">
@@ -1788,7 +1992,7 @@ $results_count = $GetQuery_all->num_rows;
 							<?php echo $c_postalCode; ?></p>
 					</div>
 					<div class="small-12 medium-6 large-6 cell text-center">
-						<center><a href="patients.php?m=editaddress&id=<?php echo $pe_id; ?>" class="button large expanded inactive">Edit address</a>
+						<center><a href="patients.php?m=editaddress&id=<?php echo $pe_id; ?>" class="button large expanded inactive">Edit Address</a>
 						</center>
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
@@ -1807,8 +2011,10 @@ $results_count = $GetQuery_all->num_rows;
 						</label>
 					</div>
 					<div class="small-12 medium-12 large-12 cell" >
+                                              <?php if($_SESSION['add_mobilenumber_format_error'])
+                                                     echo "<div class='error_message fi-alert'><strong>Please enter a valid Mobile Number</strong></div>"; ?>
 						<label>Mobile Number
-							<input type="text" name="mobilenumber" value="<?php echo $c_mobileNumber; ?>">
+							<input type="text" name="mobilenumber"  value="<?php echo $c_mobileNumber; ?>">
 						</label>
 					</div>
 				</div>
@@ -1818,7 +2024,7 @@ $results_count = $GetQuery_all->num_rows;
 				<div class="small-12 medium-6 large-6 cell text-center">
 					<p>&nbsp;</p>
 					<center>
-						<button type="submit" name="" class="button large expanded">Save</button>
+						<button type="submit" name="save" class="button large expanded">Save</button>
 					</center>
 				</div>
 				<div class="hide-for-small-only medium-3 large-3 cell"></div>
@@ -1843,12 +2049,21 @@ $results_count = $GetQuery_all->num_rows;
 	$c_county = $qryResult_ea['c_county'];
 	$c_city = $qryResult_ea['c_city'];
 	$pt_status = get_pt_status($id);
-	if($pt_status == "Inactive")
-		$pt_status_class = "ps_grey"; 
-        else if(Spt_status == "Alert")
-		$pt_status_class = "ps_red"; 
-        else if($pt_status == "Active")
-		$pt_status_class = "ps_green";
+    switch($pt_status) {
+        case "Inactive":
+        case "Pending":
+            $pt_status_class = 'ps_grey';
+            break;
+        case "Alert":
+            $pt_status_class = 'ps_red';
+            break;
+        case "Active":
+            $pt_status_class = 'ps_green';
+            break;
+        default:
+            $pt_status_class = 'ps_grey';
+
+    }
 } else if($mode == "addaddress") {
 	$c_address = $_SESSION['add_address'];
 	$c_address2 = $_SESSION['add_address2'];
@@ -1888,14 +2103,23 @@ $results_count = $GetQuery_all->num_rows;
 						<?php if($_SESSION['add_address_error'])
 							echo "<div class='error_message fi-alert'><strong>Please select an address for this post code</strong> - this is required</div>"; ?>
 						<label>Postcode
-							<input type="text" name="postalcode" id="postalcode_ea" value="<?php echo $c_postalCode; ?>">
-						</label>
-					</div>
-					<div class="small-12 medium-12 large-12 cell">
+                            <input type="text" name="postalcode" id="postalcode_ea" value="<?php echo $c_postalCode; ?>">
+                        </label>
+                    </div>
+                    <!--<div class="small-12 cell">
+                        <label>Temp dev feild
+                            <select id="postalcode_ea_temp" class="select2 proc_surgeon1">
+                             <option value="<?php echo $c_postalCode; ?>"></option>
+                                <option value="LE11UT"></option>
+                                <option value="111111"></option>
+                            </select>
+                    <input type="text" class="hide" name="postalcode_temp1" id="postalcode_ea_temp1" value="<?php echo $c_postalCode; ?>">
+                    </div>-->
+                        <div data-role="none" class="small-12 medium-12 large-12 cell">
 						<?php if($_SESSION['add_address_error'])
 							echo "<strong>Select an address</strong> - this is required."; ?>
 						<label>
-							<select id="address" class="select_address" name="found_address" size="10">
+							<select id="address" data-role="none" data-native-menu="false" style="touch-action: none;" class="select_address" name="found_address" size="10">
 								<?php echo get_address_by_postcode($c_postalCode); ?>
 							</select>
 						</label>
@@ -1922,7 +2146,7 @@ $results_count = $GetQuery_all->num_rows;
 					</div>
 					<div class="small-12 medium-12 large-12 cell">
 						<label>Postcode
-							<input id="postalcode_2_ea" type="text" name="postalcode2" value="<?php echo $c_postalCode; ?>">
+							<input id="postalcode_2_ea" type="text" name="postalcode2"value="<?php echo $c_postalCode; ?>">
 						</label>
 					</div>
 				</div>
@@ -1944,11 +2168,11 @@ $results_count = $GetQuery_all->num_rows;
 	$arr_pt_info = get_pt_info($pe_id); ?>
 <div class="small-12 medium-6 large-6 cell content-right  <?php echo $editconfirm_hide; ?>">
 	<!-- <div class="back"><img src="../img/icons/back.png" alt="less than icon" class="float-left" />Back</div> -->
-	<h3>Confirmation</h3>
+	<h3 class="padding-bottom-1">Confirmation</h3>
 	<div class="grid-x text-center">
 		<div class="hide-for-small-only medium-3 large-3 cell"></div>
 		<div class="small-12 medium-6 large-6 cell">
-			<h5 class="">You have updated the patient's information</h5>
+			<h5 class="padding-top-2">You have updated the patient's information</h5>
 			<?php if($arr_pt_info['c_status'] <> "PENDING") { ?>
 				<div class="grid-x grid-padding-x">
 					<div class="small-12 medium-12 large-12 cell text-center">
@@ -1956,15 +2180,15 @@ $results_count = $GetQuery_all->num_rows;
 					</div>
 					<div class="small-12 medium-12 large-12 cell text-center">
 						<p>&nbsp;</p>
-						<a href="resend_invite.php?id=<?php echo $pe_id; ?>" class="button large expanded">SEND</a>
-						<a href="patients.php?m=main" class="button large expanded inactive">NO THANKS</a>
+						<a href="resend_invite.php?id=<?php echo $pe_id; ?>" class="button large expanded">Send</a>
+						<a href="patients.php?m=main" class="button large expanded inactive">No Thanks</a>
 					</div>
 				</div>
 			<?php } else { ?>
 				<div class="grid-x grid-padding-x">
 					<div class="small-12 medium-12 large-12 cell text-center">
 						<p>&nbsp;</p>
-						<a href="patients.php?main=m&id=<?php echo $pe_id; ?>" class="button large expanded">HOME</a>
+						<a href="patients.php?main=m&id=<?php echo $pe_id; ?>" class="button large expanded">Home</a>
 					</div>
 				</div>
 			<?php } ?>
@@ -1976,7 +2200,7 @@ $results_count = $GetQuery_all->num_rows;
 <!-- PROCPROCEED SECTION -->
 <div class="small-12 medium-6 large-6 cell content-right  <?php echo $procproceed_hide; ?>">
 
-	<h3>Add Patient</h3>
+	<h3 style="margin-bottom: 10px;padding-bottom:10px;">Add Patient</h3>
 	<div class="grid-x text-center">
 		<div class="hide-for-small-only medium-3 large-3 cell"></div>
 		<div class="small-12 medium-6 large-6 cell">
@@ -1990,8 +2214,8 @@ $results_count = $GetQuery_all->num_rows;
 				</div>
 				<div class="small-12 medium-12 large-12 cell text-center">
 					<p>&nbsp;</p>
-					<a href="patients.php?m=procselect&id=<?php echo $pe_id; ?>" class="button large expanded">Add procedure</a>
-					<a href="patients_a.php?m=gotoaddpt" class="button large expanded">New patient</a>
+					<a href="patients.php?m=procselect&id=<?php echo $pe_id; ?>" class="button large expanded">Add Procedure</a>
+					<a href="patients_a.php?m=gotoaddpt" class="button large expanded">New Patient</a>
 					<a href="patients.php?m=main" class="button large expanded inactive">Home</a>
 				</div>
 			</div>
@@ -2295,13 +2519,14 @@ if($mode == "review") {
 // ********************************************************************************
 if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "procselect" || $mode == "procsummary" || $mode == "procsurgeon") {
 	$sql_pd = "SELECT *
-                            FROM $TBLPTEPISODES
-                            WHERE id = '$pe_id'";
+                   FROM $TBLPTEPISODES
+                   WHERE id = '$pe_id'";
 	$GetQuery_pd = dbi_query($sql_pd);
+logMsg(">>>>>>>> $sql_pd",$logfile);
 	$qryResult_pd = $GetQuery_pd->fetch_assoc();
 	$id = $qryResult_pd['id'];
 	$c_surname = $qryResult_pd['c_surname'];
-    $c_surname_uc = strtoupper($qryResult_pd['c_surname']);
+        $c_surname_uc = strtoupper($qryResult_pd['c_surname']);
 	$c_firstName = $qryResult_pd['c_firstName'];
 	$c_plannedProcedureDate = $qryResult_pd['c_plannedProcedureDate'];
 	$c_nhsNumber = $qryResult_pd['c_nhsNumber'];
@@ -2321,20 +2546,28 @@ if($mode == "procdetail" || $mode == "proccomplete" || $mode == "procdate" || "p
         $c_procedureStatus = $qryResult_pd['c_procedureStatus'];
 	$procedure = $c_procedureId . " - " . $c_displayName;
 	$pt_status = get_pt_status($id);
-	if($pt_status == "Inactive")
-		$pt_status_class = "ps_grey"; else if(Spt_status == "Alert")
-		$pt_status_class = "ps_red"; else if($pt_status == "Active")
-		$pt_status_class = "ps_green";
+    switch($pt_status) {
+        case "Inactive":
+        case "Pending":
+            $pt_status_class = 'ps_grey';
+            break;
+        case "Alert":
+            $pt_status_class = 'ps_red';
+            break;
+        case "Active":
+            $pt_status_class = 'ps_green';
+            break;
+        default:
+            $pt_status_class = 'ps_grey';
 
-    $sql_sd = "SELECT id
-FROM $TBLSURGEONS
-WHERE c_gmcNumber = '$c_gmcNumber'";
-$GetQuery_sd = dbi_query($sql_sd);
-$qryResult_sd = $GetQuery_sd->fetch_assoc();
-$c_surgeonId =$qryResult_sd['id'];
-
-
-} ?>
+    }
+        $sql_sd = "SELECT id
+                   FROM $TBLSURGEONS
+                   WHERE c_gmcNumber = '$c_gmcNumber'";
+        $GetQuery_sd = dbi_query($sql_sd);
+        $qryResult_sd = $GetQuery_sd->fetch_assoc();
+        $c_surgeonId =$qryResult_sd['id'];
+    } ?>
 
 <!-- PROCSELECT SECTION -->
 <?php if($mode == "procselect") {
@@ -2358,7 +2591,7 @@ $c_surgeonId =$qryResult_sd['id'];
             Back</span>
         </a>
 	</div>
-	<h3>Select Procedure<br><span class="small">Which procedure will the patient have?</span></h3>
+	<h3>Select Procedure<br><span class="small sub-text">Which procedure will the patient have?</span></h3>
 	<form action="patients_a.php?m=procselect&id=<?php echo $pe_id; ?>" method="post" class="rs-adj">
 		<div class="grid-container">
 			<div class="grid-x">
@@ -2366,9 +2599,9 @@ $c_surgeonId =$qryResult_sd['id'];
 					<?php if($_SESSION['proc_select_error'])
 						echo "<div class='error_message fi-alert'><strong>Please select a procedure</strong> - this is required</div>";
 					$_SESSION['proc_select_error'] = false; ?>
-					<label>Procedure
+					<label class="padding-bottom-1">Procedure
 						<select name="proc_id">
-							<?php make_combo($TBLPROCEPISODES, "id", "c_description", $proc_id_selected, "", " ORDER BY c_procedureId "); ?>
+                                                    <?php echo make_procselect_combo($proc_id_selected); ?>
 						</select>
 					</label>
 				</div>
@@ -2381,7 +2614,7 @@ $c_surgeonId =$qryResult_sd['id'];
 						<?php echo "<p>" . $arr_proc_info[0]['c_procedureId'] . " - " . $arr_proc_info[0]['c_description'] . "</p>"; ?>
 						<label>Overview</label>
 						<div class="timeline timeline-right">
-							<table class="su-table">
+							<table class="su-table timeline-table" style="border-bottom: 0px !important;">
 								<?php $proctl_num_sessions = $arr_proc_info[0]['c_numberOfSessions'];
 								//logMsg("PS: num_sess: $proctl_num_sessions", $logfile);
 								$proctl_prepost_prev = "PRE"; // always starts with PRE
@@ -2390,39 +2623,52 @@ $c_surgeonId =$qryResult_sd['id'];
 									//logMsg("PS: pi=$pi - prePost_prev=$proctl_prepost_prev - prePost=".$arr_proc_info[$pi][$varname1], $logfile);
 									if(strtoupper($arr_proc_info[$pi][$varname1]) <> strtoupper($proctl_prepost_prev)) {
 										// changed from pre to post - insert Procedure
-										$proctl_class = "timeline-icon-cs";
-										$proctl_iconfile = "arrow.png";
+                                       $proctl_lineclass= "";
+                                       $proctr_class = "timeline-complete-before timeline-background";
+										$proctl_class = "timeline-icon-proc";
+                                       $proctl_iconref = "eido-icon-dot-circle-o";
+                                       $proctl_iconclass = 'tlicon-proc';
+                                       $proctl_icon = "<i class='".$proctl_iconclass." ".$proctl_iconref."'></i>";
 										$proctl_desc = $arr_proc_info[0]['c_description'];
 										$proctl_prepost_prev = $arr_proc_info[$pi][$varname1];
 										// bit of a hack - drop counter back one so we get the session info next pass
 										$pi--;
 									} else {
 										// Survey (session)
-										$proctl_class = "timeline-icon-cs";
-										$proctl_iconfile = "caution.png";
+                                       $proctr_class = "timeline-no-hover";
+                                       $proctl_lineclass= "timeline-wrapper";
+                                       $proctl_class = "timeline-icon";
+                                       $proctl_iconref = "white_circle.png";
+                                       $proctl_icon = "<img src='../img/icons/$proctl_iconref' width='20'>";
 										$varname2 = "c_session" . $pi . "Name";
 										$proctl_desc = $arr_proc_info[$pi][$varname2];
 										$proctl_prepost_prev = $arr_proc_info[$pi][$varname1];
 									}
 									// PROCTL
 									?>
-									<tr>
-										<td width="20%">
+									<tr class="<?php echo $proctr_class; ?>">
+										<td width="15%" style="background-color: #FFFFFF !important;">
 											&nbsp;
 										</td>
+                                        <td width="10%">
+                                            &nbsp;
+                                        </td>
 										<td width="12%" class="timeline-item">
-											<span class="timeline-wrapper">
-												<span class="<?php echo $proctl_class; ?>">
-                                                    <img src="../img/icons/<?php echo $proctl_iconfile; ?>" width="20">
+											<span class="<?php echo $proctl_lineclass; ?>">
+												<span class="<?php echo $proctl_class; ?>" style="left: 5%;">
+                                                    <?php echo $proctl_icon; ?>
                                                 </span>
 											</span>
 										</td>
-										<td width="58%" class="timeline-item tlbdr">
+										<td width="38%" class="timeline-item tlbdr">
                                 <span class="timeline-content">
                                 <p><?php echo $proctl_desc; ?></p>
                                 </span>
 										</td>
-										<td width="10%" class="tlbdr">
+                                        <td width="10%" class="">
+                                            &nbsp;
+                                        </td>
+										<td width="15%" class="" style="background-color: #FFFFFF !important;">
 											&nbsp;
 										</td>
 									</tr>
@@ -2463,19 +2709,30 @@ $c_surgeonId =$qryResult_sd['id'];
             Back</span>
         </a>
 	</div>
-	<h3 style="padding-bottom: 25px;" >Select Procedure Date<br><span  class="small">What date is the procedure planned for?</span></h3>
+	<h3 style="margin-left: 0px ;padding-left: 20px !important;">Select Procedure Date<br>
+        <span class="small sub-text">What date is the procedure planned for?</span>
+    </h3>
 	<?php ; // &rtn=pd   ???  ?>
+
+            <table class="padding-bottom-1">
+                <tbody>
+                <tr>
+                    <td class="padding-top-2" style="padding-left: 20px; width: 20%; vertical-align: top;"><strong>Procedure:</strong></td>
+                    <td class="padding-top-2" ><?php echo $procedure; ?></td>
+                </tr>
+                </tbody>
+            </table>
 	<form action="patients_a.php?m=procdate&id=<?php echo $pe_id; ?>" method="post">
              <input type="hidden" name="rtn" value="<?php echo $rtn; ?>">
-		<div style="padding-left: 0" class="grid-container">
-			<div class="grid-x">
-				<div style="padding-left: 0" class="small-12 cell field">
+        <div class="grid-container">
+            <div class="grid-x padding-top-1">
+				<!--<div style="padding-left: 0" class="small-12 cell field">
 					<h5>Procedure</h5>
                     <label style="padding-bottom: 15px;">
-					<?php echo $procedure; ?>
+
 					</label>
-				</div>
-				<div style="padding-left: 0; margin-bottom: 0px; padding-bottom: 0px" class="small-12 field">
+				</div>-->
+				<div style="padding-left: 0; margin-bottom: 0px; padding-bottom: 0px" class="small-12 field padding-top-1">
                                    <?php if($_SESSION['proc_date_error']) echo "<div class='error_message fi-alert'><strong>Please correct the procedure date</strong> - the date cannot be in the past.<br /></div>"; ?>
 					<div style="padding-left: 0; margin-bottom: 0" class="input-group">
 						<span style="padding-left: 0" class="input-group-label"><i class="fi-calendar"></i></span>
@@ -2534,29 +2791,45 @@ $c_surgeonId =$qryResult_sd['id'];
             Back</span>
         </a>
 	</div>
-	<h3>Select Surgeon<br/><span class="small">Which surgeon will perform the procedure?</span></h3>
-    <div style="margin-left: 20px; margin-right: 20px;">
-	<table class="su-table stack">
-		<tr>
-			<td style="padding-left: 0"><strong>Procedure:</strong></td>
-			<td><?php echo $procedure; ?></td>
+
+	<h3>Select Surgeon<br/><span class="small sub-text">Which surgeon will perform the procedure?</span></h3>
+
+    <!--<div style="margin-left: 20px; margin-right: 20px;">-->
+    <div class="">
+    <table class="padding-bottom-1">
+        <tbody>
+        <tr>
+            <td class="padding-top-1" style="padding-left: 20px; width: 20%; vertical-align: top;"><strong>Procedure:</strong></td>
+            <td class="padding-top-1" ><?php echo $procedure; ?></td>
+        </tr>
+        <tr>
+            <td class="" style="padding-left: 20px; width: 20%; vertical-align: top;"><strong>Date:</strong></td>
+            <td class="" ><?php echo $c_plannedProcedureDate; ?></td>
+        </tr>
+        </tbody>
+    </table>
+	<!--<table class="su-table stack">
+		<tr style="border-top: 0px !important;">
+			<td style="padding-left: 0;"><strong>Procedure:</strong></td>
+			<td><></td>
 		</tr>
 		<tr>
 			<td style="padding-left: 0"><strong>Procedure Date:</strong></td>
-			<td><?php echo $c_plannedProcedureDate; ?></td>
+			<td><></td>
 		</tr>
-	</table>
+	</table>-->
     </div>
-	<form action="patients_a.php?m=procsurgeon&id=<?php echo $pe_id; ?>" method="post" class="rs-adj">
+           <form action="patients_a.php?m=procsurgeon&id=<?php echo $pe_id; ?>" method="post" class="rs-adj">
+
 		<div class="grid-container">
-			<div class="grid-x">
-				<div class="small-12 cell">
+			<div class="grid-x" style="border-top: 1px solid #D3d1d1;">
+				<div class="small-12 cell padding-top-3">
 					<p>Search for the name of the surgeon who will perform this procedure.</p>
 				</div>
-				<div class="small-12 cell">
+				<div class="small-12 cell" >
 					<label>Surgeon Name
-						<select id="proc_surgeonname" class="select2 proc_surgeonname">
-							<?php make_combo("app_fd_ver_surgeons", "id", "c_surgeonName", "$c_surgeonId", "", " ORDER BY c_surgeonName "); ?>
+						<select style="height: 2.4375rem !important;" id="proc_surgeonname" class="select2 proc_surgeon">
+							<?php make_combo($TBLSURGEONS, "id", "c_surgeonName", "$c_surgeonId", " WHERE c_organizationId='$org_id' ", " ORDER BY c_surgeonName ", " ", "c_gmcNumber", "c_surgeonName", "true"); ?>
 						</select>
 					</label>
 					<input id="proc_surgeon" type="hidden" name="proc_surgeon" class="proc_surgeon" value="<?php echo $c_surgeonName; ?>"/>
@@ -2583,6 +2856,7 @@ $c_surgeonId =$qryResult_sd['id'];
 	<div class="hide-for-small-only medium-3 large-3 cell"></div>
 </div>
 </div>
+
 <!-- </div> WEL -->
 <!-- END PROCSURGEON SECTION -->
 <!-- PROCSUMMARY SECTION -->
@@ -2598,7 +2872,7 @@ $c_surgeonId =$qryResult_sd['id'];
     <div style="margin-left: 20px; margin-right: 20px;">
 	<h6 class="border"></h6>
 	<h6>Patient Name</h6>
-	<p><?php echo $c_surname_uc . "," . $c_firstName; ?></p>
+	<p><?php echo $c_surname_uc . ", " . $c_firstName; ?></p>
 	<h6>NHS Number</h6>
 	<p><?php echo $c_nhsNumber; ?></p>
 	<h6>Hospital Number</h6>
@@ -2612,7 +2886,9 @@ $c_surgeonId =$qryResult_sd['id'];
 	<p><?php echo $c_plannedProcedureDate; ?></p>
     <h6 class="border"></h6>
 	<h6>Surgeon</h6>
-	<p><?php echo $c_surgeonName; ?><br/>GMC: <?php echo $c_gmcNumber; ?></p>
+	<p><?php echo $c_surgeonName; ?>
+        <h6>GMC:</h6>
+        <p><?php echo $c_gmcNumber; ?></p>
     </div>
 	<div class="grid-x">
 		<div class="hide-for-small-only medium-3 large-3 cell"></div>
@@ -2634,9 +2910,9 @@ $c_surgeonId =$qryResult_sd['id'];
 	<div class="back clickable-row" data-href="patients.php?m=procsurgeon&id=<?php echo $pe_id; ?>">
 		<img src="../img/icons/back.png" alt="less than icon" class="float-left"/>Back
 	</div>-->
-	<h3>Confirmation<br/><span class="small"></span></h3>
+	<h3 class="padding-bottom-1">Confirmation<br/><span class="small"></span></h3>
 	<div class="grid-x text-center">
-		<div class="hide-for-small-only medium-2 large-2 large-offset-1 cell"></div>
+		<div class="hide-for-small-only medium-3 large-3 cell">&nbsp;</div>
 		<div class="small-12 medium-6 large-6 cell">
 			<p class="text-center" style="padding-top: 60px;"><img src="../img/success-guy.png" width="110"></p>
 			<h5 class="uc">Success</h5>
@@ -2651,7 +2927,7 @@ $c_surgeonId =$qryResult_sd['id'];
 				</div>
 			</div>
 		</div>
-		<div class="hide-for-small-only medium-2 large-2 cell"></div>
+		<div class="hide-for-small-only medium-3 large-3 cell">&nbsp;</div>
 	</div>
 </div>
 <!-- PROCCONFIRM END -->
@@ -2679,17 +2955,17 @@ $c_surgeonId =$qryResult_sd['id'];
 		</tr>
 		<tr>
 			<td style="padding-left: 20px; padding-top: 0px;"><strong>Surgeon:</strong></td>
-			<td style="padding-top: 0px;"><?php if($c_surgeonName == "") echo "<span style='color:red;'>No surgeon selected.</span>"; else echo $c_surgeonName; ?></td>
+			<td style="padding-top: 0px;"><?php if($c_surgeonName == "") echo "<span style='color:red;'>No surgeon selected</span>"; else echo $c_surgeonName; ?></td>
 		</tr>
 		<tr>
 			<td style="padding-left: 20px; padding-top: 0px; padding-bottom: 25px;"><strong>GMC Number:</strong></td>
-			<td style="padding-top: 0px; padding-bottom: 25px;"><?php if($c_gmcNumber == "") echo "<span style='color:red;'>GMS Number not available.</span>"; else echo $c_gmcNumber; ?></td>
+			<td style="padding-top: 0px; padding-bottom: 25px;"><?php if($c_gmcNumber == "") echo "<span style='color:red;'>GMC number not available</span>"; else echo $c_gmcNumber; ?></td>
 		</tr>
 	</table>
-    <ul class="patient-list">
-        <li style="margin-left: 20px; margin-right: 20px; border-bottom: 1px solid #D3D1D1 !important; font-family: 'Lato-Bold', 'Lato Bold', 'Lato-Light', 'Lato Light', 'Lato', 'sans-serif'; text-decoration-color: #0d2240;">
+    <ul class="patient-list" style="padding-right: -1px;">
+        <li style="margin-left: 20px; margin-right: 20px; border-bottom: 0px solid #D3D1D1 !important; font-family: 'Lato-Bold', 'Lato Bold', 'Lato-Light', 'Lato Light', 'Lato', 'sans-serif'; text-decoration-color: #0d2240;">
  <?php if ($c_procedureStatus=="PRE") { ?>
-    <div class="small-12 medium-12 large-12 cell text-left clickable-row" data-href="patients_a.php?m=gotoprocdate&id=<?php echo $pe_id; ?>" style="border-top: 1px solid #D3D1D1 !important;">
+    <div class="small-12 medium-12 large-12 cell text-left clickable-row" data-href="patients_a.php?m=gotoprocdate&id=<?php echo $pe_id; ?>" style="border-top: 0px solid #D3D1D1; border-bottom: 1px solid #D3D1D1;">
         <a href="patients_a.php?m=gotoprocdate&id=<?php echo $pe_id; ?>" class="no-u" style="padding-left: 10px; padding-top: 20px; padding-bottom: 20px;">
             <span style="padding-top: 5px:" class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
             <p style="width:80%; color: #0d2240; font-size: small;"><span style="font-size:medium;font-weight:700;">Change procedure date or surgeon</span>
@@ -2697,7 +2973,7 @@ $c_surgeonId =$qryResult_sd['id'];
             </p>
         </a>
     </div>
-	<div class="small-12 medium-12 large-12 cell text-left clickable-row" data-href="patients.php?m=proccomplete&id=<?php echo $pe_id; ?>" style="border-top: 1px solid #D3D1D1 !important;">
+	<div class="small-12 medium-12 large-12 cell text-left clickable-row" data-href="patients.php?m=proccomplete&id=<?php echo $pe_id; ?>" style="border-top: 0px solid #D3D1D1; border-bottom: 1px solid #D3D1D1;"">
 		<a href="patients.php?m=proccomplete&id=<?php echo $pe_id; ?>" class="no-u" style="padding-left: 10px; padding-top: 20px; padding-bottom: 20px;">
             <span style="padding-top: 5px:" class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
 			<p style="width:80%; color: #0d2240; font-size: small;"><span style="font-size:medium;font-weight:700;">Mark procedure as complete</span>
@@ -2707,7 +2983,7 @@ $c_surgeonId =$qryResult_sd['id'];
 	</div>
  <?php } ?>
             <?php if ($c_status<>"EpisodeComplete") { ?>
-	<div class="small-12 medium-12 large-12 cell text-left clickable-row" data-href="patients.php?m=proccancel&id=<?php echo $pe_id; ?>" style="border-top: 1px solid #D3D1D1 !important;">
+	<div class="small-12 medium-12 large-12 cell text-left clickable-row" data-href="patients.php?m=proccancel&id=<?php echo $pe_id; ?>" style="border-top: 0px solid #D3D1D1; border-bottom: 1px solid #D3D1D1;">
 		<a href="patients.php?m=proccancel&id=<?php echo $pe_id; ?>" class="no-u" style="padding-left: 10px; padding-top: 20px; padding-bottom: 20px;">
             <span style="padding-top: 5px:" class="float-right right-arrow"><i class="icon eido-icon-chevron-right"></i></span>
 			<p style="width:80%; color: #0d2240; font-size: small;"><span style="font-size:medium;font-weight:700; color: #0d2240">Stop sending surveys</span>
@@ -2732,8 +3008,8 @@ $c_surgeonId =$qryResult_sd['id'];
 	<div class="grid-x text-center">
 		<div class="hide-for-small-only medium-3 large-3 cell"></div>
 		<div class="small-12 medium-6 large-6 cell">
-			<center><h3>Are you susre you want to cancel this proceudre?</h3></center>
-			<p><br/><br/>No more surveys will be sent to the patient and all their previous respnses will be voided.</p>
+			<center><h5 class="text-center">Are you sure you want to cancel this procedure?</h5></center>
+			<p><br/><br/>No more surveys will be sent to the patient and all their previous responses will be voided.</p>
 			<p>&nbsp;</p>
 			<a href="patients.php?m=procdetail&id=<?php echo $pe_id; ?>">
 				<button name="" value="confirm complete" class="button large expanded inactive"/>
@@ -2784,20 +3060,21 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
                                         <p style="padding-left: 20px; padding-right: 20px;text-align: left;">Search for the name of the surgeon who performed this procedure</p>
 
                                         <form action="patients_a.php?m=proccomplete&id=<?php echo $pe_id; ?>" method="post">
-                                            <div class="small-12 cell">
+                                            <div class="small-12 cell" style="height:25px; padding-bottom: 40px;">
                                         <label>Surgeon Name
-                                                <select id="proc_surgeonname_complete" class="select2 proc_surgeonname">
-                                                        <?php make_combo("app_fd_ver_surgeons", "id", "c_surgeonName", "$c_surgeonId", "", " ORDER BY c_surgeonName "); ?>
+                                            <select style="height: 2.4375rem !important; margin-bottom: 20px;" id="proc_surgeonname_complete" class="select2 proc_surgeonname">
+
+                                                        <?php make_combo($TBLSURGEONS, "id", "c_surgeonName", "$c_surgeonId", " WHERE c_organizationId='$org_id' ", " ORDER BY c_surgeonName "); ?>
                                                 </select>
                                         </label>
-                                        <input id="proc_surgeon_complete" type="hidden" name="proc_surgeon" class="proc_surgeon" value="<?php echo $c_surgeonName; ?>"/>
+                                                <input id="proc_surgeon_complete" type="hidden" name="proc_surgeon" class="proc_surgeon" value="<?php echo $c_surgeonName; ?>"/>
                                         </div>
-                                <div class="small-12 cell">
+                                <div style="margin-top: 40px;" class="small-12 cell">
                                         <select id="proc_surgeonname_temp_complete" class="hide proc_surgeonname_temp">
-                                                <?php make_combo($TBLSURGEONS, "id", "c_gmcNumber", "$c_gmcNumber", "", " ORDER BY c_surgeonName "); ?>
+                                                <?php make_combo($TBLSURGEONS, "id", "c_gmcNumber", "$c_gmcNumber", " WHERE c_organizationId='$org_id' ", " ORDER BY c_surgeonName "); ?>
                                         </select>
                                         <label>GMC Number
-                                                <input id="proc_gmcnumber_temp_complete" disabled type="text" class=proc_gmcnumber_temp" value="<?php echo $c_gmcNumber; ?>">
+                                                <input id="proc_gmcnumber_temp_complete" disabled type="text" style="" class=proc_gmcnumber_temp" value="<?php echo $c_gmcNumber; ?>">
                                         </label>
                                         <input id="proc_gmcnumber_complete" type="hidden" name="proc_gmcnumber" value="<?php echo $c_gmcNumber; ?>" class="proc_gmcnumber">
                                 </div>
@@ -2823,29 +3100,50 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
 <?php ; // logMsg("Patients(BOT)> mode: $mode",$logfile); ?>
 <!-- End Footer -->
 </div>
+<!--commented out this jquery.js, which is version 3.something, as jquery 1.12.4 is loaded in the document head, this is redundent.  Also, jquery needs to be loaded before the dom elements to it can traverse them as they are loaded.-->
 <!--<script src="../js/vendor/jquery.js"></script>-->
 <script src="../js/vendor/what-input.js"></script>
 <script src="../js/vendor/foundation.js"></script>
 <script src="../js/jquery.plugin.min.js"></script>
-
-
-
 <script src="../js/foundation-datepicker.min.js"></script>
 <script src="../js/app.js"></script>
 <script>
+    $(document).ready(function() {
+        //when a button is clicked, this will make the focus/hover state (dark brown w/ white text) persist even if the button loses focus/hover state after being clicked but before page reload.
+        // on click, set background to dark brown
+        $(".button").click(function(){
+            $(this).css('background','#6B6B6B');
+        });
+        //on click, set text color to white
+        $(".button").click(function(){
+            $(this).css('color','white !important');
+        });
+        //on click, remove class 'inactive', so the button will not change state if it loses focus/hover state
+        $(".button").click(function(){
+            $(this).removeClass('inactive');
+        });
 
     $(".clickable-row").click(function() {
         window.location = $(this).data("href");
     });
-    $(document).ready(function() {
-       $(".select2").select2({
-    });
+    //Select2 is a js library  for transforming HTML elements to make enhanced select fields that include search fields, enhanced grouping, custom, multi-host data connectors, etc.)
+       //the Select2 js and css will add a searchfield and custom style to the select2 class, which is used on all Surgeon select fields
+        $(".select2").select2({
+           placeholder: '' ,
+           allowClear: true
+       });
+          // maximumSelectionLength: 0
+       // $("#address").addClass( "destroy" );
+       // $("#postalcode_ea_temp").select2({
+           // maximumSelectionLength: 1,
+           // dropdownParent: $("#address")
+       //});
     });
   //$(function() {
    //   var placeholder = "&#xf002 Select a place";
    //   $(".select2").select2({
    //       placeholder: placeholder,
-   //       width: null,
+   //       width: null,]
    //       escapeMarkup: function(m) {
    //           return m;
    //       }
@@ -2853,6 +3151,8 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
  // });
 
                 $(document).ready(function() {
+                    //add class to remove the bottom border of the timeline entry above Procedure Complete because css uses once-over algo and the previous tr cannot be addressed with a selector
+                    $("table .timeline-background").prev('tr').addClass('timeline-no-bottom-border');
 
                     $('.date_element').fdatepicker({
                         format: 'dd/mm/yyyy',
@@ -3003,6 +3303,16 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
 
 
                 });
+/*    $(document).ready(function() {
+        jQuery(document).on('select2:opening select2:open', function (e) {
+            console.log(navigator.userAgent);
+            if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                setTimeout(function (e) {
+                    document.activeElement.blur();
+                }, 0);
+            }
+        });
+    });*/
             
 </script>
 </body>

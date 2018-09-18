@@ -6,8 +6,9 @@
 // ***************************************
 
 require_once '../utilities.php';
-session_start();
 $logfile = "organisation.log";
+logMsg("Start organisations_a",$logfile);
+session_start();
 $error_msg="";
 
 $arr_ext=array();
@@ -122,6 +123,7 @@ if ($mode=="update") {
                dateModified=NOW()
            WHERE id='$id'";
    dbi_query($sql);
+      logMsg($sql, $logfile);
 
    // if the name changed - update the name in pt episodes & dir_organisations
    // Aipent is too stupid to do a two table lookup  
@@ -139,8 +141,7 @@ if ($mode=="update") {
       dbi_query($sql);
       logMsg($sql, $logfile);
    }
-
-   header("Location: organisations.php");
+   header("Location: organisations.php?m=overview&id=$org_id");
    exit();
 } 
 else if ($mode=="gotoaddorg") {
@@ -163,6 +164,16 @@ else if ($mode=="gotoaddorg") {
    unset($_SESSION['add_type_error']);
    unset($_SESSION['add_logo_error']);
    unset($_SESSION['add_logo_type_error']);
+   unset($_SESSION['name']);  
+   unset($_SESSION['type']); 
+   unset($_SESSION['email']);  
+   unset($_SESSION['fname']);  
+   unset($_SESSION['lname']); 
+   unset($_SESSION['admin_email']);   
+   unset($_SESSION['admin_fname']);  
+   unset($_SESSION['admin_lname']); 
+   unset($_SESSION['subdivision']);
+
    header("Location: organisations.php?m=add");
    exit();
 }
@@ -170,6 +181,11 @@ else if ($mode=="clearsession") {
    $goto = get_query_string('g');
    $_SESSION = array();
    header ("Location: organisations.php?m=$goto&id=$id");
+   exit();
+}
+else if ($mode=="clear_proc_search") {
+   unset($_SESSION['proc_searchterm']);
+   header ("Location: organisations.php?m=procadd&id=$id");
    exit();
 }
 else if ($mode=="add") {
@@ -208,18 +224,18 @@ else if ($mode=="add") {
        $_SESSION['add_admin_lname_error'] || $_SESSION['add_admin_lname_format_error'] ||
        $_SESSION['add_admin_email_error'] || $_SESSION['add_admin_email_duplicate_error'] || 
        $_SESSION['add_admin_bad_email_error']) {
-         $_SESSION['error_msg'] = $error_msg;
-         $_SESSION['name'] = $name;
-         $_SESSION['type'] = $type;
-         $_SESSION['email'] = $email;
-         $_SESSION['fname'] = $fname;
-         $_SESSION['lname'] = $lname;
-         $_SESSION['admin_email'] = $admin_email;
-         $_SESSION['admin_fname'] = $admin_fname;
-         $_SESSION['admin_lname'] = $admin_lname;
-         $_SESSION['subdivision'] = $subdivision;
-         header ("Location: organisations.php?m=add");
-         exit();
+       $_SESSION['error_msg'] = $error_msg;
+       $_SESSION['name'] = $name;
+       $_SESSION['type'] = $type;
+       $_SESSION['email'] = $email;
+       $_SESSION['fname'] = $fname;
+       $_SESSION['lname'] = $lname;
+       $_SESSION['admin_email'] = $admin_email;
+       $_SESSION['admin_fname'] = $admin_fname;
+       $_SESSION['admin_lname'] = $admin_lname;
+       $_SESSION['subdivision'] = $subdivision;
+       header ("Location: organisations.php?m=add");
+       exit();
    }
 
    //Upload the file
@@ -246,6 +262,7 @@ else if ($mode=="add") {
                c_description=".escapeQuote($name).",
                c_type=".escapeQuote($type).",
                c_level='ORG',
+               c_status='ACTIVE',
                c_email=".escapeQuote($email).",
                c_admin=".escapeQuote($owner).",
                c_logo=".escapeQuote($header_logo).",
@@ -334,7 +351,7 @@ else if ($mode=="add") {
    $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
          <p>Username: $admin_email<br />
          Password: $password</p>
-         <p>Click the button below to log into the EIDO Verify systemi</p>";
+         <p>Click the button below to log into the EIDO Verify system.</p>";
          $email_template = str_replace("**CONTENT2**", $content2, $email_template);
 
    // set up the button
@@ -358,6 +375,255 @@ else if ($mode=="add") {
 
    send_email($arr_email);
    header("Location: organisations.php");
+   exit();
+}
+else if ($mode=="addowner" || $mode=="editowner") {
+   $email = $_POST['email'];
+   $fname = $_POST['fname'];
+   $lname = $_POST['lname'];
+
+   if ($fname=="")
+      $_SESSION['add_fname_error']=true; else $_SESSION['add_fname_error']=false;
+   if (!preg_match("/^[a-zA-Z' -]*$/",$fname))
+      $_SESSION['add_fname_format_error']=true; else $_SESSION['add_fname_format_error']=false;
+   if ($lname=="")
+      $_SESSION['add_lname_error']=true; else $_SESSION['add_lname_error']=false;
+   if (!preg_match("/^[a-zA-Z' -]*$/",$lname))
+      $_SESSION['add_lname_format_error']=true; else $_SESSION['add_lname_format_error']=false;
+   if ($email=="")
+      $_SESSION['add_email_error']=true; else $_SESSION['add_email_error']=false;
+   if ($email<>"" && !filter_var($email, FILTER_VALIDATE_EMAIL))
+      $_SESSION['add_bad_email_error']=true; else $_SESSION['add_bad_email_error']=false;
+
+   if ( $_SESSION['add_fname_error'] || $_SESSION['add_fname_format_error'] ||
+       $_SESSION['add_lname_error'] || $_SESSION['add_lname_format_error'] ||
+       $_SESSION['add_email_error'] ||
+       $_SESSION['add_bad_email_error'] ) {
+         $_SESSION['email'] = $email;
+         $_SESSION['fname'] = $fname;
+         $_SESSION['lname'] = $lname;
+         if ($mode=="addowner")
+            header ("Location: organisations.php?m=addowner&id=$id");
+         else
+            header ("Location: organisations.php?m=editowner&id=$id");
+         exit();
+   }
+   $owner = $fname." ".$lname;
+   $sql = "UPDATE $TBLORGANISATIONS
+           SET c_email=".escapeQuote($email).",
+               c_admin=".escapeQuote($owner).",
+               modifiedBy=".escapeQuote($user_id).",
+               dateModified=NOW()";
+   dbi_query($sql);
+
+   header ("Location: organisations.php?m=overview&id=$id");
+   exit();
+   logMsg($sql,$logfile);
+}
+else if ($mode=="deleteowner") {
+   $sql = "UPDATE $TBLORGANISATIONS
+           SET c_email='',
+               c_admin='',
+               modifiedBy=".escapeQuote($user_id).",
+               dateModified=NOW()";
+   dbi_query($sql);
+   logMsg($sql,$logfile);
+
+   header ("Location: organisations.php?m=overview&id=$id");
+   exit();
+}
+// else if ($mode=="addadmin") {
+// 
+// }
+else if ($mode=="editadmin" || $mode=="addadmin") {
+   $admin_email = $_POST['admin_email'];
+   $admin_fname = $_POST['admin_fname'];
+   $admin_lname = $_POST['admin_lname'];
+
+   $sql = "SELECT c_firstUser
+           FROM $TBLORGANISATIONS
+           WHERE id='$id'";
+   $GetQuery=dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   $c_firstUser_orig = $qryResult['c_firstUser'];
+logMsg("editadmin: $c_firstUser_orig", $logfile);
+
+   // error check first admin
+   if ($admin_fname=="")
+      $_SESSION['add_admin_fname_error']=true; else $_SESSION['add_admin_fname_error']=false;
+   if (!preg_match("/^[a-zA-Z' -]*$/",$admin_fname))
+      $_SESSION['add_admin_fname_format_error']=true; else $_SESSION['add_admin_fname_format_error']=false;
+   if ($admin_lname=="")
+      $_SESSION['add_admin_lname_error']=true; else $_SESSION['add_admin_lname_error']=false;
+   if (!preg_match("/^[a-zA-Z' -]*$/",$admin_lname))
+      $_SESSION['add_admin_lname_format_error']=true; else $_SESSION['add_admin_lname_format_error']=false;
+   if ($admin_email=="")
+      $_SESSION['add_admin_email_error']=true; else $_SESSION['add_admin_email_error']=false;
+   if ($admin_email<>"" && !filter_var($admin_email, FILTER_VALIDATE_EMAIL))
+      $_SESSION['add_bad_admin_email_error']=true; else $_SESSION['add_bad_admin_email_error']=false;
+
+   if ( $_SESSION['add_admin_fname_error'] || $_SESSION['add_admin_fname_format_error'] ||
+       $_SESSION['add_admin_lname_error'] || $_SESSION['add_admin_lname_format_error'] ||
+       $_SESSION['add_admin_email_error'] || $_SESSION['add_admin_email_duplicate_error'] ||
+       $_SESSION['add_admin_bad_email_error']) {
+         $_SESSION['admin_email'] = $admin_email;
+         $_SESSION['admin_fname'] = $admin_fname;
+         $_SESSION['admin_lname'] = $admin_lname;
+         header ("Location: organisations.php?m=addadmin&id=$id");
+         exit();
+   }
+   // get the user id for the org's first user/primary admin
+   $sql = "SELECT u.id, u.username
+           FROM dir_user u, $TBLORGANISATIONS o
+           WHERE o.id='$id'
+           AND o.c_firstUser=u.id";
+   $GetQuery=dbi_query($sql);
+   $qryResult=$GetQuery->fetch_assoc();
+   $admin_uid=$qryResult['id'];
+logMsg("editadmin: admin userID from users for first user - $admin_uid", $logfile);
+
+   $sql = "DELETE FROM dir_user_role WHERE userId='$admin_uid'";
+   dbi_query($sql);
+   logMsg($sql,$logfile);
+
+   $sql = "DELETE FROM dir_user_group WHERE userId='$admin_uid'";
+   dbi_query($sql);
+   logMsg($sql,$logfile);
+
+   if ($mode==editadmin) {
+      // edit the existing user
+      $sql = "UPDATE dir_user
+              SET username=".escapeQuote($admin_email).",
+                  firstName=".escapeQuote($admin_fname).",
+                  lastName=".escapeQuote($admin_lname).",
+                  email=".escapeQuote($admin_email).",
+                  c_dateModified=NOW(),
+                  active='1',
+                  timezone='0'
+               WHERE id='$admin_uid'";
+      dbi_query($sql);
+      logMsg($sql,$logfile);
+   } else {
+      // adding a new user
+      $password = random_password();
+      $hash = password_hash($password, PASSWORD_BCRYPT);
+      if (!password_verify($password, $hash)) {
+         // Invalid hash generation
+         header("Location:".$_SERVER['HTTP_REFERER']);
+         exit;
+      }
+      logMsg("pw: $password - hash: $hash", $logfile);
+
+      $admin_uid=uniqid();
+      $sql = "INSERT INTO dir_user
+              SET id='$admin_uid',
+                  username=".escapeQuote($admin_email).",
+                  firstName=".escapeQuote($admin_fname).",
+                  lastName=".escapeQuote($admin_lname).",
+                  email=".escapeQuote($admin_email).",
+                  c_organizationId=".escapeQuote($id).",
+                  uipassword=".escapeQuote($hash).",
+                  c_dateModified=NOW(),
+                  c_dateCreated=NOW(),
+                  active='1',
+                  timezone='0'";
+      dbi_query($sql);
+      logMsg($sql,$logfile);
+
+      // send mail to the new user
+      include "../includes/inc_email_template.php";
+
+      // need a button - include it into template
+      include "../includes/inc_email_button.php";
+      $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
+
+      $email_template = str_replace("**FIRSTNAME**", $admin_fname, $email_template);
+      $email_template = str_replace("**HEADER**", "Welcome", $email_template);
+
+      $content1 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
+            Username: $admin_email<br />
+            Password: $password<br /><br />
+            <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
+            $email_template = str_replace("**CONTENT1**", $content1, $email_template);
+
+      $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
+            <p>Username: $admin_email<br />
+            Password: $password</p>
+            <p>Click the button below to log into the EIDO Verify system.</p>";
+               $email_template = str_replace("**CONTENT2**", $content2, $email_template);
+
+      // set up the button
+      $button_text = "Get Started";
+      $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
+      $button_url = "https://verify.eidosystems.com";
+         $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
+
+      // content3 after the button
+      $content3="";
+      $email_template = str_replace("**CONTENT3**", $content3, $email_template);
+   
+      $arr_email = array();
+      $arr_email['mail_to']=$admin_email;
+      $arr_email['mail_to_name']="$admin_fname $admin_lname";
+      $arr_email['bcc']="wayne@mindstreams.com";
+      $arr_email['mail_from']=$verify_mail_from;
+      $arr_email['mail_from_name']=$verify_mail_from_name;
+      $arr_email['subject']="EIDO Verify Account Information";
+      $arr_email['body']=$email_template;
+   
+      send_email($arr_email);
+   }
+
+   $sql = "INSERT INTO dir_user_role
+           SET roleId = 'ROLE_USER',
+               userId = '$admin_uid',
+               username = '$admin_email'";
+   dbi_query($sql);
+   logMsg($sql,$logfile);
+
+   $sql = "INSERT INTO dir_user_group
+           SET groupId = 'sitedivadmins',
+               userId = '$admin_uid',
+               username = '$admin_email'";
+   dbi_query($sql);
+   logMsg($sql,$logfile);
+
+   $user_id = $_COOKIE['user_id'];
+   $sql = "UPDATE $TBLORGANISATIONS
+           SET c_firstUser='$admin_uid',
+               modifiedBy=".escapeQuote($user_id).",
+               dateModified=NOW()
+           WHERE id='$id'";
+   dbi_query($sql);
+
+   header("Location: organisations.php?m=overview&id=$id");
+   exit();
+}
+else if ($mode=="deleteadmin") {
+   // get the admin ID from org table
+   $sql = "SELECT c_firstUser FROM $TBLORGANISATIONS WHERE id='$id'";
+   $GetQuery=dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   $c_firstUser = $qryResult['c_firstUser'];
+   
+   $user_id = $_COOKIE['user_id'];
+   $sql = "UPDATE $TBLORGANISATIONS
+           SET c_firstUser='',
+               modifiedBy=".escapeQuote($user_id).",
+               dateModified=NOW()";
+   dbi_query($sql);
+   logMsg($sql,$logfile);
+
+   $sql_du = "DELETE FROM dir_user_group WHERE userid='$c_firstUser'";
+   dbi_query($sql_du);
+
+   $sql_du = "DELETE FROM dir_user_role WHERE userid='$c_firstUser'";
+   dbi_query($sql_du);
+
+   $sql_du = "DELETE FROM dir_user WHERE id='$c_firstUser'";
+   dbi_query($sql_du);
+
+   header ("Location: organisations.php?m=overview&id=$id");
    exit();
 }
 else if ($mode=="editdiv") {
@@ -492,9 +758,10 @@ logMsg("org_id: $org_id",$logfile);
 
    // delete all users associated with this division
    $sql = "SELECT id FROM dir_user WHERE c_organizationId='$id'";
+logMsg($sql,$logfile);
    $GetQuery = dbi_query($sql);
    while ($qryResult = $GetQuery->fetch_assoc()) {
-      $uid = $queryResult['id'];
+      $uid = $qryResult['id'];
       $sql_du = "DELETE FROM dir_user_group WHERE userid='$uid'";
       dbi_query($sql_du);
 
@@ -502,6 +769,7 @@ logMsg("org_id: $org_id",$logfile);
       dbi_query($sql_du);
 
       $sql_du = "DELETE FROM dir_user WHERE id='$uid'";
+logMsg($sql_du,$logfile);
       dbi_query($sql_du);
       logMsg("Deleted userId: $uid from user tables", $logfile);
    }
@@ -579,7 +847,7 @@ else if ($mode=="deletecust") {
 }
 else if ($mode=="adddiv" || $mode=="addcust") {
    logMsg("-------------- START SUBDIV ADD ----------------",$logfile);
-   $org_id=uniqid();
+   $div_id=uniqid();
    $name = $_POST['name'];               // org name
    $fname = $_POST['fname'];
    $lname = $_POST['lname'];
@@ -589,7 +857,7 @@ else if ($mode=="adddiv" || $mode=="addcust") {
    $admin_lname = $_POST['admin_lname'];
    $type = $_POST['type'];               // defaults to same as parent
    $subdivision = $_POST['subdivision']; // defaults to No
-   $gmcnumber = $_POST['gmcnumber'];     // blank for DIVs - only for ustomers
+   $gmcnumber = $_POST['gmcnumber'];     // blank for DIVs - only for customers
 
    if ($mode=="adddiv") {
       include "inc_org_error_check.php";
@@ -626,19 +894,20 @@ else if ($mode=="adddiv" || $mode=="addcust") {
             exit();
       }
    }
-   $user_id = $_COOKIE['user_id'];       // id of super user putting this in
-   // create ID for first user account
-   $firstuser_uid = $admin_email;        // we are using email as the USER ID
+   $user_id = $_COOKIE['user_id'];          // id of super user putting this in
+   // $org_id = $_COOKIE['org_id'];         // id of user's organization  - NOT SURE (WEL)
 
    if ($mode=="adddiv") { 
       // add DIVISION
+      $firstuser_uid = $admin_email;        // we are using email as the USER ID
       $sql = "INSERT INTO $TBLORGANISATIONS
-              SET id='".$org_id."',
+              SET id='".$div_id."',
                   c_name=".escapeQuote($name).",
                   c_description=".escapeQuote($name).",
                   c_type=".escapeQuote($type).",
                   c_level='DIV',
-                  c_subdivision=".escapeQuote($subdivision).",
+                  c_status='ACTIVE',
+                  c_subdivision='No',
                   c_parentId=".escapeQuote($id).",
                   c_firstUser=".escapeQuote($firstuser_uid).",
                   createdBy=".escapeQuote($user_id).",
@@ -648,7 +917,7 @@ else if ($mode=="adddiv" || $mode=="addcust") {
       logMsg($sql,$logfile);
    
       $sql = "INSERT INTO dir_organization
-              SET id='$org_id',
+              SET id='$div_id',
                   name=".escapeQuote($name).",
                   description=".escapeQuote($name).";";
       dbi_query($sql);
@@ -668,8 +937,9 @@ else if ($mode=="adddiv" || $mode=="addcust") {
               SET id='".$div_id."',
                   dateCreated=NOW(),
                   dateModified=NOW(),
-                  createdBy='$user_d',
+                  createdBy='$user_id',
                   c_userId='$email',
+                  c_organizationId='$id',
                   c_gmcNumber='$gmcnumber',
                   c_surgeonName='$sname'";
       dbi_query($sql);
@@ -690,6 +960,10 @@ else if ($mode=="adddiv" || $mode=="addcust") {
    }
    logMsg("pw: $password - hash: $hash", $logfile);
 
+   if ($mode=="adddiv")
+      $user_org = $div_id;
+   else
+      $user_org = $id;
    $sql = "INSERT INTO dir_user
            SET id=".escapeQuote($admin_email).",
                username=".escapeQuote($admin_email).",
@@ -701,7 +975,7 @@ else if ($mode=="adddiv" || $mode=="addcust") {
                timezone='0',
                c_dateCreated=NOW(),
                c_dateModified=NOW(),
-               c_organizationId='$org_id',
+               c_organizationId='$user_org',
                gmc_number='$gmcnumber'";
    dbi_query($sql);
    logMsg($sql,$logfile);
@@ -709,14 +983,16 @@ else if ($mode=="adddiv" || $mode=="addcust") {
    // ROLE - User or Admin
    $sql = "INSERT INTO dir_user_role
            SET roleId = 'ROLE_USER',
-               userId = '$email'";
+               userId = '$admin_email',
+               username = '$admin_email'";
    dbi_query($sql);
    logMsg($sql,$logfile);
 
    // GROUP - Admin or Staff
    $sql = "INSERT INTO dir_user_group
            SET groupId = 'sitedivadmins',
-               userId = '$email'";
+               userId = '$admin_email',
+               username = '$admin_email'";
    dbi_query($sql);
    logMsg($sql,$logfile);
 
@@ -737,7 +1013,7 @@ else if ($mode=="adddiv" || $mode=="addcust") {
    include "../includes/inc_email_button.php";
    $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
 
-   $email_template = str_replace("**FIRSTNAME**", $fname, $email_template);
+   $email_template = str_replace("**FIRSTNAME**", $admin_fname, $email_template);
    $email_template = str_replace("**HEADER**", "Welcome", $email_template);
 
    $content1 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
@@ -747,9 +1023,9 @@ else if ($mode=="adddiv" || $mode=="addcust") {
          $email_template = str_replace("**CONTENT1**", $content1, $email_template);
 
    $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
-         <p>Username: $email<br />
+         <p>Username: $admin_email<br />
          Password: $password</p>
-         <p>Click the button below to log into the EIDO Verify systemi</p>";
+         <p>Click the button below to log into the EIDO Verify system.</p>";
          $email_template = str_replace("**CONTENT2**", $content2, $email_template);
 
    // set up the button
@@ -763,8 +1039,8 @@ else if ($mode=="adddiv" || $mode=="addcust") {
    $email_template = str_replace("**CONTENT3**", $content3, $email_template);
 
    $arr_email = array();
-   $arr_email['mail_to']=$email;
-   $arr_email['mail_to_name']="$fname $lname";
+   $arr_email['mail_to']=$admin_email;
+   $arr_email['mail_to_name']="$admin_fname $admin_lname";
    $arr_email['bcc']="wayne@mindstreams.com";
    $arr_email['mail_from']=$verify_mail_from;
    $arr_email['mail_from_name']=$verify_mail_from_name;
@@ -773,7 +1049,7 @@ else if ($mode=="adddiv" || $mode=="addcust") {
 
    send_email($arr_email);
 
-   header("Location: organisations.php?m=listdivs&id=$org_id");
+   header("Location: organisations.php?m=listdivs&id=$id");
    exit(); 
 }
 else if ($mode == "removelogo") {
@@ -790,229 +1066,4 @@ else if ($mode == "removelogo") {
 header("Location: organisations.php");
 exit();
 
-/*  *********************** EXTRA JUNK - NOT SURE HOW THIS GOT COPIED HERE ***************
-         $_SESSION['error_msg'] = $error_msg;
-         $_SESSION['name'] = $name;
-         $_SESSION['type'] = $type;
-         $_SESSION['email'] = $email;
-         $_SESSION['fname'] = $fname;
-         $_SESSION['lname'] = $lname;
-         $_SESSION['admin_email'] = $admin_email;
-         $_SESSION['admin_fname'] = $admin_fname;
-         $_SESSION['admin_lname'] = $admin_lname;
-         $_SESSION['subdivision'] = $subdivision;
-         header ("Location: organisations.php?m=add");
-         exit();
-   }
-
-   //Upload the file
-   if ($_FILES['header_logo']['size'] > 0)
-   {
-      $target_file_name = $org_id.".".$ext;
-      $target_file_path = $ABS_PATH."img/org_logos/".$target_file_name;
-      // logMsg($_FILES['header_logo']['tmp_name'], $logfile);
-      // logMsg($target_file_path, $logfile);
-      move_uploaded_file($_FILES['header_logo']['tmp_name'], $target_file_path);
-      $header_logo=$target_file_name;
-   }
-
-   $user_id = $_COOKIE['user_id'];
-   $admin = $fname." ".$lname;
-   $sql = "INSERT INTO $TBLORGANISATIONS
-           SET id='".$org_id."',
-               c_name=".escapeQuote($name).",
-               c_description=".escapeQuote($name).",
-               c_type=".escapeQuote($type).",
-               c_email=".escapeQuote($email).",
-               c_admin=".escapeQuote($admin).",
-               c_logo=".escapeQuote($header_logo).",
-               c_subdivision=".escapeQuote($subdivision).",
-               createdBy=".escapeQuote($user_id).",
-               dateModified=NOW(),
-               dateCreated=NOW()";
-   dbi_query($sql);
-   logMsg($sql,$logfile);
-
-   $sql = "INSERT INTO dir_organization 
-           SET id='$org_id',
-               name=".escapeQuote($name).",
-               description=".escapeQuote($name).";"; 
-   dbi_query($sql);
-   logMsg($sql,$logfile);
-
-   // we are using email as the USER ID
-   $uid = $email;
-   // create and encrypt password
-   $password = random_password();
-   $hash = password_hash($password, PASSWORD_BCRYPT);
-   if (!password_verify($password, $hash)) {
-      // Invalid hash generation
-      header("Location:".$_SERVER['HTTP_REFERER']);
-      exit;
-   }
-   logMsg("pw: $password - hash: $hash", $logfile);
-
-   $sql = "INSERT INTO dir_user
-           SET id=".escapeQuote($email).",
-               username=".escapeQuote($email).",
-               uipassword=".escapeQuote($hash).",
-               firstName=".escapeQuote($fname).",
-               lastName=".escapeQuote($lname).",
-               email=".escapeQuote($email).",
-               active='1',
-               timezone='0',
-               gmc_number=''";
-   dbi_query($sql);
-   logMsg($sql,$logfile);
-
-   $sql = "INSERT INTO dir_user_role
-           SET roleId = 'ROLE_USER',
-               userId = '$uid',
-               username='$email'";
-   dbi_query($sql);
-   logMsg($sql,$logfile);
-
-   $sql = "INSERT INTO dir_user_group
-           SET groupId = 'sitedivadmins',
-               userId = '$uid',
-               username='$email'";
-   dbi_query($sql);
-   logMsg($sql,$logfile);
-
-   // send mail to the new user
-   include "../includes/inc_email_template.php";
-
-   // need a button - include it into template
-   include "../includes/inc_email_button.php";
-   $email_template = str_replace("**EMAILBUTTON**", $email_button, $email_template);
-
-   $email_template = str_replace("**FIRSTNAME**", $fname, $email_template);
-   $email_template = str_replace("**HEADER**", "Welcome", $email_template);
-
-   $content1 = "We have created an account for you in the EIDO Verify system. Here are your account credentials.<br /><br />
-         Username: $email<br />
-         Password: $password<br /><br />
-         <a href='https://verify.eidosystems.com'>Click here to log into the EIDO Verify system</a><br /><br />";
-         $email_template = str_replace("**CONTENT1**", $content1, $email_template);
-
-   $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
-         <p>Username: $email<br />
-         Password: $password</p>
-         <p>Click the button below to log into the EIDO Verify systemi</p>";
-         $email_template = str_replace("**CONTENT2**", $content2, $email_template);
-
-   // set up the button
-   $button_text = "Get Started";
-   $email_template = str_replace("**BUTTONTEXT**", $button_text, $email_template);
-   $button_url = "https://verify.eidosystems.com";
-   $email_template = str_replace("**BUTTONURL**", $button_url, $email_template);
-
-   // content3 after the button
-   $content3="";
-   $email_template = str_replace("**CONTENT3**", $content3, $email_template);
-
-   $arr_email = array();
-   $arr_email['mail_to']=$email;
-   $arr_email['mail_to_name']="$fname $lname";
-   $arr_email['bcc']="wayne@mindstreams.com";
-   $arr_email['mail_from']=$verify_mail_from;
-   $arr_email['mail_from_name']=$verify_mail_from_name;
-   $arr_email['subject']="EIDO Verify Account Information";
-   $arr_email['body']=$email_template;
-
-   send_email($arr_email);
-   header("Location: organisations.php");
-   exit();
-}
-else if ($mode=="adddiv" || $mode=="addcust")
-{
-   logMsg("-------------- START SUBDIV ADD ----------------",$logfile);
-   $org_id=$id;
-   $fname = $_POST['fname'];
-   $lname = $_POST['lname'];
-   $email = $_POST['email'];
-   $name = $_POST['name'];
-
-   $div_id = uniqid();
-   $user_id = $_COOKIE['user_id'];
-
-   if ($mode=="adddiv")
-   {
-      $sql = "INSERT INTO dir_department 
-              SET id='".$div_id."',
-                  name=".escapeQuote($name).",
-                  description=".escapeQuote($name).",
-                  organizationId=".escapeQuote($org_id).";";
-      dbi_query($sql);
-      logMsg($sql,$logfile);
-   }
-   else
-   {
-      $sname="$fname $lname";
-      $sql = "INSERT INTO $TBLSURGEONS
-              SET id='".$div_id."',
-                  dateCreated=NOW(),
-                  dateModified=NOW(),
-                  createdBy='$user_d',
-                  c_surgeonName='$sname'";
-      dbi_query($sql);
-      logMsg($sql,$logfile);
-   }
-
-   // USER 
-   $sql = "INSERT INTO dir_user
-           SET id=".escapeQuote($email).",
-               username=".escapeQuote($email).",
-               password='password',
-               email=".escapeQuote($email).",
-               firstName=".escapeQuote($fname).",
-               lastName=".escapeQuote($lname).",
-               active=1,
-               timezone='0',
-               gmc_number=''";
-   dbi_query($sql);
-
-   // ROLE - User or Admin
-   $sql = "INSERT INTO dir_user_role
-           SET roleId = 'ROLE_USER',
-               userId = '$email'";
-   dbi_query($sql);
-   logMsg($sql,$logfile);
-
-   // GROUP - Admin or Staff
-   $sql = "INSERT INTO dir_user_group
-           SET groupId = 'admin',
-               userId = '$email'";
-   dbi_query($sql);
-   logMsg($sql,$logfile);
-
-   // EMPLOYMENT - tie user/organisation/subdivision (or cust/surgeon) all together
-   // $emp_id=uniqid();
-   $sql = "INSERT INTO dir_employment
-           SET id='$email',
-               userid='$email',
-               departmentId='$div_id',
-               organizationId='$org_id'";
-   dbi_query($sql);
-   logMsg($sql,$logfile);
-   header("Location: organisations.php?m=listdivs&id=$org_id");
-   exit(); 
-}
-
-if($mode == "removelogo") {
-	$target_file_path = $ABS_PATH."img/org_logos/";
-	// get the current logo address
-	$sql = "SELECT * FROM $TBLORGANISATIONS WHERE id='$id'";
-	$GetQuery=dbi_query($sql);
-	$qryResult=$GetQuery->fetch_assoc();
-	unlink($target_file_path."{$qryResult['c_logo']}");
-
-	//update
-    dbi_query("UPDATE $TBLORGANISATIONS SET c_logo = NULL WHERE id='$id'");
-
-}
-header("Location: organisations.php");
-exit();
-
-***************************************************  */
 ?>

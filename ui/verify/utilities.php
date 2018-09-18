@@ -117,6 +117,8 @@ function date_cleanup($dt)
       if (strlen($d)==1) $d="0".$d;
       if (strlen($m)==1) $m="0".$m;
       $arr_date_cleanup['date_formatted']="$d/$m/$y";
+      $arr_date_cleanup['mysql_format']="$y-$m-$d";
+//echo "mysql in cleanup: ".$arr_date_cleanup['mysql_format']."<br />";
    }
    return $arr_date_cleanup;
 }
@@ -248,7 +250,7 @@ function save_user_pw_key($email, $pwkey)
               SET c_passwordResetKey = '$pwkey'
               WHERE username = '".$email."'
               AND active=1";
-      logMsg("save_user_pw_key: $sql", "wel.log");
+      // logMsg("save_user_pw_key: $sql", "wel.log");
       dbi_query($sql);
    } else {
       $arr_user_info['lastname']="ERROR";
@@ -263,7 +265,7 @@ function  save_user_pw_reset($pwkey, $password)
            SET uipassword = '$password',
                c_passwordResetKey = '*!*!*!*'
            WHERE c_passwordResetKey = '".$pwkey."'";
-   logMsg("save_user_pw_reset: $sql", "wel.log");
+//   logMsg("save_user_pw_reset: $sql", "wel.log");
    dbi_query($sql);
 }
 
@@ -273,7 +275,7 @@ function get_user_info_by_pwkey($pwkey)
    $arr_user_info = array();
    $sql = "SELECT * FROM dir_user
            WHERE c_passwordResetKey='$pwkey'";
-   logMsg("get_user_info_by_pwkey: $sql", "wel.log");
+//   logMsg("get_user_info_by_pwkey: $sql", "wel.log");
    $GetQuery = dbi_query($sql);
    if ($GetQuery->num_rows==0)
    {
@@ -314,6 +316,87 @@ function random_password( $length = 8 ) {
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&?";
     $password = substr( str_shuffle( $chars ), 0, $length );
     return $password;
+}
+// ***************************************************
+function get_proc_info($id)
+{
+   global $TBLPROCEPISODES, $MAX_SESSIONS;
+
+   $sql = "SELECT c_numberOfSessions, c_description, c_procedureId,
+                  c_procedure, c_org
+           FROM $TBLPROCEPISODES
+           WHERE id='$id'";
+   $GetQuery = dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   $arr_proc_info[0][c_numberOfSessions] = $qryResult[c_numberOfSessions];
+   $arr_proc_info[0][c_description] = $qryResult[c_description];
+   $arr_proc_info[0][c_procedureId] = $qryResult[c_procedureId];
+   $arr_proc_info[0][c_procedure] = $qryResult[c_procedure];
+   $arr_proc_info[0][c_org] = $qryResult[c_org];
+
+   for ($i=1; $i<=$MAX_SESSIONS; $i++)
+   {
+      $var_pre_post = "c_prePost".$i;
+      $var_custom_message = "c_prePost".$i."CustomMessage";
+      $var_session_survey1 = "c_session".$i."Survey1";
+      $var_session_survey2 = "c_session".$i."Survey2";
+      $var_session_survey3 = "c_session".$i."Survey3";
+      $var_session_survey4 = "c_session".$i."Survey4";
+      $var_session_survey5 = "c_session".$i."Survey5";
+      $var_session_name = "c_session".$i."Name";
+
+      $sql = "SELECT $var_pre_post, $var_custom_message, $var_session_survey1,
+                     $var_session_survey2, $var_session_survey3, $var_session_survey4,
+                     $var_session_survey5, $var_session_name
+              FROM $TBLPROCEPISODES
+              WHERE id='$id'";
+      $GetQuery = dbi_query($sql);
+      $qryResult = $GetQuery->fetch_assoc();
+      $arr_proc_info[$i][$var_pre_post] = $qryResult[$var_pre_post];
+      $arr_proc_info[$i][$var_custom_message] = $qryResult[$var_custom_message];
+      $arr_proc_info[$i][$var_session_survey1] = $qryResult[$var_session_survey1];
+      $arr_proc_info[$i]['survey_name1'] = get_survey_name($qryResult[$var_session_survey1]);
+      $arr_proc_info[$i][$var_session_survey2] = $qryResult[$var_session_survey2];
+      $arr_proc_info[$i]['survey_name2'] = get_survey_name($qryResult[$var_session_survey2]);
+      $arr_proc_info[$i][$var_session_survey3] = $qryResult[$var_session_survey3];
+      $arr_proc_info[$i]['survey_name3'] = get_survey_name($qryResult[$var_session_survey3]);
+      $arr_proc_info[$i][$var_session_survey4] = $qryResult[$var_session_survey4];
+      $arr_proc_info[$i]['survey_name4'] = get_survey_name($qryResult[$var_session_survey4]);
+      $arr_proc_info[$i][$var_session_survey5] = $qryResult[$var_session_survey5];
+      $arr_proc_info[$i]['survey_name5'] = get_survey_name($qryResult[$var_session_survey5]);
+      $arr_proc_info[$i][$var_session_name] = $qryResult[$var_session_name];
+   }
+   // session delay does not have a value for session 1 so loop over 2 to max
+   for ($i=2; $i<=$MAX_SESSIONS; $i++)
+   {
+      $var_session_delay = "c_session".$i."Delay";
+      $sql = "SELECT $var_pre_post, $var_session_delay
+              FROM $TBLPROCEPISODES
+              WHERE id='$id'";
+      $GetQuery = dbi_query($sql);
+      $qryResult = $GetQuery->fetch_assoc();
+      $arr_proc_info[$i][$var_session_delay] = $qryResult[$var_session_delay];
+   }
+
+   //echo "<pre>";
+   //print_r ($arr_proc_info);
+   //echo "</pre>";
+   //exit();
+
+   return $arr_proc_info;
+}
+// ****************************************************
+function get_survey_name($survey_number)
+{
+   global $TBLSURVEYS;
+
+   $sql = "SELECT c_description
+           FROM $TBLSURVEYS
+           WHERE c_surveyNumber = '$survey_number'";
+   $GetQuery = dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   $description = $qryResult['c_description'];
+   return $description;
 }
 // EOF
 ?>

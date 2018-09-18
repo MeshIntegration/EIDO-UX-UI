@@ -48,56 +48,113 @@ if ($mode=="edit")
    //            c_postalCode=".escapeQuote($postalcode).",
 
    // required field check
-   if ($fname=="")
-      $_SESSION['add_fname_error']=true; else $_SESSION['add_fname_error']=false;
-   if (!preg_match("/^[a-zA-Z- ']*$/",$fname))
-      $_SESSION['add_fname_format_error']=true; else $_SESSION['add_fname_format_error']=false;
-
-   if ($lname=="")
-      $_SESSION['add_lname_error']=true; else $_SESSION['add_lname_error']=false;
-   if (!preg_match("/^[a-zA-Z- ']*$/",$lname))
-      $_SESSION['add_lname_format_error']=true; else $_SESSION['add_lname_format_error']=false;
-
-   if ($nhsnumber=="")
-      $_SESSION['add_nhsnumber_error']=true; else $_SESSION['add_nhsnumber_error']=false;
-   if (!preg_match("/^[0-9]*$/",$nhsnumber))
-      $_SESSION['add_nhsnumber_format_error']=true; else $_SESSION['add_nhsnumber_format_error']=false;
-   if (strlen($nhsnumber)<>10)
-      $_SESSION['add_nhsnumber_length_error']=true; else $_SESSION['add_nhsnumber_length_error']=false;
-
-   if ($hospitalnumber=="")
-      $_SESSION['add_hospitalnumber_error']=true; else $_SESSION['add_hospitalnumber_error']=false;
-   if (!preg_match("/^[a-zA-Z0-9]*$/",$hospitalnumber))
-      $_SESSION['add_hospitalnumber_format_error']=true; else $_SESSION['add_hospitalnumber_format_error']=false;
-
-   if ($gender=="")
-      $_SESSION['add_gender_error']=true; else $_SESSION['add_gender_error']=false;
-
-   if ($dob=="")
-      $_SESSION['add_dob_error']=true;
-   else
-   {
-      $_SESSION['add_dob_error']=false;
-      if (!preg_match("/^[0-9\/\-]*$/",$dob))
-         $_SESSION['add_dob_format_error']=true;
-      else
-      {
+      if ($fname=="") {
+         $_SESSION['add_fname_error']=true;
+      }
+      else {
+         $_SESSION['add_fname_error']=false;
+      }
+      if (!preg_match("/^[a-zA-Z- ']*$/",$fname)) {
+         $_SESSION['add_fname_format_error']=true;
+      }
+      else {
+         $_SESSION['add_fname_format_error']=false;
+      }
+      if ($lname=="") {
+         $_SESSION['add_lname_error']=true;
+      }
+      else {
+         $_SESSION['add_lname_error']=false;
+      }
+      if (!preg_match("/^[a-zA-Z- ']*$/",$lname)) {
+         $_SESSION['add_lname_format_error']=true;
+      }
+      else {
+         $_SESSION['add_lname_format_error']=false;
+      }
+      if ($nhsnumber=="") {
+         $_SESSION['add_nhsnumber_error']=true;
+      }
+      else {
+         $_SESSION['add_nhsnumber_error']=false;
+      }
+      if (!preg_match("/^[0-9]*$/",$nhsnumber)) {
+         $_SESSION['add_nhsnumber_format_error']=true;
+      }
+      else {
+         $_SESSION['add_nhsnumber_format_error']=false;
+      }
+      if (strlen($nhsnumber)<>10) {
+         $_SESSION['add_nhsnumber_length_error']=true;
+      }
+      else {
+         $_SESSION['add_nhsnumber_length_error']=false;
+      }
+      if ($hospitalnumber=="") {
+         $_SESSION['add_hospitalnumber_error'] = true;
+      }
+      else {
+         $_SESSION['add_hospitalnumber_error'] = false;
+      }
+      if (!preg_match("/^[a-zA-Z0-9]*$/",$hospitalnumber)){
+         $_SESSION['add_hospitalnumber_format_error']=true;
+      }
+      else {
+         $_SESSION['add_hospitalnumber_format_error'] = false;
+      }
+      if ($gender=="") {
+         $_SESSION['add_gender_error']=true;
+      }
+      else {
+         $_SESSION['add_gender_error']=false;
+      }
+      if ($dob=="") {
+         $_SESSION['add_dob_error'] = true;
+      }
+      else {
+         $_SESSION['add_dob_error']=false;
+      }
+      if (!preg_match("/^[0-9\/\-]*$/",$dob)) {
+         $_SESSION['add_dob_format_error'] = true;
+      }
+      else {
          $_SESSION['add_dob_format_error']=false;
          $arr_date_cleanup=date_cleanup($dob);
-         if (!$arr_date_cleanup['date_valid'])
-            $_SESSION['add_dob_invalid_error']=true;
-         else
-         {
-            $_SESSION['add_dob_invalid_error']=false;
-            $dob=$arr_date_cleanup['date_formatted'];
-         }
       }
-   }
+      if (!$arr_date_cleanup['date_valid']) {
+         $_SESSION['add_dob_invalid_error'] = true;
+      }
+      else {
+         $_SESSION['add_dob_invalid_error']=false;
+         $dob=$arr_date_cleanup['date_formatted'];
 
-   if ($email<>"" && !filter_var($email, FILTER_VALIDATE_EMAIL))
-      $_SESSION['add_bad_email_error']=true; else $_SESSION['add_bad_email_error']=false;
-   if ($email=="" && $mobilenumber=="")
-      $_SESSION['add_no_contact_error']=true; else $_SESSION['add_no_contact_error']=false;
+         // check if dob is in future
+         $dob2 = strtotime($arr_date_cleanup['mysql_format']);
+         $cutoff = strtotime("today");
+         if ($dob2 > $cutoff)
+            $_SESSION['add_dob_future_error']=true;
+         else
+            $_SESSION['add_dob_future_error']=false;
+// echo "mysql: ".$arr_date_cleanup['mysql_format']."<br />";
+ //echo "dob: $dob2<br />";
+ //echo "cutoff: $cutoff<br />";
+ //exit();
+      }
+
+   if ($email<>"" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+       $_SESSION['add_bad_email_error'] = true;
+   }
+   else {
+       $_SESSION['add_bad_email_error']=false;
+   }
+   if ($email=="" && $mobilenumber=="") {
+       $_SESSION['add_no_contact_error'] = true;
+   }
+   else {
+       $_SESSION['add_no_contact_error'] = false;
+   }
+   if (!preg_match("/^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/",$mobilenumber) && $mobilenumber<>"")
+      $_SESSION['add_mobilenumber_format_error']=true; else $_SESSION['add_mobilenumber_format_error']=false;
 
    if ($_SESSION['add_fname_error'] || $_SESSION['add_lname_error'] || $_SESSION['add_nhsnumber_error'] ||
        $_SESSION['add_hospitalnumber_error'] || $_SESSION['add_gender_error'] || $_SESSION['add_dob_error'] ||
@@ -105,19 +162,20 @@ if ($mode=="edit")
        $_SESSION['add_fname_format_error'] || $_SESSION['add_lname_format_error'] ||
        $_SESSION['add_nhsnumber_format_error'] || $_SESSION['add_hospitalnumber_format_error'] ||
        $_SESSION['add_nhsnumber_length_error'] || $_SESSION['add_dob_invalid_error'] ||
-       $_SESSION['add_dob_format_error'])
+       $_SESSION['add_dob_format_error'] || $_SESSION['add_mobilenumber_format_error'] ||
+       $_SESSION['add_dob_future_error'])
    {
       header("Location: patients.php?m=edit&id=$id");
       exit();
    }
-
+   
    $sql = "UPDATE $TBLPTEPISODES
            SET c_firstName=".escapeQuote($_POST['fname']).",
                c_surname=".escapeQuote($_POST['lname']).",
                c_nhsNumber=".escapeQuote($_POST['nhsnumber']).",
                c_referenceNumberHospitalId=".escapeQuote($_POST['hospitalnumber']).",
                c_gender=".escapeQuote($_POST['gender']).",
-               c_dateOfBirth=".escapeQuote($_POST['dob']).",
+               c_dateOfBirth=".escapeQuote($dob).",
                c_emailAddress=".escapeQuote($_POST['email']).",
                c_mobileNumber=".escapeQuote($_POST['mobilenumber']).",
                dateModified=NOW(),
@@ -162,21 +220,26 @@ else if ($mode=="add")
 
    if ($dob=="")
       $_SESSION['add_dob_error']=true; 
-   else 
-   {
+   else {
       $_SESSION['add_dob_error']=false;
       if (!preg_match("/^[0-9\/\-]*$/",$dob))
          $_SESSION['add_dob_format_error']=true; 
-      else
-      {
+      else {
          $_SESSION['add_dob_format_error']=false;
          $arr_date_cleanup=date_cleanup($dob);
          if (!$arr_date_cleanup['date_valid']) 
             $_SESSION['add_dob_invalid_error']=true; 
-         else 
-         {
+         else {
             $_SESSION['add_dob_invalid_error']=false;
             $dob=$arr_date_cleanup['date_formatted'];
+
+            // check if dob is in future
+            $dob2 = strtotime($arr_date_cleanup['mysql_format']);
+            $cutoff = strtotime("today");
+            if ($dob2 > $cutoff)
+               $_SESSION['add_dob_future_error']=true;
+            else 
+               $_SESSION['add_dob_future_error']=false;
          }
       }
    }
@@ -190,6 +253,9 @@ else if ($mode=="add")
       $_SESSION['add_bad_email_error']=true; else $_SESSION['add_bad_email_error']=false;
    if ($email=="" && $mobilenumber=="")
       $_SESSION['add_no_contact_error']=true; else $_SESSION['add_no_contact_error']=false;
+
+   if (!preg_match("/^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/",$mobilenumber) && $mobilenumber<>"")
+      $_SESSION['add_mobilenumber_format_error']=true; else $_SESSION['add_mobilenumber_format_error']=false;
    
    logMsg("patients_a: mode=add", $logfile);
    $_SESSION['add_fname'] = $fname;
@@ -208,7 +274,9 @@ else if ($mode=="add")
        $_SESSION['add_fname_format_error'] || $_SESSION['add_lname_format_error'] || 
        $_SESSION['add_nhsnumber_format_error'] || $_SESSION['add_hospitalnumber_format_error'] || 
        $_SESSION['add_nhsnumber_length_error'] || $_SESSION['add_dob_invalid_error'] ||
-       $_SESSION['add_dob_format_error'] || $_SESSION['add_postalcode_format_error'])
+       $_SESSION['add_dob_format_error'] || $_SESSION['add_postalcode_format_error'] ||
+       $_SESSION['add_mobilenumber_format_error'] ||
+       $_SESSION['add_dob_future_error'])
    {
       header("Location: patients.php?m=add");
       exit();
@@ -285,9 +353,9 @@ logMsg($sql,$logfile);
    $sql = "INSERT INTO $TBLPTEPISODES
            SET id='".$pe_id."',
                c_userId='$user_id',
-               c_userName='$username',
-               c_hospitalName='$hospitalname',
-               c_hospitalId='$org_id',
+               c_userName=".escapeQuote($username).",
+               c_hospitalName=".escapeQuote($hospitalname).",
+               c_hospitalId=".escapeQuote($org_id).",
                c_firstName=".escapeQuote($_SESSION['add_fname']).",
                c_surname=".escapeQuote($_SESSION['add_lname']).",
                c_nhsNumber=".escapeQuote($_SESSION['add_nhsnumber']).",
@@ -311,7 +379,7 @@ logMsg($sql,$logfile);
    $fname=$_SESSION['add_fname'];
    $lname=$_SESSION['add_lname'];
    add_to_timeline($pe_id, "New Patient Added ($fname $lname)", "Closed", "CHANGELOG", $browser, $ip_address, "Patient Dashboard");
-   add_to_timeline($pe_id, "New Patient Added", "Open", "Event", $browser, $ip_address, "Patient Dashboard");
+   // add_to_timeline($pe_id, "New Patient Added", "Open", "Event", $browser, $ip_address, "Patient Dashboard");
    // go to the Procedure Proceed screen to ask what next 
    header("Location: patients.php?m=procproceed&id=$pe_id");
    exit();
@@ -521,8 +589,8 @@ logMsg("patients_a: procselect: proc_id (from post[proc_id])= $proc_id",$logfile
                 c_session5Survey5='".$qryResult['c_session5Survey5']."',
                 c_prePost2='".$qryResult['c_prePost2']."',
                 c_numberOfSessions='".$qryResult['c_numberOfSessions']."',
-                c_displayName='".$qryResult['c_description']."',
-                c_description='".$qryResult['c_description']."',
+                c_displayName=".escapeQuote($qryResult['c_description']).",
+                c_description=".escapeQuote($qryResult['c_description']).",
                 c_procedureId='".$qryResult['c_procedureId']."',
                 c_procedureStatus='PRE',
                 c_procedure='".$qryResult['id']."'
@@ -691,7 +759,7 @@ else if ($mode=="procconfirm")
 }
 else if ($mode=="proccomplete" || $mode=="proccancel")
 {
-   // $id is the patient episond ID passwed in from UI
+   // $id is the patient episode ID passwed in from UI
    $loginas=get_query_string('loginas');
    logMsg("Patients_a: Proccomplete: loginas: $loginas", $logfile);
    $surgeon = $_POST['proc_surgeon'];
@@ -740,15 +808,17 @@ else if ($mode=="proccomplete" || $mode=="proccancel")
    logMsg(" ", $logfile);
 
    // pass over the proceedOrCancel variable
-   // $url =  $BASE_WORKFLOW_URL."assignment/variable/".$activity_id."/proceedOrCancel?value=".$value."&j_username=eidoverify2017&hash=C03B449319B694BD223A7E39142B7E34&loginAs=admin";      // .$assignee_id;
-   $url = "https://verify.eidosystems.com:8080/jw/web/json/monitoring/process/variable/".$id."/proceedOrCancel?value=".$value."&j_username=eidoverify2017&hash=C03B449319B694BD223A7E39142B7E34&loginAs=admin";
+   // $url =  $BASE_WORKFLOW_URL."assignment/variable/".$activity_id."/proceedOrCancel?value=".$value."&j_username=eidoverify2017&hash=C03B449319B694BD223A7E39142B7E34&loginAs=admin";
+   // .$assignee_id;
+   //   http vs. httpS (httpS was causing issues - WEL - 6/21/18)
+   $url = "http://verify.eidosystems.com:8080/jw/web/json/monitoring/process/variable/".$id."/proceedOrCancel?value=".$value."&j_username=eidoverify2017&hash=C03B449319B694BD223A7E39142B7E34&loginAs=admin";
 
    logMsg("Patients_A: Pass Variable: $url", $logfile);
    $resp = getCurlResponse($url, $requestParam, 1, "POST", "DEFAULT", "OBJECT", $loginas);
-   //echo "$url<br /><br />";
-   //echo "<pre>";
-   //print_r($resp);
-   //echo "</pre>";
+   echo "$url<br /><br />";
+   echo "<pre>";
+   print_r($resp);
+   echo "</pre>";
    
    // give it some time to process
    sleep(3);

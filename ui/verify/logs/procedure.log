@@ -3867,3 +3867,1452 @@
                c_displayName='Knee Arthroscopy - Shortened for Demo',
                dateModified=NOW()
            WHERE id='eb45e550-23b1f8f7-1bc2ad19-2b223900'
+06/19/2018 12:19:33 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:19:33 - 82.34.15.57: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 1 - NUMSURV: 2
+06/19/2018 12:19:33 - 82.34.15.57: In: add to array
+06/19/2018 12:19:50 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:19:50 - 82.34.15.57: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 1 - NUMSURV: 3
+06/19/2018 12:19:50 - 82.34.15.57: In: add to array
+06/19/2018 12:19:58 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:19:58 - 82.34.15.57: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 1 - NUMSURV: 4
+06/19/2018 12:19:58 - 82.34.15.57: In: add to array
+06/19/2018 12:21:02 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:21:02 - 82.34.15.57: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 2 - NUMSURV: 0
+06/19/2018 12:21:02 - 82.34.15.57: In: add to array
+06/19/2018 12:21:39 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:21:39 - 82.34.15.57: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 2 - NUMSURV: 0
+06/19/2018 12:21:39 - 82.34.15.57: In: add to array
+06/19/2018 12:21:55 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:21:55 - 82.34.15.57: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 2 - NUMSURV: 0
+06/19/2018 12:21:55 - 82.34.15.57: In: add to array
+06/19/2018 12:22:02 - 82.34.15.57: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+06/19/2018 12:22:24 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:22:24 - 82.34.15.57: MaxSurveys: 5 - PEID: f3ffc29b-23b1f8f7-6dcb74b4-2c37659a - SESS: 2 - NUMSURV: 3
+06/19/2018 12:22:24 - 82.34.15.57: In: add to array
+06/19/2018 12:40:10 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:40:10 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 1 - NUMSURV: 1
+06/19/2018 12:40:10 - 82.34.15.57: In: add to array
+06/19/2018 12:40:21 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:40:21 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 1 - NUMSURV: 2
+06/19/2018 12:40:21 - 82.34.15.57: In: add to array
+06/19/2018 12:44:20 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:44:20 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 1 - NUMSURV: 2
+06/19/2018 12:44:20 - 82.34.15.57: In: add to array
+06/19/2018 12:44:36 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:44:36 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 1 - NUMSURV: 3
+06/19/2018 12:44:36 - 82.34.15.57: In: add to array
+06/19/2018 12:44:42 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:44:42 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 1 - NUMSURV: 4
+06/19/2018 12:44:42 - 82.34.15.57: In: add to array
+06/19/2018 12:44:57 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+06/19/2018 12:45:30 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:45:30 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 2 - NUMSURV: 2
+06/19/2018 12:45:30 - 82.34.15.57: In: add to array
+06/19/2018 12:45:41 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:45:41 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 2 - NUMSURV: 3
+06/19/2018 12:45:41 - 82.34.15.57: In: add to array
+06/19/2018 12:45:46 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:45:46 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 2 - NUMSURV: 4
+06/19/2018 12:45:46 - 82.34.15.57: In: add to array
+06/19/2018 12:46:08 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+06/19/2018 12:48:33 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:48:33 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 3 - NUMSURV: 1
+06/19/2018 12:48:33 - 82.34.15.57: In: add to array
+06/19/2018 12:48:40 - 82.34.15.57: In: add_survey_to_temp
+06/19/2018 12:48:40 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 3 - NUMSURV: 2
+06/19/2018 12:48:40 - 82.34.15.57: In: add to array
+06/19/2018 12:48:53 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+06/19/2018 12:49:50 - 82.34.15.57: Procedures_a: add 
+06/19/2018 12:49:50 - 82.34.15.57: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b28fbee103c3',
+               c_description='Colonoscopy',
+               c_procedureId='E03',
+               c_displayName='Colonoscopy',
+               dateModified=NOW(),
+               dateCreated=NOW()
+06/20/2018 19:24:32 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+06/20/2018 19:25:55 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+06/20/2018 19:36:11 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+06/20/2018 19:39:29 - 174.100.21.203: In: add_survey_to_temp
+06/20/2018 19:39:29 - 174.100.21.203: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 2
+06/20/2018 19:39:29 - 174.100.21.203: In: add to array
+06/21/2018 14:54:55 - 68.107.189.223: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+06/21/2018 15:42:05 - 68.107.189.223: Procedures_a: add 
+06/21/2018 15:42:05 - 68.107.189.223: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b2bc74d114d7',
+               c_description='Upper GI Endoscopy Two',
+               c_procedureId='E01 2',
+               c_displayName='Upper GI Endoscopy Two',
+               dateModified=NOW(),
+               dateCreated=NOW()
+06/21/2018 15:49:06 - 68.107.189.223: In: add_survey_to_temp
+06/21/2018 15:49:06 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b2bc74d114d7 - SESS: 1 - NUMSURV: 0
+06/21/2018 15:49:06 - 68.107.189.223: In: add to array
+06/21/2018 15:49:34 - 68.107.189.223: In: add_survey_to_temp
+06/21/2018 15:49:34 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b2bc74d114d7 - SESS: 1 - NUMSURV: 1
+06/21/2018 15:49:34 - 68.107.189.223: In: add to array
+06/21/2018 15:49:47 - 68.107.189.223: In: add_survey_to_temp
+06/21/2018 15:49:47 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b2bc74d114d7 - SESS: 1 - NUMSURV: 2
+06/21/2018 15:49:47 - 68.107.189.223: In: add to array
+06/21/2018 15:51:02 - 68.107.189.223: In: add_survey_to_temp
+06/21/2018 15:51:02 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b2bc74d114d7 - SESS: 2 - NUMSURV: 0
+06/21/2018 15:51:02 - 68.107.189.223: In: add to array
+06/21/2018 15:51:28 - 68.107.189.223: In: add_survey_to_temp
+06/21/2018 15:51:28 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b2bc74d114d7 - SESS: 2 - NUMSURV: 1
+06/21/2018 15:51:28 - 68.107.189.223: In: add to array
+06/21/2018 15:51:46 - 68.107.189.223: In: add_survey_to_temp
+06/21/2018 15:51:46 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b2bc74d114d7 - SESS: 2 - NUMSURV: 2
+06/21/2018 15:51:46 - 68.107.189.223: In: add to array
+06/21/2018 15:52:35 - 68.107.189.223: Procedures_a: updateproc 5b2bc74d114d7
+06/21/2018 19:32:00 - 69.137.186.144: In: add_survey_to_temp
+06/21/2018 19:32:00 - 69.137.186.144: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 2
+06/21/2018 19:32:00 - 69.137.186.144: In: add to array
+06/21/2018 19:32:52 - 69.137.186.144: In: add_survey_to_temp
+06/21/2018 19:32:52 - 69.137.186.144: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 0
+06/21/2018 19:32:52 - 69.137.186.144: In: add to array
+06/21/2018 19:33:26 - 69.137.186.144: In: add_survey_to_temp
+06/21/2018 19:33:26 - 69.137.186.144: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 2 - NUMSURV: 0
+06/21/2018 19:33:26 - 69.137.186.144: In: add to array
+06/21/2018 19:33:50 - 69.137.186.144: Procedures_a: updateproc 5abe4d575be08
+06/21/2018 19:34:44 - 69.137.186.144: Procedures_a: updateproc 5abe4d575be08
+06/21/2018 19:37:28 - 69.137.186.144: Procedures_a: updateproc 5abe4d575be08
+06/25/2018 13:13:23 - 82.34.15.57: In: add_survey_to_temp
+06/25/2018 13:13:23 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 1 - NUMSURV: 0
+06/25/2018 13:13:23 - 82.34.15.57: In: add to array
+06/25/2018 13:13:31 - 82.34.15.57: In: add_survey_to_temp
+06/25/2018 13:13:31 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 1 - NUMSURV: 1
+06/25/2018 13:13:31 - 82.34.15.57: In: add to array
+06/25/2018 13:13:39 - 82.34.15.57: In: add_survey_to_temp
+06/25/2018 13:13:39 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 1 - NUMSURV: 2
+06/25/2018 13:13:39 - 82.34.15.57: In: add to array
+06/25/2018 13:13:48 - 82.34.15.57: Procedures_a: updateproc 5b28fbee103c3
+06/25/2018 13:14:10 - 82.34.15.57: In: add_survey_to_temp
+06/25/2018 13:14:10 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 2 - NUMSURV: 0
+06/25/2018 13:14:10 - 82.34.15.57: In: add to array
+06/25/2018 13:14:22 - 82.34.15.57: In: add_survey_to_temp
+06/25/2018 13:14:22 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 2 - NUMSURV: 1
+06/25/2018 13:14:22 - 82.34.15.57: In: add to array
+06/25/2018 13:14:37 - 82.34.15.57: In: add_survey_to_temp
+06/25/2018 13:14:37 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 2 - NUMSURV: 2
+06/25/2018 13:14:37 - 82.34.15.57: In: add to array
+06/25/2018 13:14:43 - 82.34.15.57: In: add_survey_to_temp
+06/25/2018 13:14:43 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 2 - NUMSURV: 3
+06/25/2018 13:14:43 - 82.34.15.57: In: add to array
+06/25/2018 13:14:50 - 82.34.15.57: Procedures_a: updateproc 5b28fbee103c3
+06/25/2018 13:14:59 - 82.34.15.57: Procedures_a: updateproc 5b28fbee103c3
+06/25/2018 14:00:31 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+06/25/2018 14:00:51 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+07/02/2018 12:07:56 - 68.107.189.223: Procedures_a: add 
+07/02/2018 12:07:56 - 68.107.189.223: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b3a159ca044e',
+               c_description='WEL Proc',
+               c_procedureId='WEL 001',
+               c_displayName='WEL Procedure',
+               dateModified=NOW(),
+               dateCreated=NOW()
+07/02/2018 13:04:14 - 68.107.189.223: In: add_survey_to_temp
+07/02/2018 13:04:14 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b3a159ca044e - SESS: 1 - NUMSURV: 0
+07/02/2018 13:04:14 - 68.107.189.223: In: add to array
+07/02/2018 13:04:16 - 68.107.189.223: In: add_survey_to_temp
+07/02/2018 13:04:16 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b3a159ca044e - SESS: 1 - NUMSURV: 1
+07/02/2018 13:04:16 - 68.107.189.223: In: add to array
+07/02/2018 13:04:18 - 68.107.189.223: In: add_survey_to_temp
+07/02/2018 13:04:18 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b3a159ca044e - SESS: 1 - NUMSURV: 2
+07/02/2018 13:04:18 - 68.107.189.223: In: add to array
+07/02/2018 13:06:30 - 68.107.189.223: In: add_survey_to_temp
+07/02/2018 13:06:30 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b3a159ca044e - SESS: 1 - NUMSURV: 0
+07/02/2018 13:06:30 - 68.107.189.223: In: add to array
+07/02/2018 13:09:27 - 68.107.189.223: In: add_survey_to_temp
+07/02/2018 13:09:27 - 68.107.189.223: MaxSurveys: 5 - PEID: 5b3a159ca044e - SESS: 1 - NUMSURV: 0
+07/02/2018 13:09:27 - 68.107.189.223: In: add to array
+07/02/2018 13:15:46 - 68.107.189.223: Procedures_a: updateproc 5b3a159ca044e
+07/09/2018 07:54:12 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+07/09/2018 07:54:36 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+07/09/2018 07:56:30 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+07/09/2018 07:58:44 - 82.34.15.57: In: add_survey_to_temp
+07/09/2018 07:58:44 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 1 - NUMSURV: 5
+07/09/2018 07:58:44 - 82.34.15.57: In: too many surveys
+07/09/2018 07:59:12 - 82.34.15.57: In: add_survey_to_temp
+07/09/2018 07:59:12 - 82.34.15.57: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 2 - NUMSURV: 5
+07/09/2018 07:59:12 - 82.34.15.57: In: too many surveys
+07/10/2018 10:35:24 - 82.34.15.57: In: add_survey_to_temp
+07/10/2018 10:35:24 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 1 - NUMSURV: 2
+07/10/2018 10:35:24 - 82.34.15.57: In: add to array
+07/10/2018 10:36:13 - 82.34.15.57: In: add_survey_to_temp
+07/10/2018 10:36:13 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 1 - NUMSURV: 2
+07/10/2018 10:36:13 - 82.34.15.57: In: add to array
+07/11/2018 16:10:01 - 76.188.180.118: In: add_survey_to_temp
+07/11/2018 16:10:01 - 76.188.180.118: MaxSurveys: 5 - PEID: b3bce54b-23b1f8f7-6edadd0e-b5a6ba0a - SESS: 1 - NUMSURV: 2
+07/11/2018 16:10:01 - 76.188.180.118: In: add to array
+07/11/2018 19:29:49 - 76.188.180.118: In: add_survey_to_temp
+07/11/2018 19:29:49 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 1
+07/11/2018 19:29:49 - 76.188.180.118: In: add to array
+07/12/2018 01:08:56 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 01:08:56 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 1
+07/12/2018 01:08:56 - 76.188.180.118: In: add to array
+07/12/2018 04:47:32 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:47:32 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 1
+07/12/2018 04:47:32 - 76.188.180.118: In: add to array
+07/12/2018 04:49:53 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:49:53 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 0
+07/12/2018 04:49:53 - 76.188.180.118: In: add to array
+07/12/2018 04:50:00 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:50:00 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 1
+07/12/2018 04:50:00 - 76.188.180.118: In: add to array
+07/12/2018 04:50:04 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:50:04 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 2
+07/12/2018 04:50:04 - 76.188.180.118: In: add to array
+07/12/2018 04:50:11 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:50:11 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 2
+07/12/2018 04:50:11 - 76.188.180.118: In: add to array
+07/12/2018 04:51:06 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:51:06 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 3
+07/12/2018 04:51:06 - 76.188.180.118: In: add to array
+07/12/2018 04:51:25 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:51:25 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 4
+07/12/2018 04:51:25 - 76.188.180.118: In: add to array
+07/12/2018 04:52:21 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:52:21 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 5
+07/12/2018 04:52:21 - 76.188.180.118: In: too many surveys
+07/12/2018 04:52:54 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:52:54 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 2
+07/12/2018 04:52:54 - 76.188.180.118: In: add to array
+07/12/2018 04:53:16 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:53:16 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 2
+07/12/2018 04:53:16 - 76.188.180.118: In: add to array
+07/12/2018 04:53:34 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:53:34 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 3
+07/12/2018 04:53:34 - 76.188.180.118: In: add to array
+07/12/2018 04:54:16 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 04:54:16 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 4
+07/12/2018 04:54:16 - 76.188.180.118: In: add to array
+07/12/2018 04:55:05 - 76.188.180.118: Procedures_a: updateproc 5abe4d575be08
+07/12/2018 05:52:34 - 76.188.180.118: In: add_survey_to_temp
+07/12/2018 05:52:34 - 76.188.180.118: MaxSurveys: 5 - PEID: 5abe4d575be08 - SESS: 1 - NUMSURV: 4
+07/12/2018 05:52:34 - 76.188.180.118: In: add to array
+07/16/2018 12:52:20 - 82.34.15.57: In: add_survey_to_temp
+07/16/2018 12:52:20 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 1 - NUMSURV: 3
+07/16/2018 12:52:20 - 82.34.15.57: In: add to array
+07/16/2018 12:52:53 - 82.34.15.57: In: add_survey_to_temp
+07/16/2018 12:52:53 - 82.34.15.57: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 2 - NUMSURV: 0
+07/16/2018 12:52:53 - 82.34.15.57: In: add to array
+07/16/2018 12:53:06 - 82.34.15.57: Procedures_a: updateproc 5b28fbee103c3
+07/17/2018 15:32:36 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+07/17/2018 15:32:46 - 82.34.15.57: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+07/19/2018 16:12:52 - 174.100.21.203: In: add_survey_to_temp
+07/19/2018 16:12:52 - 174.100.21.203: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 2 - NUMSURV: 0
+07/19/2018 16:12:52 - 174.100.21.203: In: add to array
+07/19/2018 16:13:06 - 174.100.21.203: In: add_survey_to_temp
+07/19/2018 16:13:06 - 174.100.21.203: MaxSurveys: 5 - PEID: 5b28fbee103c3 - SESS: 2 - NUMSURV: 1
+07/19/2018 16:13:06 - 174.100.21.203: In: add to array
+07/19/2018 16:13:46 - 174.100.21.203: Procedures_a: updateproc 5b28fbee103c3
+07/23/2018 10:37:27 - 76.188.180.118: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+07/23/2018 10:40:33 - 76.188.180.118: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+07/24/2018 15:04:30 - 68.107.189.223: Procedures_a: updateproc 5b28fbee103c3
+07/26/2018 12:20:23 - 68.107.189.223: Procedures_a: update 5ac5a4c1af966
+07/26/2018 12:20:23 - 68.107.189.223: UPDATE app_fd_ver_procEpisodes
+           SET id='5ac5a4c1af966',
+               c_description='Survey Test',
+               c_procedureId='TEST 6',
+               c_displayName='TEST 6 - Survey Test (WEL)',
+               dateModified=NOW()
+           WHERE id='5ac5a4c1af966'
+07/26/2018 12:34:25 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/26/2018 12:34:33 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/26/2018 12:35:29 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/26/2018 12:53:19 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/26/2018 12:55:12 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/26/2018 13:02:01 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/26/2018 13:38:42 - 68.107.189.223: In: add_survey_to_temp
+07/26/2018 13:38:42 - 68.107.189.223: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 3 - NUMSURV: 2
+07/26/2018 13:38:42 - 68.107.189.223: In: add to array
+07/26/2018 13:40:01 - 68.107.189.223: In: add_survey_to_temp
+07/26/2018 13:40:01 - 68.107.189.223: MaxSurveys: 5 - PEID: bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c - SESS: 3 - NUMSURV: 3
+07/26/2018 13:40:01 - 68.107.189.223: In: add to array
+07/26/2018 14:51:30 - 68.107.189.223: In: add_survey_to_temp
+07/26/2018 14:51:30 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 1 - NUMSURV: 4
+07/26/2018 14:51:30 - 68.107.189.223: In: add to array
+07/26/2018 15:02:57 - 68.107.189.223: In: add_survey_to_temp
+07/26/2018 15:02:57 - 68.107.189.223: MaxSurveys: 5 - PEID: eb45e550-23b1f8f7-1bc2ad19-2b223900 - SESS: 2 - NUMSURV: 2
+07/26/2018 15:02:57 - 68.107.189.223: In: add to array
+07/26/2018 17:33:24 - 107.10.10.162: Procedures_a: update bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+07/26/2018 17:33:24 - 107.10.10.162: UPDATE app_fd_ver_procEpisodes
+           SET id='bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c',
+               c_description='Knee Arthroscopy',
+               c_procedureId='OS03',
+               c_displayName='Knee Arthoscopy',
+               dateModified=NOW()
+           WHERE id='bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c'
+07/26/2018 17:33:35 - 107.10.10.162: Procedures_a: updateproc bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+07/26/2018 17:33:42 - 107.10.10.162: Procedures_a: update bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c
+07/26/2018 17:33:42 - 107.10.10.162: UPDATE app_fd_ver_procEpisodes
+           SET id='bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c',
+               c_description='Knee Arthroscopy',
+               c_procedureId='OS03',
+               c_displayName='Knee Arthoscopy',
+               dateModified=NOW()
+           WHERE id='bd2f1da0-23b1f8f7-9c9f84a0-8ee8958c'
+07/26/2018 17:34:07 - 107.10.10.162: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+07/26/2018 21:22:48 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 21:25:28 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 21:28:03 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 21:28:03 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                        c_session1Name='Session 1 WEL',
+                        c_session1Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:28:03 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                        c_session2Name='Session 2 Name WEL',
+                        c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:28:03 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                        c_session3Name='',
+                        c_session3Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:31:56 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 21:31:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 WEL',
+                        c_session1Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:31:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Session 2 Name WEL',
+                        c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:31:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='',
+                        c_session3Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:33:57 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 21:33:57 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='c_session1Name',
+                        c_session1Delay='c_session1Delay'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:33:57 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='c_session2Name',
+                        c_session2Delay='c_session2Delay'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:33:57 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='c_session3Name',
+                        c_session3Delay='c_session3Delay'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:38:23 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 21:38:23 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='',
+                        c_session1Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:38:23 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='',
+                        c_session2Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:38:23 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='',
+                        c_session3Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:42:42 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 21:42:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='',
+                        c_session1Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:42:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='',
+                        c_session2Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 21:42:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='',
+                        c_session3Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:08:26 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 22:08:26 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='',
+                        c_session1Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:08:26 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='',
+                        c_session2Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:08:26 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='',
+                        c_session3Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:29:01 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 22:29:01 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 WEL',
+                        c_session1Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:29:01 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='22222222222222',
+                        c_session2Delay='222222222222222'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:29:01 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='',
+                        c_session3Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:29:37 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 22:29:37 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111',
+                        c_session1Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:29:37 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='22222222222222',
+                        c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:29:37 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='33333333333333',
+                        c_session3Delay='3333'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:30:02 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 22:30:02 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='1111111111111',
+                        c_session1Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:30:02 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='22222222222222',
+                        c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:30:02 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='33333333333333',
+                        c_session3Delay='3333'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:35:56 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 22:35:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:35:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:35:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:55:04 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/26/2018 22:55:04 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:55:04 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:55:04 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 22:55:04 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='FOUR FOUR FOUR', c_session4Delay='40'
+                 WHERE id = '5ac5a4c1af966'
+07/26/2018 23:37:10 - 68.107.189.223: In: add_survey_to_temp
+07/26/2018 23:37:10 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 5
+07/26/2018 23:37:10 - 68.107.189.223: In: too many surveys
+07/26/2018 23:45:44 - 68.107.189.223: In: add_survey_to_temp
+07/26/2018 23:45:44 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 0
+07/26/2018 23:45:44 - 68.107.189.223: In: add to array
+07/27/2018 01:00:32 - 68.107.189.223: In: add_survey_to_temp
+07/27/2018 01:00:32 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 0
+07/27/2018 01:00:32 - 68.107.189.223: In: add to array
+07/27/2018 01:32:41 - 68.107.189.223: In: add_survey_to_temp
+07/27/2018 01:32:41 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 0
+07/27/2018 01:32:41 - 68.107.189.223: In: add to array
+07/27/2018 01:33:06 - 68.107.189.223: In: add_survey_to_temp
+07/27/2018 01:33:06 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 0
+07/27/2018 01:33:06 - 68.107.189.223: In: add to array
+07/27/2018 01:33:13 - 68.107.189.223: In: add_survey_to_temp
+07/27/2018 01:33:13 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 0
+07/27/2018 01:33:13 - 68.107.189.223: In: add to array
+07/27/2018 01:33:36 - 68.107.189.223: In: add_survey_to_temp
+07/27/2018 01:33:36 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 0
+07/27/2018 01:33:36 - 68.107.189.223: In: add to array
+07/27/2018 01:34:34 - 68.107.189.223: In: add_survey_to_temp
+07/27/2018 01:34:34 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 0
+07/27/2018 01:34:34 - 68.107.189.223: In: add to array
+07/27/2018 01:34:39 - 68.107.189.223: In: add_survey_to_temp
+07/27/2018 01:34:39 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 0
+07/27/2018 01:34:39 - 68.107.189.223: In: add to array
+07/27/2018 01:34:50 - 68.107.189.223: In: add_survey_to_temp
+07/27/2018 01:34:50 - 68.107.189.223: MaxSurveys: 5 - PEID: 5ac5a4c1af966 - SESS: 2 - NUMSURV: 0
+07/27/2018 01:34:50 - 68.107.189.223: In: add to array
+07/27/2018 19:01:33 - 68.107.189.223: Procedures_a: msall 5aca22ebc26f5
+07/27/2018 19:01:33 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5aca22ebc26f5'
+07/27/2018 19:01:33 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO FIR TEA', c_session2Delay='202'
+                 WHERE id = '5aca22ebc26f5'
+07/29/2018 02:06:54 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 02:06:54 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:06:54 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:06:54 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:06:54 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='FOUR FOUR FOUR', c_session4Delay='40'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:16:44 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 02:16:44 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:16:44 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:16:44 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:16:44 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='FOUR FOUR FOUR', c_session4Delay='40'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:38:28 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 02:38:28 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:38:28 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:38:28 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:38:28 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='FOUR FOUR FOUR', c_session4Delay='40'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:49:28 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 02:49:28 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:49:28 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:49:28 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:49:28 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='FOUR FOUR FOUR', c_session4Delay='40'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:55:27 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 02:55:27 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:55:27 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:55:27 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:55:27 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='FOUR FOUR FOUR', c_session4Delay='40'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:57:24 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 02:57:24 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:57:24 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:57:24 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 02:57:24 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='FOUR FOUR FOUR', c_session4Delay='40'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:06:44 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 03:06:44 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:06:44 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:06:44 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:06:44 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='FOUR FOUR FOUR', c_session4Delay='40'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:11:35 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 03:11:35 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:11:35 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:11:35 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='30'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:11:35 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='FOUR FOUR FOUR', c_session4Delay='40'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:12:32 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 03:12:32 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:12:32 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:12:32 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:12:32 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='', c_session4Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:14:32 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 03:14:32 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:14:32 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:14:32 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:14:32 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:28:31 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 03:28:31 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:28:31 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:28:31 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:28:31 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:28:31 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session5Name='', c_session5Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:30:08 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 03:30:08 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:30:08 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:30:08 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:30:08 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:30:08 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session5Name='', c_session5Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:30:50 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 03:30:50 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:30:50 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO TWO TWO', c_session2Delay='20'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:30:50 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:30:50 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:32:23 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 03:34:08 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 03:41:36 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 03:41:36 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name=''
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:41:36 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='', c_session2Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:41:36 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:41:36 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:42:31 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 03:42:31 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:42:31 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='SESSION 2', c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:42:31 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 03:42:31 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:13:35 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 04:13:35 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:13:35 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='SESSION 2', c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:13:35 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:13:35 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:13:35 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session5Name='', c_session5Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:14:08 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 04:17:00 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 04:17:00 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:00 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='SESSION 2', c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:00 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:00 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:00 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session5Name='FFFFFFFFFFFFFFFFFFF', c_session5Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:18 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 04:17:18 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:18 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='SESSION 2', c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:18 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:18 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:18 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session5Name='FFFFFFFFFFFFFFFFFFF', c_session5Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:42 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 04:17:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='SESSION 2', c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:17:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:18:05 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 04:18:05 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:18:05 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='SESSION 2', c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:18:05 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 04:18:05 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 16:04:00 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 16:19:24 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 16:21:10 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 16:27:30 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 16:27:55 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 16:32:37 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 16:35:35 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 16:37:56 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 18:48:56 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 18:48:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Wayne Session 1'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 18:48:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='SESSION 2', c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 18:48:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='THREE THREE THREE', c_session3Delay='333'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 18:48:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 18:49:29 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 18:49:53 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/29/2018 18:50:25 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/29/2018 18:50:25 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Wayne Session 1'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 18:50:25 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='SESSION 2', c_session2Delay='222'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 18:50:25 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='', c_session3Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 18:50:25 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/29/2018 18:54:30 - 68.107.189.223: Procedures_a: updateproc 5ac5a4c1af966
+07/30/2018 02:30:16 - 68.107.189.223: Procedures_a: update 5aca22ebc26f5
+07/30/2018 02:30:16 - 68.107.189.223: UPDATE app_fd_ver_procEpisodes
+           SET id='5aca22ebc26f5',
+               c_description='Survey Test',
+               c_procedureId='TEST 7',
+               c_displayName='Test Procedure by Wayne',
+               dateModified=NOW()
+           WHERE id='5aca22ebc26f5'
+07/30/2018 02:31:01 - 68.107.189.223: Procedures_a: updateproc 5aca22ebc26f5
+07/30/2018 02:33:11 - 68.107.189.223: Procedures_a: msall 5aca22ebc26f5
+07/30/2018 02:33:11 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5aca22ebc26f5'
+07/30/2018 02:33:11 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO FIR TEA', c_session2Delay='202'
+                 WHERE id = '5aca22ebc26f5'
+07/30/2018 02:33:11 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5aca22ebc26f5'
+07/30/2018 02:35:11 - 68.107.189.223: Procedures_a: msall 5aca22ebc26f5
+07/30/2018 02:35:11 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5aca22ebc26f5'
+07/30/2018 02:35:11 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO FIR TEA', c_session2Delay='202'
+                 WHERE id = '5aca22ebc26f5'
+07/30/2018 02:35:11 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5aca22ebc26f5'
+07/30/2018 02:38:11 - 68.107.189.223: Procedures_a: msall 5aca22ebc26f5
+07/30/2018 02:38:11 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1 11111111111111'
+                 WHERE id = '5aca22ebc26f5'
+07/30/2018 02:38:11 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO FIR TEA', c_session2Delay='202'
+                 WHERE id = '5aca22ebc26f5'
+07/30/2018 02:38:11 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5aca22ebc26f5'
+07/30/2018 02:59:49 - 68.107.189.223: Procedures_a: updateproc 5aca22ebc26f5
+07/30/2018 12:10:49 - 82.34.15.57: Procedures_a: updateproc 5b28fbee103c3
+07/30/2018 12:14:39 - 82.34.15.57: Procedures_a: msall 5b28fbee103c3
+07/30/2018 12:14:39 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Pre Screening'
+                 WHERE id = '5b28fbee103c3'
+07/30/2018 12:14:39 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Follow Up', c_session2Delay='1'
+                 WHERE id = '5b28fbee103c3'
+07/30/2018 13:51:07 - 82.34.15.57: Procedures_a: updateproc 5b28fbee103c3
+07/30/2018 13:51:13 - 82.34.15.57: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+07/30/2018 15:16:16 - 174.100.21.203: Procedures_a: updateproc 5abe4d575be08
+07/30/2018 15:16:33 - 174.100.21.203: Procedures_a: updateproc 5abe4d575be08
+07/30/2018 15:16:35 - 174.100.21.203: Procedures_a: updateproc 5abe4d575be08
+07/31/2018 08:27:44 - 82.34.15.57: Procedures_a: add 
+07/31/2018 08:27:44 - 82.34.15.57: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b601d80f3164',
+               c_description='Testosaur',
+               c_procedureId='TT2',
+               c_displayName='Test Sores',
+               dateModified=NOW(),
+               dateCreated=NOW()
+07/31/2018 23:05:09 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:05:09 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:05:09 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:05:09 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:05:09 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:07:29 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:07:29 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:07:29 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:07:29 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:07:29 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay='44'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:07:56 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:07:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:07:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:07:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:07:56 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:11:18 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:11:18 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:11:18 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:11:18 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:11:18 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='4444444444444444', c_session4Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:18:53 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:18:53 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:18:53 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:18:53 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:18:53 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='', c_session4Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:19:12 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:19:12 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:19:12 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:19:12 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:19:12 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='', c_session4Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:19:42 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:19:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:19:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:19:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:19:42 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='', c_session4Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:42:19 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:42:19 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:42:19 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:42:19 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:42:19 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='', c_session4Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:48:47 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:48:47 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:48:47 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:48:47 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:48:47 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='', c_session4Delay=''
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:49:17 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+07/31/2018 23:49:17 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:49:17 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:49:17 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+07/31/2018 23:49:17 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='SESSION FOUR', c_session4Delay='4'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:19:14 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+08/01/2018 01:19:14 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:19:14 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:19:14 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:19:14 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='SESSION FOUR', c_session4Delay='4'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:19:14 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session5Name='FIVE WAYNE TEST', c_session5Delay='5'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:20:24 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+08/01/2018 01:20:24 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:20:24 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:20:24 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:20:24 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='SESSION FOUR', c_session4Delay='4'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:30:02 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+08/01/2018 01:30:02 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:30:02 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:30:02 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:30:02 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='SESSION FOUR', c_session4Delay='4'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:34:34 - 68.107.189.223: Procedures_a: msall 5ac5a4c1af966
+08/01/2018 01:34:34 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='SESSION 1 NAME ONE ONE ONE'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:34:34 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO 222222 TWO', c_session2Delay='22'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:34:34 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='33'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 01:34:34 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='SESSION FOUR', c_session4Delay='4'
+                 WHERE id = '5ac5a4c1af966'
+08/01/2018 14:09:10 - 174.100.21.203: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+08/01/2018 14:09:41 - 174.100.21.203: Procedures_a: msall f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+08/01/2018 14:09:41 - 174.100.21.203: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Pre Screening'
+                 WHERE id = 'f3ffc29b-23b1f8f7-6dcb74b4-2c37659a'
+08/01/2018 14:09:41 - 174.100.21.203: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Session 2', c_session2Delay='0'
+                 WHERE id = 'f3ffc29b-23b1f8f7-6dcb74b4-2c37659a'
+08/01/2018 14:09:41 - 174.100.21.203: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay=''
+                 WHERE id = 'f3ffc29b-23b1f8f7-6dcb74b4-2c37659a'
+08/01/2018 14:09:56 - 174.100.21.203: Procedures_a: msall f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+08/01/2018 14:09:56 - 174.100.21.203: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Pre Screening'
+                 WHERE id = 'f3ffc29b-23b1f8f7-6dcb74b4-2c37659a'
+08/01/2018 14:09:56 - 174.100.21.203: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Session 2', c_session2Delay='0'
+                 WHERE id = 'f3ffc29b-23b1f8f7-6dcb74b4-2c37659a'
+08/02/2018 19:27:48 - 174.100.21.203: Procedures_a: updateproc 5abe4d575be08
+08/02/2018 19:29:10 - 174.100.21.203: Procedures_a: updateproc 5abe4d575be08
+08/03/2018 07:57:12 - 82.34.15.57: Procedures_a: add 
+08/03/2018 07:57:12 - 82.34.15.57: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b640ad8aabea',
+               c_description='TEST3-3 Session Test',
+               c_procedureId='TT3',
+               c_displayName='3 Session Test',
+               dateModified=NOW(),
+               dateCreated=NOW()
+08/03/2018 08:03:19 - 82.34.15.57: Procedures_a: updateproc 5b640ad8aabea
+08/03/2018 08:13:48 - 82.34.15.57: Procedures_a: msall 5b640ad8aabea
+08/03/2018 08:13:48 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Introdution'
+                 WHERE id = '5b640ad8aabea'
+08/03/2018 08:13:48 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Post Op Uno', c_session2Delay='1'
+                 WHERE id = '5b640ad8aabea'
+08/03/2018 08:13:48 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Post Op Part Deux', c_session3Delay='1'
+                 WHERE id = '5b640ad8aabea'
+08/03/2018 08:14:08 - 82.34.15.57: Procedures_a: msall 5b640ad8aabea
+08/03/2018 08:14:08 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Introduction'
+                 WHERE id = '5b640ad8aabea'
+08/03/2018 08:14:08 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Post Op Uno', c_session2Delay='1'
+                 WHERE id = '5b640ad8aabea'
+08/03/2018 08:14:08 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Post Op Part Deux', c_session3Delay='1'
+                 WHERE id = '5b640ad8aabea'
+08/03/2018 13:07:12 - 76.188.180.118: Procedures_a: add 
+08/03/2018 13:07:12 - 76.188.180.118: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b645380e4ad4',
+               c_description='',
+               c_procedureId='',
+               c_displayName='',
+               dateModified=NOW(),
+               dateCreated=NOW()
+08/04/2018 18:06:39 - 68.107.189.223: Procedures_a: msall 5aca22ebc26f5
+08/04/2018 18:06:39 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Prep Questions for PRE'
+                 WHERE id = '5aca22ebc26f5'
+08/04/2018 18:06:39 - 68.107.189.223: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='TWO FOR TEA', c_session2Delay='1'
+                 WHERE id = '5aca22ebc26f5'
+08/06/2018 19:22:48 - 68.107.189.223: Procedures_a: update 5b645380e4ad4
+08/06/2018 19:22:48 - 68.107.189.223: UPDATE app_fd_ver_procEpisodes
+           SET id='5b645380e4ad4',
+               c_description='Lobotomy',
+               c_procedureId='BRAIN-001',
+               c_displayName='Check up from the neck up',
+               dateModified=NOW()
+           WHERE id='5b645380e4ad4'
+08/06/2018 19:23:19 - 68.107.189.223: Procedures_a: add 
+08/06/2018 19:23:19 - 68.107.189.223: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b68a027f2f68',
+               c_description='',
+               c_procedureId='',
+               c_displayName='',
+               dateModified=NOW(),
+               dateCreated=NOW()
+08/06/2018 19:57:25 - 68.107.189.223: Procedures_a: add 
+08/06/2018 19:57:25 - 68.107.189.223: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b68a82544399',
+               c_description='',
+               c_procedureId='',
+               c_displayName='',
+               dateModified=NOW(),
+               dateCreated=NOW()
+08/06/2018 19:57:42 - 68.107.189.223: Procedures_a: add 
+08/06/2018 19:57:42 - 68.107.189.223: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b68a836cefa3',
+               c_description='',
+               c_procedureId='',
+               c_displayName='',
+               dateModified=NOW(),
+               dateCreated=NOW()
+08/06/2018 19:59:39 - 68.107.189.223: Procedures_a: add 
+08/06/2018 20:19:48 - 68.107.189.223: Procedures_a: clearsession 
+08/06/2018 20:21:41 - 68.107.189.223: Procedures_a: add 
+08/06/2018 20:21:46 - 68.107.189.223: Procedures_a: clearsession 
+08/07/2018 08:57:41 - 76.188.180.118: Procedures_a: clearsession 
+08/07/2018 08:59:21 - 76.188.180.118: Procedures_a: add 
+08/07/2018 12:53:04 - 68.107.189.223: Procedures_a: clearsession 
+08/07/2018 13:17:54 - 174.100.21.203: Procedures_a: clearsession 
+08/07/2018 13:37:26 - 82.34.15.57: Procedures_a: clearsession 
+08/07/2018 13:37:30 - 82.34.15.57: Procedures_a: clearsession 
+08/07/2018 13:45:56 - 82.34.15.57: Procedures_a: clearsession 
+08/07/2018 13:47:00 - 82.34.15.57: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+08/07/2018 13:47:55 - 82.34.15.57: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+08/07/2018 13:48:55 - 82.34.15.57: Procedures_a: clearsession 
+08/07/2018 13:49:29 - 82.34.15.57: Procedures_a: add 
+08/07/2018 13:49:29 - 82.34.15.57: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b69a36903354',
+               c_description='Toe-dectomy',
+               c_procedureId='TOE1',
+               c_displayName='this little pinky',
+               dateModified=NOW(),
+               dateCreated=NOW()
+08/07/2018 13:50:44 - 82.34.15.57: Procedures_a: msall 5b69a36903354
+08/07/2018 13:50:44 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Into-toe'
+                 WHERE id = '5b69a36903354'
+08/07/2018 13:50:44 - 82.34.15.57: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Post Op NoToe', c_session2Delay='2'
+                 WHERE id = '5b69a36903354'
+08/07/2018 13:51:07 - 82.34.15.57: Procedures_a: clearsession 
+08/07/2018 14:24:37 - 76.188.180.118: Procedures_a: clearsession 
+08/07/2018 14:28:04 - 76.188.180.118: Procedures_a: msall 5abe4d575be08
+08/07/2018 14:28:04 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='S1-PRE-TEST5D02'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:28:04 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Session 2 gen qol', c_session2Delay='4'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:28:04 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3  gen post', c_session3Delay='2'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:28:04 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='Session 4 - Hosp Recommendations', c_session4Delay='2'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:28:04 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session5Name='S5-POST-TEST5D02', c_session5Delay='2'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:31:09 - 76.188.180.118: Procedures_a: updateproc 5abe4d575be08
+08/07/2018 14:32:44 - 76.188.180.118: Procedures_a: msall 5abe4d575be08
+08/07/2018 14:32:44 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Sesssion 1 - Content Understanding'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:32:44 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Session 2 - Gen QOL', c_session2Delay='4'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:32:44 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3 - Post Complications', c_session3Delay='2'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:32:44 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session4Name='Session 4 - Hosp Recommendations', c_session4Delay='2'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:32:44 - 76.188.180.118: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session5Name='Session 5 - Specific Experience', c_session5Delay='2'
+                 WHERE id = '5abe4d575be08'
+08/07/2018 14:34:13 - 76.188.180.118: Procedures_a: updateproc 5abe4d575be08
+08/07/2018 15:29:00 - 76.188.180.118: Procedures_a: clearsession 
+08/07/2018 15:29:09 - 76.188.180.118: Procedures_a: add 
+08/08/2018 13:36:21 - 82.34.15.57: Procedures_a: clearsession 
+08/08/2018 13:37:33 - 82.34.15.57: Procedures_a: clearsession 
+08/08/2018 13:37:59 - 82.34.15.57: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+08/08/2018 13:46:41 - 76.188.180.118: Procedures_a: clearsession 
+08/08/2018 13:47:10 - 76.188.180.118: Procedures_a: clearsession 
+08/08/2018 13:56:45 - 82.34.15.57: Procedures_a: clearsession 
+08/08/2018 13:57:36 - 76.188.180.118: Procedures_a: clearsession 
+08/08/2018 14:26:51 - 82.34.15.57: Procedures_a: clearsession 
+08/08/2018 18:54:26 - 107.10.10.162: Procedures_a: clearsession 
+08/09/2018 12:28:37 - 68.107.189.223: Procedures_a: clearsession 
+08/09/2018 13:41:58 - 174.100.21.203: Procedures_a: clearsession 
+08/09/2018 14:11:32 - 68.107.189.223: Procedures_a: clearsession 
+08/09/2018 14:14:12 - 68.107.189.223: Procedures_a: clearsession 
+08/09/2018 14:16:58 - 76.188.180.118: Procedures_a: clearsession 
+08/09/2018 14:31:01 - 174.100.21.203: Procedures_a: clearsession 
+08/09/2018 15:38:48 - 174.100.21.203: Procedures_a: clearsession 
+08/09/2018 15:39:23 - 174.100.21.203: Procedures_a: clearsession 
+08/13/2018 13:14:53 - 82.34.15.57: Procedures_a: clearsession 
+08/13/2018 13:25:41 - 82.34.15.57: Procedures_a: clearsession 
+08/13/2018 13:28:08 - 82.34.15.57: Procedures_a: clearsession 
+08/13/2018 13:28:33 - 82.34.15.57: Procedures_a: updateproc f3ffc29b-23b1f8f7-6dcb74b4-2c37659a
+08/14/2018 17:07:01 - 82.23.201.76: Procedures_a: clearsession 
+08/14/2018 17:07:08 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 11:04:58 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 11:05:49 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 11:09:22 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 11:10:37 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:11:45 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:14:15 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:34:00 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:34:11 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:34:16 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:35:24 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:39:16 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:42:55 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:44:37 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:44:46 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:48:11 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 12:49:36 - 82.23.201.76: Procedures_a: add 
+08/15/2018 12:49:36 - 82.23.201.76: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b742160cbc5c',
+               c_description='Dax\'s amputation',
+               c_procedureId='DAX01',
+               c_displayName='Dax Amputate',
+               dateModified=NOW(),
+               dateCreated=NOW()
+08/15/2018 12:52:04 - 82.23.201.76: Procedures_a: updateproc 5b742160cbc5c
+08/15/2018 12:52:47 - 82.23.201.76: Procedures_a: msall 5b742160cbc5c
+08/15/2018 12:52:47 - 82.23.201.76: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 2'
+                 WHERE id = '5b742160cbc5c'
+08/15/2018 12:52:47 - 82.23.201.76: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Session 2', c_session2Delay='5 minutes'
+                 WHERE id = '5b742160cbc5c'
+08/15/2018 12:52:47 - 82.23.201.76: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='10 minutes'
+                 WHERE id = '5b742160cbc5c'
+08/15/2018 12:53:08 - 82.23.201.76: Procedures_a: updateproc 5b742160cbc5c
+08/15/2018 17:31:30 - 82.23.201.76: Procedures_a: clearsession 
+08/15/2018 17:35:08 - 82.23.201.76: Procedures_a: clearsession 
+08/20/2018 14:55:05 - 76.188.180.118: Procedures_a: clearsession 
+08/20/2018 14:57:34 - 76.188.180.118: Procedures_a: clearsession 
+08/21/2018 11:09:04 - 82.23.201.76: Procedures_a: clearsession 
+08/21/2018 11:09:57 - 82.23.201.76: Procedures_a: add 
+08/21/2018 11:09:57 - 82.23.201.76: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b7bf30525b98',
+               c_description='Dax\'s special knee surgery',
+               c_procedureId='DAX02',
+               c_displayName='DAX02 - special knee surgery',
+               dateModified=NOW(),
+               dateCreated=NOW()
+08/21/2018 11:10:23 - 82.23.201.76: Procedures_a: add 
+08/21/2018 11:10:23 - 82.23.201.76: INSERT INTO  app_fd_ver_procEpisodes
+           SET id='5b7bf31fe4207',
+               c_description='Dax\'s special shoulder surgery',
+               c_procedureId='DAX03',
+               c_displayName='DAX03 - special shoulder surgery',
+               dateModified=NOW(),
+               dateCreated=NOW()
+08/21/2018 11:12:32 - 82.23.201.76: Procedures_a: updateproc 5b7bf30525b98
+08/21/2018 11:13:47 - 82.23.201.76: Procedures_a: msall 5b7bf30525b98
+08/21/2018 11:13:47 - 82.23.201.76: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session1Name='Session 1'
+                 WHERE id = '5b7bf30525b98'
+08/21/2018 11:13:47 - 82.23.201.76: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session2Name='Session 2', c_session2Delay='5'
+                 WHERE id = '5b7bf30525b98'
+08/21/2018 11:13:47 - 82.23.201.76: MSALL: UPDATE app_fd_ver_procEpisodes
+                 SET    c_session3Name='Session 3', c_session3Delay='5'
+                 WHERE id = '5b7bf30525b98'
+08/22/2018 12:40:56 - 76.188.180.118: Procedures_a: clearsession 
+08/22/2018 12:55:30 - 76.188.180.118: Procedures_a: clearsession 
+08/22/2018 13:19:57 - 76.188.180.118: Procedures_a: clearsession 
+08/22/2018 13:25:06 - 174.100.21.203: Procedures_a: clearsession 
+08/22/2018 13:25:09 - 174.100.21.203: Procedures_a: clearsession 
+08/22/2018 13:29:14 - 174.100.21.203: Procedures_a: clearsession 
+08/22/2018 13:42:10 - 174.100.21.203: Procedures_a: clearsession 
+08/22/2018 13:42:18 - 174.100.21.203: Procedures_a: clearsession 
+08/22/2018 13:42:33 - 174.100.21.203: Procedures_a: clearsession 
+08/22/2018 13:42:45 - 174.100.21.203: Procedures_a: clearsession 
+08/22/2018 13:42:51 - 174.100.21.203: Procedures_a: clearsession 
+08/23/2018 04:58:00 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 04:59:58 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 05:06:32 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 05:17:59 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 05:20:23 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 05:27:11 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 05:32:53 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 05:38:42 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 06:02:12 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 07:33:05 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 09:46:16 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 12:52:29 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 12:53:01 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 14:36:39 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 14:41:38 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 14:58:41 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 15:35:47 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 16:26:14 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 16:29:03 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 21:23:01 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 21:40:30 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 21:49:41 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 22:14:34 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 22:51:50 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 23:05:00 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 23:17:27 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 23:26:36 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 23:30:07 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 23:39:19 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 23:42:11 - 76.188.180.118: Procedures_a: clearsession 
+08/23/2018 23:53:14 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 00:05:07 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 03:48:21 - 68.107.189.223: Procedures_a: clearsession 
+08/24/2018 04:01:32 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 04:02:32 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 05:09:23 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 05:11:45 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 05:14:17 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 05:16:22 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 05:17:30 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 05:26:04 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 05:42:05 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 05:46:00 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 05:56:09 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 07:13:39 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 08:32:48 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 08:33:41 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 08:36:08 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 09:24:31 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 12:53:29 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 13:00:02 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 13:00:41 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 13:00:45 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 13:02:25 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 14:09:46 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 14:10:03 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 14:23:56 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 14:46:17 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 14:48:01 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 14:52:15 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 14:58:08 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 15:02:06 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 15:06:28 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 15:07:36 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 15:09:01 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 15:12:49 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 15:18:12 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 15:19:17 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:20:07 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:20:27 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:20:32 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:20:58 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:22:17 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:22:28 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:22:54 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:23:07 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:25:49 - 174.100.21.203: Procedures_a: clearsession 
+08/24/2018 15:31:05 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 15:31:45 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 15:36:36 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 16:03:24 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 16:26:17 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 16:33:30 - 76.188.180.118: Procedures_a: clearsession 
+08/24/2018 16:34:26 - 76.188.180.118: Procedures_a: clearsession 
+08/27/2018 13:05:58 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 13:06:42 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 13:08:50 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 13:08:55 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 13:09:50 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 13:10:13 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 13:53:43 - 76.188.180.118: Procedures_a: clearsession 
+08/27/2018 14:15:20 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:18:03 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:18:53 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:19:08 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:22:36 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:22:36 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:23:55 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:24:47 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:25:59 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:26:37 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 14:30:16 - 174.100.21.203: Procedures_a: clearsession 
+08/27/2018 15:47:55 - 68.107.189.223: Procedures_a: clearsession 
+08/27/2018 15:58:59 - 68.107.189.223: Procedures_a: clearsession 
+08/27/2018 18:32:41 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 00:07:47 - 68.107.189.223: Procedures_a: clearsession 
+08/28/2018 00:09:45 - 68.107.189.223: Procedures_a: clearsession 
+08/28/2018 02:09:14 - 68.107.189.223: Procedures_a: clearsession 
+08/28/2018 02:12:12 - 68.107.189.223: Procedures_a: clearsession 
+08/28/2018 02:20:27 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 02:35:30 - 68.107.189.223: Procedures_a: clearsession 
+08/28/2018 04:19:18 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 04:21:48 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 05:02:13 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 05:04:38 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 05:09:34 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 05:14:21 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 05:17:17 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 05:30:49 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 05:32:21 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 05:33:37 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 05:35:28 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 11:57:25 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 12:15:14 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 12:19:47 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 14:16:15 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 15:13:40 - 82.23.201.76: Procedures_a: clearsession 
+08/28/2018 15:22:36 - 82.23.201.76: Procedures_a: clearsession 
+08/28/2018 17:22:29 - 82.23.201.76: Procedures_a: clearsession 
+08/28/2018 17:25:32 - 82.23.201.76: Procedures_a: clearsession 
+08/28/2018 17:48:01 - 174.100.21.203: Procedures_a: clearsession 
+08/28/2018 17:48:17 - 174.100.21.203: Procedures_a: clearsession 
+08/28/2018 19:14:07 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 19:18:26 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 19:30:05 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 19:30:49 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 19:32:13 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 19:33:39 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 19:33:49 - 76.188.180.118: Procedures_a: clearsession 
+08/28/2018 19:40:02 - 76.188.180.118: Procedures_a: clearsession 
+08/29/2018 00:37:34 - 68.107.189.223: Procedures_a: clearsession 
+08/29/2018 13:04:55 - 174.100.21.203: Procedures_a: clearsession 
+08/29/2018 13:05:36 - 174.100.21.203: Procedures_a: clearsession 
+08/29/2018 13:05:55 - 174.100.21.203: Procedures_a: clearsession 
+08/30/2018 07:53:07 - 82.23.201.76: Procedures_a: clearsession 
+08/30/2018 07:55:31 - 82.23.201.76: Procedures_a: clearsession 
+09/10/2018 09:11:30 - 144.48.250.178: Procedures_a: clearsession 
+09/10/2018 09:15:35 - 144.48.250.178: Procedures_a: clearsession 
+09/10/2018 09:17:01 - 144.48.250.178: Procedures_a: clearsession 
+09/10/2018 09:17:06 - 144.48.250.178: Procedures_a: clearsession 
+09/10/2018 10:01:30 - 144.48.250.178: Procedures_a: clearsession 
+09/12/2018 09:07:28 - 144.48.250.178: Procedures_a: clearsession 
+09/13/2018 18:30:20 - 174.100.21.203: Procedures_a: clearsession 
+09/13/2018 18:32:30 - 174.100.21.203: Procedures_a: clearsession 
+09/13/2018 18:35:20 - 174.100.21.203: Procedures_a: clearsession 
+09/17/2018 06:34:49 - 144.48.250.178: Procedures_a: clearsession 
+09/17/2018 06:39:31 - 144.48.250.178: Procedures_a: clearsession 
+09/17/2018 06:39:50 - 144.48.250.178: Procedures_a: clearsession 
+09/17/2018 06:47:33 - 144.48.250.178: Procedures_a: clearsession 

@@ -21,17 +21,18 @@ if (isset($forgot_login_flag))
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - Patient Auth V3 - Screen 2</title>
+  <title>EIDO Verify</title>
   <link rel="stylesheet" href="../css/foundation.css">
   <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/app.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
-  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <!--<script src="https://code.jquery.com/jquery-1.9.1.js"></script>-->
     <!--following script is required for comodo secure seal logo, there is a corresponding required script tag inside the html body tag-->
   <script>
 	    $( function() {
-   $( "#tooltip_error_day" ).tooltip().tooltip("open");
+            $( "#tooltip_error_day" ).tooltip("open");
 });
 	  </script>
 </head>
@@ -53,9 +54,9 @@ if (isset($forgot_login_flag))
 			<p>&nbsp;</p>
 			<h1>Login</h1>
                     <?php if ($_SESSION['login_error']) { ?>
-                          <div class='error_message fi-alert'><strong>Your email or password was incorrect.</strong> - please try again</div>
+                          <div class='error_message fi-alert'><strong>Your e-mail or password was incorrect.&nbsp; Please try again.</strong> </div>
                     <?php } ?>
-			<label>E-mail
+			<label style="color: #0D2240 !important;">E-mail
 			  <div class="input-group">
                 <span class="input-group-label"><i class="fi-mail"></i></span>
 				<input id="username1" class="input-group-field" name="email" type="text" value="<?php echo $email; ?>" placeholder="Enter your e-mail address">
@@ -67,16 +68,16 @@ if (isset($forgot_login_flag))
                 <input class="input-group-field" type="password" name="password" id="form_password"  placeholder="Enter your password">
                 <span class="input-group-label toggle-password" toggle="#form_password">SHOW</span>
               </div>
-			  <p id="forgotpw" class="note text-right"><a href="validation_forgot_pw.php">I forgot my password</a></p>
+			  <p id="forgotpw" class="bluelink text-right"><a href="validation_forgot_pw.php">I forgot my password</a></p>
 			</label>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 			<div class="small-12 cell">
 			  <button type="submit" name="" value="" class="button large float-right">Login</button>
 			</div>
 		  </form>
-		    <div class="small-12 cell">
-			  <p><hr></p>
-		    </div>
+		    <!--<div class="small-12 cell">-->
+			  <!--<p><hr></p>-->
+		    <!--</div>-->
 		  </div>
 		<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	  </div>	  
@@ -85,6 +86,13 @@ if (isset($forgot_login_flag))
   </div>
   <?php include '../includes/val_footer.php';?>
   <!-- End Content --> 
+</div>
+<div class="reveal" id="errorModal" data-reveal>
+    <h1>Please try again...</h1>
+    <p><?php echo $error_msg;?></p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
       <script src="../js/vendor/jquery.js"></script>
       <script src="../js/vendor/what-input.js"></script>

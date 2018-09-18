@@ -83,7 +83,7 @@ function selectOptions($table,$edit_mode,$current)
  * @param string $where
  * @param string $order
  */
-function make_combo($table_name, $value, $label, $default, $where="", $order="", $default_label="")
+function make_combo($table_name, $value, $label, $default, $where="", $order="", $default_label="", $label1="", $label2="", $combolabel="")
 {
    if ($order == "")
       $order = " ORDER BY $value";
@@ -102,12 +102,23 @@ function make_combo($table_name, $value, $label, $default, $where="", $order="",
       $selected = "";
    while ($optionResult = $optionQuery->fetch_assoc())
    {
-      if ($optionResult[$value] == $default)
-         $selected = "selected";
-      else
-         $selected = "";
+      if ($optionResult[$value] == $default) {
+          $selected = "selected";
+      }
+      else {
+          $selected = "";
+      }
 
-      echo "<option value=\"$optionResult[$value]\" $selected>$optionResult[$label]</option>";
+      if ($combolabel == "true") {
+          $surgeon = $optionResult[$label2];
+          $surgeonnamearr = explode(' ' ,$surgeon,2);
+          $surgeonnameformat = strtoupper($surgeonnamearr[1]).', '.$surgeonnamearr[0];
+         $newlabel = $surgeonnameformat.'  -  '.$optionResult[$label1];
+       echo "<option value=\"$optionResult[$value]\" $selected>$newlabel</option>";
+   }
+   else {
+       echo "<option value=\"$optionResult[$value]\" $selected>$optionResult[$label]</option>";
+   }
    } //end-loop
 
    return;

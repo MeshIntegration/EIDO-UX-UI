@@ -250,12 +250,12 @@ defaultOptions.ui.popoverError = function (errors) {
     return message;
 };
 defaultOptions.ui.errorMessages = {
-    wordLength: "Your password is too short",
-    wordNotEmail: "Do not use your email as your password",
-    wordSimilarToUsername: "Your password cannot contain your username",
-    wordTwoCharacterClasses: "Use different character classes",
-    wordRepetitions: "Too many repetitions",
-    wordSequences: "Your password contains sequences"
+    wordLength: "Your password is too short.",
+    wordNotEmail: "Do not use your email as your password.",
+    wordSimilarToUsername: "Your password cannot contain your username.",
+    wordTwoCharacterClasses: "Use different character classes.",
+    wordRepetitions: "Too many repetitions.",
+    wordSequences: "Your password contains sequences."
 };
 defaultOptions.ui.verdicts = ["Weak", "Normal", "Medium", "Strong", "Very Strong"];
 defaultOptions.ui.showVerdicts = true;
@@ -358,7 +358,7 @@ var ui = {};
     ui.initErrorList = function (options, $el) {
         var $container = ui.getContainer(options, $el);
         if (!ui.findElement($container, options.ui.viewports.errors, 'small.error').length) {
-            ui.initHelper(options, $el, "<small class='error' style='display:none;'></small>",
+            ui.initHelper(options, $el, "<small class='hide error' style='display:none;top:-100%;position: relative;text-align: left: 96px;'></small>",
                         options.ui.viewports.errors);
         }
     };

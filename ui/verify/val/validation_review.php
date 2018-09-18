@@ -6,7 +6,8 @@ $logfile = "validation.log";
 session_start();
 $error_msg = $_SESSION['error_msg'];
 $_SESSION['error_msg']="";
-$arr_pt_info = $_SESSION['arr_pt_info'];
+$arr_pt_info = get_pt_info($_SESSION['patientEpisodeId']);
+$_SESSION['patientEpisodeId'] = $arr_pt_info['id'];
 $ip_address = $_SERVER['REMOTE_ADDR'];
 $browser = $_SERVER['HTTP_USER_AGENT'];
 
@@ -95,7 +96,9 @@ if ($error_ct==0 || $error_ct==1)
    //     so just rewrite what is in db for now
    $mobile=$arr_pt_info['c_mobileNumber'];
    $preferred=$arr_pt_info['c_preferredContactMethod'];
-   save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $mobile, $preferred, $arr_pt_info['c_emailAddress']);
+   $email=$arr_pt_info['c_emailAddress'];
+   $preferenceset=$arr_pt_info['c_preferenceSet'];
+   save_pt_info($arr_pt_info['id'], $_SESSION['entered_surname'], $_SESSION['entered_postalcode'], $_SESSION['entered_dob'], $_SESSION['entered_nhsnumber'], $_SESSION['entered_password'], $mobile, $preferred, $email, $preferenceset);
 
 
 
@@ -103,7 +106,7 @@ if ($error_ct==0 || $error_ct==1)
     // - Andrew
 
 
-   if ( $arr_pt_info['c_emailAddress']<>"" && $arr_pt_info['c_mobilePageDone']=="YES") {
+   if ( $arr_pt_info['c_emailAddress']<>"" && $arr_pt_info['c_preferenceSet']=="YES") {
        logMsg("Mobile page done already - pt has email - going to validate_pw, then on to survey...",$logfile);
       // patient has an email so can create a password to login
        // and they have completed mobile/email contact preferences page,
@@ -111,27 +114,40 @@ if ($error_ct==0 || $error_ct==1)
        // patients with contact preference set to mobile, but who also have an email will be directed here.
        // they can create a password and then login with email & password, or skip through the screen and go straight to surveys.
        //  This may need modified to pass patients set to mobile phone preference directly to surveys.
-      header ("Location: validation_pw.php");
+      header ("Location: validation_pw.php?patientEpisodeId=".$arr_pt_info['id']);
       exit();
    } else {
-       if ($arr_pt_info['c_mobilePageDone']=="YES") {
-           logMsg("Mobile page done already - no email - go directly to survey...",$logfile);
+     //  if ($arr_pt_info['c_preferenceSet']=="YES" && $arr_pt_info['c_password']<>"") {
+      //     logMsg("Mobile page done already - go directly to survey...", $logfile);
            // WE HAVE LIFT OFF - take them to the correct survey
 
-      // no email - go to survey if the mobile page was already done
+           // no email - go to survey if the mobile page was already done
 
 
-         $goto_url = get_survey_url($arr_pt_info);
-         $_SESSION = array();
-         session_destroy();
-         header ("Location: $goto_url");
-         exit();
-      } else {
+      //     $goto_url = get_survey_url($arr_pt_info);
+      //     $_SESSION = array();
+
+       //    header("Location: $goto_url");
+       //    exit();
+     //  }
+      //     if ($arr_pt_info['c_preferenceSet']=="YES" && $arr_pt_info['c_emailAddress']<>"" && $arr_pt_info['c_password']=="") {
+       //        logMsg("Mobile page done already - go to set pw page...",$logfile);
+               // WE HAVE LIFT OFF - take them to the correct survey
+
+               // no email - go to survey if the mobile page was already done
+
+
+        //       $goto_url = get_survey_url($arr_pt_info);
+       //        $_SESSION = array();
+
+       //        header ("Location: $goto_url");
+       //        exit();
+   //   } else {
          logMsg("Going to mobile.php...",$logfile);
          header ("Location: validation_mobile.php");
          exit();
       }
-   }
+
 }
 // else if ($error_ct==2)
 //   add_to_timeline($arr_pt_info['id'], "Patient validation error (soft fail)", "Open", "Info", 
@@ -166,7 +182,7 @@ if ($_SESSION['dob_error'])
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - Patient Auth V3 - Screen 5</title>
+  <title>EIDO Verify</title>
   <link rel="stylesheet" href="../css/foundation.css">
   <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
@@ -174,9 +190,9 @@ if ($_SESSION['dob_error'])
   <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script>
-	    $( function() {
-   $( "#tooltip_error_day" ).tooltip().tooltip("open");
-});
+//	    $( function() {
+ //  $( "#tooltip_error_day" ).tooltip().tooltip("open");
+//});
 	  </script>
 </head>
 <body class="alert_msg registration">
@@ -198,7 +214,7 @@ if ($_SESSION['dob_error'])
 		    <?php if ($_SESSION['surname_error']) { ?>
 		<label class="alert">Surname
 		  <div class="input-group">
-                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check the spelling of your surname" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="icon eido-icon-user2 alert"></i></span>
+                     <span class="input-group-label has-tip" style="padding-top: 10px;" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check the spelling of your surname" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="mediumicon icon eido-icon-user2 alert"></i></span>
                      <input class="input-group-field" type="text" name="c_surname" value="<?php echo $_SESSION['entered_surname']; ?>">
                  </div>
 	      </label>
@@ -206,71 +222,71 @@ if ($_SESSION['dob_error'])
             <?php if ($_SESSION['postalcode_error']) { ?>
 		<label class="alert">Postal Code
 		  <div class="input-group">
-                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your Postal Cose is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="ico eido-icon-user2 alert"></i></span>
+                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your Postal Cose is correct" data-position="top" data-alignment="left" id="tooltip_alert_day" style="padding-top: 10px; padding-right: 7px !important; padding-left: 7px !important;"><i class="mediumicon eido-icon-location23 alert"></i></span>
                      <input class="input-group-field" type="text" name="c_postalCode" value="<?php echo $_SESSION['entered_postalcode']; ?>">
                  </div>
 	      </label>
             <?php } ?>
             <?php if ($_SESSION['dob_error']) { ?>
-		<label class="alert label-dob" style="margin-bottom:20px !important;">Date of Birth
+		<label class="alert label-dob" style="margin-bottom: 0px !important; margin-top: 10px;">Date of Birth</label>
 		  <div class="input-group">
-                     <span class="input-group-label has-tip input-bg-white" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your Date of Birth is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="fi-calendar alert"></i></span>
-			    <div class="select">
-				    <select class="input-group-field" name="dob_day" placeholder="Day">
+                     <span class="input-group-label has-tip input-bg-white" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your Date of Birth is correct" data-position="top" data-alignment="left" id="tooltip_alert_day" style="margin-top: 10px; margin-left: 0px; padding-left: 10px; padding-right: 5px;"><i class="smallmediumicon eido-icon-calendar-o alert" ></i></span>
+			    <span class="select float-left flex-container">
+				    <select class="input-group-field input-group-label" name="dob_day">
 					    <?php include "../includes/select_day.html"; ?>
 				    </select>
-			    </div>
-                <div class="select">
-	                <select class="input-group-field" name="dob_month" placeholder="Month">
+			    </span>
+                <span class="select float-center flex-container">
+	                <select class="input-group-field input-group-label" name="dob_month">
 		                <?php include "../includes/select_month.html"; ?>
 	                </select>
-                </div>
-                <div class="select">
-	                <select class="input-group-field" name="dob_year" placeholder="Year">
+                </span>
+                <span class="select float-right flex-container">
+	                <select class="input-group-field input-group-label" name="dob_year">
 		                <?php include "../includes/select_year.html"; ?>
 	                </select>
-                </div>
+                </span>
 
                  </div>
-	      </label>
+
             <?php } ?>
             <?php if ($_SESSION['nhsnumber_error']) { ?>
-		<label class="alert">NHS NUMBER
-		  <div class="input-group">
-                     <span class="input-group-label has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your NHS Number is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="icon eido-icon-dot-circle-o alert"></i></span>
-                     <input class="input-group-field" type="text" name="c_nhsNumber" value="<?php echo $_SESSION['entered_nhsnumber']; ?>">
+		<label class="alert">NHS Number
+		  <div class="input-group login">
+                     <span class="input-group-label has has-tip" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Please check that your NHS Number is correct" data-position="top" data-alignment="left" id="tooltip_alert_day"><i class="mediumicon eido-icon-dot-circle-o alert"></i></span>
+                     <input class="input-group-field" type="text" pattern="[0-9]*" name="c_nhsNumber" value="<?php echo $_SESSION['entered_nhsnumber']; ?>">
                  </div>
-                 <p><span style="font-color:red;font-size:small;">You can find your NHS Number on a letter from your GP or hospital or on a medical ID card.</span><p>
+                 <p><span style="color: #0D2240; font-size:small;">You can find your NHS Number on a letter from your GP or hospital, or on a medical ID card.</span><p>
 	      </label>
             <?php } ?>
-		<div class="small-12 text-right cell"><p>&nbsp;</p></div>
+		<div class="hide-for-small-only small-12 text-right cell"><p>&nbsp;</p></div>
 		<div class="small-12 cell">
-		  <button type="submit" name="" value="" class="button large float-right">UPDATE</button>
+		  <button type="submit" name="" value="" class="button large float-center">Update</button>
 		</div>
             <?php if ($_SESSION['error_ct']==2) { // soft fail ?>
-		<div class="small-12 text-right cell"><p>&nbsp;</p></div>
+		<div class="hide-for-small-only small-12 text-right cell"><p>&nbsp;</p></div>
                 <div class="clear"></div>
 		<div class="small-12 cell">
                   <p>If you are 100% sure the data is correct, please click the button below for a review.</p>
-		  <a href="validation_goto_request.php"><button type="button" name="" value="" class="button large float-right inactive">Request Review</button></a>
+		  <a href="validation_goto_request.php"><button type="button" name="" value="" class="button large float-center inactive">Request Review</button></a>
 		</div>
             <?php } ?>
+                <div class="hide-for-small-only small-12 text-right cell"><p>&nbsp;<br /></p></div>
 	  </form>
-	    <div class="small-12 cell">
-		  <p><img src="../img/org_logos/<?php echo $arr_pt_info['logo']; ?>" alt="" class="vendor"/></p>
-	    </div>
-	  </div>
-	<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
+            <img src="../img/org_logos/<?php echo $arr_pt_info['logo']; ?>" alt="" class="vendor"/><!--</p>-->
+        </div>
+	  <div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	</div>	  
     </div>
+  </div>
 	<!-- End Content-Full -->
   </div>
         <?php include "../includes/val_footer.php"; ?>  
   <!-- End Content --> 
 </div>
-      <script src="../js/vendor/jquery.js"></script>
+     <!-- <script src="../js/vendor/jquery.js"></script>-->
       <script src="../js/vendor/what-input.js"></script>
-      <script src="./js/vendor/foundation.js"></script>
+      <script src="../js/vendor/foundation.js"></script>
       <script src="../js/app.js"></script>
       <script>
          $(document).ready(function () {

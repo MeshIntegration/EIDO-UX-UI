@@ -1,5 +1,5 @@
 <div class="grid-x hide-for-small-only show-for-medium">
-    <div class="small-12 medium-2 large-2 cell">
+    <div class="small-12 medium-2 large-2 cell small-blank">
         <button class="button type shift btn-header" style="" type="button" data-toggle="example-dropdown-bottom-left">
             <?php echo $user_initials; ?>
         </button>
@@ -19,10 +19,10 @@
 
 
 
-    <div class="small-12 medium-6 large-6 cell" style="padding-top: 26px;">
+    <div class="small-12 medium-6 large-6 cell small-blank" style="padding-top: 26px;">
         <!--  <div class="grid" style="padding-top: 15px;"> -->
 
-        <div id="addusr" class="row links" style="margin-top: -2px; margin-bottom: 4px; height: 20px; zoom: 1.14;">
+        <div id="addusr" class="row links bluelink" style="text-decoration: none; margin-top: -2px; margin-bottom: 4px; height: 20px; zoom: 1.14;">
             <a href="/ui/verify/admin/users_a.php?m=gotoadd" style="padding-bottom: 2px; vertical-align: center;">
                 <i class="icon eido-icon-plus-circle" style="margin-right: 7px;"></i>Add User</a>
         </div>
@@ -33,19 +33,23 @@
 </div>
 
 
-<div class="small-12 medium-4 large-4 cell">
-    <div class="back-row back-row-head">
-        <a style="zoom: .8; margin-left: 13px" class="back-btn" href="/ui/verify/patient/patients.php?m=main">
-            <i class="icon eido-icon-chevron-left"></i>&nbsp;&nbsp;Back To Dashboard
-        </a>
+<div class="small-12 medium-4 large-4 cell small-blank">
+    <div class="row back-row-top back-row-head "  style="margin-left 30px; padding-top: 0px;">
+    <div class="row clickable-row btn-back linkssub links bluelink back-row-top-span"  style="text-decoration: none; background-color: #ffffff00;" data-href="/ui/verify/patient/patients.php?m=main">
+        <a style="zoom: .8; vertical-align: text-bottom;" href="/ui/verify/patient/patients.php?m=main">
+
+                <i class=" back-row-top-span float-left eido-icon-chevron-left" style="padding-left:5px; padding-top: 2px; vertical-align: sub" data-href="/ui/verify/patient/patients.php?m=main"></i><span data-href="/ui/verify/patient/patients.php?m=main" class="" style="font-family: 'Lato', 'Lato', 'Lato Bold', sans-serif; font-weight: normal; font-size:16px; margin-top: -5px; padding-bottom: 10px; vertical-align: top;">&nbsp;&nbsp;&nbsp;Back To Dashboard</span>&nbsp;
+
+                </a>
+    </div>
     </div>
 </div>
 
 
 <!-- Start Mobile Nav -->
 <div class="grid-x hide-for-medium">
-    <div class="small-12 cell text-center"><a href="patients.php?m=main"><img src="/ui/img/eido_logo.png" alt="EIDO Logo" class="logo"/></a></div>
-    <div class="small-12 cell toggle">
+    <div class="small-12 cell text-right"><a href="patients.php?m=main"><img src="/ui/img/eido_logo.png" alt="EIDO Logo" class="logo"/></a></div>
+    <div class="small-12 cell toggle small-blank">
         <div class="grid-x">
             <div class="small-10 cell">&nbsp;</div>
             <div class="small-2 cell text-right">

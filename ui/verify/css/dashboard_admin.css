@@ -4,21 +4,21 @@
 /* Client: Eido */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i'); 
-body { color:#0D2240; font-family:'Lato', sans-serif; font-style:normal; font-weight:200; font-size:1em; }
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,400,400i,700,700i');
+body { color:#0D2240; font-family:'Lato', sans-serif; font-style:normal; font-weight:400; font-size:1em; }
 h1, h2, h3, h4, h5, h6 { color:#0D2240; }
   h1 { font-size:1.75em; font-family:'Lato-Bold', 'Lato Bold', 'Lato', sans-serif; font-weight:700; }
-  h2 { font-size:1.5em; font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif; font-style:normal; font-weight:200; line-height:0.85em; margin:0px 0px 20px 0px; }
+  h2 { font-size:1.5em; font-family: 'Lato', 'Lato', 'Lato', sans-serif; font-style:normal; font-weight:400; line-height:0.85em; margin:0px 0px 20px 0px; }
   h3 { font-size:1.25em; font-family:'Lato-Bold', 'Lato Bold', 'Lato', sans-serif; font-weight:700; }
   h4 { font-size:1.125em; font-family:'Lato-Bold', 'Lato Bold', 'Lato', sans-serif; font-weight:700; width:100%; border-bottom:3px solid #3eaf65; padding-bottom:5px; margin-bottom:15px; }
-    h4 .active { font-size:0.55em; font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif; font-style:normal; font-weight:200; text-transform:uppercase; margin-top:7px; }
+    h4 .active { font-size:0.55em; font-family: 'Lato', 'Lato', 'Lato', sans-serif; font-style:normal; font-weight:400; text-transform:uppercase; margin-top:7px; }
   h5 { font-size:1em; font-family:'Lato-Bold', 'Lato Bold', 'Lato', sans-serif; font-weight:700; color:#0D2240; }
     h5.notification { padding:10px; margin-bottom:28px; border-bottom:1px solid #787878; text-align:center; }
     h5.notification-red { padding:10px; margin-bottom:28px; border-bottom:1px solid #d0021b; text-align:center; color:#d0021b; }
   h6 { font-size:1em; font-family:'Lato', sans-serif; font-weight:normal; font-style:normal; color:#0D2240; }
 
 [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'],
-[type='url'], [type='color'], textarea, select { color:#0D2240; font-size:14px; font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif; font-style:normal; margin-bottom:0px; }
+[type='url'], [type='color'], textarea, select { color:#0D2240; font-size:14px; font-family: 'Lato', 'Lato', 'Lato', sans-serif; font-style:normal; margin-bottom:0px; }
 
 [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus, textarea:focus { border:1px solid #979797; background:#e3e3e3; }
 
@@ -114,7 +114,7 @@ input.number { width:40px; }
 .return { background:#39f; color:#fff; text-transform:uppercase; font-size:14px; padding:15px 0px 9px 48px; }
   .return a { color:#fff; text-decoration:none;  padding:none !important; font-size:14px; }
 .return img { margin-right:10px; margin-top:-4px; }
-.page-title-blue { background:#39f; font-family:'Lato-Light', 'Lato Light', 'Lato'; font-weight:200; font-style:normal !important; font-size:20px; text-align:center; text-transform:uppercase; color:#fff; 
+.page-title-blue { background:#39f; font-family:'Lato', 'Lato', 'Lato'; font-weight:400; font-style:normal !important; font-size:20px; text-align:center; text-transform:uppercase; color:#fff;
 	                padding:13px 0px; }
 
 /* Content */
@@ -124,7 +124,7 @@ input.number { width:40px; }
 
 .content-left { background:#fff; padding:20px 0px; border-right:12px solid #efefef; position:relative; }
 .name { font-size:18px; line-height:1em; margin:0; }
-  .name .small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small { font-family:'Lato-Light', 'Lato Light', 'Lato'; font-weight:200; font-style:normal; font-size:12px; margin-bottom:10px; }
+  .name .small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small { font-family:'Lato', 'Lato', 'Lato'; font-weight:400; font-style:normal; font-size:12px; margin-bottom:10px; }
   .fade { color:#bbbbbb; font-size:18px; margin-right:10px; }
   .fade-right { color:#bbbbbb; font-size:18px; margin-left:10px; }
 .divide { border-top:16px solid #efefef; padding:20px 0px;  }

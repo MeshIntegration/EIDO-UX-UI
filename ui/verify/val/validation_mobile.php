@@ -5,8 +5,9 @@
 $logfile = "validation.log";
 require_once '../utilities.php';
 session_start();
-$arr_pt_info = $_SESSION['arr_pt_info'];
+$arr_pt_info = get_pt_info($_SESSION['patientEpisodeId']);
 $patientEpisodeId = $arr_pt_info['id'];
+$_SESSION['patientEpisodeId'] = $arr_pt_info['id'];
 if($arr_pt_info['c_preferenceSet'] == "YES" && $arr_pt_info['c_acceptedTC'] == "YES" && $arr_pt_info['c_password'] == "") {
 	header("Location: validation_pw.php?patientEpisodeId=$patientEpisodeId");
 	exit();
@@ -14,7 +15,7 @@ if($arr_pt_info['c_preferenceSet'] == "YES" && $arr_pt_info['c_acceptedTC'] == "
 if($arr_pt_info['c_preferenceSet'] == "YES" && $arr_pt_info['c_acceptedTC'] == "YES" && $arr_pt_info['c_password'] <> "") {
     $goto_url = get_survey_url($arr_pt_info);
     $_SESSION = array();
-    session_destroy();
+
     header ("Location: $goto_url");
     exit();
 }
@@ -60,7 +61,7 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Eido Verify - Patient Auth V3 - Screen 4</title>
+	<title>EIDO Verify</title>
 	<link rel="stylesheet" href="../css/foundation.css">
 	<link rel="stylesheet" href="../css/eido.css">
 	<link rel="stylesheet" href="../css/dashboard.css">
@@ -86,26 +87,27 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 				<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 				<div class="small-12 medium-6 align-center-middle cell">
 					<p>&nbsp;</p>
+                    <h1 class="text-center">Contact Details</h1>
 					<form class="login" action="validation_mobile_a.php" method="post">
 						<?php if($arr_pt_info['c_mobileNumber'] == "") { ?>
-							<p class="lead"><strong>We don't have a mobile number for you<br/>
-							If you add it, we can text you with updates...<strong</p>
-						<?php } else { ?>
-							<p class="lead"><strong>Do we have the latest mobile number for you?<br />
-									Please check the number below and change it if necessary.</strong></p>
+							<p class="lead"  style="font-size: medium; padding-left: 20px; padding-right: 20px;">We don't have a mobile number for you.<br />If you add it, we can text you with updates...</p>
+						<?php } ?>
+                        <?php if($prompt == "mobileconfirm") { ?>
+							<p class="lead" style="font-size: medium;">Do we have the correct mobile number for you?<br />
+									</p>
 						<?php } ?>
 						<?php if($arr_pt_info['c_emailAddress'] == "") { ?>
-							<p class="lead"><strong>We don't have an email address for you.
-									If you add it, we can send you email with updates...</strong></p>
+                            <p class="lead" style="font-size: medium;">We don't have an email address for you.<br />
+									If you add it, we can send you email with updates...</p>
 						<?php } ?>
 						<?php if($error_msg == 'NO_MOBILE') { ?>
-							<div class='error_message fi-alert'><strong>Please enter a mobile number</strong></div>
+							<div class='error_message fi-alert <?php echo $showmobile; ?>'><strong>Please enter a mobile number</strong></div>
 						<?php } ?>
 						<div id="mobilecontainer" class="<?php echo $showmobile; ?>">
-							<label>Mobile Number
+                            <label style="font-size: large;">Mobile Number
 								<div class="input-group">
-									<span class="input-group-label"><i class="fi-telephone"></i></span>
-									<input id="mobile" class="inputfield input-group-field" name="mobile" type="text" value="<?php echo $arr_pt_info['c_mobileNumber']; ?>" placeholder="Enter your mobile number"><br/>
+									<span class="input-group-label"><i class=" largeicon eido-icon-mobile"></i></span>
+									<input id="mobile" class="inputfield input-group-field" pattern="[0-9]*" name="mobile" type="text" value="<?php echo $arr_pt_info['c_mobileNumber']; ?>" placeholder="Enter your mobile number"><br/>
 								</div>
 							</label>
 						</div>
@@ -113,10 +115,10 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 							<div class='error_message fi-alert'><strong>Please enter an email address</strong></div>
 						<?php } ?>
 						<div id="emailcontainer" class="<?php echo $showemail; ?>">
-							<label>Email
+							<label style="font-size: 20px;">Email Address
 								<div class="input-group">
-									<span class="input-group-label"><i class="fi-mail"></i></span>
-									<input class="inputfield input-group-field" id="email" name="email" type="text" value="<?php echo $arr_pt_info['c_emailAddress']; ?>" placeholder="Enter your email"><br/>
+									<span class="input-group-label"><i class="largeicon fi-mail"></i></span>
+									<input class="inputfield input-group-field" id="email" name="email" type="text" value="<?php echo $arr_pt_info['c_emailAddress']; ?>" placeholder="Enter your email address"><br/>
 								</div>
 						</div>
 						</label>
@@ -136,27 +138,26 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 			                      </label>
 							</div>
 						</div>
-						<div name="preferenceset" id="preference_set" class="small-12">
-                            <input type="radio" name="preferenceset" value="NO" id="preference_set_no"><label for="NO"> NO</label><br>
-                            <input type="radio" name="preferenceset" value="YES" id="preference_set_yes"><label for="YES"> YES</label><br>
+						<div name="preferenceset" id="preference_set" class="hide small-12">
+                            <input type="radio" name="preferenceset" value="NO" id="preference_set_no"><label for="NO">NO</label><br>
+                            <input type="radio" name="preferenceset" value="YES" id="preference_set_yes"><label for="YES">YES</label><br>
 						</div>
 						<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 						<div class="grid-x row">
 							<div class="small-6 cell text-left">
-								<button type="button" name="" value="" class="button large inactive text-left">Back</button>
+								<button type="button" name="" value="" class="button large inactive text-left" style="display: none">Back</button>
 							</div>
 							<div class="small-6 text-right">
 								<button type="submit" name="" value="" class="button large float-right">Next</button>
 							</div>
 						</div>
-
+                        <div class="small-12 text-right cell"><p>&nbsp;<br /></p></div>
 					</form>
-					<div class="small-12 cell">
-						<p><img src="../img/org_logos/<?php echo $arr_pt_info['logo']; ?>" alt="" class="vendor"/></p>
-					</div>
-				</div>
-				<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
-			</div>
+                    <img src="../img/org_logos/<?php echo $arr_pt_info['logo']; ?>" alt="" class="vendor"/><!--</p>-->
+                </div>
+                <div class="hide-for-small-only medium-3 cell">&nbsp;</div>
+            </div>
+
 		</div>
 		<?php include "../includes/val_footer.php"; ?>
 		<!-- End Content-Full -->
@@ -184,7 +185,7 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
 //show contact preference div if mobile is entered and is greater that ten length
 // NEEDS ADJUSTED TO ADD SOME TWILLIO COMPATIBLE PHONE NUMBER FORMAT VALIDATION
 	$("#mobile").keyup(function() {
-            if( this.value.length > 11 && this.value.length < 64 ) {
+            if( this.value.length > 10 && this.value.length < 64 ) {
                 $("#contactdiv").removeClass('hide').addClass('show');
                 $('input[type="radio"][name="preferenceset"]').last().prop('checked', true);
             }
@@ -194,7 +195,19 @@ logMsg("Validation_Mobile page: " . $arr_pt_info['id'], $logfile);
                 $('input[type="radio"][name="preferenceset"]').first().prop('checked', true);
             }
         })
+    });
+    $(document).ready(function() {
+        $(function() {
+            if ($("#mobile").val().length > 9) {
+                $('input[type="radio"][name="preferenceset"]').last().prop('checked', true);
+            }
         });
+        $(function() {
+            if ($("#email").val().length > 9) {
+                $('input[type="radio"][name="preferenceset"]').last().prop('checked', true);
+            }
+        });
+    });
 </script>
 </body>
 </html>

@@ -6,6 +6,7 @@ $logfile = "validation.log";
 session_start();
 $patientEpisodeId = get_query_string('patientEpisodeId');
 $arr_pt_info = get_pt_info($patientEpisodeId);
+$goto_url = get_survey_url($arr_pt_info);
 $_SESSION['arr_pt_info'] = $arr_pt_info;
 $error_msg = $_SESSION['error_msg'];
 $_SESSION['error_msg'] = "";
@@ -16,7 +17,7 @@ $_SESSION['error_msg'] = "";
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Eido Verify - Patient Auth V3 - Screen 3</title>
+	<title>EIDO Verify</title>
 	<link rel="stylesheet" href="../css/foundation.css">
 	<link rel="stylesheet" href="../css/eido.css">
 	<link rel="stylesheet" href="../css/dashboard.css">
@@ -49,32 +50,36 @@ $_SESSION['error_msg'] = "";
 		<!-- Start Content-Full -->
 		<div class="small-12 medium-12 large-12 cell content-full">
 			<div class="grid-x">
-				<div class="hide-for-small-only medium-2 cell">&nbsp;</div>
-				<div class="small-12 medium-8 align-center-middle cell">
-					<form class="login" action="validation_pw_a.php" method="post" id="form_container">
-						<p>&nbsp;</p>
+				<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
+				<div class="small-12 medium-6 align-center-middle cell">
+
+                        <div class="hide-for-small-only"><p>&nbsp;</p></div>
 						<p class="lead"><strong>Now create a password, to save you time on your next visit.</strong></p>
-						<label>Password
+                    <form class="login" action="validation_pw_a.php?patientEpisodeId=<?php echo $patientEpisodeId; ?>" method="post" id="form_container">
+						<p style="padding-bottom: 5px;margin-bottom:5px;" class="sub-text float-left"><strong>Password</strong>
 							<div class="input-group">
 								<span class="input-group-label"><i class="fi-lock"></i></span>
-								<input class="input-group-field" id="form_password" name="password" type="password" placeholder="Enter your password"><br/>
+								<input class="input-group-field" autocomplete="new-password" id="form_password" name="password" type="password" placeholder="Enter your password"><br/>
 							</div>
-							<div class="progress password_strength_indicator" role="progressbar" tabindex="0" aria-valuemax="100">
+                        </p>
+							<div style="margin-top: 40px;"class="progress password_strength_indicator" role="progressbar" tabindex="0" aria-valuemax="100">
                            <span class="progress-meter" style="width: 0%">
                               <p class="progress-meter-text" style="transform: translate(-0%, -50%)">Password Strength</p>
                            </span>
 							</div>
-						</label>
-						<div class="small-12 text-right cell"><p>&nbsp;</p></div>
+
+                        <div class="hide-for-small-only small-12 text-right cell"><p>&nbsp;</p></div>
+                                <div class="small-12 medium-6 text-center cell">
+                                    <p><a href="<?php echo $goto_url; ?>" name="skip" style="margin-bottom:0px;" class="text-dim">Skip this step<br/>I will enter my details again next time.</a></p>
+                                    <!-- removed from above href to accomadate new pt auth flow spec: "validation_pw_a.php?skip=Y&patientEpisodeId=" -->
+                                </div>
 						<div class="small-12 cell">
-							<button type="button" name="" value="" class="button large inactive">Back</button>
-							<button id="btn_next" type="submit" name="" value="" class="button large inactive not-active">Next</button>
+                            <span class="width-100">
+							<button type="button" name="" value="" class="button large inactive float-left" style="display: none">Back</button>
+							<button id="btn_next" type="submit" name="" value="" class="button large inactive float-right not-active">Next</button>
+                                </span>
 						</div>
-						<div class="grid-x">
-							<div class="small-12 cell alleft">
-								<a href="validation_pw_a.php?skip=Y" name="skip" style="margin-bottom:0px;" class="text-dim">Skip this step<br/>I will enter my details again next time.</a>
-							</div>
-						</div>
+
 					</form>
 					<div class="small-12 cell">
 						<p><img src="../img/org_logos/<?php echo $arr_pt_info['logo']; ?>" alt="" class="vendor"/></p>
@@ -88,7 +93,7 @@ $_SESSION['error_msg'] = "";
 	<?php include "../includes/val_footer.php"; ?>
 	<!-- End Content -->
 </div>
-<script src="../js/vendor/jquery.js"></script>
+<!--<script src="../js/vendor/jquery.js"></script>-->
 <script src="../js/vendor/what-input.js"></script>
 <script src="../js/vendor/foundation.js"></script>
 <script src="../js/app.js"></script>

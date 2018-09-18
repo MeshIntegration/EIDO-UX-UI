@@ -1,9 +1,9 @@
-  </div>
-  <div class="grid-x">
-    <div class="hide-for-small-only medium-3 cell">&nbsp;</div>
+</div>
+<div class="grid-x">
+    <div class="hide-for-small-only medium-3 large-3 cell">&nbsp;</div>
         <div class="small-12 medium-6 cell">
           <div class="small-12 cell text-center">
-	          <p>&nbsp;</p>
+              <div class="hide-for-small-only"><p>&nbsp;</p></div>
               <p><a href="#" class="aux_help"><i class="icon eido-icon-chat"></i> <br />Need any help?</a></p>
                <!-- <p><br /><a href="#" class="aux_help"><img src="../img/icons/help.png" alt="Need any help"/><br />Need any help?</a></p> -->
             <p><a href="https://support.eidosystems.com/eido-verify-terms-conditions-for-proms/" class="aux" target="_blank">Privacy Policy</a><br />
@@ -13,9 +13,10 @@
               <script language="JavaScript" type="text/javascript">
                   TrustLogo("https://verify.eidosystems.com/ui/verify/img/comodo113x59.png", "SC5", "none");
               </script>
-                <p>&nbsp;</p>
+              <div class="hide-for-small-only show-for-medium show-for-large"><p>&nbsp;</p></div>
           </div>
         </div>
-        <div class="hide-for-small-only medium-3 cell">&nbsp;</div>
-  </div>
+        <div class="hide-for-small-only medium-3 large-3 cell">&nbsp;</div>
+</div>
+
 

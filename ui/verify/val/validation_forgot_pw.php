@@ -22,7 +22,7 @@ else
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - Patient Auth V3 - Screen 2</title>
+  <title>EIDO Verify</title>
   <link rel="stylesheet" href="../css/foundation.css">
   <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
@@ -57,16 +57,16 @@ else
                 <span class="input-group-label"><i class="fi-mail"></i></span>
                 <input id="email" class="input-group-field" name="email" type="text" placeholder="Enter your e-mail" value="<?php echo $email; ?>">
               </div>
-			  <p id="backtologin" class="note text-right"><a href="login.php?f=1">I remembered! Back to Login</a></p>
+			  <p id="backtologin" class="bluelink text-right"><a href="login.php?f=1">I remembered! Back to login</a></p>
 			</label>
 			<div class="small-12 text-right cell"><p>&nbsp;</p></div>
 			<div class="small-12 cell">
 			  <button type="submit" name="" value="" class="button large float-right">Send Link</button>
 			</div>
 		  </form>
-		    <div class="small-12 cell">
+		    <!--<div class="small-12 cell">
 			  <p><hr></p>
-		    </div>
+		    </div>-->
 		  </div>
 		<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	  </div>	  

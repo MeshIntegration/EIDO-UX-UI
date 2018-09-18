@@ -41,12 +41,14 @@ function format_tl_date($tl_datetime)
 function get_stat_counts($type)
 {
    global $TBLTIMELINES, $TBLPTEPISODES;
+   $org_id = $_COOKIE['org_id'];
 
    if ($type=='active') {
       $sql = "SELECT COUNT(*) AS ct 
               FROM $TBLPTEPISODES
               WHERE c_status<>'Episode Complete'
-                AND c_status<>'PENDING'
+              AND c_hospitalId='$org_id'
+              AND c_status<>'PENDING'
               AND c_procedureStatus<>'Cancel'";
       $GetQuery = dbi_query($sql);
       $qryResult=$GetQuery->fetch_assoc();
@@ -56,9 +58,11 @@ function get_stat_counts($type)
    else if ($type=='inactive') {
       $sql = "SELECT COUNT(*) AS ct 
               FROM $TBLPTEPISODES
-              WHERE c_status='Episode Complete'
-              OR c_procedureStatus='Cancel'
-              OR c_status='PENDING'";
+              WHERE c_hospitalId='$org_id'
+              AND (c_status='Episode Complete'
+                   OR c_procedureStatus='Cancel'
+                   OR c_status='PENDING')";
+logMsg($sql,"wel.log");
       $GetQuery = dbi_query($sql);
       $qryResult=$GetQuery->fetch_assoc();
       $ct = $qryResult['ct'];
@@ -66,7 +70,8 @@ function get_stat_counts($type)
    }
    else if ($type=='total') {
       $sql = "SELECT COUNT(*) AS ct 
-              FROM $TBLPTEPISODES";
+              FROM $TBLPTEPISODES
+              WHERE c_hospitalId='$org_id'";
       $GetQuery = dbi_query($sql);
       $qryResult=$GetQuery->fetch_assoc();
       $ct = $qryResult['ct'];
@@ -74,9 +79,11 @@ function get_stat_counts($type)
    }
    else if ($type=='alert') {
       $sql = "SELECT COUNT(*) AS ct
-              FROM $TBLTIMELINES
-              WHERE c_timelineAlertStatus='Open'
-              AND c_timelineEntryType='Alert'";
+              FROM $TBLTIMELINES t, $TBLPTEPISODES p
+              WHERE t.c_timelineAlertStatus='Open'
+              AND t.c_timelineEntryType='Alert'
+              AND t.c_patientEpisodeId=p.id
+              AND p.c_hospitalId='$org_id'";
       $GetQuery = dbi_query($sql);
       $qryResult=$GetQuery->fetch_assoc();
       $ct = $qryResult['ct'];
@@ -87,7 +94,8 @@ function get_stat_counts($type)
       $sql = "SELECT COUNT(*) AS ct
               FROM $TBLPTEPISODES
               WHERE c_status='Session Complete'
-              AND DATE(dateModified)='$today'";
+              AND DATE(dateModified)='$today'
+              AND c_hospitalId='$org_id'";
       $GetQuery = dbi_query($sql);
       $qryResult=$GetQuery->fetch_assoc();
       $ct = $qryResult['ct'];
@@ -96,7 +104,8 @@ function get_stat_counts($type)
    else if ($type=='surveyincomplete') {
       $sql = "SELECT COUNT(*) AS ct
               FROM $TBLPTEPISODES
-              WHERE c_status LIKE 'Invited to Session%'";
+              WHERE c_status LIKE 'Invited to Session%'
+              AND c_hospitalId='$org_id'";
       $GetQuery = dbi_query($sql);
       $qryResult=$GetQuery->fetch_assoc();
       $ct = $qryResult['ct'];
@@ -108,7 +117,8 @@ function get_notifications($type="All", $how_many="All", $patient_id="")
 {
    global $TBLTIMELINES, $TBLPTEPISODES;
    $arr_notifications = array();
- 
+   $org_id = $_COOKIE['org_id']; 
+
    if ($type<>"")
       $type_str = " AND t.c_timelineEntryType='$type' ";
    else
@@ -125,6 +135,7 @@ function get_notifications($type="All", $how_many="All", $patient_id="")
    $sql="SELECT t.*, pe.c_firstName, pe.c_surname
          FROM $TBLTIMELINES t, $TBLPTEPISODES pe
          WHERE pe.id=t.c_patientEpisodeId
+         AND pe.c_hospitalId='$org_id'
          AND c_timelineAlertStatus='Open'
          $type_str
          $patient_id_str
@@ -234,6 +245,7 @@ function clear_add_session()
    unset($_SESSION['add_postalcode']);
    unset($_SESSION['add_email']);
    unset($_SESSION['add_mobilenumber']);
+   unset($_SESSION['add_mobilenumber_format_error']);
    unset($_SESSION['add_address']);
    unset($_SESSION['add_address2']);
    unset($_SESSION['add_city']);
@@ -254,6 +266,7 @@ function clear_add_session()
    unset($_SESSION['add_dob_error']);
    unset($_SESSION['add_dob_invalid_error']);
    unset($_SESSION['add_dob_format_error']);
+   unset($_SESSION['add_dob_future_error']);
    unset($_SESSION['add_postalcode_error']);
    unset($_SESSION['add_postalcode_format_error']);
    unset($_SESSION['add_bad_email_error']);
@@ -302,7 +315,7 @@ function get_search_suggestion($looking_for,$search_query){
    return $patient;
 }
 
-// *************************************************
+/**  MOVED TO UTILITIES.PHP - get_survey_name() and get_proc_info()  ***********************************************
 function get_proc_info($id)
 {
    global $TBLPROCEPISODES, $MAX_SESSIONS;
@@ -370,7 +383,6 @@ function get_proc_info($id)
 
    return $arr_proc_info;
 }
-
 // ****************************************************
 function get_survey_name($survey_number)
 {
@@ -384,6 +396,7 @@ function get_survey_name($survey_number)
    $description = $qryResult['c_description'];      
    return $description;
 }
+*********  END OF SECTION MOVED TO UTILITES *******************  */
 
 // ****************************************************
 function get_future_tl($pe_id, $arr_tl)
@@ -398,10 +411,10 @@ logMsg("BEFORE: Items in TL array: ".count($arr_tl), $logfile);
    $current_pre_post=strtoupper($arr_pt_info['c_procedureStatus']);
 logMsg("Max Sessions: $MAX_SESSIONS - Curr Sess: $current_session - Curr PrePost: $current_pre_post", $logfile);
    $tl = count($arr_tl);
-   if ($current_session==1) {
+   if ($current_session==1 && $arr_pt_info['c_status'] <> "Session Complete") {
       $sql="SELECT * FROM $TBLTIMELINES 
             WHERE c_timelineEntryType='Event' 
-            AND c_timelineEntryDetail='Survey Email Sent' 
+            AND (c_timelineEntryDetail='Survey Email Sent' OR c_timelineEntryDetail='Survey SMS Sent') 
             AND c_sessionNumber='1'
             AND c_patientEpisodeId='$pe_id'";
       $GetQuery=dbi_query($sql);
@@ -479,5 +492,36 @@ logMsg($sql,$logfile);
            WHERE id='$id'";
 logMsg($sql,$logfile);
    dbi_query($sql);
+}
+// ***************************************************
+function make_procselect_combo($proc_id_selected) {
+   global $TBLPROCLICENSES, $TBLPROCEPISODES, $TBLORGANISATIONS;
+
+   $org_id=$_COOKIE['org_id'];
+   // if Division - get procedures from the parent org
+   $sql="SELECT c_level, c_parentId FROM $TBLORGANISATIONS WHERE id='$org_id'";
+   $GetQuery=dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   if ($qryResult['c_level']=='DIV')
+      $org_id=$qryResult['c_parentId'];
+
+   $selectcode = "<option value=''></option>";
+   $sql = "SELECT pe.id, pe.c_description
+           FROM $TBLPROCLICENSES pl, $TBLPROCEPISODES pe 
+           WHERE pe.id=pl.c_procedure
+           AND pl.c_organization='$org_id'
+           ORDER BY  pe.c_description";
+//logMsg($sql,"patient.log");
+    $GetQuery = dbi_query($sql);
+    while ($qryResult = $GetQuery->fetch_assoc()) {
+       $c_description = $qryResult['c_description'];
+       $id = $qryResult['id'];
+       if ($id==$proc_id_selected)
+          $selected="selected";
+       else
+          $selected = "";
+       $selectcode = $selectcode . "<option value='$id' $selected>$c_description</option>";
+   }
+   return $selectcode;
 }
 ?>

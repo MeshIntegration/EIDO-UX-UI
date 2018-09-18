@@ -18,7 +18,7 @@ if ($arr_pt_info['c_surname']=="ERROR")
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eido Verify - Patient Auth V3 - Screen 3</title>
+  <title>EIDO Verify</title>
   <link rel="stylesheet" href="../css/foundation.css">
   <link rel="stylesheet" href="../css/eido.css">
   <link rel="stylesheet" href="../css/dashboard.css">
@@ -52,15 +52,15 @@ if ($arr_pt_info['c_surname']=="ERROR")
 	  <div class="grid-x">
 		<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	    <div class="small-12 medium-6 align-center-middle cell">
-		  <p>&nbsp;</p>
+            <div class="hide-for-small-only"><p>&nbsp;</p></div>
 		  <form class="login" action="validation_pw_reset_a.php" method="post" id="form_container" >
                         <p>&nbsp;</p>
                         <h1>Reset Password</h1>
-                        <p>Create a password for your account. Please use a secure format.</p>
+                        <p>Create a password for your account.</p>
 			<label>Password
 			  <div class="input-group">
                 <span class="input-group-label"><i class="fi-lock"></i></span>
-                <input class="input-group-field" id="form_password"  name="password" type="password" placeholder="Enter your password"><br />
+                <input class="input-group-field" autocomplete="new-password" id="form_password"  name="password" type="password" placeholder="Enter your password"><br />
               </div>
                         <div class="progress password_strength_indicator" role="progressbar" tabindex="0" aria-valuemax="100">
                            <span class="progress-meter" style="width: 0%">
@@ -73,9 +73,7 @@ if ($arr_pt_info['c_surname']=="ERROR")
 			  <button id="btn_next" type="submit" name="" value="" class="button large inactive not-active float-right">Reset and Login</button>
 			</div>
 		  </form>
-		    <div class="small-12 cell">
 			  <p><img src="../img/org_logos/<?php echo $arr_pt_info['logo']; ?>" alt="" class="vendor"/></p>
-		    </div>
 		  </div>
 		<div class="hide-for-small-only medium-3 cell">&nbsp;</div>
 	  </div>	  

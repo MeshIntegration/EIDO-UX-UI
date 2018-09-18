@@ -14,7 +14,14 @@
   margin-bottom:24px;
   border-bottom:1px solid #d3d1d1;
 }
+su-table tr:last-child td:last-child{
+    border:none;
+    /*any other style*/
+}
 
+.timeline timeline-item:first {
+border-top: 1px solid #d1d3d3;
+}
 .timeline-right  { text-align:left !important; }
 .timeline-right table.su-table tr { border:none !important; }
 .timeline-right table.su-table td.tlbdr { border-bottom:1px solid #d3d1d1; padding-bottom:15px; padding-top:15px; }
@@ -56,15 +63,18 @@
   position: relative;
 }
 
-.timeline .timeline-item .timeline-icon { background:#fff; border:5px solid #cdcdcd; border-radius:50%; height:25px; left:5%; margin-left:0px; overflow:hidden; position:absolute; top:0; width:25px; }
-.timeline .timeline-item .timeline-icon-cs  { background:#fff; border:5px solid #f5a623; border-radius:50%; height:25px; left:5%; margin-left:0px; overflow:hidden; position:absolute; top:0; width:25px; }
-.timeline .timeline-item .timeline-icon-green  { background:#fff; border:5px solid #3dae65; border-radius:50%; height:25px; left:5%; margin-left:0px; overflow:hidden; position:absolute; top:0; width:25px; }
-.timeline .timeline-item .timeline-icon-red  { background:#fff; border:5px solid #fd0000; border-radius:50%; height:25px; left:5%; margin-left:0px; overflow:hidden; position:absolute; top:0; width:25px; }
+.timeline .timeline-item .timeline-icon { background:#fff; border:5px solid #cdcdcd; border-radius:50%; height:25px; left:4%; margin-left:1%; overflow:hidden; position:absolute; top:0; width:25px; }
+.timeline .timeline-item .timeline-icon-proc  { background: transparent; border:0px solid #f5a623; border-radius:50%; height:25px; left:4%; margin-left:1%; position:absolute; top:0; width:25px; }
+.timeline .timeline-item .timeline-icon-cs  { background:#fff; border:5px solid #f5a623; border-radius:50%; height:25px; left:4%; margin-left:1%; overflow:hidden; position:absolute; top:0; width:25px; }
+.timeline .timeline-item .timeline-icon-csdot  { background:#fff; border:0px solid #f5a623; border-radius:50%; height:25px; left: 4%; margin-left:1%; position:absolute; top:0; width:25px; }
+.timeline .timeline-item .timeline-icon-green  { background:#fff; border:5px solid #3dae65; border-radius:50%; height:25px; left:4%; margin-left:1%; overflow:hidden; position:absolute; top:0; width:25px; }
+.timeline .timeline-item .timeline-icon-red  { background:#fff; border:5px solid #fd0000; border-radius:50%; height:25px; left:4%; margin-left:1%; overflow:hidden; position:absolute; top:0; width:25px; }
+.timeline .timeline-item .timeline-icon-orange  { background:#fff; border:5px solid #f5a623; border-radius:50%; height:25px; left:4%; margin-left:1%; overflow:hidden; position:absolute; top:0; width:25px; }
 
-.timeline .timeline-item .timeline-icon img, .timeline .timeline-item .timeline-icon-cs img, .timeline .timeline-item .timeline-icon-green img,
-.timeline .timeline-item .timeline-icon svg, .timeline .timeline-item .timeline-icon-cs svg, .timeline .timeline-item .timeline-icon-green svg { position:relative; top:0px; vertical-align:top; }
+.timeline .timeline-item .timeline-icon img, .timeline .timeline-item .timeline-icon-cs img,  .timeline .timeline-item .timeline-icon-csdot img,.timeline .timeline-item .timeline-icon-green img, .timeline .timeline-item .timeline-icon-orange img, .timeline .timeline-item .timeline-icon-proc img,
+.timeline .timeline-item .timeline-icon svg, .timeline .timeline-item .timeline-icon-cs svg,  .timeline .timeline-item .timeline-icon-csdot svg, .timeline .timeline-item .timeline-icon-green svg, .timeline .timeline-item .timeline-icon-orange svg, .timeline .timeline-item .timeline-icon-proc svg { position:relative; top:0px; vertical-align:top; }
 
-.timeline .timeline-item .timeline-icon svg, .timeline .timeline-item .timeline-icon-cs svg, .timeline .timeline-item .timeline-icon-green svg { top:14px; }
+.timeline .timeline-item .timeline-icon svg, .timeline .timeline-item .timeline-icon-cs svg, .timeline .timeline-item .timeline-icon-csdot svg, .timeline .timeline-item .timeline-icon-green svg, .timeline .timeline-item .timeline-icon-orange svg, .timeline .timeline-item .timeline-icon-proc svg { top:14px; }
 
 .timeline .timeline-item .timeline-content { padding:0; text-align:right; transition:all 0.25s ease-in; width:90%; background:transparent; }
 .timeline-right .timeline-item .timeline-content { padding:0; text-align:left; transition:all 0.25s ease-in; width:90%; background:transparent; }
@@ -74,7 +84,7 @@
 .timeline .timeline-item .timeline-content p { font-size: 16px; line-height: 1.4; margin-bottom: 0; }
 .timeline .su-table p { font-size:14px !important; } 
 
-.timeline-right .timeline-icon, .timeline-right .timeline-icon-cs, .timeline-right .timeline-icon-green { top:15px !important; }
+.timeline-right .timeline-icon, .timeline-right .timeline-icon-cs, .timeline-right .timeline-icon-csdot, .timeline-right .timeline-icon-green, .timeline-right .timeline-icon-orange, .timeline-right .timeline-icon-proc { top:15px !important; }
 
 
 .timeline .timeline-item .timeline-content .timeline-content-date {
@@ -117,5 +127,38 @@
     left: 0%;
     margin-left: -6px;
   }
-  .timeline .timeline-item .timeline-icon, .timeline .timeline-item .timeline-icon-cs, .timeline .timeline-item .timeline-icon-green { left:3%; }
+  .timeline .timeline-item .timeline-icon, .timeline .timeline-item .timeline-icon-cs, .timeline .timeline-item .timeline-icon-proc,  .timeline .timeline-item .timeline-icon-csdot, .timeline .timeline-item .timeline-icon-green, .timeline .timeline-item .timeline-icon-orange { left:3%; }
+}
+
+.tlicon-proc
+{
+  color: #f5a623;
+  font-size: 32px;
+  margin-left: -5%;
+  vertical-align: 3px;
+  line-height: .8 !important;
+}
+.tlicon-proccomplete
+{
+  color: #3dae65;
+  font-size: 32px;
+  margin-left: -5%;
+  vertical-align: 3px;
+  line-height: .8 !important;
+}
+.tlicon-alert
+{
+  color: #fd0000;
+  font-size: 32px;
+  margin-left: -5%;
+  vertical-align: 3px;
+  line-height: .8 !important;
+}
+.tlicon-alertclosed
+{
+color: #3dae65;
+font-size: 32px;
+margin-left: -5%;
+vertical-align: 3px;
+line-height: .8 !important;
 }

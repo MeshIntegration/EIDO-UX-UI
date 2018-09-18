@@ -36,7 +36,7 @@ if ($email==$arr_pt_info['c_emailAddress'] && $password==$arr_pt_info['c_passwor
    logMsg("Pt login sucessful. Going to survey...",$logfile);
    $goto_url = get_survey_url($arr_pt_info);
    $_SESSION = array();
-   session_destroy();
+ 
    header("Location:$goto_url");
    exit();
 }

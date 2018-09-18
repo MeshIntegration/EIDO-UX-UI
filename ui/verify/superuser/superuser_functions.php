@@ -108,12 +108,48 @@ function get_surveys_by_proc($pe_id, $session_number)
    $qryResult = $GetQuery->fetch_assoc();
    $num_surveys=0;
    $surveys = array();
-  for ($i=1; $i<=$MAX_SURVEYS; $i++)
+   for ($i=1; $i<=$MAX_SURVEYS; $i++)
    {
      $nm = "c_session".$session_number."Survey".$i;
-     $surveys[] = $qryResult[$nm];
+     if ($qryResult[$nm]<>"")
+        $surveys[] = $qryResult[$nm];
    }
    return $surveys;
+}
+
+// ***************************************************************
+function save_surveys_to_session($pe_id, $sess_id, $survey_ids) {
+   global $TBLPROCEPISODES, $MAX_SURVEYS;
+
+// echo "<br />save_surveys_to_session<br />";
+// print_r($survey_ids);
+// echo "<br />";
+
+   // don't save empty ones
+   $s=1;  // survey number
+   for ($i=0; $i<count($survey_ids); $i++) {
+      if ($survey_ids[$i]<>"") {
+         $varname = "c_session".$sess_id."Survey".$s;
+         $sql = "UPDATE $TBLPROCEPISODES
+                 SET $varname = ".$survey_ids[$i]." 
+                 WHERE id = '$pe_id'";
+         dbi_query($sql);
+         $s++;
+// echo "$sql<br />";
+     }
+   }
+
+// echo "-----<br />";
+   //  blank out the unused ones
+   for ($i=$s; $i<=$MAX_SURVEYS; $i++) {
+      $varname = "c_session".$sess_id."Survey".$i;
+      $sql = "UPDATE $TBLPROCEPISODES
+              SET $varname = '' 
+              WHERE id = '$pe_id'";
+      dbi_query($sql);
+// echo "$sql<br />";
+   }
+// exit();
 }
 
 // ***************************************************************
@@ -122,7 +158,6 @@ function get_all_surveys($search_term="")
    global $TBLSURVEYS;
 
    $logfile = "superuser.log";
-   logMsg("-------------- Get_all_surveys ---------------",$logfile);
 
    if ($search_term=="") $search_str = "1";
    else $search_str="c_description LIKE '%".$search_term."%'";
@@ -130,7 +165,6 @@ function get_all_surveys($search_term="")
            FROM $TBLSURVEYS
            WHERE $search_str
            ORDER BY c_description";
-logMsg($sql,"wel.log");
    $GetQuery = dbi_query($sql);
    $arr_all_surveys=array();
    $i=0;
@@ -141,7 +175,7 @@ logMsg($sql,"wel.log");
       $i++;
    }
 
-   logMsg("Survey count: $i",$logfile);
+//   logMsg("Survey count: $i",$logfile);
    return $arr_all_surveys;
 }
 
@@ -152,9 +186,7 @@ logMsg($sql,"wel.log");
 function get_survey_by_num($sn)
 {
    global $TBLSURVEYS;
-logMsg("survey number: $sn","wel.log");
    $sql = "SELECT * FROM $TBLSURVEYS WHERE c_surveyNumber='$sn'";
-logMsg($sql, "wel.log");
    $GetQuery = dbi_query($sql);
    $qryResult = $GetQuery->fetch_assoc();
    return $qryResult;
@@ -198,5 +230,28 @@ function get_proc_by_id($id)
    $qryResult = $GetQuery->fetch_assoc();
    return $qryResult;
 }
+
+// ************************************************************
+function get_session_name($pe_id, $sess_id) {
+   global $TBLPROCEPISODES;
+
+   $varname = "c_session".$sess_id."Name";
+
+   $sql="SELECT $varname FROM $TBLPROCEPISODES WHERE id='$pe_id'";
+   $GetQuery = dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   return $qryResult[$varname];
+}
+
+// ************************************************************
+function get_proc_name($pe_id) {
+   global $TBLPROCEPISODES;
+
+   $sql="SELECT c_procedureId, c_description FROM $TBLPROCEPISODES WHERE id='$pe_id'";
+   $GetQuery = dbi_query($sql);
+   $qryResult = $GetQuery->fetch_assoc();
+   return $qryResult['c_procedureId']." - ".$qryResult['c_description'];
+}
+
 ?> 
 

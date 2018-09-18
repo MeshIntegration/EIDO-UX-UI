@@ -25,9 +25,9 @@ function get_pt_info($patientEpisodeId)
    {
       $arr_pt_info = $GetQuery->fetch_assoc();
       $sql = "SELECT o.c_logo 
-              FROM $TBLORGANISATIONS o, dir_user u
-              WHERE o.c_email=u.email
-              AND u.id='".$arr_pt_info['c_userId']."'";
+              FROM $TBLORGANISATIONS o, $TBLPTEPISODES pe  
+              WHERE pe.c_hospitalId=o.id
+              AND pe.id='$patientEpisodeId'";
       logMsg("get_pt_info LOGO: $sql", "validation.log");
       $GetQuery = dbi_query($sql);
       $qryResult = $GetQuery->fetch_assoc();
@@ -182,7 +182,7 @@ function get_survey_url($arr_pt_info)
    $goto_url .= "&eid=" . $arr_pt_info['id'];
    // $goto_url .= "&dev=" . $dev;
 
-   // logMsg($goto_url, "validation.log");
+   logMsg("SURVEY GOTO URL: ".$goto_url, "validation.log");
    return $goto_url;
 } 
 

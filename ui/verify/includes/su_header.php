@@ -22,8 +22,9 @@
         <!--  <div class="grid" style="padding-top: 15px;"> -->
 
         <div id="addusr" class="row links" style="margin-top: -2px; margin-bottom: 4px; height: 20px; zoom: 1.14;">
-            <a href="/ui/verify/superuser/users_a.php?m=gotoadd" style="padding-bottom: 2px; vertical-align: center;">
-                <i class="icon eido-icon-plus-circle" style="margin-right: 7px;"></i>Add User</a>
+            &nbsp;
+            <!-- <a href="/ui/verify/superuser/users_a.php?m=gotoadd" style="padding-bottom: 2px; vertical-align: center;">
+                <i class="icon eido-icon-plus-circle" style="margin-right: 7px;"></i>Add User</a>  -->
         </div>
 
     </div>

@@ -27,7 +27,7 @@ if ($mode=="update") {
         $_SESSION['add_firstname_format_error'] = true; else $_SESSION['add_firstname_format_error'] = false;
     if ($lastname == "")
         $_SESSION['add_lastname_error'] = true; else $_SESSION['add_lastname_error'] = false;
-    if (!preg_match("/^[a-zA-Z']*$/", $lastname))
+    if (!preg_match("/^[a-zA-Z- ']*$/",$lastname))
         $_SESSION['add_lastname_format_error'] = true; else $_SESSION['add_lastname_format_error'] = false;
     if ($email == "")
         $_SESSION['add_email_error'] = true; else $_SESSION['add_email_error'] = false;
@@ -51,6 +51,7 @@ if ($mode=="update") {
     $sql = "UPDATE dir_user
            SET firstName=" . escapeQuote($firstname) . ",
                lastName=" . escapeQuote($lastname) . ",
+               c_dateModified=NOW(),
                email=" . escapeQuote($email) . "
            WHERE id='$id'";
     dbi_query($sql);
@@ -102,6 +103,10 @@ if ($mode=="update") {
            WHERE id IN ($id)";
    dbi_query($sql);
    logMsg("USERRESET (password): $sql",$logfile);
+   $_SESSION = array();
+   header("Location: users_a.php?m=gotoadd");
+   exit();
+
 } else if ($mode=="userdelete") {
 	if(is_array($id)) {
 		$id = "'".implode("','", $id)."'";
@@ -159,7 +164,7 @@ else if ($mode=="add") {
       $_SESSION['add_firstname_format_error']=true; else $_SESSION['add_firstname_format_error']=false;
    if ($lastname=="")
       $_SESSION['add_lastname_error']=true; else $_SESSION['add_lastname_error']=false;
-   if (!preg_match("/^[a-zA-Z']*$/",$lastname))
+   if (!preg_match("/^[a-zA-Z- ']*$/",$lastname))
       $_SESSION['add_lastname_format_error']=true; else $_SESSION['add_lastname_format_error']=false;
    if ($email=="")
       $_SESSION['add_email_error']=true; else $_SESSION['add_email_error']=false;
@@ -201,6 +206,7 @@ else if ($mode=="add") {
                active='1',
                timeZone='0',
                id='$id',
+               c_dateCreated=NOW(),
                c_dateModified=NOW(),
                username='$email'";
    dbi_query($sql);
@@ -239,7 +245,7 @@ else if ($mode=="add") {
    $content2 = "<p>We have created an account for you in the EIDO Verify system. Here are your account credentials.</p>
          <p>Username: $email<br />
          Password: $password</p>
-         <p>Click the button below to log into the EIDO Verify systemi</p>";
+         <p>Click the button below to log into the EIDO Verify system.</p>";
          $email_template = str_replace("**CONTENT2**", $content2, $email_template);
 
    // set up the button
@@ -266,7 +272,13 @@ else if ($mode=="add") {
    unset($_SESSION['add_lastname']); 
    unset($_SESSION['add_email']); 
    unset($_SESSION['add_password']); 
+} else if ($mode=="clearsession") {
+   $goto = get_query_string('g');
+   $_SESSION = array();
+   header ("Location: users.php?m=$goto");
+   exit();
 }
+
 header("Location: users.php");
 exit();
 

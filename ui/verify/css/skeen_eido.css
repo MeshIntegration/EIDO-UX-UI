@@ -9,7 +9,7 @@
 }
 .superuser .navigation-bar,
 .superuser .menu.simple {
-  background: #3dae65;
+  background:  #f5a623;
 }
 .superuser .navigation-bar li,
 .superuser .menu.simple li,
@@ -32,7 +32,7 @@
   background: #dddddd;
 }
 .back-row a {
-  font-family: 'Lato-Light', 'Lato Light', 'Lato', sans-serif;
+  font-family: 'Lato', 'Lato', 'Lato', sans-serif;
   color: #0d2240;
 }
 .back-row a i {
@@ -94,15 +94,26 @@ override shit tab
 .tabs-title a {
   display: inline;
 }
-.tabs-title a:hover,
+
 .tabs-title a:active,
-.tabs-title a:focus {
-  background: #0d2240;
-  color: #fff;
+  .tabs-title a:hover
+ {
+  background: #6B6B6B;
+  color: #ffffff;
 }
+.tabs-title.is-active:hover a,
+
 .tabs-title.is-active a {
-  color: #0d2240;
-  background: #ddd;
+  color: #ffffff;
+  background: #6B6B6B;
+}
+.tabs-title > a:hover, .tabs-title > a[aria-selected='true'] {
+  color: #FFFFFF;
+  background-color: #6B6B6B;
+}
+.tabs-title > a:focus{
+  color: #FFFFFF;
+  background-color: #6B6B6B;
 }
 .tabs-content {
   border: 0;
@@ -242,7 +253,12 @@ h4.vertical-middle {
   text-decoration: none !important;
   line-height: 1.4em;
   font-size: 14px;
+  border-top: 0 solid #d1d3d3 !important;
+  border-bottom: 0 solid #d1d3d3 !important;
+  border-collapse: collapse;
 }
+ 
+
 .link-full-block:hover,
 .link-full-block:focus,
 .link-full-block:active {
@@ -331,6 +347,8 @@ h4.vertical-middle {
 }
 .timeline-right .timeline-icon,
 .timeline-right .timeline-icon-cs,
+.timeline-right .timeline-icon-csdot,
+.timeline-right .timeline-icon-orange,
 .timeline-right .timeline-icon-green {
   top: 50% !important;
   margin-top: -11px !important;
@@ -483,25 +501,77 @@ p.small {
 }
 #Notifications .n-icon {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
+  overflow: hidden !important;
   height: 100%;
   width: 50px;
   background: #BC271A;
-}
-#Notifications .n-icon i {
-  color: #fff;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -10px;
-  margin-top: -9px;
+  border: 3px solid #BC271A;
 }
 #Notifications .n-icon i.fa {
   font-size: 40px;
   margin-left: -8px;
   margin-top: -18px;
+}
+
+#Notifications .n-icon i {
+  color: #fff;
+  font-size: 32px;
+  position: absolute;
+  top: 35%;
+  left: 38%;
+  margin-left: -10px;
+  margin-top: -9px;
+}
+#Notifications .n-icon2 {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 50px;
+  background: #BC271A;
+  border: 3px solid #BC271A;
+}
+#Notifications .n-icon2 i.fa {
+  font-size: 40px;
+  margin-left: -8px;
+  margin-top: -18px;
+}
+
+#Notifications .n-icon2 i {
+  color: #fff;
+  font-size: 35px;
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+#Notifications .n-icon3 {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  background: #BC271A;
+}
+#Notifications .n-icon3 i.fa {
+  font-size: 40px;
+  margin-left: -6px;
+  margin-top: -18px;
+}
+
+#Notifications .n-icon3 i {
+  color: #fff;
+  font-size: 34px;
+  position: absolute;
+  top: 38%;
+  left: 45%;
+  margin-left: -10px;
+  padding-bottom: 2px;
+  margin-top: -9px;
 }
 #Notifications .right-arrow {
   right: 15px;
@@ -524,7 +594,7 @@ p.small {
   border: none !important;
 }
 .registration .button.large {
-  padding: 0.85em 50px !important;
+  padding: 0.85em 40px !important;
 }
 .registration .input-group small.error {
   top: 10px;
@@ -544,22 +614,26 @@ p.small {
 }
 .select {
   position: relative;
-  margin-right: 20px;
+
   display: inline-block;
 }
+
 .select select {
-  padding-right: 40px !important;
-  color: #9b9b9b;
+  padding-right: 15px !important;
+  padding-left: 5px;
+
+  color: #0D2240;
+  font-size: 14px !important;
 }
 .select:after {
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 15px;
   content: '';
   position: absolute;
   display: block;
-  top: 50%;
-  margin-top: -3px;
-  right: 5px;
+  top: 45%;
+
+  right:-3px;
   border: solid;
   border-width: 7px 7px 0 7px;
   border-color: #9B9B9B transparent transparent transparent;
@@ -602,5 +676,6 @@ fixes for messed up styling on the right content
 super user dashboard
  */
 .menu.simple.show-for-medium > li > a {
-  text-decoration: underline;
+  text-decoration: none;
+  font-weight: bold;
 }
