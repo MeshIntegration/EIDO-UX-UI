@@ -37760,3 +37760,563 @@
         ORDER BY c_name ASC
         LIMIT 10,10
 09/17/2018 12:54:13 - 68.107.189.223: update: resetting Procedure Arrays
+09/19/2018 05:09:05 - 144.48.250.178: Start organisations_a
+09/19/2018 05:09:05 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/19/2018 05:09:05 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/19/2018 05:09:08 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/19/2018 05:09:08 - 144.48.250.178: update: resetting Procedure Arrays
+09/19/2018 05:09:22 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/19/2018 05:09:22 - 144.48.250.178: update: resetting Procedure Arrays
+09/20/2018 08:53:06 - 144.48.250.178: Start organisations_a
+09/20/2018 08:53:06 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/20/2018 08:53:06 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 08:54:03 - 144.48.250.178: Start organisations_a
+09/20/2018 08:54:03 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/20/2018 08:54:03 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:00:49 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:08:08 - 82.34.15.57: Start organisations_a
+09/20/2018 09:08:08 - 82.34.15.57: organisations_a - mode: clearsession id: 
+09/20/2018 09:08:08 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:08:11 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:08:11 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 09:08:13 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:11:29 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:11:29 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 09:24:46 - 144.48.250.178: Start organisations_a
+09/20/2018 09:24:46 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/20/2018 09:24:46 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:04 - 144.48.250.178: Start organisations_a
+09/20/2018 09:27:04 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/20/2018 09:27:04 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:18 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:18 - 144.48.250.178: SELECT * FROM app_fd_ver_organizations WHERE id=''
+09/20/2018 09:27:30 - 144.48.250.178: Start organisations_a
+09/20/2018 09:27:30 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/20/2018 09:27:30 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:34 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:34 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 09:27:35 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:35 - 144.48.250.178: update: resetting Procedure Arrays
+09/20/2018 09:27:41 - 82.34.15.57: Start organisations_a
+09/20/2018 09:27:41 - 82.34.15.57: organisations_a - mode: clearsession id: 5b28ff0d3e01d
+09/20/2018 09:27:41 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:42 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:42 - 144.48.250.178: SELECT o.id, o.c_name, u.email, u.firstName, u.lastName  
+                           FROM app_fd_ver_organizations o, dir_user u 
+                           WHERE o.c_parentId='5b7417223c89b'
+                           AND o.c_firstUser=u.id
+                           AND o.c_status='ACTIVE'
+09/20/2018 09:27:45 - 144.48.250.178: Start organisations_a
+09/20/2018 09:27:45 - 144.48.250.178: organisations_a - mode: clearsession id: 5b7417223c89b
+09/20/2018 09:27:45 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:45 - 144.48.250.178: SELECT * FROM app_fd_ver_organizations WHERE id='5b7417223c89b'
+09/20/2018 09:27:54 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:27:54 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 09:31:03 - 82.34.15.57: Start organisations_a
+09/20/2018 09:31:03 - 82.34.15.57: organisations_a - mode: clearsession id: 5b28ff0d3e01d
+09/20/2018 09:31:03 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:31:03 - 82.34.15.57: editowner: SELECT c_admin, c_email
+                  FROM app_fd_ver_organizations 
+                  WHERE id='5b28ff0d3e01d'
+09/20/2018 09:31:06 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:31:06 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 09:31:08 - 82.34.15.57: Start organisations_a
+09/20/2018 09:31:08 - 82.34.15.57: organisations_a - mode: clearsession id: 5b28ff0d3e01d
+09/20/2018 09:31:08 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:31:11 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:31:11 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 09:32:03 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:32:03 - 144.48.250.178: update: resetting Procedure Arrays
+09/20/2018 09:32:09 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:32:13 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:32:21 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:32:25 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:32:39 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:32:39 - 144.48.250.178: arr_add_procs: ProcID: 5abe4d575be08
+09/20/2018 09:32:53 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:32:53 - 144.48.250.178: arr_add_procs: ProcID: 5abe4d575be08
+09/20/2018 09:34:14 - 82.34.15.57: Start organisations_a
+09/20/2018 09:34:14 - 82.34.15.57: organisations_a - mode: clearsession id: 5b28ff0d3e01d
+09/20/2018 09:34:14 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:34:17 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:34:24 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:34:24 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 09:37:27 - 82.34.15.57: Start organisations_a
+09/20/2018 09:37:27 - 82.34.15.57: organisations_a - mode: clearsession id: 5b28ff0d3e01d
+09/20/2018 09:37:27 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:37:46 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 09:37:46 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 09:38:56 - 82.34.15.57: Start organisations_a
+09/20/2018 09:38:56 - 82.34.15.57: organisations_a - mode: clearsession id: 5b28ff0d3e01d
+09/20/2018 09:38:56 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 10:32:31 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 10:32:31 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 10:57:49 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 10:57:49 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 10:57:52 - 82.34.15.57: Start organisations_a
+09/20/2018 10:57:52 - 82.34.15.57: organisations_a - mode: clearsession id: 5b7bf1a376afa
+09/20/2018 10:57:52 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 10:57:58 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 10:57:58 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 10:58:23 - 82.34.15.57: Start organisations_a
+09/20/2018 10:58:23 - 82.34.15.57: organisations_a - mode: clearsession id: 5b7bf1a376afa
+09/20/2018 10:58:23 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:12:38 - 82.34.15.57: Start organisations_a
+09/20/2018 13:12:38 - 82.34.15.57: organisations_a - mode: clearsession id: 
+09/20/2018 13:12:38 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:12:41 - 82.34.15.57: Start organisations_a
+09/20/2018 13:12:41 - 82.34.15.57: organisations_a - mode: clearsession id: 
+09/20/2018 13:12:41 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:15 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:15 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 13:13:22 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:30 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:30 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 13:13:32 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:32 - 82.34.15.57: SELECT o.id, o.c_name, u.email, u.firstName, u.lastName  
+                           FROM app_fd_ver_organizations o, dir_user u 
+                           WHERE o.c_parentId='5b7bf1a376afa'
+                           AND o.c_firstUser=u.id
+                           AND o.c_status='ACTIVE'
+09/20/2018 13:13:35 - 82.34.15.57: Start organisations_a
+09/20/2018 13:13:35 - 82.34.15.57: organisations_a - mode: clearsession id: 5b7bf1a376afa
+09/20/2018 13:13:35 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:35 - 82.34.15.57: SELECT * FROM app_fd_ver_organizations WHERE id='5b7bf1a376afa'
+09/20/2018 13:13:42 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:42 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 13:13:45 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:47 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:52 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:53 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/20/2018 13:13:53 - 82.34.15.57: update: resetting Procedure Arrays
+09/20/2018 14:31:25 - 82.34.15.57: Start organisations_a
+09/20/2018 14:31:25 - 82.34.15.57: organisations_a - mode: clearsession id: 
+09/20/2018 14:31:25 - 82.34.15.57: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 09:42:52 - 144.48.250.178: Start organisations_a
+09/24/2018 09:42:52 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 09:42:53 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 09:43:42 - 144.48.250.178: Start organisations_a
+09/24/2018 09:43:42 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 09:43:42 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 09:43:44 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 09:43:44 - 144.48.250.178: update: resetting Procedure Arrays
+09/24/2018 09:43:51 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 09:47:17 - 144.48.250.178: Start organisations_a
+09/24/2018 09:47:17 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 09:47:17 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 09:53:06 - 144.48.250.178: Start organisations_a
+09/24/2018 09:53:06 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 09:53:07 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 09:55:44 - 144.48.250.178: Start organisations_a
+09/24/2018 09:55:44 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 09:55:44 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 10:05:18 - 144.48.250.178: Start organisations_a
+09/24/2018 10:05:18 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 10:05:18 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 10:22:22 - 144.48.250.178: Start organisations_a
+09/24/2018 10:22:22 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 10:22:23 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 10:22:27 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 10:22:27 - 144.48.250.178: update: resetting Procedure Arrays
+09/24/2018 10:22:30 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 10:22:35 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 10:22:35 - 144.48.250.178: update: resetting Procedure Arrays
+09/24/2018 10:22:44 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 10:34:04 - 144.48.250.178: Start organisations_a
+09/24/2018 10:34:04 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 10:34:04 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 11:44:56 - 144.48.250.178: Start organisations_a
+09/24/2018 11:44:56 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 11:44:56 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 11:51:44 - 144.48.250.178: Start organisations_a
+09/24/2018 11:51:44 - 144.48.250.178: organisations_a - mode: clearsession id: 
+09/24/2018 11:51:44 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 11:51:46 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 11:51:46 - 144.48.250.178: update: resetting Procedure Arrays
+09/24/2018 11:51:49 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 11:51:49 - 144.48.250.178: update: resetting Procedure Arrays
+09/24/2018 11:51:51 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 11:51:51 - 144.48.250.178: update: resetting Procedure Arrays
+09/24/2018 11:51:53 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 11:51:55 - 144.48.250.178: Organisations: SELECT * 
+        FROM app_fd_ver_organizations 
+        WHERE c_level='ORG'
+        AND c_status='ACTIVE'
+        ORDER BY c_name ASC
+        LIMIT 0,10
+09/24/2018 11:51:55 - 144.48.250.178: update: resetting Procedure Arrays

@@ -26079,3 +26079,265 @@
         AND u.active=1
 09/18/2018 14:48:33 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
 09/18/2018 14:48:33 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+09/18/2018 16:17:30 - 76.188.180.118: USERS Mode: 
+09/18/2018 16:17:30 - 76.188.180.118: USERS bulkdelete_hide: hide
+09/19/2018 05:09:00 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/19/2018 05:09:00 - 144.48.250.178: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+09/19/2018 05:09:00 - 144.48.250.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+09/19/2018 05:13:05 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/19/2018 05:13:05 - 144.48.250.178: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/19/2018 05:13:05 - 144.48.250.178: >>>>  GroupID: sitedivadmins
+09/19/2018 05:13:48 - 144.48.250.178: USERS Mode: 
+09/19/2018 05:13:48 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/19/2018 05:13:52 - 144.48.250.178: Users_a: mode: gotoupdate - ID: 5b4c98179d988
+09/19/2018 05:13:52 - 144.48.250.178: USERS Mode: update
+09/19/2018 05:13:52 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/19/2018 13:30:54 - 174.100.21.203: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/19/2018 13:30:54 - 174.100.21.203: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/19/2018 13:30:54 - 174.100.21.203: >>>>  GroupID: sitedivadmins
+09/20/2018 08:51:04 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/20/2018 08:51:04 - 144.48.250.178: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+09/20/2018 08:51:04 - 144.48.250.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+09/20/2018 09:53:14 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/20/2018 09:53:14 - 144.48.250.178: Incorrect password. rob@thenakedsurgeon.com P3PzzBuhbsVvVx%X - back to login.php
+09/20/2018 09:53:26 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/20/2018 09:53:26 - 144.48.250.178: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/20/2018 09:53:26 - 144.48.250.178: >>>>  GroupID: sitedivadmins
+09/20/2018 09:54:59 - 144.48.250.178: USERS Mode: 
+09/20/2018 09:54:59 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/20/2018 10:05:06 - 144.48.250.178: Users_a: mode: gotoadd - ID: 
+09/20/2018 10:05:06 - 144.48.250.178: USERS Mode: add
+09/20/2018 10:05:06 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/20/2018 11:18:23 - 188.29.165.168: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='matthew@eidoactive.co.uk'
+        AND u.id=ug.userid
+        AND u.active=1
+09/20/2018 11:18:23 - 188.29.165.168: AFTER COOKIES: FN Matthew Ravenscroft - INITIALS MR - GROUP sitedivadmins
+09/20/2018 11:18:23 - 188.29.165.168: >>>>  GroupID: sitedivadmins
+09/21/2018 15:41:12 - 174.100.21.203: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/21/2018 15:41:12 - 174.100.21.203: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/21/2018 15:41:12 - 174.100.21.203: >>>>  GroupID: sitedivadmins
+09/24/2018 08:36:27 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='daxadminnodiv@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 08:36:27 - 185.134.108.162: AFTER COOKIES: FN Dax AdminNoDiv - INITIALS DA - GROUP sitedivadmins
+09/24/2018 08:36:27 - 185.134.108.162: >>>>  GroupID: sitedivadmins
+09/24/2018 08:36:38 - 185.134.108.162: USERS Mode: 
+09/24/2018 08:36:38 - 185.134.108.162: USERS bulkdelete_hide: hide
+09/24/2018 08:39:02 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='daxadminnodiv@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 08:39:02 - 185.134.108.162: AFTER COOKIES: FN Dax AdminNoDiv - INITIALS DA - GROUP sitedivadmins
+09/24/2018 08:39:02 - 185.134.108.162: >>>>  GroupID: sitedivadmins
+09/24/2018 08:42:04 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmcknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 08:42:04 - 185.134.108.162: Incorrect email (user not found) jmcknife@thenakedsurgeon.com password - back to login.php
+09/24/2018 08:42:13 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='jmcknife@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 08:42:13 - 185.134.108.162: Incorrect email (user not found) jmcknife@thenakedsurgeon.com password123 - back to login.php
+09/24/2018 08:46:43 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 08:46:43 - 185.134.108.162: Incorrect password. eidoadmin@thenakedsurgeon.com password123 - back to login.php
+09/24/2018 08:46:47 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 08:46:47 - 185.134.108.162: Incorrect password. eidoadmin@thenakedsurgeon.com password - back to login.php
+09/24/2018 08:59:26 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='dax@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 08:59:26 - 185.134.108.162: Incorrect email (user not found) dax@thenakedsurgeon.com password - back to login.php
+09/24/2018 08:59:34 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='daxadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 08:59:34 - 185.134.108.162: Incorrect email (user not found) daxadmin@thenakedsurgeon.com password - back to login.php
+09/24/2018 09:00:22 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='daxadminnodiv@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 09:00:22 - 185.134.108.162: Incorrect password. daxadminnodiv@thenakedsurgeon.com password - back to login.php
+09/24/2018 09:00:26 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='daxadminnodiv@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 09:00:26 - 185.134.108.162: Incorrect password. daxadminnodiv@thenakedsurgeon.com password123 - back to login.php
+09/24/2018 09:01:12 - 185.134.108.162: USERS Mode: 
+09/24/2018 09:01:12 - 185.134.108.162: USERS bulkdelete_hide: hide
+09/24/2018 09:01:25 - 94.197.120.140: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='adrian@eidoactive.co.uk'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 09:01:25 - 94.197.120.140: AFTER COOKIES: FN Adrian Lead - INITIALS AL - GROUP sitedivadmins
+09/24/2018 09:01:25 - 94.197.120.140: >>>>  GroupID: sitedivadmins
+09/24/2018 09:01:31 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='daxuser@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 09:01:31 - 185.134.108.162: Incorrect password. daxuser@thenakedsurgeon.com password - back to login.php
+09/24/2018 09:01:35 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='daxuser@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 09:01:35 - 185.134.108.162: Incorrect password. daxuser@thenakedsurgeon.com password123 - back to login.php
+09/24/2018 09:03:06 - 185.134.108.162: Users_a: mode: add - ID: 
+09/24/2018 09:03:06 - 185.134.108.162: pw: 4y3YsePH - hash: $2y$10$6v3t4AaW4YrolffSzG2QteNsEHEBHN/1CzV7r7G5mQaIT7YZrEv4O
+09/24/2018 09:03:06 - 185.134.108.162: ADD: INSERT INTO dir_user
+           SET firstName='Don',
+               lastName='Johnson',
+               email='don@thenakedsurgeon.com',
+               active=1,
+               timeZone='0',
+               id='5ba8a84ab3e39',
+               username='don@thenakedsurgeon.com',
+               gmc_number='',
+               c_organizationId='5b7bf8a3bb841',
+               isSurgeon='',
+               uipassword='$2y$10$6v3t4AaW4YrolffSzG2QteNsEHEBHN/1CzV7r7G5mQaIT7YZrEv4O'
+09/24/2018 09:03:06 - 185.134.108.162: INSERT INTO dir_user_role
+           SET roleId='ROLE_USER',
+               username='don@thenakedsurgeon.com',
+               userId='5ba8a84ab3e39'
+09/24/2018 09:03:06 - 185.134.108.162: INSERT INTO dir_user_group
+           SET groupId='staff',
+               username='don@thenakedsurgeon.com',
+               userId='5ba8a84ab3e39'
+09/24/2018 09:03:06 - 185.134.108.162: USERS Mode: add
+09/24/2018 09:03:06 - 185.134.108.162: USERS bulkdelete_hide: hide
+09/24/2018 09:03:11 - 185.134.108.162: Users_a: mode: gotoupdate - ID: 5ba8a84ab3e39
+09/24/2018 09:03:11 - 185.134.108.162: USERS Mode: update
+09/24/2018 09:03:11 - 185.134.108.162: USERS bulkdelete_hide: hide
+09/24/2018 09:04:17 - 185.134.108.162: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='don@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 09:04:17 - 185.134.108.162: AFTER COOKIES: FN Don Johnson - INITIALS DJ - GROUP staff
+09/24/2018 09:04:17 - 185.134.108.162: >>>>  GroupID: staff
+09/24/2018 09:42:48 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 09:42:48 - 144.48.250.178: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+09/24/2018 09:42:48 - 144.48.250.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+09/24/2018 10:52:08 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 10:52:08 - 144.48.250.178: Incorrect password. rob@thenakedsurgeon.com P3PzzBuhbsVvVx%X - back to login.php
+09/24/2018 10:52:18 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 10:52:18 - 144.48.250.178: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/24/2018 10:52:18 - 144.48.250.178: >>>>  GroupID: sitedivadmins
+09/24/2018 10:55:08 - 109.144.219.110: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='matthew@eidoactive.co.uk'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 10:55:08 - 109.144.219.110: AFTER COOKIES: FN Matthew Ravenscroft - INITIALS MR - GROUP sitedivadmins
+09/24/2018 10:55:08 - 109.144.219.110: >>>>  GroupID: sitedivadmins
+09/24/2018 10:59:39 - 144.48.250.178: USERS Mode: 
+09/24/2018 10:59:39 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/24/2018 11:44:48 - 144.48.250.178: Users_a: mode: gotoadd - ID: 
+09/24/2018 11:44:48 - 144.48.250.178: USERS Mode: add
+09/24/2018 11:44:48 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/24/2018 11:44:54 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 11:44:54 - 144.48.250.178: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+09/24/2018 11:44:54 - 144.48.250.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+09/24/2018 11:54:21 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/24/2018 11:54:21 - 144.48.250.178: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/24/2018 11:54:21 - 144.48.250.178: >>>>  GroupID: sitedivadmins
+09/25/2018 05:33:01 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/25/2018 05:33:01 - 144.48.250.178: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/25/2018 05:33:01 - 144.48.250.178: >>>>  GroupID: sitedivadmins
+09/25/2018 05:41:13 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/25/2018 05:41:13 - 144.48.250.178: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/25/2018 05:41:13 - 144.48.250.178: >>>>  GroupID: sitedivadmins
+09/25/2018 06:44:55 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/25/2018 06:44:55 - 144.48.250.178: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+09/25/2018 06:44:55 - 144.48.250.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+09/25/2018 07:23:15 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/25/2018 07:23:16 - 144.48.250.178: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/25/2018 07:23:16 - 144.48.250.178: >>>>  GroupID: sitedivadmins
+09/25/2018 08:47:10 - 144.48.250.178: USERS Mode: 
+09/25/2018 08:47:10 - 144.48.250.178: USERS bulkdelete_hide: hide

@@ -1511,6 +1511,7 @@ $results_count = $GetQuery_all->num_rows;
 					}
 
 					$tl_link = "";
+					$tl_target = "";
 					$tl_btn_str = "";
 					$tr_class = 'class="timeline-no-hover"';
 					$tl_lineclass = "timeline-wrapper";
@@ -1564,8 +1565,9 @@ $results_count = $GetQuery_all->num_rows;
 						//$qryResult_link = $GetQuery_link->fetch_assoc();
                                                 //  $qryResult_link[$fieldname];
 						$tl_link = $tl_data;
+						$tl_target = "_blank";
 						$tl_desc2 = $tl_desc;
-                                                $tl_link2 = "<a>$tl_session_name</a>";
+                                                $tl_link2 = "<a href='$tl_data' target='$tl_target'>$tl_session_name</a>";
                                                 // $tl_link2 = "<object data='$tl_data' type='application/pdf'>$tl_session_name</object>";
                                                 $tl_desc="<strong>".$tl_desc."</strong><br />".$tl_link2;
 
@@ -1619,10 +1621,12 @@ $results_count = $GetQuery_all->num_rows;
 					// logMsg("Desc: $tl_desc Date: $tl_date Type: $tl_type Image: $tl_imgfile Icon: $tl_iconfile Class: $tl_class", $logfile);
 					?>
 
-                <tr <?php if ($tl_link<>"none") echo 'class="clickable-row timeline-hover"'; else echo $tr_class; ?>>
+                <tr >
 
-				<td width="20%"><?php if($tl_desc2 == "Report Generated") echo "<a href='$tl_data' target='_blank'>"; ?>
-					<span class="date"><?php echo $tl_date; ?></span>
+				<td width="20%"<?php if ($tl_link<>"none") echo 'class="clickable-row timeline-hover"'; else echo $tr_class; ?>>
+					<?php if ($tl_link<>"none") echo "<a href='$tl_data' target='$tl_target'>"; else echo " "; ?>
+                    <span class="date"><?php echo $tl_date; ?></span>
+                    <?php if ($tl_link<>"none") echo "</a>"; else echo " "; ?>
 				</td>
 				<td width="12%" class="timeline-item">
 					<span class="<?php echo $tl_lineclass; ?>">
@@ -1642,9 +1646,9 @@ $results_count = $GetQuery_all->num_rows;
                           </span>
 			</td>
 			<?php if($tl_btn_str == "") { ?>
-				<td width="10%" class="tlbdr">
+				<td width="10%" class="tlbdr <?php if ($tl_link<>"none") echo "clickable-row"; ?>">
 					<?php if ($tl_link=="none") echo "&nbsp;"; else { ?>
-					<a href="<?php echo $tl_link; ?>"<?php if($tl_desc2 == "Report Generated") echo 'target="_blank"'; ?>><img src="../img/icons/greater.png" alt="greater than icon" class="align-right"/></a>
+					<a href="<?php echo $tl_link; ?>" target="<?php echo $tl_target; ?>"><img src="../img/icons/greater.png" alt="greater than icon" class="align-right"/></a>
                                           <?php } ?>
 				</td>
 
@@ -3124,7 +3128,15 @@ WHERE c_gmcNumber = '$c_gmcNumber'";
         });
 
     $(".clickable-row").click(function() {
-        window.location = $(this).data("href");
+        //ammended to handle links with a target attribute (Report Generated timeline enties) that need to open in a new tab
+        if(this.hasAttribute("target")){
+            window.open($(this).data("href"),$(this).data("target"));
+        }
+        // else if no target attribute, then the link opens in the same browser window
+        else{
+            window.location = $(this).data("href");
+        }
+        //window.location = $(this).data("href");
     });
     //Select2 is a js library  for transforming HTML elements to make enhanced select fields that include search fields, enhanced grouping, custom, multi-host data connectors, etc.)
        //the Select2 js and css will add a searchfield and custom style to the select2 class, which is used on all Surgeon select fields
