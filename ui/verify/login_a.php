@@ -12,6 +12,10 @@
 //     staff or surgeon - Patient Dashboard
 // *********************************
 
+require "/var/www/html/ui/verify/lib/vendor/aws-autoloader.php";
+use Aws\S3\S3Client;
+use Aws\Sts\StsClient;
+use Aws\Credentials\Credentials;
 include "utilities.php";
 $logfile = "admin.log";
 session_start();
@@ -82,14 +86,84 @@ else {
 //   $GetQuery=dbi_query($sql);
 //   $qryResult=$GetQuery->fetch_assoc();
 
+// get AWS IAM access ket and secret access key for report link signing
+    $org_id = $qryResult['c_organizationId'];
+    $sql_aws = "SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='$org_id'";
+    logMsg($sql_aws,$logfile);
+    $GetQuery_aws = dbi_query($sql_aws);
+    $qryResult_aws = $GetQuery_aws->fetch_assoc();
+    $org_key = $qryResult_aws['iam_access_key'];
+    $org_secretkey = $qryResult_aws['iam_secret_access_key'];
+
+// use the AWS credentials to request a session-token
+// Hard-coded credentials
+// use Aws\S3\S3Client;
+//    $stsClient = new STSClient([
+//    'version'     => 'latest',
+//    'region'      => 'eu-west-1',
+//    'credentials' => [
+//        'key'    => '$org_key',
+//        'secret' => '$org_secretkey',
+//    ],
+//]);
+
+$credentials = new Credentials(
+    $org_key,
+    $org_secretkey
+);
+
+$stsClient = new StsClient([
+    'version'     => 'latest',
+    'region'      => 'eu-west-2',
+    'credentials' => $credentials
+]);
+
+
+
+$result = $stsClient->getSessionToken();
+$tempCredentials = $stsClient->createCredentials($result);
+//get presigned url
+$s3Client = new Aws\S3\S3Client([
+    'region' => 'eu-west-2',
+    'version' => 'latest',
+	'credentials' => $tempCredentials
+]);
+
+$cmd = $s3Client->getCommand('GetObject', [
+    'Bucket' => 'eido-demo-hospital-trust',
+    'Key' => 'survey9004127423398_gov_patientEpisode9004134590041274_434341286563.pdf'
+]);
+
+$requestUrl = $s3Client->createPresignedRequest($cmd, '+220 minutes');
+//is_setcookie("req", $requestUrl, 0, "/", $cookie_domain);
+$presignedUrl = (string)$requestUrl->getUri();
+$presignedUrlStr = urldecode($presignedUrl);
+
+
+//$decodedUrl = $presignedUrlStr->urldecode();
+$rawDecodedUrl = rawurldecode($presignedUrl);
+
+setrawcookie("rawDecodedUrl", $rawDecodedUrl, 0, "/", $cookie_domain);
+//is_setcookie("decodedUrl", $decodedUrl, 0, "/", $cookie_domain);
+setrawcookie("presignedurl", $presignedUrl, 0, "/", $cookie_domain);
+
 logMsg(">>>>  GroupID: ".$qryResult['groupId'], $logfile);
 
     if ((strtolower($qryResult['groupId']) == "sitedivadmins" || strtolower($qryResult['groupId']) == "staff")) {
         //  determine what organisation they are with
+        //  query org table to get aws iam key and iam secret key
         //  and set a cookie for the ORG ID
+        //  and set cookie for the aws iam key
+        //  and set cookie for the aws iam secret key
 
         $org_id = $qryResult['c_organizationId'];
+        $org_key = $qryResult_aws['iam_access_key'];
+        $org_secretkey = $qryResult_aws['iam_secret_access_key'];
         is_setcookie("org_id", $org_id, 0, "/", $cookie_domain);
+        is_setcookie("org_key", $org_key, 0, "/", $cookie_domain);
+        is_setcookie("org_secretkey", $org_secretkey, 0, "/", $cookie_domain);
     }
 
     if (strtolower($qryResult['groupId']) == "sitedivadmins") {

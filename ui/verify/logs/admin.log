@@ -26079,3 +26079,405 @@
         AND u.active=1
 09/18/2018 14:48:33 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
 09/18/2018 14:48:33 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+09/18/2018 16:17:30 - 76.188.180.118: USERS Mode: 
+09/18/2018 16:17:30 - 76.188.180.118: USERS bulkdelete_hide: hide
+09/19/2018 05:09:00 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/19/2018 05:09:00 - 144.48.250.178: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+09/19/2018 05:09:00 - 144.48.250.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+09/19/2018 05:13:05 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/19/2018 05:13:05 - 144.48.250.178: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/19/2018 05:13:05 - 144.48.250.178: >>>>  GroupID: sitedivadmins
+09/19/2018 05:13:48 - 144.48.250.178: USERS Mode: 
+09/19/2018 05:13:48 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/19/2018 05:13:52 - 144.48.250.178: Users_a: mode: gotoupdate - ID: 5b4c98179d988
+09/19/2018 05:13:52 - 144.48.250.178: USERS Mode: update
+09/19/2018 05:13:52 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/19/2018 13:30:54 - 174.100.21.203: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/19/2018 13:30:54 - 174.100.21.203: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/19/2018 13:30:54 - 174.100.21.203: >>>>  GroupID: sitedivadmins
+09/20/2018 08:51:04 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='eidoadmin@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/20/2018 08:51:04 - 144.48.250.178: AFTER COOKIES: FN EIDO Admin - INITIALS EA - GROUP eidoadmins
+09/20/2018 08:51:04 - 144.48.250.178: eidoadmin@thenakedsurgeon.com - Logged in as SUPERUSER
+09/20/2018 09:53:14 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/20/2018 09:53:14 - 144.48.250.178: Incorrect password. rob@thenakedsurgeon.com P3PzzBuhbsVvVx%X - back to login.php
+09/20/2018 09:53:26 - 144.48.250.178: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/20/2018 09:53:26 - 144.48.250.178: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/20/2018 09:53:26 - 144.48.250.178: >>>>  GroupID: sitedivadmins
+09/20/2018 09:54:59 - 144.48.250.178: USERS Mode: 
+09/20/2018 09:54:59 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/20/2018 10:05:06 - 144.48.250.178: Users_a: mode: gotoadd - ID: 
+09/20/2018 10:05:06 - 144.48.250.178: USERS Mode: add
+09/20/2018 10:05:06 - 144.48.250.178: USERS bulkdelete_hide: hide
+09/20/2018 11:18:23 - 188.29.165.168: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='matthew@eidoactive.co.uk'
+        AND u.id=ug.userid
+        AND u.active=1
+09/20/2018 11:18:23 - 188.29.165.168: AFTER COOKIES: FN Matthew Ravenscroft - INITIALS MR - GROUP sitedivadmins
+09/20/2018 11:18:23 - 188.29.165.168: >>>>  GroupID: sitedivadmins
+09/28/2018 12:03:19 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+09/28/2018 12:03:19 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+09/28/2018 12:03:19 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/02/2018 13:46:54 - 174.232.1.69: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/02/2018 13:46:54 - 174.232.1.69: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/02/2018 13:46:54 - 174.232.1.69: >>>>  GroupID: sitedivadmins
+10/02/2018 18:48:40 - 174.100.21.203: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/02/2018 18:48:40 - 174.100.21.203: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/02/2018 18:48:40 - 174.100.21.203: >>>>  GroupID: sitedivadmins
+10/17/2018 14:18:21 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/17/2018 14:18:21 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/17/2018 14:18:21 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/17/2018 14:18:21 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id = 5b28ff0d3e01d
+10/17/2018 14:29:01 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/17/2018 14:29:01 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/17/2018 14:29:01 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id = 5b28ff0d3e01d
+10/17/2018 14:47:20 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/17/2018 14:47:20 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/17/2018 14:47:20 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id = 5b28ff0d3e01d
+10/17/2018 15:00:04 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/17/2018 15:00:04 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/17/2018 15:00:04 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/17/2018 15:00:04 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/17/2018 15:27:21 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/17/2018 15:27:21 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/17/2018 15:27:21 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/17/2018 15:27:21 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/17/2018 15:59:17 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/17/2018 15:59:17 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/17/2018 15:59:17 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/17/2018 16:07:19 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/17/2018 16:07:19 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/17/2018 16:07:19 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/17/2018 16:18:48 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/17/2018 16:18:48 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/17/2018 16:18:48 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/17/2018 16:26:38 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/17/2018 16:26:38 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/17/2018 16:26:38 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 14:50:22 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 14:50:22 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 14:50:22 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 14:50:22 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 14:54:15 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 14:54:16 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 14:54:16 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 14:54:16 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 15:24:14 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 15:24:14 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 15:24:14 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 15:24:14 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 15:54:45 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 15:54:45 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 15:54:45 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 15:55:51 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 15:55:51 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 15:55:51 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 15:55:51 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 15:58:54 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 15:58:54 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 15:58:54 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 15:58:54 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 16:01:26 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 16:01:26 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 16:01:26 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 16:01:26 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 16:03:33 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 16:03:33 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 16:03:33 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 16:03:34 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 16:41:27 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 16:41:27 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 16:41:27 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 16:41:27 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 16:57:07 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 16:57:07 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 16:57:07 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 16:57:08 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 19:10:19 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 19:10:19 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 19:10:19 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 19:10:19 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 19:25:38 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 19:25:38 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 19:25:38 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 19:25:38 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 19:39:32 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 19:39:32 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 19:39:32 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 19:59:09 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 19:59:09 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 19:59:09 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 19:59:09 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 20:11:51 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:11:51 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 20:11:51 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 20:11:51 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 20:14:30 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:14:30 - 76.188.180.118: Incorrect password. rob@thenakedsurgeon.com password201/8 - back to login.php
+10/18/2018 20:14:44 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:14:44 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 20:14:44 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 20:14:44 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 20:20:46 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:20:46 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 20:20:46 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 20:21:19 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:21:20 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 20:21:20 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 20:23:37 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:23:37 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 20:23:37 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 20:23:38 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 20:45:55 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:45:55 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 20:45:55 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 20:48:04 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:48:04 - 76.188.180.118: Incorrect password. rob@thenakedsurgeon.com password - back to login.php
+10/18/2018 20:48:10 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:48:10 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 20:48:10 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 20:48:11 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 20:49:07 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:49:07 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 20:49:07 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 20:49:07 - 76.188.180.118: >>>>  GroupID: sitedivadmins
+10/18/2018 20:53:08 - 76.188.180.118: SELECT u.*, ug.*
+        FROM dir_user u, dir_user_group ug
+        WHERE u.username='rob@thenakedsurgeon.com'
+        AND u.id=ug.userid
+        AND u.active=1
+10/18/2018 20:53:08 - 76.188.180.118: AFTER COOKIES: FN Rob Hughes - INITIALS RH - GROUP sitedivadmins
+10/18/2018 20:53:08 - 76.188.180.118: SELECT iam_access_key, iam_secret_access_key
+                FROM app_fd_ver_organizations
+                WHERE id='5b28ff0d3e01d'
+10/18/2018 20:53:08 - 76.188.180.118: >>>>  GroupID: sitedivadmins

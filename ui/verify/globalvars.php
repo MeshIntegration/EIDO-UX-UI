@@ -31,7 +31,7 @@ $db = new MysqliDb ($HOST,$USERNAME,$PASSWORD,$DBNAME);
 //$PASSWORD = "";
 //$DBNAME = "jwedb";
 
-$cookie_domain = ".verify.eidosystems.com";
+$cookie_domain = ".verifydev.eidosystems.com";
 $cookie_expire = 3600*24*365;
 
 $debug = true ;//false ; // true;
@@ -40,14 +40,14 @@ if($debug){
    ini_set("display_errors", 1);
 }
 
-$SITE_URL = "https://verify.eidosystems.com/ui/verify/";
+$SITE_URL = "https://verifydev.eidosystems.com/ui/verify/";
 $ABS_PATH = "/var/www/html/ui/verify/" ;
 
 $logdir = "/var/www/html/ui/verify/logs";
 
 // Joget API detail
-$BASE_URL = "http://verify.eidosystems.com:8080/jw/web/json/data/";
-$BASE_WORKFLOW_URL = "http://verify.eidosystems.com:8080/jw/web/json/workflow/";
+$BASE_URL = "https://jogetdev.meshconnect.app/jw/web/json/data/";
+$BASE_WORKFLOW_URL = "https://jogetdev.meshconnect.app/jw/web/json/workflow/";
 $USERNAME = "eidoverify2017";
 $PASSWORD = "";
 $HASH = "91FCC50BA6AC975A3876E556CCE7D986"; //  md5($USERNAME . "::" . md5($PASSWORD));
